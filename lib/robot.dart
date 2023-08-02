@@ -1,6 +1,8 @@
 library bosdart;
 
 import 'package:bosdart/channels.dart';
+import 'package:bosdart/generated/bosdyn/api/header.pb.dart';
+import 'package:bosdart/generated/google/protobuf/timestamp.pb.dart';
 import 'package:bosdart/structures/authority.dart';
 import 'package:bosdart/subsystems/auth.dart';
 
@@ -16,6 +18,18 @@ class Robot {
     Future connect() async {
        token = await getAuthToken(this); 
        ChannelManager.channels[Authority.auth]?.shutdown();
+    }
+
+    Future initialise() async {
+
+    }
+
+    RequestHeader requestHeader() {
+        RequestHeader header = RequestHeader(); 
+        header.requestTimestamp = Timestamp.fromDateTime(DateTime.now());
+        header.clientName = "bosdart";
+        
+        return RequestHeader();
     }
     
     Future shutdown() async {
