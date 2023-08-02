@@ -1,0 +1,23 @@
+name: bosdart
+description: Spot SDK in dart.
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: '>=3.0.3 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  async: ^2.2.0
+  grpc: ^3.2.3
+  protobuf: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
