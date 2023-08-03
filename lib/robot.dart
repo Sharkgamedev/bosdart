@@ -5,8 +5,6 @@ import 'package:bosdart/generated/bosdyn/api/header.pb.dart';
 import 'package:bosdart/generated/google/protobuf/timestamp.pb.dart';
 import 'package:bosdart/structures/authority.dart';
 import 'package:bosdart/subsystems/auth.dart';
-import 'package:bosdart/subsystems/lease.dart';
-import 'package:bosdart/subsystems/power.dart';
 import 'package:bosdart/subsystems/time.dart';
 
 class Robot {
