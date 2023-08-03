@@ -29,7 +29,6 @@ class ChannelManager {
   }
 
   static CallOptions callOptions(Robot robot) {
-    print("Bearer ${robot.token}");
     return CallOptions(
       metadata: { "authorization": "Bearer ${robot.token}" }
     );

@@ -36,20 +36,20 @@ void main() {
 
   test('robot stands', () async {
     expect(spot.positionCommand(spot.stand(), lease.lease!), completes);
-    expect(await Future.delayed(const Duration(seconds: 5)), completes);
+    await Future.delayed(const Duration(seconds: 5));
   });
 
   test('robot walks', () async {
     Vec2 direction = Vec2();
-    direction.y = 2;
+    direction.y = 4;
     
     expect(spot.positionCommand(spot.walk(direction, endTimeRelative: 5000000), lease.lease!), completes);
-    expect(await Future.delayed(const Duration(seconds: 5)), completes);
+    await Future.delayed(const Duration(seconds: 5));
   });
 
   test('robot sits', () async {
     expect(spot.positionCommand(spot.sit(), lease.lease!), completes);
-    expect(await Future.delayed(const Duration(seconds: 5)), completes);
+    await Future.delayed(const Duration(seconds: 5));
   });
 
   test('robot powers off', () async {

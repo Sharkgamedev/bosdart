@@ -5,7 +5,9 @@ import 'package:bosdart/generated/bosdyn/api/lease.pb.dart';
 import 'package:bosdart/generated/bosdyn/api/mobility_command.pb.dart';
 import 'package:bosdart/generated/bosdyn/api/robot_command.pb.dart';
 import 'package:bosdart/generated/bosdyn/api/robot_command_service.pbgrpc.dart';
+import 'package:bosdart/generated/bosdyn/api/spot/robot_command.pb.dart';
 import 'package:bosdart/generated/bosdyn/api/synchronized_command.pb.dart';
+import 'package:bosdart/generated/google/protobuf/any.pb.dart';
 import 'package:bosdart/robot.dart';
 import 'package:bosdart/structures/authority.dart';
 import 'package:bosdart/subsystems/time.dart';
@@ -35,16 +37,20 @@ extension CommandClient on Robot {
   
   MobilityCommand_Request walk(Vec2 direction, { int endTimeRelative = 1000000 }) {
     MobilityCommand_Request mobilityRequest = MobilityCommand_Request();
+    MobilityParams params = MobilityParams();
     SE2VelocityCommand_Request walkRequest = SE2VelocityCommand_Request();
+
+    params.locomotionHint = LocomotionHint.HINT_AUTO;
 
     SE2Velocity seVelocity = SE2Velocity();
     seVelocity.linear = direction; 
 
     walkRequest.velocity = seVelocity; 
     walkRequest.endTime = TimeSystem.timestampFromLocalMicros(DateTime.now().microsecondsSinceEpoch + endTimeRelative);
-    walkRequest.se2FrameName = "flat_body";
+    walkRequest.se2FrameName = "body";
     
     mobilityRequest.se2VelocityRequest = walkRequest;
+    mobilityRequest.params = Any.pack(params); 
 
     return mobilityRequest;
   }
