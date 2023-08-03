@@ -39,14 +39,14 @@ class LeaseContainer {
   }
 
   Future<Lease> acquireLease() async {
-    AcquireLeaseRequest request = AcquireLeaseRequest();
+    TakeLeaseRequest request = TakeLeaseRequest();
     request.header = robot.requestHeader();
     request.resource = resource; 
 
-    AcquireLeaseResponse response = await client.acquireLease(request);
+    TakeLeaseResponse response = await client.takeLease(request);
     
-    if (!response.header.error.resultOk() || response.status != AcquireLeaseResponse_Status.STATUS_OK) {
-      throw Exception("Unable to acquire a lease");
+    if (!response.header.error.resultOk() || response.status != TakeLeaseResponse_Status.STATUS_OK) {
+      throw Exception("Unable to acquire a lease: ${response.status.name}");
     }
 
     lease = response.lease;

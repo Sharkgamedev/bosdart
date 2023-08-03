@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bosdart/channels.dart';
 import 'package:bosdart/generated/bosdyn/api/basic_command.pb.dart';
 import 'package:bosdart/generated/bosdyn/api/geometry.pb.dart';
@@ -40,14 +42,22 @@ extension CommandClient on Robot {
     MobilityParams params = MobilityParams();
     SE2VelocityCommand_Request walkRequest = SE2VelocityCommand_Request();
 
-    params.locomotionHint = LocomotionHint.HINT_AUTO;
+    params.locomotionHint = LocomotionHint.HINT_CRAWL;
+
+    Vec2 slewLimit = Vec2();
+    slewLimit.x = 4;
+    slewLimit.y = 4;
 
     SE2Velocity seVelocity = SE2Velocity();
-    seVelocity.linear = direction; 
+    SE2Velocity slewVelocity = SE2Velocity();
+    seVelocity.linear = direction;
+    slewVelocity.linear = slewLimit;
+    slewVelocity.angular = 2.0; 
 
     walkRequest.velocity = seVelocity; 
     walkRequest.endTime = TimeSystem.timestampFromLocalMicros(DateTime.now().microsecondsSinceEpoch + endTimeRelative);
-    walkRequest.se2FrameName = "body";
+    walkRequest.se2FrameName = "flat_body";
+    walkRequest.slewRateLimit = slewVelocity;
     
     mobilityRequest.se2VelocityRequest = walkRequest;
     mobilityRequest.params = Any.pack(params); 

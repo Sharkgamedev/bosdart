@@ -5,6 +5,7 @@ import 'package:bosdart/generated/google/protobuf/timestamp.pb.dart';
 import 'package:bosdart/robot.dart';
 import 'package:bosdart/structures/authority.dart';
 import '../../generated/google/protobuf/duration.pb.dart' as gpbuff;
+import 'package:fixnum/fixnum.dart' as nmbuff;
 
 class TimeSystem {
   static TimeSyncRoundTrip? _last;
@@ -29,7 +30,11 @@ class TimeSystem {
       throw Exception("Clock skew is not initialised!"); 
       // return Timestamp.fromDateTime(DateTime.now());
     }
-    return Timestamp.fromDateTime(DateTime.fromMicrosecondsSinceEpoch(microsecondsEpoch + (clockSkew()!.nanos * 1000)));
+    Timestamp time = Timestamp();
+    time.seconds = nmbuff.Int64((microsecondsEpoch + (clockSkew()!.nanos / 1000)).round() * 1000000);
+    time.nanos = 0;
+
+    return time;  
   }
 
   static Future tryUpdateTimeSync(Robot robot) async {

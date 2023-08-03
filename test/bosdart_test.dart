@@ -31,28 +31,29 @@ void main() {
   });
 
   test('robot powers on', () async {
-    expect(PowerManager.setPowerStateAndWait(spot, lease.lease!, PowerCommandRequest_Request.REQUEST_ON), completes);
+    await expectLater(PowerManager.setPowerStateAndWait(spot, lease.lease!, PowerCommandRequest_Request.REQUEST_ON), completes);
   });
 
   test('robot stands', () async {
-    expect(spot.positionCommand(spot.stand(), lease.lease!), completes);
+    await expectLater(spot.positionCommand(spot.stand(), lease.lease!), completes);
     await Future.delayed(const Duration(seconds: 5));
   });
 
   test('robot walks', () async {
     Vec2 direction = Vec2();
-    direction.y = 4;
+    direction.x = 1;
     
-    expect(spot.positionCommand(spot.walk(direction, endTimeRelative: 5000000), lease.lease!), completes);
     await Future.delayed(const Duration(seconds: 5));
+    await expectLater(spot.positionCommand(spot.walk(direction, endTimeRelative: 1500000000), lease.lease!), completes);
+    await Future.delayed(const Duration(seconds: 10));
   });
 
   test('robot sits', () async {
-    expect(spot.positionCommand(spot.sit(), lease.lease!), completes);
+    await expectLater(spot.positionCommand(spot.sit(), lease.lease!), completes);
     await Future.delayed(const Duration(seconds: 5));
   });
 
   test('robot powers off', () async {
-    expect(PowerManager.setPowerStateAndWait(spot, lease.lease!, PowerCommandRequest_Request.REQUEST_OFF), completes);
+    await expectLater(PowerManager.setPowerStateAndWait(spot, lease.lease!, PowerCommandRequest_Request.REQUEST_OFF), completes);
   });
 }
