@@ -11,6 +11,7 @@ Future<String> getAuthToken(Robot robot) async {
   GetAuthTokenRequest request = GetAuthTokenRequest();
   request.username = robot.username;
   request.password = robot.password;
+  request.header = robot.requestHeader();
 
   GetAuthTokenResponse response = await client.getAuthToken(request);
 

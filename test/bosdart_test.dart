@@ -1,20 +1,17 @@
 import 'package:bosdart/generated/bosdyn/api/geometry.pb.dart';
-import 'package:bosdart/generated/bosdyn/api/lease.pb.dart';
+import 'package:bosdart/generated/bosdyn/api/power.pb.dart';
 import 'package:bosdart/robot.dart';
 import 'package:bosdart/subsystems/command.dart';
 import 'package:bosdart/subsystems/lease.dart';
+import 'package:bosdart/subsystems/power.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   late Robot spot;
   late LeaseContainer lease;
 
-  setUp(() async {
+  setUpAll(() async {
     spot = Robot.fromCredentials('spot', 'spotspotspot', '192.168.80.3');
-    lease = LeaseContainer(spot);
-    lease.acquireManageLease();
-
-    await Future.delayed(Duration(seconds: 5));
   });
 
   test('robot class connects to spot', () {
@@ -25,10 +22,37 @@ void main() {
     expect(spot.initialise(), completes);
   });
 
-  test('robot walks', () {
+  test('lease container acquires lease', () async {
+    lease = LeaseContainer(spot);
+    lease.acquireManageLease();
+  
+    await Future.delayed(const Duration(seconds: 5));
+    expect(lease, isNotNull);
+  });
+
+  test('robot powers on', () async {
+    expect(PowerManager.setPowerStateAndWait(spot, lease.lease!, PowerCommandRequest_Request.REQUEST_ON), completes);
+  });
+
+  test('robot stands', () async {
+    expect(spot.positionCommand(spot.stand(), lease.lease!), completes);
+    expect(await Future.delayed(const Duration(seconds: 5)), completes);
+  });
+
+  test('robot walks', () async {
     Vec2 direction = Vec2();
-    direction.x = 2;
+    direction.y = 2;
     
-    expect(spot.positionCommand(spot.walk(direction), lease.lease!), completes);
+    expect(spot.positionCommand(spot.walk(direction, endTimeRelative: 5000000), lease.lease!), completes);
+    expect(await Future.delayed(const Duration(seconds: 5)), completes);
+  });
+
+  test('robot sits', () async {
+    expect(spot.positionCommand(spot.sit(), lease.lease!), completes);
+    expect(await Future.delayed(const Duration(seconds: 5)), completes);
+  });
+
+  test('robot powers off', () async {
+    expect(PowerManager.setPowerStateAndWait(spot, lease.lease!, PowerCommandRequest_Request.REQUEST_OFF), completes);
   });
 }

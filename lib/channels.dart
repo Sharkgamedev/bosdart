@@ -21,12 +21,15 @@ class ChannelManager {
         credentials: ChannelCredentials.secure(
           certificates: rootCertificate,
           authority: getAuthorityString(at),
+          // TODO: Actually handle this
+          onBadCertificate: (certificate, host) => true,
         ),
       ),
     );
   }
 
   static CallOptions callOptions(Robot robot) {
+    print("Bearer ${robot.token}");
     return CallOptions(
       metadata: { "authorization": "Bearer ${robot.token}" }
     );

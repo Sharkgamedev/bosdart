@@ -8,5 +8,6 @@ enum Authority {
 }
 
 String getAuthorityString(Authority authority) {
-    return '${authority.toString()}.spot.robot';
+  print('${authority.name}.spot.robot');
+    return '${authority.name}.spot.robot';
 }

@@ -23,7 +23,7 @@ class Robot {
        ChannelManager.channels[Authority.auth]?.shutdown();
     }
 
-    Future initialise(LeaseContainer lease) async {
+    Future initialise() async {
       await TimeSystem.establishTimeSync(this);
     }
 
@@ -32,7 +32,7 @@ class Robot {
         header.requestTimestamp = Timestamp.fromDateTime(DateTime.now());
         header.clientName = "bosdart";
         
-        return RequestHeader();
+        return header;
     }
     
     Future shutdown() async {
