@@ -33,7 +33,7 @@ extension CommandClient on Robot {
     }
   }
   
-  MobilityCommand_Request walk(Vec2 direction, { int endTimeRelative = 500 }) {
+  MobilityCommand_Request walk(Vec2 direction, { int endTimeRelative = 1000000 }) {
     MobilityCommand_Request mobilityRequest = MobilityCommand_Request();
     SE2VelocityCommand_Request walkRequest = SE2VelocityCommand_Request();
 
@@ -41,7 +41,7 @@ extension CommandClient on Robot {
     seVelocity.linear = direction; 
 
     walkRequest.velocity = seVelocity; 
-    walkRequest.endTime = TimeSystem.localToRobot(DateTime.now().millisecond + endTimeRelative);
+    walkRequest.endTime = TimeSystem.timestampFromLocalMicros(DateTime.now().microsecondsSinceEpoch + endTimeRelative);
     walkRequest.se2FrameName = "flat_body";
     
     mobilityRequest.se2VelocityRequest = walkRequest;

@@ -4,6 +4,7 @@ import 'package:bosdart/generated/bosdyn/api/time_sync_service.pbgrpc.dart';
 import 'package:bosdart/generated/google/protobuf/timestamp.pb.dart';
 import 'package:bosdart/robot.dart';
 import 'package:bosdart/structures/authority.dart';
+import '../../generated/google/protobuf/duration.pb.dart' as gpbuff;
 
 class TimeSystem {
   static TimeSyncRoundTrip? _last;
@@ -14,6 +15,21 @@ class TimeSystem {
     while (!timeSync) {
       timeSync = await tryUpdateTimeSync(robot);
     }
+
+    // Queue another run to re-adjust clock to prevent clock drift
+    Future.delayed(const Duration(seconds: 60), () => establishTimeSync(robot));
+  }
+
+  static gpbuff.Duration? clockSkew() {
+    return lockedResponse?.bestEstimate.clockSkew;
+  }
+
+  static timestampFromLocalMicros(int microsecondsEpoch) {
+    if (clockSkew() == null) { 
+      throw Exception("Clock skew is not initialised!"); 
+      // return Timestamp.fromDateTime(DateTime.now());
+    }
+    return Timestamp.fromDateTime(DateTime.fromMicrosecondsSinceEpoch(microsecondsEpoch + (clockSkew()!.nanos * 1000)));
   }
 
   static Future tryUpdateTimeSync(Robot robot) async {
