@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:bosdart/channels.dart';
 import 'package:bosdart/generated/bosdyn/api/basic_command.pb.dart';
 import 'package:bosdart/generated/bosdyn/api/geometry.pb.dart';
