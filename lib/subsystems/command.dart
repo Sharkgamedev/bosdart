@@ -48,4 +48,20 @@ extension CommandClient on Robot {
 
     return mobilityRequest;
   }
+
+  MobilityCommand_Request stand() {
+    StandCommand_Request standRequest = StandCommand_Request();
+    MobilityCommand_Request mobilityRequest = MobilityCommand_Request();
+    
+    mobilityRequest.standRequest = standRequest;
+    return mobilityRequest;
+  }
+
+  MobilityCommand_Request sit() {
+    SitCommand_Request sitRequest = SitCommand_Request();
+    MobilityCommand_Request mobilityRequest = MobilityCommand_Request();
+    
+    mobilityRequest.sitRequest = sitRequest;
+    return mobilityRequest;
+  }
 }
