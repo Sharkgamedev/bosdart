@@ -25,13 +25,13 @@ class TimeSystem {
     return lockedResponse?.bestEstimate.clockSkew;
   }
 
-  static timestampFromLocalMicros(int microsecondsEpoch) {
+  static Timestamp timestampFromLocalMicros(int localSecondsEpoch) {
     if (clockSkew() == null) { 
       throw Exception("Clock skew is not initialised!"); 
       // return Timestamp.fromDateTime(DateTime.now());
     }
     Timestamp time = Timestamp();
-    time.seconds = nmbuff.Int64((microsecondsEpoch + (clockSkew()!.nanos / 1000)).round() * 1000000);
+    time.seconds = nmbuff.Int64(localSecondsEpoch) + clockSkew()!.seconds;
     time.nanos = 0;
 
     return time;  

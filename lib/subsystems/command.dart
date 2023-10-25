@@ -8,6 +8,7 @@ import 'package:bosdart/generated/bosdyn/api/robot_command_service.pbgrpc.dart';
 import 'package:bosdart/generated/bosdyn/api/spot/robot_command.pb.dart';
 import 'package:bosdart/generated/bosdyn/api/synchronized_command.pb.dart';
 import 'package:bosdart/generated/google/protobuf/any.pb.dart';
+import 'package:bosdart/generated/google/protobuf/timestamp.pb.dart';
 import 'package:bosdart/robot.dart';
 import 'package:bosdart/structures/authority.dart';
 import 'package:bosdart/subsystems/time.dart';
@@ -31,11 +32,11 @@ extension CommandClient on Robot {
     RobotCommandResponse response = await client.robotCommand(request);
 
     if (response.status != RobotCommandResponse_Status.STATUS_OK) {
-      Exception("Fault when issuing command ${response.header.error.message} status: ${response.status.toString()}");
+      throw Exception("Fault when issuing command ${response.header.error.message} status: ${response.status.toString()}");
     }
   }
   
-  MobilityCommand_Request walk(Vec2 direction, { int endTimeRelative = 1000000 }) {
+  MobilityCommand_Request walk(Vec2 direction, { int endTimeRelative = 1 }) {
     MobilityCommand_Request mobilityRequest = MobilityCommand_Request();
     MobilityParams params = MobilityParams();
     SE2VelocityCommand_Request walkRequest = SE2VelocityCommand_Request();
@@ -53,7 +54,10 @@ extension CommandClient on Robot {
     slewVelocity.angular = 2.0; 
 
     walkRequest.velocity = seVelocity; 
-    walkRequest.endTime = TimeSystem.timestampFromLocalMicros(DateTime.now().microsecondsSinceEpoch + endTimeRelative);
+    print(DateTime.now());
+    walkRequest.endTime = TimeSystem.timestampFromLocalMicros((DateTime.now().millisecondsSinceEpoch / 1000).round() + endTimeRelative);
+    //print(DateTime.fromMicrosecondsSinceEpoch(DateTime.now().microsecondsSinceEpoch + endTimeRelative));
+    //print(TimeSystem.timestampFromLocalMicros(DateTime.now().microsecondsSinceEpoch + endTimeRelative).toDateTime());
     walkRequest.se2FrameName = "flat_body";
     walkRequest.slewRateLimit = slewVelocity;
     

@@ -44,7 +44,7 @@ void main() {
     direction.x = 1;
     
     await Future.delayed(const Duration(seconds: 5));
-    await expectLater(spot.positionCommand(spot.walk(direction, endTimeRelative: 1500000000), lease.lease!), completes);
+    await expectLater(spot.positionCommand(spot.walk(direction), lease.lease!), completes);
     await Future.delayed(const Duration(seconds: 10));
   });
 
