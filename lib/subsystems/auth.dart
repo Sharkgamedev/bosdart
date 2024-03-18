@@ -6,7 +6,8 @@ import 'package:bosdart/structures/authority.dart';
 import 'package:bosdart/structures/error.dart';
 
 Future<String> getAuthToken(Robot robot) async {
-  AuthServiceClient client = AuthServiceClient(ChannelManager.ensureChannelFor(robot, Authority.auth));
+  AuthServiceClient client =
+      AuthServiceClient(ChannelManager.ensureChannelFor(robot, Authority.auth));
 
   GetAuthTokenRequest request = GetAuthTokenRequest();
   request.username = robot.username;
