@@ -10,7 +10,7 @@ import 'package:fixnum/fixnum.dart' as nmbuff;
 class TimeSystem {
   static TimeSyncRoundTrip? _last;
   static TimeSyncState? lockedResponse;
-  
+
   static Future establishTimeSync(Robot robot) async {
     bool timeSync = false;
     while (!timeSync) {
@@ -26,20 +26,23 @@ class TimeSystem {
   }
 
   static Timestamp timestampFromLocalMicros(int localSecondsEpoch) {
-    if (clockSkew() == null) { 
-      throw Exception("Clock skew is not initialised!"); 
+    if (clockSkew() == null) {
+      throw Exception("Clock skew is not initialised!");
       // return Timestamp.fromDateTime(DateTime.now());
     }
     Timestamp time = Timestamp();
     time.seconds = nmbuff.Int64(localSecondsEpoch) + clockSkew()!.seconds;
     time.nanos = 0;
 
-    return time;  
+    return time;
   }
 
   static Future tryUpdateTimeSync(Robot robot) async {
-    TimeSyncServiceClient client = TimeSyncServiceClient(ChannelManager.ensureChannelFor(robot, Authority.api), options: ChannelManager.callOptions(robot),);
-    
+    TimeSyncServiceClient client = TimeSyncServiceClient(
+      ChannelManager.ensureChannelFor(robot, Authority.api),
+      options: ChannelManager.callOptions(robot),
+    );
+
     TimeSyncUpdateRequest request = TimeSyncUpdateRequest();
     if (_last != null) {
       request.previousRoundTrip = _last!;
@@ -47,7 +50,8 @@ class TimeSystem {
     request.clockIdentifier = "bosdart";
     request.header = robot.requestHeader();
 
-    TimeSyncUpdateResponse response = await client.timeSyncUpdate(request, options: ChannelManager.callOptions(robot));
+    TimeSyncUpdateResponse response = await client.timeSyncUpdate(request,
+        options: ChannelManager.callOptions(robot));
 
     _last = TimeSyncRoundTrip();
     _last!.clientTx = response.header.requestHeader.requestTimestamp;

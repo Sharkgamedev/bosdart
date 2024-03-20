@@ -15,7 +15,9 @@ import 'package:bosdart/subsystems/time.dart';
 
 extension CommandClient on Robot {
   Future positionCommand(MobilityCommand_Request command, Lease lease) async {
-    RobotCommandServiceClient client = RobotCommandServiceClient(ChannelManager.ensureChannelFor(this, Authority.command), options: ChannelManager.callOptions(this));
+    RobotCommandServiceClient client = RobotCommandServiceClient(
+        ChannelManager.ensureChannelFor(this, Authority.command),
+        options: ChannelManager.callOptions(this));
 
     SynchronizedCommand_Request synchroReq = SynchronizedCommand_Request();
     synchroReq.mobilityCommand = command;
@@ -26,22 +28,23 @@ extension CommandClient on Robot {
     RobotCommandRequest request = RobotCommandRequest();
     request.command = robotCom;
     request.header = requestHeader();
-    request.lease = lease; 
+    request.lease = lease;
     request.clockIdentifier = "bosdart";
 
     RobotCommandResponse response = await client.robotCommand(request);
 
     if (response.status != RobotCommandResponse_Status.STATUS_OK) {
-      throw Exception("Fault when issuing command ${response.header.error.message} status: ${response.status.toString()}");
+      throw Exception(
+          "Fault when issuing command ${response.header.error.message} status: ${response.status.toString()}");
     }
   }
-  
-  MobilityCommand_Request walk(Vec2 direction, { int endTimeRelative = 1 }) {
+
+  MobilityCommand_Request walk(Vec3 direction, {int endTimeRelative = 1}) {
     MobilityCommand_Request mobilityRequest = MobilityCommand_Request();
     MobilityParams params = MobilityParams();
     SE2VelocityCommand_Request walkRequest = SE2VelocityCommand_Request();
 
-    params.locomotionHint = LocomotionHint.HINT_CRAWL;
+    //params.locomotionHint = LocomotionHint.HINT_CRAWL;
 
     Vec2 slewLimit = Vec2();
     slewLimit.x = 4;
@@ -49,20 +52,27 @@ extension CommandClient on Robot {
 
     SE2Velocity seVelocity = SE2Velocity();
     SE2Velocity slewVelocity = SE2Velocity();
-    seVelocity.linear = direction;
-    slewVelocity.linear = slewLimit;
-    slewVelocity.angular = 2.0; 
+    Vec2 dir = Vec2();
+    dir.x = direction.x;
+    dir.y = direction.y;
+    seVelocity.linear = dir;
+    seVelocity.angular = direction.z;
 
-    walkRequest.velocity = seVelocity; 
+    slewVelocity.linear = slewLimit;
+    slewVelocity.angular = 2.0;
+
+    walkRequest.velocity = seVelocity;
     print(DateTime.now());
-    walkRequest.endTime = TimeSystem.timestampFromLocalMicros((DateTime.now().millisecondsSinceEpoch / 1000).round() + endTimeRelative);
+    walkRequest.endTime = TimeSystem.timestampFromLocalMicros(
+        (DateTime.now().millisecondsSinceEpoch / 1000).round() +
+            endTimeRelative);
     //print(DateTime.fromMicrosecondsSinceEpoch(DateTime.now().microsecondsSinceEpoch + endTimeRelative));
     //print(TimeSystem.timestampFromLocalMicros(DateTime.now().microsecondsSinceEpoch + endTimeRelative).toDateTime());
     walkRequest.se2FrameName = "flat_body";
     walkRequest.slewRateLimit = slewVelocity;
-    
+
     mobilityRequest.se2VelocityRequest = walkRequest;
-    mobilityRequest.params = Any.pack(params); 
+    mobilityRequest.params = Any.pack(params);
 
     return mobilityRequest;
   }
@@ -70,7 +80,7 @@ extension CommandClient on Robot {
   MobilityCommand_Request stand() {
     StandCommand_Request standRequest = StandCommand_Request();
     MobilityCommand_Request mobilityRequest = MobilityCommand_Request();
-    
+
     mobilityRequest.standRequest = standRequest;
     return mobilityRequest;
   }
@@ -78,7 +88,7 @@ extension CommandClient on Robot {
   MobilityCommand_Request sit() {
     SitCommand_Request sitRequest = SitCommand_Request();
     MobilityCommand_Request mobilityRequest = MobilityCommand_Request();
-    
+
     mobilityRequest.sitRequest = sitRequest;
     return mobilityRequest;
   }
