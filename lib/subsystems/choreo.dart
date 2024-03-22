@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:bosdart/channels.dart';
@@ -15,7 +16,7 @@ extension ChoreoClient on Robot {
     if (!await File(path).exists()) throw 'No File exists at $path';
 
     ChoreographySequence sequence = ChoreographySequence();
-    sequence.mergeFromJson(await File(path).readAsString());
+    sequence.mergeFromProto3Json(jsonDecode(await File(path).readAsString()));
     return sequence;
   }
 

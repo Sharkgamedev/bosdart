@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bosdart/generated/bosdyn/api/geometry.pb.dart';
 import 'package:bosdart/generated/bosdyn/api/power.pb.dart';
 import 'package:bosdart/robot.dart';
@@ -46,14 +48,18 @@ void main() {
 
   test('choreo file loads without exceptions', () async {
     await expectLater(
-        spot.loadChoreoFromFile('./choreo/wiggle.json'), completes);
+        spot.loadChoreoFromFile(
+            '${Directory.current.path}/test/choreo/bow.json'),
+        completes);
     await Future.delayed(const Duration(seconds: 5));
   });
 
   test('robot dances', () async {
     await expectLater(
         spot.runChoreo(
-          await spot.loadChoreoFromFile('./choreo/wiggle.json'),
+          await spot.loadChoreoFromFile(
+            '${Directory.current.path}/test/choreo/bow.json',
+          ),
           lease.lease!,
         ),
         completes);
