@@ -1,0 +1,13 @@
+{
+  "name": "Bow",
+  "slicesPerMinute": 480.0,
+  "moves": [
+    {
+      "type": "animation",
+      "requestedSlices": 28,
+      "animateParams": {
+        "animationName": "performance_bow"
+      }
+    }
+  ]
+}

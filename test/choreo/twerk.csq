@@ -1,0 +1,17 @@
+name: "Twerk"
+slices_per_minute: 480.0
+
+moves {
+    type: "twerk"
+    requested_slices: 4
+}
+moves {
+    type: "twerk"
+    start_slice: 4
+    requested_slices: 4
+}
+moves {
+    type: "twerk"
+    start_slice: 8
+    requested_slices: 4
+}

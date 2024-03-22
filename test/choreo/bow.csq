@@ -1,0 +1,10 @@
+name: "Bow"
+slices_per_minute: 480.0
+
+moves {
+    type: "animation"
+    requested_slices: 28
+    animate_params {
+        animation_name: "performance_bow"
+    }
+}

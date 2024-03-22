@@ -8,7 +8,6 @@ import 'package:bosdart/generated/bosdyn/api/robot_command_service.pbgrpc.dart';
 import 'package:bosdart/generated/bosdyn/api/spot/robot_command.pb.dart';
 import 'package:bosdart/generated/bosdyn/api/synchronized_command.pb.dart';
 import 'package:bosdart/generated/google/protobuf/any.pb.dart';
-import 'package:bosdart/generated/google/protobuf/timestamp.pb.dart';
 import 'package:bosdart/robot.dart';
 import 'package:bosdart/structures/authority.dart';
 import 'package:bosdart/subsystems/time.dart';

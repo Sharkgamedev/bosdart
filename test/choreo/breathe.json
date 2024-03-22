@@ -1,0 +1,13 @@
+{
+  "name": "Fidget Stand",
+  "slicesPerMinute": 5000.0,
+  "moves": [
+    {
+      "type": "fidget_stand",
+      "requestedSlices": 1000,
+      "fidgetStandParams": {
+        "preset": "PRESET_EXHAUSTED"
+      }
+    }
+  ]
+}

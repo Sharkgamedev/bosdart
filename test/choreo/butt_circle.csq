@@ -1,0 +1,15 @@
+name: "Butt Circle"
+slices_per_minute: 480.0
+
+moves {
+    type: "butt_circle"
+    requested_slices: 24
+    butt_circle_params {
+        beats_per_circle {
+            value: 1.5
+        }
+        radius {
+            value: 0.1
+        }
+    }
+}
