@@ -63,7 +63,7 @@ void main() {
           lease.lease!,
         ),
         completes);
-    await Future.delayed(const Duration(seconds: 5));
+    await Future.delayed(const Duration(seconds: 10));
   });
 
   test('robot walks', () async {

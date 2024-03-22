@@ -18,6 +18,12 @@ extension ChoreoClient on Robot {
     return sequence;
   }
 
+  Future<ChoreographySequence> loadChoreoFromFileData(String data) async {
+    ChoreographySequence sequence = ChoreographySequence();
+    sequence.mergeFromProto3Json(jsonDecode(data));
+    return sequence;
+  }
+
   Future<ChoreographySequence> loadChoreoFromFile(String path) async {
     if (!await File(path).exists()) throw 'No File exists at $path';
 
@@ -29,7 +35,7 @@ extension ChoreoClient on Robot {
   Future runChoreo(ChoreographySequence sequence, Lease lease,
       {int startTimeRelative = 1}) async {
     ChoreographyServiceClient client = ChoreographyServiceClient(
-        ChannelManager.ensureChannelFor(this, Authority.command),
+        ChannelManager.ensureChannelFor(this, Authority.choreographyservice),
         options: ChannelManager.callOptions(this));
 
     UploadChoreographyRequest request = UploadChoreographyRequest(
