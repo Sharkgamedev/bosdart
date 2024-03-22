@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,15 +13,38 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/duration.pb.dart' as $61;
-import '../../google/protobuf/timestamp.pb.dart' as $59;
-import 'header.pb.dart' as $67;
+import '../../google/protobuf/duration.pb.dart' as $62;
+import '../../google/protobuf/timestamp.pb.dart' as $60;
+import 'header.pb.dart' as $68;
 import 'service_fault.pbenum.dart';
 
 export 'service_fault.pbenum.dart';
 
+/// Information necessary to uniquely specify a service fault.
+/// A service fault typically is associated with a service running on the robot or a
+/// payload. Occassionally, the fault may pertain to a payload but no specific service
+/// on the payload. In that situation, no service_name should not be specified and instead
+/// a payload_guid should be specified. Otherwise, in the standard case of a service
+/// originating fault, only the service_name should be specified and the payload_guid
+/// will be populated automatically by the fault service on robot.
 class ServiceFaultId extends $pb.GeneratedMessage {
-  factory ServiceFaultId() => create();
+  factory ServiceFaultId({
+    $core.String? faultName,
+    $core.String? serviceName,
+    $core.String? payloadGuid,
+  }) {
+    final $result = create();
+    if (faultName != null) {
+      $result.faultName = faultName;
+    }
+    if (serviceName != null) {
+      $result.serviceName = serviceName;
+    }
+    if (payloadGuid != null) {
+      $result.payloadGuid = payloadGuid;
+    }
+    return $result;
+  }
   ServiceFaultId._() : super();
   factory ServiceFaultId.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ServiceFaultId.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -54,6 +77,7 @@ class ServiceFaultId extends $pb.GeneratedMessage {
   static ServiceFaultId getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServiceFaultId>(create);
   static ServiceFaultId? _defaultInstance;
 
+  /// Name of the fault.
   @$pb.TagNumber(1)
   $core.String get faultName => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -63,6 +87,9 @@ class ServiceFaultId extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFaultName() => clearField(1);
 
+  /// Name of the registered service associated with the fault.
+  /// Optional. Service name does not need to be specified if this is a payload-level
+  /// fault with no associated service.
   @$pb.TagNumber(2)
   $core.String get serviceName => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -72,6 +99,9 @@ class ServiceFaultId extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearServiceName() => clearField(2);
 
+  /// GUID of the payload associated with the faulted service.
+  /// Optional. If not set, it will be assigned to the payload associated with the
+  /// service_name.
   @$pb.TagNumber(3)
   $core.String get payloadGuid => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -82,8 +112,43 @@ class ServiceFaultId extends $pb.GeneratedMessage {
   void clearPayloadGuid() => clearField(3);
 }
 
+/// The current service faults for services registered with the robot.
+/// A fault is an indicator of a problem with a service or payload registered
+/// with the robot. An active fault may indicate a service may fail to comply
+/// with a user request.
+/// If the name, service_name, and payload_guid of a newly triggered ServiceFault matches an
+/// already active ServiceFault the new fault will not be added to the active fault list.
+/// The oldest matching fault will be maintained.
 class ServiceFault extends $pb.GeneratedMessage {
-  factory ServiceFault() => create();
+  factory ServiceFault({
+    ServiceFaultId? faultId,
+    $core.String? errorMessage,
+    $core.Iterable<$core.String>? attributes,
+    ServiceFault_Severity? severity,
+    $60.Timestamp? onsetTimestamp,
+    $62.Duration? duration,
+  }) {
+    final $result = create();
+    if (faultId != null) {
+      $result.faultId = faultId;
+    }
+    if (errorMessage != null) {
+      $result.errorMessage = errorMessage;
+    }
+    if (attributes != null) {
+      $result.attributes.addAll(attributes);
+    }
+    if (severity != null) {
+      $result.severity = severity;
+    }
+    if (onsetTimestamp != null) {
+      $result.onsetTimestamp = onsetTimestamp;
+    }
+    if (duration != null) {
+      $result.duration = duration;
+    }
+    return $result;
+  }
   ServiceFault._() : super();
   factory ServiceFault.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ServiceFault.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -93,8 +158,8 @@ class ServiceFault extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'errorMessage')
     ..pPS(3, _omitFieldNames ? '' : 'attributes')
     ..e<ServiceFault_Severity>(4, _omitFieldNames ? '' : 'severity', $pb.PbFieldType.OE, defaultOrMaker: ServiceFault_Severity.SEVERITY_UNKNOWN, valueOf: ServiceFault_Severity.valueOf, enumValues: ServiceFault_Severity.values)
-    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'onsetTimestamp', subBuilder: $59.Timestamp.create)
-    ..aOM<$61.Duration>(6, _omitFieldNames ? '' : 'duration', subBuilder: $61.Duration.create)
+    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'onsetTimestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$62.Duration>(6, _omitFieldNames ? '' : 'duration', subBuilder: $62.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -119,6 +184,7 @@ class ServiceFault extends $pb.GeneratedMessage {
   static ServiceFault getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServiceFault>(create);
   static ServiceFault? _defaultInstance;
 
+  /// Identifying information of the fault.
   @$pb.TagNumber(1)
   ServiceFaultId get faultId => $_getN(0);
   @$pb.TagNumber(1)
@@ -130,6 +196,8 @@ class ServiceFault extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   ServiceFaultId ensureFaultId() => $_ensure(0);
 
+  /// User visible description of the fault (and possibly remedies). Will be
+  /// displayed on tablet.
   @$pb.TagNumber(2)
   $core.String get errorMessage => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -139,9 +207,23 @@ class ServiceFault extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearErrorMessage() => clearField(2);
 
+  /// Fault attributes
+  /// Each fault may be flagged with attribute metadata (strings in this case.)
+  /// These attributes are useful to communicate that a particular fault may
+  /// have significant effect on the operations of services. Some potential attributes
+  /// may be "autowalk", "Spot CORE", "vision", or "gauge detection". These
+  /// attributes enable the caller to flag a fault as indicating a problem with
+  /// particular robot abstractions. A fault may have, zero, one, or more
+  /// attributes attached to it.
   @$pb.TagNumber(3)
   $core.List<$core.String> get attributes => $_getList(2);
 
+  /// The severity level will have some indication of the potential breakage
+  /// resulting from the fault. For example, a fault associated with payload
+  /// X and severity level SEVERITY_INFO may indicate the payload is in an
+  /// unexpected state but still operational. However, a fault with serverity
+  /// level SEVERITY_CRITICAL may indicate the payload is no
+  /// longer operational.
   @$pb.TagNumber(4)
   ServiceFault_Severity get severity => $_getN(3);
   @$pb.TagNumber(4)
@@ -151,37 +233,54 @@ class ServiceFault extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearSeverity() => clearField(4);
 
+  /// Time of robot local clock at fault onset. Set by robot-state service.
   @$pb.TagNumber(5)
-  $59.Timestamp get onsetTimestamp => $_getN(4);
+  $60.Timestamp get onsetTimestamp => $_getN(4);
   @$pb.TagNumber(5)
-  set onsetTimestamp($59.Timestamp v) { setField(5, v); }
+  set onsetTimestamp($60.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasOnsetTimestamp() => $_has(4);
   @$pb.TagNumber(5)
   void clearOnsetTimestamp() => clearField(5);
   @$pb.TagNumber(5)
-  $59.Timestamp ensureOnsetTimestamp() => $_ensure(4);
+  $60.Timestamp ensureOnsetTimestamp() => $_ensure(4);
 
+  /// Time elapsed since onset of the fault. Set by robot-state service.
   @$pb.TagNumber(6)
-  $61.Duration get duration => $_getN(5);
+  $62.Duration get duration => $_getN(5);
   @$pb.TagNumber(6)
-  set duration($61.Duration v) { setField(6, v); }
+  set duration($62.Duration v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasDuration() => $_has(5);
   @$pb.TagNumber(6)
   void clearDuration() => clearField(6);
   @$pb.TagNumber(6)
-  $61.Duration ensureDuration() => $_ensure(5);
+  $62.Duration ensureDuration() => $_ensure(5);
 }
 
+/// Trigger a new service fault that will be reported in the robot ServiceFaultState.
+/// These faults will be displayed in the tablet. Developers should be careful to
+/// avoid overwhelming operators with dozens of minor messages.
 class TriggerServiceFaultRequest extends $pb.GeneratedMessage {
-  factory TriggerServiceFaultRequest() => create();
+  factory TriggerServiceFaultRequest({
+    $68.RequestHeader? header,
+    ServiceFault? fault,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (fault != null) {
+      $result.fault = fault;
+    }
+    return $result;
+  }
   TriggerServiceFaultRequest._() : super();
   factory TriggerServiceFaultRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TriggerServiceFaultRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TriggerServiceFaultRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<ServiceFault>(2, _omitFieldNames ? '' : 'fault', subBuilder: ServiceFault.create)
     ..hasRequiredFields = false
   ;
@@ -207,17 +306,19 @@ class TriggerServiceFaultRequest extends $pb.GeneratedMessage {
   static TriggerServiceFaultRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TriggerServiceFaultRequest>(create);
   static TriggerServiceFaultRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// The fault to report in ServiceFaultState.
   @$pb.TagNumber(2)
   ServiceFault get fault => $_getN(1);
   @$pb.TagNumber(2)
@@ -230,14 +331,27 @@ class TriggerServiceFaultRequest extends $pb.GeneratedMessage {
   ServiceFault ensureFault() => $_ensure(1);
 }
 
+/// The TriggerServiceFault response message contains a header indicating success.
 class TriggerServiceFaultResponse extends $pb.GeneratedMessage {
-  factory TriggerServiceFaultResponse() => create();
+  factory TriggerServiceFaultResponse({
+    $68.ResponseHeader? header,
+    TriggerServiceFaultResponse_Status? status,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   TriggerServiceFaultResponse._() : super();
   factory TriggerServiceFaultResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TriggerServiceFaultResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TriggerServiceFaultResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..e<TriggerServiceFaultResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: TriggerServiceFaultResponse_Status.STATUS_UNKNOWN, valueOf: TriggerServiceFaultResponse_Status.valueOf, enumValues: TriggerServiceFaultResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -263,17 +377,19 @@ class TriggerServiceFaultResponse extends $pb.GeneratedMessage {
   static TriggerServiceFaultResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TriggerServiceFaultResponse>(create);
   static TriggerServiceFaultResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Return status for the request.
   @$pb.TagNumber(2)
   TriggerServiceFaultResponse_Status get status => $_getN(1);
   @$pb.TagNumber(2)
@@ -284,14 +400,37 @@ class TriggerServiceFaultResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(2);
 }
 
+/// Clear a service fault from the robot's ServiceFaultState (in robot_state.proto).
+/// The active ServiceFault to clear will be determined by matching fault_name and
+/// service_name/payload_guid, specified in the ServiceFaultId message.
 class ClearServiceFaultRequest extends $pb.GeneratedMessage {
-  factory ClearServiceFaultRequest() => create();
+  factory ClearServiceFaultRequest({
+    $68.RequestHeader? header,
+    ServiceFaultId? faultId,
+    $core.bool? clearAllServiceFaults,
+    $core.bool? clearAllPayloadFaults,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (faultId != null) {
+      $result.faultId = faultId;
+    }
+    if (clearAllServiceFaults != null) {
+      $result.clearAllServiceFaults = clearAllServiceFaults;
+    }
+    if (clearAllPayloadFaults != null) {
+      $result.clearAllPayloadFaults = clearAllPayloadFaults;
+    }
+    return $result;
+  }
   ClearServiceFaultRequest._() : super();
   factory ClearServiceFaultRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ClearServiceFaultRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClearServiceFaultRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<ServiceFaultId>(2, _omitFieldNames ? '' : 'faultId', subBuilder: ServiceFaultId.create)
     ..aOB(3, _omitFieldNames ? '' : 'clearAllServiceFaults')
     ..aOB(4, _omitFieldNames ? '' : 'clearAllPayloadFaults')
@@ -319,17 +458,19 @@ class ClearServiceFaultRequest extends $pb.GeneratedMessage {
   static ClearServiceFaultRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ClearServiceFaultRequest>(create);
   static ClearServiceFaultRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Identifying information of the fault to clear.
   @$pb.TagNumber(2)
   ServiceFaultId get faultId => $_getN(1);
   @$pb.TagNumber(2)
@@ -341,6 +482,7 @@ class ClearServiceFaultRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   ServiceFaultId ensureFaultId() => $_ensure(1);
 
+  /// Clear all faults that are associated with the same service_name. Use carefully.
   @$pb.TagNumber(3)
   $core.bool get clearAllServiceFaults => $_getBF(2);
   @$pb.TagNumber(3)
@@ -350,6 +492,7 @@ class ClearServiceFaultRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearClearAllServiceFaults() => clearField(3);
 
+  /// Clear all faults that are associated with the same payload_guid. Use carefully.
   @$pb.TagNumber(4)
   $core.bool get clearAllPayloadFaults => $_getBF(3);
   @$pb.TagNumber(4)
@@ -360,14 +503,27 @@ class ClearServiceFaultRequest extends $pb.GeneratedMessage {
   void clearClearAllPayloadFaults() => clearField(4);
 }
 
+/// The ClearServiceFault response message contains a header indicating success.
 class ClearServiceFaultResponse extends $pb.GeneratedMessage {
-  factory ClearServiceFaultResponse() => create();
+  factory ClearServiceFaultResponse({
+    $68.ResponseHeader? header,
+    ClearServiceFaultResponse_Status? status,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   ClearServiceFaultResponse._() : super();
   factory ClearServiceFaultResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ClearServiceFaultResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClearServiceFaultResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..e<ClearServiceFaultResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ClearServiceFaultResponse_Status.STATUS_UNKNOWN, valueOf: ClearServiceFaultResponse_Status.valueOf, enumValues: ClearServiceFaultResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -393,17 +549,19 @@ class ClearServiceFaultResponse extends $pb.GeneratedMessage {
   static ClearServiceFaultResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ClearServiceFaultResponse>(create);
   static ClearServiceFaultResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Return status for the request.
   @$pb.TagNumber(2)
   ClearServiceFaultResponse_Status get status => $_getN(1);
   @$pb.TagNumber(2)

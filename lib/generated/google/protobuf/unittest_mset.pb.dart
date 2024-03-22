@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,16 +13,24 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest_mset_wire_format.pb.dart' as $101;
+import 'unittest_mset_wire_format.pb.dart' as $103;
 
 class TestMessageSetContainer extends $pb.GeneratedMessage {
-  factory TestMessageSetContainer() => create();
+  factory TestMessageSetContainer({
+    $103.TestMessageSet? messageSet,
+  }) {
+    final $result = create();
+    if (messageSet != null) {
+      $result.messageSet = messageSet;
+    }
+    return $result;
+  }
   TestMessageSetContainer._() : super();
   factory TestMessageSetContainer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMessageSetContainer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestMessageSetContainer', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest'), createEmptyInstance: create)
-    ..aOM<$101.TestMessageSet>(1, _omitFieldNames ? '' : 'messageSet', subBuilder: $101.TestMessageSet.create)
+    ..aOM<$103.TestMessageSet>(1, _omitFieldNames ? '' : 'messageSet', subBuilder: $103.TestMessageSet.create)
   ;
 
   @$core.Deprecated(
@@ -47,19 +55,31 @@ class TestMessageSetContainer extends $pb.GeneratedMessage {
   static TestMessageSetContainer? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $101.TestMessageSet get messageSet => $_getN(0);
+  $103.TestMessageSet get messageSet => $_getN(0);
   @$pb.TagNumber(1)
-  set messageSet($101.TestMessageSet v) { setField(1, v); }
+  set messageSet($103.TestMessageSet v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMessageSet() => $_has(0);
   @$pb.TagNumber(1)
   void clearMessageSet() => clearField(1);
   @$pb.TagNumber(1)
-  $101.TestMessageSet ensureMessageSet() => $_ensure(0);
+  $103.TestMessageSet ensureMessageSet() => $_ensure(0);
 }
 
 class NestedTestMessageSetContainer extends $pb.GeneratedMessage {
-  factory NestedTestMessageSetContainer() => create();
+  factory NestedTestMessageSetContainer({
+    TestMessageSetContainer? container,
+    NestedTestMessageSetContainer? child,
+  }) {
+    final $result = create();
+    if (container != null) {
+      $result.container = container;
+    }
+    if (child != null) {
+      $result.child = child;
+    }
+    return $result;
+  }
   NestedTestMessageSetContainer._() : super();
   factory NestedTestMessageSetContainer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NestedTestMessageSetContainer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -114,7 +134,23 @@ class NestedTestMessageSetContainer extends $pb.GeneratedMessage {
 }
 
 class NestedTestInt extends $pb.GeneratedMessage {
-  factory NestedTestInt() => create();
+  factory NestedTestInt({
+    $core.int? a,
+    NestedTestInt? child,
+    $core.int? b,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (child != null) {
+      $result.child = child;
+    }
+    if (b != null) {
+      $result.b = b;
+    }
+    return $result;
+  }
   NestedTestInt._() : super();
   factory NestedTestInt.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NestedTestInt.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -178,14 +214,30 @@ class NestedTestInt extends $pb.GeneratedMessage {
 }
 
 class TestMessageSetExtension1 extends $pb.GeneratedMessage {
-  factory TestMessageSetExtension1() => create();
+  factory TestMessageSetExtension1({
+    $core.int? i,
+    $103.TestMessageSet? recursive,
+    $core.String? testAliasing,
+  }) {
+    final $result = create();
+    if (i != null) {
+      $result.i = i;
+    }
+    if (recursive != null) {
+      $result.recursive = recursive;
+    }
+    if (testAliasing != null) {
+      $result.testAliasing = testAliasing;
+    }
+    return $result;
+  }
   TestMessageSetExtension1._() : super();
   factory TestMessageSetExtension1.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMessageSetExtension1.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestMessageSetExtension1', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest'), createEmptyInstance: create)
     ..a<$core.int>(15, _omitFieldNames ? '' : 'i', $pb.PbFieldType.O3)
-    ..aOM<$101.TestMessageSet>(16, _omitFieldNames ? '' : 'recursive', subBuilder: $101.TestMessageSet.create)
+    ..aOM<$103.TestMessageSet>(16, _omitFieldNames ? '' : 'recursive', subBuilder: $103.TestMessageSet.create)
     ..aOS(17, _omitFieldNames ? '' : 'testAliasing')
   ;
   static final messageSetExtension = $pb.Extension<TestMessageSetExtension1>(_omitMessageNames ? '' : 'proto2_wireformat_unittest.TestMessageSet', _omitFieldNames ? '' : 'messageSetExtension', 1545008, $pb.PbFieldType.OM, defaultOrMaker: TestMessageSetExtension1.getDefault, subBuilder: TestMessageSetExtension1.create);
@@ -221,15 +273,15 @@ class TestMessageSetExtension1 extends $pb.GeneratedMessage {
   void clearI() => clearField(15);
 
   @$pb.TagNumber(16)
-  $101.TestMessageSet get recursive => $_getN(1);
+  $103.TestMessageSet get recursive => $_getN(1);
   @$pb.TagNumber(16)
-  set recursive($101.TestMessageSet v) { setField(16, v); }
+  set recursive($103.TestMessageSet v) { setField(16, v); }
   @$pb.TagNumber(16)
   $core.bool hasRecursive() => $_has(1);
   @$pb.TagNumber(16)
   void clearRecursive() => clearField(16);
   @$pb.TagNumber(16)
-  $101.TestMessageSet ensureRecursive() => $_ensure(1);
+  $103.TestMessageSet ensureRecursive() => $_ensure(1);
 
   @$pb.TagNumber(17)
   $core.String get testAliasing => $_getSZ(2);
@@ -242,7 +294,15 @@ class TestMessageSetExtension1 extends $pb.GeneratedMessage {
 }
 
 class TestMessageSetExtension2 extends $pb.GeneratedMessage {
-  factory TestMessageSetExtension2() => create();
+  factory TestMessageSetExtension2({
+    $core.String? str,
+  }) {
+    final $result = create();
+    if (str != null) {
+      $result.str = str;
+    }
+    return $result;
+  }
   TestMessageSetExtension2._() : super();
   factory TestMessageSetExtension2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMessageSetExtension2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -285,7 +345,19 @@ class TestMessageSetExtension2 extends $pb.GeneratedMessage {
 }
 
 class TestMessageSetExtension3 extends $pb.GeneratedMessage {
-  factory TestMessageSetExtension3() => create();
+  factory TestMessageSetExtension3({
+    NestedTestInt? msg,
+    $core.int? requiredInt,
+  }) {
+    final $result = create();
+    if (msg != null) {
+      $result.msg = msg;
+    }
+    if (requiredInt != null) {
+      $result.requiredInt = requiredInt;
+    }
+    return $result;
+  }
   TestMessageSetExtension3._() : super();
   factory TestMessageSetExtension3.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMessageSetExtension3.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -339,7 +411,19 @@ class TestMessageSetExtension3 extends $pb.GeneratedMessage {
 }
 
 class RawMessageSet_Item extends $pb.GeneratedMessage {
-  factory RawMessageSet_Item() => create();
+  factory RawMessageSet_Item({
+    $core.int? typeId,
+    $core.List<$core.int>? message,
+  }) {
+    final $result = create();
+    if (typeId != null) {
+      $result.typeId = typeId;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    return $result;
+  }
   RawMessageSet_Item._() : super();
   factory RawMessageSet_Item.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RawMessageSet_Item.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -389,8 +473,17 @@ class RawMessageSet_Item extends $pb.GeneratedMessage {
   void clearMessage() => clearField(3);
 }
 
+/// MessageSet wire format is equivalent to this.
 class RawMessageSet extends $pb.GeneratedMessage {
-  factory RawMessageSet() => create();
+  factory RawMessageSet({
+    $core.Iterable<RawMessageSet_Item>? item,
+  }) {
+    final $result = create();
+    if (item != null) {
+      $result.item.addAll(item);
+    }
+    return $result;
+  }
   RawMessageSet._() : super();
   factory RawMessageSet.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RawMessageSet.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

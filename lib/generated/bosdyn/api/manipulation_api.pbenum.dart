@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -94,6 +94,7 @@ class ManipulationCameraSource extends $pb.ProtobufEnum {
   const ManipulationCameraSource._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Configure automatic walking and gazing at the target.
 class WalkGazeMode extends $pb.ProtobufEnum {
   static const WalkGazeMode PICK_WALK_GAZE_UNKNOWN = WalkGazeMode._(0, _omitEnumNames ? '' : 'PICK_WALK_GAZE_UNKNOWN');
   static const WalkGazeMode PICK_AUTO_WALK_AND_GAZE = WalkGazeMode._(1, _omitEnumNames ? '' : 'PICK_AUTO_WALK_AND_GAZE');

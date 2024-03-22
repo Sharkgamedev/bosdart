@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Status of a previous request for log bundler generation. Terminal statuses start at 100, such
+/// that if a status >= DONE, it can be concluded that the request is no longer active.
 class LogStatus_Status extends $pb.ProtobufEnum {
   static const LogStatus_Status STATUS_UNKNOWN = LogStatus_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const LogStatus_Status STATUS_RECEIVED = LogStatus_Status._(1, _omitEnumNames ? '' : 'STATUS_RECEIVED');
@@ -38,6 +40,7 @@ class LogStatus_Status extends $pb.ProtobufEnum {
   const LogStatus_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Types of logs
 class LogStatus_Type extends $pb.ProtobufEnum {
   static const LogStatus_Type TYPE_UNKNOWN = LogStatus_Type._(0, _omitEnumNames ? '' : 'TYPE_UNKNOWN');
   static const LogStatus_Type TYPE_EXPERIMENT = LogStatus_Type._(1, _omitEnumNames ? '' : 'TYPE_EXPERIMENT');

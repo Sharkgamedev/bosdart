@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,20 +13,37 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/any.pb.dart' as $66;
-import '../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../google/protobuf/any.pb.dart' as $67;
+import '../../google/protobuf/timestamp.pb.dart' as $60;
 import 'header.pbenum.dart';
 
 export 'header.pbenum.dart';
 
+/// Standard header attached to all GRPC requests to services.
 class RequestHeader extends $pb.GeneratedMessage {
-  factory RequestHeader() => create();
+  factory RequestHeader({
+    $60.Timestamp? requestTimestamp,
+    $core.String? clientName,
+    $core.bool? disableRpcLogging,
+  }) {
+    final $result = create();
+    if (requestTimestamp != null) {
+      $result.requestTimestamp = requestTimestamp;
+    }
+    if (clientName != null) {
+      $result.clientName = clientName;
+    }
+    if (disableRpcLogging != null) {
+      $result.disableRpcLogging = disableRpcLogging;
+    }
+    return $result;
+  }
   RequestHeader._() : super();
   factory RequestHeader.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RequestHeader.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RequestHeader', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'requestTimestamp', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'requestTimestamp', subBuilder: $60.Timestamp.create)
     ..aOS(2, _omitFieldNames ? '' : 'clientName')
     ..aOB(3, _omitFieldNames ? '' : 'disableRpcLogging')
     ..hasRequiredFields = false
@@ -53,17 +70,21 @@ class RequestHeader extends $pb.GeneratedMessage {
   static RequestHeader getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RequestHeader>(create);
   static RequestHeader? _defaultInstance;
 
+  /// Time that the request was sent, as measured by the client's local system clock.
   @$pb.TagNumber(1)
-  $59.Timestamp get requestTimestamp => $_getN(0);
+  $60.Timestamp get requestTimestamp => $_getN(0);
   @$pb.TagNumber(1)
-  set requestTimestamp($59.Timestamp v) { setField(1, v); }
+  set requestTimestamp($60.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRequestTimestamp() => $_has(0);
   @$pb.TagNumber(1)
   void clearRequestTimestamp() => clearField(1);
   @$pb.TagNumber(1)
-  $59.Timestamp ensureRequestTimestamp() => $_ensure(0);
+  $60.Timestamp ensureRequestTimestamp() => $_ensure(0);
 
+  /// Name of the client to identify itself. The name will typically include a
+  /// symbolic string to identify the program, and a unique integer to identify
+  /// the specific instance of the process running.
   @$pb.TagNumber(2)
   $core.String get clientName => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -73,6 +94,8 @@ class RequestHeader extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearClientName() => clearField(2);
 
+  /// If Set to true, request that request and response messages for this call are not recorded
+  /// in the GRPC log.
   @$pb.TagNumber(3)
   $core.bool get disableRpcLogging => $_getBF(2);
   @$pb.TagNumber(3)
@@ -83,8 +106,27 @@ class RequestHeader extends $pb.GeneratedMessage {
   void clearDisableRpcLogging() => clearField(3);
 }
 
+/// General error code are returned in the header to facilitate error-handling which is not
+/// message-specific.
+/// This can be used for generic error handlers, aggregation, and trend analysis.
 class CommonError extends $pb.GeneratedMessage {
-  factory CommonError() => create();
+  factory CommonError({
+    CommonError_Code? code,
+    $core.String? message,
+    $67.Any? data,
+  }) {
+    final $result = create();
+    if (code != null) {
+      $result.code = code;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   CommonError._() : super();
   factory CommonError.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CommonError.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -92,7 +134,7 @@ class CommonError extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommonError', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..e<CommonError_Code>(1, _omitFieldNames ? '' : 'code', $pb.PbFieldType.OE, defaultOrMaker: CommonError_Code.CODE_UNSPECIFIED, valueOf: CommonError_Code.valueOf, enumValues: CommonError_Code.values)
     ..aOS(2, _omitFieldNames ? '' : 'message')
-    ..aOM<$66.Any>(3, _omitFieldNames ? '' : 'data', subBuilder: $66.Any.create)
+    ..aOM<$67.Any>(3, _omitFieldNames ? '' : 'data', subBuilder: $67.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -117,6 +159,7 @@ class CommonError extends $pb.GeneratedMessage {
   static CommonError getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommonError>(create);
   static CommonError? _defaultInstance;
 
+  /// The different error codes that can be returned on a grpc response message.
   @$pb.TagNumber(1)
   CommonError_Code get code => $_getN(0);
   @$pb.TagNumber(1)
@@ -126,6 +169,7 @@ class CommonError extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearCode() => clearField(1);
 
+  /// Human-readable error description.  Not for programmatic analysis.
   @$pb.TagNumber(2)
   $core.String get message => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -135,30 +179,56 @@ class CommonError extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearMessage() => clearField(2);
 
+  /// Extra information that can optionally be provided for generic error handling/analysis.
   @$pb.TagNumber(3)
-  $66.Any get data => $_getN(2);
+  $67.Any get data => $_getN(2);
   @$pb.TagNumber(3)
-  set data($66.Any v) { setField(3, v); }
+  set data($67.Any v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasData() => $_has(2);
   @$pb.TagNumber(3)
   void clearData() => clearField(3);
   @$pb.TagNumber(3)
-  $66.Any ensureData() => $_ensure(2);
+  $67.Any ensureData() => $_ensure(2);
 }
 
+/// Standard header attached to all GRPC responses from services.
 class ResponseHeader extends $pb.GeneratedMessage {
-  factory ResponseHeader() => create();
+  factory ResponseHeader({
+    RequestHeader? requestHeader,
+    $60.Timestamp? requestReceivedTimestamp,
+    $60.Timestamp? responseTimestamp,
+    CommonError? error,
+    $67.Any? request,
+  }) {
+    final $result = create();
+    if (requestHeader != null) {
+      $result.requestHeader = requestHeader;
+    }
+    if (requestReceivedTimestamp != null) {
+      $result.requestReceivedTimestamp = requestReceivedTimestamp;
+    }
+    if (responseTimestamp != null) {
+      $result.responseTimestamp = responseTimestamp;
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    if (request != null) {
+      $result.request = request;
+    }
+    return $result;
+  }
   ResponseHeader._() : super();
   factory ResponseHeader.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResponseHeader.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResponseHeader', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOM<RequestHeader>(1, _omitFieldNames ? '' : 'requestHeader', subBuilder: RequestHeader.create)
-    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'requestReceivedTimestamp', subBuilder: $59.Timestamp.create)
-    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'responseTimestamp', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'requestReceivedTimestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'responseTimestamp', subBuilder: $60.Timestamp.create)
     ..aOM<CommonError>(4, _omitFieldNames ? '' : 'error', subBuilder: CommonError.create)
-    ..aOM<$66.Any>(5, _omitFieldNames ? '' : 'request', subBuilder: $66.Any.create)
+    ..aOM<$67.Any>(5, _omitFieldNames ? '' : 'request', subBuilder: $67.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -183,6 +253,7 @@ class ResponseHeader extends $pb.GeneratedMessage {
   static ResponseHeader getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResponseHeader>(create);
   static ResponseHeader? _defaultInstance;
 
+  /// Echo-back the RequestHeader for timing information, etc....
   @$pb.TagNumber(1)
   RequestHeader get requestHeader => $_getN(0);
   @$pb.TagNumber(1)
@@ -194,28 +265,33 @@ class ResponseHeader extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   RequestHeader ensureRequestHeader() => $_ensure(0);
 
+  /// Time that the request was received. The server clock is the time basis.
   @$pb.TagNumber(2)
-  $59.Timestamp get requestReceivedTimestamp => $_getN(1);
+  $60.Timestamp get requestReceivedTimestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set requestReceivedTimestamp($59.Timestamp v) { setField(2, v); }
+  set requestReceivedTimestamp($60.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasRequestReceivedTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearRequestReceivedTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $59.Timestamp ensureRequestReceivedTimestamp() => $_ensure(1);
+  $60.Timestamp ensureRequestReceivedTimestamp() => $_ensure(1);
 
+  /// Time that the response was received. The server clock is the time basis.
   @$pb.TagNumber(3)
-  $59.Timestamp get responseTimestamp => $_getN(2);
+  $60.Timestamp get responseTimestamp => $_getN(2);
   @$pb.TagNumber(3)
-  set responseTimestamp($59.Timestamp v) { setField(3, v); }
+  set responseTimestamp($60.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasResponseTimestamp() => $_has(2);
   @$pb.TagNumber(3)
   void clearResponseTimestamp() => clearField(3);
   @$pb.TagNumber(3)
-  $59.Timestamp ensureResponseTimestamp() => $_ensure(2);
+  $60.Timestamp ensureResponseTimestamp() => $_ensure(2);
 
+  /// Common errors, such as invalid input or internal server problems.
+  /// If there is a common error, the rest of the response message outside of the
+  /// ResponseHeader will be invalid.
   @$pb.TagNumber(4)
   CommonError get error => $_getN(3);
   @$pb.TagNumber(4)
@@ -227,16 +303,18 @@ class ResponseHeader extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   CommonError ensureError() => $_ensure(3);
 
+  /// Echoed request message. In some cases it may not be present, or it may be a stripped
+  /// down representation of the request.
   @$pb.TagNumber(5)
-  $66.Any get request => $_getN(4);
+  $67.Any get request => $_getN(4);
   @$pb.TagNumber(5)
-  set request($66.Any v) { setField(5, v); }
+  set request($67.Any v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasRequest() => $_has(4);
   @$pb.TagNumber(5)
   void clearRequest() => clearField(5);
   @$pb.TagNumber(5)
-  $66.Any ensureRequest() => $_ensure(4);
+  $67.Any ensureRequest() => $_ensure(4);
 }
 
 

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -89,6 +89,8 @@ class SelfRightCommand_Feedback_Status extends $pb.ProtobufEnum {
   const SelfRightCommand_Feedback_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Robot action in response to a command received while in an unsafe position. If not
+/// specified, UNSAFE_MOVE_TO_SAFE_POSITION will be used
 class SafePowerOffCommand_Request_UnsafeAction extends $pb.ProtobufEnum {
   static const SafePowerOffCommand_Request_UnsafeAction UNSAFE_UNKNOWN = SafePowerOffCommand_Request_UnsafeAction._(0, _omitEnumNames ? '' : 'UNSAFE_UNKNOWN');
   static const SafePowerOffCommand_Request_UnsafeAction UNSAFE_MOVE_TO_SAFE_POSITION = SafePowerOffCommand_Request_UnsafeAction._(1, _omitEnumNames ? '' : 'UNSAFE_MOVE_TO_SAFE_POSITION');
@@ -248,6 +250,9 @@ class ArmDragCommand_Feedback_Status extends $pb.ProtobufEnum {
   const ArmDragCommand_Feedback_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Geometrical category of a task. See the constrained_manipulation_helper function
+/// for examples of each of these categories. For e.g. SE3_CIRCLE_FORCE_TORQUE corresponds
+/// to lever type objects.
 class ConstrainedManipulationCommand_Request_TaskType extends $pb.ProtobufEnum {
   static const ConstrainedManipulationCommand_Request_TaskType TASK_TYPE_UNKNOWN = ConstrainedManipulationCommand_Request_TaskType._(0, _omitEnumNames ? '' : 'TASK_TYPE_UNKNOWN');
   static const ConstrainedManipulationCommand_Request_TaskType TASK_TYPE_SE3_CIRCLE_FORCE_TORQUE = ConstrainedManipulationCommand_Request_TaskType._(1, _omitEnumNames ? '' : 'TASK_TYPE_SE3_CIRCLE_FORCE_TORQUE');

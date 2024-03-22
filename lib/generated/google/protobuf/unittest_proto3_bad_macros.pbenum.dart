@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// This generates `GID_MAX`, which is a macro in some circumstances.
 class GID extends $pb.ProtobufEnum {
   static const GID GID_UNUSED = GID._(0, _omitEnumNames ? '' : 'GID_UNUSED');
 
@@ -26,6 +27,7 @@ class GID extends $pb.ProtobufEnum {
   const GID._($core.int v, $core.String n) : super(v, n);
 }
 
+/// This generates `UID_MAX`, which is a mcro in some circumstances.
 class UID extends $pb.ProtobufEnum {
   static const UID UID_UNUSED = UID._(0, _omitEnumNames ? '' : 'UID_UNUSED');
 
@@ -39,6 +41,9 @@ class UID extends $pb.ProtobufEnum {
   const UID._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Just a container for bad macro names. Some of these do not follow the normal
+/// naming conventions, this is intentional, we just want to trigger a build
+/// failure if the macro is left defined.
 class BadNames extends $pb.ProtobufEnum {
   static const BadNames PACKAGE = BadNames._(0, _omitEnumNames ? '' : 'PACKAGE');
   static const BadNames PACKED = BadNames._(1, _omitEnumNames ? '' : 'PACKED');

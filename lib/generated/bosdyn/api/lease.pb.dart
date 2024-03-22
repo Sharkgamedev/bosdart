@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,14 +13,41 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $59;
-import 'header.pb.dart' as $67;
+import '../../google/protobuf/timestamp.pb.dart' as $60;
+import 'header.pb.dart' as $68;
 import 'lease.pbenum.dart';
 
 export 'lease.pbenum.dart';
 
+/// Leases are used to verify that a client has exclusive access to a shared
+/// resources. Examples of shared resources are the motors for a robot, or
+/// indicator lights on a robot.
+/// Leases are initially obtained by clients from the LeaseService. Clients
+/// then attach Leases to Commands which require them. Clients may also
+/// generate sub-Leases to delegate out control of the resource to other
+/// services.
 class Lease extends $pb.GeneratedMessage {
-  factory Lease() => create();
+  factory Lease({
+    $core.String? resource,
+    $core.String? epoch,
+    $core.Iterable<$core.int>? sequence,
+    $core.Iterable<$core.String>? clientNames,
+  }) {
+    final $result = create();
+    if (resource != null) {
+      $result.resource = resource;
+    }
+    if (epoch != null) {
+      $result.epoch = epoch;
+    }
+    if (sequence != null) {
+      $result.sequence.addAll(sequence);
+    }
+    if (clientNames != null) {
+      $result.clientNames.addAll(clientNames);
+    }
+    return $result;
+  }
   Lease._() : super();
   factory Lease.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Lease.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -54,6 +81,7 @@ class Lease extends $pb.GeneratedMessage {
   static Lease getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Lease>(create);
   static Lease? _defaultInstance;
 
+  /// The resource that the Lease is for.
   @$pb.TagNumber(1)
   $core.String get resource => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -63,6 +91,9 @@ class Lease extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearResource() => clearField(1);
 
+  /// The epoch for the Lease. The sequences field are scoped to a particular epoch.
+  /// One example of where this can be used is to generate a random epoch
+  /// at LeaseService startup.
   @$pb.TagNumber(2)
   $core.String get epoch => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -72,15 +103,31 @@ class Lease extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearEpoch() => clearField(2);
 
+  /// Logical vector clock indicating when the Lease was generated.
   @$pb.TagNumber(3)
   $core.List<$core.int> get sequence => $_getList(2);
 
+  /// The set of different clients which have sent/receieved the lease.
   @$pb.TagNumber(4)
   $core.List<$core.String> get clientNames => $_getList(3);
 }
 
+/// Lease resources can be divided into a hierarchy of sub-resources that can
+/// be commanded together. This message describes the hierarchy of a resource.
 class ResourceTree extends $pb.GeneratedMessage {
-  factory ResourceTree() => create();
+  factory ResourceTree({
+    $core.String? resource,
+    $core.Iterable<ResourceTree>? subResources,
+  }) {
+    final $result = create();
+    if (resource != null) {
+      $result.resource = resource;
+    }
+    if (subResources != null) {
+      $result.subResources.addAll(subResources);
+    }
+    return $result;
+  }
   ResourceTree._() : super();
   factory ResourceTree.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ResourceTree.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -112,6 +159,7 @@ class ResourceTree extends $pb.GeneratedMessage {
   static ResourceTree getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResourceTree>(create);
   static ResourceTree? _defaultInstance;
 
+  /// The name of this resource.
   @$pb.TagNumber(1)
   $core.String get resource => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -121,12 +169,26 @@ class ResourceTree extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearResource() => clearField(1);
 
+  /// Sub-resources that make up this resource.
   @$pb.TagNumber(2)
   $core.List<ResourceTree> get subResources => $_getList(1);
 }
 
+/// Details about who currently owns the Lease for a resource.
 class LeaseOwner extends $pb.GeneratedMessage {
-  factory LeaseOwner() => create();
+  factory LeaseOwner({
+    $core.String? clientName,
+    $core.String? userName,
+  }) {
+    final $result = create();
+    if (clientName != null) {
+      $result.clientName = clientName;
+    }
+    if (userName != null) {
+      $result.userName = userName;
+    }
+    return $result;
+  }
   LeaseOwner._() : super();
   factory LeaseOwner.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LeaseOwner.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -177,8 +239,38 @@ class LeaseOwner extends $pb.GeneratedMessage {
   void clearUserName() => clearField(2);
 }
 
+/// Result for when a Lease is used - for example, in a LeaseRetainer, or
+/// associated with a command.
 class LeaseUseResult extends $pb.GeneratedMessage {
-  factory LeaseUseResult() => create();
+  factory LeaseUseResult({
+    LeaseUseResult_Status? status,
+    LeaseOwner? owner,
+    Lease? attemptedLease,
+    Lease? previousLease,
+    Lease? latestKnownLease,
+    $core.Iterable<Lease>? latestResources,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    if (owner != null) {
+      $result.owner = owner;
+    }
+    if (attemptedLease != null) {
+      $result.attemptedLease = attemptedLease;
+    }
+    if (previousLease != null) {
+      $result.previousLease = previousLease;
+    }
+    if (latestKnownLease != null) {
+      $result.latestKnownLease = latestKnownLease;
+    }
+    if (latestResources != null) {
+      $result.latestResources.addAll(latestResources);
+    }
+    return $result;
+  }
   LeaseUseResult._() : super();
   factory LeaseUseResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LeaseUseResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -223,6 +315,7 @@ class LeaseUseResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearStatus() => clearField(1);
 
+  /// The current lease owner.
   @$pb.TagNumber(2)
   LeaseOwner get owner => $_getN(1);
   @$pb.TagNumber(2)
@@ -234,6 +327,7 @@ class LeaseUseResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   LeaseOwner ensureOwner() => $_ensure(1);
 
+  /// The lease which was attempted for use.
   @$pb.TagNumber(3)
   Lease get attemptedLease => $_getN(2);
   @$pb.TagNumber(3)
@@ -245,6 +339,7 @@ class LeaseUseResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   Lease ensureAttemptedLease() => $_ensure(2);
 
+  /// The previous lease, if any, which was used.
   @$pb.TagNumber(4)
   Lease get previousLease => $_getN(3);
   @$pb.TagNumber(4)
@@ -256,6 +351,7 @@ class LeaseUseResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   Lease ensurePreviousLease() => $_ensure(3);
 
+  /// The "latest"/"most recent" lease known to the system.
   @$pb.TagNumber(5)
   Lease get latestKnownLease => $_getN(4);
   @$pb.TagNumber(5)
@@ -267,18 +363,32 @@ class LeaseUseResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   Lease ensureLatestKnownLease() => $_ensure(4);
 
+  /// Represents the latest "leaf" resources of the hierarchy.
   @$pb.TagNumber(6)
   $core.List<Lease> get latestResources => $_getList(5);
 }
 
+/// The AcquireLease request message which sends which resource the lease should be for.
 class AcquireLeaseRequest extends $pb.GeneratedMessage {
-  factory AcquireLeaseRequest() => create();
+  factory AcquireLeaseRequest({
+    $68.RequestHeader? header,
+    $core.String? resource,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (resource != null) {
+      $result.resource = resource;
+    }
+    return $result;
+  }
   AcquireLeaseRequest._() : super();
   factory AcquireLeaseRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AcquireLeaseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcquireLeaseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'resource')
     ..hasRequiredFields = false
   ;
@@ -304,17 +414,19 @@ class AcquireLeaseRequest extends $pb.GeneratedMessage {
   static AcquireLeaseRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AcquireLeaseRequest>(create);
   static AcquireLeaseRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// The resource to obtain a Lease for.
   @$pb.TagNumber(2)
   $core.String get resource => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -325,14 +437,38 @@ class AcquireLeaseRequest extends $pb.GeneratedMessage {
   void clearResource() => clearField(2);
 }
 
+/// The AcquireLease response returns the lease for the desired resource if it could be obtained.
+/// If a client is returned a new lease, the client should initiate a
+/// RetainLease bidirectional streaming request immediately after completion
+/// of AcquireLease.
 class AcquireLeaseResponse extends $pb.GeneratedMessage {
-  factory AcquireLeaseResponse() => create();
+  factory AcquireLeaseResponse({
+    $68.ResponseHeader? header,
+    AcquireLeaseResponse_Status? status,
+    Lease? lease,
+    LeaseOwner? leaseOwner,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (lease != null) {
+      $result.lease = lease;
+    }
+    if (leaseOwner != null) {
+      $result.leaseOwner = leaseOwner;
+    }
+    return $result;
+  }
   AcquireLeaseResponse._() : super();
   factory AcquireLeaseResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AcquireLeaseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcquireLeaseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..e<AcquireLeaseResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: AcquireLeaseResponse_Status.STATUS_UNKNOWN, valueOf: AcquireLeaseResponse_Status.valueOf, enumValues: AcquireLeaseResponse_Status.values)
     ..aOM<Lease>(3, _omitFieldNames ? '' : 'lease', subBuilder: Lease.create)
     ..aOM<LeaseOwner>(4, _omitFieldNames ? '' : 'leaseOwner', subBuilder: LeaseOwner.create)
@@ -360,17 +496,19 @@ class AcquireLeaseResponse extends $pb.GeneratedMessage {
   static AcquireLeaseResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AcquireLeaseResponse>(create);
   static AcquireLeaseResponse? _defaultInstance;
 
+  /// Common response Header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Return status for the request.
   @$pb.TagNumber(2)
   AcquireLeaseResponse_Status get status => $_getN(1);
   @$pb.TagNumber(2)
@@ -380,6 +518,7 @@ class AcquireLeaseResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearStatus() => clearField(2);
 
+  /// The lease for the resource. Only set if status field == STATUS_OK.
   @$pb.TagNumber(3)
   Lease get lease => $_getN(2);
   @$pb.TagNumber(3)
@@ -391,6 +530,8 @@ class AcquireLeaseResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   Lease ensureLease() => $_ensure(2);
 
+  /// The owner for the lease. Set if status field == OK or status field ==
+  /// RESOURCE_ALREADY_CLAIMED.
   @$pb.TagNumber(4)
   LeaseOwner get leaseOwner => $_getN(3);
   @$pb.TagNumber(4)
@@ -403,14 +544,27 @@ class AcquireLeaseResponse extends $pb.GeneratedMessage {
   LeaseOwner ensureLeaseOwner() => $_ensure(3);
 }
 
+/// The TakeLease request message which sends which resource the lease should be for.
 class TakeLeaseRequest extends $pb.GeneratedMessage {
-  factory TakeLeaseRequest() => create();
+  factory TakeLeaseRequest({
+    $68.RequestHeader? header,
+    $core.String? resource,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (resource != null) {
+      $result.resource = resource;
+    }
+    return $result;
+  }
   TakeLeaseRequest._() : super();
   factory TakeLeaseRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TakeLeaseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TakeLeaseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'resource')
     ..hasRequiredFields = false
   ;
@@ -436,17 +590,19 @@ class TakeLeaseRequest extends $pb.GeneratedMessage {
   static TakeLeaseRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TakeLeaseRequest>(create);
   static TakeLeaseRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// The resource to obtain a Lease for.
   @$pb.TagNumber(2)
   $core.String get resource => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -457,14 +613,42 @@ class TakeLeaseRequest extends $pb.GeneratedMessage {
   void clearResource() => clearField(2);
 }
 
+/// The TakeLease response returns the lease for the desired resource if it could be obtained.
+/// In most cases if the resource is managed by the LeaseService, TakeLease
+/// will succeed. However, in the future policies may be introduced which will prevent
+/// TakeLease from succeeding and clients should be prepared to handle that
+/// case.
+/// If a client obtains a new lease, the client should initiate a
+/// RetainLease bidirectional streaming request immediately after completion
+/// of TakeLease.
 class TakeLeaseResponse extends $pb.GeneratedMessage {
-  factory TakeLeaseResponse() => create();
+  factory TakeLeaseResponse({
+    $68.ResponseHeader? header,
+    TakeLeaseResponse_Status? status,
+    Lease? lease,
+    LeaseOwner? leaseOwner,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (lease != null) {
+      $result.lease = lease;
+    }
+    if (leaseOwner != null) {
+      $result.leaseOwner = leaseOwner;
+    }
+    return $result;
+  }
   TakeLeaseResponse._() : super();
   factory TakeLeaseResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TakeLeaseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TakeLeaseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..e<TakeLeaseResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: TakeLeaseResponse_Status.STATUS_UNKNOWN, valueOf: TakeLeaseResponse_Status.valueOf, enumValues: TakeLeaseResponse_Status.values)
     ..aOM<Lease>(3, _omitFieldNames ? '' : 'lease', subBuilder: Lease.create)
     ..aOM<LeaseOwner>(4, _omitFieldNames ? '' : 'leaseOwner', subBuilder: LeaseOwner.create)
@@ -492,17 +676,19 @@ class TakeLeaseResponse extends $pb.GeneratedMessage {
   static TakeLeaseResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TakeLeaseResponse>(create);
   static TakeLeaseResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Return status for the request.
   @$pb.TagNumber(2)
   TakeLeaseResponse_Status get status => $_getN(1);
   @$pb.TagNumber(2)
@@ -512,6 +698,7 @@ class TakeLeaseResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearStatus() => clearField(2);
 
+  /// The lease for the resource. Only set if status field == STATUS_OK.
   @$pb.TagNumber(3)
   Lease get lease => $_getN(2);
   @$pb.TagNumber(3)
@@ -523,6 +710,7 @@ class TakeLeaseResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   Lease ensureLease() => $_ensure(2);
 
+  /// The owner for the lease. Set if status field == STATUS_OK.
   @$pb.TagNumber(4)
   LeaseOwner get leaseOwner => $_getN(3);
   @$pb.TagNumber(4)
@@ -535,14 +723,29 @@ class TakeLeaseResponse extends $pb.GeneratedMessage {
   LeaseOwner ensureLeaseOwner() => $_ensure(3);
 }
 
+/// The ReturnLease request message will be sent to the LeaseService. If the lease
+/// is currently active for the resource, the LeaseService will invalidate the lease.
+/// Future calls to AcquireLease by any client will now succeed.
 class ReturnLeaseRequest extends $pb.GeneratedMessage {
-  factory ReturnLeaseRequest() => create();
+  factory ReturnLeaseRequest({
+    $68.RequestHeader? header,
+    Lease? lease,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (lease != null) {
+      $result.lease = lease;
+    }
+    return $result;
+  }
   ReturnLeaseRequest._() : super();
   factory ReturnLeaseRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ReturnLeaseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReturnLeaseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: Lease.create)
     ..hasRequiredFields = false
   ;
@@ -568,17 +771,19 @@ class ReturnLeaseRequest extends $pb.GeneratedMessage {
   static ReturnLeaseRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReturnLeaseRequest>(create);
   static ReturnLeaseRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// The Lease to return back to the LeaseService.
   @$pb.TagNumber(2)
   Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
@@ -591,14 +796,27 @@ class ReturnLeaseRequest extends $pb.GeneratedMessage {
   Lease ensureLease() => $_ensure(1);
 }
 
+/// The ReturnLease response message
 class ReturnLeaseResponse extends $pb.GeneratedMessage {
-  factory ReturnLeaseResponse() => create();
+  factory ReturnLeaseResponse({
+    $68.ResponseHeader? header,
+    ReturnLeaseResponse_Status? status,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   ReturnLeaseResponse._() : super();
   factory ReturnLeaseResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ReturnLeaseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReturnLeaseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..e<ReturnLeaseResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ReturnLeaseResponse_Status.STATUS_UNKNOWN, valueOf: ReturnLeaseResponse_Status.valueOf, enumValues: ReturnLeaseResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -624,17 +842,19 @@ class ReturnLeaseResponse extends $pb.GeneratedMessage {
   static ReturnLeaseResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReturnLeaseResponse>(create);
   static ReturnLeaseResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Return status for the request.
   @$pb.TagNumber(2)
   ReturnLeaseResponse_Status get status => $_getN(1);
   @$pb.TagNumber(2)
@@ -645,14 +865,27 @@ class ReturnLeaseResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(2);
 }
 
+/// The ListLease request message asks for information about any known lease resources.
 class ListLeasesRequest extends $pb.GeneratedMessage {
-  factory ListLeasesRequest() => create();
+  factory ListLeasesRequest({
+    $68.RequestHeader? header,
+    $core.bool? includeFullLeaseInfo,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (includeFullLeaseInfo != null) {
+      $result.includeFullLeaseInfo = includeFullLeaseInfo;
+    }
+    return $result;
+  }
   ListLeasesRequest._() : super();
   factory ListLeasesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListLeasesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLeasesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOB(2, _omitFieldNames ? '' : 'includeFullLeaseInfo')
     ..hasRequiredFields = false
   ;
@@ -678,17 +911,20 @@ class ListLeasesRequest extends $pb.GeneratedMessage {
   static ListLeasesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLeasesRequest>(create);
   static ListLeasesRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Include the full data of leases in use, if available.
+  /// Defaults to false to receive basic information.
   @$pb.TagNumber(2)
   $core.bool get includeFullLeaseInfo => $_getBF(1);
   @$pb.TagNumber(2)
@@ -699,8 +935,36 @@ class ListLeasesRequest extends $pb.GeneratedMessage {
   void clearIncludeFullLeaseInfo() => clearField(2);
 }
 
+/// Describes all information about a sepcific lease: including the resource it covers, the
+/// active lease, and which application is the owner of a lease.
 class LeaseResource extends $pb.GeneratedMessage {
-  factory LeaseResource() => create();
+  factory LeaseResource({
+    $core.String? resource,
+    Lease? lease,
+    LeaseOwner? leaseOwner,
+  @$core.Deprecated('This field is deprecated.')
+    $60.Timestamp? staleTime,
+    $core.bool? isStale,
+  }) {
+    final $result = create();
+    if (resource != null) {
+      $result.resource = resource;
+    }
+    if (lease != null) {
+      $result.lease = lease;
+    }
+    if (leaseOwner != null) {
+      $result.leaseOwner = leaseOwner;
+    }
+    if (staleTime != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.staleTime = staleTime;
+    }
+    if (isStale != null) {
+      $result.isStale = isStale;
+    }
+    return $result;
+  }
   LeaseResource._() : super();
   factory LeaseResource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LeaseResource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -709,7 +973,7 @@ class LeaseResource extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'resource')
     ..aOM<Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: Lease.create)
     ..aOM<LeaseOwner>(3, _omitFieldNames ? '' : 'leaseOwner', subBuilder: LeaseOwner.create)
-    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'staleTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'staleTime', subBuilder: $60.Timestamp.create)
     ..aOB(5, _omitFieldNames ? '' : 'isStale')
     ..hasRequiredFields = false
   ;
@@ -735,6 +999,7 @@ class LeaseResource extends $pb.GeneratedMessage {
   static LeaseResource getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LeaseResource>(create);
   static LeaseResource? _defaultInstance;
 
+  /// The resource name.
   @$pb.TagNumber(1)
   $core.String get resource => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -744,6 +1009,7 @@ class LeaseResource extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearResource() => clearField(1);
 
+  /// The active lease, if any.
   @$pb.TagNumber(2)
   Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
@@ -755,6 +1021,7 @@ class LeaseResource extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   Lease ensureLease() => $_ensure(1);
 
+  /// The Lease Owner, if there is a Lease.
   @$pb.TagNumber(3)
   LeaseOwner get leaseOwner => $_getN(2);
   @$pb.TagNumber(3)
@@ -766,12 +1033,30 @@ class LeaseResource extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   LeaseOwner ensureLeaseOwner() => $_ensure(2);
 
+  ///  The robot time when this lease will become stale.  A stale lease can be
+  ///  acquired with an AcquireLeaseRequest OR a TakeLeaseRequest, while a lease
+  ///  that is not stale can only be acquired with a TakeLeaseRequest.
+  ///
+  ///  Leases get marked stale when they haven't been used in a while.  If you want
+  ///  to prevent your lease from being marked stale, you need to either:
+  ///      - Periodically send RetainLeaseRequests.
+  ///      - Periodically send valid commands to the robot using the lease.  Note
+  ///        that only some types of commands will actually cause explicit lease
+  ///        retention.
+  ///
+  ///  Commands & RetainLeaseRequests issued with a stale lease will still be accepted.
+  ///  Stale leases, when used, will cause the used lease to no longer be stale.
+  ///
+  ///  DEPRECATED as of 3.3. Lease staleness is now set by the Keepalive service.
+  ///  This value is only an estimate, and may not be correct if a Keepalive client has changed it.
+  ///  Please use the is_stale flag for an instantaneous report on staleness, or check the
+  ///  GetStatusResponse in the Keepalive service to get a time.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $59.Timestamp get staleTime => $_getN(3);
+  $60.Timestamp get staleTime => $_getN(3);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  set staleTime($59.Timestamp v) { setField(4, v); }
+  set staleTime($60.Timestamp v) { setField(4, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.bool hasStaleTime() => $_has(3);
@@ -780,8 +1065,9 @@ class LeaseResource extends $pb.GeneratedMessage {
   void clearStaleTime() => clearField(4);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $59.Timestamp ensureStaleTime() => $_ensure(3);
+  $60.Timestamp ensureStaleTime() => $_ensure(3);
 
+  /// This lease has been marked stale, and may be acquired by another client.
   @$pb.TagNumber(5)
   $core.bool get isStale => $_getBF(4);
   @$pb.TagNumber(5)
@@ -792,14 +1078,31 @@ class LeaseResource extends $pb.GeneratedMessage {
   void clearIsStale() => clearField(5);
 }
 
+/// The ListLease response message returns all known lease resources from the LeaseService.
 class ListLeasesResponse extends $pb.GeneratedMessage {
-  factory ListLeasesResponse() => create();
+  factory ListLeasesResponse({
+    $68.ResponseHeader? header,
+    $core.Iterable<LeaseResource>? resources,
+    ResourceTree? resourceTree,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    if (resourceTree != null) {
+      $result.resourceTree = resourceTree;
+    }
+    return $result;
+  }
   ListLeasesResponse._() : super();
   factory ListLeasesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListLeasesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLeasesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..pc<LeaseResource>(2, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: LeaseResource.create)
     ..aOM<ResourceTree>(3, _omitFieldNames ? '' : 'resourceTree', subBuilder: ResourceTree.create)
     ..hasRequiredFields = false
@@ -826,20 +1129,25 @@ class ListLeasesResponse extends $pb.GeneratedMessage {
   static ListLeasesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLeasesResponse>(create);
   static ListLeasesResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// The resources managed by the LeaseService.
   @$pb.TagNumber(2)
   $core.List<LeaseResource> get resources => $_getList(1);
 
+  /// Provide the hierarchical lease structure.
+  /// A resource can encapsulate multiple sub-resources.
+  /// For example, the "body" lease may include control of the legs, arm, and gripper.
   @$pb.TagNumber(3)
   ResourceTree get resourceTree => $_getN(2);
   @$pb.TagNumber(3)
@@ -852,14 +1160,29 @@ class ListLeasesResponse extends $pb.GeneratedMessage {
   ResourceTree ensureResourceTree() => $_ensure(2);
 }
 
+/// The RetainLease request will inform the LeaseService that the application contains to hold
+/// ownership of this lease. Lease holders are expected to be reachable and alive. If enough time
+/// has passed since the last RetainLeaseRequest, the LeaseService will revoke the lease.
 class RetainLeaseRequest extends $pb.GeneratedMessage {
-  factory RetainLeaseRequest() => create();
+  factory RetainLeaseRequest({
+    $68.RequestHeader? header,
+    Lease? lease,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (lease != null) {
+      $result.lease = lease;
+    }
+    return $result;
+  }
   RetainLeaseRequest._() : super();
   factory RetainLeaseRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RetainLeaseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RetainLeaseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: Lease.create)
     ..hasRequiredFields = false
   ;
@@ -885,17 +1208,20 @@ class RetainLeaseRequest extends $pb.GeneratedMessage {
   static RetainLeaseRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RetainLeaseRequest>(create);
   static RetainLeaseRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// The Lease to retain ownership over. May also be a "super" lease of the lease to retain
+  /// ownership over.
   @$pb.TagNumber(2)
   Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
@@ -908,14 +1234,28 @@ class RetainLeaseRequest extends $pb.GeneratedMessage {
   Lease ensureLease() => $_ensure(1);
 }
 
+/// The RetainLease response message sends the result of the attempted RetainLease request, which
+/// contains whether or not the lease is still owned by the application sending the request.
 class RetainLeaseResponse extends $pb.GeneratedMessage {
-  factory RetainLeaseResponse() => create();
+  factory RetainLeaseResponse({
+    $68.ResponseHeader? header,
+    LeaseUseResult? leaseUseResult,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (leaseUseResult != null) {
+      $result.leaseUseResult = leaseUseResult;
+    }
+    return $result;
+  }
   RetainLeaseResponse._() : super();
   factory RetainLeaseResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RetainLeaseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RetainLeaseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: LeaseUseResult.create)
     ..hasRequiredFields = false
   ;
@@ -941,17 +1281,19 @@ class RetainLeaseResponse extends $pb.GeneratedMessage {
   static RetainLeaseResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RetainLeaseResponse>(create);
   static RetainLeaseResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Result of using the lease.
   @$pb.TagNumber(2)
   LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)

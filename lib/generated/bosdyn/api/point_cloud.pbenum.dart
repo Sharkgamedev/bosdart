@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Point clouds may be encoded in different ways to preserve bandwidth or disk space.
 class PointCloud_Encoding extends $pb.ProtobufEnum {
   static const PointCloud_Encoding ENCODING_UNKNOWN = PointCloud_Encoding._(0, _omitEnumNames ? '' : 'ENCODING_UNKNOWN');
   static const PointCloud_Encoding ENCODING_XYZ_32F = PointCloud_Encoding._(1, _omitEnumNames ? '' : 'ENCODING_XYZ_32F');

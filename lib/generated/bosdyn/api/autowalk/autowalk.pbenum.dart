@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Possible results of compiling a walk to mission.
 class CompileAutowalkResponse_Status extends $pb.ProtobufEnum {
   static const CompileAutowalkResponse_Status STATUS_UNKNOWN = CompileAutowalkResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const CompileAutowalkResponse_Status STATUS_OK = CompileAutowalkResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -30,6 +31,7 @@ class CompileAutowalkResponse_Status extends $pb.ProtobufEnum {
   const CompileAutowalkResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Possible results of loading a mission.
 class LoadAutowalkResponse_Status extends $pb.ProtobufEnum {
   static const LoadAutowalkResponse_Status STATUS_UNKNOWN = LoadAutowalkResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const LoadAutowalkResponse_Status STATUS_OK = LoadAutowalkResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');

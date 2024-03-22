@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -82,6 +82,21 @@ class SignalTick_Encoding extends $pb.ProtobufEnum {
   const SignalTick_Encoding._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Level, or similarly "visibility," "importance," or "weight" of event.
+///  - Higher level events will increase the visibility on the event timeline, relative to other
+///    events.
+///  - In general, higher level events should be more consequential with respect to the robot
+///    operation on a per-occurence basis.
+///  - Lower level events should be less consequential on a per occurence basis.
+///  - Non-critical events may be one of LOW, MEDIUM, or HIGH.  UNSET is logically equivalent to
+///    LOW level.
+///  - Critical events may be either mission or system critical.
+///  - System-critical is quasi-reserved for internal robot use, and is used to identify events
+///    that directly affect robot status or capability, such as the onset of a critical fault or
+///    start of an enabling capability.
+///  - Mission-critical is quasi-reserved client use, and is intended for events that directly
+///    affect the ability of the robot to "do what the user wants," such as the onset of a
+///    service fault or start of an enabling capability.
 class Event_Level extends $pb.ProtobufEnum {
   static const Event_Level LEVEL_UNSET = Event_Level._(0, _omitEnumNames ? '' : 'LEVEL_UNSET');
   static const Event_Level LEVEL_LOW = Event_Level._(1, _omitEnumNames ? '' : 'LEVEL_LOW');
@@ -105,6 +120,9 @@ class Event_Level extends $pb.ProtobufEnum {
   const Event_Level._($core.int v, $core.String n) : super(v, n);
 }
 
+/// LogPreserveHint may encode a hint to the robot's logging system for whether to preserve
+/// internal log data near the time of this event.  This could be useful in saving data
+/// to be used in a service log to send to Boston Dynamics.
 class Event_LogPreserveHint extends $pb.ProtobufEnum {
   static const Event_LogPreserveHint LOG_PRESERVE_HINT_UNSET = Event_LogPreserveHint._(0, _omitEnumNames ? '' : 'LOG_PRESERVE_HINT_UNSET');
   static const Event_LogPreserveHint LOG_PRESERVE_HINT_NORMAL = Event_LogPreserveHint._(1, _omitEnumNames ? '' : 'LOG_PRESERVE_HINT_NORMAL');

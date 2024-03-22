@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,19 +13,44 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'geometry.pb.dart' as $60;
+import 'geometry.pb.dart' as $61;
 import 'sparse_features.pbenum.dart';
 
 export 'sparse_features.pbenum.dart';
 
+/// A point of interest in an image expressed as a pixel coordinate with associated metadata.
 class Keypoint extends $pb.GeneratedMessage {
-  factory Keypoint() => create();
+  factory Keypoint({
+    $61.Vec2? coordinates,
+    $core.List<$core.int>? binaryDescriptor,
+    $core.double? score,
+    $core.double? size,
+    $core.double? angle,
+  }) {
+    final $result = create();
+    if (coordinates != null) {
+      $result.coordinates = coordinates;
+    }
+    if (binaryDescriptor != null) {
+      $result.binaryDescriptor = binaryDescriptor;
+    }
+    if (score != null) {
+      $result.score = score;
+    }
+    if (size != null) {
+      $result.size = size;
+    }
+    if (angle != null) {
+      $result.angle = angle;
+    }
+    return $result;
+  }
   Keypoint._() : super();
   factory Keypoint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Keypoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Keypoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Vec2>(2, _omitFieldNames ? '' : 'coordinates', subBuilder: $60.Vec2.create)
+    ..aOM<$61.Vec2>(2, _omitFieldNames ? '' : 'coordinates', subBuilder: $61.Vec2.create)
     ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'binaryDescriptor', $pb.PbFieldType.OY)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'score', $pb.PbFieldType.OF)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'size', $pb.PbFieldType.OF)
@@ -54,17 +79,19 @@ class Keypoint extends $pb.GeneratedMessage {
   static Keypoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Keypoint>(create);
   static Keypoint? _defaultInstance;
 
+  /// The image pixel coordinates of the keypoint.
   @$pb.TagNumber(2)
-  $60.Vec2 get coordinates => $_getN(0);
+  $61.Vec2 get coordinates => $_getN(0);
   @$pb.TagNumber(2)
-  set coordinates($60.Vec2 v) { setField(2, v); }
+  set coordinates($61.Vec2 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCoordinates() => $_has(0);
   @$pb.TagNumber(2)
   void clearCoordinates() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Vec2 ensureCoordinates() => $_ensure(0);
+  $61.Vec2 ensureCoordinates() => $_ensure(0);
 
+  /// A binary descriptor representing the keypoint.
   @$pb.TagNumber(3)
   $core.List<$core.int> get binaryDescriptor => $_getN(1);
   @$pb.TagNumber(3)
@@ -74,6 +101,7 @@ class Keypoint extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearBinaryDescriptor() => clearField(3);
 
+  /// The score of this keypoint from the underlying keypoint detector, if applicable.
   @$pb.TagNumber(4)
   $core.double get score => $_getN(2);
   @$pb.TagNumber(4)
@@ -83,6 +111,7 @@ class Keypoint extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearScore() => clearField(4);
 
+  /// The diameter in pixels of the local neighborhood used to construct the descriptor.
   @$pb.TagNumber(5)
   $core.double get size => $_getN(3);
   @$pb.TagNumber(5)
@@ -92,6 +121,7 @@ class Keypoint extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearSize() => clearField(5);
 
+  /// The orientation of the keypoint, if applicable.
   @$pb.TagNumber(6)
   $core.double get angle => $_getN(4);
   @$pb.TagNumber(6)
@@ -102,8 +132,21 @@ class Keypoint extends $pb.GeneratedMessage {
   void clearAngle() => clearField(6);
 }
 
+/// A set of keypoints detected in a single image.
 class KeypointSet extends $pb.GeneratedMessage {
-  factory KeypointSet() => create();
+  factory KeypointSet({
+    $core.Iterable<Keypoint>? keypoints,
+    KeypointSet_KeypointType? type,
+  }) {
+    final $result = create();
+    if (keypoints != null) {
+      $result.keypoints.addAll(keypoints);
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    return $result;
+  }
   KeypointSet._() : super();
   factory KeypointSet.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory KeypointSet.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -135,9 +178,11 @@ class KeypointSet extends $pb.GeneratedMessage {
   static KeypointSet getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<KeypointSet>(create);
   static KeypointSet? _defaultInstance;
 
+  /// A set of detected keypoints and associated metadata.
   @$pb.TagNumber(2)
   $core.List<Keypoint> get keypoints => $_getList(0);
 
+  /// The algorithm used to compute this keypoint and its descriptor.
   @$pb.TagNumber(3)
   KeypointSet_KeypointType get type => $_getN(1);
   @$pb.TagNumber(3)
@@ -149,7 +194,23 @@ class KeypointSet extends $pb.GeneratedMessage {
 }
 
 class Match extends $pb.GeneratedMessage {
-  factory Match() => create();
+  factory Match({
+    $core.int? referenceIndex,
+    $core.int? liveIndex,
+    $core.double? distance,
+  }) {
+    final $result = create();
+    if (referenceIndex != null) {
+      $result.referenceIndex = referenceIndex;
+    }
+    if (liveIndex != null) {
+      $result.liveIndex = liveIndex;
+    }
+    if (distance != null) {
+      $result.distance = distance;
+    }
+    return $result;
+  }
   Match._() : super();
   factory Match.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Match.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -182,6 +243,7 @@ class Match extends $pb.GeneratedMessage {
   static Match getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Match>(create);
   static Match? _defaultInstance;
 
+  /// The index in the reference KeypointSet of the keypoint in the matching pair.
   @$pb.TagNumber(2)
   $core.int get referenceIndex => $_getIZ(0);
   @$pb.TagNumber(2)
@@ -191,6 +253,7 @@ class Match extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearReferenceIndex() => clearField(2);
 
+  /// The index in the live KeypointSet of the keypoint in the matching pair.
   @$pb.TagNumber(3)
   $core.int get liveIndex => $_getIZ(1);
   @$pb.TagNumber(3)
@@ -200,6 +263,7 @@ class Match extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearLiveIndex() => clearField(3);
 
+  /// The distance in descriptor space between the two keypoints.
   @$pb.TagNumber(4)
   $core.double get distance => $_getN(2);
   @$pb.TagNumber(4)
@@ -210,8 +274,25 @@ class Match extends $pb.GeneratedMessage {
   void clearDistance() => clearField(4);
 }
 
+/// A pair of keypoint sets containing only features in common that have been matched.
 class KeypointMatches extends $pb.GeneratedMessage {
-  factory KeypointMatches() => create();
+  factory KeypointMatches({
+    KeypointSet? referenceKeypoints,
+    KeypointSet? liveKeypoints,
+    $core.Iterable<Match>? matches,
+  }) {
+    final $result = create();
+    if (referenceKeypoints != null) {
+      $result.referenceKeypoints = referenceKeypoints;
+    }
+    if (liveKeypoints != null) {
+      $result.liveKeypoints = liveKeypoints;
+    }
+    if (matches != null) {
+      $result.matches.addAll(matches);
+    }
+    return $result;
+  }
   KeypointMatches._() : super();
   factory KeypointMatches.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory KeypointMatches.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -244,6 +325,7 @@ class KeypointMatches extends $pb.GeneratedMessage {
   static KeypointMatches getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<KeypointMatches>(create);
   static KeypointMatches? _defaultInstance;
 
+  /// The set of common keypoints in a first ("reference") image.
   @$pb.TagNumber(2)
   KeypointSet get referenceKeypoints => $_getN(0);
   @$pb.TagNumber(2)
@@ -255,6 +337,7 @@ class KeypointMatches extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   KeypointSet ensureReferenceKeypoints() => $_ensure(0);
 
+  /// The set of common keypoints in a second ("live") image.
   @$pb.TagNumber(3)
   KeypointSet get liveKeypoints => $_getN(1);
   @$pb.TagNumber(3)
@@ -266,6 +349,7 @@ class KeypointMatches extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   KeypointSet ensureLiveKeypoints() => $_ensure(1);
 
+  /// Indices of pairs of matches in the two KeypointSets and their distance measure.
   @$pb.TagNumber(4)
   $core.List<Match> get matches => $_getList(2);
 }

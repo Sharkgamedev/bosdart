@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -43,6 +43,8 @@ class PowerState_MotorPowerState extends $pb.ProtobufEnum {
   const PowerState_MotorPowerState._($core.int v, $core.String n) : super(v, n);
 }
 
+/// State describing if robot is connected to shore (wall) power. Robot can't be powered on
+/// while on shore power
 class PowerState_ShorePowerState extends $pb.ProtobufEnum {
   static const PowerState_ShorePowerState STATE_UNKNOWN_SHORE_POWER = PowerState_ShorePowerState._(0, _omitEnumNames ? '' : 'STATE_UNKNOWN_SHORE_POWER');
   static const PowerState_ShorePowerState STATE_ON_SHORE_POWER = PowerState_ShorePowerState._(1, _omitEnumNames ? '' : 'STATE_ON_SHORE_POWER');
@@ -64,6 +66,7 @@ class PowerState_ShorePowerState extends $pb.ProtobufEnum {
   const PowerState_ShorePowerState._($core.int v, $core.String n) : super(v, n);
 }
 
+/// State describing if the robot has power.
 class PowerState_RobotPowerState extends $pb.ProtobufEnum {
   static const PowerState_RobotPowerState ROBOT_POWER_STATE_UNKNOWN = PowerState_RobotPowerState._(0, _omitEnumNames ? '' : 'ROBOT_POWER_STATE_UNKNOWN');
   static const PowerState_RobotPowerState ROBOT_POWER_STATE_ON = PowerState_RobotPowerState._(1, _omitEnumNames ? '' : 'ROBOT_POWER_STATE_ON');
@@ -81,6 +84,7 @@ class PowerState_RobotPowerState extends $pb.ProtobufEnum {
   const PowerState_RobotPowerState._($core.int v, $core.String n) : super(v, n);
 }
 
+/// State describing if the payload port has power.
 class PowerState_PayloadPortsPowerState extends $pb.ProtobufEnum {
   static const PowerState_PayloadPortsPowerState PAYLOAD_PORTS_POWER_STATE_UNKNOWN = PowerState_PayloadPortsPowerState._(0, _omitEnumNames ? '' : 'PAYLOAD_PORTS_POWER_STATE_UNKNOWN');
   static const PowerState_PayloadPortsPowerState PAYLOAD_PORTS_POWER_STATE_ON = PowerState_PayloadPortsPowerState._(1, _omitEnumNames ? '' : 'PAYLOAD_PORTS_POWER_STATE_ON');
@@ -98,6 +102,7 @@ class PowerState_PayloadPortsPowerState extends $pb.ProtobufEnum {
   const PowerState_PayloadPortsPowerState._($core.int v, $core.String n) : super(v, n);
 }
 
+/// State describing if the robot Wi-Fi router has power.
 class PowerState_WifiRadioPowerState extends $pb.ProtobufEnum {
   static const PowerState_WifiRadioPowerState WIFI_RADIO_POWER_STATE_UNKNOWN = PowerState_WifiRadioPowerState._(0, _omitEnumNames ? '' : 'WIFI_RADIO_POWER_STATE_UNKNOWN');
   static const PowerState_WifiRadioPowerState WIFI_RADIO_POWER_STATE_ON = PowerState_WifiRadioPowerState._(1, _omitEnumNames ? '' : 'WIFI_RADIO_POWER_STATE_ON');
@@ -276,6 +281,15 @@ class ManipulatorState_StowState extends $pb.ProtobufEnum {
   const ManipulatorState_StowState._($core.int v, $core.String n) : super(v, n);
 }
 
+/// The stowing behavior is modified as a function of the Carry State.  If holding an item, the
+/// stowing behavior will be modified as follows:
+///  NOT_CARRIABLE - The arm will not stow, instead entering stop
+///  CARRIABLE - The arm will not stow, instead entering stop
+///  CARRIABLE_AND_STOWABLE - The arm will stow while continuing to grasp the item
+/// The comms loss behavior of the arm is also modified as follows:
+///  NOT_CARRIABLE - The arm will release the item and stow
+///  CARRIABLE - The arm will not stow, instead entering stop
+///  CARRIABLE_AND_STOWABLE - The arm will stow while continuing to grasp the item
 class ManipulatorState_CarryState extends $pb.ProtobufEnum {
   static const ManipulatorState_CarryState CARRY_STATE_UNKNOWN = ManipulatorState_CarryState._(0, _omitEnumNames ? '' : 'CARRY_STATE_UNKNOWN');
   static const ManipulatorState_CarryState CARRY_STATE_NOT_CARRIABLE = ManipulatorState_CarryState._(1, _omitEnumNames ? '' : 'CARRY_STATE_NOT_CARRIABLE');
@@ -295,6 +309,7 @@ class ManipulatorState_CarryState extends $pb.ProtobufEnum {
   const ManipulatorState_CarryState._($core.int v, $core.String n) : super(v, n);
 }
 
+/// If the robot is stopped due to being impaired, this is the reason why.
 class RobotImpairedState_ImpairedStatus extends $pb.ProtobufEnum {
   static const RobotImpairedState_ImpairedStatus IMPAIRED_STATUS_UNKNOWN = RobotImpairedState_ImpairedStatus._(0, _omitEnumNames ? '' : 'IMPAIRED_STATUS_UNKNOWN');
   static const RobotImpairedState_ImpairedStatus IMPAIRED_STATUS_OK = RobotImpairedState_ImpairedStatus._(1, _omitEnumNames ? '' : 'IMPAIRED_STATUS_OK');

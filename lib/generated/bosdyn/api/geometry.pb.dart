@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,10 +14,23 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/wrappers.pb.dart' as $58;
+import '../../google/protobuf/wrappers.pb.dart' as $59;
 
+/// Two dimensional vector primitive.
 class Vec2 extends $pb.GeneratedMessage {
-  factory Vec2() => create();
+  factory Vec2({
+    $core.double? x,
+    $core.double? y,
+  }) {
+    final $result = create();
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    return $result;
+  }
   Vec2._() : super();
   factory Vec2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Vec2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -68,8 +81,25 @@ class Vec2 extends $pb.GeneratedMessage {
   void clearY() => clearField(2);
 }
 
+/// Three dimensional vector primitive.
 class Vec3 extends $pb.GeneratedMessage {
-  factory Vec3() => create();
+  factory Vec3({
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+  }) {
+    final $result = create();
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    return $result;
+  }
   Vec3._() : super();
   factory Vec3.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Vec3.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -130,8 +160,28 @@ class Vec3 extends $pb.GeneratedMessage {
   void clearZ() => clearField(3);
 }
 
+/// Cylindrical coordinates are a generalization of polar coordiates, adding a
+/// height
+/// axis. See (http://mathworld.wolfram.com/CylindricalCoordinates.html) for
+/// more details.
 class CylindricalCoordinate extends $pb.GeneratedMessage {
-  factory CylindricalCoordinate() => create();
+  factory CylindricalCoordinate({
+    $core.double? r,
+    $core.double? theta,
+    $core.double? z,
+  }) {
+    final $result = create();
+    if (r != null) {
+      $result.r = r;
+    }
+    if (theta != null) {
+      $result.theta = theta;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    return $result;
+  }
   CylindricalCoordinate._() : super();
   factory CylindricalCoordinate.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CylindricalCoordinate.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -192,8 +242,29 @@ class CylindricalCoordinate extends $pb.GeneratedMessage {
   void clearZ() => clearField(3);
 }
 
+/// Quaternion primitive. A quaternion can be used to describe the rotation.
 class Quaternion extends $pb.GeneratedMessage {
-  factory Quaternion() => create();
+  factory Quaternion({
+    $core.double? x,
+    $core.double? y,
+    $core.double? z,
+    $core.double? w,
+  }) {
+    final $result = create();
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    if (w != null) {
+      $result.w = w;
+    }
+    return $result;
+  }
   Quaternion._() : super();
   factory Quaternion.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Quaternion.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -264,8 +335,21 @@ class Quaternion extends $pb.GeneratedMessage {
   void clearW() => clearField(4);
 }
 
+/// Plane primitive, described with a point and normal.
 class Plane extends $pb.GeneratedMessage {
-  factory Plane() => create();
+  factory Plane({
+    Vec3? point,
+    Vec3? normal,
+  }) {
+    final $result = create();
+    if (point != null) {
+      $result.point = point;
+    }
+    if (normal != null) {
+      $result.normal = normal;
+    }
+    return $result;
+  }
   Plane._() : super();
   factory Plane.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Plane.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -320,8 +404,21 @@ class Plane extends $pb.GeneratedMessage {
   Vec3 ensureNormal() => $_ensure(1);
 }
 
+/// A square oriented in 3D space.
 class Quad extends $pb.GeneratedMessage {
-  factory Quad() => create();
+  factory Quad({
+    SE3Pose? pose,
+    $core.double? size,
+  }) {
+    final $result = create();
+    if (pose != null) {
+      $result.pose = pose;
+    }
+    if (size != null) {
+      $result.size = size;
+    }
+    return $result;
+  }
   Quad._() : super();
   factory Quad.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Quad.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -353,6 +450,8 @@ class Quad extends $pb.GeneratedMessage {
   static Quad getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Quad>(create);
   static Quad? _defaultInstance;
 
+  /// The center of the quad and the orientation of the normal.
+  /// The normal axis is [0, 0, 1].
   @$pb.TagNumber(1)
   SE3Pose get pose => $_getN(0);
   @$pb.TagNumber(1)
@@ -364,6 +463,7 @@ class Quad extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   SE3Pose ensurePose() => $_ensure(0);
 
+  /// The side length of the quad.
   @$pb.TagNumber(2)
   $core.double get size => $_getN(1);
   @$pb.TagNumber(2)
@@ -374,8 +474,21 @@ class Quad extends $pb.GeneratedMessage {
   void clearSize() => clearField(2);
 }
 
+/// A ray in 3D space.
 class Ray extends $pb.GeneratedMessage {
-  factory Ray() => create();
+  factory Ray({
+    Vec3? origin,
+    Vec3? direction,
+  }) {
+    final $result = create();
+    if (origin != null) {
+      $result.origin = origin;
+    }
+    if (direction != null) {
+      $result.direction = direction;
+    }
+    return $result;
+  }
   Ray._() : super();
   factory Ray.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Ray.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -407,6 +520,7 @@ class Ray extends $pb.GeneratedMessage {
   static Ray getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Ray>(create);
   static Ray? _defaultInstance;
 
+  /// Base of ray.
   @$pb.TagNumber(1)
   Vec3 get origin => $_getN(0);
   @$pb.TagNumber(1)
@@ -418,6 +532,7 @@ class Ray extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Vec3 ensureOrigin() => $_ensure(0);
 
+  /// Unit vector defining the direction of the ray.
   @$pb.TagNumber(2)
   Vec3 get direction => $_getN(1);
   @$pb.TagNumber(2)
@@ -430,8 +545,21 @@ class Ray extends $pb.GeneratedMessage {
   Vec3 ensureDirection() => $_ensure(1);
 }
 
+/// Geometric primitive to describe 2D position and rotation.
 class SE2Pose extends $pb.GeneratedMessage {
-  factory SE2Pose() => create();
+  factory SE2Pose({
+    Vec2? position,
+    $core.double? angle,
+  }) {
+    final $result = create();
+    if (position != null) {
+      $result.position = position;
+    }
+    if (angle != null) {
+      $result.angle = angle;
+    }
+    return $result;
+  }
   SE2Pose._() : super();
   factory SE2Pose.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SE2Pose.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -484,8 +612,21 @@ class SE2Pose extends $pb.GeneratedMessage {
   void clearAngle() => clearField(2);
 }
 
+/// Geometric primitive that describes a 2D velocity through it's linear and angular components.
 class SE2Velocity extends $pb.GeneratedMessage {
-  factory SE2Velocity() => create();
+  factory SE2Velocity({
+    Vec2? linear,
+    $core.double? angular,
+  }) {
+    final $result = create();
+    if (linear != null) {
+      $result.linear = linear;
+    }
+    if (angular != null) {
+      $result.angular = angular;
+    }
+    return $result;
+  }
   SE2Velocity._() : super();
   factory SE2Velocity.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SE2Velocity.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -538,8 +679,21 @@ class SE2Velocity extends $pb.GeneratedMessage {
   void clearAngular() => clearField(2);
 }
 
+/// Geometric primitive to couple minimum and maximum SE2Velocities in a single message.
 class SE2VelocityLimit extends $pb.GeneratedMessage {
-  factory SE2VelocityLimit() => create();
+  factory SE2VelocityLimit({
+    SE2Velocity? maxVel,
+    SE2Velocity? minVel,
+  }) {
+    final $result = create();
+    if (maxVel != null) {
+      $result.maxVel = maxVel;
+    }
+    if (minVel != null) {
+      $result.minVel = minVel;
+    }
+    return $result;
+  }
   SE2VelocityLimit._() : super();
   factory SE2VelocityLimit.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SE2VelocityLimit.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -571,6 +725,7 @@ class SE2VelocityLimit extends $pb.GeneratedMessage {
   static SE2VelocityLimit getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SE2VelocityLimit>(create);
   static SE2VelocityLimit? _defaultInstance;
 
+  /// If set, limits the maximum velocity.
   @$pb.TagNumber(1)
   SE2Velocity get maxVel => $_getN(0);
   @$pb.TagNumber(1)
@@ -582,6 +737,7 @@ class SE2VelocityLimit extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   SE2Velocity ensureMaxVel() => $_ensure(0);
 
+  /// If set, limits the minimum velocity.
   @$pb.TagNumber(2)
   SE2Velocity get minVel => $_getN(1);
   @$pb.TagNumber(2)
@@ -594,8 +750,21 @@ class SE2VelocityLimit extends $pb.GeneratedMessage {
   SE2Velocity ensureMinVel() => $_ensure(1);
 }
 
+/// Geometric primitive to describe 3D position and rotation.
 class SE3Pose extends $pb.GeneratedMessage {
-  factory SE3Pose() => create();
+  factory SE3Pose({
+    Vec3? position,
+    Quaternion? rotation,
+  }) {
+    final $result = create();
+    if (position != null) {
+      $result.position = position;
+    }
+    if (rotation != null) {
+      $result.rotation = rotation;
+    }
+    return $result;
+  }
   SE3Pose._() : super();
   factory SE3Pose.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SE3Pose.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -650,8 +819,21 @@ class SE3Pose extends $pb.GeneratedMessage {
   Quaternion ensureRotation() => $_ensure(1);
 }
 
+/// Geometric primitive that describes a 3D velocity through it's linear and angular components.
 class SE3Velocity extends $pb.GeneratedMessage {
-  factory SE3Velocity() => create();
+  factory SE3Velocity({
+    Vec3? linear,
+    Vec3? angular,
+  }) {
+    final $result = create();
+    if (linear != null) {
+      $result.linear = linear;
+    }
+    if (angular != null) {
+      $result.angular = angular;
+    }
+    return $result;
+  }
   SE3Velocity._() : super();
   factory SE3Velocity.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SE3Velocity.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -706,8 +888,21 @@ class SE3Velocity extends $pb.GeneratedMessage {
   Vec3 ensureAngular() => $_ensure(1);
 }
 
+/// Geometric primitive used to specify forces and torques.
 class Wrench extends $pb.GeneratedMessage {
-  factory Wrench() => create();
+  factory Wrench({
+    Vec3? force,
+    Vec3? torque,
+  }) {
+    final $result = create();
+    if (force != null) {
+      $result.force = force;
+    }
+    if (torque != null) {
+      $result.torque = torque;
+    }
+    return $result;
+  }
   Wrench._() : super();
   factory Wrench.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Wrench.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -762,8 +957,21 @@ class Wrench extends $pb.GeneratedMessage {
   Vec3 ensureTorque() => $_ensure(1);
 }
 
+/// ParentEdge represents the relationship from a child frame to a parent frame.
 class FrameTreeSnapshot_ParentEdge extends $pb.GeneratedMessage {
-  factory FrameTreeSnapshot_ParentEdge() => create();
+  factory FrameTreeSnapshot_ParentEdge({
+    $core.String? parentFrameName,
+    SE3Pose? parentTformChild,
+  }) {
+    final $result = create();
+    if (parentFrameName != null) {
+      $result.parentFrameName = parentFrameName;
+    }
+    if (parentTformChild != null) {
+      $result.parentTformChild = parentTformChild;
+    }
+    return $result;
+  }
   FrameTreeSnapshot_ParentEdge._() : super();
   factory FrameTreeSnapshot_ParentEdge.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FrameTreeSnapshot_ParentEdge.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -795,6 +1003,8 @@ class FrameTreeSnapshot_ParentEdge extends $pb.GeneratedMessage {
   static FrameTreeSnapshot_ParentEdge getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FrameTreeSnapshot_ParentEdge>(create);
   static FrameTreeSnapshot_ParentEdge? _defaultInstance;
 
+  /// The name of the parent frame. If a frame has no parent (parent_frame_name is empty),
+  /// it is the root of the tree.
   @$pb.TagNumber(1)
   $core.String get parentFrameName => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -804,6 +1014,7 @@ class FrameTreeSnapshot_ParentEdge extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearParentFrameName() => clearField(1);
 
+  /// Transform representing the pose of the child frame in the parent's frame.
   @$pb.TagNumber(2)
   SE3Pose get parentTformChild => $_getN(1);
   @$pb.TagNumber(2)
@@ -817,7 +1028,15 @@ class FrameTreeSnapshot_ParentEdge extends $pb.GeneratedMessage {
 }
 
 class FrameTreeSnapshot extends $pb.GeneratedMessage {
-  factory FrameTreeSnapshot() => create();
+  factory FrameTreeSnapshot({
+    $core.Map<$core.String, FrameTreeSnapshot_ParentEdge>? childToParentEdgeMap,
+  }) {
+    final $result = create();
+    if (childToParentEdgeMap != null) {
+      $result.childToParentEdgeMap.addAll(childToParentEdgeMap);
+    }
+    return $result;
+  }
   FrameTreeSnapshot._() : super();
   factory FrameTreeSnapshot.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FrameTreeSnapshot.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -848,12 +1067,23 @@ class FrameTreeSnapshot extends $pb.GeneratedMessage {
   static FrameTreeSnapshot getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FrameTreeSnapshot>(create);
   static FrameTreeSnapshot? _defaultInstance;
 
+  /// child_to_parent_edge_map maps the child frame name to the ParentEdge.
+  /// In aggregate, this forms the tree structure.
   @$pb.TagNumber(1)
   $core.Map<$core.String, FrameTreeSnapshot_ParentEdge> get childToParentEdgeMap => $_getMap(0);
 }
 
+/// Geometric primitive describing a two-dimensional box.
 class Box2 extends $pb.GeneratedMessage {
-  factory Box2() => create();
+  factory Box2({
+    Vec2? size,
+  }) {
+    final $result = create();
+    if (size != null) {
+      $result.size = size;
+    }
+    return $result;
+  }
   Box2._() : super();
   factory Box2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Box2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -896,8 +1126,25 @@ class Box2 extends $pb.GeneratedMessage {
   Vec2 ensureSize() => $_ensure(0);
 }
 
+/// Geometric primitive to describe a 2D box in a specific frame.
 class Box2WithFrame extends $pb.GeneratedMessage {
-  factory Box2WithFrame() => create();
+  factory Box2WithFrame({
+    Box2? box,
+    $core.String? frameName,
+    SE3Pose? frameNameTformBox,
+  }) {
+    final $result = create();
+    if (box != null) {
+      $result.box = box;
+    }
+    if (frameName != null) {
+      $result.frameName = frameName;
+    }
+    if (frameNameTformBox != null) {
+      $result.frameNameTformBox = frameNameTformBox;
+    }
+    return $result;
+  }
   Box2WithFrame._() : super();
   factory Box2WithFrame.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Box2WithFrame.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -930,6 +1177,9 @@ class Box2WithFrame extends $pb.GeneratedMessage {
   static Box2WithFrame getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Box2WithFrame>(create);
   static Box2WithFrame? _defaultInstance;
 
+  /// The box is specified with width (y) and length (x), and the full box is
+  /// fixed at an origin, where it's sides are along the coordinate frame's
+  /// axes.
   @$pb.TagNumber(1)
   Box2 get box => $_getN(0);
   @$pb.TagNumber(1)
@@ -941,6 +1191,7 @@ class Box2WithFrame extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Box2 ensureBox() => $_ensure(0);
 
+  /// The pose of the axis-aligned box is in 'frame_name'.
   @$pb.TagNumber(2)
   $core.String get frameName => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -950,6 +1201,8 @@ class Box2WithFrame extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearFrameName() => clearField(2);
 
+  /// The transformation of the axis-aligned box into the desired frame
+  /// (specified above).
   @$pb.TagNumber(3)
   SE3Pose get frameNameTformBox => $_getN(2);
   @$pb.TagNumber(3)
@@ -962,8 +1215,17 @@ class Box2WithFrame extends $pb.GeneratedMessage {
   SE3Pose ensureFrameNameTformBox() => $_ensure(2);
 }
 
+/// Geometric primitive describing a three-dimensional box.
 class Box3 extends $pb.GeneratedMessage {
-  factory Box3() => create();
+  factory Box3({
+    Vec3? size,
+  }) {
+    final $result = create();
+    if (size != null) {
+      $result.size = size;
+    }
+    return $result;
+  }
   Box3._() : super();
   factory Box3.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Box3.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1006,8 +1268,25 @@ class Box3 extends $pb.GeneratedMessage {
   Vec3 ensureSize() => $_ensure(0);
 }
 
+/// Geometric primitive to describe a 3D box in a specific frame.
 class Box3WithFrame extends $pb.GeneratedMessage {
-  factory Box3WithFrame() => create();
+  factory Box3WithFrame({
+    Box3? box,
+    $core.String? frameName,
+    SE3Pose? frameNameTformBox,
+  }) {
+    final $result = create();
+    if (box != null) {
+      $result.box = box;
+    }
+    if (frameName != null) {
+      $result.frameName = frameName;
+    }
+    if (frameNameTformBox != null) {
+      $result.frameNameTformBox = frameNameTformBox;
+    }
+    return $result;
+  }
   Box3WithFrame._() : super();
   factory Box3WithFrame.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Box3WithFrame.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1040,6 +1319,9 @@ class Box3WithFrame extends $pb.GeneratedMessage {
   static Box3WithFrame getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Box3WithFrame>(create);
   static Box3WithFrame? _defaultInstance;
 
+  /// The box width (y), length (x), and height (z) are interpreted in, and the
+  /// full box is fixed at an origin, where it's sides are along the coordinate
+  /// frame's axes.
   @$pb.TagNumber(1)
   Box3 get box => $_getN(0);
   @$pb.TagNumber(1)
@@ -1051,6 +1333,7 @@ class Box3WithFrame extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Box3 ensureBox() => $_ensure(0);
 
+  /// The pose of the axis-aligned box is in 'frame_name'.
   @$pb.TagNumber(2)
   $core.String get frameName => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -1060,6 +1343,8 @@ class Box3WithFrame extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearFrameName() => clearField(2);
 
+  /// The transformation of the axis-aligned box into the desired frame
+  /// (specified above).
   @$pb.TagNumber(3)
   SE3Pose get frameNameTformBox => $_getN(2);
   @$pb.TagNumber(3)
@@ -1072,8 +1357,25 @@ class Box3WithFrame extends $pb.GeneratedMessage {
   SE3Pose ensureFrameNameTformBox() => $_ensure(2);
 }
 
+/// Represents a row-major order matrix of doubles.
 class Matrix extends $pb.GeneratedMessage {
-  factory Matrix() => create();
+  factory Matrix({
+    $core.int? rows,
+    $core.int? cols,
+    $core.Iterable<$core.double>? values,
+  }) {
+    final $result = create();
+    if (rows != null) {
+      $result.rows = rows;
+    }
+    if (cols != null) {
+      $result.cols = cols;
+    }
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
   Matrix._() : super();
   factory Matrix.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Matrix.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1128,8 +1430,25 @@ class Matrix extends $pb.GeneratedMessage {
   $core.List<$core.double> get values => $_getList(2);
 }
 
+/// Represents a row-major order matrix of floats.
 class Matrixf extends $pb.GeneratedMessage {
-  factory Matrixf() => create();
+  factory Matrixf({
+    $core.int? rows,
+    $core.int? cols,
+    $core.Iterable<$core.double>? values,
+  }) {
+    final $result = create();
+    if (rows != null) {
+      $result.rows = rows;
+    }
+    if (cols != null) {
+      $result.cols = cols;
+    }
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
   Matrixf._() : super();
   factory Matrixf.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Matrixf.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1184,8 +1503,25 @@ class Matrixf extends $pb.GeneratedMessage {
   $core.List<$core.double> get values => $_getList(2);
 }
 
+/// Represents a row-major order matrix of int64.
 class MatrixInt64 extends $pb.GeneratedMessage {
-  factory MatrixInt64() => create();
+  factory MatrixInt64({
+    $core.int? rows,
+    $core.int? cols,
+    $core.Iterable<$fixnum.Int64>? values,
+  }) {
+    final $result = create();
+    if (rows != null) {
+      $result.rows = rows;
+    }
+    if (cols != null) {
+      $result.cols = cols;
+    }
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
   MatrixInt64._() : super();
   factory MatrixInt64.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MatrixInt64.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1240,8 +1576,25 @@ class MatrixInt64 extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get values => $_getList(2);
 }
 
+/// Represents a row-major order matrix of int32.
 class MatrixInt32 extends $pb.GeneratedMessage {
-  factory MatrixInt32() => create();
+  factory MatrixInt32({
+    $core.int? rows,
+    $core.int? cols,
+    $core.Iterable<$core.int>? values,
+  }) {
+    final $result = create();
+    if (rows != null) {
+      $result.rows = rows;
+    }
+    if (cols != null) {
+      $result.cols = cols;
+    }
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
   MatrixInt32._() : super();
   factory MatrixInt32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MatrixInt32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1296,8 +1649,17 @@ class MatrixInt32 extends $pb.GeneratedMessage {
   $core.List<$core.int> get values => $_getList(2);
 }
 
+/// Represents a vector of doubles
 class Vector extends $pb.GeneratedMessage {
-  factory Vector() => create();
+  factory Vector({
+    $core.Iterable<$core.double>? values,
+  }) {
+    final $result = create();
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
   Vector._() : super();
   factory Vector.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Vector.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1332,8 +1694,88 @@ class Vector extends $pb.GeneratedMessage {
   $core.List<$core.double> get values => $_getList(0);
 }
 
+/// Represents the translation/rotation covariance of an SE3 Pose.
+/// The 6x6 matrix can be viewed as the covariance among 6 variables: \
+///      rx     ry  rz    x    y    z                                 \
+/// rx rxrx  rxry rxrz  rxx  rxy  rxz                                 \
+/// ry ryrx  ryry ryrz  ryx  ryy  ryz                                 \
+/// rz rzrx  rzry rzrz  rzx  rzy  rzz                                 \
+/// x   xrx   xry  xrz   xx   xy   xz                                 \
+/// y   yrx   yry  yrz   yx   yy   yz                                 \
+/// z   zrx   zry  zrz   zx   zy   zz                                 \
+/// where x, y, z are translations in meters, and rx, ry, rz are rotations around
+/// the x, y and z axes in radians.                                   \
+/// The matrix is symmetric, so, for example, xy = yx.                \
 class SE3Covariance extends $pb.GeneratedMessage {
-  factory SE3Covariance() => create();
+  factory SE3Covariance({
+    Matrix? matrix,
+  @$core.Deprecated('This field is deprecated.')
+    $core.double? yawVariance,
+  @$core.Deprecated('This field is deprecated.')
+    $core.double? covXx,
+  @$core.Deprecated('This field is deprecated.')
+    $core.double? covXy,
+  @$core.Deprecated('This field is deprecated.')
+    $core.double? covXz,
+  @$core.Deprecated('This field is deprecated.')
+    $core.double? covYx,
+  @$core.Deprecated('This field is deprecated.')
+    $core.double? covYy,
+  @$core.Deprecated('This field is deprecated.')
+    $core.double? covYz,
+  @$core.Deprecated('This field is deprecated.')
+    $core.double? covZx,
+  @$core.Deprecated('This field is deprecated.')
+    $core.double? covZy,
+  @$core.Deprecated('This field is deprecated.')
+    $core.double? covZz,
+  }) {
+    final $result = create();
+    if (matrix != null) {
+      $result.matrix = matrix;
+    }
+    if (yawVariance != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.yawVariance = yawVariance;
+    }
+    if (covXx != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.covXx = covXx;
+    }
+    if (covXy != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.covXy = covXy;
+    }
+    if (covXz != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.covXz = covXz;
+    }
+    if (covYx != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.covYx = covYx;
+    }
+    if (covYy != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.covYy = covYy;
+    }
+    if (covYz != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.covYz = covYz;
+    }
+    if (covZx != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.covZx = covZx;
+    }
+    if (covZy != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.covZy = covZy;
+    }
+    if (covZz != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.covZz = covZz;
+    }
+    return $result;
+  }
   SE3Covariance._() : super();
   factory SE3Covariance.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SE3Covariance.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1374,6 +1816,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   static SE3Covariance getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SE3Covariance>(create);
   static SE3Covariance? _defaultInstance;
 
+  /// Row-major order representation of the covariance matrix.
   @$pb.TagNumber(1)
   Matrix get matrix => $_getN(0);
   @$pb.TagNumber(1)
@@ -1385,6 +1828,9 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Matrix ensureMatrix() => $_ensure(0);
 
+  /// Variance of the yaw component of the SE3 Pose.
+  /// Warning: DEPRECATED as of 2.1. This should equal cov_rzrz, inside `matrix`. Will be removed
+  /// in 4.0.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.double get yawVariance => $_getN(1);
@@ -1398,6 +1844,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearYawVariance() => clearField(2);
 
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.double get covXx => $_getN(2);
@@ -1411,6 +1858,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearCovXx() => clearField(3);
 
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.double get covXy => $_getN(3);
@@ -1424,6 +1872,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearCovXy() => clearField(4);
 
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $core.double get covXz => $_getN(4);
@@ -1437,6 +1886,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearCovXz() => clearField(5);
 
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   $core.double get covYx => $_getN(5);
@@ -1450,6 +1900,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearCovYx() => clearField(6);
 
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   $core.double get covYy => $_getN(6);
@@ -1463,6 +1914,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearCovYy() => clearField(7);
 
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(8)
   $core.double get covYz => $_getN(7);
@@ -1476,6 +1928,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearCovYz() => clearField(8);
 
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(9)
   $core.double get covZx => $_getN(8);
@@ -1489,6 +1942,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearCovZx() => clearField(9);
 
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(10)
   $core.double get covZy => $_getN(9);
@@ -1502,6 +1956,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearCovZy() => clearField(10);
 
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(11)
   $core.double get covZz => $_getN(10);
@@ -1516,8 +1971,17 @@ class SE3Covariance extends $pb.GeneratedMessage {
   void clearCovZz() => clearField(11);
 }
 
+/// Multi-part, 1D line segments defined by a series of points.
 class PolyLine extends $pb.GeneratedMessage {
-  factory PolyLine() => create();
+  factory PolyLine({
+    $core.Iterable<Vec2>? points,
+  }) {
+    final $result = create();
+    if (points != null) {
+      $result.points.addAll(points);
+    }
+    return $result;
+  }
   PolyLine._() : super();
   factory PolyLine.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PolyLine.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1552,8 +2016,19 @@ class PolyLine extends $pb.GeneratedMessage {
   $core.List<Vec2> get points => $_getList(0);
 }
 
+/// Polygon in the XY plane.
+/// May be concave, but should not self-intersect. Vertices can be specified in either
+/// clockwise or counterclockwise orders.
 class Polygon extends $pb.GeneratedMessage {
-  factory Polygon() => create();
+  factory Polygon({
+    $core.Iterable<Vec2>? vertexes,
+  }) {
+    final $result = create();
+    if (vertexes != null) {
+      $result.vertexes.addAll(vertexes);
+    }
+    return $result;
+  }
   Polygon._() : super();
   factory Polygon.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Polygon.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1588,8 +2063,29 @@ class Polygon extends $pb.GeneratedMessage {
   $core.List<Vec2> get vertexes => $_getList(0);
 }
 
+///  Represents a region in the XY plane that consists of a single polygon
+///  from which polygons representing exclusion areas may be subtracted.
+///
+///  A point is considered to be inside the region if it is inside the inclusion
+///  polygon and not inside any of the exclusion polygons.
+///
+///  Note that while this can be used to represent a polygon with holes, that
+///  exclusions are not necessarily holes:  An exclusion polygon may not be
+///  completely inside the inclusion polygon.
 class PolygonWithExclusions extends $pb.GeneratedMessage {
-  factory PolygonWithExclusions() => create();
+  factory PolygonWithExclusions({
+    Polygon? inclusion,
+    $core.Iterable<Polygon>? exclusions,
+  }) {
+    final $result = create();
+    if (inclusion != null) {
+      $result.inclusion = inclusion;
+    }
+    if (exclusions != null) {
+      $result.exclusions.addAll(exclusions);
+    }
+    return $result;
+  }
   PolygonWithExclusions._() : super();
   factory PolygonWithExclusions.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PolygonWithExclusions.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1636,8 +2132,21 @@ class PolygonWithExclusions extends $pb.GeneratedMessage {
   $core.List<Polygon> get exclusions => $_getList(1);
 }
 
+/// Represents a circular 2D area.
 class Circle extends $pb.GeneratedMessage {
-  factory Circle() => create();
+  factory Circle({
+    Vec2? centerPt,
+    $core.double? radius,
+  }) {
+    final $result = create();
+    if (centerPt != null) {
+      $result.centerPt = centerPt;
+    }
+    if (radius != null) {
+      $result.radius = radius;
+    }
+    return $result;
+  }
   Circle._() : super();
   factory Circle.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Circle.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1696,8 +2205,21 @@ enum Area_Geometry {
   notSet
 }
 
+/// Represents an area in the XY plane.
 class Area extends $pb.GeneratedMessage {
-  factory Area() => create();
+  factory Area({
+    Polygon? polygon,
+    Circle? circle,
+  }) {
+    final $result = create();
+    if (polygon != null) {
+      $result.polygon = polygon;
+    }
+    if (circle != null) {
+      $result.circle = circle;
+    }
+    return $result;
+  }
   Area._() : super();
   factory Area.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Area.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1766,8 +2288,17 @@ enum Volume_Geometry {
   notSet
 }
 
+/// Represents a volume of space in an unspecified frame.
 class Volume extends $pb.GeneratedMessage {
-  factory Volume() => create();
+  factory Volume({
+    Vec3? box,
+  }) {
+    final $result = create();
+    if (box != null) {
+      $result.box = box;
+    }
+    return $result;
+  }
   Volume._() : super();
   factory Volume.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Volume.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1818,8 +2349,23 @@ class Volume extends $pb.GeneratedMessage {
   Vec3 ensureBox() => $_ensure(0);
 }
 
+/// Represents bounds on a value, such that lower < value < upper.
+/// If you do not want to specify one side of the bound, set it to
+/// an appropriately large (or small) number.
 class Bounds extends $pb.GeneratedMessage {
-  factory Bounds() => create();
+  factory Bounds({
+    $core.double? lower,
+    $core.double? upper,
+  }) {
+    final $result = create();
+    if (lower != null) {
+      $result.lower = lower;
+    }
+    if (upper != null) {
+      $result.upper = upper;
+    }
+    return $result;
+  }
   Bounds._() : super();
   factory Bounds.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Bounds.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1870,15 +2416,28 @@ class Bounds extends $pb.GeneratedMessage {
   void clearUpper() => clearField(2);
 }
 
+/// A 2D vector of doubles that uses wrapped values so we can tell which elements are set.
 class Vec2Value extends $pb.GeneratedMessage {
-  factory Vec2Value() => create();
+  factory Vec2Value({
+    $59.DoubleValue? x,
+    $59.DoubleValue? y,
+  }) {
+    final $result = create();
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    return $result;
+  }
   Vec2Value._() : super();
   factory Vec2Value.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Vec2Value.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Vec2Value', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'x', subBuilder: $58.DoubleValue.create)
-    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'y', subBuilder: $58.DoubleValue.create)
+    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'x', subBuilder: $59.DoubleValue.create)
+    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'y', subBuilder: $59.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1904,38 +2463,55 @@ class Vec2Value extends $pb.GeneratedMessage {
   static Vec2Value? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $58.DoubleValue get x => $_getN(0);
+  $59.DoubleValue get x => $_getN(0);
   @$pb.TagNumber(1)
-  set x($58.DoubleValue v) { setField(1, v); }
+  set x($59.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasX() => $_has(0);
   @$pb.TagNumber(1)
   void clearX() => clearField(1);
   @$pb.TagNumber(1)
-  $58.DoubleValue ensureX() => $_ensure(0);
+  $59.DoubleValue ensureX() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $58.DoubleValue get y => $_getN(1);
+  $59.DoubleValue get y => $_getN(1);
   @$pb.TagNumber(2)
-  set y($58.DoubleValue v) { setField(2, v); }
+  set y($59.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasY() => $_has(1);
   @$pb.TagNumber(2)
   void clearY() => clearField(2);
   @$pb.TagNumber(2)
-  $58.DoubleValue ensureY() => $_ensure(1);
+  $59.DoubleValue ensureY() => $_ensure(1);
 }
 
+/// A 3D vector of doubles that uses wrapped values so we can tell which elements are set.
 class Vec3Value extends $pb.GeneratedMessage {
-  factory Vec3Value() => create();
+  factory Vec3Value({
+    $59.DoubleValue? x,
+    $59.DoubleValue? y,
+    $59.DoubleValue? z,
+  }) {
+    final $result = create();
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (z != null) {
+      $result.z = z;
+    }
+    return $result;
+  }
   Vec3Value._() : super();
   factory Vec3Value.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Vec3Value.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Vec3Value', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'x', subBuilder: $58.DoubleValue.create)
-    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'y', subBuilder: $58.DoubleValue.create)
-    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'z', subBuilder: $58.DoubleValue.create)
+    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'x', subBuilder: $59.DoubleValue.create)
+    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'y', subBuilder: $59.DoubleValue.create)
+    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'z', subBuilder: $59.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1961,37 +2537,37 @@ class Vec3Value extends $pb.GeneratedMessage {
   static Vec3Value? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $58.DoubleValue get x => $_getN(0);
+  $59.DoubleValue get x => $_getN(0);
   @$pb.TagNumber(1)
-  set x($58.DoubleValue v) { setField(1, v); }
+  set x($59.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasX() => $_has(0);
   @$pb.TagNumber(1)
   void clearX() => clearField(1);
   @$pb.TagNumber(1)
-  $58.DoubleValue ensureX() => $_ensure(0);
+  $59.DoubleValue ensureX() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $58.DoubleValue get y => $_getN(1);
+  $59.DoubleValue get y => $_getN(1);
   @$pb.TagNumber(2)
-  set y($58.DoubleValue v) { setField(2, v); }
+  set y($59.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasY() => $_has(1);
   @$pb.TagNumber(2)
   void clearY() => clearField(2);
   @$pb.TagNumber(2)
-  $58.DoubleValue ensureY() => $_ensure(1);
+  $59.DoubleValue ensureY() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $58.DoubleValue get z => $_getN(2);
+  $59.DoubleValue get z => $_getN(2);
   @$pb.TagNumber(3)
-  set z($58.DoubleValue v) { setField(3, v); }
+  set z($59.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasZ() => $_has(2);
   @$pb.TagNumber(3)
   void clearZ() => clearField(3);
   @$pb.TagNumber(3)
-  $58.DoubleValue ensureZ() => $_ensure(2);
+  $59.DoubleValue ensureZ() => $_ensure(2);
 }
 
 

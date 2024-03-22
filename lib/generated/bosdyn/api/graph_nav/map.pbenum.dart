@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Indicator of whether or not the waypoint and edge annotations are complete and filled out.
 class AnnotationState extends $pb.ProtobufEnum {
   static const AnnotationState ANNOTATION_STATE_UNKNOWN = AnnotationState._(0, _omitEnumNames ? '' : 'ANNOTATION_STATE_UNKNOWN');
   static const AnnotationState ANNOTATION_STATE_SET = AnnotationState._(1, _omitEnumNames ? '' : 'ANNOTATION_STATE_SET');
@@ -95,6 +96,7 @@ class Edge_Annotations_DirectionConstraint extends $pb.ProtobufEnum {
   const Edge_Annotations_DirectionConstraint._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Path following mode
 class Edge_Annotations_PathFollowingMode extends $pb.ProtobufEnum {
   static const Edge_Annotations_PathFollowingMode PATH_MODE_UNKNOWN = Edge_Annotations_PathFollowingMode._(0, _omitEnumNames ? '' : 'PATH_MODE_UNKNOWN');
   static const Edge_Annotations_PathFollowingMode PATH_MODE_DEFAULT = Edge_Annotations_PathFollowingMode._(1, _omitEnumNames ? '' : 'PATH_MODE_DEFAULT');
@@ -112,6 +114,8 @@ class Edge_Annotations_PathFollowingMode extends $pb.ProtobufEnum {
   const Edge_Annotations_PathFollowingMode._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Ground clutter avoidance mode.
+/// This enables detection and avoidance of low obstacles.
 class Edge_Annotations_GroundClutterAvoidanceMode extends $pb.ProtobufEnum {
   static const Edge_Annotations_GroundClutterAvoidanceMode GROUND_CLUTTER_UNKNOWN = Edge_Annotations_GroundClutterAvoidanceMode._(0, _omitEnumNames ? '' : 'GROUND_CLUTTER_UNKNOWN');
   static const Edge_Annotations_GroundClutterAvoidanceMode GROUND_CLUTTER_OFF = Edge_Annotations_GroundClutterAvoidanceMode._(1, _omitEnumNames ? '' : 'GROUND_CLUTTER_OFF');

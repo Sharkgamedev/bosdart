@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,21 +13,34 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/wrappers.pb.dart' as $58;
-import '../header.pb.dart' as $67;
+import '../../../google/protobuf/wrappers.pb.dart' as $59;
+import '../header.pb.dart' as $68;
 import 'ptz.pbenum.dart';
 
 export 'ptz.pbenum.dart';
 
+/// Limits for a single axis.
 class PtzDescription_Limits extends $pb.GeneratedMessage {
-  factory PtzDescription_Limits() => create();
+  factory PtzDescription_Limits({
+    $59.FloatValue? min,
+    $59.FloatValue? max,
+  }) {
+    final $result = create();
+    if (min != null) {
+      $result.min = min;
+    }
+    if (max != null) {
+      $result.max = max;
+    }
+    return $result;
+  }
   PtzDescription_Limits._() : super();
   factory PtzDescription_Limits.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PtzDescription_Limits.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PtzDescription.Limits', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$58.FloatValue>(1, _omitFieldNames ? '' : 'min', subBuilder: $58.FloatValue.create)
-    ..aOM<$58.FloatValue>(2, _omitFieldNames ? '' : 'max', subBuilder: $58.FloatValue.create)
+    ..aOM<$59.FloatValue>(1, _omitFieldNames ? '' : 'min', subBuilder: $59.FloatValue.create)
+    ..aOM<$59.FloatValue>(2, _omitFieldNames ? '' : 'max', subBuilder: $59.FloatValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -53,30 +66,52 @@ class PtzDescription_Limits extends $pb.GeneratedMessage {
   static PtzDescription_Limits? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $58.FloatValue get min => $_getN(0);
+  $59.FloatValue get min => $_getN(0);
   @$pb.TagNumber(1)
-  set min($58.FloatValue v) { setField(1, v); }
+  set min($59.FloatValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMin() => $_has(0);
   @$pb.TagNumber(1)
   void clearMin() => clearField(1);
   @$pb.TagNumber(1)
-  $58.FloatValue ensureMin() => $_ensure(0);
+  $59.FloatValue ensureMin() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $58.FloatValue get max => $_getN(1);
+  $59.FloatValue get max => $_getN(1);
   @$pb.TagNumber(2)
-  set max($58.FloatValue v) { setField(2, v); }
+  set max($59.FloatValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasMax() => $_has(1);
   @$pb.TagNumber(2)
   void clearMax() => clearField(2);
   @$pb.TagNumber(2)
-  $58.FloatValue ensureMax() => $_ensure(1);
+  $59.FloatValue ensureMax() => $_ensure(1);
 }
 
+/// PtzDescription provides information about a given PTZ. The name is usually all that's required to
+/// describe a PTZ, but ListPtzResponse will include more information.
 class PtzDescription extends $pb.GeneratedMessage {
-  factory PtzDescription() => create();
+  factory PtzDescription({
+    $core.String? name,
+    PtzDescription_Limits? panLimit,
+    PtzDescription_Limits? tiltLimit,
+    PtzDescription_Limits? zoomLimit,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (panLimit != null) {
+      $result.panLimit = panLimit;
+    }
+    if (tiltLimit != null) {
+      $result.tiltLimit = tiltLimit;
+    }
+    if (zoomLimit != null) {
+      $result.zoomLimit = zoomLimit;
+    }
+    return $result;
+  }
   PtzDescription._() : super();
   factory PtzDescription.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PtzDescription.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -110,6 +145,7 @@ class PtzDescription extends $pb.GeneratedMessage {
   static PtzDescription getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PtzDescription>(create);
   static PtzDescription? _defaultInstance;
 
+  /// Identifier of a particular controllable PTZ mechanism (real or virtual).
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -119,6 +155,7 @@ class PtzDescription extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// If a limit is not set, all positions are valid
   @$pb.TagNumber(2)
   PtzDescription_Limits get panLimit => $_getN(1);
   @$pb.TagNumber(2)
@@ -153,17 +190,38 @@ class PtzDescription extends $pb.GeneratedMessage {
   PtzDescription_Limits ensureZoomLimit() => $_ensure(3);
 }
 
+/// Doubles as a description of current state, or a command for a new position.
 class PtzPosition extends $pb.GeneratedMessage {
-  factory PtzPosition() => create();
+  factory PtzPosition({
+    PtzDescription? ptz,
+    $59.FloatValue? pan,
+    $59.FloatValue? tilt,
+    $59.FloatValue? zoom,
+  }) {
+    final $result = create();
+    if (ptz != null) {
+      $result.ptz = ptz;
+    }
+    if (pan != null) {
+      $result.pan = pan;
+    }
+    if (tilt != null) {
+      $result.tilt = tilt;
+    }
+    if (zoom != null) {
+      $result.zoom = zoom;
+    }
+    return $result;
+  }
   PtzPosition._() : super();
   factory PtzPosition.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PtzPosition.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PtzPosition', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
     ..aOM<PtzDescription>(2, _omitFieldNames ? '' : 'ptz', subBuilder: PtzDescription.create)
-    ..aOM<$58.FloatValue>(3, _omitFieldNames ? '' : 'pan', subBuilder: $58.FloatValue.create)
-    ..aOM<$58.FloatValue>(4, _omitFieldNames ? '' : 'tilt', subBuilder: $58.FloatValue.create)
-    ..aOM<$58.FloatValue>(5, _omitFieldNames ? '' : 'zoom', subBuilder: $58.FloatValue.create)
+    ..aOM<$59.FloatValue>(3, _omitFieldNames ? '' : 'pan', subBuilder: $59.FloatValue.create)
+    ..aOM<$59.FloatValue>(4, _omitFieldNames ? '' : 'tilt', subBuilder: $59.FloatValue.create)
+    ..aOM<$59.FloatValue>(5, _omitFieldNames ? '' : 'zoom', subBuilder: $59.FloatValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -188,6 +246,9 @@ class PtzPosition extends $pb.GeneratedMessage {
   static PtzPosition getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PtzPosition>(create);
   static PtzPosition? _defaultInstance;
 
+  /// The "mech" ptz can pan [0, 360] degrees,
+  /// tilt approximately [-30, 100] degrees where 0 is the horizon, IR and PTZ models differ
+  /// and zoom between 1x and 30x.
   @$pb.TagNumber(2)
   PtzDescription get ptz => $_getN(0);
   @$pb.TagNumber(2)
@@ -200,50 +261,71 @@ class PtzPosition extends $pb.GeneratedMessage {
   PtzDescription ensurePtz() => $_ensure(0);
 
   @$pb.TagNumber(3)
-  $58.FloatValue get pan => $_getN(1);
+  $59.FloatValue get pan => $_getN(1);
   @$pb.TagNumber(3)
-  set pan($58.FloatValue v) { setField(3, v); }
+  set pan($59.FloatValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasPan() => $_has(1);
   @$pb.TagNumber(3)
   void clearPan() => clearField(3);
   @$pb.TagNumber(3)
-  $58.FloatValue ensurePan() => $_ensure(1);
+  $59.FloatValue ensurePan() => $_ensure(1);
 
   @$pb.TagNumber(4)
-  $58.FloatValue get tilt => $_getN(2);
+  $59.FloatValue get tilt => $_getN(2);
   @$pb.TagNumber(4)
-  set tilt($58.FloatValue v) { setField(4, v); }
+  set tilt($59.FloatValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTilt() => $_has(2);
   @$pb.TagNumber(4)
   void clearTilt() => clearField(4);
   @$pb.TagNumber(4)
-  $58.FloatValue ensureTilt() => $_ensure(2);
+  $59.FloatValue ensureTilt() => $_ensure(2);
 
   @$pb.TagNumber(5)
-  $58.FloatValue get zoom => $_getN(3);
+  $59.FloatValue get zoom => $_getN(3);
   @$pb.TagNumber(5)
-  set zoom($58.FloatValue v) { setField(5, v); }
+  set zoom($59.FloatValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasZoom() => $_has(3);
   @$pb.TagNumber(5)
   void clearZoom() => clearField(5);
   @$pb.TagNumber(5)
-  $58.FloatValue ensureZoom() => $_ensure(3);
+  $59.FloatValue ensureZoom() => $_ensure(3);
 }
 
+/// Doubles as a description of current state, or a command for a new velocity.
 class PtzVelocity extends $pb.GeneratedMessage {
-  factory PtzVelocity() => create();
+  factory PtzVelocity({
+    PtzDescription? ptz,
+    $59.FloatValue? pan,
+    $59.FloatValue? tilt,
+    $59.FloatValue? zoom,
+  }) {
+    final $result = create();
+    if (ptz != null) {
+      $result.ptz = ptz;
+    }
+    if (pan != null) {
+      $result.pan = pan;
+    }
+    if (tilt != null) {
+      $result.tilt = tilt;
+    }
+    if (zoom != null) {
+      $result.zoom = zoom;
+    }
+    return $result;
+  }
   PtzVelocity._() : super();
   factory PtzVelocity.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PtzVelocity.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PtzVelocity', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
     ..aOM<PtzDescription>(2, _omitFieldNames ? '' : 'ptz', subBuilder: PtzDescription.create)
-    ..aOM<$58.FloatValue>(3, _omitFieldNames ? '' : 'pan', subBuilder: $58.FloatValue.create)
-    ..aOM<$58.FloatValue>(4, _omitFieldNames ? '' : 'tilt', subBuilder: $58.FloatValue.create)
-    ..aOM<$58.FloatValue>(5, _omitFieldNames ? '' : 'zoom', subBuilder: $58.FloatValue.create)
+    ..aOM<$59.FloatValue>(3, _omitFieldNames ? '' : 'pan', subBuilder: $59.FloatValue.create)
+    ..aOM<$59.FloatValue>(4, _omitFieldNames ? '' : 'tilt', subBuilder: $59.FloatValue.create)
+    ..aOM<$59.FloatValue>(5, _omitFieldNames ? '' : 'zoom', subBuilder: $59.FloatValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -268,6 +350,7 @@ class PtzVelocity extends $pb.GeneratedMessage {
   static PtzVelocity getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PtzVelocity>(create);
   static PtzVelocity? _defaultInstance;
 
+  /// The "mech" ptz cannot be used with Velocity.
   @$pb.TagNumber(2)
   PtzDescription get ptz => $_getN(0);
   @$pb.TagNumber(2)
@@ -280,47 +363,60 @@ class PtzVelocity extends $pb.GeneratedMessage {
   PtzDescription ensurePtz() => $_ensure(0);
 
   @$pb.TagNumber(3)
-  $58.FloatValue get pan => $_getN(1);
+  $59.FloatValue get pan => $_getN(1);
   @$pb.TagNumber(3)
-  set pan($58.FloatValue v) { setField(3, v); }
+  set pan($59.FloatValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasPan() => $_has(1);
   @$pb.TagNumber(3)
   void clearPan() => clearField(3);
   @$pb.TagNumber(3)
-  $58.FloatValue ensurePan() => $_ensure(1);
+  $59.FloatValue ensurePan() => $_ensure(1);
 
   @$pb.TagNumber(4)
-  $58.FloatValue get tilt => $_getN(2);
+  $59.FloatValue get tilt => $_getN(2);
   @$pb.TagNumber(4)
-  set tilt($58.FloatValue v) { setField(4, v); }
+  set tilt($59.FloatValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTilt() => $_has(2);
   @$pb.TagNumber(4)
   void clearTilt() => clearField(4);
   @$pb.TagNumber(4)
-  $58.FloatValue ensureTilt() => $_ensure(2);
+  $59.FloatValue ensureTilt() => $_ensure(2);
 
   @$pb.TagNumber(5)
-  $58.FloatValue get zoom => $_getN(3);
+  $59.FloatValue get zoom => $_getN(3);
   @$pb.TagNumber(5)
-  set zoom($58.FloatValue v) { setField(5, v); }
+  set zoom($59.FloatValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasZoom() => $_has(3);
   @$pb.TagNumber(5)
   void clearZoom() => clearField(5);
   @$pb.TagNumber(5)
-  $58.FloatValue ensureZoom() => $_ensure(3);
+  $59.FloatValue ensureZoom() => $_ensure(3);
 }
 
+/// Request the current position of a ptz.
 class GetPtzPositionRequest extends $pb.GeneratedMessage {
-  factory GetPtzPositionRequest() => create();
+  factory GetPtzPositionRequest({
+    $68.RequestHeader? header,
+    PtzDescription? ptz,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (ptz != null) {
+      $result.ptz = ptz;
+    }
+    return $result;
+  }
   GetPtzPositionRequest._() : super();
   factory GetPtzPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPtzPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPtzPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<PtzDescription>(2, _omitFieldNames ? '' : 'ptz', subBuilder: PtzDescription.create)
     ..hasRequiredFields = false
   ;
@@ -346,17 +442,19 @@ class GetPtzPositionRequest extends $pb.GeneratedMessage {
   static GetPtzPositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPtzPositionRequest>(create);
   static GetPtzPositionRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Only the name is used.
   @$pb.TagNumber(2)
   PtzDescription get ptz => $_getN(1);
   @$pb.TagNumber(2)
@@ -369,14 +467,27 @@ class GetPtzPositionRequest extends $pb.GeneratedMessage {
   PtzDescription ensurePtz() => $_ensure(1);
 }
 
+/// Provides the current measured position.
 class GetPtzPositionResponse extends $pb.GeneratedMessage {
-  factory GetPtzPositionResponse() => create();
+  factory GetPtzPositionResponse({
+    $68.ResponseHeader? header,
+    PtzPosition? position,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (position != null) {
+      $result.position = position;
+    }
+    return $result;
+  }
   GetPtzPositionResponse._() : super();
   factory GetPtzPositionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPtzPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPtzPositionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<PtzPosition>(2, _omitFieldNames ? '' : 'position', subBuilder: PtzPosition.create)
     ..hasRequiredFields = false
   ;
@@ -402,17 +513,19 @@ class GetPtzPositionResponse extends $pb.GeneratedMessage {
   static GetPtzPositionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPtzPositionResponse>(create);
   static GetPtzPositionResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Current position of the mechanism.
   @$pb.TagNumber(2)
   PtzPosition get position => $_getN(1);
   @$pb.TagNumber(2)
@@ -425,14 +538,27 @@ class GetPtzPositionResponse extends $pb.GeneratedMessage {
   PtzPosition ensurePosition() => $_ensure(1);
 }
 
+/// Request the velocity of a ptz
 class GetPtzVelocityRequest extends $pb.GeneratedMessage {
-  factory GetPtzVelocityRequest() => create();
+  factory GetPtzVelocityRequest({
+    $68.RequestHeader? header,
+    PtzDescription? ptz,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (ptz != null) {
+      $result.ptz = ptz;
+    }
+    return $result;
+  }
   GetPtzVelocityRequest._() : super();
   factory GetPtzVelocityRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPtzVelocityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPtzVelocityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<PtzDescription>(2, _omitFieldNames ? '' : 'ptz', subBuilder: PtzDescription.create)
     ..hasRequiredFields = false
   ;
@@ -458,17 +584,19 @@ class GetPtzVelocityRequest extends $pb.GeneratedMessage {
   static GetPtzVelocityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPtzVelocityRequest>(create);
   static GetPtzVelocityRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Only the name is used.
   @$pb.TagNumber(2)
   PtzDescription get ptz => $_getN(1);
   @$pb.TagNumber(2)
@@ -481,14 +609,27 @@ class GetPtzVelocityRequest extends $pb.GeneratedMessage {
   PtzDescription ensurePtz() => $_ensure(1);
 }
 
+/// Provides the current measured velocity.
 class GetPtzVelocityResponse extends $pb.GeneratedMessage {
-  factory GetPtzVelocityResponse() => create();
+  factory GetPtzVelocityResponse({
+    $68.ResponseHeader? header,
+    PtzVelocity? velocity,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (velocity != null) {
+      $result.velocity = velocity;
+    }
+    return $result;
+  }
   GetPtzVelocityResponse._() : super();
   factory GetPtzVelocityResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPtzVelocityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPtzVelocityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<PtzVelocity>(2, _omitFieldNames ? '' : 'velocity', subBuilder: PtzVelocity.create)
     ..hasRequiredFields = false
   ;
@@ -514,17 +655,19 @@ class GetPtzVelocityResponse extends $pb.GeneratedMessage {
   static GetPtzVelocityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPtzVelocityResponse>(create);
   static GetPtzVelocityResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Current velocity of the mechanism.
   @$pb.TagNumber(2)
   PtzVelocity get velocity => $_getN(1);
   @$pb.TagNumber(2)
@@ -537,14 +680,23 @@ class GetPtzVelocityResponse extends $pb.GeneratedMessage {
   PtzVelocity ensureVelocity() => $_ensure(1);
 }
 
+/// Request all available ptzs on the SpotCam.
 class ListPtzRequest extends $pb.GeneratedMessage {
-  factory ListPtzRequest() => create();
+  factory ListPtzRequest({
+    $68.RequestHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   ListPtzRequest._() : super();
   factory ListPtzRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListPtzRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPtzRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -569,26 +721,40 @@ class ListPtzRequest extends $pb.GeneratedMessage {
   static ListPtzRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPtzRequest>(create);
   static ListPtzRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 }
 
+/// Provide all available ptz on the SpotCam.
 class ListPtzResponse extends $pb.GeneratedMessage {
-  factory ListPtzResponse() => create();
+  factory ListPtzResponse({
+    $68.ResponseHeader? header,
+    $core.Iterable<PtzDescription>? ptzs,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (ptzs != null) {
+      $result.ptzs.addAll(ptzs);
+    }
+    return $result;
+  }
   ListPtzResponse._() : super();
   factory ListPtzResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListPtzResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPtzResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..pc<PtzDescription>(2, _omitFieldNames ? '' : 'ptzs', $pb.PbFieldType.PM, subBuilder: PtzDescription.create)
     ..hasRequiredFields = false
   ;
@@ -614,29 +780,44 @@ class ListPtzResponse extends $pb.GeneratedMessage {
   static ListPtzResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPtzResponse>(create);
   static ListPtzResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// List of ptzs, real and virtual.
   @$pb.TagNumber(2)
   $core.List<PtzDescription> get ptzs => $_getList(1);
 }
 
+/// Command the ptz to move to a position.
 class SetPtzPositionRequest extends $pb.GeneratedMessage {
-  factory SetPtzPositionRequest() => create();
+  factory SetPtzPositionRequest({
+    $68.RequestHeader? header,
+    PtzPosition? position,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (position != null) {
+      $result.position = position;
+    }
+    return $result;
+  }
   SetPtzPositionRequest._() : super();
   factory SetPtzPositionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPtzPositionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPtzPositionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<PtzPosition>(2, _omitFieldNames ? '' : 'position', subBuilder: PtzPosition.create)
     ..hasRequiredFields = false
   ;
@@ -662,17 +843,19 @@ class SetPtzPositionRequest extends $pb.GeneratedMessage {
   static SetPtzPositionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPtzPositionRequest>(create);
   static SetPtzPositionRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Desired position to achieve.
   @$pb.TagNumber(2)
   PtzPosition get position => $_getN(1);
   @$pb.TagNumber(2)
@@ -685,14 +868,27 @@ class SetPtzPositionRequest extends $pb.GeneratedMessage {
   PtzPosition ensurePosition() => $_ensure(1);
 }
 
+/// Result of a SetPtzPositionRequest.
 class SetPtzPositionResponse extends $pb.GeneratedMessage {
-  factory SetPtzPositionResponse() => create();
+  factory SetPtzPositionResponse({
+    $68.ResponseHeader? header,
+    PtzPosition? position,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (position != null) {
+      $result.position = position;
+    }
+    return $result;
+  }
   SetPtzPositionResponse._() : super();
   factory SetPtzPositionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPtzPositionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPtzPositionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<PtzPosition>(2, _omitFieldNames ? '' : 'position', subBuilder: PtzPosition.create)
     ..hasRequiredFields = false
   ;
@@ -718,17 +914,19 @@ class SetPtzPositionResponse extends $pb.GeneratedMessage {
   static SetPtzPositionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPtzPositionResponse>(create);
   static SetPtzPositionResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Applied desired position.
   @$pb.TagNumber(2)
   PtzPosition get position => $_getN(1);
   @$pb.TagNumber(2)
@@ -741,14 +939,27 @@ class SetPtzPositionResponse extends $pb.GeneratedMessage {
   PtzPosition ensurePosition() => $_ensure(1);
 }
 
+/// Command a velocity for a ptz.
 class SetPtzVelocityRequest extends $pb.GeneratedMessage {
-  factory SetPtzVelocityRequest() => create();
+  factory SetPtzVelocityRequest({
+    $68.RequestHeader? header,
+    PtzVelocity? velocity,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (velocity != null) {
+      $result.velocity = velocity;
+    }
+    return $result;
+  }
   SetPtzVelocityRequest._() : super();
   factory SetPtzVelocityRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPtzVelocityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPtzVelocityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<PtzVelocity>(2, _omitFieldNames ? '' : 'velocity', subBuilder: PtzVelocity.create)
     ..hasRequiredFields = false
   ;
@@ -774,17 +985,19 @@ class SetPtzVelocityRequest extends $pb.GeneratedMessage {
   static SetPtzVelocityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPtzVelocityRequest>(create);
   static SetPtzVelocityRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Desired velocity to achieve.
   @$pb.TagNumber(2)
   PtzVelocity get velocity => $_getN(1);
   @$pb.TagNumber(2)
@@ -797,14 +1010,27 @@ class SetPtzVelocityRequest extends $pb.GeneratedMessage {
   PtzVelocity ensureVelocity() => $_ensure(1);
 }
 
+/// Result of a SetPtzVelocityRequest.
 class SetPtzVelocityResponse extends $pb.GeneratedMessage {
-  factory SetPtzVelocityResponse() => create();
+  factory SetPtzVelocityResponse({
+    $68.ResponseHeader? header,
+    PtzVelocity? velocity,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (velocity != null) {
+      $result.velocity = velocity;
+    }
+    return $result;
+  }
   SetPtzVelocityResponse._() : super();
   factory SetPtzVelocityResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPtzVelocityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPtzVelocityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<PtzVelocity>(2, _omitFieldNames ? '' : 'velocity', subBuilder: PtzVelocity.create)
     ..hasRequiredFields = false
   ;
@@ -830,17 +1056,19 @@ class SetPtzVelocityResponse extends $pb.GeneratedMessage {
   static SetPtzVelocityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetPtzVelocityResponse>(create);
   static SetPtzVelocityResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Applied desired position.
   @$pb.TagNumber(2)
   PtzVelocity get velocity => $_getN(1);
   @$pb.TagNumber(2)
@@ -853,14 +1081,23 @@ class SetPtzVelocityResponse extends $pb.GeneratedMessage {
   PtzVelocity ensureVelocity() => $_ensure(1);
 }
 
+/// Command to reset PTZ autofocus
 class InitializeLensRequest extends $pb.GeneratedMessage {
-  factory InitializeLensRequest() => create();
+  factory InitializeLensRequest({
+    $68.RequestHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   InitializeLensRequest._() : super();
   factory InitializeLensRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory InitializeLensRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InitializeLensRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -885,26 +1122,36 @@ class InitializeLensRequest extends $pb.GeneratedMessage {
   static InitializeLensRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InitializeLensRequest>(create);
   static InitializeLensRequest? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 }
 
+/// Result of a InitializeLensRequest.
 class InitializeLensResponse extends $pb.GeneratedMessage {
-  factory InitializeLensResponse() => create();
+  factory InitializeLensResponse({
+    $68.ResponseHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   InitializeLensResponse._() : super();
   factory InitializeLensResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory InitializeLensResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InitializeLensResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -929,28 +1176,46 @@ class InitializeLensResponse extends $pb.GeneratedMessage {
   static InitializeLensResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InitializeLensResponse>(create);
   static InitializeLensResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
+/// focus commands only affect the mech EO camera
 class PtzFocusState extends $pb.GeneratedMessage {
-  factory PtzFocusState() => create();
+  factory PtzFocusState({
+    PtzFocusState_PtzFocusMode? mode,
+    $59.Int32Value? focusPosition,
+    $59.FloatValue? approxDistance,
+  }) {
+    final $result = create();
+    if (mode != null) {
+      $result.mode = mode;
+    }
+    if (focusPosition != null) {
+      $result.focusPosition = focusPosition;
+    }
+    if (approxDistance != null) {
+      $result.approxDistance = approxDistance;
+    }
+    return $result;
+  }
   PtzFocusState._() : super();
   factory PtzFocusState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PtzFocusState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PtzFocusState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
     ..e<PtzFocusState_PtzFocusMode>(1, _omitFieldNames ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: PtzFocusState_PtzFocusMode.PTZ_FOCUS_UNDEFINED, valueOf: PtzFocusState_PtzFocusMode.valueOf, enumValues: PtzFocusState_PtzFocusMode.values)
-    ..aOM<$58.Int32Value>(2, _omitFieldNames ? '' : 'focusPosition', subBuilder: $58.Int32Value.create)
-    ..aOM<$58.FloatValue>(3, _omitFieldNames ? '' : 'approxDistance', subBuilder: $58.FloatValue.create)
+    ..aOM<$59.Int32Value>(2, _omitFieldNames ? '' : 'focusPosition', subBuilder: $59.Int32Value.create)
+    ..aOM<$59.FloatValue>(3, _omitFieldNames ? '' : 'approxDistance', subBuilder: $59.FloatValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -984,37 +1249,54 @@ class PtzFocusState extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearMode() => clearField(1);
 
+  /// focus_position only settable in PTZ_FOCUS_MANUAL mode
+  /// this represents a precise lens position for the camera for repeatable operations
   @$pb.TagNumber(2)
-  $58.Int32Value get focusPosition => $_getN(1);
+  $59.Int32Value get focusPosition => $_getN(1);
   @$pb.TagNumber(2)
-  set focusPosition($58.Int32Value v) { setField(2, v); }
+  set focusPosition($59.Int32Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFocusPosition() => $_has(1);
   @$pb.TagNumber(2)
   void clearFocusPosition() => clearField(2);
   @$pb.TagNumber(2)
-  $58.Int32Value ensureFocusPosition() => $_ensure(1);
+  $59.Int32Value ensureFocusPosition() => $_ensure(1);
 
+  /// approx_distance only settable in PTZ_FOCUS_MANUAL mode
+  /// approx_distance is most accurate between 1.2m and 20m
+  /// approx_distance is ignored on a Set operation if focus_position is included
   @$pb.TagNumber(3)
-  $58.FloatValue get approxDistance => $_getN(2);
+  $59.FloatValue get approxDistance => $_getN(2);
   @$pb.TagNumber(3)
-  set approxDistance($58.FloatValue v) { setField(3, v); }
+  set approxDistance($59.FloatValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasApproxDistance() => $_has(2);
   @$pb.TagNumber(3)
   void clearApproxDistance() => clearField(3);
   @$pb.TagNumber(3)
-  $58.FloatValue ensureApproxDistance() => $_ensure(2);
+  $59.FloatValue ensureApproxDistance() => $_ensure(2);
 }
 
 class SetPtzFocusStateRequest extends $pb.GeneratedMessage {
-  factory SetPtzFocusStateRequest() => create();
+  factory SetPtzFocusStateRequest({
+    $68.RequestHeader? header,
+    PtzFocusState? focusState,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (focusState != null) {
+      $result.focusState = focusState;
+    }
+    return $result;
+  }
   SetPtzFocusStateRequest._() : super();
   factory SetPtzFocusStateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPtzFocusStateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPtzFocusStateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<PtzFocusState>(2, _omitFieldNames ? '' : 'focusState', subBuilder: PtzFocusState.create)
     ..hasRequiredFields = false
   ;
@@ -1041,15 +1323,15 @@ class SetPtzFocusStateRequest extends $pb.GeneratedMessage {
   static SetPtzFocusStateRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   PtzFocusState get focusState => $_getN(1);
@@ -1064,13 +1346,21 @@ class SetPtzFocusStateRequest extends $pb.GeneratedMessage {
 }
 
 class SetPtzFocusStateResponse extends $pb.GeneratedMessage {
-  factory SetPtzFocusStateResponse() => create();
+  factory SetPtzFocusStateResponse({
+    $68.ResponseHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   SetPtzFocusStateResponse._() : super();
   factory SetPtzFocusStateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetPtzFocusStateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPtzFocusStateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1096,25 +1386,33 @@ class SetPtzFocusStateResponse extends $pb.GeneratedMessage {
   static SetPtzFocusStateResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 class GetPtzFocusStateRequest extends $pb.GeneratedMessage {
-  factory GetPtzFocusStateRequest() => create();
+  factory GetPtzFocusStateRequest({
+    $68.RequestHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   GetPtzFocusStateRequest._() : super();
   factory GetPtzFocusStateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPtzFocusStateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPtzFocusStateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1140,25 +1438,37 @@ class GetPtzFocusStateRequest extends $pb.GeneratedMessage {
   static GetPtzFocusStateRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class GetPtzFocusStateResponse extends $pb.GeneratedMessage {
-  factory GetPtzFocusStateResponse() => create();
+  factory GetPtzFocusStateResponse({
+    $68.ResponseHeader? header,
+    PtzFocusState? focusState,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (focusState != null) {
+      $result.focusState = focusState;
+    }
+    return $result;
+  }
   GetPtzFocusStateResponse._() : super();
   factory GetPtzFocusStateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPtzFocusStateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPtzFocusStateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<PtzFocusState>(2, _omitFieldNames ? '' : 'focusState', subBuilder: PtzFocusState.create)
     ..hasRequiredFields = false
   ;
@@ -1185,15 +1495,15 @@ class GetPtzFocusStateResponse extends $pb.GeneratedMessage {
   static GetPtzFocusStateResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   PtzFocusState get focusState => $_getN(1);

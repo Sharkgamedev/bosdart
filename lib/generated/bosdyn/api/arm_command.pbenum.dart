@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -51,6 +51,11 @@ class NamedArmPositionsCommand_Feedback_Status extends $pb.ProtobufEnum {
   const NamedArmPositionsCommand_Feedback_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// If an axis is set to position mode (default), read desired from SE3Trajectory trajectory
+/// command.  If mode is set to Force, read desired from WrenchTrajectory wrench_trajectory
+/// command.  This supports hybrid control of the arm where users can specify, for example, Z
+/// to be in force control with X and Y in position control.  The elements are expressed in
+/// the same task_frame as the trajectories.
 class ArmCartesianCommand_Request_AxisMode extends $pb.ProtobufEnum {
   static const ArmCartesianCommand_Request_AxisMode AXIS_MODE_POSITION = ArmCartesianCommand_Request_AxisMode._(0, _omitEnumNames ? '' : 'AXIS_MODE_POSITION');
   static const ArmCartesianCommand_Request_AxisMode AXIS_MODE_FORCE = ArmCartesianCommand_Request_AxisMode._(1, _omitEnumNames ? '' : 'AXIS_MODE_FORCE');

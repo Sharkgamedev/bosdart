@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,18 +13,31 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $66;
-import '../service_customization.pb.dart' as $71;
+import '../../../google/protobuf/any.pb.dart' as $67;
+import '../service_customization.pb.dart' as $72;
 
+/// Data for a AreaCallback to be stored in the map
 class AreaCallbackData extends $pb.GeneratedMessage {
-  factory AreaCallbackData() => create();
+  factory AreaCallbackData({
+    $67.Any? configData,
+    $72.DictParam? customParams,
+  }) {
+    final $result = create();
+    if (configData != null) {
+      $result.configData = configData;
+    }
+    if (customParams != null) {
+      $result.customParams = customParams;
+    }
+    return $result;
+  }
   AreaCallbackData._() : super();
   factory AreaCallbackData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AreaCallbackData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AreaCallbackData', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$66.Any>(1, _omitFieldNames ? '' : 'configData', subBuilder: $66.Any.create)
-    ..aOM<$71.DictParam>(2, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam.create)
+    ..aOM<$67.Any>(1, _omitFieldNames ? '' : 'configData', subBuilder: $67.Any.create)
+    ..aOM<$72.DictParam>(2, _omitFieldNames ? '' : 'customParams', subBuilder: $72.DictParam.create)
     ..hasRequiredFields = false
   ;
 
@@ -49,27 +62,30 @@ class AreaCallbackData extends $pb.GeneratedMessage {
   static AreaCallbackData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AreaCallbackData>(create);
   static AreaCallbackData? _defaultInstance;
 
+  /// Custom config data used by the service to do its job.
   @$pb.TagNumber(1)
-  $66.Any get configData => $_getN(0);
+  $67.Any get configData => $_getN(0);
   @$pb.TagNumber(1)
-  set configData($66.Any v) { setField(1, v); }
+  set configData($67.Any v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasConfigData() => $_has(0);
   @$pb.TagNumber(1)
   void clearConfigData() => clearField(1);
   @$pb.TagNumber(1)
-  $66.Any ensureConfigData() => $_ensure(0);
+  $67.Any ensureConfigData() => $_ensure(0);
 
+  /// Any other custom parameters to the callback. This will be copied into
+  /// custom_params inside the BeginCallback RPC if it exists.
   @$pb.TagNumber(2)
-  $71.DictParam get customParams => $_getN(1);
+  $72.DictParam get customParams => $_getN(1);
   @$pb.TagNumber(2)
-  set customParams($71.DictParam v) { setField(2, v); }
+  set customParams($72.DictParam v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCustomParams() => $_has(1);
   @$pb.TagNumber(2)
   void clearCustomParams() => clearField(2);
   @$pb.TagNumber(2)
-  $71.DictParam ensureCustomParams() => $_ensure(1);
+  $72.DictParam ensureCustomParams() => $_ensure(1);
 }
 
 

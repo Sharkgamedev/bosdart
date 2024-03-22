@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,25 +13,60 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $59;
-import '../header.pb.dart' as $67;
+import '../../../google/protobuf/timestamp.pb.dart' as $60;
+import '../header.pb.dart' as $68;
 import '../lease.pb.dart' as $13;
 import 'docking.pbenum.dart';
 
 export 'docking.pbenum.dart';
 
+/// Message to command the robot to dock. \
+/// Note: If the robot is docked, you can undock the robot by issuing a command with
+/// `prep_pose_behavior=PREP_POSE_UNDOCK`. If undocking, `docking_station_id` is not required.
 class DockingCommandRequest extends $pb.GeneratedMessage {
-  factory DockingCommandRequest() => create();
+  factory DockingCommandRequest({
+    $68.RequestHeader? header,
+    $13.Lease? lease,
+    $core.int? dockingStationId,
+    $core.String? clockIdentifier,
+    $60.Timestamp? endTime,
+    PrepPoseBehavior? prepPoseBehavior,
+    $core.bool? requireFiducial,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (lease != null) {
+      $result.lease = lease;
+    }
+    if (dockingStationId != null) {
+      $result.dockingStationId = dockingStationId;
+    }
+    if (clockIdentifier != null) {
+      $result.clockIdentifier = clockIdentifier;
+    }
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    if (prepPoseBehavior != null) {
+      $result.prepPoseBehavior = prepPoseBehavior;
+    }
+    if (requireFiducial != null) {
+      $result.requireFiducial = requireFiducial;
+    }
+    return $result;
+  }
   DockingCommandRequest._() : super();
   factory DockingCommandRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DockingCommandRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DockingCommandRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.docking'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<$13.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'dockingStationId', $pb.PbFieldType.OU3)
     ..aOS(4, _omitFieldNames ? '' : 'clockIdentifier')
-    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
     ..e<PrepPoseBehavior>(9, _omitFieldNames ? '' : 'prepPoseBehavior', $pb.PbFieldType.OE, defaultOrMaker: PrepPoseBehavior.PREP_POSE_UNKNOWN, valueOf: PrepPoseBehavior.valueOf, enumValues: PrepPoseBehavior.values)
     ..aOB(10, _omitFieldNames ? '' : 'requireFiducial')
     ..hasRequiredFields = false
@@ -58,17 +93,19 @@ class DockingCommandRequest extends $pb.GeneratedMessage {
   static DockingCommandRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DockingCommandRequest>(create);
   static DockingCommandRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// The Lease to show ownership of the robot.
   @$pb.TagNumber(2)
   $13.Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
@@ -80,6 +117,8 @@ class DockingCommandRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $13.Lease ensureLease() => $_ensure(1);
 
+  /// ID of docking station to dock at.
+  /// This is ignored if undocking the robot, the current dock is used.
   @$pb.TagNumber(3)
   $core.int get dockingStationId => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -89,6 +128,7 @@ class DockingCommandRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDockingStationId() => clearField(3);
 
+  /// Identifier provided by the time sync service to verify time sync between robot and client.
   @$pb.TagNumber(4)
   $core.String get clockIdentifier => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -98,17 +138,21 @@ class DockingCommandRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearClockIdentifier() => clearField(4);
 
+  /// The timestamp (in robot time) at which a command will stop executing.
+  /// This can be updated by other RPCs
+  /// This is a required field and used to prevent runaway commands.
   @$pb.TagNumber(5)
-  $59.Timestamp get endTime => $_getN(4);
+  $60.Timestamp get endTime => $_getN(4);
   @$pb.TagNumber(5)
-  set endTime($59.Timestamp v) { setField(5, v); }
+  set endTime($60.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasEndTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearEndTime() => clearField(5);
   @$pb.TagNumber(5)
-  $59.Timestamp ensureEndTime() => $_ensure(4);
+  $60.Timestamp ensureEndTime() => $_ensure(4);
 
+  /// [Optional] Specify the prep pose behavior
   @$pb.TagNumber(9)
   PrepPoseBehavior get prepPoseBehavior => $_getN(5);
   @$pb.TagNumber(9)
@@ -118,6 +162,7 @@ class DockingCommandRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearPrepPoseBehavior() => clearField(9);
 
+  /// Require the detection of the dock's fiducial
   @$pb.TagNumber(10)
   $core.bool get requireFiducial => $_getBF(6);
   @$pb.TagNumber(10)
@@ -128,14 +173,35 @@ class DockingCommandRequest extends $pb.GeneratedMessage {
   void clearRequireFiducial() => clearField(10);
 }
 
+/// Response to a DockingCommandRequest
 class DockingCommandResponse extends $pb.GeneratedMessage {
-  factory DockingCommandResponse() => create();
+  factory DockingCommandResponse({
+    $68.ResponseHeader? header,
+    $13.LeaseUseResult? leaseUseResult,
+    DockingCommandResponse_Status? status,
+    $core.int? dockingCommandId,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (leaseUseResult != null) {
+      $result.leaseUseResult = leaseUseResult;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (dockingCommandId != null) {
+      $result.dockingCommandId = dockingCommandId;
+    }
+    return $result;
+  }
   DockingCommandResponse._() : super();
   factory DockingCommandResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DockingCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DockingCommandResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.docking'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
     ..e<DockingCommandResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: DockingCommandResponse_Status.STATUS_UNKNOWN, valueOf: DockingCommandResponse_Status.valueOf, enumValues: DockingCommandResponse_Status.values)
     ..a<$core.int>(5, _omitFieldNames ? '' : 'dockingCommandId', $pb.PbFieldType.OU3)
@@ -163,17 +229,19 @@ class DockingCommandResponse extends $pb.GeneratedMessage {
   static DockingCommandResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DockingCommandResponse>(create);
   static DockingCommandResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Details about how the lease was used.
   @$pb.TagNumber(2)
   $13.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
@@ -185,6 +253,7 @@ class DockingCommandResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
+  /// Result of issued command.
   @$pb.TagNumber(3)
   DockingCommandResponse_Status get status => $_getN(2);
   @$pb.TagNumber(3)
@@ -194,6 +263,7 @@ class DockingCommandResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearStatus() => clearField(3);
 
+  /// Unique identifier for the command (if accepted, `status=STATUS_OK`).
   @$pb.TagNumber(5)
   $core.int get dockingCommandId => $_getIZ(3);
   @$pb.TagNumber(5)
@@ -205,13 +275,21 @@ class DockingCommandResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateDockingParams extends $pb.GeneratedMessage {
-  factory UpdateDockingParams() => create();
+  factory UpdateDockingParams({
+    $60.Timestamp? endTime,
+  }) {
+    final $result = create();
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    return $result;
+  }
   UpdateDockingParams._() : super();
   factory UpdateDockingParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateDockingParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateDockingParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.docking'), createEmptyInstance: create)
-    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -236,26 +314,44 @@ class UpdateDockingParams extends $pb.GeneratedMessage {
   static UpdateDockingParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateDockingParams>(create);
   static UpdateDockingParams? _defaultInstance;
 
+  /// The new timestamp (in robot time) at which a command will stop executing.
   @$pb.TagNumber(5)
-  $59.Timestamp get endTime => $_getN(0);
+  $60.Timestamp get endTime => $_getN(0);
   @$pb.TagNumber(5)
-  set endTime($59.Timestamp v) { setField(5, v); }
+  set endTime($60.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasEndTime() => $_has(0);
   @$pb.TagNumber(5)
   void clearEndTime() => clearField(5);
   @$pb.TagNumber(5)
-  $59.Timestamp ensureEndTime() => $_ensure(0);
+  $60.Timestamp ensureEndTime() => $_ensure(0);
 }
 
+/// Message to get the status of a previously issued DockingCommand
 class DockingCommandFeedbackRequest extends $pb.GeneratedMessage {
-  factory DockingCommandFeedbackRequest() => create();
+  factory DockingCommandFeedbackRequest({
+    $68.RequestHeader? header,
+    $core.int? dockingCommandId,
+    UpdateDockingParams? updateDockingParams,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (dockingCommandId != null) {
+      $result.dockingCommandId = dockingCommandId;
+    }
+    if (updateDockingParams != null) {
+      $result.updateDockingParams = updateDockingParams;
+    }
+    return $result;
+  }
   DockingCommandFeedbackRequest._() : super();
   factory DockingCommandFeedbackRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DockingCommandFeedbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DockingCommandFeedbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.docking'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'dockingCommandId', $pb.PbFieldType.OU3)
     ..aOM<UpdateDockingParams>(3, _omitFieldNames ? '' : 'updateDockingParams', subBuilder: UpdateDockingParams.create)
     ..hasRequiredFields = false
@@ -282,17 +378,19 @@ class DockingCommandFeedbackRequest extends $pb.GeneratedMessage {
   static DockingCommandFeedbackRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DockingCommandFeedbackRequest>(create);
   static DockingCommandFeedbackRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Unique identifier of the command to get feedback for.
   @$pb.TagNumber(2)
   $core.int get dockingCommandId => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -302,6 +400,7 @@ class DockingCommandFeedbackRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDockingCommandId() => clearField(2);
 
+  /// [optional] Update parameters relating to the specified command ID
   @$pb.TagNumber(3)
   UpdateDockingParams get updateDockingParams => $_getN(2);
   @$pb.TagNumber(3)
@@ -314,14 +413,31 @@ class DockingCommandFeedbackRequest extends $pb.GeneratedMessage {
   UpdateDockingParams ensureUpdateDockingParams() => $_ensure(2);
 }
 
+/// Response to a DockingCommandFeedbackRequest for a particualar docking command ID
 class DockingCommandFeedbackResponse extends $pb.GeneratedMessage {
-  factory DockingCommandFeedbackResponse() => create();
+  factory DockingCommandFeedbackResponse({
+    $68.ResponseHeader? header,
+    $13.LeaseUseResult? leaseUseResult,
+    DockingCommandFeedbackResponse_Status? status,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (leaseUseResult != null) {
+      $result.leaseUseResult = leaseUseResult;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   DockingCommandFeedbackResponse._() : super();
   factory DockingCommandFeedbackResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DockingCommandFeedbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DockingCommandFeedbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.docking'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
     ..e<DockingCommandFeedbackResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: DockingCommandFeedbackResponse_Status.STATUS_UNKNOWN, valueOf: DockingCommandFeedbackResponse_Status.valueOf, enumValues: DockingCommandFeedbackResponse_Status.values)
     ..hasRequiredFields = false
@@ -348,17 +464,19 @@ class DockingCommandFeedbackResponse extends $pb.GeneratedMessage {
   static DockingCommandFeedbackResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DockingCommandFeedbackResponse>(create);
   static DockingCommandFeedbackResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Details about how the lease was used (unset if unknown).
   @$pb.TagNumber(2)
   $13.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
@@ -370,6 +488,7 @@ class DockingCommandFeedbackResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
+  /// Current feedback of specified command ID.
   @$pb.TagNumber(3)
   DockingCommandFeedbackResponse_Status get status => $_getN(2);
   @$pb.TagNumber(3)
@@ -380,8 +499,25 @@ class DockingCommandFeedbackResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(3);
 }
 
+/// The configuration of a range of dock ID's
 class ConfigRange extends $pb.GeneratedMessage {
-  factory ConfigRange() => create();
+  factory ConfigRange({
+    $core.int? idStart,
+    $core.int? idEnd,
+    DockType? type,
+  }) {
+    final $result = create();
+    if (idStart != null) {
+      $result.idStart = idStart;
+    }
+    if (idEnd != null) {
+      $result.idEnd = idEnd;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    return $result;
+  }
   ConfigRange._() : super();
   factory ConfigRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ConfigRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -414,6 +550,7 @@ class ConfigRange extends $pb.GeneratedMessage {
   static ConfigRange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConfigRange>(create);
   static ConfigRange? _defaultInstance;
 
+  /// Starting ID
   @$pb.TagNumber(1)
   $core.int get idStart => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -423,6 +560,7 @@ class ConfigRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearIdStart() => clearField(1);
 
+  /// Ending ID
   @$pb.TagNumber(2)
   $core.int get idEnd => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -432,6 +570,7 @@ class ConfigRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearIdEnd() => clearField(2);
 
+  /// Type of dock for this range
   @$pb.TagNumber(3)
   DockType get type => $_getN(2);
   @$pb.TagNumber(3)
@@ -443,13 +582,21 @@ class ConfigRange extends $pb.GeneratedMessage {
 }
 
 class GetDockingConfigRequest extends $pb.GeneratedMessage {
-  factory GetDockingConfigRequest() => create();
+  factory GetDockingConfigRequest({
+    $68.RequestHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   GetDockingConfigRequest._() : super();
   factory GetDockingConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetDockingConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDockingConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.docking'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -474,26 +621,39 @@ class GetDockingConfigRequest extends $pb.GeneratedMessage {
   static GetDockingConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDockingConfigRequest>(create);
   static GetDockingConfigRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class GetDockingConfigResponse extends $pb.GeneratedMessage {
-  factory GetDockingConfigResponse() => create();
+  factory GetDockingConfigResponse({
+    $68.ResponseHeader? header,
+    $core.Iterable<ConfigRange>? dockConfigs,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (dockConfigs != null) {
+      $result.dockConfigs.addAll(dockConfigs);
+    }
+    return $result;
+  }
   GetDockingConfigResponse._() : super();
   factory GetDockingConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetDockingConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDockingConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.docking'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..pc<ConfigRange>(2, _omitFieldNames ? '' : 'dockConfigs', $pb.PbFieldType.PM, subBuilder: ConfigRange.create)
     ..hasRequiredFields = false
   ;
@@ -519,23 +679,50 @@ class GetDockingConfigResponse extends $pb.GeneratedMessage {
   static GetDockingConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDockingConfigResponse>(create);
   static GetDockingConfigResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// A series of `ConfigRange` specifying details for dock ID numbers.
   @$pb.TagNumber(2)
   $core.List<ConfigRange> get dockConfigs => $_getList(1);
 }
 
+/// Message describing the overall dock state of the robot, including power & comms connections.  \
+/// Not tied to any particular DockingCommand ID.  \
+/// Note: [*] indicates fields which are only valid if the status is DOCK_STATUS_DOCKED or DOCK_STATUS_DOCKING  \
+/// or DOCK_STATUS_UNDOCKING. \
+/// Note: [^] indicates fields which are only valid if the status is DOCK_STATUS_DOCKED.  \
 class DockState extends $pb.GeneratedMessage {
-  factory DockState() => create();
+  factory DockState({
+    DockState_DockedStatus? status,
+    DockType? dockType,
+    $core.int? dockId,
+    DockState_LinkStatus? powerStatus,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    if (dockType != null) {
+      $result.dockType = dockType;
+    }
+    if (dockId != null) {
+      $result.dockId = dockId;
+    }
+    if (powerStatus != null) {
+      $result.powerStatus = powerStatus;
+    }
+    return $result;
+  }
   DockState._() : super();
   factory DockState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DockState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -569,6 +756,7 @@ class DockState extends $pb.GeneratedMessage {
   static DockState getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DockState>(create);
   static DockState? _defaultInstance;
 
+  /// Status of if the robot is on dock
   @$pb.TagNumber(1)
   DockState_DockedStatus get status => $_getN(0);
   @$pb.TagNumber(1)
@@ -578,6 +766,7 @@ class DockState extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearStatus() => clearField(1);
 
+  /// [*] Type of the dock
   @$pb.TagNumber(2)
   DockType get dockType => $_getN(1);
   @$pb.TagNumber(2)
@@ -587,6 +776,7 @@ class DockState extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDockType() => clearField(2);
 
+  /// [*] ID of the dock
   @$pb.TagNumber(3)
   $core.int get dockId => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -596,6 +786,7 @@ class DockState extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDockId() => clearField(3);
 
+  /// [^] Status of power detection from the dock
   @$pb.TagNumber(4)
   DockState_LinkStatus get powerStatus => $_getN(3);
   @$pb.TagNumber(4)
@@ -606,14 +797,23 @@ class DockState extends $pb.GeneratedMessage {
   void clearPowerStatus() => clearField(4);
 }
 
+/// Message to get the overall docking state
 class GetDockingStateRequest extends $pb.GeneratedMessage {
-  factory GetDockingStateRequest() => create();
+  factory GetDockingStateRequest({
+    $68.RequestHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   GetDockingStateRequest._() : super();
   factory GetDockingStateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetDockingStateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDockingStateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.docking'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -638,26 +838,40 @@ class GetDockingStateRequest extends $pb.GeneratedMessage {
   static GetDockingStateRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDockingStateRequest>(create);
   static GetDockingStateRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 }
 
+/// Response of a GetDockingStateRequest
 class GetDockingStateResponse extends $pb.GeneratedMessage {
-  factory GetDockingStateResponse() => create();
+  factory GetDockingStateResponse({
+    $68.ResponseHeader? header,
+    DockState? dockState,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (dockState != null) {
+      $result.dockState = dockState;
+    }
+    return $result;
+  }
   GetDockingStateResponse._() : super();
   factory GetDockingStateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetDockingStateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDockingStateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.docking'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<DockState>(2, _omitFieldNames ? '' : 'dockState', subBuilder: DockState.create)
     ..hasRequiredFields = false
   ;
@@ -683,16 +897,17 @@ class GetDockingStateResponse extends $pb.GeneratedMessage {
   static GetDockingStateResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDockingStateResponse>(create);
   static GetDockingStateResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   DockState get dockState => $_getN(1);

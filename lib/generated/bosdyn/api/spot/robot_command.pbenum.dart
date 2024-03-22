@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// The locomotion hint specifying the gait of the robot.
 class LocomotionHint extends $pb.ProtobufEnum {
   static const LocomotionHint HINT_UNKNOWN = LocomotionHint._(0, _omitEnumNames ? '' : 'HINT_UNKNOWN');
   static const LocomotionHint HINT_AUTO = LocomotionHint._(1, _omitEnumNames ? '' : 'HINT_AUTO');
@@ -47,6 +48,7 @@ class LocomotionHint extends $pb.ProtobufEnum {
   const LocomotionHint._($core.int v, $core.String n) : super(v, n);
 }
 
+/// The type of swing height for a step.
 class SwingHeight extends $pb.ProtobufEnum {
   static const SwingHeight SWING_HEIGHT_UNKNOWN = SwingHeight._(0, _omitEnumNames ? '' : 'SWING_HEIGHT_UNKNOWN');
   static const SwingHeight SWING_HEIGHT_LOW = SwingHeight._(1, _omitEnumNames ? '' : 'SWING_HEIGHT_LOW');
@@ -66,6 +68,8 @@ class SwingHeight extends $pb.ProtobufEnum {
   const SwingHeight._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Stairs are only supported in trot gaits. Enabling stairs mode will override some user
+/// defaults in order to optimize stair behavior.
 class MobilityParams_StairsMode extends $pb.ProtobufEnum {
   static const MobilityParams_StairsMode STAIRS_MODE_UNKNOWN = MobilityParams_StairsMode._(0, _omitEnumNames ? '' : 'STAIRS_MODE_UNKNOWN');
   static const MobilityParams_StairsMode STAIRS_MODE_OFF = MobilityParams_StairsMode._(1, _omitEnumNames ? '' : 'STAIRS_MODE_OFF');
@@ -85,6 +89,12 @@ class MobilityParams_StairsMode extends $pb.ProtobufEnum {
   const MobilityParams_StairsMode._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Setting for how the robot interprets base offset pitch & roll components.
+/// In the default case (ROTATION_SETTING_OFFSET) the robot will naturally align the body to the
+/// pitch of the current terrain. In some circumstances, the user may wish to override this value
+/// and try to maintain alignment with respect to gravity. Be careful with this setting as it may
+/// likely degrade robot performance in complex terrain, e.g. stairs, platforms, or slopes of
+/// sufficiently high grade.
 class BodyControlParams_RotationSetting extends $pb.ProtobufEnum {
   static const BodyControlParams_RotationSetting ROTATION_SETTING_UNKNOWN = BodyControlParams_RotationSetting._(0, _omitEnumNames ? '' : 'ROTATION_SETTING_UNKNOWN');
   static const BodyControlParams_RotationSetting ROTATION_SETTING_OFFSET = BodyControlParams_RotationSetting._(1, _omitEnumNames ? '' : 'ROTATION_SETTING_OFFSET');
@@ -102,6 +112,10 @@ class BodyControlParams_RotationSetting extends $pb.ProtobufEnum {
   const BodyControlParams_RotationSetting._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Options for Grated Surfaces Mode. When Grated Surfaces Mode is on, the robot assumes the
+/// ground below it is made of grated metal or other repeated pattern. When on, the robot will
+/// make assumptions about the environment structure and more aggressively filter noise in
+/// perception data.
 class TerrainParams_GratedSurfacesMode extends $pb.ProtobufEnum {
   static const TerrainParams_GratedSurfacesMode GRATED_SURFACES_MODE_UNKNOWN = TerrainParams_GratedSurfacesMode._(0, _omitEnumNames ? '' : 'GRATED_SURFACES_MODE_UNKNOWN');
   static const TerrainParams_GratedSurfacesMode GRATED_SURFACES_MODE_OFF = TerrainParams_GratedSurfacesMode._(1, _omitEnumNames ? '' : 'GRATED_SURFACES_MODE_OFF');
@@ -121,6 +135,8 @@ class TerrainParams_GratedSurfacesMode extends $pb.ProtobufEnum {
   const TerrainParams_GratedSurfacesMode._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Indicates what external force estimate/override the robot should use.
+/// By default, the external force estimator is disabled on the robot.
 class BodyExternalForceParams_ExternalForceIndicator extends $pb.ProtobufEnum {
   static const BodyExternalForceParams_ExternalForceIndicator EXTERNAL_FORCE_NONE = BodyExternalForceParams_ExternalForceIndicator._(0, _omitEnumNames ? '' : 'EXTERNAL_FORCE_NONE');
   static const BodyExternalForceParams_ExternalForceIndicator EXTERNAL_FORCE_USE_ESTIMATE = BodyExternalForceParams_ExternalForceIndicator._(1, _omitEnumNames ? '' : 'EXTERNAL_FORCE_USE_ESTIMATE');

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,10 +14,10 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/wrappers.pb.dart' as $58;
-import 'image_geometry.pb.dart' as $70;
+import '../../google/protobuf/wrappers.pb.dart' as $59;
+import 'image_geometry.pb.dart' as $71;
 import 'service_customization.pbenum.dart';
-import 'units.pb.dart' as $69;
+import 'units.pb.dart' as $70;
 
 export 'service_customization.pbenum.dart';
 
@@ -34,7 +34,43 @@ enum CustomParam_Spec_Spec {
 }
 
 class CustomParam_Spec extends $pb.GeneratedMessage {
-  factory CustomParam_Spec() => create();
+  factory CustomParam_Spec({
+    DictParam_Spec? dictSpec,
+    ListParam_Spec? listSpec,
+    Int64Param_Spec? intSpec,
+    DoubleParam_Spec? doubleSpec,
+    StringParam_Spec? stringSpec,
+    RegionOfInterestParam_Spec? roiSpec,
+    BoolParam_Spec? boolSpec,
+    OneOfParam_Spec? oneOfSpec,
+  }) {
+    final $result = create();
+    if (dictSpec != null) {
+      $result.dictSpec = dictSpec;
+    }
+    if (listSpec != null) {
+      $result.listSpec = listSpec;
+    }
+    if (intSpec != null) {
+      $result.intSpec = intSpec;
+    }
+    if (doubleSpec != null) {
+      $result.doubleSpec = doubleSpec;
+    }
+    if (stringSpec != null) {
+      $result.stringSpec = stringSpec;
+    }
+    if (roiSpec != null) {
+      $result.roiSpec = roiSpec;
+    }
+    if (boolSpec != null) {
+      $result.boolSpec = boolSpec;
+    }
+    if (oneOfSpec != null) {
+      $result.oneOfSpec = oneOfSpec;
+    }
+    return $result;
+  }
   CustomParam_Spec._() : super();
   factory CustomParam_Spec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CustomParam_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -87,6 +123,12 @@ class CustomParam_Spec extends $pb.GeneratedMessage {
   CustomParam_Spec_Spec whichSpec() => _CustomParam_Spec_SpecByTag[$_whichOneof(0)]!;
   void clearSpec() => clearField($_whichOneof(0));
 
+  /// This parameter is actually a set of sub-parameters.
+  /// Useful for setting up a paramter hierarchy, e.g.
+  ///           param A
+  ///          /       \
+  ///         /         \
+  ///     param A.B   param A.C
   @$pb.TagNumber(1)
   DictParam_Spec get dictSpec => $_getN(0);
   @$pb.TagNumber(1)
@@ -98,6 +140,7 @@ class CustomParam_Spec extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   DictParam_Spec ensureDictSpec() => $_ensure(0);
 
+  /// This parameter is a list of things.
   @$pb.TagNumber(2)
   ListParam_Spec get listSpec => $_getN(1);
   @$pb.TagNumber(2)
@@ -189,7 +232,43 @@ enum CustomParam_Value {
 }
 
 class CustomParam extends $pb.GeneratedMessage {
-  factory CustomParam() => create();
+  factory CustomParam({
+    DictParam? dictValue,
+    ListParam? listValue,
+    Int64Param? intValue,
+    DoubleParam? doubleValue,
+    StringParam? stringValue,
+    RegionOfInterestParam? roiValue,
+    BoolParam? boolValue,
+    OneOfParam? oneOfValue,
+  }) {
+    final $result = create();
+    if (dictValue != null) {
+      $result.dictValue = dictValue;
+    }
+    if (listValue != null) {
+      $result.listValue = listValue;
+    }
+    if (intValue != null) {
+      $result.intValue = intValue;
+    }
+    if (doubleValue != null) {
+      $result.doubleValue = doubleValue;
+    }
+    if (stringValue != null) {
+      $result.stringValue = stringValue;
+    }
+    if (roiValue != null) {
+      $result.roiValue = roiValue;
+    }
+    if (boolValue != null) {
+      $result.boolValue = boolValue;
+    }
+    if (oneOfValue != null) {
+      $result.oneOfValue = oneOfValue;
+    }
+    return $result;
+  }
   CustomParam._() : super();
   factory CustomParam.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CustomParam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -332,7 +411,23 @@ class CustomParam extends $pb.GeneratedMessage {
 }
 
 class UserInterfaceInfo extends $pb.GeneratedMessage {
-  factory UserInterfaceInfo() => create();
+  factory UserInterfaceInfo({
+    $core.String? displayName,
+    $core.String? description,
+    $fixnum.Int64? displayOrder,
+  }) {
+    final $result = create();
+    if (displayName != null) {
+      $result.displayName = displayName;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (displayOrder != null) {
+      $result.displayOrder = displayOrder;
+    }
+    return $result;
+  }
   UserInterfaceInfo._() : super();
   factory UserInterfaceInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UserInterfaceInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -365,6 +460,10 @@ class UserInterfaceInfo extends $pb.GeneratedMessage {
   static UserInterfaceInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserInterfaceInfo>(create);
   static UserInterfaceInfo? _defaultInstance;
 
+  /// This string is an optional display name for the UI.  If left unset, UI will use the
+  /// DictParam key to label the corresponding UI element.  DictParam key is meant to be
+  /// machine readable, and shouldn't change accross releases.  display_name is meant to be
+  /// human readable, and can change from release to release if needed.
   @$pb.TagNumber(1)
   $core.String get displayName => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -374,6 +473,8 @@ class UserInterfaceInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearDisplayName() => clearField(1);
 
+  /// An optional description that provides additional information about the parameter. Use in
+  /// combination with display_name.
   @$pb.TagNumber(2)
   $core.String get description => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -383,6 +484,9 @@ class UserInterfaceInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDescription() => clearField(2);
 
+  /// This is an optional sorting hint.  UI elements will likely be shown in a list, and
+  /// Dictionary children will be sorted by [display_order, display_name, dictionary key],
+  /// in ascending numerical order and alphabetical string order.
   @$pb.TagNumber(3)
   $fixnum.Int64 get displayOrder => $_getI64(2);
   @$pb.TagNumber(3)
@@ -393,8 +497,23 @@ class UserInterfaceInfo extends $pb.GeneratedMessage {
   void clearDisplayOrder() => clearField(3);
 }
 
+/// Collection of both specifications and values.
+/// Meant to be used as a snapshot of specifications offered by a service, and the values
+/// chosen by a user.
 class CustomParamCollection extends $pb.GeneratedMessage {
-  factory CustomParamCollection() => create();
+  factory CustomParamCollection({
+    DictParam_Spec? specs,
+    DictParam? values,
+  }) {
+    final $result = create();
+    if (specs != null) {
+      $result.specs = specs;
+    }
+    if (values != null) {
+      $result.values = values;
+    }
+    return $result;
+  }
   CustomParamCollection._() : super();
   factory CustomParamCollection.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CustomParamCollection.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -450,7 +569,19 @@ class CustomParamCollection extends $pb.GeneratedMessage {
 }
 
 class DictParam_ChildSpec extends $pb.GeneratedMessage {
-  factory DictParam_ChildSpec() => create();
+  factory DictParam_ChildSpec({
+    CustomParam_Spec? spec,
+    UserInterfaceInfo? uiInfo,
+  }) {
+    final $result = create();
+    if (spec != null) {
+      $result.spec = spec;
+    }
+    if (uiInfo != null) {
+      $result.uiInfo = uiInfo;
+    }
+    return $result;
+  }
   DictParam_ChildSpec._() : super();
   factory DictParam_ChildSpec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DictParam_ChildSpec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -506,7 +637,19 @@ class DictParam_ChildSpec extends $pb.GeneratedMessage {
 }
 
 class DictParam_Spec extends $pb.GeneratedMessage {
-  factory DictParam_Spec() => create();
+  factory DictParam_Spec({
+    $core.Map<$core.String, DictParam_ChildSpec>? specs,
+    $core.bool? isHiddenByDefault,
+  }) {
+    final $result = create();
+    if (specs != null) {
+      $result.specs.addAll(specs);
+    }
+    if (isHiddenByDefault != null) {
+      $result.isHiddenByDefault = isHiddenByDefault;
+    }
+    return $result;
+  }
   DictParam_Spec._() : super();
   factory DictParam_Spec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DictParam_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -538,9 +681,14 @@ class DictParam_Spec extends $pb.GeneratedMessage {
   static DictParam_Spec getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DictParam_Spec>(create);
   static DictParam_Spec? _defaultInstance;
 
+  /// Each element can have its own type.  Dictionaries can even contain dictionaries!
   @$pb.TagNumber(2)
   $core.Map<$core.String, DictParam_ChildSpec> get specs => $_getMap(0);
 
+  ///  Whether the dict should initially appear hidden/collapsed. For example an "Advanced"
+  ///  section that users infrequently access.
+  ///
+  ///  The client may ignore this value if there is sufficient screen space.
   @$pb.TagNumber(3)
   $core.bool get isHiddenByDefault => $_getBF(1);
   @$pb.TagNumber(3)
@@ -551,8 +699,17 @@ class DictParam_Spec extends $pb.GeneratedMessage {
   void clearIsHiddenByDefault() => clearField(3);
 }
 
+/// A dictionary of parameters.
 class DictParam extends $pb.GeneratedMessage {
-  factory DictParam() => create();
+  factory DictParam({
+    $core.Map<$core.String, CustomParam>? values,
+  }) {
+    final $result = create();
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
   DictParam._() : super();
   factory DictParam.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DictParam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -588,7 +745,19 @@ class DictParam extends $pb.GeneratedMessage {
 }
 
 class OneOfParam_ChildSpec extends $pb.GeneratedMessage {
-  factory OneOfParam_ChildSpec() => create();
+  factory OneOfParam_ChildSpec({
+    DictParam_Spec? spec,
+    UserInterfaceInfo? uiInfo,
+  }) {
+    final $result = create();
+    if (spec != null) {
+      $result.spec = spec;
+    }
+    if (uiInfo != null) {
+      $result.uiInfo = uiInfo;
+    }
+    return $result;
+  }
   OneOfParam_ChildSpec._() : super();
   factory OneOfParam_ChildSpec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OneOfParam_ChildSpec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -644,7 +813,19 @@ class OneOfParam_ChildSpec extends $pb.GeneratedMessage {
 }
 
 class OneOfParam_Spec extends $pb.GeneratedMessage {
-  factory OneOfParam_Spec() => create();
+  factory OneOfParam_Spec({
+    $core.Map<$core.String, OneOfParam_ChildSpec>? specs,
+    $core.String? defaultKey,
+  }) {
+    final $result = create();
+    if (specs != null) {
+      $result.specs.addAll(specs);
+    }
+    if (defaultKey != null) {
+      $result.defaultKey = defaultKey;
+    }
+    return $result;
+  }
   OneOfParam_Spec._() : super();
   factory OneOfParam_Spec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OneOfParam_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -676,9 +857,13 @@ class OneOfParam_Spec extends $pb.GeneratedMessage {
   static OneOfParam_Spec getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OneOfParam_Spec>(create);
   static OneOfParam_Spec? _defaultInstance;
 
+  ///  What options are available.  Only one will be specified by the user.
+  ///
+  ///  If an option has no additional parameters, its spec should be an empty DictParam.Spec.
   @$pb.TagNumber(1)
   $core.Map<$core.String, OneOfParam_ChildSpec> get specs => $_getMap(0);
 
+  /// Which option to start selected.  If left blank, UI will pick one for you.
   @$pb.TagNumber(2)
   $core.String get defaultKey => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -689,8 +874,36 @@ class OneOfParam_Spec extends $pb.GeneratedMessage {
   void clearDefaultKey() => clearField(2);
 }
 
+///  A selected param from one of several options.  Can be useful to specify parameters
+///  that have correlations.
+///
+///  Example 1 - A camera that advertises an "exposure" parameter:
+///       OneOf Option 1: Auto exposure [no additional parameters]
+///       OneOf Option 2: Manual exposure [additonal exposure double parameter from 0 - 100 ms]
+///
+///  Example 2 - A NCB worker that will alert if temperature outside a specified bound:
+///       OneOf Option 1: No alert [no additional parameters]
+///       OneOf Option 2: Alert if above max [addional max_temp parameter]
+///       OneOf Option 3: Alert if below min [additional min_temp parameter]
+///       OneOf Option 4: Alert if above max or below min [additional max_temp and min_temp
+///       parameters]
+///
+///  In the above examples, the service advertises a OneOf spec, the UI lets user PICK which child
+///  of the OneOf they want, and then the UI lets the user specify any child specific parameters.
 class OneOfParam extends $pb.GeneratedMessage {
-  factory OneOfParam() => create();
+  factory OneOfParam({
+    $core.String? key,
+    $core.Map<$core.String, DictParam>? values,
+  }) {
+    final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
   OneOfParam._() : super();
   factory OneOfParam.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OneOfParam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -731,20 +944,38 @@ class OneOfParam extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearKey() => clearField(1);
 
+  /// The values of the chosen spec will is guaraunteed to be at value[key].
+  /// The values of the other specs might at value[that_specs_key], but no guarantees.
   @$pb.TagNumber(3)
   $core.Map<$core.String, DictParam> get values => $_getMap(1);
 }
 
 class ListParam_Spec extends $pb.GeneratedMessage {
-  factory ListParam_Spec() => create();
+  factory ListParam_Spec({
+    CustomParam_Spec? elementSpec,
+    $59.Int64Value? minNumberOfValues,
+    $59.Int64Value? maxNumberOfValues,
+  }) {
+    final $result = create();
+    if (elementSpec != null) {
+      $result.elementSpec = elementSpec;
+    }
+    if (minNumberOfValues != null) {
+      $result.minNumberOfValues = minNumberOfValues;
+    }
+    if (maxNumberOfValues != null) {
+      $result.maxNumberOfValues = maxNumberOfValues;
+    }
+    return $result;
+  }
   ListParam_Spec._() : super();
   factory ListParam_Spec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListParam_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListParam.Spec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOM<CustomParam_Spec>(1, _omitFieldNames ? '' : 'elementSpec', subBuilder: CustomParam_Spec.create)
-    ..aOM<$58.Int64Value>(3, _omitFieldNames ? '' : 'minNumberOfValues', subBuilder: $58.Int64Value.create)
-    ..aOM<$58.Int64Value>(4, _omitFieldNames ? '' : 'maxNumberOfValues', subBuilder: $58.Int64Value.create)
+    ..aOM<$59.Int64Value>(3, _omitFieldNames ? '' : 'minNumberOfValues', subBuilder: $59.Int64Value.create)
+    ..aOM<$59.Int64Value>(4, _omitFieldNames ? '' : 'maxNumberOfValues', subBuilder: $59.Int64Value.create)
     ..hasRequiredFields = false
   ;
 
@@ -769,6 +1000,10 @@ class ListParam_Spec extends $pb.GeneratedMessage {
   static ListParam_Spec getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListParam_Spec>(create);
   static ListParam_Spec? _defaultInstance;
 
+  /// Each element in the list must follow the specification of the matching type.
+  /// For example, if element_specs.int_spec is filled out, all values should follow
+  /// that specification. If element_specs.string_spec is filled out, all values
+  /// should follow that specification.
   @$pb.TagNumber(1)
   CustomParam_Spec get elementSpec => $_getN(0);
   @$pb.TagNumber(1)
@@ -780,31 +1015,44 @@ class ListParam_Spec extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   CustomParam_Spec ensureElementSpec() => $_ensure(0);
 
+  ///  Minimum and maximum number of values the client may send (inclusive).
+  ///  If min_number_of_values is 0, the parameter is optional.
+  ///
+  ///  0 <= min_number_of_values <= max_number_of_values
   @$pb.TagNumber(3)
-  $58.Int64Value get minNumberOfValues => $_getN(1);
+  $59.Int64Value get minNumberOfValues => $_getN(1);
   @$pb.TagNumber(3)
-  set minNumberOfValues($58.Int64Value v) { setField(3, v); }
+  set minNumberOfValues($59.Int64Value v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMinNumberOfValues() => $_has(1);
   @$pb.TagNumber(3)
   void clearMinNumberOfValues() => clearField(3);
   @$pb.TagNumber(3)
-  $58.Int64Value ensureMinNumberOfValues() => $_ensure(1);
+  $59.Int64Value ensureMinNumberOfValues() => $_ensure(1);
 
   @$pb.TagNumber(4)
-  $58.Int64Value get maxNumberOfValues => $_getN(2);
+  $59.Int64Value get maxNumberOfValues => $_getN(2);
   @$pb.TagNumber(4)
-  set maxNumberOfValues($58.Int64Value v) { setField(4, v); }
+  set maxNumberOfValues($59.Int64Value v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMaxNumberOfValues() => $_has(2);
   @$pb.TagNumber(4)
   void clearMaxNumberOfValues() => clearField(4);
   @$pb.TagNumber(4)
-  $58.Int64Value ensureMaxNumberOfValues() => $_ensure(2);
+  $59.Int64Value ensureMaxNumberOfValues() => $_ensure(2);
 }
 
+/// A list of elements of given types.
 class ListParam extends $pb.GeneratedMessage {
-  factory ListParam() => create();
+  factory ListParam({
+    $core.Iterable<CustomParam>? values,
+  }) {
+    final $result = create();
+    if (values != null) {
+      $result.values.addAll(values);
+    }
+    return $result;
+  }
   ListParam._() : super();
   factory ListParam.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListParam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -840,16 +1088,36 @@ class ListParam extends $pb.GeneratedMessage {
 }
 
 class Int64Param_Spec extends $pb.GeneratedMessage {
-  factory Int64Param_Spec() => create();
+  factory Int64Param_Spec({
+    $59.Int64Value? defaultValue,
+    $70.Units? units,
+    $59.Int64Value? minValue,
+    $59.Int64Value? maxValue,
+  }) {
+    final $result = create();
+    if (defaultValue != null) {
+      $result.defaultValue = defaultValue;
+    }
+    if (units != null) {
+      $result.units = units;
+    }
+    if (minValue != null) {
+      $result.minValue = minValue;
+    }
+    if (maxValue != null) {
+      $result.maxValue = maxValue;
+    }
+    return $result;
+  }
   Int64Param_Spec._() : super();
   factory Int64Param_Spec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Int64Param_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Int64Param.Spec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$58.Int64Value>(2, _omitFieldNames ? '' : 'defaultValue', subBuilder: $58.Int64Value.create)
-    ..aOM<$69.Units>(3, _omitFieldNames ? '' : 'units', subBuilder: $69.Units.create)
-    ..aOM<$58.Int64Value>(4, _omitFieldNames ? '' : 'minValue', subBuilder: $58.Int64Value.create)
-    ..aOM<$58.Int64Value>(5, _omitFieldNames ? '' : 'maxValue', subBuilder: $58.Int64Value.create)
+    ..aOM<$59.Int64Value>(2, _omitFieldNames ? '' : 'defaultValue', subBuilder: $59.Int64Value.create)
+    ..aOM<$70.Units>(3, _omitFieldNames ? '' : 'units', subBuilder: $70.Units.create)
+    ..aOM<$59.Int64Value>(4, _omitFieldNames ? '' : 'minValue', subBuilder: $59.Int64Value.create)
+    ..aOM<$59.Int64Value>(5, _omitFieldNames ? '' : 'maxValue', subBuilder: $59.Int64Value.create)
     ..hasRequiredFields = false
   ;
 
@@ -874,53 +1142,71 @@ class Int64Param_Spec extends $pb.GeneratedMessage {
   static Int64Param_Spec getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Int64Param_Spec>(create);
   static Int64Param_Spec? _defaultInstance;
 
+  /// Default value. If unspecified, UIs can pick their own default OR force user to make a
+  /// selection.
   @$pb.TagNumber(2)
-  $58.Int64Value get defaultValue => $_getN(0);
+  $59.Int64Value get defaultValue => $_getN(0);
   @$pb.TagNumber(2)
-  set defaultValue($58.Int64Value v) { setField(2, v); }
+  set defaultValue($59.Int64Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDefaultValue() => $_has(0);
   @$pb.TagNumber(2)
   void clearDefaultValue() => clearField(2);
   @$pb.TagNumber(2)
-  $58.Int64Value ensureDefaultValue() => $_ensure(0);
+  $59.Int64Value ensureDefaultValue() => $_ensure(0);
 
+  /// Units of value, default_value, min_value, min_value.
   @$pb.TagNumber(3)
-  $69.Units get units => $_getN(1);
+  $70.Units get units => $_getN(1);
   @$pb.TagNumber(3)
-  set units($69.Units v) { setField(3, v); }
+  set units($70.Units v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUnits() => $_has(1);
   @$pb.TagNumber(3)
   void clearUnits() => clearField(3);
   @$pb.TagNumber(3)
-  $69.Units ensureUnits() => $_ensure(1);
+  $70.Units ensureUnits() => $_ensure(1);
 
+  ///  A value sent by the client must be within this minimum and maximum (inclusive).
+  ///  If unset, only limited by system representation.
+  ///  ERROR: It is an error to specify a min_value larger than the max_value.
+  ///
+  ///  ADVICE: If a client sends a value outside these bounds, reject, rather than clamp it.
   @$pb.TagNumber(4)
-  $58.Int64Value get minValue => $_getN(2);
+  $59.Int64Value get minValue => $_getN(2);
   @$pb.TagNumber(4)
-  set minValue($58.Int64Value v) { setField(4, v); }
+  set minValue($59.Int64Value v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMinValue() => $_has(2);
   @$pb.TagNumber(4)
   void clearMinValue() => clearField(4);
   @$pb.TagNumber(4)
-  $58.Int64Value ensureMinValue() => $_ensure(2);
+  $59.Int64Value ensureMinValue() => $_ensure(2);
 
   @$pb.TagNumber(5)
-  $58.Int64Value get maxValue => $_getN(3);
+  $59.Int64Value get maxValue => $_getN(3);
   @$pb.TagNumber(5)
-  set maxValue($58.Int64Value v) { setField(5, v); }
+  set maxValue($59.Int64Value v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMaxValue() => $_has(3);
   @$pb.TagNumber(5)
   void clearMaxValue() => clearField(5);
   @$pb.TagNumber(5)
-  $58.Int64Value ensureMaxValue() => $_ensure(3);
+  $59.Int64Value ensureMaxValue() => $_ensure(3);
 }
 
+/// A 64-bit integer parameter.
+/// Wraps specification-related messages, and contains fields for the value sent by a client.
 class Int64Param extends $pb.GeneratedMessage {
-  factory Int64Param() => create();
+  factory Int64Param({
+    $fixnum.Int64? value,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   Int64Param._() : super();
   factory Int64Param.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Int64Param.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -951,6 +1237,7 @@ class Int64Param extends $pb.GeneratedMessage {
   static Int64Param getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Int64Param>(create);
   static Int64Param? _defaultInstance;
 
+  /// Value should be provided in the same units as defined by the spec.
   @$pb.TagNumber(1)
   $fixnum.Int64 get value => $_getI64(0);
   @$pb.TagNumber(1)
@@ -962,16 +1249,36 @@ class Int64Param extends $pb.GeneratedMessage {
 }
 
 class DoubleParam_Spec extends $pb.GeneratedMessage {
-  factory DoubleParam_Spec() => create();
+  factory DoubleParam_Spec({
+    $59.DoubleValue? defaultValue,
+    $70.Units? units,
+    $59.DoubleValue? minValue,
+    $59.DoubleValue? maxValue,
+  }) {
+    final $result = create();
+    if (defaultValue != null) {
+      $result.defaultValue = defaultValue;
+    }
+    if (units != null) {
+      $result.units = units;
+    }
+    if (minValue != null) {
+      $result.minValue = minValue;
+    }
+    if (maxValue != null) {
+      $result.maxValue = maxValue;
+    }
+    return $result;
+  }
   DoubleParam_Spec._() : super();
   factory DoubleParam_Spec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DoubleParam_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DoubleParam.Spec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'defaultValue', subBuilder: $58.DoubleValue.create)
-    ..aOM<$69.Units>(3, _omitFieldNames ? '' : 'units', subBuilder: $69.Units.create)
-    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'minValue', subBuilder: $58.DoubleValue.create)
-    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'maxValue', subBuilder: $58.DoubleValue.create)
+    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'defaultValue', subBuilder: $59.DoubleValue.create)
+    ..aOM<$70.Units>(3, _omitFieldNames ? '' : 'units', subBuilder: $70.Units.create)
+    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'minValue', subBuilder: $59.DoubleValue.create)
+    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'maxValue', subBuilder: $59.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -996,53 +1303,70 @@ class DoubleParam_Spec extends $pb.GeneratedMessage {
   static DoubleParam_Spec getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DoubleParam_Spec>(create);
   static DoubleParam_Spec? _defaultInstance;
 
+  /// Default value. If unspecified, UIs can pick their own default OR force user to make a
+  /// selection.
   @$pb.TagNumber(2)
-  $58.DoubleValue get defaultValue => $_getN(0);
+  $59.DoubleValue get defaultValue => $_getN(0);
   @$pb.TagNumber(2)
-  set defaultValue($58.DoubleValue v) { setField(2, v); }
+  set defaultValue($59.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDefaultValue() => $_has(0);
   @$pb.TagNumber(2)
   void clearDefaultValue() => clearField(2);
   @$pb.TagNumber(2)
-  $58.DoubleValue ensureDefaultValue() => $_ensure(0);
+  $59.DoubleValue ensureDefaultValue() => $_ensure(0);
 
   @$pb.TagNumber(3)
-  $69.Units get units => $_getN(1);
+  $70.Units get units => $_getN(1);
   @$pb.TagNumber(3)
-  set units($69.Units v) { setField(3, v); }
+  set units($70.Units v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUnits() => $_has(1);
   @$pb.TagNumber(3)
   void clearUnits() => clearField(3);
   @$pb.TagNumber(3)
-  $69.Units ensureUnits() => $_ensure(1);
+  $70.Units ensureUnits() => $_ensure(1);
 
+  ///  A value sent by the client must be within this minimum and maximum (inclusive).
+  ///  If unset, only limited by system representation.
+  ///  ERROR: It is an error to specify a min_value larger than the max_value.
+  ///
+  ///  ADVICE: If a client sends a value outside these bounds, reject, rather than clamp, it.
   @$pb.TagNumber(4)
-  $58.DoubleValue get minValue => $_getN(2);
+  $59.DoubleValue get minValue => $_getN(2);
   @$pb.TagNumber(4)
-  set minValue($58.DoubleValue v) { setField(4, v); }
+  set minValue($59.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMinValue() => $_has(2);
   @$pb.TagNumber(4)
   void clearMinValue() => clearField(4);
   @$pb.TagNumber(4)
-  $58.DoubleValue ensureMinValue() => $_ensure(2);
+  $59.DoubleValue ensureMinValue() => $_ensure(2);
 
   @$pb.TagNumber(5)
-  $58.DoubleValue get maxValue => $_getN(3);
+  $59.DoubleValue get maxValue => $_getN(3);
   @$pb.TagNumber(5)
-  set maxValue($58.DoubleValue v) { setField(5, v); }
+  set maxValue($59.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMaxValue() => $_has(3);
   @$pb.TagNumber(5)
   void clearMaxValue() => clearField(5);
   @$pb.TagNumber(5)
-  $58.DoubleValue ensureMaxValue() => $_ensure(3);
+  $59.DoubleValue ensureMaxValue() => $_ensure(3);
 }
 
+/// A 64-bit floating point parameter.
+/// Wraps specification-related messages, and contains fields for the value sent by a client.
 class DoubleParam extends $pb.GeneratedMessage {
-  factory DoubleParam() => create();
+  factory DoubleParam({
+    $core.double? value,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   DoubleParam._() : super();
   factory DoubleParam.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DoubleParam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1073,6 +1397,7 @@ class DoubleParam extends $pb.GeneratedMessage {
   static DoubleParam getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DoubleParam>(create);
   static DoubleParam? _defaultInstance;
 
+  /// Value should be provided in the same units as defined by the spec.
   @$pb.TagNumber(1)
   $core.double get value => $_getN(0);
   @$pb.TagNumber(1)
@@ -1084,7 +1409,23 @@ class DoubleParam extends $pb.GeneratedMessage {
 }
 
 class StringParam_Spec extends $pb.GeneratedMessage {
-  factory StringParam_Spec() => create();
+  factory StringParam_Spec({
+    $core.Iterable<$core.String>? options,
+    $core.bool? editable,
+    $core.String? defaultValue,
+  }) {
+    final $result = create();
+    if (options != null) {
+      $result.options.addAll(options);
+    }
+    if (editable != null) {
+      $result.editable = editable;
+    }
+    if (defaultValue != null) {
+      $result.defaultValue = defaultValue;
+    }
+    return $result;
+  }
   StringParam_Spec._() : super();
   factory StringParam_Spec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StringParam_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1117,9 +1458,14 @@ class StringParam_Spec extends $pb.GeneratedMessage {
   static StringParam_Spec getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StringParam_Spec>(create);
   static StringParam_Spec? _defaultInstance;
 
+  /// A value sent by the client must be equal to one of these.
   @$pb.TagNumber(1)
   $core.List<$core.String> get options => $_getList(0);
 
+  /// Whether or not this parameter accepts a freeform string.
+  /// If set to true, clients can pick one of the given options OR type their own value.
+  /// If set to false, clients have to pick one of the given options.
+  /// If no options are specified, clients should type their own value (ignoring this bool).
   @$pb.TagNumber(2)
   $core.bool get editable => $_getBF(1);
   @$pb.TagNumber(2)
@@ -1129,6 +1475,8 @@ class StringParam_Spec extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearEditable() => clearField(2);
 
+  /// Default value. If empty, UIs can pick their own default OR force user to make a
+  /// selection.
   @$pb.TagNumber(3)
   $core.String get defaultValue => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -1139,8 +1487,18 @@ class StringParam_Spec extends $pb.GeneratedMessage {
   void clearDefaultValue() => clearField(3);
 }
 
+/// A text parameter.
+/// Wraps specification-related messages, and contains fields for the value sent by a client.
 class StringParam extends $pb.GeneratedMessage {
-  factory StringParam() => create();
+  factory StringParam({
+    $core.String? value,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   StringParam._() : super();
   factory StringParam.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StringParam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1171,6 +1529,7 @@ class StringParam extends $pb.GeneratedMessage {
   static StringParam getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StringParam>(create);
   static StringParam? _defaultInstance;
 
+  /// The value sent by a client.
   @$pb.TagNumber(1)
   $core.String get value => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1182,13 +1541,21 @@ class StringParam extends $pb.GeneratedMessage {
 }
 
 class BoolParam_Spec extends $pb.GeneratedMessage {
-  factory BoolParam_Spec() => create();
+  factory BoolParam_Spec({
+    $59.BoolValue? defaultValue,
+  }) {
+    final $result = create();
+    if (defaultValue != null) {
+      $result.defaultValue = defaultValue;
+    }
+    return $result;
+  }
   BoolParam_Spec._() : super();
   factory BoolParam_Spec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BoolParam_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BoolParam.Spec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$58.BoolValue>(1, _omitFieldNames ? '' : 'defaultValue', subBuilder: $58.BoolValue.create)
+    ..aOM<$59.BoolValue>(1, _omitFieldNames ? '' : 'defaultValue', subBuilder: $59.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1213,20 +1580,31 @@ class BoolParam_Spec extends $pb.GeneratedMessage {
   static BoolParam_Spec getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BoolParam_Spec>(create);
   static BoolParam_Spec? _defaultInstance;
 
+  /// Default value. If unset, UIs can pick their own default OR force user to make a
+  /// selection.
   @$pb.TagNumber(1)
-  $58.BoolValue get defaultValue => $_getN(0);
+  $59.BoolValue get defaultValue => $_getN(0);
   @$pb.TagNumber(1)
-  set defaultValue($58.BoolValue v) { setField(1, v); }
+  set defaultValue($59.BoolValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDefaultValue() => $_has(0);
   @$pb.TagNumber(1)
   void clearDefaultValue() => clearField(1);
   @$pb.TagNumber(1)
-  $58.BoolValue ensureDefaultValue() => $_ensure(0);
+  $59.BoolValue ensureDefaultValue() => $_ensure(0);
 }
 
+/// A boolean parameter.
 class BoolParam extends $pb.GeneratedMessage {
-  factory BoolParam() => create();
+  factory BoolParam({
+    $core.bool? value,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   BoolParam._() : super();
   factory BoolParam.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BoolParam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1257,6 +1635,7 @@ class BoolParam extends $pb.GeneratedMessage {
   static BoolParam getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BoolParam>(create);
   static BoolParam? _defaultInstance;
 
+  /// The value sent by a client.
   @$pb.TagNumber(1)
   $core.bool get value => $_getBF(0);
   @$pb.TagNumber(1)
@@ -1268,7 +1647,19 @@ class BoolParam extends $pb.GeneratedMessage {
 }
 
 class RegionOfInterestParam_ServiceAndSource extends $pb.GeneratedMessage {
-  factory RegionOfInterestParam_ServiceAndSource() => create();
+  factory RegionOfInterestParam_ServiceAndSource({
+    $core.String? service,
+    $core.String? source,
+  }) {
+    final $result = create();
+    if (service != null) {
+      $result.service = service;
+    }
+    if (source != null) {
+      $result.source = source;
+    }
+    return $result;
+  }
   RegionOfInterestParam_ServiceAndSource._() : super();
   factory RegionOfInterestParam_ServiceAndSource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RegionOfInterestParam_ServiceAndSource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1320,14 +1711,30 @@ class RegionOfInterestParam_ServiceAndSource extends $pb.GeneratedMessage {
 }
 
 class RegionOfInterestParam_Spec extends $pb.GeneratedMessage {
-  factory RegionOfInterestParam_Spec() => create();
+  factory RegionOfInterestParam_Spec({
+    RegionOfInterestParam_ServiceAndSource? serviceAndSource,
+    $71.AreaI? defaultArea,
+    $core.bool? allowsRectangle,
+  }) {
+    final $result = create();
+    if (serviceAndSource != null) {
+      $result.serviceAndSource = serviceAndSource;
+    }
+    if (defaultArea != null) {
+      $result.defaultArea = defaultArea;
+    }
+    if (allowsRectangle != null) {
+      $result.allowsRectangle = allowsRectangle;
+    }
+    return $result;
+  }
   RegionOfInterestParam_Spec._() : super();
   factory RegionOfInterestParam_Spec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RegionOfInterestParam_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegionOfInterestParam.Spec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOM<RegionOfInterestParam_ServiceAndSource>(1, _omitFieldNames ? '' : 'serviceAndSource', subBuilder: RegionOfInterestParam_ServiceAndSource.create)
-    ..aOM<$70.AreaI>(2, _omitFieldNames ? '' : 'defaultArea', subBuilder: $70.AreaI.create)
+    ..aOM<$71.AreaI>(2, _omitFieldNames ? '' : 'defaultArea', subBuilder: $71.AreaI.create)
     ..aOB(3, _omitFieldNames ? '' : 'allowsRectangle')
     ..hasRequiredFields = false
   ;
@@ -1353,6 +1760,12 @@ class RegionOfInterestParam_Spec extends $pb.GeneratedMessage {
   static RegionOfInterestParam_Spec getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegionOfInterestParam_Spec>(create);
   static RegionOfInterestParam_Spec? _defaultInstance;
 
+  ///  Sometimes, which image the ROI will reference is obvious:
+  ///    - Image services
+  ///    - Network compute bridge workers that accept a single image
+  ///
+  ///  Othertimes, it might not be clear which image an ROI is supposed to reference.  In those
+  ///  cases, the Spec for the ROI can advertise which image it wants.
   @$pb.TagNumber(1)
   RegionOfInterestParam_ServiceAndSource get serviceAndSource => $_getN(0);
   @$pb.TagNumber(1)
@@ -1364,17 +1777,22 @@ class RegionOfInterestParam_Spec extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   RegionOfInterestParam_ServiceAndSource ensureServiceAndSource() => $_ensure(0);
 
+  /// Default value. If unset, UIs can pick their own default OR force user to make a
+  /// selection.
   @$pb.TagNumber(2)
-  $70.AreaI get defaultArea => $_getN(1);
+  $71.AreaI get defaultArea => $_getN(1);
   @$pb.TagNumber(2)
-  set defaultArea($70.AreaI v) { setField(2, v); }
+  set defaultArea($71.AreaI v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDefaultArea() => $_has(1);
   @$pb.TagNumber(2)
   void clearDefaultArea() => clearField(2);
   @$pb.TagNumber(2)
-  $70.AreaI ensureDefaultArea() => $_ensure(1);
+  $71.AreaI ensureDefaultArea() => $_ensure(1);
 
+  /// Area may eventually contain many shape primatives.  In that case, services can constrain
+  /// which primatives they accept.  These will be opt in, so that adding new primative types
+  /// won't be automatically advertised by older services.
   @$pb.TagNumber(3)
   $core.bool get allowsRectangle => $_getBF(2);
   @$pb.TagNumber(3)
@@ -1385,14 +1803,35 @@ class RegionOfInterestParam_Spec extends $pb.GeneratedMessage {
   void clearAllowsRectangle() => clearField(3);
 }
 
+/// Region of Interest parameter, region is associated with a specific image.
 class RegionOfInterestParam extends $pb.GeneratedMessage {
-  factory RegionOfInterestParam() => create();
+  factory RegionOfInterestParam({
+    $71.AreaI? area,
+    RegionOfInterestParam_ServiceAndSource? serviceAndSource,
+    $core.int? imageCols,
+    $core.int? imageRows,
+  }) {
+    final $result = create();
+    if (area != null) {
+      $result.area = area;
+    }
+    if (serviceAndSource != null) {
+      $result.serviceAndSource = serviceAndSource;
+    }
+    if (imageCols != null) {
+      $result.imageCols = imageCols;
+    }
+    if (imageRows != null) {
+      $result.imageRows = imageRows;
+    }
+    return $result;
+  }
   RegionOfInterestParam._() : super();
   factory RegionOfInterestParam.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RegionOfInterestParam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegionOfInterestParam', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$70.AreaI>(1, _omitFieldNames ? '' : 'area', subBuilder: $70.AreaI.create)
+    ..aOM<$71.AreaI>(1, _omitFieldNames ? '' : 'area', subBuilder: $71.AreaI.create)
     ..aOM<RegionOfInterestParam_ServiceAndSource>(2, _omitFieldNames ? '' : 'serviceAndSource', subBuilder: RegionOfInterestParam_ServiceAndSource.create)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'imageCols', $pb.PbFieldType.O3)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'imageRows', $pb.PbFieldType.O3)
@@ -1421,16 +1860,17 @@ class RegionOfInterestParam extends $pb.GeneratedMessage {
   static RegionOfInterestParam? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $70.AreaI get area => $_getN(0);
+  $71.AreaI get area => $_getN(0);
   @$pb.TagNumber(1)
-  set area($70.AreaI v) { setField(1, v); }
+  set area($71.AreaI v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasArea() => $_has(0);
   @$pb.TagNumber(1)
   void clearArea() => clearField(1);
   @$pb.TagNumber(1)
-  $70.AreaI ensureArea() => $_ensure(0);
+  $71.AreaI ensureArea() => $_ensure(0);
 
+  /// The name of the image service and source the UI had the user specify the ROI on.
   @$pb.TagNumber(2)
   RegionOfInterestParam_ServiceAndSource get serviceAndSource => $_getN(1);
   @$pb.TagNumber(2)
@@ -1442,6 +1882,9 @@ class RegionOfInterestParam extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   RegionOfInterestParam_ServiceAndSource ensureServiceAndSource() => $_ensure(1);
 
+  /// Width of the image (in pixels) when the ROI was specified.
+  /// This should be used to ensure that the ROI is applied to an image with the same
+  /// size / aspect ratio.
   @$pb.TagNumber(3)
   $core.int get imageCols => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -1451,6 +1894,9 @@ class RegionOfInterestParam extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearImageCols() => clearField(3);
 
+  /// Height of the image (in pixels).
+  /// This should be used to ensure that the ROI is applied to an image with the same
+  /// size / aspect ratio.
   @$pb.TagNumber(4)
   $core.int get imageRows => $_getIZ(3);
   @$pb.TagNumber(4)
@@ -1461,8 +1907,21 @@ class RegionOfInterestParam extends $pb.GeneratedMessage {
   void clearImageRows() => clearField(4);
 }
 
+/// Errors specific to the use of custom parameters.
 class CustomParamError extends $pb.GeneratedMessage {
-  factory CustomParamError() => create();
+  factory CustomParamError({
+    CustomParamError_Status? status,
+    $core.Iterable<$core.String>? errorMessages,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    if (errorMessages != null) {
+      $result.errorMessages.addAll(errorMessages);
+    }
+    return $result;
+  }
   CustomParamError._() : super();
   factory CustomParamError.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CustomParamError.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1503,6 +1962,7 @@ class CustomParamError extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearStatus() => clearField(4);
 
+  /// List of error messages from this parameter and its children
   @$pb.TagNumber(5)
   $core.List<$core.String> get errorMessages => $_getList(1);
 }

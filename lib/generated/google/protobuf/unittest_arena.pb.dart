@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,7 +14,15 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class NestedMessage extends $pb.GeneratedMessage {
-  factory NestedMessage() => create();
+  factory NestedMessage({
+    $core.int? d,
+  }) {
+    final $result = create();
+    if (d != null) {
+      $result.d = d;
+    }
+    return $result;
+  }
   NestedMessage._() : super();
   factory NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -56,7 +64,15 @@ class NestedMessage extends $pb.GeneratedMessage {
 }
 
 class ArenaMessage extends $pb.GeneratedMessage {
-  factory ArenaMessage() => create();
+  factory ArenaMessage({
+    $core.Iterable<NestedMessage>? repeatedNestedMessage,
+  }) {
+    final $result = create();
+    if (repeatedNestedMessage != null) {
+      $result.repeatedNestedMessage.addAll(repeatedNestedMessage);
+    }
+    return $result;
+  }
   ArenaMessage._() : super();
   factory ArenaMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ArenaMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

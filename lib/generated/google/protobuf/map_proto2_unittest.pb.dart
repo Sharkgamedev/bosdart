@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -15,12 +15,72 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'map_proto2_unittest.pbenum.dart';
-import 'unittest_import.pbenum.dart' as $95;
+import 'unittest_import.pbenum.dart' as $97;
 
 export 'map_proto2_unittest.pbenum.dart';
 
 class TestEnumMap extends $pb.GeneratedMessage {
-  factory TestEnumMap() => create();
+  factory TestEnumMap({
+    $core.Map<$core.int, Proto2MapEnum>? knownMapField,
+    $core.Map<$core.int, Proto2MapEnum>? unknownMapField,
+    $core.Map<$fixnum.Int64, Proto2MapEnum>? unknownMapFieldInt64,
+    $core.Map<$fixnum.Int64, Proto2MapEnum>? unknownMapFieldUint64,
+    $core.Map<$core.int, Proto2MapEnum>? unknownMapFieldInt32,
+    $core.Map<$core.int, Proto2MapEnum>? unknownMapFieldUint32,
+    $core.Map<$core.int, Proto2MapEnum>? unknownMapFieldFixed32,
+    $core.Map<$fixnum.Int64, Proto2MapEnum>? unknownMapFieldFixed64,
+    $core.Map<$core.bool, Proto2MapEnum>? unknownMapFieldBool,
+    $core.Map<$core.String, Proto2MapEnum>? unknownMapFieldString,
+    $core.Map<$core.int, Proto2MapEnum>? unknownMapFieldSint32,
+    $core.Map<$fixnum.Int64, Proto2MapEnum>? unknownMapFieldSint64,
+    $core.Map<$core.int, Proto2MapEnum>? unknownMapFieldSfixed32,
+    $core.Map<$fixnum.Int64, Proto2MapEnum>? unknownMapFieldSfixed64,
+  }) {
+    final $result = create();
+    if (knownMapField != null) {
+      $result.knownMapField.addAll(knownMapField);
+    }
+    if (unknownMapField != null) {
+      $result.unknownMapField.addAll(unknownMapField);
+    }
+    if (unknownMapFieldInt64 != null) {
+      $result.unknownMapFieldInt64.addAll(unknownMapFieldInt64);
+    }
+    if (unknownMapFieldUint64 != null) {
+      $result.unknownMapFieldUint64.addAll(unknownMapFieldUint64);
+    }
+    if (unknownMapFieldInt32 != null) {
+      $result.unknownMapFieldInt32.addAll(unknownMapFieldInt32);
+    }
+    if (unknownMapFieldUint32 != null) {
+      $result.unknownMapFieldUint32.addAll(unknownMapFieldUint32);
+    }
+    if (unknownMapFieldFixed32 != null) {
+      $result.unknownMapFieldFixed32.addAll(unknownMapFieldFixed32);
+    }
+    if (unknownMapFieldFixed64 != null) {
+      $result.unknownMapFieldFixed64.addAll(unknownMapFieldFixed64);
+    }
+    if (unknownMapFieldBool != null) {
+      $result.unknownMapFieldBool.addAll(unknownMapFieldBool);
+    }
+    if (unknownMapFieldString != null) {
+      $result.unknownMapFieldString.addAll(unknownMapFieldString);
+    }
+    if (unknownMapFieldSint32 != null) {
+      $result.unknownMapFieldSint32.addAll(unknownMapFieldSint32);
+    }
+    if (unknownMapFieldSint64 != null) {
+      $result.unknownMapFieldSint64.addAll(unknownMapFieldSint64);
+    }
+    if (unknownMapFieldSfixed32 != null) {
+      $result.unknownMapFieldSfixed32.addAll(unknownMapFieldSfixed32);
+    }
+    if (unknownMapFieldSfixed64 != null) {
+      $result.unknownMapFieldSfixed64.addAll(unknownMapFieldSfixed64);
+    }
+    return $result;
+  }
   TestEnumMap._() : super();
   factory TestEnumMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestEnumMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -70,6 +130,7 @@ class TestEnumMap extends $pb.GeneratedMessage {
   @$pb.TagNumber(102)
   $core.Map<$core.int, Proto2MapEnum> get unknownMapField => $_getMap(1);
 
+  /// Other maps with all key types to test the unknown entry serialization
   @$pb.TagNumber(200)
   $core.Map<$fixnum.Int64, Proto2MapEnum> get unknownMapFieldInt64 => $_getMap(2);
 
@@ -108,7 +169,67 @@ class TestEnumMap extends $pb.GeneratedMessage {
 }
 
 class TestEnumMapPlusExtra extends $pb.GeneratedMessage {
-  factory TestEnumMapPlusExtra() => create();
+  factory TestEnumMapPlusExtra({
+    $core.Map<$core.int, Proto2MapEnumPlusExtra>? knownMapField,
+    $core.Map<$core.int, Proto2MapEnumPlusExtra>? unknownMapField,
+    $core.Map<$fixnum.Int64, Proto2MapEnumPlusExtra>? unknownMapFieldInt64,
+    $core.Map<$fixnum.Int64, Proto2MapEnumPlusExtra>? unknownMapFieldUint64,
+    $core.Map<$core.int, Proto2MapEnumPlusExtra>? unknownMapFieldInt32,
+    $core.Map<$core.int, Proto2MapEnumPlusExtra>? unknownMapFieldUint32,
+    $core.Map<$core.int, Proto2MapEnumPlusExtra>? unknownMapFieldFixed32,
+    $core.Map<$fixnum.Int64, Proto2MapEnumPlusExtra>? unknownMapFieldFixed64,
+    $core.Map<$core.bool, Proto2MapEnumPlusExtra>? unknownMapFieldBool,
+    $core.Map<$core.String, Proto2MapEnumPlusExtra>? unknownMapFieldString,
+    $core.Map<$core.int, Proto2MapEnumPlusExtra>? unknownMapFieldSint32,
+    $core.Map<$fixnum.Int64, Proto2MapEnumPlusExtra>? unknownMapFieldSint64,
+    $core.Map<$core.int, Proto2MapEnumPlusExtra>? unknownMapFieldSfixed32,
+    $core.Map<$fixnum.Int64, Proto2MapEnumPlusExtra>? unknownMapFieldSfixed64,
+  }) {
+    final $result = create();
+    if (knownMapField != null) {
+      $result.knownMapField.addAll(knownMapField);
+    }
+    if (unknownMapField != null) {
+      $result.unknownMapField.addAll(unknownMapField);
+    }
+    if (unknownMapFieldInt64 != null) {
+      $result.unknownMapFieldInt64.addAll(unknownMapFieldInt64);
+    }
+    if (unknownMapFieldUint64 != null) {
+      $result.unknownMapFieldUint64.addAll(unknownMapFieldUint64);
+    }
+    if (unknownMapFieldInt32 != null) {
+      $result.unknownMapFieldInt32.addAll(unknownMapFieldInt32);
+    }
+    if (unknownMapFieldUint32 != null) {
+      $result.unknownMapFieldUint32.addAll(unknownMapFieldUint32);
+    }
+    if (unknownMapFieldFixed32 != null) {
+      $result.unknownMapFieldFixed32.addAll(unknownMapFieldFixed32);
+    }
+    if (unknownMapFieldFixed64 != null) {
+      $result.unknownMapFieldFixed64.addAll(unknownMapFieldFixed64);
+    }
+    if (unknownMapFieldBool != null) {
+      $result.unknownMapFieldBool.addAll(unknownMapFieldBool);
+    }
+    if (unknownMapFieldString != null) {
+      $result.unknownMapFieldString.addAll(unknownMapFieldString);
+    }
+    if (unknownMapFieldSint32 != null) {
+      $result.unknownMapFieldSint32.addAll(unknownMapFieldSint32);
+    }
+    if (unknownMapFieldSint64 != null) {
+      $result.unknownMapFieldSint64.addAll(unknownMapFieldSint64);
+    }
+    if (unknownMapFieldSfixed32 != null) {
+      $result.unknownMapFieldSfixed32.addAll(unknownMapFieldSfixed32);
+    }
+    if (unknownMapFieldSfixed64 != null) {
+      $result.unknownMapFieldSfixed64.addAll(unknownMapFieldSfixed64);
+    }
+    return $result;
+  }
   TestEnumMapPlusExtra._() : super();
   factory TestEnumMapPlusExtra.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestEnumMapPlusExtra.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -158,6 +279,7 @@ class TestEnumMapPlusExtra extends $pb.GeneratedMessage {
   @$pb.TagNumber(102)
   $core.Map<$core.int, Proto2MapEnumPlusExtra> get unknownMapField => $_getMap(1);
 
+  /// Other maps with all key types to test the unknown entry serialization
   @$pb.TagNumber(200)
   $core.Map<$fixnum.Int64, Proto2MapEnumPlusExtra> get unknownMapFieldInt64 => $_getMap(2);
 
@@ -196,13 +318,21 @@ class TestEnumMapPlusExtra extends $pb.GeneratedMessage {
 }
 
 class TestImportEnumMap extends $pb.GeneratedMessage {
-  factory TestImportEnumMap() => create();
+  factory TestImportEnumMap({
+    $core.Map<$core.int, $97.ImportEnumForMap>? importEnumAmp,
+  }) {
+    final $result = create();
+    if (importEnumAmp != null) {
+      $result.importEnumAmp.addAll(importEnumAmp);
+    }
+    return $result;
+  }
   TestImportEnumMap._() : super();
   factory TestImportEnumMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestImportEnumMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestImportEnumMap', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest'), createEmptyInstance: create)
-    ..m<$core.int, $95.ImportEnumForMap>(1, _omitFieldNames ? '' : 'importEnumAmp', entryClassName: 'TestImportEnumMap.ImportEnumAmpEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OE, valueOf: $95.ImportEnumForMap.valueOf, enumValues: $95.ImportEnumForMap.values, valueDefaultOrMaker: $95.ImportEnumForMap.UNKNOWN, defaultEnumValue: $95.ImportEnumForMap.UNKNOWN, packageName: const $pb.PackageName('protobuf_unittest'))
+    ..m<$core.int, $97.ImportEnumForMap>(1, _omitFieldNames ? '' : 'importEnumAmp', entryClassName: 'TestImportEnumMap.ImportEnumAmpEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OE, valueOf: $97.ImportEnumForMap.valueOf, enumValues: $97.ImportEnumForMap.values, valueDefaultOrMaker: $97.ImportEnumForMap.UNKNOWN, defaultEnumValue: $97.ImportEnumForMap.UNKNOWN, packageName: const $pb.PackageName('protobuf_unittest'))
     ..hasRequiredFields = false
   ;
 
@@ -228,11 +358,19 @@ class TestImportEnumMap extends $pb.GeneratedMessage {
   static TestImportEnumMap? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.int, $95.ImportEnumForMap> get importEnumAmp => $_getMap(0);
+  $core.Map<$core.int, $97.ImportEnumForMap> get importEnumAmp => $_getMap(0);
 }
 
 class TestIntIntMap extends $pb.GeneratedMessage {
-  factory TestIntIntMap() => create();
+  factory TestIntIntMap({
+    $core.Map<$core.int, $core.int>? m,
+  }) {
+    final $result = create();
+    if (m != null) {
+      $result.m.addAll(m);
+    }
+    return $result;
+  }
   TestIntIntMap._() : super();
   factory TestIntIntMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestIntIntMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -267,8 +405,61 @@ class TestIntIntMap extends $pb.GeneratedMessage {
   $core.Map<$core.int, $core.int> get m => $_getMap(0);
 }
 
+/// Test all key types: string, plus the non-floating-point scalars.
 class TestMaps extends $pb.GeneratedMessage {
-  factory TestMaps() => create();
+  factory TestMaps({
+    $core.Map<$core.int, TestIntIntMap>? mInt32,
+    $core.Map<$fixnum.Int64, TestIntIntMap>? mInt64,
+    $core.Map<$core.int, TestIntIntMap>? mUint32,
+    $core.Map<$fixnum.Int64, TestIntIntMap>? mUint64,
+    $core.Map<$core.int, TestIntIntMap>? mSint32,
+    $core.Map<$fixnum.Int64, TestIntIntMap>? mSint64,
+    $core.Map<$core.int, TestIntIntMap>? mFixed32,
+    $core.Map<$fixnum.Int64, TestIntIntMap>? mFixed64,
+    $core.Map<$core.int, TestIntIntMap>? mSfixed32,
+    $core.Map<$fixnum.Int64, TestIntIntMap>? mSfixed64,
+    $core.Map<$core.bool, TestIntIntMap>? mBool,
+    $core.Map<$core.String, TestIntIntMap>? mString,
+  }) {
+    final $result = create();
+    if (mInt32 != null) {
+      $result.mInt32.addAll(mInt32);
+    }
+    if (mInt64 != null) {
+      $result.mInt64.addAll(mInt64);
+    }
+    if (mUint32 != null) {
+      $result.mUint32.addAll(mUint32);
+    }
+    if (mUint64 != null) {
+      $result.mUint64.addAll(mUint64);
+    }
+    if (mSint32 != null) {
+      $result.mSint32.addAll(mSint32);
+    }
+    if (mSint64 != null) {
+      $result.mSint64.addAll(mSint64);
+    }
+    if (mFixed32 != null) {
+      $result.mFixed32.addAll(mFixed32);
+    }
+    if (mFixed64 != null) {
+      $result.mFixed64.addAll(mFixed64);
+    }
+    if (mSfixed32 != null) {
+      $result.mSfixed32.addAll(mSfixed32);
+    }
+    if (mSfixed64 != null) {
+      $result.mSfixed64.addAll(mSfixed64);
+    }
+    if (mBool != null) {
+      $result.mBool.addAll(mBool);
+    }
+    if (mString != null) {
+      $result.mString.addAll(mString);
+    }
+    return $result;
+  }
   TestMaps._() : super();
   factory TestMaps.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMaps.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -347,8 +538,17 @@ class TestMaps extends $pb.GeneratedMessage {
   $core.Map<$core.String, TestIntIntMap> get mString => $_getMap(11);
 }
 
+/// Test maps in submessages.
 class TestSubmessageMaps extends $pb.GeneratedMessage {
-  factory TestSubmessageMaps() => create();
+  factory TestSubmessageMaps({
+    TestMaps? m,
+  }) {
+    final $result = create();
+    if (m != null) {
+      $result.m = m;
+    }
+    return $result;
+  }
   TestSubmessageMaps._() : super();
   factory TestSubmessageMaps.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestSubmessageMaps.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -392,7 +592,19 @@ class TestSubmessageMaps extends $pb.GeneratedMessage {
 }
 
 class TestProto2BytesMap extends $pb.GeneratedMessage {
-  factory TestProto2BytesMap() => create();
+  factory TestProto2BytesMap({
+    $core.Map<$core.int, $core.List<$core.int>>? mapBytes,
+    $core.Map<$core.int, $core.String>? mapString,
+  }) {
+    final $result = create();
+    if (mapBytes != null) {
+      $result.mapBytes.addAll(mapBytes);
+    }
+    if (mapString != null) {
+      $result.mapString.addAll(mapString);
+    }
+    return $result;
+  }
   TestProto2BytesMap._() : super();
   factory TestProto2BytesMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestProto2BytesMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

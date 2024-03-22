@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -90,6 +90,8 @@ class SpotCheckFeedbackResponse_State extends $pb.ProtobufEnum {
   const SpotCheckFeedbackResponse_State._($core.int v, $core.String n) : super(v, n);
 }
 
+/// If SpotCheck experienced an error, specific error details reported here.
+/// This reflects an error in the routine.
 class SpotCheckFeedbackResponse_Error extends $pb.ProtobufEnum {
   static const SpotCheckFeedbackResponse_Error ERROR_UNKNOWN = SpotCheckFeedbackResponse_Error._(0, _omitEnumNames ? '' : 'ERROR_UNKNOWN');
   static const SpotCheckFeedbackResponse_Error ERROR_NONE = SpotCheckFeedbackResponse_Error._(1, _omitEnumNames ? '' : 'ERROR_NONE');
@@ -135,6 +137,7 @@ class SpotCheckFeedbackResponse_Error extends $pb.ProtobufEnum {
   const SpotCheckFeedbackResponse_Error._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Errors reflect an issue with camera hardware.
 class DepthPlaneSpotCheckResult_Status extends $pb.ProtobufEnum {
   static const DepthPlaneSpotCheckResult_Status STATUS_UNKNOWN = DepthPlaneSpotCheckResult_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const DepthPlaneSpotCheckResult_Status STATUS_OK = DepthPlaneSpotCheckResult_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -154,6 +157,7 @@ class DepthPlaneSpotCheckResult_Status extends $pb.ProtobufEnum {
   const DepthPlaneSpotCheckResult_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Errors reflect an issue with payload configuration.
 class PayloadCheckResult_Error extends $pb.ProtobufEnum {
   static const PayloadCheckResult_Error ERROR_UNKNOWN = PayloadCheckResult_Error._(0, _omitEnumNames ? '' : 'ERROR_UNKNOWN');
   static const PayloadCheckResult_Error ERROR_NONE = PayloadCheckResult_Error._(1, _omitEnumNames ? '' : 'ERROR_NONE');
@@ -171,6 +175,7 @@ class PayloadCheckResult_Error extends $pb.ProtobufEnum {
   const PayloadCheckResult_Error._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Errors reflect an issue with robot hardware.
 class LoadCellSpotCheckResult_Error extends $pb.ProtobufEnum {
   static const LoadCellSpotCheckResult_Error ERROR_UNKNOWN = LoadCellSpotCheckResult_Error._(0, _omitEnumNames ? '' : 'ERROR_UNKNOWN');
   static const LoadCellSpotCheckResult_Error ERROR_NONE = LoadCellSpotCheckResult_Error._(1, _omitEnumNames ? '' : 'ERROR_NONE');
@@ -188,6 +193,7 @@ class LoadCellSpotCheckResult_Error extends $pb.ProtobufEnum {
   const LoadCellSpotCheckResult_Error._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Errors reflect an issue with robot hardware.
 class JointKinematicCheckResult_Error extends $pb.ProtobufEnum {
   static const JointKinematicCheckResult_Error ERROR_UNKNOWN = JointKinematicCheckResult_Error._(0, _omitEnumNames ? '' : 'ERROR_UNKNOWN');
   static const JointKinematicCheckResult_Error ERROR_NONE = JointKinematicCheckResult_Error._(1, _omitEnumNames ? '' : 'ERROR_NONE');
@@ -211,6 +217,7 @@ class JointKinematicCheckResult_Error extends $pb.ProtobufEnum {
   const JointKinematicCheckResult_Error._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Errors reflect an issue with robot calibration.
 class FootHeightCheckResult_Status extends $pb.ProtobufEnum {
   static const FootHeightCheckResult_Status STATUS_UNKNOWN = FootHeightCheckResult_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const FootHeightCheckResult_Status STATUS_OK = FootHeightCheckResult_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -249,6 +256,7 @@ class LegPairCheckResult_Status extends $pb.ProtobufEnum {
   const LegPairCheckResult_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Errors reflect an issue with hip range of motion
 class HipRangeOfMotionResult_Error extends $pb.ProtobufEnum {
   static const HipRangeOfMotionResult_Error ERROR_UNKNOWN = HipRangeOfMotionResult_Error._(0, _omitEnumNames ? '' : 'ERROR_UNKNOWN');
   static const HipRangeOfMotionResult_Error ERROR_NONE = HipRangeOfMotionResult_Error._(1, _omitEnumNames ? '' : 'ERROR_NONE');

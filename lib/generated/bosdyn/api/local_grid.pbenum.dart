@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Describes the data type of a cell.
 class LocalGrid_CellFormat extends $pb.ProtobufEnum {
   static const LocalGrid_CellFormat CELL_FORMAT_UNKNOWN = LocalGrid_CellFormat._(0, _omitEnumNames ? '' : 'CELL_FORMAT_UNKNOWN');
   static const LocalGrid_CellFormat CELL_FORMAT_FLOAT32 = LocalGrid_CellFormat._(1, _omitEnumNames ? '' : 'CELL_FORMAT_FLOAT32');
@@ -38,6 +39,7 @@ class LocalGrid_CellFormat extends $pb.ProtobufEnum {
   const LocalGrid_CellFormat._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Encoding used for storing the local grid.
 class LocalGrid_Encoding extends $pb.ProtobufEnum {
   static const LocalGrid_Encoding ENCODING_UNKNOWN = LocalGrid_Encoding._(0, _omitEnumNames ? '' : 'ENCODING_UNKNOWN');
   static const LocalGrid_Encoding ENCODING_RAW = LocalGrid_Encoding._(1, _omitEnumNames ? '' : 'ENCODING_RAW');

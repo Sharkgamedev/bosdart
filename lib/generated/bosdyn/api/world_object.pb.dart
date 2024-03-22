@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,21 +13,86 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/any.pb.dart' as $66;
-import '../../google/protobuf/duration.pb.dart' as $61;
-import '../../google/protobuf/timestamp.pb.dart' as $59;
-import 'docking/docking.pbenum.dart' as $34;
-import 'geometry.pb.dart' as $60;
-import 'header.pb.dart' as $67;
+import '../../google/protobuf/any.pb.dart' as $67;
+import '../../google/protobuf/duration.pb.dart' as $62;
+import '../../google/protobuf/timestamp.pb.dart' as $60;
+import 'docking/docking.pbenum.dart' as $35;
+import 'geometry.pb.dart' as $61;
+import 'header.pb.dart' as $68;
 import 'image.pb.dart' as $11;
-import 'sparse_features.pb.dart' as $72;
-import 'stairs.pb.dart' as $73;
+import 'sparse_features.pb.dart' as $73;
+import 'stairs.pb.dart' as $74;
 import 'world_object.pbenum.dart';
 
 export 'world_object.pbenum.dart';
 
+/// The world object message is used to describe different objects seen by a robot. It contains
+/// information about the properties of the object in addition to a unique id and the transform
+/// snapshot. The world object uses "properties" to describe different traits about the object, such
+/// as image coordinates associated with the camera the object was detected in. A world object can
+/// have multiple different properties that are all associated with the single object.
 class WorldObject extends $pb.GeneratedMessage {
-  factory WorldObject() => create();
+  factory WorldObject({
+    $core.int? id,
+    $core.String? name,
+    $core.Iterable<DrawableProperties>? drawableProperties,
+    AprilTagProperties? apriltagProperties,
+    ImageProperties? imageProperties,
+    DockProperties? dockProperties,
+    RayProperties? rayProperties,
+    BoundingBoxProperties? boundingBoxProperties,
+    NoGoRegionProperties? nogoRegionProperties,
+    StaircaseProperties? staircaseProperties,
+    $60.Timestamp? acquisitionTime,
+    $61.FrameTreeSnapshot? transformsSnapshot,
+    $62.Duration? objectLifetime,
+    $67.Any? additionalProperties,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (drawableProperties != null) {
+      $result.drawableProperties.addAll(drawableProperties);
+    }
+    if (apriltagProperties != null) {
+      $result.apriltagProperties = apriltagProperties;
+    }
+    if (imageProperties != null) {
+      $result.imageProperties = imageProperties;
+    }
+    if (dockProperties != null) {
+      $result.dockProperties = dockProperties;
+    }
+    if (rayProperties != null) {
+      $result.rayProperties = rayProperties;
+    }
+    if (boundingBoxProperties != null) {
+      $result.boundingBoxProperties = boundingBoxProperties;
+    }
+    if (nogoRegionProperties != null) {
+      $result.nogoRegionProperties = nogoRegionProperties;
+    }
+    if (staircaseProperties != null) {
+      $result.staircaseProperties = staircaseProperties;
+    }
+    if (acquisitionTime != null) {
+      $result.acquisitionTime = acquisitionTime;
+    }
+    if (transformsSnapshot != null) {
+      $result.transformsSnapshot = transformsSnapshot;
+    }
+    if (objectLifetime != null) {
+      $result.objectLifetime = objectLifetime;
+    }
+    if (additionalProperties != null) {
+      $result.additionalProperties = additionalProperties;
+    }
+    return $result;
+  }
   WorldObject._() : super();
   factory WorldObject.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorldObject.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -43,10 +108,10 @@ class WorldObject extends $pb.GeneratedMessage {
     ..aOM<BoundingBoxProperties>(12, _omitFieldNames ? '' : 'boundingBoxProperties', subBuilder: BoundingBoxProperties.create)
     ..aOM<NoGoRegionProperties>(14, _omitFieldNames ? '' : 'nogoRegionProperties', subBuilder: NoGoRegionProperties.create)
     ..aOM<StaircaseProperties>(15, _omitFieldNames ? '' : 'staircaseProperties', subBuilder: StaircaseProperties.create)
-    ..aOM<$59.Timestamp>(30, _omitFieldNames ? '' : 'acquisitionTime', subBuilder: $59.Timestamp.create)
-    ..aOM<$60.FrameTreeSnapshot>(31, _omitFieldNames ? '' : 'transformsSnapshot', subBuilder: $60.FrameTreeSnapshot.create)
-    ..aOM<$61.Duration>(32, _omitFieldNames ? '' : 'objectLifetime', subBuilder: $61.Duration.create)
-    ..aOM<$66.Any>(100, _omitFieldNames ? '' : 'additionalProperties', subBuilder: $66.Any.create)
+    ..aOM<$60.Timestamp>(30, _omitFieldNames ? '' : 'acquisitionTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$61.FrameTreeSnapshot>(31, _omitFieldNames ? '' : 'transformsSnapshot', subBuilder: $61.FrameTreeSnapshot.create)
+    ..aOM<$62.Duration>(32, _omitFieldNames ? '' : 'objectLifetime', subBuilder: $62.Duration.create)
+    ..aOM<$67.Any>(100, _omitFieldNames ? '' : 'additionalProperties', subBuilder: $67.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -71,6 +136,8 @@ class WorldObject extends $pb.GeneratedMessage {
   static WorldObject getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WorldObject>(create);
   static WorldObject? _defaultInstance;
 
+  /// Unique integer identifier that will be consistent for the duration of a robot's battery life
+  /// The id is set internally by the world object service.
   @$pb.TagNumber(1)
   $core.int get id => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -80,6 +147,8 @@ class WorldObject extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// A human readable name for the world object. Note that this differs from any frame_name's
+  /// associated with the object (since there can be multiple frames describing a single object).
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -89,9 +158,11 @@ class WorldObject extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
 
+  /// The drawable properties describe geometric shapes associated with an object.
   @$pb.TagNumber(5)
   $core.List<DrawableProperties> get drawableProperties => $_getList(2);
 
+  /// The apriltag properties describe any fiducial identifying an object.
   @$pb.TagNumber(6)
   AprilTagProperties get apriltagProperties => $_getN(3);
   @$pb.TagNumber(6)
@@ -103,6 +174,7 @@ class WorldObject extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   AprilTagProperties ensureApriltagProperties() => $_ensure(3);
 
+  /// The image properties describe any camera and image coordinates associated with an object.
   @$pb.TagNumber(9)
   ImageProperties get imageProperties => $_getN(4);
   @$pb.TagNumber(9)
@@ -114,6 +186,7 @@ class WorldObject extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   ImageProperties ensureImageProperties() => $_ensure(4);
 
+  /// Properties describing a dock
   @$pb.TagNumber(10)
   DockProperties get dockProperties => $_getN(5);
   @$pb.TagNumber(10)
@@ -125,6 +198,8 @@ class WorldObject extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   DockProperties ensureDockProperties() => $_ensure(5);
 
+  /// A ray pointing at the object.  Useful in cases where position is unknown but direction is
+  /// known.
   @$pb.TagNumber(11)
   RayProperties get rayProperties => $_getN(6);
   @$pb.TagNumber(11)
@@ -136,6 +211,7 @@ class WorldObject extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   RayProperties ensureRayProperties() => $_ensure(6);
 
+  /// Bounding box in the world, oriented at the location provided in the transforms_snapshot.
   @$pb.TagNumber(12)
   BoundingBoxProperties get boundingBoxProperties => $_getN(7);
   @$pb.TagNumber(12)
@@ -147,6 +223,7 @@ class WorldObject extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   BoundingBoxProperties ensureBoundingBoxProperties() => $_ensure(7);
 
+  /// Property for a user no-go
   @$pb.TagNumber(14)
   NoGoRegionProperties get nogoRegionProperties => $_getN(8);
   @$pb.TagNumber(14)
@@ -158,6 +235,7 @@ class WorldObject extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   NoGoRegionProperties ensureNogoRegionProperties() => $_ensure(8);
 
+  /// The staircase properties provide information that helps the robot traverse or see a staircase.
   @$pb.TagNumber(15)
   StaircaseProperties get staircaseProperties => $_getN(9);
   @$pb.TagNumber(15)
@@ -169,61 +247,91 @@ class WorldObject extends $pb.GeneratedMessage {
   @$pb.TagNumber(15)
   StaircaseProperties ensureStaircaseProperties() => $_ensure(9);
 
+  /// Time in robot time clock at which this object was most recently detected and valid.
   @$pb.TagNumber(30)
-  $59.Timestamp get acquisitionTime => $_getN(10);
+  $60.Timestamp get acquisitionTime => $_getN(10);
   @$pb.TagNumber(30)
-  set acquisitionTime($59.Timestamp v) { setField(30, v); }
+  set acquisitionTime($60.Timestamp v) { setField(30, v); }
   @$pb.TagNumber(30)
   $core.bool hasAcquisitionTime() => $_has(10);
   @$pb.TagNumber(30)
   void clearAcquisitionTime() => clearField(30);
   @$pb.TagNumber(30)
-  $59.Timestamp ensureAcquisitionTime() => $_ensure(10);
+  $60.Timestamp ensureAcquisitionTime() => $_ensure(10);
 
+  /// A tree-based collection of transformations, which will include the transformations to each
+  /// of the returned world objects in addition to transformations to the common frames ("vision",
+  /// "body", "odom"). All transforms within the snapshot are at the acquisition time of the world
+  /// object. Note that each object's frame names are defined within the properties submessage. For
+  /// example, the apriltag frame name is defined in the AprilTagProperties message as
+  /// "frame_name_fiducial"
   @$pb.TagNumber(31)
-  $60.FrameTreeSnapshot get transformsSnapshot => $_getN(11);
+  $61.FrameTreeSnapshot get transformsSnapshot => $_getN(11);
   @$pb.TagNumber(31)
-  set transformsSnapshot($60.FrameTreeSnapshot v) { setField(31, v); }
+  set transformsSnapshot($61.FrameTreeSnapshot v) { setField(31, v); }
   @$pb.TagNumber(31)
   $core.bool hasTransformsSnapshot() => $_has(11);
   @$pb.TagNumber(31)
   void clearTransformsSnapshot() => clearField(31);
   @$pb.TagNumber(31)
-  $60.FrameTreeSnapshot ensureTransformsSnapshot() => $_ensure(11);
+  $61.FrameTreeSnapshot ensureTransformsSnapshot() => $_ensure(11);
 
+  /// Duration of time after which the obstacle expires.  If this field is left blank, the object
+  /// will expire according to a default time set in the world object service.  The duration is
+  /// relative to the acquisition_time if filled out, or relative to the time the object is
+  /// added to the world object service if acquisition_time is left blank.
   @$pb.TagNumber(32)
-  $61.Duration get objectLifetime => $_getN(12);
+  $62.Duration get objectLifetime => $_getN(12);
   @$pb.TagNumber(32)
-  set objectLifetime($61.Duration v) { setField(32, v); }
+  set objectLifetime($62.Duration v) { setField(32, v); }
   @$pb.TagNumber(32)
   $core.bool hasObjectLifetime() => $_has(12);
   @$pb.TagNumber(32)
   void clearObjectLifetime() => clearField(32);
   @$pb.TagNumber(32)
-  $61.Duration ensureObjectLifetime() => $_ensure(12);
+  $62.Duration ensureObjectLifetime() => $_ensure(12);
 
+  /// An extra field for application-specific object properties.
   @$pb.TagNumber(100)
-  $66.Any get additionalProperties => $_getN(13);
+  $67.Any get additionalProperties => $_getN(13);
   @$pb.TagNumber(100)
-  set additionalProperties($66.Any v) { setField(100, v); }
+  set additionalProperties($67.Any v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasAdditionalProperties() => $_has(13);
   @$pb.TagNumber(100)
   void clearAdditionalProperties() => clearField(100);
   @$pb.TagNumber(100)
-  $66.Any ensureAdditionalProperties() => $_ensure(13);
+  $67.Any ensureAdditionalProperties() => $_ensure(13);
 }
 
+/// The ListWorldObject request message, which can optionally include filters for the object type or
+/// timestamp.
 class ListWorldObjectRequest extends $pb.GeneratedMessage {
-  factory ListWorldObjectRequest() => create();
+  factory ListWorldObjectRequest({
+    $68.RequestHeader? header,
+    $core.Iterable<WorldObjectType>? objectType,
+    $60.Timestamp? timestampFilter,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (objectType != null) {
+      $result.objectType.addAll(objectType);
+    }
+    if (timestampFilter != null) {
+      $result.timestampFilter = timestampFilter;
+    }
+    return $result;
+  }
   ListWorldObjectRequest._() : super();
   factory ListWorldObjectRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListWorldObjectRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListWorldObjectRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..pc<WorldObjectType>(2, _omitFieldNames ? '' : 'objectType', $pb.PbFieldType.KE, valueOf: WorldObjectType.valueOf, enumValues: WorldObjectType.values, defaultEnumValue: WorldObjectType.WORLD_OBJECT_UNKNOWN)
-    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'timestampFilter', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'timestampFilter', subBuilder: $60.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -248,40 +356,59 @@ class ListWorldObjectRequest extends $pb.GeneratedMessage {
   static ListWorldObjectRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListWorldObjectRequest>(create);
   static ListWorldObjectRequest? _defaultInstance;
 
+  /// Common request header
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Optional filters to apply to the world object request
+  /// Specific type of object; can request multiple different properties
   @$pb.TagNumber(2)
   $core.List<WorldObjectType> get objectType => $_getList(1);
 
+  /// Timestamp to filter objects based on. The time should be in robot time
+  /// All objects with header timestamps after (>) timestamp_filter will be returned
   @$pb.TagNumber(3)
-  $59.Timestamp get timestampFilter => $_getN(2);
+  $60.Timestamp get timestampFilter => $_getN(2);
   @$pb.TagNumber(3)
-  set timestampFilter($59.Timestamp v) { setField(3, v); }
+  set timestampFilter($60.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimestampFilter() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimestampFilter() => clearField(3);
   @$pb.TagNumber(3)
-  $59.Timestamp ensureTimestampFilter() => $_ensure(2);
+  $60.Timestamp ensureTimestampFilter() => $_ensure(2);
 }
 
+/// The ListWorldObject response message, which contains all of the current world objects in the
+/// robot's perception scene.
 class ListWorldObjectResponse extends $pb.GeneratedMessage {
-  factory ListWorldObjectResponse() => create();
+  factory ListWorldObjectResponse({
+    $68.ResponseHeader? header,
+    $core.Iterable<WorldObject>? worldObjects,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (worldObjects != null) {
+      $result.worldObjects.addAll(worldObjects);
+    }
+    return $result;
+  }
   ListWorldObjectResponse._() : super();
   factory ListWorldObjectResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListWorldObjectResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListWorldObjectResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..pc<WorldObject>(2, _omitFieldNames ? '' : 'worldObjects', $pb.PbFieldType.PM, subBuilder: WorldObject.create)
     ..hasRequiredFields = false
   ;
@@ -307,23 +434,37 @@ class ListWorldObjectResponse extends $pb.GeneratedMessage {
   static ListWorldObjectResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListWorldObjectResponse>(create);
   static ListWorldObjectResponse? _defaultInstance;
 
+  /// Common response header
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// The currently perceived world objects.
   @$pb.TagNumber(2)
   $core.List<WorldObject> get worldObjects => $_getList(1);
 }
 
 class MutateWorldObjectRequest_Mutation extends $pb.GeneratedMessage {
-  factory MutateWorldObjectRequest_Mutation() => create();
+  factory MutateWorldObjectRequest_Mutation({
+    MutateWorldObjectRequest_Action? action,
+    WorldObject? object,
+  }) {
+    final $result = create();
+    if (action != null) {
+      $result.action = action;
+    }
+    if (object != null) {
+      $result.object = object;
+    }
+    return $result;
+  }
   MutateWorldObjectRequest_Mutation._() : super();
   factory MutateWorldObjectRequest_Mutation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MutateWorldObjectRequest_Mutation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -355,6 +496,7 @@ class MutateWorldObjectRequest_Mutation extends $pb.GeneratedMessage {
   static MutateWorldObjectRequest_Mutation getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MutateWorldObjectRequest_Mutation>(create);
   static MutateWorldObjectRequest_Mutation? _defaultInstance;
 
+  /// The action (add, change, or delete) to be applied to a world object.
   @$pb.TagNumber(1)
   MutateWorldObjectRequest_Action get action => $_getN(0);
   @$pb.TagNumber(1)
@@ -364,6 +506,9 @@ class MutateWorldObjectRequest_Mutation extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearAction() => clearField(1);
 
+  /// World object to be mutated.
+  /// If an object is being changed/deleted, then the world object id must match a world
+  /// object id known by the service.
   @$pb.TagNumber(2)
   WorldObject get object => $_getN(1);
   @$pb.TagNumber(2)
@@ -376,14 +521,28 @@ class MutateWorldObjectRequest_Mutation extends $pb.GeneratedMessage {
   WorldObject ensureObject() => $_ensure(1);
 }
 
+/// The MutateWorldObject request message, which specifies the type of mutation and which object
+/// the mutation should be applied to.
 class MutateWorldObjectRequest extends $pb.GeneratedMessage {
-  factory MutateWorldObjectRequest() => create();
+  factory MutateWorldObjectRequest({
+    $68.RequestHeader? header,
+    MutateWorldObjectRequest_Mutation? mutation,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (mutation != null) {
+      $result.mutation = mutation;
+    }
+    return $result;
+  }
   MutateWorldObjectRequest._() : super();
   factory MutateWorldObjectRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MutateWorldObjectRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MutateWorldObjectRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<MutateWorldObjectRequest_Mutation>(2, _omitFieldNames ? '' : 'mutation', subBuilder: MutateWorldObjectRequest_Mutation.create)
     ..hasRequiredFields = false
   ;
@@ -409,17 +568,19 @@ class MutateWorldObjectRequest extends $pb.GeneratedMessage {
   static MutateWorldObjectRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MutateWorldObjectRequest>(create);
   static MutateWorldObjectRequest? _defaultInstance;
 
+  /// Common request header
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// The mutation for this request.
   @$pb.TagNumber(2)
   MutateWorldObjectRequest_Mutation get mutation => $_getN(1);
   @$pb.TagNumber(2)
@@ -432,14 +593,32 @@ class MutateWorldObjectRequest extends $pb.GeneratedMessage {
   MutateWorldObjectRequest_Mutation ensureMutation() => $_ensure(1);
 }
 
+/// The MutateWorldObject response message, which includes the world object id for the object that
+/// the mutation was applied to if the request succeeds.
 class MutateWorldObjectResponse extends $pb.GeneratedMessage {
-  factory MutateWorldObjectResponse() => create();
+  factory MutateWorldObjectResponse({
+    $68.ResponseHeader? header,
+    MutateWorldObjectResponse_Status? status,
+    $core.int? mutatedObjectId,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (mutatedObjectId != null) {
+      $result.mutatedObjectId = mutatedObjectId;
+    }
+    return $result;
+  }
   MutateWorldObjectResponse._() : super();
   factory MutateWorldObjectResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MutateWorldObjectResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MutateWorldObjectResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..e<MutateWorldObjectResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: MutateWorldObjectResponse_Status.STATUS_UNKNOWN, valueOf: MutateWorldObjectResponse_Status.valueOf, enumValues: MutateWorldObjectResponse_Status.values)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'mutatedObjectId', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
@@ -466,17 +645,19 @@ class MutateWorldObjectResponse extends $pb.GeneratedMessage {
   static MutateWorldObjectResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MutateWorldObjectResponse>(create);
   static MutateWorldObjectResponse? _defaultInstance;
 
+  /// Common response header
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Return status for the request.
   @$pb.TagNumber(2)
   MutateWorldObjectResponse_Status get status => $_getN(1);
   @$pb.TagNumber(2)
@@ -486,6 +667,7 @@ class MutateWorldObjectResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearStatus() => clearField(2);
 
+  /// ID set by the world object service for the mutated object
   @$pb.TagNumber(4)
   $core.int get mutatedObjectId => $_getIZ(2);
   @$pb.TagNumber(4)
@@ -501,8 +683,29 @@ enum NoGoRegionProperties_Region {
   notSet
 }
 
+/// A box no-go region
 class NoGoRegionProperties extends $pb.GeneratedMessage {
-  factory NoGoRegionProperties() => create();
+  factory NoGoRegionProperties({
+    $61.Box2WithFrame? box,
+    $core.bool? disableFootObstacleGeneration,
+    $core.bool? disableBodyObstacleGeneration,
+    $core.bool? disableFootObstacleInflation,
+  }) {
+    final $result = create();
+    if (box != null) {
+      $result.box = box;
+    }
+    if (disableFootObstacleGeneration != null) {
+      $result.disableFootObstacleGeneration = disableFootObstacleGeneration;
+    }
+    if (disableBodyObstacleGeneration != null) {
+      $result.disableBodyObstacleGeneration = disableBodyObstacleGeneration;
+    }
+    if (disableFootObstacleInflation != null) {
+      $result.disableFootObstacleInflation = disableFootObstacleInflation;
+    }
+    return $result;
+  }
   NoGoRegionProperties._() : super();
   factory NoGoRegionProperties.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NoGoRegionProperties.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -513,7 +716,7 @@ class NoGoRegionProperties extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NoGoRegionProperties', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..oo(0, [1])
-    ..aOM<$60.Box2WithFrame>(1, _omitFieldNames ? '' : 'box', subBuilder: $60.Box2WithFrame.create)
+    ..aOM<$61.Box2WithFrame>(1, _omitFieldNames ? '' : 'box', subBuilder: $61.Box2WithFrame.create)
     ..aOB(2, _omitFieldNames ? '' : 'disableFootObstacleGeneration')
     ..aOB(3, _omitFieldNames ? '' : 'disableBodyObstacleGeneration')
     ..aOB(4, _omitFieldNames ? '' : 'disableFootObstacleInflation')
@@ -545,16 +748,17 @@ class NoGoRegionProperties extends $pb.GeneratedMessage {
   void clearRegion() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
-  $60.Box2WithFrame get box => $_getN(0);
+  $61.Box2WithFrame get box => $_getN(0);
   @$pb.TagNumber(1)
-  set box($60.Box2WithFrame v) { setField(1, v); }
+  set box($61.Box2WithFrame v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBox() => $_has(0);
   @$pb.TagNumber(1)
   void clearBox() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Box2WithFrame ensureBox() => $_ensure(0);
+  $61.Box2WithFrame ensureBox() => $_ensure(0);
 
+  /// If set true, will NOT create a foot obstacle for this region.
   @$pb.TagNumber(2)
   $core.bool get disableFootObstacleGeneration => $_getBF(1);
   @$pb.TagNumber(2)
@@ -564,6 +768,7 @@ class NoGoRegionProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDisableFootObstacleGeneration() => clearField(2);
 
+  /// If set true, will NOT create a body obstacle for this region.
   @$pb.TagNumber(3)
   $core.bool get disableBodyObstacleGeneration => $_getBF(2);
   @$pb.TagNumber(3)
@@ -573,6 +778,8 @@ class NoGoRegionProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDisableBodyObstacleGeneration() => clearField(3);
 
+  /// If set true, and a foot obstacle is being generated, will make the foot obstacle the exact
+  /// size specified in the "region" field and NOT inflate by approx. robot foot width.
   @$pb.TagNumber(4)
   $core.bool get disableFootObstacleInflation => $_getBF(3);
   @$pb.TagNumber(4)
@@ -589,8 +796,37 @@ enum ImageProperties_ImageData {
   notSet
 }
 
+/// World object properties describing image coordinates associated with an object or scene.
 class ImageProperties extends $pb.GeneratedMessage {
-  factory ImageProperties() => create();
+  factory ImageProperties({
+    $core.String? cameraSource,
+    $61.Polygon? coordinates,
+    $core.String? frameNameImageCoordinates,
+    $73.KeypointSet? keypoints,
+    $11.ImageSource? imageSource,
+    $11.ImageCapture? imageCapture,
+  }) {
+    final $result = create();
+    if (cameraSource != null) {
+      $result.cameraSource = cameraSource;
+    }
+    if (coordinates != null) {
+      $result.coordinates = coordinates;
+    }
+    if (frameNameImageCoordinates != null) {
+      $result.frameNameImageCoordinates = frameNameImageCoordinates;
+    }
+    if (keypoints != null) {
+      $result.keypoints = keypoints;
+    }
+    if (imageSource != null) {
+      $result.imageSource = imageSource;
+    }
+    if (imageCapture != null) {
+      $result.imageCapture = imageCapture;
+    }
+    return $result;
+  }
   ImageProperties._() : super();
   factory ImageProperties.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ImageProperties.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -603,9 +839,9 @@ class ImageProperties extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImageProperties', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..oo(0, [2, 4])
     ..aOS(1, _omitFieldNames ? '' : 'cameraSource')
-    ..aOM<$60.Polygon>(2, _omitFieldNames ? '' : 'coordinates', subBuilder: $60.Polygon.create)
+    ..aOM<$61.Polygon>(2, _omitFieldNames ? '' : 'coordinates', subBuilder: $61.Polygon.create)
     ..aOS(3, _omitFieldNames ? '' : 'frameNameImageCoordinates')
-    ..aOM<$72.KeypointSet>(4, _omitFieldNames ? '' : 'keypoints', subBuilder: $72.KeypointSet.create)
+    ..aOM<$73.KeypointSet>(4, _omitFieldNames ? '' : 'keypoints', subBuilder: $73.KeypointSet.create)
     ..aOM<$11.ImageSource>(5, _omitFieldNames ? '' : 'imageSource', subBuilder: $11.ImageSource.create)
     ..aOM<$11.ImageCapture>(6, _omitFieldNames ? '' : 'imageCapture', subBuilder: $11.ImageCapture.create)
     ..hasRequiredFields = false
@@ -635,6 +871,7 @@ class ImageProperties extends $pb.GeneratedMessage {
   ImageProperties_ImageData whichImageData() => _ImageProperties_ImageDataByTag[$_whichOneof(0)]!;
   void clearImageData() => clearField($_whichOneof(0));
 
+  /// Camera Source of such as "back", "frontleft", etc.
   @$pb.TagNumber(1)
   $core.String get cameraSource => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -644,17 +881,20 @@ class ImageProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearCameraSource() => clearField(1);
 
+  /// Image coordinates of the corners of a polygon (pixels of x[row], y[col]) in either
+  /// clockwise/counter clockwise order
   @$pb.TagNumber(2)
-  $60.Polygon get coordinates => $_getN(1);
+  $61.Polygon get coordinates => $_getN(1);
   @$pb.TagNumber(2)
-  set coordinates($60.Polygon v) { setField(2, v); }
+  set coordinates($61.Polygon v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCoordinates() => $_has(1);
   @$pb.TagNumber(2)
   void clearCoordinates() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Polygon ensureCoordinates() => $_ensure(1);
+  $61.Polygon ensureCoordinates() => $_ensure(1);
 
+  /// Frame name for the object described by image coordinates.
   @$pb.TagNumber(3)
   $core.String get frameNameImageCoordinates => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -664,17 +904,19 @@ class ImageProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearFrameNameImageCoordinates() => clearField(3);
 
+  /// A set of keypoints and their associated metadata.
   @$pb.TagNumber(4)
-  $72.KeypointSet get keypoints => $_getN(3);
+  $73.KeypointSet get keypoints => $_getN(3);
   @$pb.TagNumber(4)
-  set keypoints($72.KeypointSet v) { setField(4, v); }
+  set keypoints($73.KeypointSet v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasKeypoints() => $_has(3);
   @$pb.TagNumber(4)
   void clearKeypoints() => clearField(4);
   @$pb.TagNumber(4)
-  $72.KeypointSet ensureKeypoints() => $_ensure(3);
+  $73.KeypointSet ensureKeypoints() => $_ensure(3);
 
+  /// Camera parameters.
   @$pb.TagNumber(5)
   $11.ImageSource get imageSource => $_getN(4);
   @$pb.TagNumber(5)
@@ -686,6 +928,7 @@ class ImageProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $11.ImageSource ensureImageSource() => $_ensure(4);
 
+  /// Image that produced the data.
   @$pb.TagNumber(6)
   $11.ImageCapture get imageCapture => $_getN(5);
   @$pb.TagNumber(6)
@@ -698,15 +941,40 @@ class ImageProperties extends $pb.GeneratedMessage {
   $11.ImageCapture ensureImageCapture() => $_ensure(5);
 }
 
+/// World object properties describing a dock
 class DockProperties extends $pb.GeneratedMessage {
-  factory DockProperties() => create();
+  factory DockProperties({
+    $core.int? dockId,
+    $35.DockType? type,
+    $core.String? frameNameDock,
+    $core.bool? unavailable,
+    $core.bool? fromPrior,
+  }) {
+    final $result = create();
+    if (dockId != null) {
+      $result.dockId = dockId;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (frameNameDock != null) {
+      $result.frameNameDock = frameNameDock;
+    }
+    if (unavailable != null) {
+      $result.unavailable = unavailable;
+    }
+    if (fromPrior != null) {
+      $result.fromPrior = fromPrior;
+    }
+    return $result;
+  }
   DockProperties._() : super();
   factory DockProperties.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DockProperties.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DockProperties', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'dockId', $pb.PbFieldType.OU3)
-    ..e<$34.DockType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $34.DockType.DOCK_TYPE_UNKNOWN, valueOf: $34.DockType.valueOf, enumValues: $34.DockType.values)
+    ..e<$35.DockType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $35.DockType.DOCK_TYPE_UNKNOWN, valueOf: $35.DockType.valueOf, enumValues: $35.DockType.values)
     ..aOS(3, _omitFieldNames ? '' : 'frameNameDock')
     ..aOB(4, _omitFieldNames ? '' : 'unavailable')
     ..aOB(5, _omitFieldNames ? '' : 'fromPrior')
@@ -734,6 +1002,7 @@ class DockProperties extends $pb.GeneratedMessage {
   static DockProperties getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DockProperties>(create);
   static DockProperties? _defaultInstance;
 
+  /// Consistent id associated with a given dock.
   @$pb.TagNumber(1)
   $core.int get dockId => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -743,15 +1012,18 @@ class DockProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearDockId() => clearField(1);
 
+  /// Type of dock.
   @$pb.TagNumber(2)
-  $34.DockType get type => $_getN(1);
+  $35.DockType get type => $_getN(1);
   @$pb.TagNumber(2)
-  set type($34.DockType v) { setField(2, v); }
+  set type($35.DockType v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasType() => $_has(1);
   @$pb.TagNumber(2)
   void clearType() => clearField(2);
 
+  /// The frame name for the location of dock origin. This will be included in the transform
+  /// snapshot.
   @$pb.TagNumber(3)
   $core.String get frameNameDock => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -761,6 +1033,7 @@ class DockProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearFrameNameDock() => clearField(3);
 
+  /// Availability if the dock can be used
   @$pb.TagNumber(4)
   $core.bool get unavailable => $_getBF(3);
   @$pb.TagNumber(4)
@@ -770,6 +1043,7 @@ class DockProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearUnavailable() => clearField(4);
 
+  /// The dock is an unconfirmed prior detection
   @$pb.TagNumber(5)
   $core.bool get fromPrior => $_getBF(4);
   @$pb.TagNumber(5)
@@ -780,18 +1054,59 @@ class DockProperties extends $pb.GeneratedMessage {
   void clearFromPrior() => clearField(5);
 }
 
+/// World object properties describing a fiducial object.
 class AprilTagProperties extends $pb.GeneratedMessage {
-  factory AprilTagProperties() => create();
+  factory AprilTagProperties({
+    $core.int? tagId,
+    $61.Vec2? dimensions,
+    $core.String? frameNameFiducial,
+    $core.String? frameNameFiducialFiltered,
+    $61.SE3Covariance? detectionCovariance,
+    $core.String? detectionCovarianceReferenceFrame,
+    $core.String? frameNameCamera,
+    AprilTagProperties_AprilTagPoseStatus? fiducialPoseStatus,
+    AprilTagProperties_AprilTagPoseStatus? fiducialFilteredPoseStatus,
+  }) {
+    final $result = create();
+    if (tagId != null) {
+      $result.tagId = tagId;
+    }
+    if (dimensions != null) {
+      $result.dimensions = dimensions;
+    }
+    if (frameNameFiducial != null) {
+      $result.frameNameFiducial = frameNameFiducial;
+    }
+    if (frameNameFiducialFiltered != null) {
+      $result.frameNameFiducialFiltered = frameNameFiducialFiltered;
+    }
+    if (detectionCovariance != null) {
+      $result.detectionCovariance = detectionCovariance;
+    }
+    if (detectionCovarianceReferenceFrame != null) {
+      $result.detectionCovarianceReferenceFrame = detectionCovarianceReferenceFrame;
+    }
+    if (frameNameCamera != null) {
+      $result.frameNameCamera = frameNameCamera;
+    }
+    if (fiducialPoseStatus != null) {
+      $result.fiducialPoseStatus = fiducialPoseStatus;
+    }
+    if (fiducialFilteredPoseStatus != null) {
+      $result.fiducialFilteredPoseStatus = fiducialFilteredPoseStatus;
+    }
+    return $result;
+  }
   AprilTagProperties._() : super();
   factory AprilTagProperties.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AprilTagProperties.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AprilTagProperties', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'tagId', $pb.PbFieldType.O3)
-    ..aOM<$60.Vec2>(2, _omitFieldNames ? '' : 'dimensions', subBuilder: $60.Vec2.create)
+    ..aOM<$61.Vec2>(2, _omitFieldNames ? '' : 'dimensions', subBuilder: $61.Vec2.create)
     ..aOS(3, _omitFieldNames ? '' : 'frameNameFiducial')
     ..aOS(4, _omitFieldNames ? '' : 'frameNameFiducialFiltered')
-    ..aOM<$60.SE3Covariance>(5, _omitFieldNames ? '' : 'detectionCovariance', subBuilder: $60.SE3Covariance.create)
+    ..aOM<$61.SE3Covariance>(5, _omitFieldNames ? '' : 'detectionCovariance', subBuilder: $61.SE3Covariance.create)
     ..aOS(6, _omitFieldNames ? '' : 'detectionCovarianceReferenceFrame')
     ..aOS(7, _omitFieldNames ? '' : 'frameNameCamera')
     ..e<AprilTagProperties_AprilTagPoseStatus>(8, _omitFieldNames ? '' : 'fiducialPoseStatus', $pb.PbFieldType.OE, defaultOrMaker: AprilTagProperties_AprilTagPoseStatus.STATUS_UNKNOWN, valueOf: AprilTagProperties_AprilTagPoseStatus.valueOf, enumValues: AprilTagProperties_AprilTagPoseStatus.values)
@@ -820,6 +1135,8 @@ class AprilTagProperties extends $pb.GeneratedMessage {
   static AprilTagProperties getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AprilTagProperties>(create);
   static AprilTagProperties? _defaultInstance;
 
+  /// Consistent integer id associated with a given apriltag. April Tag detections will be from the
+  /// tag family 36h11.
   @$pb.TagNumber(1)
   $core.int get tagId => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -829,17 +1146,21 @@ class AprilTagProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearTagId() => clearField(1);
 
+  /// Apriltag size in meters, where x is the row/width length and y is the
+  /// height/col length of the tag
   @$pb.TagNumber(2)
-  $60.Vec2 get dimensions => $_getN(1);
+  $61.Vec2 get dimensions => $_getN(1);
   @$pb.TagNumber(2)
-  set dimensions($60.Vec2 v) { setField(2, v); }
+  set dimensions($61.Vec2 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDimensions() => $_has(1);
   @$pb.TagNumber(2)
   void clearDimensions() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Vec2 ensureDimensions() => $_ensure(1);
+  $61.Vec2 ensureDimensions() => $_ensure(1);
 
+  /// The frame name for the raw version of this fiducial. This will be included in the transform
+  /// snapshot.
   @$pb.TagNumber(3)
   $core.String get frameNameFiducial => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -849,6 +1170,8 @@ class AprilTagProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearFrameNameFiducial() => clearField(3);
 
+  /// The frame name for the filtered version of this fiducial. This will be included in the
+  /// transform snapshot.
   @$pb.TagNumber(4)
   $core.String get frameNameFiducialFiltered => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -858,17 +1181,24 @@ class AprilTagProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearFrameNameFiducialFiltered() => clearField(4);
 
+  /// A 6 x 6 Covariance matrix representing the marginal uncertainty of the last detection.
+  /// The rows/columns are:
+  /// rx, ry, rz, tx, ty, tz
+  /// which represent incremental rotation and translation along the x, y, and z axes of the
+  /// given frame, respectively.
+  /// This is computed using the Jacobian of the pose estimation algorithm.
   @$pb.TagNumber(5)
-  $60.SE3Covariance get detectionCovariance => $_getN(4);
+  $61.SE3Covariance get detectionCovariance => $_getN(4);
   @$pb.TagNumber(5)
-  set detectionCovariance($60.SE3Covariance v) { setField(5, v); }
+  set detectionCovariance($61.SE3Covariance v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasDetectionCovariance() => $_has(4);
   @$pb.TagNumber(5)
   void clearDetectionCovariance() => clearField(5);
   @$pb.TagNumber(5)
-  $60.SE3Covariance ensureDetectionCovariance() => $_ensure(4);
+  $61.SE3Covariance ensureDetectionCovariance() => $_ensure(4);
 
+  /// The frame that the detection covariance is expressed in.
   @$pb.TagNumber(6)
   $core.String get detectionCovarianceReferenceFrame => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -878,6 +1208,7 @@ class AprilTagProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearDetectionCovarianceReferenceFrame() => clearField(6);
 
+  /// The frame name for the camera that detected this fiducial.
   @$pb.TagNumber(7)
   $core.String get frameNameCamera => $_getSZ(6);
   @$pb.TagNumber(7)
@@ -887,6 +1218,7 @@ class AprilTagProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearFrameNameCamera() => clearField(7);
 
+  /// Status of the pose estimation of the unfiltered fiducial frame.
   @$pb.TagNumber(8)
   AprilTagProperties_AprilTagPoseStatus get fiducialPoseStatus => $_getN(7);
   @$pb.TagNumber(8)
@@ -896,6 +1228,7 @@ class AprilTagProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearFiducialPoseStatus() => clearField(8);
 
+  /// Status of the pose estimation of the filtered fiducial frame.
   @$pb.TagNumber(9)
   AprilTagProperties_AprilTagPoseStatus get fiducialFilteredPoseStatus => $_getN(8);
   @$pb.TagNumber(9)
@@ -907,13 +1240,25 @@ class AprilTagProperties extends $pb.GeneratedMessage {
 }
 
 class RayProperties extends $pb.GeneratedMessage {
-  factory RayProperties() => create();
+  factory RayProperties({
+    $61.Ray? ray,
+    $core.String? frame,
+  }) {
+    final $result = create();
+    if (ray != null) {
+      $result.ray = ray;
+    }
+    if (frame != null) {
+      $result.frame = frame;
+    }
+    return $result;
+  }
   RayProperties._() : super();
   factory RayProperties.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RayProperties.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RayProperties', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Ray>(1, _omitFieldNames ? '' : 'ray', subBuilder: $60.Ray.create)
+    ..aOM<$61.Ray>(1, _omitFieldNames ? '' : 'ray', subBuilder: $61.Ray.create)
     ..aOS(2, _omitFieldNames ? '' : 'frame')
     ..hasRequiredFields = false
   ;
@@ -939,17 +1284,19 @@ class RayProperties extends $pb.GeneratedMessage {
   static RayProperties getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RayProperties>(create);
   static RayProperties? _defaultInstance;
 
+  /// Ray, usually pointing from the camera to the object.
   @$pb.TagNumber(1)
-  $60.Ray get ray => $_getN(0);
+  $61.Ray get ray => $_getN(0);
   @$pb.TagNumber(1)
-  set ray($60.Ray v) { setField(1, v); }
+  set ray($61.Ray v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRay() => $_has(0);
   @$pb.TagNumber(1)
   void clearRay() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Ray ensureRay() => $_ensure(0);
+  $61.Ray ensureRay() => $_ensure(0);
 
+  /// Frame the ray is expressed with respect to.
   @$pb.TagNumber(2)
   $core.String get frame => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -961,13 +1308,25 @@ class RayProperties extends $pb.GeneratedMessage {
 }
 
 class BoundingBoxProperties extends $pb.GeneratedMessage {
-  factory BoundingBoxProperties() => create();
+  factory BoundingBoxProperties({
+    $61.Vec3? sizeEwrtFrame,
+    $core.String? frame,
+  }) {
+    final $result = create();
+    if (sizeEwrtFrame != null) {
+      $result.sizeEwrtFrame = sizeEwrtFrame;
+    }
+    if (frame != null) {
+      $result.frame = frame;
+    }
+    return $result;
+  }
   BoundingBoxProperties._() : super();
   factory BoundingBoxProperties.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BoundingBoxProperties.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BoundingBoxProperties', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'sizeEwrtFrame', subBuilder: $60.Vec3.create)
+    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'sizeEwrtFrame', subBuilder: $61.Vec3.create)
     ..aOS(2, _omitFieldNames ? '' : 'frame')
     ..hasRequiredFields = false
   ;
@@ -993,17 +1352,22 @@ class BoundingBoxProperties extends $pb.GeneratedMessage {
   static BoundingBoxProperties getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BoundingBoxProperties>(create);
   static BoundingBoxProperties? _defaultInstance;
 
+  ///  An Oriented Bounding Box, with position and orientation at the frame provided in the
+  ///  transforms snapshot.
+  ///
+  ///  The size of the box is expressed with respect to the frame.
   @$pb.TagNumber(1)
-  $60.Vec3 get sizeEwrtFrame => $_getN(0);
+  $61.Vec3 get sizeEwrtFrame => $_getN(0);
   @$pb.TagNumber(1)
-  set sizeEwrtFrame($60.Vec3 v) { setField(1, v); }
+  set sizeEwrtFrame($61.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSizeEwrtFrame() => $_has(0);
   @$pb.TagNumber(1)
   void clearSizeEwrtFrame() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Vec3 ensureSizeEwrtFrame() => $_ensure(0);
+  $61.Vec3 ensureSizeEwrtFrame() => $_ensure(0);
 
+  /// Frame the size is expressed with respect to.
   @$pb.TagNumber(2)
   $core.String get frame => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -1014,8 +1378,29 @@ class BoundingBoxProperties extends $pb.GeneratedMessage {
   void clearFrame() => clearField(2);
 }
 
+/// RGBA values for color ranging from [0,255] for R/G/B, and [0,1] for A.
 class DrawableProperties_Color extends $pb.GeneratedMessage {
-  factory DrawableProperties_Color() => create();
+  factory DrawableProperties_Color({
+    $core.int? r,
+    $core.int? g,
+    $core.int? b,
+    $core.double? a,
+  }) {
+    final $result = create();
+    if (r != null) {
+      $result.r = r;
+    }
+    if (g != null) {
+      $result.g = g;
+    }
+    if (b != null) {
+      $result.b = b;
+    }
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   DrawableProperties_Color._() : super();
   factory DrawableProperties_Color.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DrawableProperties_Color.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1049,6 +1434,7 @@ class DrawableProperties_Color extends $pb.GeneratedMessage {
   static DrawableProperties_Color getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DrawableProperties_Color>(create);
   static DrawableProperties_Color? _defaultInstance;
 
+  /// Red value ranging from [0,255].
   @$pb.TagNumber(1)
   $core.int get r => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -1058,6 +1444,7 @@ class DrawableProperties_Color extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearR() => clearField(1);
 
+  /// / Green value ranging from [0,255].
   @$pb.TagNumber(2)
   $core.int get g => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -1067,6 +1454,7 @@ class DrawableProperties_Color extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearG() => clearField(2);
 
+  /// Blue value ranging from [0,255].
   @$pb.TagNumber(3)
   $core.int get b => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -1076,6 +1464,7 @@ class DrawableProperties_Color extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearB() => clearField(3);
 
+  /// Alpha (transparency) value ranging from [0,1].
   @$pb.TagNumber(4)
   $core.double get a => $_getN(3);
   @$pb.TagNumber(4)
@@ -1098,8 +1487,61 @@ enum DrawableProperties_Drawable {
   notSet
 }
 
+/// The drawing and visualization information for a world object.
 class DrawableProperties extends $pb.GeneratedMessage {
-  factory DrawableProperties() => create();
+  factory DrawableProperties({
+    DrawableProperties_Color? color,
+    $core.String? label,
+    $core.bool? wireframe,
+    DrawableFrame? frame,
+    DrawableSphere? sphere,
+    DrawableBox? box,
+    DrawableArrow? arrow,
+    DrawableCapsule? capsule,
+    DrawableCylinder? cylinder,
+    DrawableLineStrip? linestrip,
+    DrawablePoints? points,
+    $core.String? frameNameDrawable,
+  }) {
+    final $result = create();
+    if (color != null) {
+      $result.color = color;
+    }
+    if (label != null) {
+      $result.label = label;
+    }
+    if (wireframe != null) {
+      $result.wireframe = wireframe;
+    }
+    if (frame != null) {
+      $result.frame = frame;
+    }
+    if (sphere != null) {
+      $result.sphere = sphere;
+    }
+    if (box != null) {
+      $result.box = box;
+    }
+    if (arrow != null) {
+      $result.arrow = arrow;
+    }
+    if (capsule != null) {
+      $result.capsule = capsule;
+    }
+    if (cylinder != null) {
+      $result.cylinder = cylinder;
+    }
+    if (linestrip != null) {
+      $result.linestrip = linestrip;
+    }
+    if (points != null) {
+      $result.points = points;
+    }
+    if (frameNameDrawable != null) {
+      $result.frameNameDrawable = frameNameDrawable;
+    }
+    return $result;
+  }
   DrawableProperties._() : super();
   factory DrawableProperties.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DrawableProperties.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1156,6 +1598,7 @@ class DrawableProperties extends $pb.GeneratedMessage {
   DrawableProperties_Drawable whichDrawable() => _DrawableProperties_DrawableByTag[$_whichOneof(0)]!;
   void clearDrawable() => clearField($_whichOneof(0));
 
+  /// Color of the object.
   @$pb.TagNumber(1)
   DrawableProperties_Color get color => $_getN(0);
   @$pb.TagNumber(1)
@@ -1167,6 +1610,7 @@ class DrawableProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   DrawableProperties_Color ensureColor() => $_ensure(0);
 
+  /// Label to be drawn at the origin of the object.
   @$pb.TagNumber(2)
   $core.String get label => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -1176,6 +1620,7 @@ class DrawableProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearLabel() => clearField(2);
 
+  /// Drawn objects in wireframe.
   @$pb.TagNumber(3)
   $core.bool get wireframe => $_getBF(2);
   @$pb.TagNumber(3)
@@ -1273,6 +1718,8 @@ class DrawableProperties extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   DrawablePoints ensurePoints() => $_ensure(10);
 
+  /// The frame name for the drawable object. This will optionally be
+  /// included in the frame tree snapshot.
   @$pb.TagNumber(12)
   $core.String get frameNameDrawable => $_getSZ(11);
   @$pb.TagNumber(12)
@@ -1284,13 +1731,21 @@ class DrawableProperties extends $pb.GeneratedMessage {
 }
 
 class StaircaseProperties extends $pb.GeneratedMessage {
-  factory StaircaseProperties() => create();
+  factory StaircaseProperties({
+    $74.Staircase? staircase,
+  }) {
+    final $result = create();
+    if (staircase != null) {
+      $result.staircase = staircase;
+    }
+    return $result;
+  }
   StaircaseProperties._() : super();
   factory StaircaseProperties.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StaircaseProperties.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StaircaseProperties', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$73.Staircase>(1, _omitFieldNames ? '' : 'staircase', subBuilder: $73.Staircase.create)
+    ..aOM<$74.Staircase>(1, _omitFieldNames ? '' : 'staircase', subBuilder: $74.Staircase.create)
     ..hasRequiredFields = false
   ;
 
@@ -1316,19 +1771,32 @@ class StaircaseProperties extends $pb.GeneratedMessage {
   static StaircaseProperties? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $73.Staircase get staircase => $_getN(0);
+  $74.Staircase get staircase => $_getN(0);
   @$pb.TagNumber(1)
-  set staircase($73.Staircase v) { setField(1, v); }
+  set staircase($74.Staircase v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStaircase() => $_has(0);
   @$pb.TagNumber(1)
   void clearStaircase() => clearField(1);
   @$pb.TagNumber(1)
-  $73.Staircase ensureStaircase() => $_ensure(0);
+  $74.Staircase ensureStaircase() => $_ensure(0);
 }
 
+/// A coordinate frame drawing object, describing how large to render the arrows.
 class DrawableFrame extends $pb.GeneratedMessage {
-  factory DrawableFrame() => create();
+  factory DrawableFrame({
+    $core.double? arrowLength,
+    $core.double? arrowRadius,
+  }) {
+    final $result = create();
+    if (arrowLength != null) {
+      $result.arrowLength = arrowLength;
+    }
+    if (arrowRadius != null) {
+      $result.arrowRadius = arrowRadius;
+    }
+    return $result;
+  }
   DrawableFrame._() : super();
   factory DrawableFrame.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DrawableFrame.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1379,8 +1847,17 @@ class DrawableFrame extends $pb.GeneratedMessage {
   void clearArrowRadius() => clearField(2);
 }
 
+/// A sphere drawing object.
 class DrawableSphere extends $pb.GeneratedMessage {
-  factory DrawableSphere() => create();
+  factory DrawableSphere({
+    $core.double? radius,
+  }) {
+    final $result = create();
+    if (radius != null) {
+      $result.radius = radius;
+    }
+    return $result;
+  }
   DrawableSphere._() : super();
   factory DrawableSphere.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DrawableSphere.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1421,14 +1898,23 @@ class DrawableSphere extends $pb.GeneratedMessage {
   void clearRadius() => clearField(1);
 }
 
+/// A three dimensional box drawing object.
 class DrawableBox extends $pb.GeneratedMessage {
-  factory DrawableBox() => create();
+  factory DrawableBox({
+    $61.Vec3? size,
+  }) {
+    final $result = create();
+    if (size != null) {
+      $result.size = size;
+    }
+    return $result;
+  }
   DrawableBox._() : super();
   factory DrawableBox.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DrawableBox.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DrawableBox', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'size', subBuilder: $60.Vec3.create)
+    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'size', subBuilder: $61.Vec3.create)
     ..hasRequiredFields = false
   ;
 
@@ -1454,25 +1940,38 @@ class DrawableBox extends $pb.GeneratedMessage {
   static DrawableBox? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $60.Vec3 get size => $_getN(0);
+  $61.Vec3 get size => $_getN(0);
   @$pb.TagNumber(1)
-  set size($60.Vec3 v) { setField(1, v); }
+  set size($61.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSize() => $_has(0);
   @$pb.TagNumber(1)
   void clearSize() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Vec3 ensureSize() => $_ensure(0);
+  $61.Vec3 ensureSize() => $_ensure(0);
 }
 
+/// A directed arrow drawing object.
 class DrawableArrow extends $pb.GeneratedMessage {
-  factory DrawableArrow() => create();
+  factory DrawableArrow({
+    $61.Vec3? direction,
+    $core.double? radius,
+  }) {
+    final $result = create();
+    if (direction != null) {
+      $result.direction = direction;
+    }
+    if (radius != null) {
+      $result.radius = radius;
+    }
+    return $result;
+  }
   DrawableArrow._() : super();
   factory DrawableArrow.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DrawableArrow.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DrawableArrow', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'direction', subBuilder: $60.Vec3.create)
+    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'direction', subBuilder: $61.Vec3.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'radius', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
@@ -1499,15 +1998,15 @@ class DrawableArrow extends $pb.GeneratedMessage {
   static DrawableArrow? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $60.Vec3 get direction => $_getN(0);
+  $61.Vec3 get direction => $_getN(0);
   @$pb.TagNumber(1)
-  set direction($60.Vec3 v) { setField(1, v); }
+  set direction($61.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDirection() => $_has(0);
   @$pb.TagNumber(1)
   void clearDirection() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Vec3 ensureDirection() => $_ensure(0);
+  $61.Vec3 ensureDirection() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.double get radius => $_getN(1);
@@ -1519,14 +2018,27 @@ class DrawableArrow extends $pb.GeneratedMessage {
   void clearRadius() => clearField(2);
 }
 
+/// A oval-like capsule drawing object.
 class DrawableCapsule extends $pb.GeneratedMessage {
-  factory DrawableCapsule() => create();
+  factory DrawableCapsule({
+    $61.Vec3? direction,
+    $core.double? radius,
+  }) {
+    final $result = create();
+    if (direction != null) {
+      $result.direction = direction;
+    }
+    if (radius != null) {
+      $result.radius = radius;
+    }
+    return $result;
+  }
   DrawableCapsule._() : super();
   factory DrawableCapsule.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DrawableCapsule.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DrawableCapsule', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'direction', subBuilder: $60.Vec3.create)
+    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'direction', subBuilder: $61.Vec3.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'radius', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
@@ -1553,15 +2065,15 @@ class DrawableCapsule extends $pb.GeneratedMessage {
   static DrawableCapsule? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $60.Vec3 get direction => $_getN(0);
+  $61.Vec3 get direction => $_getN(0);
   @$pb.TagNumber(1)
-  set direction($60.Vec3 v) { setField(1, v); }
+  set direction($61.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDirection() => $_has(0);
   @$pb.TagNumber(1)
   void clearDirection() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Vec3 ensureDirection() => $_ensure(0);
+  $61.Vec3 ensureDirection() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.double get radius => $_getN(1);
@@ -1573,14 +2085,27 @@ class DrawableCapsule extends $pb.GeneratedMessage {
   void clearRadius() => clearField(2);
 }
 
+/// A cylinder drawing object.
 class DrawableCylinder extends $pb.GeneratedMessage {
-  factory DrawableCylinder() => create();
+  factory DrawableCylinder({
+    $61.Vec3? direction,
+    $core.double? radius,
+  }) {
+    final $result = create();
+    if (direction != null) {
+      $result.direction = direction;
+    }
+    if (radius != null) {
+      $result.radius = radius;
+    }
+    return $result;
+  }
   DrawableCylinder._() : super();
   factory DrawableCylinder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DrawableCylinder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DrawableCylinder', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'direction', subBuilder: $60.Vec3.create)
+    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'direction', subBuilder: $61.Vec3.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'radius', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
@@ -1607,15 +2132,15 @@ class DrawableCylinder extends $pb.GeneratedMessage {
   static DrawableCylinder? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $60.Vec3 get direction => $_getN(0);
+  $61.Vec3 get direction => $_getN(0);
   @$pb.TagNumber(1)
-  set direction($60.Vec3 v) { setField(1, v); }
+  set direction($61.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDirection() => $_has(0);
   @$pb.TagNumber(1)
   void clearDirection() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Vec3 ensureDirection() => $_ensure(0);
+  $61.Vec3 ensureDirection() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.double get radius => $_getN(1);
@@ -1627,14 +2152,23 @@ class DrawableCylinder extends $pb.GeneratedMessage {
   void clearRadius() => clearField(2);
 }
 
+/// A line strip drawing object.
 class DrawableLineStrip extends $pb.GeneratedMessage {
-  factory DrawableLineStrip() => create();
+  factory DrawableLineStrip({
+    $61.Vec3? points,
+  }) {
+    final $result = create();
+    if (points != null) {
+      $result.points = points;
+    }
+    return $result;
+  }
   DrawableLineStrip._() : super();
   factory DrawableLineStrip.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DrawableLineStrip.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DrawableLineStrip', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'points', subBuilder: $60.Vec3.create)
+    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'points', subBuilder: $61.Vec3.create)
     ..hasRequiredFields = false
   ;
 
@@ -1660,25 +2194,34 @@ class DrawableLineStrip extends $pb.GeneratedMessage {
   static DrawableLineStrip? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $60.Vec3 get points => $_getN(0);
+  $61.Vec3 get points => $_getN(0);
   @$pb.TagNumber(1)
-  set points($60.Vec3 v) { setField(1, v); }
+  set points($61.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPoints() => $_has(0);
   @$pb.TagNumber(1)
   void clearPoints() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Vec3 ensurePoints() => $_ensure(0);
+  $61.Vec3 ensurePoints() => $_ensure(0);
 }
 
+/// A set of points drawing object.
 class DrawablePoints extends $pb.GeneratedMessage {
-  factory DrawablePoints() => create();
+  factory DrawablePoints({
+    $core.Iterable<$61.Vec3>? points,
+  }) {
+    final $result = create();
+    if (points != null) {
+      $result.points.addAll(points);
+    }
+    return $result;
+  }
   DrawablePoints._() : super();
   factory DrawablePoints.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DrawablePoints.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DrawablePoints', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..pc<$60.Vec3>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: $60.Vec3.create)
+    ..pc<$61.Vec3>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: $61.Vec3.create)
     ..hasRequiredFields = false
   ;
 
@@ -1704,7 +2247,7 @@ class DrawablePoints extends $pb.GeneratedMessage {
   static DrawablePoints? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$60.Vec3> get points => $_getList(0);
+  $core.List<$61.Vec3> get points => $_getList(0);
 }
 
 

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest.pb.dart' as $53;
+import 'unittest.pb.dart' as $54;
 
 enum TestOptimizedForSize_Foo {
   integerField, 
@@ -22,7 +22,27 @@ enum TestOptimizedForSize_Foo {
 }
 
 class TestOptimizedForSize extends $pb.GeneratedMessage {
-  factory TestOptimizedForSize() => create();
+  factory TestOptimizedForSize({
+    $core.int? i,
+    $core.int? integerField,
+    $core.String? stringField,
+    $54.ForeignMessage? msg,
+  }) {
+    final $result = create();
+    if (i != null) {
+      $result.i = i;
+    }
+    if (integerField != null) {
+      $result.integerField = integerField;
+    }
+    if (stringField != null) {
+      $result.stringField = stringField;
+    }
+    if (msg != null) {
+      $result.msg = msg;
+    }
+    return $result;
+  }
   TestOptimizedForSize._() : super();
   factory TestOptimizedForSize.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestOptimizedForSize.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -37,7 +57,7 @@ class TestOptimizedForSize extends $pb.GeneratedMessage {
     ..a<$core.int>(1, _omitFieldNames ? '' : 'i', $pb.PbFieldType.O3)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'integerField', $pb.PbFieldType.O3)
     ..aOS(3, _omitFieldNames ? '' : 'stringField')
-    ..aOM<$53.ForeignMessage>(19, _omitFieldNames ? '' : 'msg', subBuilder: $53.ForeignMessage.create)
+    ..aOM<$54.ForeignMessage>(19, _omitFieldNames ? '' : 'msg', subBuilder: $54.ForeignMessage.create)
     ..hasExtensions = true
   ;
   static final testExtension = $pb.Extension<$core.int>(_omitMessageNames ? '' : 'protobuf_unittest.TestOptimizedForSize', _omitFieldNames ? '' : 'testExtension', 1234, $pb.PbFieldType.O3);
@@ -95,19 +115,27 @@ class TestOptimizedForSize extends $pb.GeneratedMessage {
   void clearStringField() => clearField(3);
 
   @$pb.TagNumber(19)
-  $53.ForeignMessage get msg => $_getN(3);
+  $54.ForeignMessage get msg => $_getN(3);
   @$pb.TagNumber(19)
-  set msg($53.ForeignMessage v) { setField(19, v); }
+  set msg($54.ForeignMessage v) { setField(19, v); }
   @$pb.TagNumber(19)
   $core.bool hasMsg() => $_has(3);
   @$pb.TagNumber(19)
   void clearMsg() => clearField(19);
   @$pb.TagNumber(19)
-  $53.ForeignMessage ensureMsg() => $_ensure(3);
+  $54.ForeignMessage ensureMsg() => $_ensure(3);
 }
 
 class TestRequiredOptimizedForSize extends $pb.GeneratedMessage {
-  factory TestRequiredOptimizedForSize() => create();
+  factory TestRequiredOptimizedForSize({
+    $core.int? x,
+  }) {
+    final $result = create();
+    if (x != null) {
+      $result.x = x;
+    }
+    return $result;
+  }
   TestRequiredOptimizedForSize._() : super();
   factory TestRequiredOptimizedForSize.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestRequiredOptimizedForSize.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -148,7 +176,15 @@ class TestRequiredOptimizedForSize extends $pb.GeneratedMessage {
 }
 
 class TestOptionalOptimizedForSize extends $pb.GeneratedMessage {
-  factory TestOptionalOptimizedForSize() => create();
+  factory TestOptionalOptimizedForSize({
+    TestRequiredOptimizedForSize? o,
+  }) {
+    final $result = create();
+    if (o != null) {
+      $result.o = o;
+    }
+    return $result;
+  }
   TestOptionalOptimizedForSize._() : super();
   factory TestOptionalOptimizedForSize.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestOptionalOptimizedForSize.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

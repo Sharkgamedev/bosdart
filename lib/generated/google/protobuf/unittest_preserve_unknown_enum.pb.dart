@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -24,7 +24,35 @@ enum MyMessage_O {
 }
 
 class MyMessage extends $pb.GeneratedMessage {
-  factory MyMessage() => create();
+  factory MyMessage({
+    MyEnum? e,
+    $core.Iterable<MyEnum>? repeatedE,
+    $core.Iterable<MyEnum>? repeatedPackedE,
+    $core.Iterable<MyEnumPlusExtra>? repeatedPackedUnexpectedE,
+    MyEnum? oneofE1,
+    MyEnum? oneofE2,
+  }) {
+    final $result = create();
+    if (e != null) {
+      $result.e = e;
+    }
+    if (repeatedE != null) {
+      $result.repeatedE.addAll(repeatedE);
+    }
+    if (repeatedPackedE != null) {
+      $result.repeatedPackedE.addAll(repeatedPackedE);
+    }
+    if (repeatedPackedUnexpectedE != null) {
+      $result.repeatedPackedUnexpectedE.addAll(repeatedPackedUnexpectedE);
+    }
+    if (oneofE1 != null) {
+      $result.oneofE1 = oneofE1;
+    }
+    if (oneofE2 != null) {
+      $result.oneofE2 = oneofE2;
+    }
+    return $result;
+  }
   MyMessage._() : super();
   factory MyMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MyMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -113,7 +141,35 @@ enum MyMessagePlusExtra_O {
 }
 
 class MyMessagePlusExtra extends $pb.GeneratedMessage {
-  factory MyMessagePlusExtra() => create();
+  factory MyMessagePlusExtra({
+    MyEnumPlusExtra? e,
+    $core.Iterable<MyEnumPlusExtra>? repeatedE,
+    $core.Iterable<MyEnumPlusExtra>? repeatedPackedE,
+    $core.Iterable<MyEnumPlusExtra>? repeatedPackedUnexpectedE,
+    MyEnumPlusExtra? oneofE1,
+    MyEnumPlusExtra? oneofE2,
+  }) {
+    final $result = create();
+    if (e != null) {
+      $result.e = e;
+    }
+    if (repeatedE != null) {
+      $result.repeatedE.addAll(repeatedE);
+    }
+    if (repeatedPackedE != null) {
+      $result.repeatedPackedE.addAll(repeatedPackedE);
+    }
+    if (repeatedPackedUnexpectedE != null) {
+      $result.repeatedPackedUnexpectedE.addAll(repeatedPackedUnexpectedE);
+    }
+    if (oneofE1 != null) {
+      $result.oneofE1 = oneofE1;
+    }
+    if (oneofE2 != null) {
+      $result.oneofE2 = oneofE2;
+    }
+    return $result;
+  }
   MyMessagePlusExtra._() : super();
   factory MyMessagePlusExtra.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MyMessagePlusExtra.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

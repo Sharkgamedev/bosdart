@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Possible types of media that can be stored.
 class Logpoint_RecordType extends $pb.ProtobufEnum {
   static const Logpoint_RecordType STILLIMAGE = Logpoint_RecordType._(0, _omitEnumNames ? '' : 'STILLIMAGE');
 
@@ -26,6 +27,7 @@ class Logpoint_RecordType extends $pb.ProtobufEnum {
   const Logpoint_RecordType._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Possible stages of data acquisition.
 class Logpoint_LogStatus extends $pb.ProtobufEnum {
   static const Logpoint_LogStatus FAILED = Logpoint_LogStatus._(0, _omitEnumNames ? '' : 'FAILED');
   static const Logpoint_LogStatus QUEUED = Logpoint_LogStatus._(1, _omitEnumNames ? '' : 'QUEUED');

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Feedback on the current state of a power command on the robot.
 class PowerCommandStatus extends $pb.ProtobufEnum {
   static const PowerCommandStatus STATUS_UNKNOWN = PowerCommandStatus._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const PowerCommandStatus STATUS_IN_PROGRESS = PowerCommandStatus._(1, _omitEnumNames ? '' : 'STATUS_IN_PROGRESS');
@@ -50,6 +51,9 @@ class PowerCommandStatus extends $pb.ProtobufEnum {
   const PowerCommandStatus._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Commands for the robot to execute.
+/// Note that not all Spot robots are compatible with all these commands. Check your robot's
+/// HardwareConfiguration in bosdyn.api.robot_state.
 class PowerCommandRequest_Request extends $pb.ProtobufEnum {
   static const PowerCommandRequest_Request REQUEST_UNKNOWN = PowerCommandRequest_Request._(0, _omitEnumNames ? '' : 'REQUEST_UNKNOWN');
   static const PowerCommandRequest_Request REQUEST_OFF = PowerCommandRequest_Request._(1, _omitEnumNames ? '' : 'REQUEST_OFF');
@@ -82,6 +86,7 @@ class PowerCommandRequest_Request extends $pb.ProtobufEnum {
   const PowerCommandRequest_Request._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Feedback on the current state of a fan power command on the robot.
 class FanPowerCommandResponse_Status extends $pb.ProtobufEnum {
   static const FanPowerCommandResponse_Status STATUS_UNKNOWN = FanPowerCommandResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const FanPowerCommandResponse_Status STATUS_OK = FanPowerCommandResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -99,6 +104,7 @@ class FanPowerCommandResponse_Status extends $pb.ProtobufEnum {
   const FanPowerCommandResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Feedback on the current state of a fan power command on the robot.
 class FanPowerCommandFeedbackResponse_Status extends $pb.ProtobufEnum {
   static const FanPowerCommandFeedbackResponse_Status STATUS_UNKNOWN = FanPowerCommandFeedbackResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const FanPowerCommandFeedbackResponse_Status STATUS_COMPLETE = FanPowerCommandFeedbackResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_COMPLETE');

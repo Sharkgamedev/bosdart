@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,12 +13,41 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $59;
-import 'header.pb.dart' as $67;
-import 'parameter.pb.dart' as $75;
+import '../../google/protobuf/timestamp.pb.dart' as $60;
+import 'header.pb.dart' as $68;
+import 'parameter.pb.dart' as $76;
 
+/// Robot identity information, which should be static while robot is powered-on.
 class RobotId extends $pb.GeneratedMessage {
-  factory RobotId() => create();
+  factory RobotId({
+    $core.String? serialNumber,
+    $core.String? species,
+    $core.String? version,
+    RobotSoftwareRelease? softwareRelease,
+    $core.String? nickname,
+    $core.String? computerSerialNumber,
+  }) {
+    final $result = create();
+    if (serialNumber != null) {
+      $result.serialNumber = serialNumber;
+    }
+    if (species != null) {
+      $result.species = species;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (softwareRelease != null) {
+      $result.softwareRelease = softwareRelease;
+    }
+    if (nickname != null) {
+      $result.nickname = nickname;
+    }
+    if (computerSerialNumber != null) {
+      $result.computerSerialNumber = computerSerialNumber;
+    }
+    return $result;
+  }
   RobotId._() : super();
   factory RobotId.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RobotId.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -54,6 +83,7 @@ class RobotId extends $pb.GeneratedMessage {
   static RobotId getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RobotId>(create);
   static RobotId? _defaultInstance;
 
+  /// A unique string identifier for the particular robot.
   @$pb.TagNumber(1)
   $core.String get serialNumber => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -63,6 +93,7 @@ class RobotId extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSerialNumber() => clearField(1);
 
+  /// Type of robot.  E.g., 'spot'.
   @$pb.TagNumber(2)
   $core.String get species => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -72,6 +103,7 @@ class RobotId extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSpecies() => clearField(2);
 
+  /// Robot version/platform.
   @$pb.TagNumber(3)
   $core.String get version => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -81,6 +113,7 @@ class RobotId extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearVersion() => clearField(3);
 
+  /// Version information about software running on the robot.
   @$pb.TagNumber(4)
   RobotSoftwareRelease get softwareRelease => $_getN(3);
   @$pb.TagNumber(4)
@@ -92,6 +125,7 @@ class RobotId extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   RobotSoftwareRelease ensureSoftwareRelease() => $_ensure(3);
 
+  /// Optional, customer-supplied nickname.
   @$pb.TagNumber(5)
   $core.String get nickname => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -101,6 +135,8 @@ class RobotId extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearNickname() => clearField(5);
 
+  /// Computer Serial Number. Unlike serial_number, which identifies a complete robot,
+  /// the computer_serial_number identifies the computer hardware used in the robot.
   @$pb.TagNumber(6)
   $core.String get computerSerialNumber => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -111,8 +147,25 @@ class RobotId extends $pb.GeneratedMessage {
   void clearComputerSerialNumber() => clearField(6);
 }
 
+/// The software versioning number for a release.
 class SoftwareVersion extends $pb.GeneratedMessage {
-  factory SoftwareVersion() => create();
+  factory SoftwareVersion({
+    $core.int? majorVersion,
+    $core.int? minorVersion,
+    $core.int? patchLevel,
+  }) {
+    final $result = create();
+    if (majorVersion != null) {
+      $result.majorVersion = majorVersion;
+    }
+    if (minorVersion != null) {
+      $result.minorVersion = minorVersion;
+    }
+    if (patchLevel != null) {
+      $result.patchLevel = patchLevel;
+    }
+    return $result;
+  }
   SoftwareVersion._() : super();
   factory SoftwareVersion.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SoftwareVersion.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -145,6 +198,7 @@ class SoftwareVersion extends $pb.GeneratedMessage {
   static SoftwareVersion getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SoftwareVersion>(create);
   static SoftwareVersion? _defaultInstance;
 
+  /// Signficant changes to software.
   @$pb.TagNumber(1)
   $core.int get majorVersion => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -154,6 +208,7 @@ class SoftwareVersion extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearMajorVersion() => clearField(1);
 
+  /// Normal changes to software.
   @$pb.TagNumber(2)
   $core.int get minorVersion => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -163,6 +218,7 @@ class SoftwareVersion extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearMinorVersion() => clearField(2);
 
+  /// Fixes which should not change intended capabilities or affect compatibility.
   @$pb.TagNumber(3)
   $core.int get patchLevel => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -173,8 +229,49 @@ class SoftwareVersion extends $pb.GeneratedMessage {
   void clearPatchLevel() => clearField(3);
 }
 
+/// Description of the software release currently running on the robot.
 class RobotSoftwareRelease extends $pb.GeneratedMessage {
-  factory RobotSoftwareRelease() => create();
+  factory RobotSoftwareRelease({
+    SoftwareVersion? version,
+    $core.String? name,
+    $core.String? type,
+    $60.Timestamp? changesetDate,
+    $core.String? changeset,
+    $core.String? apiVersion,
+    $core.String? buildInformation,
+    $60.Timestamp? installDate,
+    $core.Iterable<$76.Parameter>? parameters,
+  }) {
+    final $result = create();
+    if (version != null) {
+      $result.version = version;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (changesetDate != null) {
+      $result.changesetDate = changesetDate;
+    }
+    if (changeset != null) {
+      $result.changeset = changeset;
+    }
+    if (apiVersion != null) {
+      $result.apiVersion = apiVersion;
+    }
+    if (buildInformation != null) {
+      $result.buildInformation = buildInformation;
+    }
+    if (installDate != null) {
+      $result.installDate = installDate;
+    }
+    if (parameters != null) {
+      $result.parameters.addAll(parameters);
+    }
+    return $result;
+  }
   RobotSoftwareRelease._() : super();
   factory RobotSoftwareRelease.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RobotSoftwareRelease.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -183,12 +280,12 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
     ..aOM<SoftwareVersion>(1, _omitFieldNames ? '' : 'version', subBuilder: SoftwareVersion.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'type')
-    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'changesetDate', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'changesetDate', subBuilder: $60.Timestamp.create)
     ..aOS(5, _omitFieldNames ? '' : 'changeset')
     ..aOS(6, _omitFieldNames ? '' : 'apiVersion')
     ..aOS(7, _omitFieldNames ? '' : 'buildInformation')
-    ..aOM<$59.Timestamp>(8, _omitFieldNames ? '' : 'installDate', subBuilder: $59.Timestamp.create)
-    ..pc<$75.Parameter>(9, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: $75.Parameter.create)
+    ..aOM<$60.Timestamp>(8, _omitFieldNames ? '' : 'installDate', subBuilder: $60.Timestamp.create)
+    ..pc<$76.Parameter>(9, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: $76.Parameter.create)
     ..hasRequiredFields = false
   ;
 
@@ -213,6 +310,7 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
   static RobotSoftwareRelease getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RobotSoftwareRelease>(create);
   static RobotSoftwareRelease? _defaultInstance;
 
+  /// The software version, e.g., 2.0.1
   @$pb.TagNumber(1)
   SoftwareVersion get version => $_getN(0);
   @$pb.TagNumber(1)
@@ -224,6 +322,7 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   SoftwareVersion ensureVersion() => $_ensure(0);
 
+  /// The name of the robot, e.g., '20190601'
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -233,6 +332,7 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
 
+  /// Kind of software release.
   @$pb.TagNumber(3)
   $core.String get type => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -242,17 +342,19 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearType() => clearField(3);
 
+  /// Timestamp of the changeset.
   @$pb.TagNumber(4)
-  $59.Timestamp get changesetDate => $_getN(3);
+  $60.Timestamp get changesetDate => $_getN(3);
   @$pb.TagNumber(4)
-  set changesetDate($59.Timestamp v) { setField(4, v); }
+  set changesetDate($60.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasChangesetDate() => $_has(3);
   @$pb.TagNumber(4)
   void clearChangesetDate() => clearField(4);
   @$pb.TagNumber(4)
-  $59.Timestamp ensureChangesetDate() => $_ensure(3);
+  $60.Timestamp ensureChangesetDate() => $_ensure(3);
 
+  /// Changeset hash.
   @$pb.TagNumber(5)
   $core.String get changeset => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -262,6 +364,7 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearChangeset() => clearField(5);
 
+  /// API version.  E.g., 2.14.5.
   @$pb.TagNumber(6)
   $core.String get apiVersion => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -271,6 +374,7 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearApiVersion() => clearField(6);
 
+  /// Extra information associated with the build.
   @$pb.TagNumber(7)
   $core.String get buildInformation => $_getSZ(6);
   @$pb.TagNumber(7)
@@ -280,29 +384,40 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearBuildInformation() => clearField(7);
 
+  /// Date/time when release was installed.
   @$pb.TagNumber(8)
-  $59.Timestamp get installDate => $_getN(7);
+  $60.Timestamp get installDate => $_getN(7);
   @$pb.TagNumber(8)
-  set installDate($59.Timestamp v) { setField(8, v); }
+  set installDate($60.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasInstallDate() => $_has(7);
   @$pb.TagNumber(8)
   void clearInstallDate() => clearField(8);
   @$pb.TagNumber(8)
-  $59.Timestamp ensureInstallDate() => $_ensure(7);
+  $60.Timestamp ensureInstallDate() => $_ensure(7);
 
+  /// Other information about the build.
   @$pb.TagNumber(9)
-  $core.List<$75.Parameter> get parameters => $_getList(8);
+  $core.List<$76.Parameter> get parameters => $_getList(8);
 }
 
+/// The RobotId request message sent to a robot to learn it's basic identification information.
 class RobotIdRequest extends $pb.GeneratedMessage {
-  factory RobotIdRequest() => create();
+  factory RobotIdRequest({
+    $68.RequestHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   RobotIdRequest._() : super();
   factory RobotIdRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RobotIdRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotIdRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -328,25 +443,38 @@ class RobotIdRequest extends $pb.GeneratedMessage {
   static RobotIdRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 }
 
+/// The RobotId response message, including the ID information for a robot.
 class RobotIdResponse extends $pb.GeneratedMessage {
-  factory RobotIdResponse() => create();
+  factory RobotIdResponse({
+    $68.ResponseHeader? header,
+    RobotId? robotId,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (robotId != null) {
+      $result.robotId = robotId;
+    }
+    return $result;
+  }
   RobotIdResponse._() : super();
   factory RobotIdResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RobotIdResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotIdResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<RobotId>(2, _omitFieldNames ? '' : 'robotId', subBuilder: RobotId.create)
     ..hasRequiredFields = false
   ;
@@ -373,15 +501,15 @@ class RobotIdResponse extends $pb.GeneratedMessage {
   static RobotIdResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   RobotId get robotId => $_getN(1);

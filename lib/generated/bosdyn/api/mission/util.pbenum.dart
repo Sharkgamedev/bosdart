@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Results from executing / ticking / running a single node.
 class Result extends $pb.ProtobufEnum {
   static const Result RESULT_UNKNOWN = Result._(0, _omitEnumNames ? '' : 'RESULT_UNKNOWN');
   static const Result RESULT_FAILURE = Result._(1, _omitEnumNames ? '' : 'RESULT_FAILURE');
@@ -34,6 +35,7 @@ class Result extends $pb.ProtobufEnum {
   const Result._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Supported types for blackboard or parameter values.
 class VariableDeclaration_Type extends $pb.ProtobufEnum {
   static const VariableDeclaration_Type TYPE_UNKNOWN = VariableDeclaration_Type._(0, _omitEnumNames ? '' : 'TYPE_UNKNOWN');
   static const VariableDeclaration_Type TYPE_FLOAT = VariableDeclaration_Type._(1, _omitEnumNames ? '' : 'TYPE_FLOAT');

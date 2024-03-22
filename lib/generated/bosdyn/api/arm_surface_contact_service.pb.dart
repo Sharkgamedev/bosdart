@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,20 +13,36 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'arm_surface_contact.pb.dart' as $68;
-import 'header.pb.dart' as $67;
+import 'arm_surface_contact.pb.dart' as $69;
+import 'header.pb.dart' as $68;
 import 'lease.pb.dart' as $13;
 
 class ArmSurfaceContactCommand extends $pb.GeneratedMessage {
-  factory ArmSurfaceContactCommand() => create();
+  factory ArmSurfaceContactCommand({
+    $68.RequestHeader? header,
+    $13.Lease? lease,
+    $69.ArmSurfaceContact_Request? request,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (lease != null) {
+      $result.lease = lease;
+    }
+    if (request != null) {
+      $result.request = request;
+    }
+    return $result;
+  }
   ArmSurfaceContactCommand._() : super();
   factory ArmSurfaceContactCommand.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ArmSurfaceContactCommand.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ArmSurfaceContactCommand', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<$13.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
-    ..aOM<$68.ArmSurfaceContact_Request>(4, _omitFieldNames ? '' : 'request', subBuilder: $68.ArmSurfaceContact_Request.create)
+    ..aOM<$69.ArmSurfaceContact_Request>(4, _omitFieldNames ? '' : 'request', subBuilder: $69.ArmSurfaceContact_Request.create)
     ..hasRequiredFields = false
   ;
 
@@ -52,16 +68,17 @@ class ArmSurfaceContactCommand extends $pb.GeneratedMessage {
   static ArmSurfaceContactCommand? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// The Lease to show ownership of the robot.
   @$pb.TagNumber(2)
   $13.Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
@@ -74,25 +91,33 @@ class ArmSurfaceContactCommand extends $pb.GeneratedMessage {
   $13.Lease ensureLease() => $_ensure(1);
 
   @$pb.TagNumber(4)
-  $68.ArmSurfaceContact_Request get request => $_getN(2);
+  $69.ArmSurfaceContact_Request get request => $_getN(2);
   @$pb.TagNumber(4)
-  set request($68.ArmSurfaceContact_Request v) { setField(4, v); }
+  set request($69.ArmSurfaceContact_Request v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasRequest() => $_has(2);
   @$pb.TagNumber(4)
   void clearRequest() => clearField(4);
   @$pb.TagNumber(4)
-  $68.ArmSurfaceContact_Request ensureRequest() => $_ensure(2);
+  $69.ArmSurfaceContact_Request ensureRequest() => $_ensure(2);
 }
 
 class ArmSurfaceContactResponse extends $pb.GeneratedMessage {
-  factory ArmSurfaceContactResponse() => create();
+  factory ArmSurfaceContactResponse({
+    $68.ResponseHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   ArmSurfaceContactResponse._() : super();
   factory ArmSurfaceContactResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ArmSurfaceContactResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ArmSurfaceContactResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -117,16 +142,17 @@ class ArmSurfaceContactResponse extends $pb.GeneratedMessage {
   static ArmSurfaceContactResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ArmSurfaceContactResponse>(create);
   static ArmSurfaceContactResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 

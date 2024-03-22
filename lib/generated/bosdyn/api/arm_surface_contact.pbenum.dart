@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// If an axis is set to position mode (default), read desired from SE3Trajectory command.
+/// If mode is set to force, use the "press_force_percentage" field to determine force.
 class ArmSurfaceContact_Request_AxisMode extends $pb.ProtobufEnum {
   static const ArmSurfaceContact_Request_AxisMode AXIS_MODE_POSITION = ArmSurfaceContact_Request_AxisMode._(0, _omitEnumNames ? '' : 'AXIS_MODE_POSITION');
   static const ArmSurfaceContact_Request_AxisMode AXIS_MODE_FORCE = ArmSurfaceContact_Request_AxisMode._(1, _omitEnumNames ? '' : 'AXIS_MODE_FORCE');
@@ -28,6 +30,9 @@ class ArmSurfaceContact_Request_AxisMode extends $pb.ProtobufEnum {
   const ArmSurfaceContact_Request_AxisMode._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Parameters for controlling admittance.  By default, the robot will
+/// stop moving the arm when it encounters resistance.  You can control that reaction to
+/// make the robot stiffer or less stiff by changing the parameters.
 class ArmSurfaceContact_Request_AdmittanceSetting extends $pb.ProtobufEnum {
   static const ArmSurfaceContact_Request_AdmittanceSetting ADMITTANCE_SETTING_UNKNOWN = ArmSurfaceContact_Request_AdmittanceSetting._(0, _omitEnumNames ? '' : 'ADMITTANCE_SETTING_UNKNOWN');
   static const ArmSurfaceContact_Request_AdmittanceSetting ADMITTANCE_SETTING_OFF = ArmSurfaceContact_Request_AdmittanceSetting._(1, _omitEnumNames ? '' : 'ADMITTANCE_SETTING_OFF');

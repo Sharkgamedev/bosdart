@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,8 +13,29 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Represents a rectangle, with integer indices.
 class RectangleI extends $pb.GeneratedMessage {
-  factory RectangleI() => create();
+  factory RectangleI({
+    $core.int? x,
+    $core.int? y,
+    $core.int? cols,
+    $core.int? rows,
+  }) {
+    final $result = create();
+    if (x != null) {
+      $result.x = x;
+    }
+    if (y != null) {
+      $result.y = y;
+    }
+    if (cols != null) {
+      $result.cols = cols;
+    }
+    if (rows != null) {
+      $result.rows = rows;
+    }
+    return $result;
+  }
   RectangleI._() : super();
   factory RectangleI.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RectangleI.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -48,6 +69,7 @@ class RectangleI extends $pb.GeneratedMessage {
   static RectangleI getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RectangleI>(create);
   static RectangleI? _defaultInstance;
 
+  /// Distance from the left
   @$pb.TagNumber(5)
   $core.int get x => $_getIZ(0);
   @$pb.TagNumber(5)
@@ -57,6 +79,7 @@ class RectangleI extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearX() => clearField(5);
 
+  /// Distance from the top
   @$pb.TagNumber(6)
   $core.int get y => $_getIZ(1);
   @$pb.TagNumber(6)
@@ -66,6 +89,7 @@ class RectangleI extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearY() => clearField(6);
 
+  /// Width of the rectangle in pixels
   @$pb.TagNumber(7)
   $core.int get cols => $_getIZ(2);
   @$pb.TagNumber(7)
@@ -75,6 +99,7 @@ class RectangleI extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearCols() => clearField(7);
 
+  /// Height of the rectangle in pixels
   @$pb.TagNumber(8)
   $core.int get rows => $_getIZ(3);
   @$pb.TagNumber(8)
@@ -90,8 +115,17 @@ enum AreaI_Geometry {
   notSet
 }
 
+/// Represents an area in the XY plane, with integer indices
 class AreaI extends $pb.GeneratedMessage {
-  factory AreaI() => create();
+  factory AreaI({
+    RectangleI? rectangle,
+  }) {
+    final $result = create();
+    if (rectangle != null) {
+      $result.rectangle = rectangle;
+    }
+    return $result;
+  }
   AreaI._() : super();
   factory AreaI.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AreaI.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

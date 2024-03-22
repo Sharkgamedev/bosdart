@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -51,7 +51,27 @@ class PayloadEstimationCommand_Request extends $pb.GeneratedMessage {
 }
 
 class PayloadEstimationCommand_Feedback extends $pb.GeneratedMessage {
-  factory PayloadEstimationCommand_Feedback() => create();
+  factory PayloadEstimationCommand_Feedback({
+    PayloadEstimationCommand_Feedback_Status? status,
+    $core.double? progress,
+    PayloadEstimationCommand_Feedback_Error? error,
+    $20.Payload? estimatedPayload,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    if (progress != null) {
+      $result.progress = progress;
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    if (estimatedPayload != null) {
+      $result.estimatedPayload = estimatedPayload;
+    }
+    return $result;
+  }
   PayloadEstimationCommand_Feedback._() : super();
   factory PayloadEstimationCommand_Feedback.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PayloadEstimationCommand_Feedback.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -85,6 +105,7 @@ class PayloadEstimationCommand_Feedback extends $pb.GeneratedMessage {
   static PayloadEstimationCommand_Feedback getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PayloadEstimationCommand_Feedback>(create);
   static PayloadEstimationCommand_Feedback? _defaultInstance;
 
+  /// Status of the estimation routine.
   @$pb.TagNumber(1)
   PayloadEstimationCommand_Feedback_Status get status => $_getN(0);
   @$pb.TagNumber(1)
@@ -94,6 +115,7 @@ class PayloadEstimationCommand_Feedback extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearStatus() => clearField(1);
 
+  /// The approximate progress of the routine, range [0-1].
   @$pb.TagNumber(2)
   $core.double get progress => $_getN(1);
   @$pb.TagNumber(2)
@@ -103,6 +125,7 @@ class PayloadEstimationCommand_Feedback extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearProgress() => clearField(2);
 
+  /// Error status of the estimation routine.
   @$pb.TagNumber(3)
   PayloadEstimationCommand_Feedback_Error get error => $_getN(2);
   @$pb.TagNumber(3)
@@ -112,6 +135,7 @@ class PayloadEstimationCommand_Feedback extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearError() => clearField(3);
 
+  /// The resulting payload estimated by the estimation routine.
   @$pb.TagNumber(4)
   $20.Payload get estimatedPayload => $_getN(3);
   @$pb.TagNumber(4)
@@ -124,6 +148,8 @@ class PayloadEstimationCommand_Feedback extends $pb.GeneratedMessage {
   $20.Payload ensureEstimatedPayload() => $_ensure(3);
 }
 
+/// Command the robot to stand and execute a routine to estimate the mass properties of an
+/// unregistered payload attached to the robot.
 class PayloadEstimationCommand extends $pb.GeneratedMessage {
   factory PayloadEstimationCommand() => create();
   PayloadEstimationCommand._() : super();

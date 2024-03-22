@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Parameters for how positional trajectories will be interpolated on robot.
 class PositionalInterpolation extends $pb.ProtobufEnum {
   static const PositionalInterpolation POS_INTERP_UNKNOWN = PositionalInterpolation._(0, _omitEnumNames ? '' : 'POS_INTERP_UNKNOWN');
   static const PositionalInterpolation POS_INTERP_LINEAR = PositionalInterpolation._(1, _omitEnumNames ? '' : 'POS_INTERP_LINEAR');
@@ -30,6 +31,7 @@ class PositionalInterpolation extends $pb.ProtobufEnum {
   const PositionalInterpolation._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Parameters for how angular trajectories will be interpolated on robot.
 class AngularInterpolation extends $pb.ProtobufEnum {
   static const AngularInterpolation ANG_INTERP_UNKNOWN = AngularInterpolation._(0, _omitEnumNames ? '' : 'ANG_INTERP_UNKNOWN');
   static const AngularInterpolation ANG_INTERP_LINEAR = AngularInterpolation._(1, _omitEnumNames ? '' : 'ANG_INTERP_LINEAR');

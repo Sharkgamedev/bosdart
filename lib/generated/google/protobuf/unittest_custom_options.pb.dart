@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'any.pb.dart' as $66;
-import 'descriptor.pb.dart' as $97;
+import 'any.pb.dart' as $67;
+import 'descriptor.pb.dart' as $99;
 import 'unittest_custom_options.pbenum.dart';
 
 export 'unittest_custom_options.pbenum.dart';
@@ -25,8 +25,26 @@ enum TestMessageWithCustomOptions_AnOneof {
   notSet
 }
 
+/// A test message with custom options at all possible locations (and also some
+/// regular options, to make sure they interact nicely).
 class TestMessageWithCustomOptions extends $pb.GeneratedMessage {
-  factory TestMessageWithCustomOptions() => create();
+  factory TestMessageWithCustomOptions({
+    $core.String? field1,
+    $core.int? oneofField,
+    $core.Map<$core.String, $core.String>? mapField,
+  }) {
+    final $result = create();
+    if (field1 != null) {
+      $result.field1 = field1;
+    }
+    if (oneofField != null) {
+      $result.oneofField = oneofField;
+    }
+    if (mapField != null) {
+      $result.mapField.addAll(mapField);
+    }
+    return $result;
+  }
   TestMessageWithCustomOptions._() : super();
   factory TestMessageWithCustomOptions.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMessageWithCustomOptions.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -89,6 +107,8 @@ class TestMessageWithCustomOptions extends $pb.GeneratedMessage {
   $core.Map<$core.String, $core.String> get mapField => $_getMap(2);
 }
 
+/// A test RPC service with custom options at all possible locations (and also
+/// some regular options, to make sure they interact nicely).
 class CustomOptionFooRequest extends $pb.GeneratedMessage {
   factory CustomOptionFooRequest() => create();
   CustomOptionFooRequest._() : super();
@@ -442,7 +462,27 @@ class SettingRealsFromNegativeInts extends $pb.GeneratedMessage {
 }
 
 class ComplexOptionType1 extends $pb.GeneratedMessage {
-  factory ComplexOptionType1() => create();
+  factory ComplexOptionType1({
+    $core.int? foo,
+    $core.int? foo2,
+    $core.int? foo3,
+    $core.Iterable<$core.int>? foo4,
+  }) {
+    final $result = create();
+    if (foo != null) {
+      $result.foo = foo;
+    }
+    if (foo2 != null) {
+      $result.foo2 = foo2;
+    }
+    if (foo3 != null) {
+      $result.foo3 = foo3;
+    }
+    if (foo4 != null) {
+      $result.foo4.addAll(foo4);
+    }
+    return $result;
+  }
   ComplexOptionType1._() : super();
   factory ComplexOptionType1.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ComplexOptionType1.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -508,7 +548,15 @@ class ComplexOptionType1 extends $pb.GeneratedMessage {
 }
 
 class ComplexOptionType2_ComplexOptionType4 extends $pb.GeneratedMessage {
-  factory ComplexOptionType2_ComplexOptionType4() => create();
+  factory ComplexOptionType2_ComplexOptionType4({
+    $core.int? waldo,
+  }) {
+    final $result = create();
+    if (waldo != null) {
+      $result.waldo = waldo;
+    }
+    return $result;
+  }
   ComplexOptionType2_ComplexOptionType4._() : super();
   factory ComplexOptionType2_ComplexOptionType4.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ComplexOptionType2_ComplexOptionType4.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -551,7 +599,27 @@ class ComplexOptionType2_ComplexOptionType4 extends $pb.GeneratedMessage {
 }
 
 class ComplexOptionType2 extends $pb.GeneratedMessage {
-  factory ComplexOptionType2() => create();
+  factory ComplexOptionType2({
+    ComplexOptionType1? bar,
+    $core.int? baz,
+    ComplexOptionType2_ComplexOptionType4? fred,
+    $core.Iterable<ComplexOptionType2_ComplexOptionType4>? barney,
+  }) {
+    final $result = create();
+    if (bar != null) {
+      $result.bar = bar;
+    }
+    if (baz != null) {
+      $result.baz = baz;
+    }
+    if (fred != null) {
+      $result.fred = fred;
+    }
+    if (barney != null) {
+      $result.barney.addAll(barney);
+    }
+    return $result;
+  }
   ComplexOptionType2._() : super();
   factory ComplexOptionType2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ComplexOptionType2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -621,7 +689,15 @@ class ComplexOptionType2 extends $pb.GeneratedMessage {
 }
 
 class ComplexOptionType3_ComplexOptionType5 extends $pb.GeneratedMessage {
-  factory ComplexOptionType3_ComplexOptionType5() => create();
+  factory ComplexOptionType3_ComplexOptionType5({
+    $core.int? plugh,
+  }) {
+    final $result = create();
+    if (plugh != null) {
+      $result.plugh = plugh;
+    }
+    return $result;
+  }
   ComplexOptionType3_ComplexOptionType5._() : super();
   factory ComplexOptionType3_ComplexOptionType5.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ComplexOptionType3_ComplexOptionType5.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -663,7 +739,19 @@ class ComplexOptionType3_ComplexOptionType5 extends $pb.GeneratedMessage {
 }
 
 class ComplexOptionType3 extends $pb.GeneratedMessage {
-  factory ComplexOptionType3() => create();
+  factory ComplexOptionType3({
+    $core.int? moo,
+    ComplexOptionType3_ComplexOptionType5? complexOptionType5,
+  }) {
+    final $result = create();
+    if (moo != null) {
+      $result.moo = moo;
+    }
+    if (complexOptionType5 != null) {
+      $result.complexOptionType5 = complexOptionType5;
+    }
+    return $result;
+  }
   ComplexOptionType3._() : super();
   factory ComplexOptionType3.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ComplexOptionType3.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -715,7 +803,15 @@ class ComplexOptionType3 extends $pb.GeneratedMessage {
 }
 
 class ComplexOpt6 extends $pb.GeneratedMessage {
-  factory ComplexOpt6() => create();
+  factory ComplexOpt6({
+    $core.int? xyzzy,
+  }) {
+    final $result = create();
+    if (xyzzy != null) {
+      $result.xyzzy = xyzzy;
+    }
+    return $result;
+  }
   ComplexOpt6._() : super();
   factory ComplexOpt6.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ComplexOpt6.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -756,6 +852,7 @@ class ComplexOpt6 extends $pb.GeneratedMessage {
   void clearXyzzy() => clearField(7593951);
 }
 
+/// Note that we try various different ways of naming the same extension.
 class VariousComplexOptions extends $pb.GeneratedMessage {
   factory VariousComplexOptions() => create();
   VariousComplexOptions._() : super();
@@ -788,7 +885,7 @@ class VariousComplexOptions extends $pb.GeneratedMessage {
   static VariousComplexOptions? _defaultInstance;
 }
 
-class AggregateMessageSet extends $pb.GeneratedMessage {
+class AggregateMessageSet extends $pb.$_MessageSet {
   factory AggregateMessageSet() => create();
   AggregateMessageSet._() : super();
   factory AggregateMessageSet.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
@@ -821,7 +918,15 @@ class AggregateMessageSet extends $pb.GeneratedMessage {
 }
 
 class AggregateMessageSetElement extends $pb.GeneratedMessage {
-  factory AggregateMessageSetElement() => create();
+  factory AggregateMessageSetElement({
+    $core.String? s,
+  }) {
+    final $result = create();
+    if (s != null) {
+      $result.s = s;
+    }
+    return $result;
+  }
   AggregateMessageSetElement._() : super();
   factory AggregateMessageSetElement.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AggregateMessageSetElement.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -863,8 +968,37 @@ class AggregateMessageSetElement extends $pb.GeneratedMessage {
   void clearS() => clearField(1);
 }
 
+/// A helper type used to test aggregate option parsing
 class Aggregate extends $pb.GeneratedMessage {
-  factory Aggregate() => create();
+  factory Aggregate({
+    $core.int? i,
+    $core.String? s,
+    Aggregate? sub,
+    $99.FileOptions? file,
+    AggregateMessageSet? mset,
+    $67.Any? any,
+  }) {
+    final $result = create();
+    if (i != null) {
+      $result.i = i;
+    }
+    if (s != null) {
+      $result.s = s;
+    }
+    if (sub != null) {
+      $result.sub = sub;
+    }
+    if (file != null) {
+      $result.file = file;
+    }
+    if (mset != null) {
+      $result.mset = mset;
+    }
+    if (any != null) {
+      $result.any = any;
+    }
+    return $result;
+  }
   Aggregate._() : super();
   factory Aggregate.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Aggregate.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -873,9 +1007,9 @@ class Aggregate extends $pb.GeneratedMessage {
     ..a<$core.int>(1, _omitFieldNames ? '' : 'i', $pb.PbFieldType.O3)
     ..aOS(2, _omitFieldNames ? '' : 's')
     ..aOM<Aggregate>(3, _omitFieldNames ? '' : 'sub', subBuilder: Aggregate.create)
-    ..aOM<$97.FileOptions>(4, _omitFieldNames ? '' : 'file', subBuilder: $97.FileOptions.create)
+    ..aOM<$99.FileOptions>(4, _omitFieldNames ? '' : 'file', subBuilder: $99.FileOptions.create)
     ..aOM<AggregateMessageSet>(5, _omitFieldNames ? '' : 'mset', subBuilder: AggregateMessageSet.create)
-    ..aOM<$66.Any>(6, _omitFieldNames ? '' : 'any', subBuilder: $66.Any.create)
+    ..aOM<$67.Any>(6, _omitFieldNames ? '' : 'any', subBuilder: $67.Any.create)
   ;
   static final nested = $pb.Extension<Aggregate>(_omitMessageNames ? '' : 'google.protobuf.FileOptions', _omitFieldNames ? '' : 'nested', 15476903, $pb.PbFieldType.OM, defaultOrMaker: Aggregate.getDefault, subBuilder: Aggregate.create);
 
@@ -918,6 +1052,7 @@ class Aggregate extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearS() => clearField(2);
 
+  /// A nested object
   @$pb.TagNumber(3)
   Aggregate get sub => $_getN(2);
   @$pb.TagNumber(3)
@@ -929,17 +1064,19 @@ class Aggregate extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   Aggregate ensureSub() => $_ensure(2);
 
+  /// To test the parsing of extensions inside aggregate values
   @$pb.TagNumber(4)
-  $97.FileOptions get file => $_getN(3);
+  $99.FileOptions get file => $_getN(3);
   @$pb.TagNumber(4)
-  set file($97.FileOptions v) { setField(4, v); }
+  set file($99.FileOptions v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasFile() => $_has(3);
   @$pb.TagNumber(4)
   void clearFile() => clearField(4);
   @$pb.TagNumber(4)
-  $97.FileOptions ensureFile() => $_ensure(3);
+  $99.FileOptions ensureFile() => $_ensure(3);
 
+  /// An embedded message set
   @$pb.TagNumber(5)
   AggregateMessageSet get mset => $_getN(4);
   @$pb.TagNumber(5)
@@ -951,20 +1088,29 @@ class Aggregate extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   AggregateMessageSet ensureMset() => $_ensure(4);
 
+  /// An any
   @$pb.TagNumber(6)
-  $66.Any get any => $_getN(5);
+  $67.Any get any => $_getN(5);
   @$pb.TagNumber(6)
-  set any($66.Any v) { setField(6, v); }
+  set any($67.Any v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasAny() => $_has(5);
   @$pb.TagNumber(6)
   void clearAny() => clearField(6);
   @$pb.TagNumber(6)
-  $66.Any ensureAny() => $_ensure(5);
+  $67.Any ensureAny() => $_ensure(5);
 }
 
 class AggregateMessage extends $pb.GeneratedMessage {
-  factory AggregateMessage() => create();
+  factory AggregateMessage({
+    $core.int? fieldname,
+  }) {
+    final $result = create();
+    if (fieldname != null) {
+      $result.fieldname = fieldname;
+    }
+    return $result;
+  }
   AggregateMessage._() : super();
   factory AggregateMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AggregateMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1006,7 +1152,15 @@ class AggregateMessage extends $pb.GeneratedMessage {
 }
 
 class NestedOptionType_NestedMessage extends $pb.GeneratedMessage {
-  factory NestedOptionType_NestedMessage() => create();
+  factory NestedOptionType_NestedMessage({
+    $core.int? nestedField,
+  }) {
+    final $result = create();
+    if (nestedField != null) {
+      $result.nestedField = nestedField;
+    }
+    return $result;
+  }
   NestedOptionType_NestedMessage._() : super();
   factory NestedOptionType_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NestedOptionType_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1047,6 +1201,7 @@ class NestedOptionType_NestedMessage extends $pb.GeneratedMessage {
   void clearNestedField() => clearField(1);
 }
 
+/// Test custom options for nested type.
 class NestedOptionType extends $pb.GeneratedMessage {
   factory NestedOptionType() => create();
   NestedOptionType._() : super();
@@ -1080,8 +1235,18 @@ class NestedOptionType extends $pb.GeneratedMessage {
   static NestedOptionType? _defaultInstance;
 }
 
+/// Custom message option that has a required enum field.
+/// WARNING: this is strongly discouraged!
 class OldOptionType extends $pb.GeneratedMessage {
-  factory OldOptionType() => create();
+  factory OldOptionType({
+    OldOptionType_TestEnum? value,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   OldOptionType._() : super();
   factory OldOptionType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OldOptionType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1121,8 +1286,17 @@ class OldOptionType extends $pb.GeneratedMessage {
   void clearValue() => clearField(1);
 }
 
+/// Updated version of the custom option above.
 class NewOptionType extends $pb.GeneratedMessage {
-  factory NewOptionType() => create();
+  factory NewOptionType({
+    NewOptionType_TestEnum? value,
+  }) {
+    final $result = create();
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   NewOptionType._() : super();
   factory NewOptionType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NewOptionType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1162,6 +1336,7 @@ class NewOptionType extends $pb.GeneratedMessage {
   void clearValue() => clearField(1);
 }
 
+/// Test message using the "required_enum_opt" option defined above.
 class TestMessageWithRequiredEnumOption extends $pb.GeneratedMessage {
   factory TestMessageWithRequiredEnumOption() => create();
   TestMessageWithRequiredEnumOption._() : super();

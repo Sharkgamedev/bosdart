@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Possible results of establishing a session.
 class EstablishSessionResponse_Status extends $pb.ProtobufEnum {
   static const EstablishSessionResponse_Status STATUS_UNKNOWN = EstablishSessionResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const EstablishSessionResponse_Status STATUS_OK = EstablishSessionResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -32,6 +33,8 @@ class EstablishSessionResponse_Status extends $pb.ProtobufEnum {
   const EstablishSessionResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Possible results from the node. The FAILURE, RUNNING, and SUCCESS statuses map to the
+/// behavior tree terms, all others indicate an error in the TickRequest.
 class TickResponse_Status extends $pb.ProtobufEnum {
   static const TickResponse_Status STATUS_UNKNOWN = TickResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const TickResponse_Status STATUS_FAILURE = TickResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_FAILURE');
@@ -59,6 +62,7 @@ class TickResponse_Status extends $pb.ProtobufEnum {
   const TickResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Possible results for a StopRequest.
 class StopResponse_Status extends $pb.ProtobufEnum {
   static const StopResponse_Status STATUS_UNKNOWN = StopResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const StopResponse_Status STATUS_OK = StopResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -76,6 +80,7 @@ class StopResponse_Status extends $pb.ProtobufEnum {
   const StopResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Possible results of ending a session.
 class TeardownSessionResponse_Status extends $pb.ProtobufEnum {
   static const TeardownSessionResponse_Status STATUS_UNKNOWN = TeardownSessionResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const TeardownSessionResponse_Status STATUS_OK = TeardownSessionResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');

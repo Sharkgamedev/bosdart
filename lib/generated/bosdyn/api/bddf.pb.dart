@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../google/protobuf/timestamp.pb.dart' as $60;
 import 'bddf.pbenum.dart';
 
 export 'bddf.pbenum.dart';
@@ -27,8 +27,32 @@ enum DescriptorBlock_DescriptorType {
   notSet
 }
 
+/// A Descriptor block typically describes a series of messages, but the descriptor at the
+///  start of the file describes the contents of the file as a whole, and the descriptor
+///  at the end of the file is an index structure to allow efficient access to the contents
+///  of the file.
 class DescriptorBlock extends $pb.GeneratedMessage {
-  factory DescriptorBlock() => create();
+  factory DescriptorBlock({
+    FileFormatDescriptor? fileDescriptor,
+    SeriesDescriptor? seriesDescriptor,
+    SeriesBlockIndex? seriesBlockIndex,
+    FileIndex? fileIndex,
+  }) {
+    final $result = create();
+    if (fileDescriptor != null) {
+      $result.fileDescriptor = fileDescriptor;
+    }
+    if (seriesDescriptor != null) {
+      $result.seriesDescriptor = seriesDescriptor;
+    }
+    if (seriesBlockIndex != null) {
+      $result.seriesBlockIndex = seriesBlockIndex;
+    }
+    if (fileIndex != null) {
+      $result.fileIndex = fileIndex;
+    }
+    return $result;
+  }
   DescriptorBlock._() : super();
   factory DescriptorBlock.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DescriptorBlock.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -118,15 +142,33 @@ class DescriptorBlock extends $pb.GeneratedMessage {
   FileIndex ensureFileIndex() => $_ensure(3);
 }
 
+/// A DataDescriptor describes a data block which immediately follows it in the file.
+/// A corresponding SeriesDescriptor with a matching series_index must precede this in the file.
 class DataDescriptor extends $pb.GeneratedMessage {
-  factory DataDescriptor() => create();
+  factory DataDescriptor({
+    $core.int? seriesIndex,
+    $60.Timestamp? timestamp,
+    $core.Iterable<$fixnum.Int64>? additionalIndexes,
+  }) {
+    final $result = create();
+    if (seriesIndex != null) {
+      $result.seriesIndex = seriesIndex;
+    }
+    if (timestamp != null) {
+      $result.timestamp = timestamp;
+    }
+    if (additionalIndexes != null) {
+      $result.additionalIndexes.addAll(additionalIndexes);
+    }
+    return $result;
+  }
   DataDescriptor._() : super();
   factory DataDescriptor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DataDescriptor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataDescriptor', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'seriesIndex', $pb.PbFieldType.OU3)
-    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'additionalIndexes', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
   ;
@@ -152,6 +194,7 @@ class DataDescriptor extends $pb.GeneratedMessage {
   static DataDescriptor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DataDescriptor>(create);
   static DataDescriptor? _defaultInstance;
 
+  /// The series_index references the SeriesDescriptor to which the data following is associated.
   @$pb.TagNumber(1)
   $core.int get seriesIndex => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -161,23 +204,59 @@ class DataDescriptor extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSeriesIndex() => clearField(1);
 
+  /// The time at which the data is considered to be captured/sampled.
+  /// E.g., the shutter-close time of a captured image.
   @$pb.TagNumber(2)
-  $59.Timestamp get timestamp => $_getN(1);
+  $60.Timestamp get timestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set timestamp($59.Timestamp v) { setField(2, v); }
+  set timestamp($60.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $59.Timestamp ensureTimestamp() => $_ensure(1);
+  $60.Timestamp ensureTimestamp() => $_ensure(1);
 
+  /// Sometimes a visualizer will want to organize message by data timestamp, sometimes by
+  ///  the time messages were published or logged.
+  /// The additional_indexes field allows extra indexes or timestamps to be associated with
+  ///  each data block for this purpose.
+  /// Other identifying information may also be used here, such as the PID of the process which
+  ///  originated the data (e.g., for detecting if and when that process restarted).
+  /// The values in this field should correspond to the labels defined in "additional_index_names"
+  ///  in the corresponding SeriesDescriptor.
   @$pb.TagNumber(3)
   $core.List<$fixnum.Int64> get additionalIndexes => $_getList(2);
 }
 
+/// The first block in the file should be a DescriptorBlock containing a FileFormatDescriptor.
+/// FileFormatDescriptor indicates the file format version and annotations.
+/// Annotations describe things like the robot from which the log was taken and the release id.
+/// The format of annotation keys should be
+///   {project-or-organization}/{annotation-name}
+/// For example, 'bosdyn/robot-serial-number'.
 class FileFormatDescriptor extends $pb.GeneratedMessage {
-  factory FileFormatDescriptor() => create();
+  factory FileFormatDescriptor({
+    FileFormatVersion? version,
+    $core.Map<$core.String, $core.String>? annotations,
+    FileFormatDescriptor_CheckSumType? checksumType,
+    $core.int? checksumNumBytes,
+  }) {
+    final $result = create();
+    if (version != null) {
+      $result.version = version;
+    }
+    if (annotations != null) {
+      $result.annotations.addAll(annotations);
+    }
+    if (checksumType != null) {
+      $result.checksumType = checksumType;
+    }
+    if (checksumNumBytes != null) {
+      $result.checksumNumBytes = checksumNumBytes;
+    }
+    return $result;
+  }
   FileFormatDescriptor._() : super();
   factory FileFormatDescriptor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FileFormatDescriptor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -211,6 +290,7 @@ class FileFormatDescriptor extends $pb.GeneratedMessage {
   static FileFormatDescriptor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FileFormatDescriptor>(create);
   static FileFormatDescriptor? _defaultInstance;
 
+  /// The version number of the BDDF file.
   @$pb.TagNumber(1)
   FileFormatVersion get version => $_getN(0);
   @$pb.TagNumber(1)
@@ -222,9 +302,12 @@ class FileFormatDescriptor extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   FileFormatVersion ensureVersion() => $_ensure(0);
 
+  /// File/stream-wide annotations to describe the content of the file.
   @$pb.TagNumber(2)
   $core.Map<$core.String, $core.String> get annotations => $_getMap(1);
 
+  /// The type of checksum supported by this stream.
+  /// For BDDF version 1.0.0 this should be SHA1.
   @$pb.TagNumber(3)
   FileFormatDescriptor_CheckSumType get checksumType => $_getN(2);
   @$pb.TagNumber(3)
@@ -234,6 +317,8 @@ class FileFormatDescriptor extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearChecksumType() => clearField(3);
 
+  /// The number of bytes used for the BDDF checksum.
+  /// For BDDF version 1.0.0 this should always be 20, even if CHECKSUM_NONE is used.
   @$pb.TagNumber(4)
   $core.int get checksumNumBytes => $_getIZ(3);
   @$pb.TagNumber(4)
@@ -244,8 +329,25 @@ class FileFormatDescriptor extends $pb.GeneratedMessage {
   void clearChecksumNumBytes() => clearField(4);
 }
 
+/// The current data file format is 1.0.0.
 class FileFormatVersion extends $pb.GeneratedMessage {
-  factory FileFormatVersion() => create();
+  factory FileFormatVersion({
+    $core.int? majorVersion,
+    $core.int? minorVersion,
+    $core.int? patchLevel,
+  }) {
+    final $result = create();
+    if (majorVersion != null) {
+      $result.majorVersion = majorVersion;
+    }
+    if (minorVersion != null) {
+      $result.minorVersion = minorVersion;
+    }
+    if (patchLevel != null) {
+      $result.patchLevel = patchLevel;
+    }
+    return $result;
+  }
   FileFormatVersion._() : super();
   factory FileFormatVersion.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FileFormatVersion.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -313,8 +415,52 @@ enum SeriesDescriptor_DataType {
   notSet
 }
 
+/// A description of a series of data blocks.
+/// These data blocks may either represent binary messages of a variable size, or they may
+///  represent a sequence of samples of POD data samples: single/vector/matrix/... of integer
+///  or floating-point values.
 class SeriesDescriptor extends $pb.GeneratedMessage {
-  factory SeriesDescriptor() => create();
+  factory SeriesDescriptor({
+    $core.int? seriesIndex,
+    SeriesIdentifier? seriesIdentifier,
+    $fixnum.Int64? identifierHash,
+    MessageTypeDescriptor? messageType,
+    PodTypeDescriptor? podType,
+    StructTypeDescriptor? structType,
+    $core.Map<$core.String, $core.String>? annotations,
+    $core.Iterable<$core.String>? additionalIndexNames,
+    $core.String? description,
+  }) {
+    final $result = create();
+    if (seriesIndex != null) {
+      $result.seriesIndex = seriesIndex;
+    }
+    if (seriesIdentifier != null) {
+      $result.seriesIdentifier = seriesIdentifier;
+    }
+    if (identifierHash != null) {
+      $result.identifierHash = identifierHash;
+    }
+    if (messageType != null) {
+      $result.messageType = messageType;
+    }
+    if (podType != null) {
+      $result.podType = podType;
+    }
+    if (structType != null) {
+      $result.structType = structType;
+    }
+    if (annotations != null) {
+      $result.annotations.addAll(annotations);
+    }
+    if (additionalIndexNames != null) {
+      $result.additionalIndexNames.addAll(additionalIndexNames);
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    return $result;
+  }
   SeriesDescriptor._() : super();
   factory SeriesDescriptor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SeriesDescriptor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -363,6 +509,7 @@ class SeriesDescriptor extends $pb.GeneratedMessage {
   SeriesDescriptor_DataType whichDataType() => _SeriesDescriptor_DataTypeByTag[$_whichOneof(0)]!;
   void clearDataType() => clearField($_whichOneof(0));
 
+  /// This index for the series is unique within the data file.
   @$pb.TagNumber(1)
   $core.int get seriesIndex => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -372,6 +519,7 @@ class SeriesDescriptor extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSeriesIndex() => clearField(1);
 
+  /// This is the globally unique {key -> value} mapping to identify the series.
   @$pb.TagNumber(2)
   SeriesIdentifier get seriesIdentifier => $_getN(1);
   @$pb.TagNumber(2)
@@ -383,6 +531,14 @@ class SeriesDescriptor extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   SeriesIdentifier ensureSeriesIdentifier() => $_ensure(1);
 
+  /// This is a hash of the series_identifier.
+  /// The hash is the first 64 bits (read as a big-endian encoded uint64_t) of
+  ///  SHA1(S K1 V1 K2 V2 ...) where,
+  ///   - S is series identifier text,
+  ///   - K1 and V1 are the key and value of the first key and value of the `spec`,
+  ///   - K2 and V2 are the second key and value of the spec, etc...
+  /// Here, all strings are encoded as utf-8, and keys are sorted lexicographically using this
+  ///  encoding (K1 < K2 < ...).
   @$pb.TagNumber(3)
   $fixnum.Int64 get identifierHash => $_getI64(2);
   @$pb.TagNumber(3)
@@ -425,9 +581,19 @@ class SeriesDescriptor extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   StructTypeDescriptor ensureStructType() => $_ensure(5);
 
+  /// Annotations are a {key -> value} mapping for associating additional information with
+  ///  the series.
+  /// The format of annotation keys should be
+  ///   {project-or-organization}/{annotation-name}
+  /// For example, 'bosdyn/channel-name', 'bosdyn/protobuf-type'.
+  /// Annotation keys without a '/' are reserved.
+  /// The only current key in the reserved namespace is 'units': e.g., {'units': 'm/s2'}.
   @$pb.TagNumber(7)
   $core.Map<$core.String, $core.String> get annotations => $_getMap(6);
 
+  /// Labels for additional index values which should be attached to each DataDescriptor
+  ///  in the series.
+  /// See the description of "additional_indexes" in DataDescriptor.
   @$pb.TagNumber(8)
   $core.List<$core.String> get additionalIndexNames => $_getList(7);
 
@@ -441,8 +607,26 @@ class SeriesDescriptor extends $pb.GeneratedMessage {
   void clearDescription() => clearField(9);
 }
 
+/// If a data series contains a sequence of binary messages, the encoding and format of these
+///  messages is described by a MesssageTypeDescriptor.
 class MessageTypeDescriptor extends $pb.GeneratedMessage {
-  factory MessageTypeDescriptor() => create();
+  factory MessageTypeDescriptor({
+    $core.String? contentType,
+    $core.String? typeName,
+    $core.bool? isMetadata,
+  }) {
+    final $result = create();
+    if (contentType != null) {
+      $result.contentType = contentType;
+    }
+    if (typeName != null) {
+      $result.typeName = typeName;
+    }
+    if (isMetadata != null) {
+      $result.isMetadata = isMetadata;
+    }
+    return $result;
+  }
   MessageTypeDescriptor._() : super();
   factory MessageTypeDescriptor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MessageTypeDescriptor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -475,6 +659,8 @@ class MessageTypeDescriptor extends $pb.GeneratedMessage {
   static MessageTypeDescriptor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MessageTypeDescriptor>(create);
   static MessageTypeDescriptor? _defaultInstance;
 
+  /// Description of the content type.
+  /// E.g., "application/protobuf", "image/jpeg", "text/csv", ...
   @$pb.TagNumber(1)
   $core.String get contentType => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -484,6 +670,7 @@ class MessageTypeDescriptor extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearContentType() => clearField(1);
 
+  /// If content_type is "application/protobuf", this is the full-name of the protobuf type.
   @$pb.TagNumber(2)
   $core.String get typeName => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -493,6 +680,9 @@ class MessageTypeDescriptor extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearTypeName() => clearField(2);
 
+  /// If true, message contents are necessary for interpreting other messages.
+  /// If the content of this file is split into multiple output files, these messages should be
+  ///  copied into each.
   @$pb.TagNumber(3)
   $core.bool get isMetadata => $_getBF(2);
   @$pb.TagNumber(3)
@@ -503,8 +693,24 @@ class MessageTypeDescriptor extends $pb.GeneratedMessage {
   void clearIsMetadata() => clearField(3);
 }
 
+/// If a data series contains signals-style data of time-sampled "plain old datatypes", this
+///  describes the content of the series.
+/// All POD data stored in data blocks is stored in little-endian byte order.
+/// Any number of samples may be stored within a given data block.
 class PodTypeDescriptor extends $pb.GeneratedMessage {
-  factory PodTypeDescriptor() => create();
+  factory PodTypeDescriptor({
+    PodTypeEnum? podType,
+    $core.Iterable<$core.int>? dimension,
+  }) {
+    final $result = create();
+    if (podType != null) {
+      $result.podType = podType;
+    }
+    if (dimension != null) {
+      $result.dimension.addAll(dimension);
+    }
+    return $result;
+  }
   PodTypeDescriptor._() : super();
   factory PodTypeDescriptor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PodTypeDescriptor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -536,6 +742,7 @@ class PodTypeDescriptor extends $pb.GeneratedMessage {
   static PodTypeDescriptor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PodTypeDescriptor>(create);
   static PodTypeDescriptor? _defaultInstance;
 
+  /// The type of machine-readable values stored.
   @$pb.TagNumber(1)
   PodTypeEnum get podType => $_getN(0);
   @$pb.TagNumber(1)
@@ -545,12 +752,32 @@ class PodTypeDescriptor extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearPodType() => clearField(1);
 
+  /// If empty, indicates a single POD per sample.
+  /// If one-element, indicates a vector of the given size per sample.
+  /// If two-elements, indicates a matrix of the given size, and so on.
+  /// An M x N x .. x P array of data is traversed from innermost (P) to outermost (M) dimension.
   @$pb.TagNumber(2)
   $core.List<$core.int> get dimension => $_getList(1);
 }
 
+/// A struct series is a composite formed by a set of other series whose messages or signals-ticks
+///  are sampled at the same time.
+/// For example, all there may be a struct series for a set of signals variables, all from a
+///  process with an 'update()' function within which all all variables are sampled with the
+///  same timestamp.
+/// DataBlocks will not directly reference this series, but only child series of this series.
+/// Struct series may reference other struct series, but the series structure must be a directed
+///  acyclic graph (DAG): no circular reference structures.
 class StructTypeDescriptor extends $pb.GeneratedMessage {
-  factory StructTypeDescriptor() => create();
+  factory StructTypeDescriptor({
+    $core.Map<$core.String, $fixnum.Int64>? keyToSeriesIdentifierHash,
+  }) {
+    final $result = create();
+    if (keyToSeriesIdentifierHash != null) {
+      $result.keyToSeriesIdentifierHash.addAll(keyToSeriesIdentifierHash);
+    }
+    return $result;
+  }
   StructTypeDescriptor._() : super();
   factory StructTypeDescriptor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StructTypeDescriptor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -581,12 +808,36 @@ class StructTypeDescriptor extends $pb.GeneratedMessage {
   static StructTypeDescriptor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StructTypeDescriptor>(create);
   static StructTypeDescriptor? _defaultInstance;
 
+  /// A map of a name-reference to a series, identified by its series_identifer_hash.
   @$pb.TagNumber(1)
   $core.Map<$core.String, $fixnum.Int64> get keyToSeriesIdentifierHash => $_getMap(0);
 }
 
+/// As a file is closed, a DescriptorBlock containing a FileIndex should be written.
+/// The FileIndex summarizes the data series stored in the file and the location of the
+///  block-indexes for each type in the file.
+/// Each series is assigned a "series_index" within the file, and this index may be used to
+///  index into the repeated fields in this message.
+/// E.g., for the series with series_index N, you can access its SeriesIdentifier by accessing
+///  element N the of the series_identifiers repeated field.
 class FileIndex extends $pb.GeneratedMessage {
-  factory FileIndex() => create();
+  factory FileIndex({
+    $core.Iterable<SeriesIdentifier>? seriesIdentifiers,
+    $core.Iterable<$fixnum.Int64>? seriesBlockIndexOffsets,
+    $core.Iterable<$fixnum.Int64>? seriesIdentifierHashes,
+  }) {
+    final $result = create();
+    if (seriesIdentifiers != null) {
+      $result.seriesIdentifiers.addAll(seriesIdentifiers);
+    }
+    if (seriesBlockIndexOffsets != null) {
+      $result.seriesBlockIndexOffsets.addAll(seriesBlockIndexOffsets);
+    }
+    if (seriesIdentifierHashes != null) {
+      $result.seriesIdentifierHashes.addAll(seriesIdentifierHashes);
+    }
+    return $result;
+  }
   FileIndex._() : super();
   factory FileIndex.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FileIndex.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -619,24 +870,43 @@ class FileIndex extends $pb.GeneratedMessage {
   static FileIndex getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FileIndex>(create);
   static FileIndex? _defaultInstance;
 
+  /// SeriesIdentifer for each series in this file.
   @$pb.TagNumber(1)
   $core.List<SeriesIdentifier> get seriesIdentifiers => $_getList(0);
 
+  /// The offset from the start of the file of the SeriesBlockIndex block for each series.
   @$pb.TagNumber(2)
   $core.List<$fixnum.Int64> get seriesBlockIndexOffsets => $_getList(1);
 
+  /// The hash of the series_identifier for each series.
   @$pb.TagNumber(3)
   $core.List<$fixnum.Int64> get seriesIdentifierHashes => $_getList(2);
 }
 
 class SeriesBlockIndex_BlockEntry extends $pb.GeneratedMessage {
-  factory SeriesBlockIndex_BlockEntry() => create();
+  factory SeriesBlockIndex_BlockEntry({
+    $60.Timestamp? timestamp,
+    $fixnum.Int64? fileOffset,
+    $core.Iterable<$fixnum.Int64>? additionalIndexes,
+  }) {
+    final $result = create();
+    if (timestamp != null) {
+      $result.timestamp = timestamp;
+    }
+    if (fileOffset != null) {
+      $result.fileOffset = fileOffset;
+    }
+    if (additionalIndexes != null) {
+      $result.additionalIndexes.addAll(additionalIndexes);
+    }
+    return $result;
+  }
   SeriesBlockIndex_BlockEntry._() : super();
   factory SeriesBlockIndex_BlockEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SeriesBlockIndex_BlockEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SeriesBlockIndex.BlockEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'fileOffset', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'additionalIndexes', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
@@ -663,17 +933,19 @@ class SeriesBlockIndex_BlockEntry extends $pb.GeneratedMessage {
   static SeriesBlockIndex_BlockEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SeriesBlockIndex_BlockEntry>(create);
   static SeriesBlockIndex_BlockEntry? _defaultInstance;
 
+  /// The timestamp of data in this block.
   @$pb.TagNumber(1)
-  $59.Timestamp get timestamp => $_getN(0);
+  $60.Timestamp get timestamp => $_getN(0);
   @$pb.TagNumber(1)
-  set timestamp($59.Timestamp v) { setField(1, v); }
+  set timestamp($60.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimestamp() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimestamp() => clearField(1);
   @$pb.TagNumber(1)
-  $59.Timestamp ensureTimestamp() => $_ensure(0);
+  $60.Timestamp ensureTimestamp() => $_ensure(0);
 
+  /// The offset of the data block from the start of the file.
   @$pb.TagNumber(2)
   $fixnum.Int64 get fileOffset => $_getI64(1);
   @$pb.TagNumber(2)
@@ -683,12 +955,35 @@ class SeriesBlockIndex_BlockEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearFileOffset() => clearField(2);
 
+  /// Values of the additional indexes for describing this block.
   @$pb.TagNumber(3)
   $core.List<$fixnum.Int64> get additionalIndexes => $_getList(2);
 }
 
+/// This describes the location of the SeriesDescriptor DescriptorBlock for the series, and
+///  the timestamp and location in the file of every data block in the series.
 class SeriesBlockIndex extends $pb.GeneratedMessage {
-  factory SeriesBlockIndex() => create();
+  factory SeriesBlockIndex({
+    $core.int? seriesIndex,
+    $fixnum.Int64? descriptorFileOffset,
+    $core.Iterable<SeriesBlockIndex_BlockEntry>? blockEntries,
+    $fixnum.Int64? totalBytes,
+  }) {
+    final $result = create();
+    if (seriesIndex != null) {
+      $result.seriesIndex = seriesIndex;
+    }
+    if (descriptorFileOffset != null) {
+      $result.descriptorFileOffset = descriptorFileOffset;
+    }
+    if (blockEntries != null) {
+      $result.blockEntries.addAll(blockEntries);
+    }
+    if (totalBytes != null) {
+      $result.totalBytes = totalBytes;
+    }
+    return $result;
+  }
   SeriesBlockIndex._() : super();
   factory SeriesBlockIndex.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SeriesBlockIndex.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -722,6 +1017,7 @@ class SeriesBlockIndex extends $pb.GeneratedMessage {
   static SeriesBlockIndex getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SeriesBlockIndex>(create);
   static SeriesBlockIndex? _defaultInstance;
 
+  /// The series_index for the series described by this index block.
   @$pb.TagNumber(1)
   $core.int get seriesIndex => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -731,6 +1027,7 @@ class SeriesBlockIndex extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSeriesIndex() => clearField(1);
 
+  /// Offset of type descriptor block from start of file.
   @$pb.TagNumber(2)
   $fixnum.Int64 get descriptorFileOffset => $_getI64(1);
   @$pb.TagNumber(2)
@@ -740,9 +1037,11 @@ class SeriesBlockIndex extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDescriptorFileOffset() => clearField(2);
 
+  /// The timestamp and location of each data block for this series.
   @$pb.TagNumber(3)
   $core.List<SeriesBlockIndex_BlockEntry> get blockEntries => $_getList(2);
 
+  /// The total size of the data stored in the data blocks of this series.
   @$pb.TagNumber(4)
   $fixnum.Int64 get totalBytes => $_getI64(3);
   @$pb.TagNumber(4)
@@ -753,8 +1052,30 @@ class SeriesBlockIndex extends $pb.GeneratedMessage {
   void clearTotalBytes() => clearField(4);
 }
 
+/// A key or description for selecting a message series.
+/// Because there may be multiple ways of describing a message series, we identify
+///  them by a unique mapping of {key -> value}.
+/// A series_type corresponds to a set of keys which are expected in the mapping.
+/// A 'bosdyn:grpc:requests' series_type, containing GRPC robot-id request messages, might
+///  thus be specified as:
+///   {'service': 'robot_id', 'message': 'bosdyn.api.RobotIdRequest'}
+/// A 'bosdyn:logtick' series_type, containing a signals data variable from LogTick
+///   annotations might be specified as:
+///   {'varname': 'tablet.wifi.rssi', 'schema': 'tablet-comms', 'client': 'bd-tablet'}
 class SeriesIdentifier extends $pb.GeneratedMessage {
-  factory SeriesIdentifier() => create();
+  factory SeriesIdentifier({
+    $core.String? seriesType,
+    $core.Map<$core.String, $core.String>? spec,
+  }) {
+    final $result = create();
+    if (seriesType != null) {
+      $result.seriesType = seriesType;
+    }
+    if (spec != null) {
+      $result.spec.addAll(spec);
+    }
+    return $result;
+  }
   SeriesIdentifier._() : super();
   factory SeriesIdentifier.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SeriesIdentifier.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -786,6 +1107,8 @@ class SeriesIdentifier extends $pb.GeneratedMessage {
   static SeriesIdentifier getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SeriesIdentifier>(create);
   static SeriesIdentifier? _defaultInstance;
 
+  /// This is the kind of spec, which should correspond to a set of keys which are expected
+  ///  in the spec.
   @$pb.TagNumber(1)
   $core.String get seriesType => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -795,6 +1118,9 @@ class SeriesIdentifier extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSeriesType() => clearField(1);
 
+  /// This is the "key" for naming the series within the file.
+  /// A key->value description which should be unique for this series within the file
+  ///  with this series_type.
   @$pb.TagNumber(2)
   $core.Map<$core.String, $core.String> get spec => $_getMap(1);
 }

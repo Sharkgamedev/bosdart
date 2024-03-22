@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,25 +13,37 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/any.pb.dart' as $66;
-import '../../google/protobuf/struct.pb.dart' as $57;
-import 'alerts.pb.dart' as $74;
-import 'header.pb.dart' as $67;
+import '../../google/protobuf/any.pb.dart' as $67;
+import '../../google/protobuf/struct.pb.dart' as $58;
+import 'alerts.pb.dart' as $75;
+import 'header.pb.dart' as $68;
 import 'image.pb.dart' as $11;
 import 'network_compute_bridge.pbenum.dart';
-import 'service_customization.pb.dart' as $71;
+import 'service_customization.pb.dart' as $72;
 import 'world_object.pb.dart' as $28;
 
 export 'network_compute_bridge.pbenum.dart';
 
 class ListAvailableModelsRequest extends $pb.GeneratedMessage {
-  factory ListAvailableModelsRequest() => create();
+  factory ListAvailableModelsRequest({
+    $68.RequestHeader? header,
+    NetworkComputeServerConfiguration? serverConfig,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (serverConfig != null) {
+      $result.serverConfig = serverConfig;
+    }
+    return $result;
+  }
   ListAvailableModelsRequest._() : super();
   factory ListAvailableModelsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListAvailableModelsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAvailableModelsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<NetworkComputeServerConfiguration>(2, _omitFieldNames ? '' : 'serverConfig', subBuilder: NetworkComputeServerConfiguration.create)
     ..hasRequiredFields = false
   ;
@@ -58,16 +70,17 @@ class ListAvailableModelsRequest extends $pb.GeneratedMessage {
   static ListAvailableModelsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Configuration about which server to use.
   @$pb.TagNumber(2)
   NetworkComputeServerConfiguration get serverConfig => $_getN(1);
   @$pb.TagNumber(2)
@@ -81,13 +94,41 @@ class ListAvailableModelsRequest extends $pb.GeneratedMessage {
 }
 
 class ListAvailableModelsResponse extends $pb.GeneratedMessage {
-  factory ListAvailableModelsResponse() => create();
+  factory ListAvailableModelsResponse({
+    $68.ResponseHeader? header,
+  @$core.Deprecated('This field is deprecated.')
+    $core.Iterable<$core.String>? availableModels,
+    AvailableModels? models,
+    ListAvailableModelsStatus? status,
+  @$core.Deprecated('This field is deprecated.')
+    $core.Iterable<ModelLabels>? labels,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (availableModels != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.availableModels.addAll(availableModels);
+    }
+    if (models != null) {
+      $result.models = models;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (labels != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.labels.addAll(labels);
+    }
+    return $result;
+  }
   ListAvailableModelsResponse._() : super();
   factory ListAvailableModelsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListAvailableModelsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAvailableModelsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..pPS(2, _omitFieldNames ? '' : 'availableModels')
     ..aOM<AvailableModels>(3, _omitFieldNames ? '' : 'models', subBuilder: AvailableModels.create)
     ..e<ListAvailableModelsStatus>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ListAvailableModelsStatus.LIST_AVAILABLE_MODELS_STATUS_UNKNOWN, valueOf: ListAvailableModelsStatus.valueOf, enumValues: ListAvailableModelsStatus.values)
@@ -117,20 +158,23 @@ class ListAvailableModelsResponse extends $pb.GeneratedMessage {
   static ListAvailableModelsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Provide list of available models.
+  /// DEPRECATED as of 3.3. Replaced by AvailableModels.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.List<$core.String> get availableModels => $_getList(1);
 
+  /// Envelope message for repeated ModelData.
   @$pb.TagNumber(3)
   AvailableModels get models => $_getN(2);
   @$pb.TagNumber(3)
@@ -142,6 +186,7 @@ class ListAvailableModelsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   AvailableModels ensureModels() => $_ensure(2);
 
+  /// Command status
   @$pb.TagNumber(5)
   ListAvailableModelsStatus get status => $_getN(3);
   @$pb.TagNumber(5)
@@ -151,13 +196,23 @@ class ListAvailableModelsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearStatus() => clearField(5);
 
+  /// Optional information about available classes for each model
+  /// DEPRECATED as of 3.3. Replaced by AvailableModels.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   $core.List<ModelLabels> get labels => $_getList(4);
 }
 
 class AvailableModels extends $pb.GeneratedMessage {
-  factory AvailableModels() => create();
+  factory AvailableModels({
+    $core.Iterable<ModelData>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
   AvailableModels._() : super();
   factory AvailableModels.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AvailableModels.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -188,12 +243,33 @@ class AvailableModels extends $pb.GeneratedMessage {
   static AvailableModels getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AvailableModels>(create);
   static AvailableModels? _defaultInstance;
 
+  /// Contains model name, class labels, and per-model parameters.
   @$pb.TagNumber(1)
   $core.List<ModelData> get data => $_getList(0);
 }
 
 class ModelData extends $pb.GeneratedMessage {
-  factory ModelData() => create();
+  factory ModelData({
+    $core.String? modelName,
+    $core.Iterable<$core.String>? availableLabels,
+    $core.Iterable<OutputImageSpec>? outputImageSpec,
+    $72.DictParam_Spec? customParams,
+  }) {
+    final $result = create();
+    if (modelName != null) {
+      $result.modelName = modelName;
+    }
+    if (availableLabels != null) {
+      $result.availableLabels.addAll(availableLabels);
+    }
+    if (outputImageSpec != null) {
+      $result.outputImageSpec.addAll(outputImageSpec);
+    }
+    if (customParams != null) {
+      $result.customParams = customParams;
+    }
+    return $result;
+  }
   ModelData._() : super();
   factory ModelData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ModelData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -202,7 +278,7 @@ class ModelData extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'modelName')
     ..pPS(2, _omitFieldNames ? '' : 'availableLabels')
     ..pc<OutputImageSpec>(3, _omitFieldNames ? '' : 'outputImageSpec', $pb.PbFieldType.PM, subBuilder: OutputImageSpec.create)
-    ..aOM<$71.DictParam_Spec>(7, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam_Spec.create)
+    ..aOM<$72.DictParam_Spec>(7, _omitFieldNames ? '' : 'customParams', subBuilder: $72.DictParam_Spec.create)
     ..hasRequiredFields = false
   ;
 
@@ -227,6 +303,7 @@ class ModelData extends $pb.GeneratedMessage {
   static ModelData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ModelData>(create);
   static ModelData? _defaultInstance;
 
+  /// The model name used should match a name specified here.
   @$pb.TagNumber(1)
   $core.String get modelName => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -236,26 +313,46 @@ class ModelData extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearModelName() => clearField(1);
 
+  /// List of class labels returned by this model (optional).
   @$pb.TagNumber(2)
   $core.List<$core.String> get availableLabels => $_getList(1);
 
+  ///  An ordered list of what types of outputs this NCB model generates.
+  ///  This can be used by clients to determine which NCB images to display first
+  ///  at action configuration time.
+  ///
+  ///  It's ok for the NCB worker to return a different set of outputs (more / fewer)
+  ///  than specified here.
   @$pb.TagNumber(3)
   $core.List<OutputImageSpec> get outputImageSpec => $_getList(2);
 
+  /// Per-model parameters.
   @$pb.TagNumber(7)
-  $71.DictParam_Spec get customParams => $_getN(3);
+  $72.DictParam_Spec get customParams => $_getN(3);
   @$pb.TagNumber(7)
-  set customParams($71.DictParam_Spec v) { setField(7, v); }
+  set customParams($72.DictParam_Spec v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasCustomParams() => $_has(3);
   @$pb.TagNumber(7)
   void clearCustomParams() => clearField(7);
   @$pb.TagNumber(7)
-  $71.DictParam_Spec ensureCustomParams() => $_ensure(3);
+  $72.DictParam_Spec ensureCustomParams() => $_ensure(3);
 }
 
 class ModelLabels extends $pb.GeneratedMessage {
-  factory ModelLabels() => create();
+  factory ModelLabels({
+    $core.String? modelName,
+    $core.Iterable<$core.String>? availableLabels,
+  }) {
+    final $result = create();
+    if (modelName != null) {
+      $result.modelName = modelName;
+    }
+    if (availableLabels != null) {
+      $result.availableLabels.addAll(availableLabels);
+    }
+    return $result;
+  }
   ModelLabels._() : super();
   factory ModelLabels.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ModelLabels.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -287,6 +384,7 @@ class ModelLabels extends $pb.GeneratedMessage {
   static ModelLabels getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ModelLabels>(create);
   static ModelLabels? _defaultInstance;
 
+  /// Model name.
   @$pb.TagNumber(1)
   $core.String get modelName => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -296,6 +394,7 @@ class ModelLabels extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearModelName() => clearField(1);
 
+  /// List of class labels returned by this model.
   @$pb.TagNumber(2)
   $core.List<$core.String> get availableLabels => $_getList(1);
 }
@@ -307,7 +406,29 @@ enum NetworkComputeRequest_Input {
 }
 
 class NetworkComputeRequest extends $pb.GeneratedMessage {
-  factory NetworkComputeRequest() => create();
+  factory NetworkComputeRequest({
+    $68.RequestHeader? header,
+  @$core.Deprecated('This field is deprecated.')
+    NetworkComputeInputData? inputData,
+    NetworkComputeServerConfiguration? serverConfig,
+    NetworkComputeInputDataBridge? inputDataBridge,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (inputData != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.inputData = inputData;
+    }
+    if (serverConfig != null) {
+      $result.serverConfig = serverConfig;
+    }
+    if (inputDataBridge != null) {
+      $result.inputDataBridge = inputDataBridge;
+    }
+    return $result;
+  }
   NetworkComputeRequest._() : super();
   factory NetworkComputeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NetworkComputeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -319,7 +440,7 @@ class NetworkComputeRequest extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetworkComputeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..oo(0, [2, 4])
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<NetworkComputeInputData>(2, _omitFieldNames ? '' : 'inputData', subBuilder: NetworkComputeInputData.create)
     ..aOM<NetworkComputeServerConfiguration>(3, _omitFieldNames ? '' : 'serverConfig', subBuilder: NetworkComputeServerConfiguration.create)
     ..aOM<NetworkComputeInputDataBridge>(4, _omitFieldNames ? '' : 'inputDataBridge', subBuilder: NetworkComputeInputDataBridge.create)
@@ -351,16 +472,18 @@ class NetworkComputeRequest extends $pb.GeneratedMessage {
   void clearInput() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Input data.
+  /// DEPRECATED as of 3.3, use input_data_bridge instead.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   NetworkComputeInputData get inputData => $_getN(1);
@@ -377,6 +500,7 @@ class NetworkComputeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   NetworkComputeInputData ensureInputData() => $_ensure(1);
 
+  /// Configuration about which server to use.
   @$pb.TagNumber(3)
   NetworkComputeServerConfiguration get serverConfig => $_getN(2);
   @$pb.TagNumber(3)
@@ -407,7 +531,23 @@ enum ImageSourceAndService_RequestData {
 }
 
 class ImageSourceAndService extends $pb.GeneratedMessage {
-  factory ImageSourceAndService() => create();
+  factory ImageSourceAndService({
+    $core.String? imageSource,
+    $core.String? imageService,
+    $11.ImageRequest? imageRequest,
+  }) {
+    final $result = create();
+    if (imageSource != null) {
+      $result.imageSource = imageSource;
+    }
+    if (imageService != null) {
+      $result.imageService = imageService;
+    }
+    if (imageRequest != null) {
+      $result.imageRequest = imageRequest;
+    }
+    return $result;
+  }
   ImageSourceAndService._() : super();
   factory ImageSourceAndService.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ImageSourceAndService.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -449,6 +589,8 @@ class ImageSourceAndService extends $pb.GeneratedMessage {
   ImageSourceAndService_RequestData whichRequestData() => _ImageSourceAndService_RequestDataByTag[$_whichOneof(0)]!;
   void clearRequestData() => clearField($_whichOneof(0));
 
+  /// When only an image source is specified, network compute bridge will choose default values
+  /// for other request options.
   @$pb.TagNumber(1)
   $core.String get imageSource => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -458,6 +600,7 @@ class ImageSourceAndService extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearImageSource() => clearField(1);
 
+  /// Image service.  If blank, it is assumed to be the robot's default image service.
   @$pb.TagNumber(2)
   $core.String get imageService => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -467,6 +610,7 @@ class ImageSourceAndService extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearImageService() => clearField(2);
 
+  /// A full image request with the image source name as well as other options.
   @$pb.TagNumber(3)
   $11.ImageRequest get imageRequest => $_getN(2);
   @$pb.TagNumber(3)
@@ -480,16 +624,36 @@ class ImageSourceAndService extends $pb.GeneratedMessage {
 }
 
 class OutputData extends $pb.GeneratedMessage {
-  factory OutputData() => create();
+  factory OutputData({
+    $58.Struct? metadata,
+    $core.Iterable<$28.WorldObject>? objectInImage,
+    $75.AlertData? alertData,
+    $67.Any? otherData,
+  }) {
+    final $result = create();
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    if (objectInImage != null) {
+      $result.objectInImage.addAll(objectInImage);
+    }
+    if (alertData != null) {
+      $result.alertData = alertData;
+    }
+    if (otherData != null) {
+      $result.otherData = otherData;
+    }
+    return $result;
+  }
   OutputData._() : super();
   factory OutputData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OutputData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OutputData', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$57.Struct>(2, _omitFieldNames ? '' : 'metadata', subBuilder: $57.Struct.create)
+    ..aOM<$58.Struct>(2, _omitFieldNames ? '' : 'metadata', subBuilder: $58.Struct.create)
     ..pc<$28.WorldObject>(3, _omitFieldNames ? '' : 'objectInImage', $pb.PbFieldType.PM, subBuilder: $28.WorldObject.create)
-    ..aOM<$74.AlertData>(4, _omitFieldNames ? '' : 'alertData', subBuilder: $74.AlertData.create)
-    ..aOM<$66.Any>(5, _omitFieldNames ? '' : 'otherData', subBuilder: $66.Any.create)
+    ..aOM<$75.AlertData>(4, _omitFieldNames ? '' : 'alertData', subBuilder: $75.AlertData.create)
+    ..aOM<$67.Any>(5, _omitFieldNames ? '' : 'otherData', subBuilder: $67.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -514,54 +678,79 @@ class OutputData extends $pb.GeneratedMessage {
   static OutputData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OutputData>(create);
   static OutputData? _defaultInstance;
 
+  /// Optional metadata related to this image/region.
   @$pb.TagNumber(2)
-  $57.Struct get metadata => $_getN(0);
+  $58.Struct get metadata => $_getN(0);
   @$pb.TagNumber(2)
-  set metadata($57.Struct v) { setField(2, v); }
+  set metadata($58.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasMetadata() => $_has(0);
   @$pb.TagNumber(2)
   void clearMetadata() => clearField(2);
   @$pb.TagNumber(2)
-  $57.Struct ensureMetadata() => $_ensure(0);
+  $58.Struct ensureMetadata() => $_ensure(0);
 
+  /// Optional detection information. May include bounding boxes, image coordinates,
+  /// 3D pose information, etc.
   @$pb.TagNumber(3)
   $core.List<$28.WorldObject> get objectInImage => $_getList(1);
 
+  /// Optional alert related to this image/region.
   @$pb.TagNumber(4)
-  $74.AlertData get alertData => $_getN(2);
+  $75.AlertData get alertData => $_getN(2);
   @$pb.TagNumber(4)
-  set alertData($74.AlertData v) { setField(4, v); }
+  set alertData($75.AlertData v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasAlertData() => $_has(2);
   @$pb.TagNumber(4)
   void clearAlertData() => clearField(4);
   @$pb.TagNumber(4)
-  $74.AlertData ensureAlertData() => $_ensure(2);
+  $75.AlertData ensureAlertData() => $_ensure(2);
 
+  /// Optional data of a custom type.
   @$pb.TagNumber(5)
-  $66.Any get otherData => $_getN(3);
+  $67.Any get otherData => $_getN(3);
   @$pb.TagNumber(5)
-  set otherData($66.Any v) { setField(5, v); }
+  set otherData($67.Any v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasOtherData() => $_has(3);
   @$pb.TagNumber(5)
   void clearOtherData() => clearField(5);
   @$pb.TagNumber(5)
-  $66.Any ensureOtherData() => $_ensure(3);
+  $67.Any ensureOtherData() => $_ensure(3);
 }
 
 class ComputeParameters extends $pb.GeneratedMessage {
-  factory ComputeParameters() => create();
+  factory ComputeParameters({
+    $67.Any? otherData,
+    $core.String? modelName,
+    $core.Iterable<$11.ImageCaptureAndSource>? referenceImages,
+    $72.DictParam? customParams,
+  }) {
+    final $result = create();
+    if (otherData != null) {
+      $result.otherData = otherData;
+    }
+    if (modelName != null) {
+      $result.modelName = modelName;
+    }
+    if (referenceImages != null) {
+      $result.referenceImages.addAll(referenceImages);
+    }
+    if (customParams != null) {
+      $result.customParams = customParams;
+    }
+    return $result;
+  }
   ComputeParameters._() : super();
   factory ComputeParameters.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ComputeParameters.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComputeParameters', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$66.Any>(3, _omitFieldNames ? '' : 'otherData', subBuilder: $66.Any.create)
+    ..aOM<$67.Any>(3, _omitFieldNames ? '' : 'otherData', subBuilder: $67.Any.create)
     ..aOS(4, _omitFieldNames ? '' : 'modelName')
     ..pc<$11.ImageCaptureAndSource>(6, _omitFieldNames ? '' : 'referenceImages', $pb.PbFieldType.PM, subBuilder: $11.ImageCaptureAndSource.create)
-    ..aOM<$71.DictParam>(7, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam.create)
+    ..aOM<$72.DictParam>(7, _omitFieldNames ? '' : 'customParams', subBuilder: $72.DictParam.create)
     ..hasRequiredFields = false
   ;
 
@@ -586,17 +775,20 @@ class ComputeParameters extends $pb.GeneratedMessage {
   static ComputeParameters getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ComputeParameters>(create);
   static ComputeParameters? _defaultInstance;
 
+  /// Other data that isn't an image.  NetworkComputeBridge service will pass it through
+  /// to the remote server so you can do computation on arbitrary data.
   @$pb.TagNumber(3)
-  $66.Any get otherData => $_getN(0);
+  $67.Any get otherData => $_getN(0);
   @$pb.TagNumber(3)
-  set otherData($66.Any v) { setField(3, v); }
+  set otherData($67.Any v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasOtherData() => $_has(0);
   @$pb.TagNumber(3)
   void clearOtherData() => clearField(3);
   @$pb.TagNumber(3)
-  $66.Any ensureOtherData() => $_ensure(0);
+  $67.Any ensureOtherData() => $_ensure(0);
 
+  /// Name of the model to be run on the input data.
   @$pb.TagNumber(4)
   $core.String get modelName => $_getSZ(1);
   @$pb.TagNumber(4)
@@ -606,23 +798,42 @@ class ComputeParameters extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearModelName() => clearField(4);
 
+  /// For some computer vision operations a number of reference images are required along with the
+  /// input image.  These images might have been taken months ago, not neccessarilly taken right
+  /// now.
   @$pb.TagNumber(6)
   $core.List<$11.ImageCaptureAndSource> get referenceImages => $_getList(2);
 
+  /// Input parameters unique to this worker that do not match any of the above fields.
   @$pb.TagNumber(7)
-  $71.DictParam get customParams => $_getN(3);
+  $72.DictParam get customParams => $_getN(3);
   @$pb.TagNumber(7)
-  set customParams($71.DictParam v) { setField(7, v); }
+  set customParams($72.DictParam v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasCustomParams() => $_has(3);
   @$pb.TagNumber(7)
   void clearCustomParams() => clearField(7);
   @$pb.TagNumber(7)
-  $71.DictParam ensureCustomParams() => $_ensure(3);
+  $72.DictParam ensureCustomParams() => $_ensure(3);
 }
 
+/// *
+///  The network compute bridge will receive this input data, and convert it to a
+///  [NetworkComputeInputDataWorker] before sending an RPC to the network compute bridge worker.
 class NetworkComputeInputDataBridge extends $pb.GeneratedMessage {
-  factory NetworkComputeInputDataBridge() => create();
+  factory NetworkComputeInputDataBridge({
+    $core.Iterable<ImageSourceAndService>? imageSourcesAndServices,
+    ComputeParameters? parameters,
+  }) {
+    final $result = create();
+    if (imageSourcesAndServices != null) {
+      $result.imageSourcesAndServices.addAll(imageSourcesAndServices);
+    }
+    if (parameters != null) {
+      $result.parameters = parameters;
+    }
+    return $result;
+  }
   NetworkComputeInputDataBridge._() : super();
   factory NetworkComputeInputDataBridge.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NetworkComputeInputDataBridge.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -654,6 +865,8 @@ class NetworkComputeInputDataBridge extends $pb.GeneratedMessage {
   static NetworkComputeInputDataBridge getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NetworkComputeInputDataBridge>(create);
   static NetworkComputeInputDataBridge? _defaultInstance;
 
+  /// Image sources to collect a number of images from.  The ImageResponses
+  /// will populate the [images] field in [NetworkComputeInputDataWorker].
   @$pb.TagNumber(1)
   $core.List<ImageSourceAndService> get imageSourcesAndServices => $_getList(0);
 
@@ -669,8 +882,22 @@ class NetworkComputeInputDataBridge extends $pb.GeneratedMessage {
   ComputeParameters ensureParameters() => $_ensure(1);
 }
 
+/// *
+///  The network compute bridge worker will receive this input data.
 class NetworkComputeInputDataWorker extends $pb.GeneratedMessage {
-  factory NetworkComputeInputDataWorker() => create();
+  factory NetworkComputeInputDataWorker({
+    $core.Iterable<$11.ImageCaptureAndSource>? images,
+    ComputeParameters? parameters,
+  }) {
+    final $result = create();
+    if (images != null) {
+      $result.images.addAll(images);
+    }
+    if (parameters != null) {
+      $result.parameters = parameters;
+    }
+    return $result;
+  }
   NetworkComputeInputDataWorker._() : super();
   factory NetworkComputeInputDataWorker.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NetworkComputeInputDataWorker.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -702,9 +929,12 @@ class NetworkComputeInputDataWorker extends $pb.GeneratedMessage {
   static NetworkComputeInputDataWorker getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NetworkComputeInputDataWorker>(create);
   static NetworkComputeInputDataWorker? _defaultInstance;
 
+  /// Live images (usually) filled out by NetworkComputeBridge right before NCB worker
+  /// is called.
   @$pb.TagNumber(1)
   $core.List<$11.ImageCaptureAndSource> get images => $_getList(0);
 
+  /// Input data.
   @$pb.TagNumber(2)
   ComputeParameters get parameters => $_getN(1);
   @$pb.TagNumber(2)
@@ -724,7 +954,35 @@ enum NetworkComputeInputData_Input {
 }
 
 class NetworkComputeInputData extends $pb.GeneratedMessage {
-  factory NetworkComputeInputData() => create();
+  factory NetworkComputeInputData({
+    $11.Image? image,
+    $67.Any? otherData,
+    $core.String? modelName,
+    $core.double? minConfidence,
+    NetworkComputeInputData_RotateImage? rotateImage,
+    ImageSourceAndService? imageSourceAndService,
+  }) {
+    final $result = create();
+    if (image != null) {
+      $result.image = image;
+    }
+    if (otherData != null) {
+      $result.otherData = otherData;
+    }
+    if (modelName != null) {
+      $result.modelName = modelName;
+    }
+    if (minConfidence != null) {
+      $result.minConfidence = minConfidence;
+    }
+    if (rotateImage != null) {
+      $result.rotateImage = rotateImage;
+    }
+    if (imageSourceAndService != null) {
+      $result.imageSourceAndService = imageSourceAndService;
+    }
+    return $result;
+  }
   NetworkComputeInputData._() : super();
   factory NetworkComputeInputData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NetworkComputeInputData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -737,7 +995,7 @@ class NetworkComputeInputData extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetworkComputeInputData', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..oo(0, [2, 7])
     ..aOM<$11.Image>(2, _omitFieldNames ? '' : 'image', subBuilder: $11.Image.create)
-    ..aOM<$66.Any>(3, _omitFieldNames ? '' : 'otherData', subBuilder: $66.Any.create)
+    ..aOM<$67.Any>(3, _omitFieldNames ? '' : 'otherData', subBuilder: $67.Any.create)
     ..aOS(4, _omitFieldNames ? '' : 'modelName')
     ..a<$core.double>(5, _omitFieldNames ? '' : 'minConfidence', $pb.PbFieldType.OF)
     ..e<NetworkComputeInputData_RotateImage>(6, _omitFieldNames ? '' : 'rotateImage', $pb.PbFieldType.OE, defaultOrMaker: NetworkComputeInputData_RotateImage.ROTATE_IMAGE_UNKNOWN, valueOf: NetworkComputeInputData_RotateImage.valueOf, enumValues: NetworkComputeInputData_RotateImage.values)
@@ -769,6 +1027,7 @@ class NetworkComputeInputData extends $pb.GeneratedMessage {
   NetworkComputeInputData_Input whichInput() => _NetworkComputeInputData_InputByTag[$_whichOneof(0)]!;
   void clearInput() => clearField($_whichOneof(0));
 
+  /// Image to process, if you are not using an image source.
   @$pb.TagNumber(2)
   $11.Image get image => $_getN(0);
   @$pb.TagNumber(2)
@@ -780,17 +1039,20 @@ class NetworkComputeInputData extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $11.Image ensureImage() => $_ensure(0);
 
+  /// Other data that isn't an image.  NetworkComputeBridge service will pass it through
+  /// to the remote server so you can do computation on arbitrary data.
   @$pb.TagNumber(3)
-  $66.Any get otherData => $_getN(1);
+  $67.Any get otherData => $_getN(1);
   @$pb.TagNumber(3)
-  set otherData($66.Any v) { setField(3, v); }
+  set otherData($67.Any v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasOtherData() => $_has(1);
   @$pb.TagNumber(3)
   void clearOtherData() => clearField(3);
   @$pb.TagNumber(3)
-  $66.Any ensureOtherData() => $_ensure(1);
+  $67.Any ensureOtherData() => $_ensure(1);
 
+  /// Name of the model to be run on the input data.
   @$pb.TagNumber(4)
   $core.String get modelName => $_getSZ(2);
   @$pb.TagNumber(4)
@@ -800,6 +1062,8 @@ class NetworkComputeInputData extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearModelName() => clearField(4);
 
+  /// Minimum confidence [0.0 - 1.0] an object must have to be returned. Detections below this
+  /// confidence threshold will be suppressed in the response.
   @$pb.TagNumber(5)
   $core.double get minConfidence => $_getN(3);
   @$pb.TagNumber(5)
@@ -809,6 +1073,11 @@ class NetworkComputeInputData extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearMinConfidence() => clearField(5);
 
+  /// Options for rotating the image before processing. When unset, no rotation is applied.
+  /// Rotation is supported for data from image services that provide a FrameTreeSnapshot
+  /// defining the sensor's frame with respect to Spot's body and vision frames.
+  /// Field is ignored for non-image input.
+  /// DEPRECATED as of 3.3. Please rotate the image client-side before passing it to NCB worker.
   @$pb.TagNumber(6)
   NetworkComputeInputData_RotateImage get rotateImage => $_getN(4);
   @$pb.TagNumber(6)
@@ -818,6 +1087,7 @@ class NetworkComputeInputData extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearRotateImage() => clearField(6);
 
+  /// Image source to collect an image from.
   @$pb.TagNumber(7)
   ImageSourceAndService get imageSourceAndService => $_getN(5);
   @$pb.TagNumber(7)
@@ -831,7 +1101,15 @@ class NetworkComputeInputData extends $pb.GeneratedMessage {
 }
 
 class NetworkComputeServerConfiguration extends $pb.GeneratedMessage {
-  factory NetworkComputeServerConfiguration() => create();
+  factory NetworkComputeServerConfiguration({
+    $core.String? serviceName,
+  }) {
+    final $result = create();
+    if (serviceName != null) {
+      $result.serviceName = serviceName;
+    }
+    return $result;
+  }
   NetworkComputeServerConfiguration._() : super();
   factory NetworkComputeServerConfiguration.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NetworkComputeServerConfiguration.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -862,6 +1140,7 @@ class NetworkComputeServerConfiguration extends $pb.GeneratedMessage {
   static NetworkComputeServerConfiguration getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NetworkComputeServerConfiguration>(create);
   static NetworkComputeServerConfiguration? _defaultInstance;
 
+  /// Service name in the robot's Directory for the worker that will process the request.
   @$pb.TagNumber(3)
   $core.String get serviceName => $_getSZ(0);
   @$pb.TagNumber(3)
@@ -873,16 +1152,36 @@ class NetworkComputeServerConfiguration extends $pb.GeneratedMessage {
 }
 
 class OutputImage extends $pb.GeneratedMessage {
-  factory OutputImage() => create();
+  factory OutputImage({
+    $11.ImageResponse? imageResponse,
+    $58.Struct? metadata,
+    $core.Iterable<$28.WorldObject>? objectInImage,
+    $75.AlertData? alertData,
+  }) {
+    final $result = create();
+    if (imageResponse != null) {
+      $result.imageResponse = imageResponse;
+    }
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    if (objectInImage != null) {
+      $result.objectInImage.addAll(objectInImage);
+    }
+    if (alertData != null) {
+      $result.alertData = alertData;
+    }
+    return $result;
+  }
   OutputImage._() : super();
   factory OutputImage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OutputImage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OutputImage', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOM<$11.ImageResponse>(1, _omitFieldNames ? '' : 'imageResponse', subBuilder: $11.ImageResponse.create)
-    ..aOM<$57.Struct>(2, _omitFieldNames ? '' : 'metadata', subBuilder: $57.Struct.create)
+    ..aOM<$58.Struct>(2, _omitFieldNames ? '' : 'metadata', subBuilder: $58.Struct.create)
     ..pc<$28.WorldObject>(3, _omitFieldNames ? '' : 'objectInImage', $pb.PbFieldType.PM, subBuilder: $28.WorldObject.create)
-    ..aOM<$74.AlertData>(4, _omitFieldNames ? '' : 'alertData', subBuilder: $74.AlertData.create)
+    ..aOM<$75.AlertData>(4, _omitFieldNames ? '' : 'alertData', subBuilder: $75.AlertData.create)
     ..hasRequiredFields = false
   ;
 
@@ -907,6 +1206,7 @@ class OutputImage extends $pb.GeneratedMessage {
   static OutputImage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OutputImage>(create);
   static OutputImage? _defaultInstance;
 
+  /// Annotated image showing process/end results.
   @$pb.TagNumber(1)
   $11.ImageResponse get imageResponse => $_getN(0);
   @$pb.TagNumber(1)
@@ -918,34 +1218,51 @@ class OutputImage extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $11.ImageResponse ensureImageResponse() => $_ensure(0);
 
+  /// Optional metadata related to this image.
   @$pb.TagNumber(2)
-  $57.Struct get metadata => $_getN(1);
+  $58.Struct get metadata => $_getN(1);
   @$pb.TagNumber(2)
-  set metadata($57.Struct v) { setField(2, v); }
+  set metadata($58.Struct v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasMetadata() => $_has(1);
   @$pb.TagNumber(2)
   void clearMetadata() => clearField(2);
   @$pb.TagNumber(2)
-  $57.Struct ensureMetadata() => $_ensure(1);
+  $58.Struct ensureMetadata() => $_ensure(1);
 
+  /// Optional detection information. May include bounding boxes, image coordinates,
+  /// 3D pose information, etc.
   @$pb.TagNumber(3)
   $core.List<$28.WorldObject> get objectInImage => $_getList(2);
 
+  /// Optional alert related to this image.
   @$pb.TagNumber(4)
-  $74.AlertData get alertData => $_getN(3);
+  $75.AlertData get alertData => $_getN(3);
   @$pb.TagNumber(4)
-  set alertData($74.AlertData v) { setField(4, v); }
+  set alertData($75.AlertData v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasAlertData() => $_has(3);
   @$pb.TagNumber(4)
   void clearAlertData() => clearField(4);
   @$pb.TagNumber(4)
-  $74.AlertData ensureAlertData() => $_ensure(3);
+  $75.AlertData ensureAlertData() => $_ensure(3);
 }
 
+/// Information about the output of an NCB worker.
 class OutputImageSpec extends $pb.GeneratedMessage {
-  factory OutputImageSpec() => create();
+  factory OutputImageSpec({
+    $core.String? key,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
   OutputImageSpec._() : super();
   factory OutputImageSpec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OutputImageSpec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -977,6 +1294,7 @@ class OutputImageSpec extends $pb.GeneratedMessage {
   static OutputImageSpec getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OutputImageSpec>(create);
   static OutputImageSpec? _defaultInstance;
 
+  /// This string corresponds to the key in `output_images`
   @$pb.TagNumber(1)
   $core.String get key => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -986,6 +1304,7 @@ class OutputImageSpec extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearKey() => clearField(1);
 
+  /// A human readable name for this output_image.
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -997,22 +1316,78 @@ class OutputImageSpec extends $pb.GeneratedMessage {
 }
 
 class NetworkComputeResponse extends $pb.GeneratedMessage {
-  factory NetworkComputeResponse() => create();
+  factory NetworkComputeResponse({
+    $68.ResponseHeader? header,
+    $core.Iterable<$28.WorldObject>? objectInImage,
+  @$core.Deprecated('This field is deprecated.')
+    $11.ImageResponse? imageResponse,
+    $67.Any? otherData,
+    NetworkComputeStatus? status,
+  @$core.Deprecated('This field is deprecated.')
+    $core.double? imageRotationAngle,
+  @$core.Deprecated('This field is deprecated.')
+    $75.AlertData? alertData,
+    $core.Map<$core.String, OutputImage>? outputImages,
+  @$core.Deprecated('This field is deprecated.')
+    $core.Map<$core.String, OutputData>? roiOutputData,
+    $72.CustomParamError? customParamError,
+    $core.Iterable<$11.ImageCaptureAndSource>? imageResponses,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (objectInImage != null) {
+      $result.objectInImage.addAll(objectInImage);
+    }
+    if (imageResponse != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.imageResponse = imageResponse;
+    }
+    if (otherData != null) {
+      $result.otherData = otherData;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (imageRotationAngle != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.imageRotationAngle = imageRotationAngle;
+    }
+    if (alertData != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.alertData = alertData;
+    }
+    if (outputImages != null) {
+      $result.outputImages.addAll(outputImages);
+    }
+    if (roiOutputData != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.roiOutputData.addAll(roiOutputData);
+    }
+    if (customParamError != null) {
+      $result.customParamError = customParamError;
+    }
+    if (imageResponses != null) {
+      $result.imageResponses.addAll(imageResponses);
+    }
+    return $result;
+  }
   NetworkComputeResponse._() : super();
   factory NetworkComputeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NetworkComputeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetworkComputeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..pc<$28.WorldObject>(2, _omitFieldNames ? '' : 'objectInImage', $pb.PbFieldType.PM, subBuilder: $28.WorldObject.create)
     ..aOM<$11.ImageResponse>(3, _omitFieldNames ? '' : 'imageResponse', subBuilder: $11.ImageResponse.create)
-    ..aOM<$66.Any>(4, _omitFieldNames ? '' : 'otherData', subBuilder: $66.Any.create)
+    ..aOM<$67.Any>(4, _omitFieldNames ? '' : 'otherData', subBuilder: $67.Any.create)
     ..e<NetworkComputeStatus>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NetworkComputeStatus.NETWORK_COMPUTE_STATUS_UNKNOWN, valueOf: NetworkComputeStatus.valueOf, enumValues: NetworkComputeStatus.values)
     ..a<$core.double>(6, _omitFieldNames ? '' : 'imageRotationAngle', $pb.PbFieldType.OD)
-    ..aOM<$74.AlertData>(7, _omitFieldNames ? '' : 'alertData', subBuilder: $74.AlertData.create)
+    ..aOM<$75.AlertData>(7, _omitFieldNames ? '' : 'alertData', subBuilder: $75.AlertData.create)
     ..m<$core.String, OutputImage>(8, _omitFieldNames ? '' : 'outputImages', entryClassName: 'NetworkComputeResponse.OutputImagesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: OutputImage.create, valueDefaultOrMaker: OutputImage.getDefault, packageName: const $pb.PackageName('bosdyn.api'))
     ..m<$core.String, OutputData>(10, _omitFieldNames ? '' : 'roiOutputData', entryClassName: 'NetworkComputeResponse.RoiOutputDataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: OutputData.create, valueDefaultOrMaker: OutputData.getDefault, packageName: const $pb.PackageName('bosdyn.api'))
-    ..aOM<$71.CustomParamError>(11, _omitFieldNames ? '' : 'customParamError', subBuilder: $71.CustomParamError.create)
+    ..aOM<$72.CustomParamError>(11, _omitFieldNames ? '' : 'customParamError', subBuilder: $72.CustomParamError.create)
     ..pc<$11.ImageCaptureAndSource>(13, _omitFieldNames ? '' : 'imageResponses', $pb.PbFieldType.PM, subBuilder: $11.ImageCaptureAndSource.create)
     ..hasRequiredFields = false
   ;
@@ -1039,19 +1414,24 @@ class NetworkComputeResponse extends $pb.GeneratedMessage {
   static NetworkComputeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Detection information. May include bounding boxes, image coordinates, 3D pose information,
+  /// etc.
   @$pb.TagNumber(2)
   $core.List<$28.WorldObject> get objectInImage => $_getList(1);
 
+  /// The image we computed the data on. If the input image itself was provided in the request,
+  /// this field is not populated.  This field is not set for non-image input.
+  /// DEPRECATED as of 3.3. Use image_responses instead.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $11.ImageResponse get imageResponse => $_getN(2);
@@ -1068,17 +1448,19 @@ class NetworkComputeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $11.ImageResponse ensureImageResponse() => $_ensure(2);
 
+  /// Non image-type data that can optionally be returned by a remote server.
   @$pb.TagNumber(4)
-  $66.Any get otherData => $_getN(3);
+  $67.Any get otherData => $_getN(3);
   @$pb.TagNumber(4)
-  set otherData($66.Any v) { setField(4, v); }
+  set otherData($67.Any v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasOtherData() => $_has(3);
   @$pb.TagNumber(4)
   void clearOtherData() => clearField(4);
   @$pb.TagNumber(4)
-  $66.Any ensureOtherData() => $_ensure(3);
+  $67.Any ensureOtherData() => $_ensure(3);
 
+  /// Command status
   @$pb.TagNumber(5)
   NetworkComputeStatus get status => $_getN(4);
   @$pb.TagNumber(5)
@@ -1088,6 +1470,12 @@ class NetworkComputeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearStatus() => clearField(5);
 
+  ///  If the image was rotated for processing, this field will contain the amount it was rotated by
+  ///  (counter-clockwise, in radians).
+  ///
+  ///  Note that the image returned is *not* rotated, regardless of if it was rotated
+  ///  for processing.  This ensures that all other calibration and metadata remains valid.
+  ///  DEPRECATED as of 3.3.  Please rotate the image client-side before passing it to NCB worker.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   $core.double get imageRotationAngle => $_getN(5);
@@ -1101,12 +1489,18 @@ class NetworkComputeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearImageRotationAngle() => clearField(6);
 
+  ///  Optional field to indicate an alert detected by this model.
+  ///
+  ///  Note that this alert will be reported for this entire response (including all output images).
+  ///  If you have multiple output images and only want to alert on a specific image,
+  ///  use the alert_data field in the associated OutputImage message.
+  ///  DEPRECATED as of 3.3. Use alert_data in OutputImage instead.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
-  $74.AlertData get alertData => $_getN(6);
+  $75.AlertData get alertData => $_getN(6);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
-  set alertData($74.AlertData v) { setField(7, v); }
+  set alertData($75.AlertData v) { setField(7, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   $core.bool hasAlertData() => $_has(6);
@@ -1115,38 +1509,56 @@ class NetworkComputeResponse extends $pb.GeneratedMessage {
   void clearAlertData() => clearField(7);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
-  $74.AlertData ensureAlertData() => $_ensure(6);
+  $75.AlertData ensureAlertData() => $_ensure(6);
 
+  /// Optional field to output images generated by this model.
+  /// Maps name to OutputImage.
   @$pb.TagNumber(8)
   $core.Map<$core.String, OutputImage> get outputImages => $_getMap(7);
 
+  /// Information computed about the regions of interest by the worker.
+  /// DEPRECATED as of 3.3. Support for non-image products will be added in the future.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(10)
   $core.Map<$core.String, OutputData> get roiOutputData => $_getMap(8);
 
+  /// Filled out if status is NETWORK_COMPUTE_STATUS_CUSTOM_PARAMS_ERROR.
   @$pb.TagNumber(11)
-  $71.CustomParamError get customParamError => $_getN(9);
+  $72.CustomParamError get customParamError => $_getN(9);
   @$pb.TagNumber(11)
-  set customParamError($71.CustomParamError v) { setField(11, v); }
+  set customParamError($72.CustomParamError v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasCustomParamError() => $_has(9);
   @$pb.TagNumber(11)
   void clearCustomParamError() => clearField(11);
   @$pb.TagNumber(11)
-  $71.CustomParamError ensureCustomParamError() => $_ensure(9);
+  $72.CustomParamError ensureCustomParamError() => $_ensure(9);
 
+  /// The image we computed the data on. This field is not set for non-image input.
   @$pb.TagNumber(13)
   $core.List<$11.ImageCaptureAndSource> get imageResponses => $_getList(10);
 }
 
 class WorkerComputeRequest extends $pb.GeneratedMessage {
-  factory WorkerComputeRequest() => create();
+  factory WorkerComputeRequest({
+    $68.RequestHeader? header,
+    NetworkComputeInputDataWorker? inputData,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (inputData != null) {
+      $result.inputData = inputData;
+    }
+    return $result;
+  }
   WorkerComputeRequest._() : super();
   factory WorkerComputeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkerComputeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WorkerComputeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<NetworkComputeInputDataWorker>(2, _omitFieldNames ? '' : 'inputData', subBuilder: NetworkComputeInputDataWorker.create)
     ..hasRequiredFields = false
   ;
@@ -1173,15 +1585,15 @@ class WorkerComputeRequest extends $pb.GeneratedMessage {
   static WorkerComputeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   NetworkComputeInputDataWorker get inputData => $_getN(1);
@@ -1196,16 +1608,40 @@ class WorkerComputeRequest extends $pb.GeneratedMessage {
 }
 
 class WorkerComputeResponse extends $pb.GeneratedMessage {
-  factory WorkerComputeResponse() => create();
+  factory WorkerComputeResponse({
+    $68.ResponseHeader? header,
+    $67.Any? otherData,
+    NetworkComputeStatus? status,
+    $72.CustomParamError? customParamError,
+    $core.Map<$core.String, OutputImage>? outputImages,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (otherData != null) {
+      $result.otherData = otherData;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (customParamError != null) {
+      $result.customParamError = customParamError;
+    }
+    if (outputImages != null) {
+      $result.outputImages.addAll(outputImages);
+    }
+    return $result;
+  }
   WorkerComputeResponse._() : super();
   factory WorkerComputeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory WorkerComputeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WorkerComputeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
-    ..aOM<$66.Any>(2, _omitFieldNames ? '' : 'otherData', subBuilder: $66.Any.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.Any>(2, _omitFieldNames ? '' : 'otherData', subBuilder: $67.Any.create)
     ..e<NetworkComputeStatus>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NetworkComputeStatus.NETWORK_COMPUTE_STATUS_UNKNOWN, valueOf: NetworkComputeStatus.valueOf, enumValues: NetworkComputeStatus.values)
-    ..aOM<$71.CustomParamError>(4, _omitFieldNames ? '' : 'customParamError', subBuilder: $71.CustomParamError.create)
+    ..aOM<$72.CustomParamError>(4, _omitFieldNames ? '' : 'customParamError', subBuilder: $72.CustomParamError.create)
     ..m<$core.String, OutputImage>(7, _omitFieldNames ? '' : 'outputImages', entryClassName: 'WorkerComputeResponse.OutputImagesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: OutputImage.create, valueDefaultOrMaker: OutputImage.getDefault, packageName: const $pb.PackageName('bosdyn.api'))
     ..hasRequiredFields = false
   ;
@@ -1232,27 +1668,29 @@ class WorkerComputeResponse extends $pb.GeneratedMessage {
   static WorkerComputeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Non image-type data that can optionally be returned by a remote server.
   @$pb.TagNumber(2)
-  $66.Any get otherData => $_getN(1);
+  $67.Any get otherData => $_getN(1);
   @$pb.TagNumber(2)
-  set otherData($66.Any v) { setField(2, v); }
+  set otherData($67.Any v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasOtherData() => $_has(1);
   @$pb.TagNumber(2)
   void clearOtherData() => clearField(2);
   @$pb.TagNumber(2)
-  $66.Any ensureOtherData() => $_ensure(1);
+  $67.Any ensureOtherData() => $_ensure(1);
 
+  /// Command status
   @$pb.TagNumber(3)
   NetworkComputeStatus get status => $_getN(2);
   @$pb.TagNumber(3)
@@ -1262,17 +1700,19 @@ class WorkerComputeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearStatus() => clearField(3);
 
+  /// Filled out if status is NETWORK_COMPUTE_STATUS_CUSTOM_PARAMS_ERROR.
   @$pb.TagNumber(4)
-  $71.CustomParamError get customParamError => $_getN(3);
+  $72.CustomParamError get customParamError => $_getN(3);
   @$pb.TagNumber(4)
-  set customParamError($71.CustomParamError v) { setField(4, v); }
+  set customParamError($72.CustomParamError v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasCustomParamError() => $_has(3);
   @$pb.TagNumber(4)
   void clearCustomParamError() => clearField(4);
   @$pb.TagNumber(4)
-  $71.CustomParamError ensureCustomParamError() => $_ensure(3);
+  $72.CustomParamError ensureCustomParamError() => $_ensure(3);
 
+  /// Output images generated by this model.
   @$pb.TagNumber(7)
   $core.Map<$core.String, OutputImage> get outputImages => $_getMap(4);
 }

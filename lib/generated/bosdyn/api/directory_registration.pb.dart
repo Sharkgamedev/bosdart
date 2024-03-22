@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -15,18 +15,36 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'directory.pb.dart' as $7;
 import 'directory_registration.pbenum.dart';
-import 'header.pb.dart' as $67;
+import 'header.pb.dart' as $68;
 
 export 'directory_registration.pbenum.dart';
 
+/// The RegisterService request message sends the service's entry and endpoint to the robot's directory.
+/// This Request serves as a heartbeat to the Directory.
 class RegisterServiceRequest extends $pb.GeneratedMessage {
-  factory RegisterServiceRequest() => create();
+  factory RegisterServiceRequest({
+    $68.RequestHeader? header,
+    $7.Endpoint? endpoint,
+    $7.ServiceEntry? serviceEntry,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (endpoint != null) {
+      $result.endpoint = endpoint;
+    }
+    if (serviceEntry != null) {
+      $result.serviceEntry = serviceEntry;
+    }
+    return $result;
+  }
   RegisterServiceRequest._() : super();
   factory RegisterServiceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RegisterServiceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterServiceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<$7.Endpoint>(2, _omitFieldNames ? '' : 'endpoint', subBuilder: $7.Endpoint.create)
     ..aOM<$7.ServiceEntry>(3, _omitFieldNames ? '' : 'serviceEntry', subBuilder: $7.ServiceEntry.create)
     ..hasRequiredFields = false
@@ -53,17 +71,19 @@ class RegisterServiceRequest extends $pb.GeneratedMessage {
   static RegisterServiceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterServiceRequest>(create);
   static RegisterServiceRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// The endpoint at which this service may be contacted.
   @$pb.TagNumber(2)
   $7.Endpoint get endpoint => $_getN(1);
   @$pb.TagNumber(2)
@@ -75,6 +95,7 @@ class RegisterServiceRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $7.Endpoint ensureEndpoint() => $_ensure(1);
 
+  /// The service to create. The name must not match any existing service.
   @$pb.TagNumber(3)
   $7.ServiceEntry get serviceEntry => $_getN(2);
   @$pb.TagNumber(3)
@@ -87,14 +108,27 @@ class RegisterServiceRequest extends $pb.GeneratedMessage {
   $7.ServiceEntry ensureServiceEntry() => $_ensure(2);
 }
 
+/// The RegisterService response message has information of whether the service was registered correctly.
 class RegisterServiceResponse extends $pb.GeneratedMessage {
-  factory RegisterServiceResponse() => create();
+  factory RegisterServiceResponse({
+    $68.ResponseHeader? header,
+    RegisterServiceResponse_Status? status,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   RegisterServiceResponse._() : super();
   factory RegisterServiceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RegisterServiceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterServiceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..e<RegisterServiceResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: RegisterServiceResponse_Status.STATUS_UNKNOWN, valueOf: RegisterServiceResponse_Status.valueOf, enumValues: RegisterServiceResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -120,17 +154,19 @@ class RegisterServiceResponse extends $pb.GeneratedMessage {
   static RegisterServiceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterServiceResponse>(create);
   static RegisterServiceResponse? _defaultInstance;
 
+  /// Common response Header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Return status for the request.
   @$pb.TagNumber(2)
   RegisterServiceResponse_Status get status => $_getN(1);
   @$pb.TagNumber(2)
@@ -141,14 +177,27 @@ class RegisterServiceResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(2);
 }
 
+/// The UnregisterService request message will unregister a service based on name.
 class UnregisterServiceRequest extends $pb.GeneratedMessage {
-  factory UnregisterServiceRequest() => create();
+  factory UnregisterServiceRequest({
+    $68.RequestHeader? header,
+    $core.String? serviceName,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (serviceName != null) {
+      $result.serviceName = serviceName;
+    }
+    return $result;
+  }
   UnregisterServiceRequest._() : super();
   factory UnregisterServiceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UnregisterServiceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnregisterServiceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'serviceName')
     ..hasRequiredFields = false
   ;
@@ -174,17 +223,19 @@ class UnregisterServiceRequest extends $pb.GeneratedMessage {
   static UnregisterServiceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnregisterServiceRequest>(create);
   static UnregisterServiceRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// The unique user-friendly name of the service.
   @$pb.TagNumber(2)
   $core.String get serviceName => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -195,14 +246,27 @@ class UnregisterServiceRequest extends $pb.GeneratedMessage {
   void clearServiceName() => clearField(2);
 }
 
+/// The UnregisterService response message has information of whether the service was unregistered.
 class UnregisterServiceResponse extends $pb.GeneratedMessage {
-  factory UnregisterServiceResponse() => create();
+  factory UnregisterServiceResponse({
+    $68.ResponseHeader? header,
+    UnregisterServiceResponse_Status? status,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   UnregisterServiceResponse._() : super();
   factory UnregisterServiceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UnregisterServiceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnregisterServiceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..e<UnregisterServiceResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UnregisterServiceResponse_Status.STATUS_UNKNOWN, valueOf: UnregisterServiceResponse_Status.valueOf, enumValues: UnregisterServiceResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -228,17 +292,19 @@ class UnregisterServiceResponse extends $pb.GeneratedMessage {
   static UnregisterServiceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnregisterServiceResponse>(create);
   static UnregisterServiceResponse? _defaultInstance;
 
+  /// Common response Header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Return status for the request.
   @$pb.TagNumber(2)
   UnregisterServiceResponse_Status get status => $_getN(1);
   @$pb.TagNumber(2)
@@ -249,14 +315,32 @@ class UnregisterServiceResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(2);
 }
 
+/// The UpdateService request message will update a service based on name to include the new endpoint and service entry.
+/// This Request serves as a heartbeat to the Directory.
 class UpdateServiceRequest extends $pb.GeneratedMessage {
-  factory UpdateServiceRequest() => create();
+  factory UpdateServiceRequest({
+    $68.RequestHeader? header,
+    $7.Endpoint? endpoint,
+    $7.ServiceEntry? serviceEntry,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (endpoint != null) {
+      $result.endpoint = endpoint;
+    }
+    if (serviceEntry != null) {
+      $result.serviceEntry = serviceEntry;
+    }
+    return $result;
+  }
   UpdateServiceRequest._() : super();
   factory UpdateServiceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateServiceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateServiceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<$7.Endpoint>(2, _omitFieldNames ? '' : 'endpoint', subBuilder: $7.Endpoint.create)
     ..aOM<$7.ServiceEntry>(3, _omitFieldNames ? '' : 'serviceEntry', subBuilder: $7.ServiceEntry.create)
     ..hasRequiredFields = false
@@ -283,17 +367,19 @@ class UpdateServiceRequest extends $pb.GeneratedMessage {
   static UpdateServiceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateServiceRequest>(create);
   static UpdateServiceRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// The endpoint at which this service may be contacted.
   @$pb.TagNumber(2)
   $7.Endpoint get endpoint => $_getN(1);
   @$pb.TagNumber(2)
@@ -305,6 +391,7 @@ class UpdateServiceRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $7.Endpoint ensureEndpoint() => $_ensure(1);
 
+  /// New record for service.  The name field is used as lookup key.
   @$pb.TagNumber(3)
   $7.ServiceEntry get serviceEntry => $_getN(2);
   @$pb.TagNumber(3)
@@ -317,14 +404,27 @@ class UpdateServiceRequest extends $pb.GeneratedMessage {
   $7.ServiceEntry ensureServiceEntry() => $_ensure(2);
 }
 
+/// The UpdateService response message has information of whether the service was updated on robot.
 class UpdateServiceResponse extends $pb.GeneratedMessage {
-  factory UpdateServiceResponse() => create();
+  factory UpdateServiceResponse({
+    $68.ResponseHeader? header,
+    UpdateServiceResponse_Status? status,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
   UpdateServiceResponse._() : super();
   factory UpdateServiceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateServiceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateServiceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..e<UpdateServiceResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UpdateServiceResponse_Status.STATUS_UNKNOWN, valueOf: UpdateServiceResponse_Status.valueOf, enumValues: UpdateServiceResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -350,17 +450,19 @@ class UpdateServiceResponse extends $pb.GeneratedMessage {
   static UpdateServiceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateServiceResponse>(create);
   static UpdateServiceResponse? _defaultInstance;
 
+  /// Common response Header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Return status for the request.
   @$pb.TagNumber(2)
   UpdateServiceResponse_Status get status => $_getN(1);
   @$pb.TagNumber(2)

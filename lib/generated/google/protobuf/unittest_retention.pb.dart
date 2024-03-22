@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -16,8 +16,25 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 export 'unittest_retention.pbenum.dart';
 
+/// Retention attributes set on fields nested within a message
 class OptionsMessage extends $pb.GeneratedMessage {
-  factory OptionsMessage() => create();
+  factory OptionsMessage({
+    $core.int? plainField,
+    $core.int? runtimeRetentionField,
+    $core.int? sourceRetentionField,
+  }) {
+    final $result = create();
+    if (plainField != null) {
+      $result.plainField = plainField;
+    }
+    if (runtimeRetentionField != null) {
+      $result.runtimeRetentionField = runtimeRetentionField;
+    }
+    if (sourceRetentionField != null) {
+      $result.sourceRetentionField = sourceRetentionField;
+    }
+    return $result;
+  }
   OptionsMessage._() : super();
   factory OptionsMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OptionsMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -148,7 +165,19 @@ enum TopLevelMessage_O {
 }
 
 class TopLevelMessage extends $pb.GeneratedMessage {
-  factory TopLevelMessage() => create();
+  factory TopLevelMessage({
+    $core.double? f,
+    $fixnum.Int64? i,
+  }) {
+    final $result = create();
+    if (f != null) {
+      $result.f = f;
+    }
+    if (i != null) {
+      $result.i = i;
+    }
+    return $result;
+  }
   TopLevelMessage._() : super();
   factory TopLevelMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TopLevelMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

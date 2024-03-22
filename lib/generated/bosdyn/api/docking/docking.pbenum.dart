@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Type of dock
 class DockType extends $pb.ProtobufEnum {
   static const DockType DOCK_TYPE_UNKNOWN = DockType._(0, _omitEnumNames ? '' : 'DOCK_TYPE_UNKNOWN');
   static const DockType DOCK_TYPE_CONTACT_PROTOTYPE = DockType._(2, _omitEnumNames ? '' : 'DOCK_TYPE_CONTACT_PROTOTYPE');
@@ -32,6 +33,7 @@ class DockType extends $pb.ProtobufEnum {
   const DockType._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Defines how and whether we use the "pre-docking" pose.
 class PrepPoseBehavior extends $pb.ProtobufEnum {
   static const PrepPoseBehavior PREP_POSE_UNKNOWN = PrepPoseBehavior._(0, _omitEnumNames ? '' : 'PREP_POSE_UNKNOWN');
   static const PrepPoseBehavior PREP_POSE_USE_POSE = PrepPoseBehavior._(1, _omitEnumNames ? '' : 'PREP_POSE_USE_POSE');

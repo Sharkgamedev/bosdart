@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,26 +13,58 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $61;
-import '../arm_command.pb.dart' as $64;
-import '../basic_command.pb.dart' as $63;
+import '../../../google/protobuf/duration.pb.dart' as $62;
+import '../arm_command.pb.dart' as $65;
+import '../basic_command.pb.dart' as $64;
 import '../data_acquisition.pb.dart' as $2;
-import '../geometry.pb.dart' as $60;
-import '../graph_nav/graph_nav.pb.dart' as $36;
-import '../graph_nav/nav.pb.dart' as $86;
+import '../geometry.pb.dart' as $61;
+import '../graph_nav/graph_nav.pb.dart' as $37;
+import '../graph_nav/nav.pb.dart' as $88;
 import '../gripper_camera_param.pb.dart' as $10;
-import '../gripper_command.pb.dart' as $65;
+import '../gripper_command.pb.dart' as $66;
 import '../image.pb.dart' as $11;
-import '../mission/nodes.pb.dart' as $88;
-import '../mission/nodes.pbenum.dart' as $88;
-import '../mission/util.pb.dart' as $87;
-import '../service_customization.pb.dart' as $71;
-import '../spot/robot_command.pb.dart' as $83;
-import '../spot_cam/ptz.pb.dart' as $48;
-import '../trajectory.pb.dart' as $62;
+import '../mission/nodes.pb.dart' as $90;
+import '../mission/nodes.pbenum.dart' as $90;
+import '../mission/util.pb.dart' as $89;
+import '../service_customization.pb.dart' as $72;
+import '../spot/robot_command.pb.dart' as $85;
+import '../spot_cam/ptz.pb.dart' as $49;
+import '../trajectory.pb.dart' as $63;
 
 class Walk extends $pb.GeneratedMessage {
-  factory Walk() => create();
+  factory Walk({
+    GlobalParameters? globalParameters,
+    PlaybackMode? playbackMode,
+    $core.String? missionName,
+    $core.Iterable<Element>? elements,
+    $core.Iterable<Dock>? docks,
+    $core.String? mapName,
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (globalParameters != null) {
+      $result.globalParameters = globalParameters;
+    }
+    if (playbackMode != null) {
+      $result.playbackMode = playbackMode;
+    }
+    if (missionName != null) {
+      $result.missionName = missionName;
+    }
+    if (elements != null) {
+      $result.elements.addAll(elements);
+    }
+    if (docks != null) {
+      $result.docks.addAll(docks);
+    }
+    if (mapName != null) {
+      $result.mapName = mapName;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   Walk._() : super();
   factory Walk.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Walk.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -69,6 +101,7 @@ class Walk extends $pb.GeneratedMessage {
   static Walk getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Walk>(create);
   static Walk? _defaultInstance;
 
+  /// Parameters that apply to the entire mission.
   @$pb.TagNumber(1)
   GlobalParameters get globalParameters => $_getN(0);
   @$pb.TagNumber(1)
@@ -80,6 +113,7 @@ class Walk extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   GlobalParameters ensureGlobalParameters() => $_ensure(0);
 
+  /// Governs the mode and frequency at which playbacks occur.
   @$pb.TagNumber(2)
   PlaybackMode get playbackMode => $_getN(1);
   @$pb.TagNumber(2)
@@ -91,6 +125,7 @@ class Walk extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   PlaybackMode ensurePlaybackMode() => $_ensure(1);
 
+  /// The name of the mission.
   @$pb.TagNumber(4)
   $core.String get missionName => $_getSZ(2);
   @$pb.TagNumber(4)
@@ -100,12 +135,17 @@ class Walk extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearMissionName() => clearField(4);
 
+  /// The list of actions and their associated locations.
   @$pb.TagNumber(5)
   $core.List<Element> get elements => $_getList(3);
 
+  /// The docks the mission can dock at.
+  /// AT THE MOMENT AUTOWALK ONLY SUPPORTS A SINGLE DOCK.
+  /// However, this is subject to change.
   @$pb.TagNumber(6)
   $core.List<Dock> get docks => $_getList(4);
 
+  /// The name of the map this mission corresponds to.
   @$pb.TagNumber(7)
   $core.String get mapName => $_getSZ(5);
   @$pb.TagNumber(7)
@@ -115,6 +155,8 @@ class Walk extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearMapName() => clearField(7);
 
+  /// Unique identifier for this walk.  This will be embedded in various Data Acquisition captures
+  /// and various logging bundles.  This should be globally unique across all walks.
   @$pb.TagNumber(8)
   $core.String get id => $_getSZ(6);
   @$pb.TagNumber(8)
@@ -125,8 +167,33 @@ class Walk extends $pb.GeneratedMessage {
   void clearId() => clearField(8);
 }
 
+/// These parameters apply to the entire autowalk.
 class GlobalParameters extends $pb.GeneratedMessage {
-  factory GlobalParameters() => create();
+  factory GlobalParameters({
+    $core.String? groupName,
+    $core.bool? shouldAutofocusPtz,
+    $core.int? selfRightAttempts,
+    $core.Iterable<Action_RemoteGrpc>? postMissionCallbacks,
+    $core.bool? skipActions,
+  }) {
+    final $result = create();
+    if (groupName != null) {
+      $result.groupName = groupName;
+    }
+    if (shouldAutofocusPtz != null) {
+      $result.shouldAutofocusPtz = shouldAutofocusPtz;
+    }
+    if (selfRightAttempts != null) {
+      $result.selfRightAttempts = selfRightAttempts;
+    }
+    if (postMissionCallbacks != null) {
+      $result.postMissionCallbacks.addAll(postMissionCallbacks);
+    }
+    if (skipActions != null) {
+      $result.skipActions = skipActions;
+    }
+    return $result;
+  }
   GlobalParameters._() : super();
   factory GlobalParameters.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GlobalParameters.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -161,6 +228,9 @@ class GlobalParameters extends $pb.GeneratedMessage {
   static GlobalParameters getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GlobalParameters>(create);
   static GlobalParameters? _defaultInstance;
 
+  /// If the mission contains data acquisitions, this will be their group name.
+  /// The actual group name used will include the specified group name, and additional
+  /// qualifiers to ensure its unique for each start of this mission.
   @$pb.TagNumber(1)
   $core.String get groupName => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -170,6 +240,9 @@ class GlobalParameters extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearGroupName() => clearField(1);
 
+  /// If the mission contains SpotCAM PTZ actions, set this to true. At the start of the
+  /// mission (or if the robot falls), the SpotCAM PTZ autofocus will be reset, thereby
+  /// improving the quality of the subsequent PTZ captures.
   @$pb.TagNumber(2)
   $core.bool get shouldAutofocusPtz => $_getBF(1);
   @$pb.TagNumber(2)
@@ -179,6 +252,12 @@ class GlobalParameters extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearShouldAutofocusPtz() => clearField(2);
 
+  /// The mission can automatically self-right the robot. Autonomous self-rights
+  /// can damage the robot, its payloads, and its surroundings. If the user
+  /// does not want the robot to self-right on its own, set this number to 0.
+  /// If the user does want the robot to self-right itself, the user may set a
+  /// maximum number of attempts so that the robot does not destroy itself by
+  /// repeatedly falling and getting up and falling again.
   @$pb.TagNumber(3)
   $core.int get selfRightAttempts => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -188,9 +267,16 @@ class GlobalParameters extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearSelfRightAttempts() => clearField(3);
 
+  /// The callbacks that will be executed at the end of the mission. Functionality that
+  /// is often found in post-mission callbacks includes uploading data to the cloud or
+  /// sending an email. The callbacks will be executed serially (first in, first executed).
   @$pb.TagNumber(4)
   $core.List<Action_RemoteGrpc> get postMissionCallbacks => $_getList(3);
 
+  /// It can be useful to have the robot run a walk without collecting data.
+  /// If this boolean is set to true, the compiled mission will still navigate to the
+  /// target of each element, however it will not actually perform the associated
+  /// action & action wrappers.
   @$pb.TagNumber(5)
   $core.bool get skipActions => $_getBF(4);
   @$pb.TagNumber(5)
@@ -201,8 +287,29 @@ class GlobalParameters extends $pb.GeneratedMessage {
   void clearSkipActions() => clearField(5);
 }
 
+/// The dock itself and the target associated with it
 class Dock extends $pb.GeneratedMessage {
-  factory Dock() => create();
+  factory Dock({
+    $core.int? dockId,
+    $core.String? dockedWaypointId,
+    Target? targetPrepPose,
+    $62.Duration? promptDuration,
+  }) {
+    final $result = create();
+    if (dockId != null) {
+      $result.dockId = dockId;
+    }
+    if (dockedWaypointId != null) {
+      $result.dockedWaypointId = dockedWaypointId;
+    }
+    if (targetPrepPose != null) {
+      $result.targetPrepPose = targetPrepPose;
+    }
+    if (promptDuration != null) {
+      $result.promptDuration = promptDuration;
+    }
+    return $result;
+  }
   Dock._() : super();
   factory Dock.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Dock.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -211,7 +318,7 @@ class Dock extends $pb.GeneratedMessage {
     ..a<$core.int>(1, _omitFieldNames ? '' : 'dockId', $pb.PbFieldType.OU3)
     ..aOS(2, _omitFieldNames ? '' : 'dockedWaypointId')
     ..aOM<Target>(3, _omitFieldNames ? '' : 'targetPrepPose', subBuilder: Target.create)
-    ..aOM<$61.Duration>(4, _omitFieldNames ? '' : 'promptDuration', subBuilder: $61.Duration.create)
+    ..aOM<$62.Duration>(4, _omitFieldNames ? '' : 'promptDuration', subBuilder: $62.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -236,6 +343,10 @@ class Dock extends $pb.GeneratedMessage {
   static Dock getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Dock>(create);
   static Dock? _defaultInstance;
 
+  /// The docking station ID of the dock corresponds to the number printed on the
+  /// fiducial, below the part of the fiducial that looks like a QR code.
+  /// Only fiducial IDs greater than or equal to 500 should be
+  /// used here because they are reserved for docks.
   @$pb.TagNumber(1)
   $core.int get dockId => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -245,6 +356,11 @@ class Dock extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearDockId() => clearField(1);
 
+  /// To maximize reliability, at record time, the client should dock the robot
+  /// while graph_nav is still recording.  When the robot is finished docking,
+  /// the client should create a waypoint on top of the dock, while the robot is
+  /// docked, and then stop recording. The waypoint created while the
+  /// robot is sitting on the dock should be specified here.
   @$pb.TagNumber(2)
   $core.String get dockedWaypointId => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -254,6 +370,14 @@ class Dock extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDockedWaypointId() => clearField(2);
 
+  /// When it is time for the robot to dock, it will approach this target
+  /// before issuing docking commands. If the user is using graph_nav, the
+  /// final waypoint in the NavigateRoute OR the waypoint ID in the
+  /// NavigateTo MUST be at the docking prep pose. To do this, send a docking
+  /// command to move the robot to the docking prep pose. Then, create a
+  /// waypoint at the docking prep pose location. Graph_nav is responsible for
+  /// navigating the robot to the docking prep pose. Once the robot is in the
+  /// docking prep pose, the docking service does the rest.
   @$pb.TagNumber(3)
   Target get targetPrepPose => $_getN(2);
   @$pb.TagNumber(3)
@@ -265,20 +389,35 @@ class Dock extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   Target ensureTargetPrepPose() => $_ensure(2);
 
+  /// At mission playback, if the robot is unable to reach the dock OR successfully
+  /// dock, the mission will let the operator know with a user question.  If the operator
+  /// does not answer, the robot will safely power off.  This parameter controls
+  /// how long the operator has to answer.
+  /// This parameter also controls how long robot will wait to retry to undock on
+  /// a failed undock.
   @$pb.TagNumber(4)
-  $61.Duration get promptDuration => $_getN(3);
+  $62.Duration get promptDuration => $_getN(3);
   @$pb.TagNumber(4)
-  set promptDuration($61.Duration v) { setField(4, v); }
+  set promptDuration($62.Duration v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasPromptDuration() => $_has(3);
   @$pb.TagNumber(4)
   void clearPromptDuration() => clearField(4);
   @$pb.TagNumber(4)
-  $61.Duration ensurePromptDuration() => $_ensure(3);
+  $62.Duration ensurePromptDuration() => $_ensure(3);
 }
 
+/// The mission should be played back once.
 class PlaybackMode_Once extends $pb.GeneratedMessage {
-  factory PlaybackMode_Once() => create();
+  factory PlaybackMode_Once({
+    $core.bool? skipDockingAfterCompletion,
+  }) {
+    final $result = create();
+    if (skipDockingAfterCompletion != null) {
+      $result.skipDockingAfterCompletion = skipDockingAfterCompletion;
+    }
+    return $result;
+  }
   PlaybackMode_Once._() : super();
   factory PlaybackMode_Once.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PlaybackMode_Once.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -309,6 +448,7 @@ class PlaybackMode_Once extends $pb.GeneratedMessage {
   static PlaybackMode_Once getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlaybackMode_Once>(create);
   static PlaybackMode_Once? _defaultInstance;
 
+  /// Boolean to allow the robot to not dock after completing a mission.
   @$pb.TagNumber(1)
   $core.bool get skipDockingAfterCompletion => $_getBF(0);
   @$pb.TagNumber(1)
@@ -319,14 +459,27 @@ class PlaybackMode_Once extends $pb.GeneratedMessage {
   void clearSkipDockingAfterCompletion() => clearField(1);
 }
 
+/// The mission should be played back periodically.
 class PlaybackMode_Periodic extends $pb.GeneratedMessage {
-  factory PlaybackMode_Periodic() => create();
+  factory PlaybackMode_Periodic({
+    $62.Duration? interval,
+    $core.int? repetitions,
+  }) {
+    final $result = create();
+    if (interval != null) {
+      $result.interval = interval;
+    }
+    if (repetitions != null) {
+      $result.repetitions = repetitions;
+    }
+    return $result;
+  }
   PlaybackMode_Periodic._() : super();
   factory PlaybackMode_Periodic.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PlaybackMode_Periodic.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlaybackMode.Periodic', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$61.Duration>(1, _omitFieldNames ? '' : 'interval', subBuilder: $61.Duration.create)
+    ..aOM<$62.Duration>(1, _omitFieldNames ? '' : 'interval', subBuilder: $62.Duration.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'repetitions', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
@@ -352,17 +505,29 @@ class PlaybackMode_Periodic extends $pb.GeneratedMessage {
   static PlaybackMode_Periodic getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlaybackMode_Periodic>(create);
   static PlaybackMode_Periodic? _defaultInstance;
 
+  /// The interval is the time that will elapse between the mission
+  /// finishing and starting again. It is applied relative to the time at
+  /// which the mission finishes. For example, if the user sets the
+  /// interval to 2 hours, starts the mission at 12:00, and the mission
+  /// takes one hour (finishes at 13:00), the next mission would start at
+  /// 15:00, NOT 14:00.
+  /// Next mission start time = current mission end time + interval
   @$pb.TagNumber(1)
-  $61.Duration get interval => $_getN(0);
+  $62.Duration get interval => $_getN(0);
   @$pb.TagNumber(1)
-  set interval($61.Duration v) { setField(1, v); }
+  set interval($62.Duration v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasInterval() => $_has(0);
   @$pb.TagNumber(1)
   void clearInterval() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Duration ensureInterval() => $_ensure(0);
+  $62.Duration ensureInterval() => $_ensure(0);
 
+  /// The number of times the mission should be played back. If set to 1,
+  /// the interval no longer applies and the mission will be played back
+  /// once. If set to two or more, the mission will run that number of
+  /// times, with the amount of time between playbacks equal to the
+  /// interval. If set to zero, the mission will run "forever".
   @$pb.TagNumber(2)
   $core.int get repetitions => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -373,6 +538,8 @@ class PlaybackMode_Periodic extends $pb.GeneratedMessage {
   void clearRepetitions() => clearField(2);
 }
 
+/// The mission should be played continuously only stopping if a battery
+/// monitor stop threshold is crossed.
 class PlaybackMode_Continuous extends $pb.GeneratedMessage {
   factory PlaybackMode_Continuous() => create();
   PlaybackMode_Continuous._() : super();
@@ -412,8 +579,28 @@ enum PlaybackMode_Mode {
   notSet
 }
 
+/// The playback mode governs how many times the mission is played back (once or
+/// more), at what interval the playbacks should occur (e.g., every 2 hours),
+/// and if docking is involved, the battery level thresholds at which the robot
+/// should either (1) stop and charge or (2) start the playback process again.
 class PlaybackMode extends $pb.GeneratedMessage {
-  factory PlaybackMode() => create();
+  factory PlaybackMode({
+    PlaybackMode_Once? once,
+    PlaybackMode_Periodic? periodic,
+    PlaybackMode_Continuous? continuous,
+  }) {
+    final $result = create();
+    if (once != null) {
+      $result.once = once;
+    }
+    if (periodic != null) {
+      $result.periodic = periodic;
+    }
+    if (continuous != null) {
+      $result.continuous = continuous;
+    }
+    return $result;
+  }
   PlaybackMode._() : super();
   factory PlaybackMode.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PlaybackMode.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -490,8 +677,53 @@ class PlaybackMode extends $pb.GeneratedMessage {
   PlaybackMode_Continuous ensureContinuous() => $_ensure(2);
 }
 
+/// An Element is the basic building block of the autowalk.
 class Element extends $pb.GeneratedMessage {
-  factory Element() => create();
+  factory Element({
+    $core.String? name,
+    Target? target,
+    FailureBehavior? targetFailureBehavior,
+    Action? action,
+    ActionWrapper? actionWrapper,
+    FailureBehavior? actionFailureBehavior,
+    $core.bool? isSkipped,
+    BatteryMonitor? batteryMonitor,
+    $62.Duration? actionDuration,
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (target != null) {
+      $result.target = target;
+    }
+    if (targetFailureBehavior != null) {
+      $result.targetFailureBehavior = targetFailureBehavior;
+    }
+    if (action != null) {
+      $result.action = action;
+    }
+    if (actionWrapper != null) {
+      $result.actionWrapper = actionWrapper;
+    }
+    if (actionFailureBehavior != null) {
+      $result.actionFailureBehavior = actionFailureBehavior;
+    }
+    if (isSkipped != null) {
+      $result.isSkipped = isSkipped;
+    }
+    if (batteryMonitor != null) {
+      $result.batteryMonitor = batteryMonitor;
+    }
+    if (actionDuration != null) {
+      $result.actionDuration = actionDuration;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   Element._() : super();
   factory Element.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Element.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -505,7 +737,7 @@ class Element extends $pb.GeneratedMessage {
     ..aOM<FailureBehavior>(6, _omitFieldNames ? '' : 'actionFailureBehavior', subBuilder: FailureBehavior.create)
     ..aOB(7, _omitFieldNames ? '' : 'isSkipped')
     ..aOM<BatteryMonitor>(8, _omitFieldNames ? '' : 'batteryMonitor', subBuilder: BatteryMonitor.create)
-    ..aOM<$61.Duration>(9, _omitFieldNames ? '' : 'actionDuration', subBuilder: $61.Duration.create)
+    ..aOM<$62.Duration>(9, _omitFieldNames ? '' : 'actionDuration', subBuilder: $62.Duration.create)
     ..aOS(10, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
   ;
@@ -531,6 +763,9 @@ class Element extends $pb.GeneratedMessage {
   static Element getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Element>(create);
   static Element? _defaultInstance;
 
+  /// The name of an element may be anything, but it is good practice to choose
+  /// something that describes the physical location and action that is occurring
+  /// (e.g., boiler room laser scan).
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -540,6 +775,7 @@ class Element extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Location the robot should navigate to.
   @$pb.TagNumber(2)
   Target get target => $_getN(1);
   @$pb.TagNumber(2)
@@ -551,6 +787,7 @@ class Element extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   Target ensureTarget() => $_ensure(1);
 
+  /// Describes what to do if the robot fails to navigate to target.
   @$pb.TagNumber(3)
   FailureBehavior get targetFailureBehavior => $_getN(2);
   @$pb.TagNumber(3)
@@ -562,6 +799,7 @@ class Element extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   FailureBehavior ensureTargetFailureBehavior() => $_ensure(2);
 
+  /// Action performed at target destination
   @$pb.TagNumber(4)
   Action get action => $_getN(3);
   @$pb.TagNumber(4)
@@ -573,6 +811,7 @@ class Element extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   Action ensureAction() => $_ensure(3);
 
+  /// Actions performed by the robot and/or payloads prior to and during an action.
   @$pb.TagNumber(5)
   ActionWrapper get actionWrapper => $_getN(4);
   @$pb.TagNumber(5)
@@ -584,6 +823,7 @@ class Element extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   ActionWrapper ensureActionWrapper() => $_ensure(4);
 
+  /// Describes what to do if the robot fails to execute the action.
   @$pb.TagNumber(6)
   FailureBehavior get actionFailureBehavior => $_getN(5);
   @$pb.TagNumber(6)
@@ -595,6 +835,7 @@ class Element extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   FailureBehavior ensureActionFailureBehavior() => $_ensure(5);
 
+  /// Set to true to skip element.
   @$pb.TagNumber(7)
   $core.bool get isSkipped => $_getBF(6);
   @$pb.TagNumber(7)
@@ -604,6 +845,11 @@ class Element extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearIsSkipped() => clearField(7);
 
+  /// If the mission requires more than one battery, the robot needs to return
+  /// to the dock and charge before it can complete the mission.
+  /// This field defines the battery percentage thresholds that at which the robot
+  /// should pause and resume mission execution.
+  /// Considering using various thresholds depending on the target's distance from the dock
   @$pb.TagNumber(8)
   BatteryMonitor get batteryMonitor => $_getN(7);
   @$pb.TagNumber(8)
@@ -615,17 +861,23 @@ class Element extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   BatteryMonitor ensureBatteryMonitor() => $_ensure(7);
 
+  /// Maximum duration of action execution time, including all wrappers.
+  /// If they take longer than this duration, the action will be considered a failure.
+  /// Not including, or including a zero duration will set the action to NOT have a
+  /// timeout.
   @$pb.TagNumber(9)
-  $61.Duration get actionDuration => $_getN(8);
+  $62.Duration get actionDuration => $_getN(8);
   @$pb.TagNumber(9)
-  set actionDuration($61.Duration v) { setField(9, v); }
+  set actionDuration($62.Duration v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasActionDuration() => $_has(8);
   @$pb.TagNumber(9)
   void clearActionDuration() => clearField(9);
   @$pb.TagNumber(9)
-  $61.Duration ensureActionDuration() => $_ensure(8);
+  $62.Duration ensureActionDuration() => $_ensure(8);
 
+  /// Unique identifier for this element.  This will be embedded in various Data Acquisition
+  /// captures and various logging bundles.  This should be globally unique across all elements.
   @$pb.TagNumber(10)
   $core.String get id => $_getSZ(9);
   @$pb.TagNumber(10)
@@ -637,13 +889,21 @@ class Element extends $pb.GeneratedMessage {
 }
 
 class Target_Relocalize extends $pb.GeneratedMessage {
-  factory Target_Relocalize() => create();
+  factory Target_Relocalize({
+    $37.SetLocalizationRequest? setLocalizationRequest,
+  }) {
+    final $result = create();
+    if (setLocalizationRequest != null) {
+      $result.setLocalizationRequest = setLocalizationRequest;
+    }
+    return $result;
+  }
   Target_Relocalize._() : super();
   factory Target_Relocalize.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Target_Relocalize.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Target.Relocalize', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$36.SetLocalizationRequest>(1, _omitFieldNames ? '' : 'setLocalizationRequest', subBuilder: $36.SetLocalizationRequest.create)
+    ..aOM<$37.SetLocalizationRequest>(1, _omitFieldNames ? '' : 'setLocalizationRequest', subBuilder: $37.SetLocalizationRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -668,27 +928,43 @@ class Target_Relocalize extends $pb.GeneratedMessage {
   static Target_Relocalize getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Target_Relocalize>(create);
   static Target_Relocalize? _defaultInstance;
 
+  /// Some SetLocalizationRequests require that waypoint snapshots contain full images.
+  /// Make sure your client is downloading / storing / uploading full snapshots if you
+  /// plan on using this feature in your client.
   @$pb.TagNumber(1)
-  $36.SetLocalizationRequest get setLocalizationRequest => $_getN(0);
+  $37.SetLocalizationRequest get setLocalizationRequest => $_getN(0);
   @$pb.TagNumber(1)
-  set setLocalizationRequest($36.SetLocalizationRequest v) { setField(1, v); }
+  set setLocalizationRequest($37.SetLocalizationRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSetLocalizationRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearSetLocalizationRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $36.SetLocalizationRequest ensureSetLocalizationRequest() => $_ensure(0);
+  $37.SetLocalizationRequest ensureSetLocalizationRequest() => $_ensure(0);
 }
 
+/// Tell the robot to navigate to a waypoint. It will choose its route.
 class Target_NavigateTo extends $pb.GeneratedMessage {
-  factory Target_NavigateTo() => create();
+  factory Target_NavigateTo({
+    $core.String? destinationWaypointId,
+    $37.TravelParams? travelParams,
+  }) {
+    final $result = create();
+    if (destinationWaypointId != null) {
+      $result.destinationWaypointId = destinationWaypointId;
+    }
+    if (travelParams != null) {
+      $result.travelParams = travelParams;
+    }
+    return $result;
+  }
   Target_NavigateTo._() : super();
   factory Target_NavigateTo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Target_NavigateTo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Target.NavigateTo', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'destinationWaypointId')
-    ..aOM<$36.TravelParams>(3, _omitFieldNames ? '' : 'travelParams', subBuilder: $36.TravelParams.create)
+    ..aOM<$37.TravelParams>(3, _omitFieldNames ? '' : 'travelParams', subBuilder: $37.TravelParams.create)
     ..hasRequiredFields = false
   ;
 
@@ -713,6 +989,8 @@ class Target_NavigateTo extends $pb.GeneratedMessage {
   static Target_NavigateTo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Target_NavigateTo>(create);
   static Target_NavigateTo? _defaultInstance;
 
+  /// A unique string corresponding to the waypoint ID that the robot
+  /// should go to.
   @$pb.TagNumber(1)
   $core.String get destinationWaypointId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -722,27 +1000,45 @@ class Target_NavigateTo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearDestinationWaypointId() => clearField(1);
 
+  /// Parameters that define how to traverse and end the route. For
+  /// example, the user may decide how close to the destination waypoint
+  /// the robot needs to be in order to declare success.
   @$pb.TagNumber(3)
-  $36.TravelParams get travelParams => $_getN(1);
+  $37.TravelParams get travelParams => $_getN(1);
   @$pb.TagNumber(3)
-  set travelParams($36.TravelParams v) { setField(3, v); }
+  set travelParams($37.TravelParams v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTravelParams() => $_has(1);
   @$pb.TagNumber(3)
   void clearTravelParams() => clearField(3);
   @$pb.TagNumber(3)
-  $36.TravelParams ensureTravelParams() => $_ensure(1);
+  $37.TravelParams ensureTravelParams() => $_ensure(1);
 }
 
+/// Tell the robot to follow a route to a waypoint.
+/// If the robot is off the route (i.e., "far" from the route) when
+/// NavigateRoute is sent, the robot may navigate in unexpected ways.
 class Target_NavigateRoute extends $pb.GeneratedMessage {
-  factory Target_NavigateRoute() => create();
+  factory Target_NavigateRoute({
+    $88.Route? route,
+    $37.TravelParams? travelParams,
+  }) {
+    final $result = create();
+    if (route != null) {
+      $result.route = route;
+    }
+    if (travelParams != null) {
+      $result.travelParams = travelParams;
+    }
+    return $result;
+  }
   Target_NavigateRoute._() : super();
   factory Target_NavigateRoute.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Target_NavigateRoute.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Target.NavigateRoute', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$86.Route>(1, _omitFieldNames ? '' : 'route', subBuilder: $86.Route.create)
-    ..aOM<$36.TravelParams>(2, _omitFieldNames ? '' : 'travelParams', subBuilder: $36.TravelParams.create)
+    ..aOM<$88.Route>(1, _omitFieldNames ? '' : 'route', subBuilder: $88.Route.create)
+    ..aOM<$37.TravelParams>(2, _omitFieldNames ? '' : 'travelParams', subBuilder: $37.TravelParams.create)
     ..hasRequiredFields = false
   ;
 
@@ -767,27 +1063,31 @@ class Target_NavigateRoute extends $pb.GeneratedMessage {
   static Target_NavigateRoute getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Target_NavigateRoute>(create);
   static Target_NavigateRoute? _defaultInstance;
 
+  /// A route for the robot to follow.
   @$pb.TagNumber(1)
-  $86.Route get route => $_getN(0);
+  $88.Route get route => $_getN(0);
   @$pb.TagNumber(1)
-  set route($86.Route v) { setField(1, v); }
+  set route($88.Route v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRoute() => $_has(0);
   @$pb.TagNumber(1)
   void clearRoute() => clearField(1);
   @$pb.TagNumber(1)
-  $86.Route ensureRoute() => $_ensure(0);
+  $88.Route ensureRoute() => $_ensure(0);
 
+  /// Parameters that define how to traverse and end the route. For
+  /// example, the user may decide how close to the destination waypoint
+  /// the robot needs to be in order to declare success.
   @$pb.TagNumber(2)
-  $36.TravelParams get travelParams => $_getN(1);
+  $37.TravelParams get travelParams => $_getN(1);
   @$pb.TagNumber(2)
-  set travelParams($36.TravelParams v) { setField(2, v); }
+  set travelParams($37.TravelParams v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTravelParams() => $_has(1);
   @$pb.TagNumber(2)
   void clearTravelParams() => clearField(2);
   @$pb.TagNumber(2)
-  $36.TravelParams ensureTravelParams() => $_ensure(1);
+  $37.TravelParams ensureTravelParams() => $_ensure(1);
 }
 
 enum Target_Target {
@@ -796,8 +1096,25 @@ enum Target_Target {
   notSet
 }
 
+/// A Target is the location the robot should navigate to.
 class Target extends $pb.GeneratedMessage {
-  factory Target() => create();
+  factory Target({
+    Target_NavigateTo? navigateTo,
+    Target_NavigateRoute? navigateRoute,
+    Target_Relocalize? relocalize,
+  }) {
+    final $result = create();
+    if (navigateTo != null) {
+      $result.navigateTo = navigateTo;
+    }
+    if (navigateRoute != null) {
+      $result.navigateRoute = navigateRoute;
+    }
+    if (relocalize != null) {
+      $result.relocalize = relocalize;
+    }
+    return $result;
+  }
   Target._() : super();
   factory Target.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Target.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -861,6 +1178,9 @@ class Target extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   Target_NavigateRoute ensureNavigateRoute() => $_ensure(1);
 
+  /// If set, upon reaching the target the robot will perform an explicit relocalization.
+  /// This should increase the accuracy of the robots belief of it's position on the map.
+  /// After relocalizing, the robot will re-navigate to the target.
   @$pb.TagNumber(3)
   Target_Relocalize get relocalize => $_getN(2);
   @$pb.TagNumber(3)
@@ -873,14 +1193,27 @@ class Target extends $pb.GeneratedMessage {
   Target_Relocalize ensureRelocalize() => $_ensure(2);
 }
 
+/// The robot does nothing but wait while
+/// also performing its ActionWrapper(s). For example, if the user
+/// wants the robot to pose for some amount of time (while doing
+/// nothing else), they would populate an ActionWrapper with Pose
+/// and set the desired duration here accordingly.
 class Action_Sleep extends $pb.GeneratedMessage {
-  factory Action_Sleep() => create();
+  factory Action_Sleep({
+    $62.Duration? duration,
+  }) {
+    final $result = create();
+    if (duration != null) {
+      $result.duration = duration;
+    }
+    return $result;
+  }
   Action_Sleep._() : super();
   factory Action_Sleep.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Action_Sleep.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Action.Sleep', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$61.Duration>(2, _omitFieldNames ? '' : 'duration', subBuilder: $61.Duration.create)
+    ..aOM<$62.Duration>(2, _omitFieldNames ? '' : 'duration', subBuilder: $62.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -906,26 +1239,47 @@ class Action_Sleep extends $pb.GeneratedMessage {
   static Action_Sleep? _defaultInstance;
 
   @$pb.TagNumber(2)
-  $61.Duration get duration => $_getN(0);
+  $62.Duration get duration => $_getN(0);
   @$pb.TagNumber(2)
-  set duration($61.Duration v) { setField(2, v); }
+  set duration($62.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDuration() => $_has(0);
   @$pb.TagNumber(2)
   void clearDuration() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Duration ensureDuration() => $_ensure(0);
+  $62.Duration ensureDuration() => $_ensure(0);
 }
 
+/// For actions associated with the Data Acquisition Service.
 class Action_DataAcquisition extends $pb.GeneratedMessage {
-  factory Action_DataAcquisition() => create();
+  factory Action_DataAcquisition({
+    $2.AcquireDataRequest? acquireDataRequest,
+    $90.DataAcquisition_CompletionBehavior? completionBehavior,
+    $2.AcquisitionCapabilityList? lastKnownCapabilities,
+    $core.Iterable<$11.ImageCaptureAndSource>? recordTimeImages,
+  }) {
+    final $result = create();
+    if (acquireDataRequest != null) {
+      $result.acquireDataRequest = acquireDataRequest;
+    }
+    if (completionBehavior != null) {
+      $result.completionBehavior = completionBehavior;
+    }
+    if (lastKnownCapabilities != null) {
+      $result.lastKnownCapabilities = lastKnownCapabilities;
+    }
+    if (recordTimeImages != null) {
+      $result.recordTimeImages.addAll(recordTimeImages);
+    }
+    return $result;
+  }
   Action_DataAcquisition._() : super();
   factory Action_DataAcquisition.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Action_DataAcquisition.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Action.DataAcquisition', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
     ..aOM<$2.AcquireDataRequest>(1, _omitFieldNames ? '' : 'acquireDataRequest', subBuilder: $2.AcquireDataRequest.create)
-    ..e<$88.DataAcquisition_CompletionBehavior>(2, _omitFieldNames ? '' : 'completionBehavior', $pb.PbFieldType.OE, defaultOrMaker: $88.DataAcquisition_CompletionBehavior.COMPLETE_UNKNOWN, valueOf: $88.DataAcquisition_CompletionBehavior.valueOf, enumValues: $88.DataAcquisition_CompletionBehavior.values)
+    ..e<$90.DataAcquisition_CompletionBehavior>(2, _omitFieldNames ? '' : 'completionBehavior', $pb.PbFieldType.OE, defaultOrMaker: $90.DataAcquisition_CompletionBehavior.COMPLETE_UNKNOWN, valueOf: $90.DataAcquisition_CompletionBehavior.valueOf, enumValues: $90.DataAcquisition_CompletionBehavior.values)
     ..aOM<$2.AcquisitionCapabilityList>(3, _omitFieldNames ? '' : 'lastKnownCapabilities', subBuilder: $2.AcquisitionCapabilityList.create)
     ..pc<$11.ImageCaptureAndSource>(4, _omitFieldNames ? '' : 'recordTimeImages', $pb.PbFieldType.PM, subBuilder: $11.ImageCaptureAndSource.create)
     ..hasRequiredFields = false
@@ -952,6 +1306,8 @@ class Action_DataAcquisition extends $pb.GeneratedMessage {
   static Action_DataAcquisition getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Action_DataAcquisition>(create);
   static Action_DataAcquisition? _defaultInstance;
 
+  /// The autowalk service replaces the action_name field in the CaptureActionId with the
+  /// element name.
   @$pb.TagNumber(1)
   $2.AcquireDataRequest get acquireDataRequest => $_getN(0);
   @$pb.TagNumber(1)
@@ -964,14 +1320,15 @@ class Action_DataAcquisition extends $pb.GeneratedMessage {
   $2.AcquireDataRequest ensureAcquireDataRequest() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $88.DataAcquisition_CompletionBehavior get completionBehavior => $_getN(1);
+  $90.DataAcquisition_CompletionBehavior get completionBehavior => $_getN(1);
   @$pb.TagNumber(2)
-  set completionBehavior($88.DataAcquisition_CompletionBehavior v) { setField(2, v); }
+  set completionBehavior($90.DataAcquisition_CompletionBehavior v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCompletionBehavior() => $_has(1);
   @$pb.TagNumber(2)
   void clearCompletionBehavior() => clearField(2);
 
+  /// Last known Data Acquisition capabilities.
   @$pb.TagNumber(3)
   $2.AcquisitionCapabilityList get lastKnownCapabilities => $_getN(2);
   @$pb.TagNumber(3)
@@ -983,22 +1340,66 @@ class Action_DataAcquisition extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $2.AcquisitionCapabilityList ensureLastKnownCapabilities() => $_ensure(2);
 
+  ///  Any images taken at action creation time.  For DataAcquisition actions, this includes:
+  ///     - Any images in the Data Acquisition capture.
+  ///     - Any images that are inputs to NCB workers that are in the Data Acquisition capture.
+  ///     - Any images that a Data Acquisition plugin in the Data Acquisition capture requests a
+  ///     region of interest for.
+  ///
+  ///  Note that both this message and AcquisitionCapabilityList will contain the
+  ///  Spec for images sources.  This message will contain the spec at record time,
+  ///  while last_known_capabilities should be updated as time progresses and services
+  ///  evolve.
+  ///
+  ///  This data is meant to allow UI's to give users context about their actions, AND
+  ///  provide them a canvas to edit region of interests with after the fact.  It is
+  ///  not used at mission playback time.
   @$pb.TagNumber(4)
   $core.List<$11.ImageCaptureAndSource> get recordTimeImages => $_getList(3);
 }
 
 class Action_RemoteGrpc extends $pb.GeneratedMessage {
-  factory Action_RemoteGrpc() => create();
+  factory Action_RemoteGrpc({
+    $core.String? serviceName,
+    $62.Duration? rpcTimeout,
+    $core.Iterable<$core.String>? leaseResources,
+  @$core.Deprecated('This field is deprecated.')
+    $core.Iterable<$89.KeyValue>? inputs,
+    $72.CustomParamCollection? parameters,
+    $core.Iterable<$11.ImageCaptureAndSource>? recordTimeImages,
+  }) {
+    final $result = create();
+    if (serviceName != null) {
+      $result.serviceName = serviceName;
+    }
+    if (rpcTimeout != null) {
+      $result.rpcTimeout = rpcTimeout;
+    }
+    if (leaseResources != null) {
+      $result.leaseResources.addAll(leaseResources);
+    }
+    if (inputs != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.inputs.addAll(inputs);
+    }
+    if (parameters != null) {
+      $result.parameters = parameters;
+    }
+    if (recordTimeImages != null) {
+      $result.recordTimeImages.addAll(recordTimeImages);
+    }
+    return $result;
+  }
   Action_RemoteGrpc._() : super();
   factory Action_RemoteGrpc.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Action_RemoteGrpc.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Action.RemoteGrpc', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'serviceName')
-    ..aOM<$61.Duration>(2, _omitFieldNames ? '' : 'rpcTimeout', subBuilder: $61.Duration.create)
+    ..aOM<$62.Duration>(2, _omitFieldNames ? '' : 'rpcTimeout', subBuilder: $62.Duration.create)
     ..pPS(3, _omitFieldNames ? '' : 'leaseResources')
-    ..pc<$87.KeyValue>(4, _omitFieldNames ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: $87.KeyValue.create)
-    ..aOM<$71.CustomParamCollection>(5, _omitFieldNames ? '' : 'parameters', subBuilder: $71.CustomParamCollection.create)
+    ..pc<$89.KeyValue>(4, _omitFieldNames ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: $89.KeyValue.create)
+    ..aOM<$72.CustomParamCollection>(5, _omitFieldNames ? '' : 'parameters', subBuilder: $72.CustomParamCollection.create)
     ..pc<$11.ImageCaptureAndSource>(6, _omitFieldNames ? '' : 'recordTimeImages', $pb.PbFieldType.PM, subBuilder: $11.ImageCaptureAndSource.create)
     ..hasRequiredFields = false
   ;
@@ -1024,6 +1425,7 @@ class Action_RemoteGrpc extends $pb.GeneratedMessage {
   static Action_RemoteGrpc getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Action_RemoteGrpc>(create);
   static Action_RemoteGrpc? _defaultInstance;
 
+  /// Name of the service in the directory.
   @$pb.TagNumber(1)
   $core.String get serviceName => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -1033,35 +1435,54 @@ class Action_RemoteGrpc extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearServiceName() => clearField(1);
 
+  /// Timeout of any single RPC. If the timeout is exceeded, the RPC will fail. The mission
+  /// service treats each failed RPC differently:
+  /// - EstablishSession: An error is returned in LoadMission.
+  /// - Tick: The RPC is retried.
+  /// - Stop: The error is ignored, and the RPC is not retried.
+  /// Omit for a default of 60 seconds.
   @$pb.TagNumber(2)
-  $61.Duration get rpcTimeout => $_getN(1);
+  $62.Duration get rpcTimeout => $_getN(1);
   @$pb.TagNumber(2)
-  set rpcTimeout($61.Duration v) { setField(2, v); }
+  set rpcTimeout($62.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasRpcTimeout() => $_has(1);
   @$pb.TagNumber(2)
   void clearRpcTimeout() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Duration ensureRpcTimeout() => $_ensure(1);
+  $62.Duration ensureRpcTimeout() => $_ensure(1);
 
+  /// Resources that we will need leases on.
   @$pb.TagNumber(3)
   $core.List<$core.String> get leaseResources => $_getList(2);
 
+  /// The list of variables the remote host should receive.
+  /// Variables given can be available at either run-time or compile-time.
+  /// The "key" in KeyValue is the name of the variable as used by the remote system.
+  /// DEPRECATED as of 3.3.  Please use 'parameters' instead.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $core.List<$87.KeyValue> get inputs => $_getList(3);
+  $core.List<$89.KeyValue> get inputs => $_getList(3);
 
+  /// All specifications and any values chosen at record time.
   @$pb.TagNumber(5)
-  $71.CustomParamCollection get parameters => $_getN(4);
+  $72.CustomParamCollection get parameters => $_getN(4);
   @$pb.TagNumber(5)
-  set parameters($71.CustomParamCollection v) { setField(5, v); }
+  set parameters($72.CustomParamCollection v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasParameters() => $_has(4);
   @$pb.TagNumber(5)
   void clearParameters() => clearField(5);
   @$pb.TagNumber(5)
-  $71.CustomParamCollection ensureParameters() => $_ensure(4);
+  $72.CustomParamCollection ensureParameters() => $_ensure(4);
 
+  ///  Any images taken at action creation time.  For RemoteGRPC's, this will only happen
+  ///  if the RemoteGRPC advertises parameters that require a region of interest for a specific
+  ///  camera.
+  ///
+  ///  This data is meant to allow UI's to give users context about their actions, AND
+  ///  provide them a canvas to edit region of interests with after the fact.  It is
+  ///  not used at mission playback time.
   @$pb.TagNumber(6)
   $core.List<$11.ImageCaptureAndSource> get recordTimeImages => $_getList(5);
 }
@@ -1074,8 +1495,30 @@ enum Action_Action {
   notSet
 }
 
+/// An Action is what the robot should do at a location. For example, the user
+/// may desire that the robot perform a laser scan at a given waypoint.
 class Action extends $pb.GeneratedMessage {
-  factory Action() => create();
+  factory Action({
+    Action_Sleep? sleep,
+    Action_DataAcquisition? dataAcquisition,
+    Action_RemoteGrpc? remoteGrpc,
+    $90.Node? node,
+  }) {
+    final $result = create();
+    if (sleep != null) {
+      $result.sleep = sleep;
+    }
+    if (dataAcquisition != null) {
+      $result.dataAcquisition = dataAcquisition;
+    }
+    if (remoteGrpc != null) {
+      $result.remoteGrpc = remoteGrpc;
+    }
+    if (node != null) {
+      $result.node = node;
+    }
+    return $result;
+  }
   Action._() : super();
   factory Action.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Action.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1092,7 +1535,7 @@ class Action extends $pb.GeneratedMessage {
     ..aOM<Action_Sleep>(1, _omitFieldNames ? '' : 'sleep', subBuilder: Action_Sleep.create)
     ..aOM<Action_DataAcquisition>(2, _omitFieldNames ? '' : 'dataAcquisition', subBuilder: Action_DataAcquisition.create)
     ..aOM<Action_RemoteGrpc>(3, _omitFieldNames ? '' : 'remoteGrpc', subBuilder: Action_RemoteGrpc.create)
-    ..aOM<$88.Node>(4, _omitFieldNames ? '' : 'node', subBuilder: $88.Node.create)
+    ..aOM<$90.Node>(4, _omitFieldNames ? '' : 'node', subBuilder: $90.Node.create)
     ..hasRequiredFields = false
   ;
 
@@ -1153,18 +1596,25 @@ class Action extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   Action_RemoteGrpc ensureRemoteGrpc() => $_ensure(2);
 
+  /// This field can be used to specify a behavior tree as an action.  If the user had
+  /// two callbacks they would like to run simultaneously at the waypoint this action
+  /// is associated with, they could use create a behavior tree inside Node with both
+  /// callbacks embedded in a simple parallel.
+  /// The downside of using node, is that editors might not support editing parameters
+  /// directly.
   @$pb.TagNumber(4)
-  $88.Node get node => $_getN(3);
+  $90.Node get node => $_getN(3);
   @$pb.TagNumber(4)
-  set node($88.Node v) { setField(4, v); }
+  set node($90.Node v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasNode() => $_has(3);
   @$pb.TagNumber(4)
   void clearNode() => clearField(4);
   @$pb.TagNumber(4)
-  $88.Node ensureNode() => $_ensure(3);
+  $90.Node ensureNode() => $_ensure(3);
 }
 
+/// Sit the robot prior to performing the action
 class ActionWrapper_RobotBodySit extends $pb.GeneratedMessage {
   factory ActionWrapper_RobotBodySit() => create();
   ActionWrapper_RobotBodySit._() : super();
@@ -1197,14 +1647,23 @@ class ActionWrapper_RobotBodySit extends $pb.GeneratedMessage {
   static ActionWrapper_RobotBodySit? _defaultInstance;
 }
 
+/// Pose the robot prior to performing the action
 class ActionWrapper_RobotBodyPose extends $pb.GeneratedMessage {
-  factory ActionWrapper_RobotBodyPose() => create();
+  factory ActionWrapper_RobotBodyPose({
+    $61.SE3Pose? targetTformBody,
+  }) {
+    final $result = create();
+    if (targetTformBody != null) {
+      $result.targetTformBody = targetTformBody;
+    }
+    return $result;
+  }
   ActionWrapper_RobotBodyPose._() : super();
   factory ActionWrapper_RobotBodyPose.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ActionWrapper_RobotBodyPose.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ActionWrapper.RobotBodyPose', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$60.SE3Pose>(1, _omitFieldNames ? '' : 'targetTformBody', subBuilder: $60.SE3Pose.create)
+    ..aOM<$61.SE3Pose>(1, _omitFieldNames ? '' : 'targetTformBody', subBuilder: $61.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -1229,20 +1688,33 @@ class ActionWrapper_RobotBodyPose extends $pb.GeneratedMessage {
   static ActionWrapper_RobotBodyPose getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActionWrapper_RobotBodyPose>(create);
   static ActionWrapper_RobotBodyPose? _defaultInstance;
 
+  /// If your Target is a graph_nav waypoint, this pose will be relative
+  /// to the waypoint you are navigating to. If no target was specified,
+  /// this parameter will be ignored and the robot will stand in a generic
+  /// pose.
   @$pb.TagNumber(1)
-  $60.SE3Pose get targetTformBody => $_getN(0);
+  $61.SE3Pose get targetTformBody => $_getN(0);
   @$pb.TagNumber(1)
-  set targetTformBody($60.SE3Pose v) { setField(1, v); }
+  set targetTformBody($61.SE3Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTargetTformBody() => $_has(0);
   @$pb.TagNumber(1)
   void clearTargetTformBody() => clearField(1);
   @$pb.TagNumber(1)
-  $60.SE3Pose ensureTargetTformBody() => $_ensure(0);
+  $61.SE3Pose ensureTargetTformBody() => $_ensure(0);
 }
 
+/// Set the brightness of the LEDs on the SpotCam.
 class ActionWrapper_SpotCamLed extends $pb.GeneratedMessage {
-  factory ActionWrapper_SpotCamLed() => create();
+  factory ActionWrapper_SpotCamLed({
+    $core.Map<$core.int, $core.double>? brightnesses,
+  }) {
+    final $result = create();
+    if (brightnesses != null) {
+      $result.brightnesses.addAll(brightnesses);
+    }
+    return $result;
+  }
   ActionWrapper_SpotCamLed._() : super();
   factory ActionWrapper_SpotCamLed.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ActionWrapper_SpotCamLed.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1273,18 +1745,30 @@ class ActionWrapper_SpotCamLed extends $pb.GeneratedMessage {
   static ActionWrapper_SpotCamLed getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActionWrapper_SpotCamLed>(create);
   static ActionWrapper_SpotCamLed? _defaultInstance;
 
+  /// There are four LEDs at indices [0, 3]. The brightness for each LED
+  /// may be set between [0.0, 1.0], where 0 is off and 1 is full
+  /// brightness.
   @$pb.TagNumber(1)
   $core.Map<$core.int, $core.double> get brightnesses => $_getMap(0);
 }
 
+/// Set the pan, tilt, and zoom of the SpotCam.
 class ActionWrapper_SpotCamPtz extends $pb.GeneratedMessage {
-  factory ActionWrapper_SpotCamPtz() => create();
+  factory ActionWrapper_SpotCamPtz({
+    $49.PtzPosition? ptzPosition,
+  }) {
+    final $result = create();
+    if (ptzPosition != null) {
+      $result.ptzPosition = ptzPosition;
+    }
+    return $result;
+  }
   ActionWrapper_SpotCamPtz._() : super();
   factory ActionWrapper_SpotCamPtz.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ActionWrapper_SpotCamPtz.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ActionWrapper.SpotCamPtz', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$48.PtzPosition>(1, _omitFieldNames ? '' : 'ptzPosition', subBuilder: $48.PtzPosition.create)
+    ..aOM<$49.PtzPosition>(1, _omitFieldNames ? '' : 'ptzPosition', subBuilder: $49.PtzPosition.create)
     ..hasRequiredFields = false
   ;
 
@@ -1309,16 +1793,17 @@ class ActionWrapper_SpotCamPtz extends $pb.GeneratedMessage {
   static ActionWrapper_SpotCamPtz getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActionWrapper_SpotCamPtz>(create);
   static ActionWrapper_SpotCamPtz? _defaultInstance;
 
+  /// See bosdyn/api/spot_cam
   @$pb.TagNumber(1)
-  $48.PtzPosition get ptzPosition => $_getN(0);
+  $49.PtzPosition get ptzPosition => $_getN(0);
   @$pb.TagNumber(1)
-  set ptzPosition($48.PtzPosition v) { setField(1, v); }
+  set ptzPosition($49.PtzPosition v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPtzPosition() => $_has(0);
   @$pb.TagNumber(1)
   void clearPtzPosition() => clearField(1);
   @$pb.TagNumber(1)
-  $48.PtzPosition ensurePtzPosition() => $_ensure(0);
+  $49.PtzPosition ensurePtzPosition() => $_ensure(0);
 }
 
 enum ActionWrapper_SpotCamAlignment_Alignment_Reference {
@@ -1327,7 +1812,27 @@ enum ActionWrapper_SpotCamAlignment_Alignment_Reference {
 }
 
 class ActionWrapper_SpotCamAlignment_Alignment extends $pb.GeneratedMessage {
-  factory ActionWrapper_SpotCamAlignment_Alignment() => create();
+  factory ActionWrapper_SpotCamAlignment_Alignment({
+    $core.double? zoom,
+    $core.String? sensorId,
+    $core.String? sceneObjectId,
+    $core.bool? isSkipped,
+  }) {
+    final $result = create();
+    if (zoom != null) {
+      $result.zoom = zoom;
+    }
+    if (sensorId != null) {
+      $result.sensorId = sensorId;
+    }
+    if (sceneObjectId != null) {
+      $result.sceneObjectId = sceneObjectId;
+    }
+    if (isSkipped != null) {
+      $result.isSkipped = isSkipped;
+    }
+    return $result;
+  }
   ActionWrapper_SpotCamAlignment_Alignment._() : super();
   factory ActionWrapper_SpotCamAlignment_Alignment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ActionWrapper_SpotCamAlignment_Alignment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1369,6 +1874,7 @@ class ActionWrapper_SpotCamAlignment_Alignment extends $pb.GeneratedMessage {
   ActionWrapper_SpotCamAlignment_Alignment_Reference whichReference() => _ActionWrapper_SpotCamAlignment_Alignment_ReferenceByTag[$_whichOneof(0)]!;
   void clearReference() => clearField($_whichOneof(0));
 
+  /// Camera zoom parameter
   @$pb.TagNumber(1)
   $core.double get zoom => $_getN(0);
   @$pb.TagNumber(1)
@@ -1378,6 +1884,7 @@ class ActionWrapper_SpotCamAlignment_Alignment extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearZoom() => clearField(1);
 
+  /// Sensor to use for alignment
   @$pb.TagNumber(2)
   $core.String get sensorId => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -1396,6 +1903,7 @@ class ActionWrapper_SpotCamAlignment_Alignment extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearSceneObjectId() => clearField(3);
 
+  /// If true, this alignment will be skipped during playback
   @$pb.TagNumber(4)
   $core.bool get isSkipped => $_getBF(3);
   @$pb.TagNumber(4)
@@ -1406,15 +1914,36 @@ class ActionWrapper_SpotCamAlignment_Alignment extends $pb.GeneratedMessage {
   void clearIsSkipped() => clearField(4);
 }
 
+/// Align SpotCam to a waypoint. Cannot be used with SpotCamPtz or RobotBodyPose
 class ActionWrapper_SpotCamAlignment extends $pb.GeneratedMessage {
-  factory ActionWrapper_SpotCamAlignment() => create();
+  factory ActionWrapper_SpotCamAlignment({
+    $core.Iterable<ActionWrapper_SpotCamAlignment_Alignment>? alignments,
+    $61.SE3Pose? targetTformSensor,
+    $core.double? finalZoom,
+    $core.Iterable<$core.String>? targetSensorIds,
+  }) {
+    final $result = create();
+    if (alignments != null) {
+      $result.alignments.addAll(alignments);
+    }
+    if (targetTformSensor != null) {
+      $result.targetTformSensor = targetTformSensor;
+    }
+    if (finalZoom != null) {
+      $result.finalZoom = finalZoom;
+    }
+    if (targetSensorIds != null) {
+      $result.targetSensorIds.addAll(targetSensorIds);
+    }
+    return $result;
+  }
   ActionWrapper_SpotCamAlignment._() : super();
   factory ActionWrapper_SpotCamAlignment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ActionWrapper_SpotCamAlignment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ActionWrapper.SpotCamAlignment', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
     ..pc<ActionWrapper_SpotCamAlignment_Alignment>(2, _omitFieldNames ? '' : 'alignments', $pb.PbFieldType.PM, subBuilder: ActionWrapper_SpotCamAlignment_Alignment.create)
-    ..aOM<$60.SE3Pose>(3, _omitFieldNames ? '' : 'targetTformSensor', subBuilder: $60.SE3Pose.create)
+    ..aOM<$61.SE3Pose>(3, _omitFieldNames ? '' : 'targetTformSensor', subBuilder: $61.SE3Pose.create)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'finalZoom', $pb.PbFieldType.OF)
     ..pPS(5, _omitFieldNames ? '' : 'targetSensorIds')
     ..hasRequiredFields = false
@@ -1441,20 +1970,23 @@ class ActionWrapper_SpotCamAlignment extends $pb.GeneratedMessage {
   static ActionWrapper_SpotCamAlignment getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActionWrapper_SpotCamAlignment>(create);
   static ActionWrapper_SpotCamAlignment? _defaultInstance;
 
+  /// List of alignments to perform
   @$pb.TagNumber(2)
   $core.List<ActionWrapper_SpotCamAlignment_Alignment> get alignments => $_getList(0);
 
+  /// Desired transform from the sensor to the target
   @$pb.TagNumber(3)
-  $60.SE3Pose get targetTformSensor => $_getN(1);
+  $61.SE3Pose get targetTformSensor => $_getN(1);
   @$pb.TagNumber(3)
-  set targetTformSensor($60.SE3Pose v) { setField(3, v); }
+  set targetTformSensor($61.SE3Pose v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTargetTformSensor() => $_has(1);
   @$pb.TagNumber(3)
   void clearTargetTformSensor() => clearField(3);
   @$pb.TagNumber(3)
-  $60.SE3Pose ensureTargetTformSensor() => $_ensure(1);
+  $61.SE3Pose ensureTargetTformSensor() => $_ensure(1);
 
+  /// Final zoom the camera should be after all alignments have finished
   @$pb.TagNumber(4)
   $core.double get finalZoom => $_getN(2);
   @$pb.TagNumber(4)
@@ -1464,23 +1996,53 @@ class ActionWrapper_SpotCamAlignment extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearFinalZoom() => clearField(4);
 
+  /// Optional list of sensor names which should be unobstructed after alignment
   @$pb.TagNumber(5)
   $core.List<$core.String> get targetSensorIds => $_getList(3);
 }
 
+/// Position the body and perform a joint move and cartesian command in target frame
 class ActionWrapper_ArmSensorPointing extends $pb.GeneratedMessage {
-  factory ActionWrapper_ArmSensorPointing() => create();
+  factory ActionWrapper_ArmSensorPointing({
+    $65.ArmJointTrajectory? jointTrajectory,
+    $61.SE3Pose? wristTformTool,
+    $63.SE3Trajectory? poseTrajectoryRtTarget,
+    $85.BodyControlParams_BodyAssistForManipulation? bodyAssistParams,
+    $core.bool? forceStowOverride,
+    $61.SE2Pose? targetTformMeasuredOffset,
+  }) {
+    final $result = create();
+    if (jointTrajectory != null) {
+      $result.jointTrajectory = jointTrajectory;
+    }
+    if (wristTformTool != null) {
+      $result.wristTformTool = wristTformTool;
+    }
+    if (poseTrajectoryRtTarget != null) {
+      $result.poseTrajectoryRtTarget = poseTrajectoryRtTarget;
+    }
+    if (bodyAssistParams != null) {
+      $result.bodyAssistParams = bodyAssistParams;
+    }
+    if (forceStowOverride != null) {
+      $result.forceStowOverride = forceStowOverride;
+    }
+    if (targetTformMeasuredOffset != null) {
+      $result.targetTformMeasuredOffset = targetTformMeasuredOffset;
+    }
+    return $result;
+  }
   ActionWrapper_ArmSensorPointing._() : super();
   factory ActionWrapper_ArmSensorPointing.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ActionWrapper_ArmSensorPointing.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ActionWrapper.ArmSensorPointing', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$64.ArmJointTrajectory>(2, _omitFieldNames ? '' : 'jointTrajectory', subBuilder: $64.ArmJointTrajectory.create)
-    ..aOM<$60.SE3Pose>(3, _omitFieldNames ? '' : 'wristTformTool', subBuilder: $60.SE3Pose.create)
-    ..aOM<$62.SE3Trajectory>(4, _omitFieldNames ? '' : 'poseTrajectoryRtTarget', subBuilder: $62.SE3Trajectory.create)
-    ..aOM<$83.BodyControlParams_BodyAssistForManipulation>(5, _omitFieldNames ? '' : 'bodyAssistParams', subBuilder: $83.BodyControlParams_BodyAssistForManipulation.create)
+    ..aOM<$65.ArmJointTrajectory>(2, _omitFieldNames ? '' : 'jointTrajectory', subBuilder: $65.ArmJointTrajectory.create)
+    ..aOM<$61.SE3Pose>(3, _omitFieldNames ? '' : 'wristTformTool', subBuilder: $61.SE3Pose.create)
+    ..aOM<$63.SE3Trajectory>(4, _omitFieldNames ? '' : 'poseTrajectoryRtTarget', subBuilder: $63.SE3Trajectory.create)
+    ..aOM<$85.BodyControlParams_BodyAssistForManipulation>(5, _omitFieldNames ? '' : 'bodyAssistParams', subBuilder: $85.BodyControlParams_BodyAssistForManipulation.create)
     ..aOB(6, _omitFieldNames ? '' : 'forceStowOverride')
-    ..aOM<$60.SE2Pose>(7, _omitFieldNames ? '' : 'targetTformMeasuredOffset', subBuilder: $60.SE2Pose.create)
+    ..aOM<$61.SE2Pose>(7, _omitFieldNames ? '' : 'targetTformMeasuredOffset', subBuilder: $61.SE2Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -1505,49 +2067,57 @@ class ActionWrapper_ArmSensorPointing extends $pb.GeneratedMessage {
   static ActionWrapper_ArmSensorPointing getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActionWrapper_ArmSensorPointing>(create);
   static ActionWrapper_ArmSensorPointing? _defaultInstance;
 
+  /// Arm Joint Move Command
+  /// The joint trajectory to execute in the initial rough pointing joint move.
   @$pb.TagNumber(2)
-  $64.ArmJointTrajectory get jointTrajectory => $_getN(0);
+  $65.ArmJointTrajectory get jointTrajectory => $_getN(0);
   @$pb.TagNumber(2)
-  set jointTrajectory($64.ArmJointTrajectory v) { setField(2, v); }
+  set jointTrajectory($65.ArmJointTrajectory v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasJointTrajectory() => $_has(0);
   @$pb.TagNumber(2)
   void clearJointTrajectory() => clearField(2);
   @$pb.TagNumber(2)
-  $64.ArmJointTrajectory ensureJointTrajectory() => $_ensure(0);
+  $65.ArmJointTrajectory ensureJointTrajectory() => $_ensure(0);
 
+  /// Arm Cartesian Command
+  /// The tool pose relative to the parent link (wrist).
+  /// Defaults to a frame with it's origin slightly in front of the gripper's palm plate
+  /// aligned with the wrist's orientation.
   @$pb.TagNumber(3)
-  $60.SE3Pose get wristTformTool => $_getN(1);
+  $61.SE3Pose get wristTformTool => $_getN(1);
   @$pb.TagNumber(3)
-  set wristTformTool($60.SE3Pose v) { setField(3, v); }
+  set wristTformTool($61.SE3Pose v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasWristTformTool() => $_has(1);
   @$pb.TagNumber(3)
   void clearWristTformTool() => clearField(3);
   @$pb.TagNumber(3)
-  $60.SE3Pose ensureWristTformTool() => $_ensure(1);
+  $61.SE3Pose ensureWristTformTool() => $_ensure(1);
 
+  /// A 3D pose trajectory for the tool expressed in target frame,
   @$pb.TagNumber(4)
-  $62.SE3Trajectory get poseTrajectoryRtTarget => $_getN(2);
+  $63.SE3Trajectory get poseTrajectoryRtTarget => $_getN(2);
   @$pb.TagNumber(4)
-  set poseTrajectoryRtTarget($62.SE3Trajectory v) { setField(4, v); }
+  set poseTrajectoryRtTarget($63.SE3Trajectory v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasPoseTrajectoryRtTarget() => $_has(2);
   @$pb.TagNumber(4)
   void clearPoseTrajectoryRtTarget() => clearField(4);
   @$pb.TagNumber(4)
-  $62.SE3Trajectory ensurePoseTrajectoryRtTarget() => $_ensure(2);
+  $63.SE3Trajectory ensurePoseTrajectoryRtTarget() => $_ensure(2);
 
+  /// Body mobility params during cartesian move
   @$pb.TagNumber(5)
-  $83.BodyControlParams_BodyAssistForManipulation get bodyAssistParams => $_getN(3);
+  $85.BodyControlParams_BodyAssistForManipulation get bodyAssistParams => $_getN(3);
   @$pb.TagNumber(5)
-  set bodyAssistParams($83.BodyControlParams_BodyAssistForManipulation v) { setField(5, v); }
+  set bodyAssistParams($85.BodyControlParams_BodyAssistForManipulation v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasBodyAssistParams() => $_has(3);
   @$pb.TagNumber(5)
   void clearBodyAssistParams() => clearField(5);
   @$pb.TagNumber(5)
-  $83.BodyControlParams_BodyAssistForManipulation ensureBodyAssistParams() => $_ensure(3);
+  $85.BodyControlParams_BodyAssistForManipulation ensureBodyAssistParams() => $_ensure(3);
 
   @$pb.TagNumber(6)
   $core.bool get forceStowOverride => $_getBF(4);
@@ -1558,20 +2128,35 @@ class ActionWrapper_ArmSensorPointing extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearForceStowOverride() => clearField(6);
 
+  /// Robot desired stance relative to waypoint
+  /// This is taken by measuring the average of the footprints
+  /// in body frame at the time of waypoint creation.
+  /// This is used to generate the stance command.
+  /// Target == waypoint.
+  /// This assumes the waypoint is gravity aligned.
   @$pb.TagNumber(7)
-  $60.SE2Pose get targetTformMeasuredOffset => $_getN(5);
+  $61.SE2Pose get targetTformMeasuredOffset => $_getN(5);
   @$pb.TagNumber(7)
-  set targetTformMeasuredOffset($60.SE2Pose v) { setField(7, v); }
+  set targetTformMeasuredOffset($61.SE2Pose v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasTargetTformMeasuredOffset() => $_has(5);
   @$pb.TagNumber(7)
   void clearTargetTformMeasuredOffset() => clearField(7);
   @$pb.TagNumber(7)
-  $60.SE2Pose ensureTargetTformMeasuredOffset() => $_ensure(5);
+  $61.SE2Pose ensureTargetTformMeasuredOffset() => $_ensure(5);
 }
 
+/// Set the camera params of the gripper camera
 class ActionWrapper_GripperCameraParams extends $pb.GeneratedMessage {
-  factory ActionWrapper_GripperCameraParams() => create();
+  factory ActionWrapper_GripperCameraParams({
+    $10.GripperCameraParams? params,
+  }) {
+    final $result = create();
+    if (params != null) {
+      $result.params = params;
+    }
+    return $result;
+  }
   ActionWrapper_GripperCameraParams._() : super();
   factory ActionWrapper_GripperCameraParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ActionWrapper_GripperCameraParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1615,13 +2200,21 @@ class ActionWrapper_GripperCameraParams extends $pb.GeneratedMessage {
 }
 
 class ActionWrapper_GripperCommand extends $pb.GeneratedMessage {
-  factory ActionWrapper_GripperCommand() => create();
+  factory ActionWrapper_GripperCommand({
+    $66.GripperCommand_Request? request,
+  }) {
+    final $result = create();
+    if (request != null) {
+      $result.request = request;
+    }
+    return $result;
+  }
   ActionWrapper_GripperCommand._() : super();
   factory ActionWrapper_GripperCommand.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ActionWrapper_GripperCommand.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ActionWrapper.GripperCommand', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$65.GripperCommand_Request>(1, _omitFieldNames ? '' : 'request', subBuilder: $65.GripperCommand_Request.create)
+    ..aOM<$66.GripperCommand_Request>(1, _omitFieldNames ? '' : 'request', subBuilder: $66.GripperCommand_Request.create)
     ..hasRequiredFields = false
   ;
 
@@ -1647,19 +2240,59 @@ class ActionWrapper_GripperCommand extends $pb.GeneratedMessage {
   static ActionWrapper_GripperCommand? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $65.GripperCommand_Request get request => $_getN(0);
+  $66.GripperCommand_Request get request => $_getN(0);
   @$pb.TagNumber(1)
-  set request($65.GripperCommand_Request v) { setField(1, v); }
+  set request($66.GripperCommand_Request v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $65.GripperCommand_Request ensureRequest() => $_ensure(0);
+  $66.GripperCommand_Request ensureRequest() => $_ensure(0);
 }
 
+/// An ActionWrapper is what the robot should do prior to and during an action.
+/// For example, the user may desire that the robot stand in such a way that its
+/// z-axis is aligned with the gravity vector, even though it is standing on an
+/// incline.
 class ActionWrapper extends $pb.GeneratedMessage {
-  factory ActionWrapper() => create();
+  factory ActionWrapper({
+    ActionWrapper_RobotBodySit? robotBodySit,
+    ActionWrapper_RobotBodyPose? robotBodyPose,
+    ActionWrapper_SpotCamLed? spotCamLed,
+    ActionWrapper_SpotCamPtz? spotCamPtz,
+    ActionWrapper_ArmSensorPointing? armSensorPointing,
+    ActionWrapper_GripperCameraParams? gripperCameraParams,
+    ActionWrapper_GripperCommand? gripperCommand,
+    ActionWrapper_SpotCamAlignment? spotCamAlignment,
+  }) {
+    final $result = create();
+    if (robotBodySit != null) {
+      $result.robotBodySit = robotBodySit;
+    }
+    if (robotBodyPose != null) {
+      $result.robotBodyPose = robotBodyPose;
+    }
+    if (spotCamLed != null) {
+      $result.spotCamLed = spotCamLed;
+    }
+    if (spotCamPtz != null) {
+      $result.spotCamPtz = spotCamPtz;
+    }
+    if (armSensorPointing != null) {
+      $result.armSensorPointing = armSensorPointing;
+    }
+    if (gripperCameraParams != null) {
+      $result.gripperCameraParams = gripperCameraParams;
+    }
+    if (gripperCommand != null) {
+      $result.gripperCommand = gripperCommand;
+    }
+    if (spotCamAlignment != null) {
+      $result.spotCamAlignment = spotCamAlignment;
+    }
+    return $result;
+  }
   ActionWrapper._() : super();
   factory ActionWrapper.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ActionWrapper.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1786,14 +2419,24 @@ class ActionWrapper extends $pb.GeneratedMessage {
   ActionWrapper_SpotCamAlignment ensureSpotCamAlignment() => $_ensure(7);
 }
 
+/// If a failure occurs and the prompt has not been answered, the robot
+/// will sit down and power off. This is the safest option.
 class FailureBehavior_SafePowerOff extends $pb.GeneratedMessage {
-  factory FailureBehavior_SafePowerOff() => create();
+  factory FailureBehavior_SafePowerOff({
+    $64.SafePowerOffCommand_Request? request,
+  }) {
+    final $result = create();
+    if (request != null) {
+      $result.request = request;
+    }
+    return $result;
+  }
   FailureBehavior_SafePowerOff._() : super();
   factory FailureBehavior_SafePowerOff.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FailureBehavior_SafePowerOff.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FailureBehavior.SafePowerOff', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$63.SafePowerOffCommand_Request>(1, _omitFieldNames ? '' : 'request', subBuilder: $63.SafePowerOffCommand_Request.create)
+    ..aOM<$64.SafePowerOffCommand_Request>(1, _omitFieldNames ? '' : 'request', subBuilder: $64.SafePowerOffCommand_Request.create)
     ..hasRequiredFields = false
   ;
 
@@ -1819,17 +2462,22 @@ class FailureBehavior_SafePowerOff extends $pb.GeneratedMessage {
   static FailureBehavior_SafePowerOff? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $63.SafePowerOffCommand_Request get request => $_getN(0);
+  $64.SafePowerOffCommand_Request get request => $_getN(0);
   @$pb.TagNumber(1)
-  set request($63.SafePowerOffCommand_Request v) { setField(1, v); }
+  set request($64.SafePowerOffCommand_Request v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRequest() => $_has(0);
   @$pb.TagNumber(1)
   void clearRequest() => clearField(1);
   @$pb.TagNumber(1)
-  $63.SafePowerOffCommand_Request ensureRequest() => $_ensure(0);
+  $64.SafePowerOffCommand_Request ensureRequest() => $_ensure(0);
 }
 
+/// If a failure occurs and the prompt has not been answered, the robot
+/// will proceed to the next action if able to do so. This may lead to
+/// different behavior at mission playback than at mission recording
+/// (e.g., the robot may take a different route, the robot may fail to
+/// collect the data for an action).
 class FailureBehavior_ProceedIfAble extends $pb.GeneratedMessage {
   factory FailureBehavior_ProceedIfAble() => create();
   FailureBehavior_ProceedIfAble._() : super();
@@ -1862,14 +2510,27 @@ class FailureBehavior_ProceedIfAble extends $pb.GeneratedMessage {
   static FailureBehavior_ProceedIfAble? _defaultInstance;
 }
 
+/// Only available in missions with a dock!
+/// If a failure occurs and the prompt has not been answered, the robot
+/// will return to the start of the mission. Once at the start of the
+/// mission, the robot will attempt to dock.  If successfully, robot will
+/// try again later after the specified delay.
 class FailureBehavior_ReturnToStartAndTryAgainLater extends $pb.GeneratedMessage {
-  factory FailureBehavior_ReturnToStartAndTryAgainLater() => create();
+  factory FailureBehavior_ReturnToStartAndTryAgainLater({
+    $62.Duration? tryAgainDelay,
+  }) {
+    final $result = create();
+    if (tryAgainDelay != null) {
+      $result.tryAgainDelay = tryAgainDelay;
+    }
+    return $result;
+  }
   FailureBehavior_ReturnToStartAndTryAgainLater._() : super();
   factory FailureBehavior_ReturnToStartAndTryAgainLater.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FailureBehavior_ReturnToStartAndTryAgainLater.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FailureBehavior.ReturnToStartAndTryAgainLater', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$61.Duration>(1, _omitFieldNames ? '' : 'tryAgainDelay', subBuilder: $61.Duration.create)
+    ..aOM<$62.Duration>(1, _omitFieldNames ? '' : 'tryAgainDelay', subBuilder: $62.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -1894,18 +2555,22 @@ class FailureBehavior_ReturnToStartAndTryAgainLater extends $pb.GeneratedMessage
   static FailureBehavior_ReturnToStartAndTryAgainLater getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FailureBehavior_ReturnToStartAndTryAgainLater>(create);
   static FailureBehavior_ReturnToStartAndTryAgainLater? _defaultInstance;
 
+  /// How long to wait at start of mission (or on dock) before trying again.
+  /// A minimum duration of 60 seconds is enforced.
   @$pb.TagNumber(1)
-  $61.Duration get tryAgainDelay => $_getN(0);
+  $62.Duration get tryAgainDelay => $_getN(0);
   @$pb.TagNumber(1)
-  set tryAgainDelay($61.Duration v) { setField(1, v); }
+  set tryAgainDelay($62.Duration v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTryAgainDelay() => $_has(0);
   @$pb.TagNumber(1)
   void clearTryAgainDelay() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Duration ensureTryAgainDelay() => $_ensure(0);
+  $62.Duration ensureTryAgainDelay() => $_ensure(0);
 }
 
+/// Only available in missions with a dock!
+/// If robot can get back to the dock, it will, and if it does, the mission will end.
 class FailureBehavior_ReturnToStartAndTerminate extends $pb.GeneratedMessage {
   factory FailureBehavior_ReturnToStartAndTerminate() => create();
   FailureBehavior_ReturnToStartAndTerminate._() : super();
@@ -1947,7 +2612,35 @@ enum FailureBehavior_DefaultBehavior {
 }
 
 class FailureBehavior extends $pb.GeneratedMessage {
-  factory FailureBehavior() => create();
+  factory FailureBehavior({
+    $core.int? retryCount,
+    $62.Duration? promptDuration,
+    FailureBehavior_SafePowerOff? safePowerOff,
+    FailureBehavior_ProceedIfAble? proceedIfAble,
+    FailureBehavior_ReturnToStartAndTryAgainLater? returnToStartAndTryAgainLater,
+    FailureBehavior_ReturnToStartAndTerminate? returnToStartAndTerminate,
+  }) {
+    final $result = create();
+    if (retryCount != null) {
+      $result.retryCount = retryCount;
+    }
+    if (promptDuration != null) {
+      $result.promptDuration = promptDuration;
+    }
+    if (safePowerOff != null) {
+      $result.safePowerOff = safePowerOff;
+    }
+    if (proceedIfAble != null) {
+      $result.proceedIfAble = proceedIfAble;
+    }
+    if (returnToStartAndTryAgainLater != null) {
+      $result.returnToStartAndTryAgainLater = returnToStartAndTryAgainLater;
+    }
+    if (returnToStartAndTerminate != null) {
+      $result.returnToStartAndTerminate = returnToStartAndTerminate;
+    }
+    return $result;
+  }
   FailureBehavior._() : super();
   factory FailureBehavior.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FailureBehavior.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1962,7 +2655,7 @@ class FailureBehavior extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FailureBehavior', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
     ..oo(0, [3, 4, 5, 6])
     ..a<$core.int>(1, _omitFieldNames ? '' : 'retryCount', $pb.PbFieldType.O3)
-    ..aOM<$61.Duration>(2, _omitFieldNames ? '' : 'promptDuration', subBuilder: $61.Duration.create)
+    ..aOM<$62.Duration>(2, _omitFieldNames ? '' : 'promptDuration', subBuilder: $62.Duration.create)
     ..aOM<FailureBehavior_SafePowerOff>(3, _omitFieldNames ? '' : 'safePowerOff', subBuilder: FailureBehavior_SafePowerOff.create)
     ..aOM<FailureBehavior_ProceedIfAble>(4, _omitFieldNames ? '' : 'proceedIfAble', subBuilder: FailureBehavior_ProceedIfAble.create)
     ..aOM<FailureBehavior_ReturnToStartAndTryAgainLater>(5, _omitFieldNames ? '' : 'returnToStartAndTryAgainLater', subBuilder: FailureBehavior_ReturnToStartAndTryAgainLater.create)
@@ -1994,6 +2687,18 @@ class FailureBehavior extends $pb.GeneratedMessage {
   FailureBehavior_DefaultBehavior whichDefaultBehavior() => _FailureBehavior_DefaultBehaviorByTag[$_whichOneof(0)]!;
   void clearDefaultBehavior() => clearField($_whichOneof(0));
 
+  /// The mission can automatically retry navigating to a waypoint or
+  /// performing an action. Automatic retries can increase the probability of
+  /// successfully navigating to a waypoint, but may cause the robot to take
+  /// an unexpected path. Similarly, they can increase the probability of
+  /// successfully collecting data for an action, but also increase the amount
+  /// of time a mission takes. If the client does not want the robot to
+  /// automatically retry navigating to a waypoint or performing an action,
+  /// set this to 0. If the client wants the robot to automatically retry
+  /// navigating to a waypoint or performing an action, set this to the
+  /// desired number of retries. For example, if the client would like the
+  /// action to be retried once, set this equal to 1. If this is unset or set
+  /// to 0, no retry will occur.
   @$pb.TagNumber(1)
   $core.int get retryCount => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -2003,16 +2708,22 @@ class FailureBehavior extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearRetryCount() => clearField(1);
 
+  /// At mission playback, if something fails (e.g., the robot gets stuck,
+  /// an action fails), the user will get all possible actions as options
+  /// in a question to choose from. If the user does not answer, the mission
+  /// will fall back to the default behavior after this timeout. The default
+  /// behaviors are defined by the default_behavior one_of. A minimum
+  /// duration of 10 seconds is enforced.
   @$pb.TagNumber(2)
-  $61.Duration get promptDuration => $_getN(1);
+  $62.Duration get promptDuration => $_getN(1);
   @$pb.TagNumber(2)
-  set promptDuration($61.Duration v) { setField(2, v); }
+  set promptDuration($62.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPromptDuration() => $_has(1);
   @$pb.TagNumber(2)
   void clearPromptDuration() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Duration ensurePromptDuration() => $_ensure(1);
+  $62.Duration ensurePromptDuration() => $_ensure(1);
 
   @$pb.TagNumber(3)
   FailureBehavior_SafePowerOff get safePowerOff => $_getN(2);
@@ -2059,8 +2770,23 @@ class FailureBehavior extends $pb.GeneratedMessage {
   FailureBehavior_ReturnToStartAndTerminate ensureReturnToStartAndTerminate() => $_ensure(5);
 }
 
+/// If your mission has docks, autowalk can pause the mission to return
+/// to the dock if the battery gets too low.  Use this message to control
+/// when this behavior happens.
 class BatteryMonitor extends $pb.GeneratedMessage {
-  factory BatteryMonitor() => create();
+  factory BatteryMonitor({
+    $core.double? batteryStartThreshold,
+    $core.double? batteryStopThreshold,
+  }) {
+    final $result = create();
+    if (batteryStartThreshold != null) {
+      $result.batteryStartThreshold = batteryStartThreshold;
+    }
+    if (batteryStopThreshold != null) {
+      $result.batteryStopThreshold = batteryStopThreshold;
+    }
+    return $result;
+  }
   BatteryMonitor._() : super();
   factory BatteryMonitor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BatteryMonitor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2092,6 +2818,9 @@ class BatteryMonitor extends $pb.GeneratedMessage {
   static BatteryMonitor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BatteryMonitor>(create);
   static BatteryMonitor? _defaultInstance;
 
+  /// Once charging, the robot will continue to charge until the battery
+  /// level is greater than or equal to this threshold, at which point in
+  /// time, the mission will start.
   @$pb.TagNumber(2)
   $core.double get batteryStartThreshold => $_getN(0);
   @$pb.TagNumber(2)
@@ -2101,6 +2830,10 @@ class BatteryMonitor extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearBatteryStartThreshold() => clearField(2);
 
+  /// If the battery level is less than or equal to this threshold, the
+  /// robot will stop what it is currently doing and return to the dock.
+  /// Once the battery level is greater than or equal to the battery start
+  /// threshold, the mission will resume.
   @$pb.TagNumber(3)
   $core.double get batteryStopThreshold => $_getN(1);
   @$pb.TagNumber(3)

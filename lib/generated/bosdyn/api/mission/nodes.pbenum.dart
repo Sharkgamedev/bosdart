@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Comparison operator.
 class Condition_Compare extends $pb.ProtobufEnum {
   static const Condition_Compare COMPARE_UNKNOWN = Condition_Compare._(0, _omitEnumNames ? '' : 'COMPARE_UNKNOWN');
   static const Condition_Compare COMPARE_EQ = Condition_Compare._(1, _omitEnumNames ? '' : 'COMPARE_EQ');
@@ -38,6 +39,8 @@ class Condition_Compare extends $pb.ProtobufEnum {
   const Condition_Compare._($core.int v, $core.String n) : super(v, n);
 }
 
+/// When comparing runtime values in the blackboard, some values might be "stale" (i.e too old).
+/// This defines how the comparator should behave when a read value is stale.
 class Condition_HandleStaleness extends $pb.ProtobufEnum {
   static const Condition_HandleStaleness HANDLE_STALE_UNKNOWN = Condition_HandleStaleness._(0, _omitEnumNames ? '' : 'HANDLE_STALE_UNKNOWN');
   static const Condition_HandleStaleness HANDLE_STALE_READ_ANYWAY = Condition_HandleStaleness._(1, _omitEnumNames ? '' : 'HANDLE_STALE_READ_ANYWAY');

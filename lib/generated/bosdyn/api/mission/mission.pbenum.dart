@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Possible overall status states of the mission.
 class State_Status extends $pb.ProtobufEnum {
   static const State_Status STATUS_UNKNOWN = State_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const State_Status STATUS_FAILURE = State_Status._(1, _omitEnumNames ? '' : 'STATUS_FAILURE');
@@ -40,6 +41,7 @@ class State_Status extends $pb.ProtobufEnum {
   const State_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Possible results for answering a question.
 class AnswerQuestionResponse_Status extends $pb.ProtobufEnum {
   static const AnswerQuestionResponse_Status STATUS_UNKNOWN = AnswerQuestionResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const AnswerQuestionResponse_Status STATUS_OK = AnswerQuestionResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -61,6 +63,7 @@ class AnswerQuestionResponse_Status extends $pb.ProtobufEnum {
   const AnswerQuestionResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Possible results for a play request.
 class PlayMissionResponse_Status extends $pb.ProtobufEnum {
   static const PlayMissionResponse_Status STATUS_UNKNOWN = PlayMissionResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const PlayMissionResponse_Status STATUS_OK = PlayMissionResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -78,6 +81,7 @@ class PlayMissionResponse_Status extends $pb.ProtobufEnum {
   const PlayMissionResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Possible results of requesting a restart.
 class RestartMissionResponse_Status extends $pb.ProtobufEnum {
   static const RestartMissionResponse_Status STATUS_UNKNOWN = RestartMissionResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const RestartMissionResponse_Status STATUS_OK = RestartMissionResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -97,6 +101,7 @@ class RestartMissionResponse_Status extends $pb.ProtobufEnum {
   const RestartMissionResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Possible results of loading a mission.
 class LoadMissionResponse_Status extends $pb.ProtobufEnum {
   static const LoadMissionResponse_Status STATUS_UNKNOWN = LoadMissionResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const LoadMissionResponse_Status STATUS_OK = LoadMissionResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -116,6 +121,7 @@ class LoadMissionResponse_Status extends $pb.ProtobufEnum {
   const LoadMissionResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Possible results of a pause request.
 class PauseMissionResponse_Status extends $pb.ProtobufEnum {
   static const PauseMissionResponse_Status STATUS_UNKNOWN = PauseMissionResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const PauseMissionResponse_Status STATUS_OK = PauseMissionResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -133,6 +139,7 @@ class PauseMissionResponse_Status extends $pb.ProtobufEnum {
   const PauseMissionResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Possible results of a stop request.
 class StopMissionResponse_Status extends $pb.ProtobufEnum {
   static const StopMissionResponse_Status STATUS_UNKNOWN = StopMissionResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const StopMissionResponse_Status STATUS_OK = StopMissionResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');

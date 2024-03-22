@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -19,7 +19,19 @@ import 'test_messages_proto2.pbenum.dart';
 export 'test_messages_proto2.pbenum.dart';
 
 class TestAllTypesProto2_NestedMessage extends $pb.GeneratedMessage {
-  factory TestAllTypesProto2_NestedMessage() => create();
+  factory TestAllTypesProto2_NestedMessage({
+    $core.int? a,
+    TestAllTypesProto2? corecursive,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (corecursive != null) {
+      $result.corecursive = corecursive;
+    }
+    return $result;
+  }
   TestAllTypesProto2_NestedMessage._() : super();
   factory TestAllTypesProto2_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypesProto2_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -71,8 +83,21 @@ class TestAllTypesProto2_NestedMessage extends $pb.GeneratedMessage {
   TestAllTypesProto2 ensureCorecursive() => $_ensure(1);
 }
 
+/// groups
 class TestAllTypesProto2_Data extends $pb.GeneratedMessage {
-  factory TestAllTypesProto2_Data() => create();
+  factory TestAllTypesProto2_Data({
+    $core.int? groupInt32,
+    $core.int? groupUint32,
+  }) {
+    final $result = create();
+    if (groupInt32 != null) {
+      $result.groupInt32 = groupInt32;
+    }
+    if (groupUint32 != null) {
+      $result.groupUint32 = groupUint32;
+    }
+    return $result;
+  }
   TestAllTypesProto2_Data._() : super();
   factory TestAllTypesProto2_Data.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypesProto2_Data.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -123,7 +148,8 @@ class TestAllTypesProto2_Data extends $pb.GeneratedMessage {
   void clearGroupUint32() => clearField(203);
 }
 
-class TestAllTypesProto2_MessageSetCorrect extends $pb.GeneratedMessage {
+/// message_set test case.
+class TestAllTypesProto2_MessageSetCorrect extends $pb.$_MessageSet {
   factory TestAllTypesProto2_MessageSetCorrect() => create();
   TestAllTypesProto2_MessageSetCorrect._() : super();
   factory TestAllTypesProto2_MessageSetCorrect.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
@@ -156,7 +182,15 @@ class TestAllTypesProto2_MessageSetCorrect extends $pb.GeneratedMessage {
 }
 
 class TestAllTypesProto2_MessageSetCorrectExtension1 extends $pb.GeneratedMessage {
-  factory TestAllTypesProto2_MessageSetCorrectExtension1() => create();
+  factory TestAllTypesProto2_MessageSetCorrectExtension1({
+    $core.String? str,
+  }) {
+    final $result = create();
+    if (str != null) {
+      $result.str = str;
+    }
+    return $result;
+  }
   TestAllTypesProto2_MessageSetCorrectExtension1._() : super();
   factory TestAllTypesProto2_MessageSetCorrectExtension1.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypesProto2_MessageSetCorrectExtension1.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -199,7 +233,15 @@ class TestAllTypesProto2_MessageSetCorrectExtension1 extends $pb.GeneratedMessag
 }
 
 class TestAllTypesProto2_MessageSetCorrectExtension2 extends $pb.GeneratedMessage {
-  factory TestAllTypesProto2_MessageSetCorrectExtension2() => create();
+  factory TestAllTypesProto2_MessageSetCorrectExtension2({
+    $core.int? i,
+  }) {
+    final $result = create();
+    if (i != null) {
+      $result.i = i;
+    }
+    return $result;
+  }
   TestAllTypesProto2_MessageSetCorrectExtension2._() : super();
   factory TestAllTypesProto2_MessageSetCorrectExtension2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypesProto2_MessageSetCorrectExtension2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -254,8 +296,551 @@ enum TestAllTypesProto2_OneofField {
   notSet
 }
 
+///  This proto includes every type of field in both singular and repeated
+///  forms.
+///
+///  Also, crucially, all messages and enums in this file are eventually
+///  submessages of this message.  So for example, a fuzz test of TestAllTypes
+///  could trigger bugs that occur in any message type in this file.  We verify
+///  this stays true in a unit test.
 class TestAllTypesProto2 extends $pb.GeneratedMessage {
-  factory TestAllTypesProto2() => create();
+  factory TestAllTypesProto2({
+    $core.int? optionalInt32,
+    $fixnum.Int64? optionalInt64,
+    $core.int? optionalUint32,
+    $fixnum.Int64? optionalUint64,
+    $core.int? optionalSint32,
+    $fixnum.Int64? optionalSint64,
+    $core.int? optionalFixed32,
+    $fixnum.Int64? optionalFixed64,
+    $core.int? optionalSfixed32,
+    $fixnum.Int64? optionalSfixed64,
+    $core.double? optionalFloat,
+    $core.double? optionalDouble,
+    $core.bool? optionalBool,
+    $core.String? optionalString,
+    $core.List<$core.int>? optionalBytes,
+    TestAllTypesProto2_NestedMessage? optionalNestedMessage,
+    ForeignMessageProto2? optionalForeignMessage,
+    TestAllTypesProto2_NestedEnum? optionalNestedEnum,
+    ForeignEnumProto2? optionalForeignEnum,
+    $core.String? optionalStringPiece,
+    $core.String? optionalCord,
+    TestAllTypesProto2? recursiveMessage,
+    $core.Iterable<$core.int>? repeatedInt32,
+    $core.Iterable<$fixnum.Int64>? repeatedInt64,
+    $core.Iterable<$core.int>? repeatedUint32,
+    $core.Iterable<$fixnum.Int64>? repeatedUint64,
+    $core.Iterable<$core.int>? repeatedSint32,
+    $core.Iterable<$fixnum.Int64>? repeatedSint64,
+    $core.Iterable<$core.int>? repeatedFixed32,
+    $core.Iterable<$fixnum.Int64>? repeatedFixed64,
+    $core.Iterable<$core.int>? repeatedSfixed32,
+    $core.Iterable<$fixnum.Int64>? repeatedSfixed64,
+    $core.Iterable<$core.double>? repeatedFloat,
+    $core.Iterable<$core.double>? repeatedDouble,
+    $core.Iterable<$core.bool>? repeatedBool,
+    $core.Iterable<$core.String>? repeatedString,
+    $core.Iterable<$core.List<$core.int>>? repeatedBytes,
+    $core.Iterable<TestAllTypesProto2_NestedMessage>? repeatedNestedMessage,
+    $core.Iterable<ForeignMessageProto2>? repeatedForeignMessage,
+    $core.Iterable<TestAllTypesProto2_NestedEnum>? repeatedNestedEnum,
+    $core.Iterable<ForeignEnumProto2>? repeatedForeignEnum,
+    $core.Iterable<$core.String>? repeatedStringPiece,
+    $core.Iterable<$core.String>? repeatedCord,
+    $core.Map<$core.int, $core.int>? mapInt32Int32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapInt64Int64,
+    $core.Map<$core.int, $core.int>? mapUint32Uint32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapUint64Uint64,
+    $core.Map<$core.int, $core.int>? mapSint32Sint32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapSint64Sint64,
+    $core.Map<$core.int, $core.int>? mapFixed32Fixed32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapFixed64Fixed64,
+    $core.Map<$core.int, $core.int>? mapSfixed32Sfixed32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapSfixed64Sfixed64,
+    $core.Map<$core.int, $core.double>? mapInt32Float,
+    $core.Map<$core.int, $core.double>? mapInt32Double,
+    $core.Map<$core.bool, $core.bool>? mapBoolBool,
+    $core.Map<$core.String, $core.String>? mapStringString,
+    $core.Map<$core.String, $core.List<$core.int>>? mapStringBytes,
+    $core.Map<$core.String, TestAllTypesProto2_NestedMessage>? mapStringNestedMessage,
+    $core.Map<$core.String, ForeignMessageProto2>? mapStringForeignMessage,
+    $core.Map<$core.String, TestAllTypesProto2_NestedEnum>? mapStringNestedEnum,
+    $core.Map<$core.String, ForeignEnumProto2>? mapStringForeignEnum,
+    $core.Iterable<$core.int>? packedInt32,
+    $core.Iterable<$fixnum.Int64>? packedInt64,
+    $core.Iterable<$core.int>? packedUint32,
+    $core.Iterable<$fixnum.Int64>? packedUint64,
+    $core.Iterable<$core.int>? packedSint32,
+    $core.Iterable<$fixnum.Int64>? packedSint64,
+    $core.Iterable<$core.int>? packedFixed32,
+    $core.Iterable<$fixnum.Int64>? packedFixed64,
+    $core.Iterable<$core.int>? packedSfixed32,
+    $core.Iterable<$fixnum.Int64>? packedSfixed64,
+    $core.Iterable<$core.double>? packedFloat,
+    $core.Iterable<$core.double>? packedDouble,
+    $core.Iterable<$core.bool>? packedBool,
+    $core.Iterable<TestAllTypesProto2_NestedEnum>? packedNestedEnum,
+    $core.Iterable<$core.int>? unpackedInt32,
+    $core.Iterable<$fixnum.Int64>? unpackedInt64,
+    $core.Iterable<$core.int>? unpackedUint32,
+    $core.Iterable<$fixnum.Int64>? unpackedUint64,
+    $core.Iterable<$core.int>? unpackedSint32,
+    $core.Iterable<$fixnum.Int64>? unpackedSint64,
+    $core.Iterable<$core.int>? unpackedFixed32,
+    $core.Iterable<$fixnum.Int64>? unpackedFixed64,
+    $core.Iterable<$core.int>? unpackedSfixed32,
+    $core.Iterable<$fixnum.Int64>? unpackedSfixed64,
+    $core.Iterable<$core.double>? unpackedFloat,
+    $core.Iterable<$core.double>? unpackedDouble,
+    $core.Iterable<$core.bool>? unpackedBool,
+    $core.Iterable<TestAllTypesProto2_NestedEnum>? unpackedNestedEnum,
+    $core.int? oneofUint32,
+    TestAllTypesProto2_NestedMessage? oneofNestedMessage,
+    $core.String? oneofString,
+    $core.List<$core.int>? oneofBytes,
+    $core.bool? oneofBool,
+    $fixnum.Int64? oneofUint64,
+    $core.double? oneofFloat,
+    $core.double? oneofDouble,
+    TestAllTypesProto2_NestedEnum? oneofEnum,
+    TestAllTypesProto2_Data? data,
+    $core.int? defaultInt32,
+    $fixnum.Int64? defaultInt64,
+    $core.int? defaultUint32,
+    $fixnum.Int64? defaultUint64,
+    $core.int? defaultSint32,
+    $fixnum.Int64? defaultSint64,
+    $core.int? defaultFixed32,
+    $fixnum.Int64? defaultFixed64,
+    $core.int? defaultSfixed32,
+    $fixnum.Int64? defaultSfixed64,
+    $core.double? defaultFloat,
+    $core.double? defaultDouble,
+    $core.bool? defaultBool,
+    $core.String? defaultString,
+    $core.List<$core.int>? defaultBytes,
+    $core.int? fieldname1,
+    $core.int? fieldName2,
+    $core.int? fieldName3,
+    $core.int? fieldName4,
+    $core.int? field0name5,
+    $core.int? field0Name6,
+    $core.int? fieldName7,
+    $core.int? fieldName8,
+    $core.int? fieldName9,
+    $core.int? fieldName10,
+    $core.int? fIELDNAME11,
+    $core.int? fIELDName12,
+    $core.int? fieldName13,
+    $core.int? fieldName14,
+    $core.int? fieldName15,
+    $core.int? fieldName16,
+    $core.int? fieldName17,
+    $core.int? fieldName18,
+  }) {
+    final $result = create();
+    if (optionalInt32 != null) {
+      $result.optionalInt32 = optionalInt32;
+    }
+    if (optionalInt64 != null) {
+      $result.optionalInt64 = optionalInt64;
+    }
+    if (optionalUint32 != null) {
+      $result.optionalUint32 = optionalUint32;
+    }
+    if (optionalUint64 != null) {
+      $result.optionalUint64 = optionalUint64;
+    }
+    if (optionalSint32 != null) {
+      $result.optionalSint32 = optionalSint32;
+    }
+    if (optionalSint64 != null) {
+      $result.optionalSint64 = optionalSint64;
+    }
+    if (optionalFixed32 != null) {
+      $result.optionalFixed32 = optionalFixed32;
+    }
+    if (optionalFixed64 != null) {
+      $result.optionalFixed64 = optionalFixed64;
+    }
+    if (optionalSfixed32 != null) {
+      $result.optionalSfixed32 = optionalSfixed32;
+    }
+    if (optionalSfixed64 != null) {
+      $result.optionalSfixed64 = optionalSfixed64;
+    }
+    if (optionalFloat != null) {
+      $result.optionalFloat = optionalFloat;
+    }
+    if (optionalDouble != null) {
+      $result.optionalDouble = optionalDouble;
+    }
+    if (optionalBool != null) {
+      $result.optionalBool = optionalBool;
+    }
+    if (optionalString != null) {
+      $result.optionalString = optionalString;
+    }
+    if (optionalBytes != null) {
+      $result.optionalBytes = optionalBytes;
+    }
+    if (optionalNestedMessage != null) {
+      $result.optionalNestedMessage = optionalNestedMessage;
+    }
+    if (optionalForeignMessage != null) {
+      $result.optionalForeignMessage = optionalForeignMessage;
+    }
+    if (optionalNestedEnum != null) {
+      $result.optionalNestedEnum = optionalNestedEnum;
+    }
+    if (optionalForeignEnum != null) {
+      $result.optionalForeignEnum = optionalForeignEnum;
+    }
+    if (optionalStringPiece != null) {
+      $result.optionalStringPiece = optionalStringPiece;
+    }
+    if (optionalCord != null) {
+      $result.optionalCord = optionalCord;
+    }
+    if (recursiveMessage != null) {
+      $result.recursiveMessage = recursiveMessage;
+    }
+    if (repeatedInt32 != null) {
+      $result.repeatedInt32.addAll(repeatedInt32);
+    }
+    if (repeatedInt64 != null) {
+      $result.repeatedInt64.addAll(repeatedInt64);
+    }
+    if (repeatedUint32 != null) {
+      $result.repeatedUint32.addAll(repeatedUint32);
+    }
+    if (repeatedUint64 != null) {
+      $result.repeatedUint64.addAll(repeatedUint64);
+    }
+    if (repeatedSint32 != null) {
+      $result.repeatedSint32.addAll(repeatedSint32);
+    }
+    if (repeatedSint64 != null) {
+      $result.repeatedSint64.addAll(repeatedSint64);
+    }
+    if (repeatedFixed32 != null) {
+      $result.repeatedFixed32.addAll(repeatedFixed32);
+    }
+    if (repeatedFixed64 != null) {
+      $result.repeatedFixed64.addAll(repeatedFixed64);
+    }
+    if (repeatedSfixed32 != null) {
+      $result.repeatedSfixed32.addAll(repeatedSfixed32);
+    }
+    if (repeatedSfixed64 != null) {
+      $result.repeatedSfixed64.addAll(repeatedSfixed64);
+    }
+    if (repeatedFloat != null) {
+      $result.repeatedFloat.addAll(repeatedFloat);
+    }
+    if (repeatedDouble != null) {
+      $result.repeatedDouble.addAll(repeatedDouble);
+    }
+    if (repeatedBool != null) {
+      $result.repeatedBool.addAll(repeatedBool);
+    }
+    if (repeatedString != null) {
+      $result.repeatedString.addAll(repeatedString);
+    }
+    if (repeatedBytes != null) {
+      $result.repeatedBytes.addAll(repeatedBytes);
+    }
+    if (repeatedNestedMessage != null) {
+      $result.repeatedNestedMessage.addAll(repeatedNestedMessage);
+    }
+    if (repeatedForeignMessage != null) {
+      $result.repeatedForeignMessage.addAll(repeatedForeignMessage);
+    }
+    if (repeatedNestedEnum != null) {
+      $result.repeatedNestedEnum.addAll(repeatedNestedEnum);
+    }
+    if (repeatedForeignEnum != null) {
+      $result.repeatedForeignEnum.addAll(repeatedForeignEnum);
+    }
+    if (repeatedStringPiece != null) {
+      $result.repeatedStringPiece.addAll(repeatedStringPiece);
+    }
+    if (repeatedCord != null) {
+      $result.repeatedCord.addAll(repeatedCord);
+    }
+    if (mapInt32Int32 != null) {
+      $result.mapInt32Int32.addAll(mapInt32Int32);
+    }
+    if (mapInt64Int64 != null) {
+      $result.mapInt64Int64.addAll(mapInt64Int64);
+    }
+    if (mapUint32Uint32 != null) {
+      $result.mapUint32Uint32.addAll(mapUint32Uint32);
+    }
+    if (mapUint64Uint64 != null) {
+      $result.mapUint64Uint64.addAll(mapUint64Uint64);
+    }
+    if (mapSint32Sint32 != null) {
+      $result.mapSint32Sint32.addAll(mapSint32Sint32);
+    }
+    if (mapSint64Sint64 != null) {
+      $result.mapSint64Sint64.addAll(mapSint64Sint64);
+    }
+    if (mapFixed32Fixed32 != null) {
+      $result.mapFixed32Fixed32.addAll(mapFixed32Fixed32);
+    }
+    if (mapFixed64Fixed64 != null) {
+      $result.mapFixed64Fixed64.addAll(mapFixed64Fixed64);
+    }
+    if (mapSfixed32Sfixed32 != null) {
+      $result.mapSfixed32Sfixed32.addAll(mapSfixed32Sfixed32);
+    }
+    if (mapSfixed64Sfixed64 != null) {
+      $result.mapSfixed64Sfixed64.addAll(mapSfixed64Sfixed64);
+    }
+    if (mapInt32Float != null) {
+      $result.mapInt32Float.addAll(mapInt32Float);
+    }
+    if (mapInt32Double != null) {
+      $result.mapInt32Double.addAll(mapInt32Double);
+    }
+    if (mapBoolBool != null) {
+      $result.mapBoolBool.addAll(mapBoolBool);
+    }
+    if (mapStringString != null) {
+      $result.mapStringString.addAll(mapStringString);
+    }
+    if (mapStringBytes != null) {
+      $result.mapStringBytes.addAll(mapStringBytes);
+    }
+    if (mapStringNestedMessage != null) {
+      $result.mapStringNestedMessage.addAll(mapStringNestedMessage);
+    }
+    if (mapStringForeignMessage != null) {
+      $result.mapStringForeignMessage.addAll(mapStringForeignMessage);
+    }
+    if (mapStringNestedEnum != null) {
+      $result.mapStringNestedEnum.addAll(mapStringNestedEnum);
+    }
+    if (mapStringForeignEnum != null) {
+      $result.mapStringForeignEnum.addAll(mapStringForeignEnum);
+    }
+    if (packedInt32 != null) {
+      $result.packedInt32.addAll(packedInt32);
+    }
+    if (packedInt64 != null) {
+      $result.packedInt64.addAll(packedInt64);
+    }
+    if (packedUint32 != null) {
+      $result.packedUint32.addAll(packedUint32);
+    }
+    if (packedUint64 != null) {
+      $result.packedUint64.addAll(packedUint64);
+    }
+    if (packedSint32 != null) {
+      $result.packedSint32.addAll(packedSint32);
+    }
+    if (packedSint64 != null) {
+      $result.packedSint64.addAll(packedSint64);
+    }
+    if (packedFixed32 != null) {
+      $result.packedFixed32.addAll(packedFixed32);
+    }
+    if (packedFixed64 != null) {
+      $result.packedFixed64.addAll(packedFixed64);
+    }
+    if (packedSfixed32 != null) {
+      $result.packedSfixed32.addAll(packedSfixed32);
+    }
+    if (packedSfixed64 != null) {
+      $result.packedSfixed64.addAll(packedSfixed64);
+    }
+    if (packedFloat != null) {
+      $result.packedFloat.addAll(packedFloat);
+    }
+    if (packedDouble != null) {
+      $result.packedDouble.addAll(packedDouble);
+    }
+    if (packedBool != null) {
+      $result.packedBool.addAll(packedBool);
+    }
+    if (packedNestedEnum != null) {
+      $result.packedNestedEnum.addAll(packedNestedEnum);
+    }
+    if (unpackedInt32 != null) {
+      $result.unpackedInt32.addAll(unpackedInt32);
+    }
+    if (unpackedInt64 != null) {
+      $result.unpackedInt64.addAll(unpackedInt64);
+    }
+    if (unpackedUint32 != null) {
+      $result.unpackedUint32.addAll(unpackedUint32);
+    }
+    if (unpackedUint64 != null) {
+      $result.unpackedUint64.addAll(unpackedUint64);
+    }
+    if (unpackedSint32 != null) {
+      $result.unpackedSint32.addAll(unpackedSint32);
+    }
+    if (unpackedSint64 != null) {
+      $result.unpackedSint64.addAll(unpackedSint64);
+    }
+    if (unpackedFixed32 != null) {
+      $result.unpackedFixed32.addAll(unpackedFixed32);
+    }
+    if (unpackedFixed64 != null) {
+      $result.unpackedFixed64.addAll(unpackedFixed64);
+    }
+    if (unpackedSfixed32 != null) {
+      $result.unpackedSfixed32.addAll(unpackedSfixed32);
+    }
+    if (unpackedSfixed64 != null) {
+      $result.unpackedSfixed64.addAll(unpackedSfixed64);
+    }
+    if (unpackedFloat != null) {
+      $result.unpackedFloat.addAll(unpackedFloat);
+    }
+    if (unpackedDouble != null) {
+      $result.unpackedDouble.addAll(unpackedDouble);
+    }
+    if (unpackedBool != null) {
+      $result.unpackedBool.addAll(unpackedBool);
+    }
+    if (unpackedNestedEnum != null) {
+      $result.unpackedNestedEnum.addAll(unpackedNestedEnum);
+    }
+    if (oneofUint32 != null) {
+      $result.oneofUint32 = oneofUint32;
+    }
+    if (oneofNestedMessage != null) {
+      $result.oneofNestedMessage = oneofNestedMessage;
+    }
+    if (oneofString != null) {
+      $result.oneofString = oneofString;
+    }
+    if (oneofBytes != null) {
+      $result.oneofBytes = oneofBytes;
+    }
+    if (oneofBool != null) {
+      $result.oneofBool = oneofBool;
+    }
+    if (oneofUint64 != null) {
+      $result.oneofUint64 = oneofUint64;
+    }
+    if (oneofFloat != null) {
+      $result.oneofFloat = oneofFloat;
+    }
+    if (oneofDouble != null) {
+      $result.oneofDouble = oneofDouble;
+    }
+    if (oneofEnum != null) {
+      $result.oneofEnum = oneofEnum;
+    }
+    if (data != null) {
+      $result.data = data;
+    }
+    if (defaultInt32 != null) {
+      $result.defaultInt32 = defaultInt32;
+    }
+    if (defaultInt64 != null) {
+      $result.defaultInt64 = defaultInt64;
+    }
+    if (defaultUint32 != null) {
+      $result.defaultUint32 = defaultUint32;
+    }
+    if (defaultUint64 != null) {
+      $result.defaultUint64 = defaultUint64;
+    }
+    if (defaultSint32 != null) {
+      $result.defaultSint32 = defaultSint32;
+    }
+    if (defaultSint64 != null) {
+      $result.defaultSint64 = defaultSint64;
+    }
+    if (defaultFixed32 != null) {
+      $result.defaultFixed32 = defaultFixed32;
+    }
+    if (defaultFixed64 != null) {
+      $result.defaultFixed64 = defaultFixed64;
+    }
+    if (defaultSfixed32 != null) {
+      $result.defaultSfixed32 = defaultSfixed32;
+    }
+    if (defaultSfixed64 != null) {
+      $result.defaultSfixed64 = defaultSfixed64;
+    }
+    if (defaultFloat != null) {
+      $result.defaultFloat = defaultFloat;
+    }
+    if (defaultDouble != null) {
+      $result.defaultDouble = defaultDouble;
+    }
+    if (defaultBool != null) {
+      $result.defaultBool = defaultBool;
+    }
+    if (defaultString != null) {
+      $result.defaultString = defaultString;
+    }
+    if (defaultBytes != null) {
+      $result.defaultBytes = defaultBytes;
+    }
+    if (fieldname1 != null) {
+      $result.fieldname1 = fieldname1;
+    }
+    if (fieldName2 != null) {
+      $result.fieldName2 = fieldName2;
+    }
+    if (fieldName3 != null) {
+      $result.fieldName3 = fieldName3;
+    }
+    if (fieldName4 != null) {
+      $result.fieldName4 = fieldName4;
+    }
+    if (field0name5 != null) {
+      $result.field0name5 = field0name5;
+    }
+    if (field0Name6 != null) {
+      $result.field0Name6 = field0Name6;
+    }
+    if (fieldName7 != null) {
+      $result.fieldName7 = fieldName7;
+    }
+    if (fieldName8 != null) {
+      $result.fieldName8 = fieldName8;
+    }
+    if (fieldName9 != null) {
+      $result.fieldName9 = fieldName9;
+    }
+    if (fieldName10 != null) {
+      $result.fieldName10 = fieldName10;
+    }
+    if (fIELDNAME11 != null) {
+      $result.fIELDNAME11 = fIELDNAME11;
+    }
+    if (fIELDName12 != null) {
+      $result.fIELDName12 = fIELDName12;
+    }
+    if (fieldName13 != null) {
+      $result.fieldName13 = fieldName13;
+    }
+    if (fieldName14 != null) {
+      $result.fieldName14 = fieldName14;
+    }
+    if (fieldName15 != null) {
+      $result.fieldName15 = fieldName15;
+    }
+    if (fieldName16 != null) {
+      $result.fieldName16 = fieldName16;
+    }
+    if (fieldName17 != null) {
+      $result.fieldName17 = fieldName17;
+    }
+    if (fieldName18 != null) {
+      $result.fieldName18 = fieldName18;
+    }
+    return $result;
+  }
   TestAllTypesProto2._() : super();
   factory TestAllTypesProto2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypesProto2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -434,6 +1019,7 @@ class TestAllTypesProto2 extends $pb.GeneratedMessage {
   TestAllTypesProto2_OneofField whichOneofField() => _TestAllTypesProto2_OneofFieldByTag[$_whichOneof(0)]!;
   void clearOneofField() => clearField($_whichOneof(0));
 
+  /// Singular
   @$pb.TagNumber(1)
   $core.int get optionalInt32 => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -638,6 +1224,7 @@ class TestAllTypesProto2 extends $pb.GeneratedMessage {
   @$pb.TagNumber(27)
   TestAllTypesProto2 ensureRecursiveMessage() => $_ensure(21);
 
+  /// Repeated
   @$pb.TagNumber(31)
   $core.List<$core.int> get repeatedInt32 => $_getList(22);
 
@@ -701,6 +1288,7 @@ class TestAllTypesProto2 extends $pb.GeneratedMessage {
   @$pb.TagNumber(55)
   $core.List<$core.String> get repeatedCord => $_getList(42);
 
+  /// Map
   @$pb.TagNumber(56)
   $core.Map<$core.int, $core.int> get mapInt32Int32 => $_getMap(43);
 
@@ -758,6 +1346,7 @@ class TestAllTypesProto2 extends $pb.GeneratedMessage {
   @$pb.TagNumber(74)
   $core.Map<$core.String, ForeignEnumProto2> get mapStringForeignEnum => $_getMap(61);
 
+  /// Packed
   @$pb.TagNumber(75)
   $core.List<$core.int> get packedInt32 => $_getList(62);
 
@@ -800,6 +1389,7 @@ class TestAllTypesProto2 extends $pb.GeneratedMessage {
   @$pb.TagNumber(88)
   $core.List<TestAllTypesProto2_NestedEnum> get packedNestedEnum => $_getList(75);
 
+  /// Unpacked
   @$pb.TagNumber(89)
   $core.List<$core.int> get unpackedInt32 => $_getList(76);
 
@@ -934,6 +1524,7 @@ class TestAllTypesProto2 extends $pb.GeneratedMessage {
   @$pb.TagNumber(201)
   void clearData() => clearField(201);
 
+  /// default values
   @$pb.TagNumber(241)
   $core.int get defaultInt32 => $_getI(100, -123456789);
   @$pb.TagNumber(241)
@@ -1069,6 +1660,8 @@ class TestAllTypesProto2 extends $pb.GeneratedMessage {
   @$pb.TagNumber(255)
   void clearDefaultBytes() => clearField(255);
 
+  /// Test field-name-to-JSON-name convention.
+  /// (protobuf says names can be any valid C/C++ identifier.)
   @$pb.TagNumber(401)
   $core.int get fieldname1 => $_getIZ(115);
   @$pb.TagNumber(401)
@@ -1233,7 +1826,15 @@ class TestAllTypesProto2 extends $pb.GeneratedMessage {
 }
 
 class ForeignMessageProto2 extends $pb.GeneratedMessage {
-  factory ForeignMessageProto2() => create();
+  factory ForeignMessageProto2({
+    $core.int? c,
+  }) {
+    final $result = create();
+    if (c != null) {
+      $result.c = c;
+    }
+    return $result;
+  }
   ForeignMessageProto2._() : super();
   factory ForeignMessageProto2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ForeignMessageProto2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1275,7 +1876,15 @@ class ForeignMessageProto2 extends $pb.GeneratedMessage {
 }
 
 class UnknownToTestAllTypes_OptionalGroup extends $pb.GeneratedMessage {
-  factory UnknownToTestAllTypes_OptionalGroup() => create();
+  factory UnknownToTestAllTypes_OptionalGroup({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   UnknownToTestAllTypes_OptionalGroup._() : super();
   factory UnknownToTestAllTypes_OptionalGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UnknownToTestAllTypes_OptionalGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1317,7 +1926,35 @@ class UnknownToTestAllTypes_OptionalGroup extends $pb.GeneratedMessage {
 }
 
 class UnknownToTestAllTypes extends $pb.GeneratedMessage {
-  factory UnknownToTestAllTypes() => create();
+  factory UnknownToTestAllTypes({
+    $core.int? optionalInt32,
+    $core.String? optionalString,
+    ForeignMessageProto2? nestedMessage,
+    UnknownToTestAllTypes_OptionalGroup? optionalGroup,
+    $core.bool? optionalBool,
+    $core.Iterable<$core.int>? repeatedInt32,
+  }) {
+    final $result = create();
+    if (optionalInt32 != null) {
+      $result.optionalInt32 = optionalInt32;
+    }
+    if (optionalString != null) {
+      $result.optionalString = optionalString;
+    }
+    if (nestedMessage != null) {
+      $result.nestedMessage = nestedMessage;
+    }
+    if (optionalGroup != null) {
+      $result.optionalGroup = optionalGroup;
+    }
+    if (optionalBool != null) {
+      $result.optionalBool = optionalBool;
+    }
+    if (repeatedInt32 != null) {
+      $result.repeatedInt32.addAll(repeatedInt32);
+    }
+    return $result;
+  }
   UnknownToTestAllTypes._() : super();
   factory UnknownToTestAllTypes.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UnknownToTestAllTypes.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1469,7 +2106,15 @@ class EnumOnlyProto2 extends $pb.GeneratedMessage {
 }
 
 class OneStringProto2 extends $pb.GeneratedMessage {
-  factory OneStringProto2() => create();
+  factory OneStringProto2({
+    $core.String? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   OneStringProto2._() : super();
   factory OneStringProto2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OneStringProto2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1511,7 +2156,23 @@ class OneStringProto2 extends $pb.GeneratedMessage {
 }
 
 class ProtoWithKeywords extends $pb.GeneratedMessage {
-  factory ProtoWithKeywords() => create();
+  factory ProtoWithKeywords({
+    $core.int? inline,
+    $core.String? concept,
+    $core.Iterable<$core.String>? requires,
+  }) {
+    final $result = create();
+    if (inline != null) {
+      $result.inline = inline;
+    }
+    if (concept != null) {
+      $result.concept = concept;
+    }
+    if (requires != null) {
+      $result.requires.addAll(requires);
+    }
+    return $result;
+  }
   ProtoWithKeywords._() : super();
   factory ProtoWithKeywords.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ProtoWithKeywords.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1567,7 +2228,23 @@ class ProtoWithKeywords extends $pb.GeneratedMessage {
 }
 
 class TestAllRequiredTypesProto2_NestedMessage extends $pb.GeneratedMessage {
-  factory TestAllRequiredTypesProto2_NestedMessage() => create();
+  factory TestAllRequiredTypesProto2_NestedMessage({
+    $core.int? a,
+    TestAllRequiredTypesProto2? corecursive,
+    TestAllRequiredTypesProto2? optionalCorecursive,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (corecursive != null) {
+      $result.corecursive = corecursive;
+    }
+    if (optionalCorecursive != null) {
+      $result.optionalCorecursive = optionalCorecursive;
+    }
+    return $result;
+  }
   TestAllRequiredTypesProto2_NestedMessage._() : super();
   factory TestAllRequiredTypesProto2_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllRequiredTypesProto2_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1631,8 +2308,21 @@ class TestAllRequiredTypesProto2_NestedMessage extends $pb.GeneratedMessage {
   TestAllRequiredTypesProto2 ensureOptionalCorecursive() => $_ensure(2);
 }
 
+/// groups
 class TestAllRequiredTypesProto2_Data extends $pb.GeneratedMessage {
-  factory TestAllRequiredTypesProto2_Data() => create();
+  factory TestAllRequiredTypesProto2_Data({
+    $core.int? groupInt32,
+    $core.int? groupUint32,
+  }) {
+    final $result = create();
+    if (groupInt32 != null) {
+      $result.groupInt32 = groupInt32;
+    }
+    if (groupUint32 != null) {
+      $result.groupUint32 = groupUint32;
+    }
+    return $result;
+  }
   TestAllRequiredTypesProto2_Data._() : super();
   factory TestAllRequiredTypesProto2_Data.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllRequiredTypesProto2_Data.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1682,7 +2372,8 @@ class TestAllRequiredTypesProto2_Data extends $pb.GeneratedMessage {
   void clearGroupUint32() => clearField(203);
 }
 
-class TestAllRequiredTypesProto2_MessageSetCorrect extends $pb.GeneratedMessage {
+/// message_set test case.
+class TestAllRequiredTypesProto2_MessageSetCorrect extends $pb.$_MessageSet {
   factory TestAllRequiredTypesProto2_MessageSetCorrect() => create();
   TestAllRequiredTypesProto2_MessageSetCorrect._() : super();
   factory TestAllRequiredTypesProto2_MessageSetCorrect.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
@@ -1715,7 +2406,15 @@ class TestAllRequiredTypesProto2_MessageSetCorrect extends $pb.GeneratedMessage 
 }
 
 class TestAllRequiredTypesProto2_MessageSetCorrectExtension1 extends $pb.GeneratedMessage {
-  factory TestAllRequiredTypesProto2_MessageSetCorrectExtension1() => create();
+  factory TestAllRequiredTypesProto2_MessageSetCorrectExtension1({
+    $core.String? str,
+  }) {
+    final $result = create();
+    if (str != null) {
+      $result.str = str;
+    }
+    return $result;
+  }
   TestAllRequiredTypesProto2_MessageSetCorrectExtension1._() : super();
   factory TestAllRequiredTypesProto2_MessageSetCorrectExtension1.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllRequiredTypesProto2_MessageSetCorrectExtension1.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1757,7 +2456,15 @@ class TestAllRequiredTypesProto2_MessageSetCorrectExtension1 extends $pb.Generat
 }
 
 class TestAllRequiredTypesProto2_MessageSetCorrectExtension2 extends $pb.GeneratedMessage {
-  factory TestAllRequiredTypesProto2_MessageSetCorrectExtension2() => create();
+  factory TestAllRequiredTypesProto2_MessageSetCorrectExtension2({
+    $core.int? i,
+  }) {
+    final $result = create();
+    if (i != null) {
+      $result.i = i;
+    }
+    return $result;
+  }
   TestAllRequiredTypesProto2_MessageSetCorrectExtension2._() : super();
   factory TestAllRequiredTypesProto2_MessageSetCorrectExtension2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllRequiredTypesProto2_MessageSetCorrectExtension2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1799,7 +2506,167 @@ class TestAllRequiredTypesProto2_MessageSetCorrectExtension2 extends $pb.Generat
 }
 
 class TestAllRequiredTypesProto2 extends $pb.GeneratedMessage {
-  factory TestAllRequiredTypesProto2() => create();
+  factory TestAllRequiredTypesProto2({
+    $core.int? requiredInt32,
+    $fixnum.Int64? requiredInt64,
+    $core.int? requiredUint32,
+    $fixnum.Int64? requiredUint64,
+    $core.int? requiredSint32,
+    $fixnum.Int64? requiredSint64,
+    $core.int? requiredFixed32,
+    $fixnum.Int64? requiredFixed64,
+    $core.int? requiredSfixed32,
+    $fixnum.Int64? requiredSfixed64,
+    $core.double? requiredFloat,
+    $core.double? requiredDouble,
+    $core.bool? requiredBool,
+    $core.String? requiredString,
+    $core.List<$core.int>? requiredBytes,
+    TestAllRequiredTypesProto2_NestedMessage? requiredNestedMessage,
+    ForeignMessageProto2? requiredForeignMessage,
+    TestAllRequiredTypesProto2_NestedEnum? requiredNestedEnum,
+    ForeignEnumProto2? requiredForeignEnum,
+    $core.String? requiredStringPiece,
+    $core.String? requiredCord,
+    TestAllRequiredTypesProto2? recursiveMessage,
+    TestAllRequiredTypesProto2? optionalRecursiveMessage,
+    TestAllRequiredTypesProto2_Data? data,
+    $core.int? defaultInt32,
+    $fixnum.Int64? defaultInt64,
+    $core.int? defaultUint32,
+    $fixnum.Int64? defaultUint64,
+    $core.int? defaultSint32,
+    $fixnum.Int64? defaultSint64,
+    $core.int? defaultFixed32,
+    $fixnum.Int64? defaultFixed64,
+    $core.int? defaultSfixed32,
+    $fixnum.Int64? defaultSfixed64,
+    $core.double? defaultFloat,
+    $core.double? defaultDouble,
+    $core.bool? defaultBool,
+    $core.String? defaultString,
+    $core.List<$core.int>? defaultBytes,
+  }) {
+    final $result = create();
+    if (requiredInt32 != null) {
+      $result.requiredInt32 = requiredInt32;
+    }
+    if (requiredInt64 != null) {
+      $result.requiredInt64 = requiredInt64;
+    }
+    if (requiredUint32 != null) {
+      $result.requiredUint32 = requiredUint32;
+    }
+    if (requiredUint64 != null) {
+      $result.requiredUint64 = requiredUint64;
+    }
+    if (requiredSint32 != null) {
+      $result.requiredSint32 = requiredSint32;
+    }
+    if (requiredSint64 != null) {
+      $result.requiredSint64 = requiredSint64;
+    }
+    if (requiredFixed32 != null) {
+      $result.requiredFixed32 = requiredFixed32;
+    }
+    if (requiredFixed64 != null) {
+      $result.requiredFixed64 = requiredFixed64;
+    }
+    if (requiredSfixed32 != null) {
+      $result.requiredSfixed32 = requiredSfixed32;
+    }
+    if (requiredSfixed64 != null) {
+      $result.requiredSfixed64 = requiredSfixed64;
+    }
+    if (requiredFloat != null) {
+      $result.requiredFloat = requiredFloat;
+    }
+    if (requiredDouble != null) {
+      $result.requiredDouble = requiredDouble;
+    }
+    if (requiredBool != null) {
+      $result.requiredBool = requiredBool;
+    }
+    if (requiredString != null) {
+      $result.requiredString = requiredString;
+    }
+    if (requiredBytes != null) {
+      $result.requiredBytes = requiredBytes;
+    }
+    if (requiredNestedMessage != null) {
+      $result.requiredNestedMessage = requiredNestedMessage;
+    }
+    if (requiredForeignMessage != null) {
+      $result.requiredForeignMessage = requiredForeignMessage;
+    }
+    if (requiredNestedEnum != null) {
+      $result.requiredNestedEnum = requiredNestedEnum;
+    }
+    if (requiredForeignEnum != null) {
+      $result.requiredForeignEnum = requiredForeignEnum;
+    }
+    if (requiredStringPiece != null) {
+      $result.requiredStringPiece = requiredStringPiece;
+    }
+    if (requiredCord != null) {
+      $result.requiredCord = requiredCord;
+    }
+    if (recursiveMessage != null) {
+      $result.recursiveMessage = recursiveMessage;
+    }
+    if (optionalRecursiveMessage != null) {
+      $result.optionalRecursiveMessage = optionalRecursiveMessage;
+    }
+    if (data != null) {
+      $result.data = data;
+    }
+    if (defaultInt32 != null) {
+      $result.defaultInt32 = defaultInt32;
+    }
+    if (defaultInt64 != null) {
+      $result.defaultInt64 = defaultInt64;
+    }
+    if (defaultUint32 != null) {
+      $result.defaultUint32 = defaultUint32;
+    }
+    if (defaultUint64 != null) {
+      $result.defaultUint64 = defaultUint64;
+    }
+    if (defaultSint32 != null) {
+      $result.defaultSint32 = defaultSint32;
+    }
+    if (defaultSint64 != null) {
+      $result.defaultSint64 = defaultSint64;
+    }
+    if (defaultFixed32 != null) {
+      $result.defaultFixed32 = defaultFixed32;
+    }
+    if (defaultFixed64 != null) {
+      $result.defaultFixed64 = defaultFixed64;
+    }
+    if (defaultSfixed32 != null) {
+      $result.defaultSfixed32 = defaultSfixed32;
+    }
+    if (defaultSfixed64 != null) {
+      $result.defaultSfixed64 = defaultSfixed64;
+    }
+    if (defaultFloat != null) {
+      $result.defaultFloat = defaultFloat;
+    }
+    if (defaultDouble != null) {
+      $result.defaultDouble = defaultDouble;
+    }
+    if (defaultBool != null) {
+      $result.defaultBool = defaultBool;
+    }
+    if (defaultString != null) {
+      $result.defaultString = defaultString;
+    }
+    if (defaultBytes != null) {
+      $result.defaultBytes = defaultBytes;
+    }
+    return $result;
+  }
   TestAllRequiredTypesProto2._() : super();
   factory TestAllRequiredTypesProto2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllRequiredTypesProto2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1868,6 +2735,7 @@ class TestAllRequiredTypesProto2 extends $pb.GeneratedMessage {
   static TestAllRequiredTypesProto2 getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TestAllRequiredTypesProto2>(create);
   static TestAllRequiredTypesProto2? _defaultInstance;
 
+  /// Singular
   @$pb.TagNumber(1)
   $core.int get requiredInt32 => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -2092,6 +2960,7 @@ class TestAllRequiredTypesProto2 extends $pb.GeneratedMessage {
   @$pb.TagNumber(201)
   void clearData() => clearField(201);
 
+  /// default values
   @$pb.TagNumber(241)
   $core.int get defaultInt32 => $_getI(24, -123456789);
   @$pb.TagNumber(241)

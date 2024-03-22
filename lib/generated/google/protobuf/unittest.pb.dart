@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -15,14 +15,22 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'unittest.pbenum.dart';
-import 'unittest_import.pb.dart' as $95;
-import 'unittest_import.pbenum.dart' as $95;
-import 'unittest_import_public.pb.dart' as $96;
+import 'unittest_import.pb.dart' as $97;
+import 'unittest_import.pbenum.dart' as $97;
+import 'unittest_import_public.pb.dart' as $98;
 
 export 'unittest.pbenum.dart';
 
 class TestAllTypes_NestedMessage extends $pb.GeneratedMessage {
-  factory TestAllTypes_NestedMessage() => create();
+  factory TestAllTypes_NestedMessage({
+    $core.int? bb,
+  }) {
+    final $result = create();
+    if (bb != null) {
+      $result.bb = bb;
+    }
+    return $result;
+  }
   TestAllTypes_NestedMessage._() : super();
   factory TestAllTypes_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypes_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -53,6 +61,9 @@ class TestAllTypes_NestedMessage extends $pb.GeneratedMessage {
   static TestAllTypes_NestedMessage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TestAllTypes_NestedMessage>(create);
   static TestAllTypes_NestedMessage? _defaultInstance;
 
+  /// The field name "b" fails to compile in proto1 because it conflicts with
+  /// a local variable named "b" in one of the generated methods.  Doh.
+  /// This file needs to compile in proto1 to test backwards-compatibility.
   @$pb.TagNumber(1)
   $core.int get bb => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -64,7 +75,15 @@ class TestAllTypes_NestedMessage extends $pb.GeneratedMessage {
 }
 
 class TestAllTypes_OptionalGroup extends $pb.GeneratedMessage {
-  factory TestAllTypes_OptionalGroup() => create();
+  factory TestAllTypes_OptionalGroup({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   TestAllTypes_OptionalGroup._() : super();
   factory TestAllTypes_OptionalGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypes_OptionalGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -106,7 +125,15 @@ class TestAllTypes_OptionalGroup extends $pb.GeneratedMessage {
 }
 
 class TestAllTypes_RepeatedGroup extends $pb.GeneratedMessage {
-  factory TestAllTypes_RepeatedGroup() => create();
+  factory TestAllTypes_RepeatedGroup({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   TestAllTypes_RepeatedGroup._() : super();
   factory TestAllTypes_RepeatedGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypes_RepeatedGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -155,8 +182,318 @@ enum TestAllTypes_OneofField {
   notSet
 }
 
+/// This proto includes every type of field in both singular and repeated
+/// forms.
 class TestAllTypes extends $pb.GeneratedMessage {
-  factory TestAllTypes() => create();
+  factory TestAllTypes({
+    $core.int? optionalInt32,
+    $fixnum.Int64? optionalInt64,
+    $core.int? optionalUint32,
+    $fixnum.Int64? optionalUint64,
+    $core.int? optionalSint32,
+    $fixnum.Int64? optionalSint64,
+    $core.int? optionalFixed32,
+    $fixnum.Int64? optionalFixed64,
+    $core.int? optionalSfixed32,
+    $fixnum.Int64? optionalSfixed64,
+    $core.double? optionalFloat,
+    $core.double? optionalDouble,
+    $core.bool? optionalBool,
+    $core.String? optionalString,
+    $core.List<$core.int>? optionalBytes,
+    TestAllTypes_OptionalGroup? optionalGroup,
+    TestAllTypes_NestedMessage? optionalNestedMessage,
+    ForeignMessage? optionalForeignMessage,
+    $97.ImportMessage? optionalImportMessage,
+    TestAllTypes_NestedEnum? optionalNestedEnum,
+    ForeignEnum? optionalForeignEnum,
+    $97.ImportEnum? optionalImportEnum,
+    $core.String? optionalStringPiece,
+    $core.String? optionalCord,
+    $98.PublicImportMessage? optionalPublicImportMessage,
+    TestAllTypes_NestedMessage? optionalLazyMessage,
+    TestAllTypes_NestedMessage? optionalUnverifiedLazyMessage,
+    $core.Iterable<$core.int>? repeatedInt32,
+    $core.Iterable<$fixnum.Int64>? repeatedInt64,
+    $core.Iterable<$core.int>? repeatedUint32,
+    $core.Iterable<$fixnum.Int64>? repeatedUint64,
+    $core.Iterable<$core.int>? repeatedSint32,
+    $core.Iterable<$fixnum.Int64>? repeatedSint64,
+    $core.Iterable<$core.int>? repeatedFixed32,
+    $core.Iterable<$fixnum.Int64>? repeatedFixed64,
+    $core.Iterable<$core.int>? repeatedSfixed32,
+    $core.Iterable<$fixnum.Int64>? repeatedSfixed64,
+    $core.Iterable<$core.double>? repeatedFloat,
+    $core.Iterable<$core.double>? repeatedDouble,
+    $core.Iterable<$core.bool>? repeatedBool,
+    $core.Iterable<$core.String>? repeatedString,
+    $core.Iterable<$core.List<$core.int>>? repeatedBytes,
+    $core.Iterable<TestAllTypes_RepeatedGroup>? repeatedGroup,
+    $core.Iterable<TestAllTypes_NestedMessage>? repeatedNestedMessage,
+    $core.Iterable<ForeignMessage>? repeatedForeignMessage,
+    $core.Iterable<$97.ImportMessage>? repeatedImportMessage,
+    $core.Iterable<TestAllTypes_NestedEnum>? repeatedNestedEnum,
+    $core.Iterable<ForeignEnum>? repeatedForeignEnum,
+    $core.Iterable<$97.ImportEnum>? repeatedImportEnum,
+    $core.Iterable<$core.String>? repeatedStringPiece,
+    $core.Iterable<$core.String>? repeatedCord,
+    $core.Iterable<TestAllTypes_NestedMessage>? repeatedLazyMessage,
+    $core.int? defaultInt32,
+    $fixnum.Int64? defaultInt64,
+    $core.int? defaultUint32,
+    $fixnum.Int64? defaultUint64,
+    $core.int? defaultSint32,
+    $fixnum.Int64? defaultSint64,
+    $core.int? defaultFixed32,
+    $fixnum.Int64? defaultFixed64,
+    $core.int? defaultSfixed32,
+    $fixnum.Int64? defaultSfixed64,
+    $core.double? defaultFloat,
+    $core.double? defaultDouble,
+    $core.bool? defaultBool,
+    $core.String? defaultString,
+    $core.List<$core.int>? defaultBytes,
+    TestAllTypes_NestedEnum? defaultNestedEnum,
+    ForeignEnum? defaultForeignEnum,
+    $97.ImportEnum? defaultImportEnum,
+    $core.String? defaultStringPiece,
+    $core.String? defaultCord,
+    $core.int? oneofUint32,
+    TestAllTypes_NestedMessage? oneofNestedMessage,
+    $core.String? oneofString,
+    $core.List<$core.int>? oneofBytes,
+  }) {
+    final $result = create();
+    if (optionalInt32 != null) {
+      $result.optionalInt32 = optionalInt32;
+    }
+    if (optionalInt64 != null) {
+      $result.optionalInt64 = optionalInt64;
+    }
+    if (optionalUint32 != null) {
+      $result.optionalUint32 = optionalUint32;
+    }
+    if (optionalUint64 != null) {
+      $result.optionalUint64 = optionalUint64;
+    }
+    if (optionalSint32 != null) {
+      $result.optionalSint32 = optionalSint32;
+    }
+    if (optionalSint64 != null) {
+      $result.optionalSint64 = optionalSint64;
+    }
+    if (optionalFixed32 != null) {
+      $result.optionalFixed32 = optionalFixed32;
+    }
+    if (optionalFixed64 != null) {
+      $result.optionalFixed64 = optionalFixed64;
+    }
+    if (optionalSfixed32 != null) {
+      $result.optionalSfixed32 = optionalSfixed32;
+    }
+    if (optionalSfixed64 != null) {
+      $result.optionalSfixed64 = optionalSfixed64;
+    }
+    if (optionalFloat != null) {
+      $result.optionalFloat = optionalFloat;
+    }
+    if (optionalDouble != null) {
+      $result.optionalDouble = optionalDouble;
+    }
+    if (optionalBool != null) {
+      $result.optionalBool = optionalBool;
+    }
+    if (optionalString != null) {
+      $result.optionalString = optionalString;
+    }
+    if (optionalBytes != null) {
+      $result.optionalBytes = optionalBytes;
+    }
+    if (optionalGroup != null) {
+      $result.optionalGroup = optionalGroup;
+    }
+    if (optionalNestedMessage != null) {
+      $result.optionalNestedMessage = optionalNestedMessage;
+    }
+    if (optionalForeignMessage != null) {
+      $result.optionalForeignMessage = optionalForeignMessage;
+    }
+    if (optionalImportMessage != null) {
+      $result.optionalImportMessage = optionalImportMessage;
+    }
+    if (optionalNestedEnum != null) {
+      $result.optionalNestedEnum = optionalNestedEnum;
+    }
+    if (optionalForeignEnum != null) {
+      $result.optionalForeignEnum = optionalForeignEnum;
+    }
+    if (optionalImportEnum != null) {
+      $result.optionalImportEnum = optionalImportEnum;
+    }
+    if (optionalStringPiece != null) {
+      $result.optionalStringPiece = optionalStringPiece;
+    }
+    if (optionalCord != null) {
+      $result.optionalCord = optionalCord;
+    }
+    if (optionalPublicImportMessage != null) {
+      $result.optionalPublicImportMessage = optionalPublicImportMessage;
+    }
+    if (optionalLazyMessage != null) {
+      $result.optionalLazyMessage = optionalLazyMessage;
+    }
+    if (optionalUnverifiedLazyMessage != null) {
+      $result.optionalUnverifiedLazyMessage = optionalUnverifiedLazyMessage;
+    }
+    if (repeatedInt32 != null) {
+      $result.repeatedInt32.addAll(repeatedInt32);
+    }
+    if (repeatedInt64 != null) {
+      $result.repeatedInt64.addAll(repeatedInt64);
+    }
+    if (repeatedUint32 != null) {
+      $result.repeatedUint32.addAll(repeatedUint32);
+    }
+    if (repeatedUint64 != null) {
+      $result.repeatedUint64.addAll(repeatedUint64);
+    }
+    if (repeatedSint32 != null) {
+      $result.repeatedSint32.addAll(repeatedSint32);
+    }
+    if (repeatedSint64 != null) {
+      $result.repeatedSint64.addAll(repeatedSint64);
+    }
+    if (repeatedFixed32 != null) {
+      $result.repeatedFixed32.addAll(repeatedFixed32);
+    }
+    if (repeatedFixed64 != null) {
+      $result.repeatedFixed64.addAll(repeatedFixed64);
+    }
+    if (repeatedSfixed32 != null) {
+      $result.repeatedSfixed32.addAll(repeatedSfixed32);
+    }
+    if (repeatedSfixed64 != null) {
+      $result.repeatedSfixed64.addAll(repeatedSfixed64);
+    }
+    if (repeatedFloat != null) {
+      $result.repeatedFloat.addAll(repeatedFloat);
+    }
+    if (repeatedDouble != null) {
+      $result.repeatedDouble.addAll(repeatedDouble);
+    }
+    if (repeatedBool != null) {
+      $result.repeatedBool.addAll(repeatedBool);
+    }
+    if (repeatedString != null) {
+      $result.repeatedString.addAll(repeatedString);
+    }
+    if (repeatedBytes != null) {
+      $result.repeatedBytes.addAll(repeatedBytes);
+    }
+    if (repeatedGroup != null) {
+      $result.repeatedGroup.addAll(repeatedGroup);
+    }
+    if (repeatedNestedMessage != null) {
+      $result.repeatedNestedMessage.addAll(repeatedNestedMessage);
+    }
+    if (repeatedForeignMessage != null) {
+      $result.repeatedForeignMessage.addAll(repeatedForeignMessage);
+    }
+    if (repeatedImportMessage != null) {
+      $result.repeatedImportMessage.addAll(repeatedImportMessage);
+    }
+    if (repeatedNestedEnum != null) {
+      $result.repeatedNestedEnum.addAll(repeatedNestedEnum);
+    }
+    if (repeatedForeignEnum != null) {
+      $result.repeatedForeignEnum.addAll(repeatedForeignEnum);
+    }
+    if (repeatedImportEnum != null) {
+      $result.repeatedImportEnum.addAll(repeatedImportEnum);
+    }
+    if (repeatedStringPiece != null) {
+      $result.repeatedStringPiece.addAll(repeatedStringPiece);
+    }
+    if (repeatedCord != null) {
+      $result.repeatedCord.addAll(repeatedCord);
+    }
+    if (repeatedLazyMessage != null) {
+      $result.repeatedLazyMessage.addAll(repeatedLazyMessage);
+    }
+    if (defaultInt32 != null) {
+      $result.defaultInt32 = defaultInt32;
+    }
+    if (defaultInt64 != null) {
+      $result.defaultInt64 = defaultInt64;
+    }
+    if (defaultUint32 != null) {
+      $result.defaultUint32 = defaultUint32;
+    }
+    if (defaultUint64 != null) {
+      $result.defaultUint64 = defaultUint64;
+    }
+    if (defaultSint32 != null) {
+      $result.defaultSint32 = defaultSint32;
+    }
+    if (defaultSint64 != null) {
+      $result.defaultSint64 = defaultSint64;
+    }
+    if (defaultFixed32 != null) {
+      $result.defaultFixed32 = defaultFixed32;
+    }
+    if (defaultFixed64 != null) {
+      $result.defaultFixed64 = defaultFixed64;
+    }
+    if (defaultSfixed32 != null) {
+      $result.defaultSfixed32 = defaultSfixed32;
+    }
+    if (defaultSfixed64 != null) {
+      $result.defaultSfixed64 = defaultSfixed64;
+    }
+    if (defaultFloat != null) {
+      $result.defaultFloat = defaultFloat;
+    }
+    if (defaultDouble != null) {
+      $result.defaultDouble = defaultDouble;
+    }
+    if (defaultBool != null) {
+      $result.defaultBool = defaultBool;
+    }
+    if (defaultString != null) {
+      $result.defaultString = defaultString;
+    }
+    if (defaultBytes != null) {
+      $result.defaultBytes = defaultBytes;
+    }
+    if (defaultNestedEnum != null) {
+      $result.defaultNestedEnum = defaultNestedEnum;
+    }
+    if (defaultForeignEnum != null) {
+      $result.defaultForeignEnum = defaultForeignEnum;
+    }
+    if (defaultImportEnum != null) {
+      $result.defaultImportEnum = defaultImportEnum;
+    }
+    if (defaultStringPiece != null) {
+      $result.defaultStringPiece = defaultStringPiece;
+    }
+    if (defaultCord != null) {
+      $result.defaultCord = defaultCord;
+    }
+    if (oneofUint32 != null) {
+      $result.oneofUint32 = oneofUint32;
+    }
+    if (oneofNestedMessage != null) {
+      $result.oneofNestedMessage = oneofNestedMessage;
+    }
+    if (oneofString != null) {
+      $result.oneofString = oneofString;
+    }
+    if (oneofBytes != null) {
+      $result.oneofBytes = oneofBytes;
+    }
+    return $result;
+  }
   TestAllTypes._() : super();
   factory TestAllTypes.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypes.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -188,13 +525,13 @@ class TestAllTypes extends $pb.GeneratedMessage {
     ..a<TestAllTypes_OptionalGroup>(16, _omitFieldNames ? '' : 'optionalgroup', $pb.PbFieldType.OG, subBuilder: TestAllTypes_OptionalGroup.create, defaultOrMaker: TestAllTypes_OptionalGroup.getDefault)
     ..aOM<TestAllTypes_NestedMessage>(18, _omitFieldNames ? '' : 'optionalNestedMessage', subBuilder: TestAllTypes_NestedMessage.create)
     ..aOM<ForeignMessage>(19, _omitFieldNames ? '' : 'optionalForeignMessage', subBuilder: ForeignMessage.create)
-    ..aOM<$95.ImportMessage>(20, _omitFieldNames ? '' : 'optionalImportMessage', subBuilder: $95.ImportMessage.create)
+    ..aOM<$97.ImportMessage>(20, _omitFieldNames ? '' : 'optionalImportMessage', subBuilder: $97.ImportMessage.create)
     ..e<TestAllTypes_NestedEnum>(21, _omitFieldNames ? '' : 'optionalNestedEnum', $pb.PbFieldType.OE, defaultOrMaker: TestAllTypes_NestedEnum.FOO, valueOf: TestAllTypes_NestedEnum.valueOf, enumValues: TestAllTypes_NestedEnum.values)
     ..e<ForeignEnum>(22, _omitFieldNames ? '' : 'optionalForeignEnum', $pb.PbFieldType.OE, defaultOrMaker: ForeignEnum.FOREIGN_FOO, valueOf: ForeignEnum.valueOf, enumValues: ForeignEnum.values)
-    ..e<$95.ImportEnum>(23, _omitFieldNames ? '' : 'optionalImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $95.ImportEnum.IMPORT_FOO, valueOf: $95.ImportEnum.valueOf, enumValues: $95.ImportEnum.values)
+    ..e<$97.ImportEnum>(23, _omitFieldNames ? '' : 'optionalImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $97.ImportEnum.IMPORT_FOO, valueOf: $97.ImportEnum.valueOf, enumValues: $97.ImportEnum.values)
     ..aOS(24, _omitFieldNames ? '' : 'optionalStringPiece')
     ..aOS(25, _omitFieldNames ? '' : 'optionalCord')
-    ..aOM<$96.PublicImportMessage>(26, _omitFieldNames ? '' : 'optionalPublicImportMessage', subBuilder: $96.PublicImportMessage.create)
+    ..aOM<$98.PublicImportMessage>(26, _omitFieldNames ? '' : 'optionalPublicImportMessage', subBuilder: $98.PublicImportMessage.create)
     ..aOM<TestAllTypes_NestedMessage>(27, _omitFieldNames ? '' : 'optionalLazyMessage', subBuilder: TestAllTypes_NestedMessage.create)
     ..aOM<TestAllTypes_NestedMessage>(28, _omitFieldNames ? '' : 'optionalUnverifiedLazyMessage', subBuilder: TestAllTypes_NestedMessage.create)
     ..p<$core.int>(31, _omitFieldNames ? '' : 'repeatedInt32', $pb.PbFieldType.P3)
@@ -215,10 +552,10 @@ class TestAllTypes extends $pb.GeneratedMessage {
     ..pc<TestAllTypes_RepeatedGroup>(46, _omitFieldNames ? '' : 'repeatedgroup', $pb.PbFieldType.PG, subBuilder: TestAllTypes_RepeatedGroup.create)
     ..pc<TestAllTypes_NestedMessage>(48, _omitFieldNames ? '' : 'repeatedNestedMessage', $pb.PbFieldType.PM, subBuilder: TestAllTypes_NestedMessage.create)
     ..pc<ForeignMessage>(49, _omitFieldNames ? '' : 'repeatedForeignMessage', $pb.PbFieldType.PM, subBuilder: ForeignMessage.create)
-    ..pc<$95.ImportMessage>(50, _omitFieldNames ? '' : 'repeatedImportMessage', $pb.PbFieldType.PM, subBuilder: $95.ImportMessage.create)
+    ..pc<$97.ImportMessage>(50, _omitFieldNames ? '' : 'repeatedImportMessage', $pb.PbFieldType.PM, subBuilder: $97.ImportMessage.create)
     ..pc<TestAllTypes_NestedEnum>(51, _omitFieldNames ? '' : 'repeatedNestedEnum', $pb.PbFieldType.PE, valueOf: TestAllTypes_NestedEnum.valueOf, enumValues: TestAllTypes_NestedEnum.values, defaultEnumValue: TestAllTypes_NestedEnum.FOO)
     ..pc<ForeignEnum>(52, _omitFieldNames ? '' : 'repeatedForeignEnum', $pb.PbFieldType.PE, valueOf: ForeignEnum.valueOf, enumValues: ForeignEnum.values, defaultEnumValue: ForeignEnum.FOREIGN_FOO)
-    ..pc<$95.ImportEnum>(53, _omitFieldNames ? '' : 'repeatedImportEnum', $pb.PbFieldType.PE, valueOf: $95.ImportEnum.valueOf, enumValues: $95.ImportEnum.values, defaultEnumValue: $95.ImportEnum.IMPORT_FOO)
+    ..pc<$97.ImportEnum>(53, _omitFieldNames ? '' : 'repeatedImportEnum', $pb.PbFieldType.PE, valueOf: $97.ImportEnum.valueOf, enumValues: $97.ImportEnum.values, defaultEnumValue: $97.ImportEnum.IMPORT_FOO)
     ..pPS(54, _omitFieldNames ? '' : 'repeatedStringPiece')
     ..pPS(55, _omitFieldNames ? '' : 'repeatedCord')
     ..pc<TestAllTypes_NestedMessage>(57, _omitFieldNames ? '' : 'repeatedLazyMessage', $pb.PbFieldType.PM, subBuilder: TestAllTypes_NestedMessage.create)
@@ -239,7 +576,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(75, _omitFieldNames ? '' : 'defaultBytes', $pb.PbFieldType.OY, defaultOrMaker: () => <$core.int>[0x77,0x6f,0x72,0x6c,0x64])
     ..e<TestAllTypes_NestedEnum>(81, _omitFieldNames ? '' : 'defaultNestedEnum', $pb.PbFieldType.OE, defaultOrMaker: TestAllTypes_NestedEnum.BAR, valueOf: TestAllTypes_NestedEnum.valueOf, enumValues: TestAllTypes_NestedEnum.values)
     ..e<ForeignEnum>(82, _omitFieldNames ? '' : 'defaultForeignEnum', $pb.PbFieldType.OE, defaultOrMaker: ForeignEnum.FOREIGN_BAR, valueOf: ForeignEnum.valueOf, enumValues: ForeignEnum.values)
-    ..e<$95.ImportEnum>(83, _omitFieldNames ? '' : 'defaultImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $95.ImportEnum.IMPORT_BAR, valueOf: $95.ImportEnum.valueOf, enumValues: $95.ImportEnum.values)
+    ..e<$97.ImportEnum>(83, _omitFieldNames ? '' : 'defaultImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $97.ImportEnum.IMPORT_BAR, valueOf: $97.ImportEnum.valueOf, enumValues: $97.ImportEnum.values)
     ..a<$core.String>(84, _omitFieldNames ? '' : 'defaultStringPiece', $pb.PbFieldType.OS, defaultOrMaker: 'abc')
     ..a<$core.String>(85, _omitFieldNames ? '' : 'defaultCord', $pb.PbFieldType.OS, defaultOrMaker: '123')
     ..a<$core.int>(111, _omitFieldNames ? '' : 'oneofUint32', $pb.PbFieldType.OU3)
@@ -273,6 +610,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
   TestAllTypes_OneofField whichOneofField() => _TestAllTypes_OneofFieldByTag[$_whichOneof(0)]!;
   void clearOneofField() => clearField($_whichOneof(0));
 
+  /// Singular
   @$pb.TagNumber(1)
   $core.int get optionalInt32 => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -440,15 +778,15 @@ class TestAllTypes extends $pb.GeneratedMessage {
   ForeignMessage ensureOptionalForeignMessage() => $_ensure(17);
 
   @$pb.TagNumber(20)
-  $95.ImportMessage get optionalImportMessage => $_getN(18);
+  $97.ImportMessage get optionalImportMessage => $_getN(18);
   @$pb.TagNumber(20)
-  set optionalImportMessage($95.ImportMessage v) { setField(20, v); }
+  set optionalImportMessage($97.ImportMessage v) { setField(20, v); }
   @$pb.TagNumber(20)
   $core.bool hasOptionalImportMessage() => $_has(18);
   @$pb.TagNumber(20)
   void clearOptionalImportMessage() => clearField(20);
   @$pb.TagNumber(20)
-  $95.ImportMessage ensureOptionalImportMessage() => $_ensure(18);
+  $97.ImportMessage ensureOptionalImportMessage() => $_ensure(18);
 
   @$pb.TagNumber(21)
   TestAllTypes_NestedEnum get optionalNestedEnum => $_getN(19);
@@ -469,9 +807,9 @@ class TestAllTypes extends $pb.GeneratedMessage {
   void clearOptionalForeignEnum() => clearField(22);
 
   @$pb.TagNumber(23)
-  $95.ImportEnum get optionalImportEnum => $_getN(21);
+  $97.ImportEnum get optionalImportEnum => $_getN(21);
   @$pb.TagNumber(23)
-  set optionalImportEnum($95.ImportEnum v) { setField(23, v); }
+  set optionalImportEnum($97.ImportEnum v) { setField(23, v); }
   @$pb.TagNumber(23)
   $core.bool hasOptionalImportEnum() => $_has(21);
   @$pb.TagNumber(23)
@@ -495,16 +833,17 @@ class TestAllTypes extends $pb.GeneratedMessage {
   @$pb.TagNumber(25)
   void clearOptionalCord() => clearField(25);
 
+  /// Defined in unittest_import_public.proto
   @$pb.TagNumber(26)
-  $96.PublicImportMessage get optionalPublicImportMessage => $_getN(24);
+  $98.PublicImportMessage get optionalPublicImportMessage => $_getN(24);
   @$pb.TagNumber(26)
-  set optionalPublicImportMessage($96.PublicImportMessage v) { setField(26, v); }
+  set optionalPublicImportMessage($98.PublicImportMessage v) { setField(26, v); }
   @$pb.TagNumber(26)
   $core.bool hasOptionalPublicImportMessage() => $_has(24);
   @$pb.TagNumber(26)
   void clearOptionalPublicImportMessage() => clearField(26);
   @$pb.TagNumber(26)
-  $96.PublicImportMessage ensureOptionalPublicImportMessage() => $_ensure(24);
+  $98.PublicImportMessage ensureOptionalPublicImportMessage() => $_ensure(24);
 
   @$pb.TagNumber(27)
   TestAllTypes_NestedMessage get optionalLazyMessage => $_getN(25);
@@ -528,6 +867,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
   @$pb.TagNumber(28)
   TestAllTypes_NestedMessage ensureOptionalUnverifiedLazyMessage() => $_ensure(26);
 
+  /// Repeated
   @$pb.TagNumber(31)
   $core.List<$core.int> get repeatedInt32 => $_getList(27);
 
@@ -583,7 +923,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
   $core.List<ForeignMessage> get repeatedForeignMessage => $_getList(44);
 
   @$pb.TagNumber(50)
-  $core.List<$95.ImportMessage> get repeatedImportMessage => $_getList(45);
+  $core.List<$97.ImportMessage> get repeatedImportMessage => $_getList(45);
 
   @$pb.TagNumber(51)
   $core.List<TestAllTypes_NestedEnum> get repeatedNestedEnum => $_getList(46);
@@ -592,7 +932,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
   $core.List<ForeignEnum> get repeatedForeignEnum => $_getList(47);
 
   @$pb.TagNumber(53)
-  $core.List<$95.ImportEnum> get repeatedImportEnum => $_getList(48);
+  $core.List<$97.ImportEnum> get repeatedImportEnum => $_getList(48);
 
   @$pb.TagNumber(54)
   $core.List<$core.String> get repeatedStringPiece => $_getList(49);
@@ -603,6 +943,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
   @$pb.TagNumber(57)
   $core.List<TestAllTypes_NestedMessage> get repeatedLazyMessage => $_getList(51);
 
+  /// Singular with defaults
   @$pb.TagNumber(61)
   $core.int get defaultInt32 => $_getI(52, 41);
   @$pb.TagNumber(61)
@@ -757,9 +1098,9 @@ class TestAllTypes extends $pb.GeneratedMessage {
   void clearDefaultForeignEnum() => clearField(82);
 
   @$pb.TagNumber(83)
-  $95.ImportEnum get defaultImportEnum => $_getN(69);
+  $97.ImportEnum get defaultImportEnum => $_getN(69);
   @$pb.TagNumber(83)
-  set defaultImportEnum($95.ImportEnum v) { setField(83, v); }
+  set defaultImportEnum($97.ImportEnum v) { setField(83, v); }
   @$pb.TagNumber(83)
   $core.bool hasDefaultImportEnum() => $_has(69);
   @$pb.TagNumber(83)
@@ -822,8 +1163,33 @@ class TestAllTypes extends $pb.GeneratedMessage {
   void clearOneofBytes() => clearField(114);
 }
 
+/// This proto includes a recursively nested message.
 class NestedTestAllTypes extends $pb.GeneratedMessage {
-  factory NestedTestAllTypes() => create();
+  factory NestedTestAllTypes({
+    NestedTestAllTypes? child,
+    TestAllTypes? payload,
+    $core.Iterable<NestedTestAllTypes>? repeatedChild,
+    NestedTestAllTypes? lazyChild,
+    TestAllTypes? eagerChild,
+  }) {
+    final $result = create();
+    if (child != null) {
+      $result.child = child;
+    }
+    if (payload != null) {
+      $result.payload = payload;
+    }
+    if (repeatedChild != null) {
+      $result.repeatedChild.addAll(repeatedChild);
+    }
+    if (lazyChild != null) {
+      $result.lazyChild = lazyChild;
+    }
+    if (eagerChild != null) {
+      $result.eagerChild = eagerChild;
+    }
+    return $result;
+  }
   NestedTestAllTypes._() : super();
   factory NestedTestAllTypes.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NestedTestAllTypes.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -912,7 +1278,39 @@ enum TestDeprecatedFields_OneofFields {
 }
 
 class TestDeprecatedFields extends $pb.GeneratedMessage {
-  factory TestDeprecatedFields() => create();
+  factory TestDeprecatedFields({
+  @$core.Deprecated('This field is deprecated.')
+    $core.int? deprecatedInt32,
+  @$core.Deprecated('This field is deprecated.')
+    $core.int? deprecatedInt32InOneof,
+  @$core.Deprecated('This field is deprecated.')
+    TestAllTypes_NestedMessage? deprecatedMessage,
+  @$core.Deprecated('This field is deprecated.')
+    $core.Iterable<$core.String>? deprecatedRepeatedString,
+    TestDeprecatedFields? nested,
+  }) {
+    final $result = create();
+    if (deprecatedInt32 != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.deprecatedInt32 = deprecatedInt32;
+    }
+    if (deprecatedInt32InOneof != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.deprecatedInt32InOneof = deprecatedInt32InOneof;
+    }
+    if (deprecatedMessage != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.deprecatedMessage = deprecatedMessage;
+    }
+    if (deprecatedRepeatedString != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.deprecatedRepeatedString.addAll(deprecatedRepeatedString);
+    }
+    if (nested != null) {
+      $result.nested = nested;
+    }
+    return $result;
+  }
   TestDeprecatedFields._() : super();
   factory TestDeprecatedFields.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestDeprecatedFields.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1045,8 +1443,22 @@ class TestDeprecatedMessage extends $pb.GeneratedMessage {
   static TestDeprecatedMessage? _defaultInstance;
 }
 
+/// Define these after TestAllTypes to make sure the compiler can handle
+/// that.
 class ForeignMessage extends $pb.GeneratedMessage {
-  factory ForeignMessage() => create();
+  factory ForeignMessage({
+    $core.int? c,
+    $core.int? d,
+  }) {
+    final $result = create();
+    if (c != null) {
+      $result.c = c;
+    }
+    if (d != null) {
+      $result.d = d;
+    }
+    return $result;
+  }
   ForeignMessage._() : super();
   factory ForeignMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ForeignMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1162,7 +1574,15 @@ class TestAllExtensions extends $pb.GeneratedMessage {
 }
 
 class OptionalGroup_extension extends $pb.GeneratedMessage {
-  factory OptionalGroup_extension() => create();
+  factory OptionalGroup_extension({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   OptionalGroup_extension._() : super();
   factory OptionalGroup_extension.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OptionalGroup_extension.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1204,7 +1624,15 @@ class OptionalGroup_extension extends $pb.GeneratedMessage {
 }
 
 class RepeatedGroup_extension extends $pb.GeneratedMessage {
-  factory RepeatedGroup_extension() => create();
+  factory RepeatedGroup_extension({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   RepeatedGroup_extension._() : super();
   factory RepeatedGroup_extension.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RepeatedGroup_extension.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1246,7 +1674,19 @@ class RepeatedGroup_extension extends $pb.GeneratedMessage {
 }
 
 class TestMixedFieldsAndExtensions extends $pb.GeneratedMessage {
-  factory TestMixedFieldsAndExtensions() => create();
+  factory TestMixedFieldsAndExtensions({
+    $core.int? a,
+    $core.Iterable<$core.int>? b,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (b != null) {
+      $result.b.addAll(b);
+    }
+    return $result;
+  }
   TestMixedFieldsAndExtensions._() : super();
   factory TestMixedFieldsAndExtensions.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMixedFieldsAndExtensions.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1294,7 +1734,19 @@ class TestMixedFieldsAndExtensions extends $pb.GeneratedMessage {
 }
 
 class TestGroup_OptionalGroup extends $pb.GeneratedMessage {
-  factory TestGroup_OptionalGroup() => create();
+  factory TestGroup_OptionalGroup({
+    $core.int? a,
+    $core.int? zz,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (zz != null) {
+      $result.zz = zz;
+    }
+    return $result;
+  }
   TestGroup_OptionalGroup._() : super();
   factory TestGroup_OptionalGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestGroup_OptionalGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1346,7 +1798,19 @@ class TestGroup_OptionalGroup extends $pb.GeneratedMessage {
 }
 
 class TestGroup extends $pb.GeneratedMessage {
-  factory TestGroup() => create();
+  factory TestGroup({
+    TestGroup_OptionalGroup? optionalGroup,
+    ForeignEnum? optionalForeignEnum,
+  }) {
+    final $result = create();
+    if (optionalGroup != null) {
+      $result.optionalGroup = optionalGroup;
+    }
+    if (optionalForeignEnum != null) {
+      $result.optionalForeignEnum = optionalForeignEnum;
+    }
+    return $result;
+  }
   TestGroup._() : super();
   factory TestGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1430,7 +1894,15 @@ class TestGroupExtension extends $pb.GeneratedMessage {
 }
 
 class TestNestedExtension_OptionalGroup_extension extends $pb.GeneratedMessage {
-  factory TestNestedExtension_OptionalGroup_extension() => create();
+  factory TestNestedExtension_OptionalGroup_extension({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   TestNestedExtension_OptionalGroup_extension._() : super();
   factory TestNestedExtension_OptionalGroup_extension.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestNestedExtension_OptionalGroup_extension.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1508,7 +1980,23 @@ class TestNestedExtension extends $pb.GeneratedMessage {
 }
 
 class TestChildExtension extends $pb.GeneratedMessage {
-  factory TestChildExtension() => create();
+  factory TestChildExtension({
+    $core.String? a,
+    $core.String? b,
+    TestAllExtensions? optionalExtension,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (b != null) {
+      $result.b = b;
+    }
+    if (optionalExtension != null) {
+      $result.optionalExtension = optionalExtension;
+    }
+    return $result;
+  }
   TestChildExtension._() : super();
   factory TestChildExtension.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestChildExtension.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1571,7 +2059,19 @@ class TestChildExtension extends $pb.GeneratedMessage {
 }
 
 class TestChildExtensionData_NestedTestAllExtensionsData_NestedDynamicExtensions extends $pb.GeneratedMessage {
-  factory TestChildExtensionData_NestedTestAllExtensionsData_NestedDynamicExtensions() => create();
+  factory TestChildExtensionData_NestedTestAllExtensionsData_NestedDynamicExtensions({
+    $core.int? a,
+    $core.int? b,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (b != null) {
+      $result.b = b;
+    }
+    return $result;
+  }
   TestChildExtensionData_NestedTestAllExtensionsData_NestedDynamicExtensions._() : super();
   factory TestChildExtensionData_NestedTestAllExtensionsData_NestedDynamicExtensions.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestChildExtensionData_NestedTestAllExtensionsData_NestedDynamicExtensions.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1623,7 +2123,15 @@ class TestChildExtensionData_NestedTestAllExtensionsData_NestedDynamicExtensions
 }
 
 class TestChildExtensionData_NestedTestAllExtensionsData extends $pb.GeneratedMessage {
-  factory TestChildExtensionData_NestedTestAllExtensionsData() => create();
+  factory TestChildExtensionData_NestedTestAllExtensionsData({
+    TestChildExtensionData_NestedTestAllExtensionsData_NestedDynamicExtensions? dynamic,
+  }) {
+    final $result = create();
+    if (dynamic != null) {
+      $result.dynamic = dynamic;
+    }
+    return $result;
+  }
   TestChildExtensionData_NestedTestAllExtensionsData._() : super();
   factory TestChildExtensionData_NestedTestAllExtensionsData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestChildExtensionData_NestedTestAllExtensionsData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1666,8 +2174,26 @@ class TestChildExtensionData_NestedTestAllExtensionsData extends $pb.GeneratedMe
   TestChildExtensionData_NestedTestAllExtensionsData_NestedDynamicExtensions ensureDynamic() => $_ensure(0);
 }
 
+/// Emulates wireformat data of TestChildExtension with dynamic extension
+/// (DynamicExtension).
 class TestChildExtensionData extends $pb.GeneratedMessage {
-  factory TestChildExtensionData() => create();
+  factory TestChildExtensionData({
+    $core.String? a,
+    $core.String? b,
+    TestChildExtensionData_NestedTestAllExtensionsData? optionalExtension,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (b != null) {
+      $result.b = b;
+    }
+    if (optionalExtension != null) {
+      $result.optionalExtension = optionalExtension;
+    }
+    return $result;
+  }
   TestChildExtensionData._() : super();
   factory TestChildExtensionData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestChildExtensionData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1731,7 +2257,19 @@ class TestChildExtensionData extends $pb.GeneratedMessage {
 }
 
 class TestNestedChildExtension extends $pb.GeneratedMessage {
-  factory TestNestedChildExtension() => create();
+  factory TestNestedChildExtension({
+    $core.int? a,
+    TestChildExtension? child,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (child != null) {
+      $result.child = child;
+    }
+    return $result;
+  }
   TestNestedChildExtension._() : super();
   factory TestNestedChildExtension.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestNestedChildExtension.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1783,8 +2321,22 @@ class TestNestedChildExtension extends $pb.GeneratedMessage {
   TestChildExtension ensureChild() => $_ensure(1);
 }
 
+/// Emulates wireformat data of TestNestedChildExtension with dynamic extension
+/// (DynamicExtension).
 class TestNestedChildExtensionData extends $pb.GeneratedMessage {
-  factory TestNestedChildExtensionData() => create();
+  factory TestNestedChildExtensionData({
+    $core.int? a,
+    TestChildExtensionData? child,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (child != null) {
+      $result.child = child;
+    }
+    return $result;
+  }
   TestNestedChildExtensionData._() : super();
   factory TestNestedChildExtensionData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestNestedChildExtensionData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1837,8 +2389,153 @@ class TestNestedChildExtensionData extends $pb.GeneratedMessage {
   TestChildExtensionData ensureChild() => $_ensure(1);
 }
 
+/// We have separate messages for testing required fields because it's
+/// annoying to have to fill in required fields in TestProto in order to
+/// do anything with it.  Note that we don't need to test every type of
+/// required filed because the code output is basically identical to
+/// optional fields for all types.
 class TestRequired extends $pb.GeneratedMessage {
-  factory TestRequired() => create();
+  factory TestRequired({
+    $core.int? a,
+    $core.int? dummy2,
+    $core.int? b,
+    $core.int? dummy4,
+    $core.int? dummy5,
+    $core.int? dummy6,
+    $core.int? dummy7,
+    $core.int? dummy8,
+    $core.int? dummy9,
+    $core.int? dummy10,
+    $core.int? dummy11,
+    $core.int? dummy12,
+    $core.int? dummy13,
+    $core.int? dummy14,
+    $core.int? dummy15,
+    $core.int? dummy16,
+    $core.int? dummy17,
+    $core.int? dummy18,
+    $core.int? dummy19,
+    $core.int? dummy20,
+    $core.int? dummy21,
+    $core.int? dummy22,
+    $core.int? dummy23,
+    $core.int? dummy24,
+    $core.int? dummy25,
+    $core.int? dummy26,
+    $core.int? dummy27,
+    $core.int? dummy28,
+    $core.int? dummy29,
+    $core.int? dummy30,
+    $core.int? dummy31,
+    $core.int? dummy32,
+    $core.int? c,
+    ForeignMessage? optionalForeign,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (dummy2 != null) {
+      $result.dummy2 = dummy2;
+    }
+    if (b != null) {
+      $result.b = b;
+    }
+    if (dummy4 != null) {
+      $result.dummy4 = dummy4;
+    }
+    if (dummy5 != null) {
+      $result.dummy5 = dummy5;
+    }
+    if (dummy6 != null) {
+      $result.dummy6 = dummy6;
+    }
+    if (dummy7 != null) {
+      $result.dummy7 = dummy7;
+    }
+    if (dummy8 != null) {
+      $result.dummy8 = dummy8;
+    }
+    if (dummy9 != null) {
+      $result.dummy9 = dummy9;
+    }
+    if (dummy10 != null) {
+      $result.dummy10 = dummy10;
+    }
+    if (dummy11 != null) {
+      $result.dummy11 = dummy11;
+    }
+    if (dummy12 != null) {
+      $result.dummy12 = dummy12;
+    }
+    if (dummy13 != null) {
+      $result.dummy13 = dummy13;
+    }
+    if (dummy14 != null) {
+      $result.dummy14 = dummy14;
+    }
+    if (dummy15 != null) {
+      $result.dummy15 = dummy15;
+    }
+    if (dummy16 != null) {
+      $result.dummy16 = dummy16;
+    }
+    if (dummy17 != null) {
+      $result.dummy17 = dummy17;
+    }
+    if (dummy18 != null) {
+      $result.dummy18 = dummy18;
+    }
+    if (dummy19 != null) {
+      $result.dummy19 = dummy19;
+    }
+    if (dummy20 != null) {
+      $result.dummy20 = dummy20;
+    }
+    if (dummy21 != null) {
+      $result.dummy21 = dummy21;
+    }
+    if (dummy22 != null) {
+      $result.dummy22 = dummy22;
+    }
+    if (dummy23 != null) {
+      $result.dummy23 = dummy23;
+    }
+    if (dummy24 != null) {
+      $result.dummy24 = dummy24;
+    }
+    if (dummy25 != null) {
+      $result.dummy25 = dummy25;
+    }
+    if (dummy26 != null) {
+      $result.dummy26 = dummy26;
+    }
+    if (dummy27 != null) {
+      $result.dummy27 = dummy27;
+    }
+    if (dummy28 != null) {
+      $result.dummy28 = dummy28;
+    }
+    if (dummy29 != null) {
+      $result.dummy29 = dummy29;
+    }
+    if (dummy30 != null) {
+      $result.dummy30 = dummy30;
+    }
+    if (dummy31 != null) {
+      $result.dummy31 = dummy31;
+    }
+    if (dummy32 != null) {
+      $result.dummy32 = dummy32;
+    }
+    if (c != null) {
+      $result.c = c;
+    }
+    if (optionalForeign != null) {
+      $result.optionalForeign = optionalForeign;
+    }
+    return $result;
+  }
   TestRequired._() : super();
   factory TestRequired.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestRequired.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1930,6 +2627,8 @@ class TestRequired extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearB() => clearField(3);
 
+  /// Pad the field count to 32 so that we can test that IsInitialized()
+  /// properly checks multiple elements of has_bits_.
   @$pb.TagNumber(4)
   $core.int get dummy4 => $_getIZ(3);
   @$pb.TagNumber(4)
@@ -2200,6 +2899,7 @@ class TestRequired extends $pb.GeneratedMessage {
   @$pb.TagNumber(33)
   void clearC() => clearField(33);
 
+  /// Add an optional child message to make this non-trivial for go/pdlazy.
   @$pb.TagNumber(34)
   ForeignMessage get optionalForeign => $_getN(33);
   @$pb.TagNumber(34)
@@ -2213,7 +2913,27 @@ class TestRequired extends $pb.GeneratedMessage {
 }
 
 class TestRequiredForeign extends $pb.GeneratedMessage {
-  factory TestRequiredForeign() => create();
+  factory TestRequiredForeign({
+    TestRequired? optionalMessage,
+    $core.Iterable<TestRequired>? repeatedMessage,
+    $core.int? dummy,
+    NestedTestAllTypes? optionalLazyMessage,
+  }) {
+    final $result = create();
+    if (optionalMessage != null) {
+      $result.optionalMessage = optionalMessage;
+    }
+    if (repeatedMessage != null) {
+      $result.repeatedMessage.addAll(repeatedMessage);
+    }
+    if (dummy != null) {
+      $result.dummy = dummy;
+    }
+    if (optionalLazyMessage != null) {
+      $result.optionalLazyMessage = optionalLazyMessage;
+    }
+    return $result;
+  }
   TestRequiredForeign._() : super();
   factory TestRequiredForeign.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestRequiredForeign.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2269,6 +2989,7 @@ class TestRequiredForeign extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDummy() => clearField(3);
 
+  /// Missing required fields must not affect verification of child messages.
   @$pb.TagNumber(4)
   NestedTestAllTypes get optionalLazyMessage => $_getN(3);
   @$pb.TagNumber(4)
@@ -2282,7 +3003,23 @@ class TestRequiredForeign extends $pb.GeneratedMessage {
 }
 
 class TestRequiredMessage extends $pb.GeneratedMessage {
-  factory TestRequiredMessage() => create();
+  factory TestRequiredMessage({
+    TestRequired? optionalMessage,
+    $core.Iterable<TestRequired>? repeatedMessage,
+    TestRequired? requiredMessage,
+  }) {
+    final $result = create();
+    if (optionalMessage != null) {
+      $result.optionalMessage = optionalMessage;
+    }
+    if (repeatedMessage != null) {
+      $result.repeatedMessage.addAll(repeatedMessage);
+    }
+    if (requiredMessage != null) {
+      $result.requiredMessage = requiredMessage;
+    }
+    return $result;
+  }
   TestRequiredMessage._() : super();
   factory TestRequiredMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestRequiredMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2341,7 +3078,23 @@ class TestRequiredMessage extends $pb.GeneratedMessage {
 }
 
 class TestNestedRequiredForeign extends $pb.GeneratedMessage {
-  factory TestNestedRequiredForeign() => create();
+  factory TestNestedRequiredForeign({
+    TestNestedRequiredForeign? child,
+    TestRequiredForeign? payload,
+    $core.int? dummy,
+  }) {
+    final $result = create();
+    if (child != null) {
+      $result.child = child;
+    }
+    if (payload != null) {
+      $result.payload = payload;
+    }
+    if (dummy != null) {
+      $result.dummy = dummy;
+    }
+    return $result;
+  }
   TestNestedRequiredForeign._() : super();
   factory TestNestedRequiredForeign.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestNestedRequiredForeign.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2405,8 +3158,17 @@ class TestNestedRequiredForeign extends $pb.GeneratedMessage {
   void clearDummy() => clearField(3);
 }
 
+/// Test that we can use NestedMessage from outside TestAllTypes.
 class TestForeignNested extends $pb.GeneratedMessage {
-  factory TestForeignNested() => create();
+  factory TestForeignNested({
+    TestAllTypes_NestedMessage? foreignNested,
+  }) {
+    final $result = create();
+    if (foreignNested != null) {
+      $result.foreignNested = foreignNested;
+    }
+    return $result;
+  }
   TestForeignNested._() : super();
   factory TestForeignNested.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestForeignNested.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2449,6 +3211,7 @@ class TestForeignNested extends $pb.GeneratedMessage {
   TestAllTypes_NestedMessage ensureForeignNested() => $_ensure(0);
 }
 
+/// TestEmptyMessage is used to test unknown field support.
 class TestEmptyMessage extends $pb.GeneratedMessage {
   factory TestEmptyMessage() => create();
   TestEmptyMessage._() : super();
@@ -2481,6 +3244,8 @@ class TestEmptyMessage extends $pb.GeneratedMessage {
   static TestEmptyMessage? _defaultInstance;
 }
 
+/// Like above, but declare all field numbers as potential extensions.  No
+/// actual extensions should ever be defined for this type.
 class TestEmptyMessageWithExtensions extends $pb.GeneratedMessage {
   factory TestEmptyMessageWithExtensions() => create();
   TestEmptyMessageWithExtensions._() : super();
@@ -2514,7 +3279,15 @@ class TestEmptyMessageWithExtensions extends $pb.GeneratedMessage {
 }
 
 class TestPickleNestedMessage_NestedMessage_NestedNestedMessage extends $pb.GeneratedMessage {
-  factory TestPickleNestedMessage_NestedMessage_NestedNestedMessage() => create();
+  factory TestPickleNestedMessage_NestedMessage_NestedNestedMessage({
+    $core.int? cc,
+  }) {
+    final $result = create();
+    if (cc != null) {
+      $result.cc = cc;
+    }
+    return $result;
+  }
   TestPickleNestedMessage_NestedMessage_NestedNestedMessage._() : super();
   factory TestPickleNestedMessage_NestedMessage_NestedNestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestPickleNestedMessage_NestedMessage_NestedNestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2556,7 +3329,15 @@ class TestPickleNestedMessage_NestedMessage_NestedNestedMessage extends $pb.Gene
 }
 
 class TestPickleNestedMessage_NestedMessage extends $pb.GeneratedMessage {
-  factory TestPickleNestedMessage_NestedMessage() => create();
+  factory TestPickleNestedMessage_NestedMessage({
+    $core.int? bb,
+  }) {
+    final $result = create();
+    if (bb != null) {
+      $result.bb = bb;
+    }
+    return $result;
+  }
   TestPickleNestedMessage_NestedMessage._() : super();
   factory TestPickleNestedMessage_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestPickleNestedMessage_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2597,6 +3378,7 @@ class TestPickleNestedMessage_NestedMessage extends $pb.GeneratedMessage {
   void clearBb() => clearField(1);
 }
 
+/// Needed for a Python test.
 class TestPickleNestedMessage extends $pb.GeneratedMessage {
   factory TestPickleNestedMessage() => create();
   TestPickleNestedMessage._() : super();
@@ -2661,8 +3443,21 @@ class TestMultipleExtensionRanges extends $pb.GeneratedMessage {
   static TestMultipleExtensionRanges? _defaultInstance;
 }
 
+/// Test that really large tag numbers don't break anything.
 class TestReallyLargeTagNumber extends $pb.GeneratedMessage {
-  factory TestReallyLargeTagNumber() => create();
+  factory TestReallyLargeTagNumber({
+    $core.int? a,
+    $core.int? bb,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (bb != null) {
+      $result.bb = bb;
+    }
+    return $result;
+  }
   TestReallyLargeTagNumber._() : super();
   factory TestReallyLargeTagNumber.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestReallyLargeTagNumber.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2694,6 +3489,8 @@ class TestReallyLargeTagNumber extends $pb.GeneratedMessage {
   static TestReallyLargeTagNumber getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TestReallyLargeTagNumber>(create);
   static TestReallyLargeTagNumber? _defaultInstance;
 
+  /// The largest possible tag number is 2^28 - 1, since the wire format uses
+  /// three bits to communicate wire type.
   @$pb.TagNumber(1)
   $core.int get a => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -2714,7 +3511,19 @@ class TestReallyLargeTagNumber extends $pb.GeneratedMessage {
 }
 
 class TestRecursiveMessage extends $pb.GeneratedMessage {
-  factory TestRecursiveMessage() => create();
+  factory TestRecursiveMessage({
+    TestRecursiveMessage? a,
+    $core.int? i,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (i != null) {
+      $result.i = i;
+    }
+    return $result;
+  }
   TestRecursiveMessage._() : super();
   factory TestRecursiveMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestRecursiveMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2768,7 +3577,15 @@ class TestRecursiveMessage extends $pb.GeneratedMessage {
 }
 
 class TestMutualRecursionA_SubMessage extends $pb.GeneratedMessage {
-  factory TestMutualRecursionA_SubMessage() => create();
+  factory TestMutualRecursionA_SubMessage({
+    TestMutualRecursionB? b,
+  }) {
+    final $result = create();
+    if (b != null) {
+      $result.b = b;
+    }
+    return $result;
+  }
   TestMutualRecursionA_SubMessage._() : super();
   factory TestMutualRecursionA_SubMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMutualRecursionA_SubMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2812,7 +3629,19 @@ class TestMutualRecursionA_SubMessage extends $pb.GeneratedMessage {
 }
 
 class TestMutualRecursionA_SubGroup extends $pb.GeneratedMessage {
-  factory TestMutualRecursionA_SubGroup() => create();
+  factory TestMutualRecursionA_SubGroup({
+    TestMutualRecursionA_SubMessage? subMessage,
+    TestAllTypes? notInThisScc,
+  }) {
+    final $result = create();
+    if (subMessage != null) {
+      $result.subMessage = subMessage;
+    }
+    if (notInThisScc != null) {
+      $result.notInThisScc = notInThisScc;
+    }
+    return $result;
+  }
   TestMutualRecursionA_SubGroup._() : super();
   factory TestMutualRecursionA_SubGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMutualRecursionA_SubGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2868,7 +3697,15 @@ class TestMutualRecursionA_SubGroup extends $pb.GeneratedMessage {
 }
 
 class TestMutualRecursionA_SubGroupR extends $pb.GeneratedMessage {
-  factory TestMutualRecursionA_SubGroupR() => create();
+  factory TestMutualRecursionA_SubGroupR({
+    TestAllTypes? payload,
+  }) {
+    final $result = create();
+    if (payload != null) {
+      $result.payload = payload;
+    }
+    return $result;
+  }
   TestMutualRecursionA_SubGroupR._() : super();
   factory TestMutualRecursionA_SubGroupR.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMutualRecursionA_SubGroupR.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2911,8 +3748,25 @@ class TestMutualRecursionA_SubGroupR extends $pb.GeneratedMessage {
   TestAllTypes ensurePayload() => $_ensure(0);
 }
 
+/// Test that mutual recursion works.
 class TestMutualRecursionA extends $pb.GeneratedMessage {
-  factory TestMutualRecursionA() => create();
+  factory TestMutualRecursionA({
+    TestMutualRecursionB? bb,
+    TestMutualRecursionA_SubGroup? subGroup,
+    $core.Iterable<TestMutualRecursionA_SubGroupR>? subGroupR,
+  }) {
+    final $result = create();
+    if (bb != null) {
+      $result.bb = bb;
+    }
+    if (subGroup != null) {
+      $result.subGroup = subGroup;
+    }
+    if (subGroupR != null) {
+      $result.subGroupR.addAll(subGroupR);
+    }
+    return $result;
+  }
   TestMutualRecursionA._() : super();
   factory TestMutualRecursionA.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMutualRecursionA.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2970,7 +3824,19 @@ class TestMutualRecursionA extends $pb.GeneratedMessage {
 }
 
 class TestMutualRecursionB extends $pb.GeneratedMessage {
-  factory TestMutualRecursionB() => create();
+  factory TestMutualRecursionB({
+    TestMutualRecursionA? a,
+    $core.int? optionalInt32,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (optionalInt32 != null) {
+      $result.optionalInt32 = optionalInt32;
+    }
+    return $result;
+  }
   TestMutualRecursionB._() : super();
   factory TestMutualRecursionB.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMutualRecursionB.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3024,7 +3890,15 @@ class TestMutualRecursionB extends $pb.GeneratedMessage {
 }
 
 class TestIsInitialized_SubMessage_SubGroup extends $pb.GeneratedMessage {
-  factory TestIsInitialized_SubMessage_SubGroup() => create();
+  factory TestIsInitialized_SubMessage_SubGroup({
+    $core.int? i,
+  }) {
+    final $result = create();
+    if (i != null) {
+      $result.i = i;
+    }
+    return $result;
+  }
   TestIsInitialized_SubMessage_SubGroup._() : super();
   factory TestIsInitialized_SubMessage_SubGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestIsInitialized_SubMessage_SubGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3065,7 +3939,15 @@ class TestIsInitialized_SubMessage_SubGroup extends $pb.GeneratedMessage {
 }
 
 class TestIsInitialized_SubMessage extends $pb.GeneratedMessage {
-  factory TestIsInitialized_SubMessage() => create();
+  factory TestIsInitialized_SubMessage({
+    TestIsInitialized_SubMessage_SubGroup? subGroup,
+  }) {
+    final $result = create();
+    if (subGroup != null) {
+      $result.subGroup = subGroup;
+    }
+    return $result;
+  }
   TestIsInitialized_SubMessage._() : super();
   factory TestIsInitialized_SubMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestIsInitialized_SubMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3107,7 +3989,15 @@ class TestIsInitialized_SubMessage extends $pb.GeneratedMessage {
 }
 
 class TestIsInitialized extends $pb.GeneratedMessage {
-  factory TestIsInitialized() => create();
+  factory TestIsInitialized({
+    TestIsInitialized_SubMessage? subMessage,
+  }) {
+    final $result = create();
+    if (subMessage != null) {
+      $result.subMessage = subMessage;
+    }
+    return $result;
+  }
   TestIsInitialized._() : super();
   factory TestIsInitialized.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestIsInitialized.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3151,7 +4041,15 @@ class TestIsInitialized extends $pb.GeneratedMessage {
 }
 
 class TestDupFieldNumber_Foo extends $pb.GeneratedMessage {
-  factory TestDupFieldNumber_Foo() => create();
+  factory TestDupFieldNumber_Foo({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   TestDupFieldNumber_Foo._() : super();
   factory TestDupFieldNumber_Foo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestDupFieldNumber_Foo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3193,7 +4091,15 @@ class TestDupFieldNumber_Foo extends $pb.GeneratedMessage {
 }
 
 class TestDupFieldNumber_Bar extends $pb.GeneratedMessage {
-  factory TestDupFieldNumber_Bar() => create();
+  factory TestDupFieldNumber_Bar({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   TestDupFieldNumber_Bar._() : super();
   factory TestDupFieldNumber_Bar.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestDupFieldNumber_Bar.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3234,8 +4140,28 @@ class TestDupFieldNumber_Bar extends $pb.GeneratedMessage {
   void clearA() => clearField(1);
 }
 
+/// Test that groups have disjoint field numbers from their siblings and
+/// parents.  This is NOT possible in proto1; only google.protobuf.  When attempting
+/// to compile with proto1, this will emit an error; so we only include it
+/// in protobuf_unittest_proto.
 class TestDupFieldNumber extends $pb.GeneratedMessage {
-  factory TestDupFieldNumber() => create();
+  factory TestDupFieldNumber({
+    $core.int? a,
+    TestDupFieldNumber_Foo? foo,
+    TestDupFieldNumber_Bar? bar,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (foo != null) {
+      $result.foo = foo;
+    }
+    if (bar != null) {
+      $result.bar = bar;
+    }
+    return $result;
+  }
   TestDupFieldNumber._() : super();
   factory TestDupFieldNumber.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestDupFieldNumber.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3296,8 +4222,17 @@ class TestDupFieldNumber extends $pb.GeneratedMessage {
   void clearBar() => clearField(3);
 }
 
+/// Additional messages for testing lazy fields.
 class TestEagerMessage extends $pb.GeneratedMessage {
-  factory TestEagerMessage() => create();
+  factory TestEagerMessage({
+    TestAllTypes? subMessage,
+  }) {
+    final $result = create();
+    if (subMessage != null) {
+      $result.subMessage = subMessage;
+    }
+    return $result;
+  }
   TestEagerMessage._() : super();
   factory TestEagerMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestEagerMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3341,7 +4276,15 @@ class TestEagerMessage extends $pb.GeneratedMessage {
 }
 
 class TestLazyMessage extends $pb.GeneratedMessage {
-  factory TestLazyMessage() => create();
+  factory TestLazyMessage({
+    TestAllTypes? subMessage,
+  }) {
+    final $result = create();
+    if (subMessage != null) {
+      $result.subMessage = subMessage;
+    }
+    return $result;
+  }
   TestLazyMessage._() : super();
   factory TestLazyMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestLazyMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3385,7 +4328,15 @@ class TestLazyMessage extends $pb.GeneratedMessage {
 }
 
 class TestEagerMaybeLazy_NestedMessage extends $pb.GeneratedMessage {
-  factory TestEagerMaybeLazy_NestedMessage() => create();
+  factory TestEagerMaybeLazy_NestedMessage({
+    TestPackedTypes? packed,
+  }) {
+    final $result = create();
+    if (packed != null) {
+      $result.packed = packed;
+    }
+    return $result;
+  }
   TestEagerMaybeLazy_NestedMessage._() : super();
   factory TestEagerMaybeLazy_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestEagerMaybeLazy_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3429,7 +4380,23 @@ class TestEagerMaybeLazy_NestedMessage extends $pb.GeneratedMessage {
 }
 
 class TestEagerMaybeLazy extends $pb.GeneratedMessage {
-  factory TestEagerMaybeLazy() => create();
+  factory TestEagerMaybeLazy({
+    TestAllTypes? messageFoo,
+    TestAllTypes? messageBar,
+    TestEagerMaybeLazy_NestedMessage? messageBaz,
+  }) {
+    final $result = create();
+    if (messageFoo != null) {
+      $result.messageFoo = messageFoo;
+    }
+    if (messageBar != null) {
+      $result.messageBar = messageBar;
+    }
+    if (messageBaz != null) {
+      $result.messageBaz = messageBaz;
+    }
+    return $result;
+  }
   TestEagerMaybeLazy._() : super();
   factory TestEagerMaybeLazy.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestEagerMaybeLazy.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3497,7 +4464,19 @@ class TestEagerMaybeLazy extends $pb.GeneratedMessage {
 }
 
 class TestNestedMessageHasBits_NestedMessage extends $pb.GeneratedMessage {
-  factory TestNestedMessageHasBits_NestedMessage() => create();
+  factory TestNestedMessageHasBits_NestedMessage({
+    $core.Iterable<$core.int>? nestedmessageRepeatedInt32,
+    $core.Iterable<ForeignMessage>? nestedmessageRepeatedForeignmessage,
+  }) {
+    final $result = create();
+    if (nestedmessageRepeatedInt32 != null) {
+      $result.nestedmessageRepeatedInt32.addAll(nestedmessageRepeatedInt32);
+    }
+    if (nestedmessageRepeatedForeignmessage != null) {
+      $result.nestedmessageRepeatedForeignmessage.addAll(nestedmessageRepeatedForeignmessage);
+    }
+    return $result;
+  }
   TestNestedMessageHasBits_NestedMessage._() : super();
   factory TestNestedMessageHasBits_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestNestedMessageHasBits_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3536,8 +4515,17 @@ class TestNestedMessageHasBits_NestedMessage extends $pb.GeneratedMessage {
   $core.List<ForeignMessage> get nestedmessageRepeatedForeignmessage => $_getList(1);
 }
 
+/// Needed for a Python test.
 class TestNestedMessageHasBits extends $pb.GeneratedMessage {
-  factory TestNestedMessageHasBits() => create();
+  factory TestNestedMessageHasBits({
+    TestNestedMessageHasBits_NestedMessage? optionalNestedMessage,
+  }) {
+    final $result = create();
+    if (optionalNestedMessage != null) {
+      $result.optionalNestedMessage = optionalNestedMessage;
+    }
+    return $result;
+  }
   TestNestedMessageHasBits._() : super();
   factory TestNestedMessageHasBits.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestNestedMessageHasBits.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3580,8 +4568,62 @@ class TestNestedMessageHasBits extends $pb.GeneratedMessage {
   TestNestedMessageHasBits_NestedMessage ensureOptionalNestedMessage() => $_ensure(0);
 }
 
+/// Test message with CamelCase field names.  This violates Protocol Buffer
+/// standard style.
 class TestCamelCaseFieldNames extends $pb.GeneratedMessage {
-  factory TestCamelCaseFieldNames() => create();
+  factory TestCamelCaseFieldNames({
+    $core.int? primitiveField,
+    $core.String? stringField,
+    ForeignEnum? enumField,
+    ForeignMessage? messageField,
+    $core.String? stringPieceField,
+    $core.String? cordField,
+    $core.Iterable<$core.int>? repeatedPrimitiveField,
+    $core.Iterable<$core.String>? repeatedStringField,
+    $core.Iterable<ForeignEnum>? repeatedEnumField,
+    $core.Iterable<ForeignMessage>? repeatedMessageField,
+    $core.Iterable<$core.String>? repeatedStringPieceField,
+    $core.Iterable<$core.String>? repeatedCordField,
+  }) {
+    final $result = create();
+    if (primitiveField != null) {
+      $result.primitiveField = primitiveField;
+    }
+    if (stringField != null) {
+      $result.stringField = stringField;
+    }
+    if (enumField != null) {
+      $result.enumField = enumField;
+    }
+    if (messageField != null) {
+      $result.messageField = messageField;
+    }
+    if (stringPieceField != null) {
+      $result.stringPieceField = stringPieceField;
+    }
+    if (cordField != null) {
+      $result.cordField = cordField;
+    }
+    if (repeatedPrimitiveField != null) {
+      $result.repeatedPrimitiveField.addAll(repeatedPrimitiveField);
+    }
+    if (repeatedStringField != null) {
+      $result.repeatedStringField.addAll(repeatedStringField);
+    }
+    if (repeatedEnumField != null) {
+      $result.repeatedEnumField.addAll(repeatedEnumField);
+    }
+    if (repeatedMessageField != null) {
+      $result.repeatedMessageField.addAll(repeatedMessageField);
+    }
+    if (repeatedStringPieceField != null) {
+      $result.repeatedStringPieceField.addAll(repeatedStringPieceField);
+    }
+    if (repeatedCordField != null) {
+      $result.repeatedCordField.addAll(repeatedCordField);
+    }
+    return $result;
+  }
   TestCamelCaseFieldNames._() : super();
   factory TestCamelCaseFieldNames.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestCamelCaseFieldNames.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3699,7 +4741,19 @@ class TestCamelCaseFieldNames extends $pb.GeneratedMessage {
 }
 
 class TestFieldOrderings_NestedMessage extends $pb.GeneratedMessage {
-  factory TestFieldOrderings_NestedMessage() => create();
+  factory TestFieldOrderings_NestedMessage({
+    $core.int? bb,
+    $fixnum.Int64? oo,
+  }) {
+    final $result = create();
+    if (bb != null) {
+      $result.bb = bb;
+    }
+    if (oo != null) {
+      $result.oo = oo;
+    }
+    return $result;
+  }
   TestFieldOrderings_NestedMessage._() : super();
   factory TestFieldOrderings_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestFieldOrderings_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3731,6 +4785,9 @@ class TestFieldOrderings_NestedMessage extends $pb.GeneratedMessage {
   static TestFieldOrderings_NestedMessage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TestFieldOrderings_NestedMessage>(create);
   static TestFieldOrderings_NestedMessage? _defaultInstance;
 
+  /// The field name "b" fails to compile in proto1 because it conflicts with
+  /// a local variable named "b" in one of the generated methods.  Doh.
+  /// This file needs to compile in proto1 to test backwards-compatibility.
   @$pb.TagNumber(1)
   $core.int get bb => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -3750,8 +4807,30 @@ class TestFieldOrderings_NestedMessage extends $pb.GeneratedMessage {
   void clearOo() => clearField(2);
 }
 
+/// We list fields out of order, to ensure that we're using field number and not
+/// field index to determine serialization order.
 class TestFieldOrderings extends $pb.GeneratedMessage {
-  factory TestFieldOrderings() => create();
+  factory TestFieldOrderings({
+    $fixnum.Int64? myInt,
+    $core.String? myString,
+    $core.double? myFloat,
+    TestFieldOrderings_NestedMessage? optionalNestedMessage,
+  }) {
+    final $result = create();
+    if (myInt != null) {
+      $result.myInt = myInt;
+    }
+    if (myString != null) {
+      $result.myString = myString;
+    }
+    if (myFloat != null) {
+      $result.myFloat = myFloat;
+    }
+    if (optionalNestedMessage != null) {
+      $result.optionalNestedMessage = optionalNestedMessage;
+    }
+    return $result;
+  }
   TestFieldOrderings._() : super();
   factory TestFieldOrderings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestFieldOrderings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3825,7 +4904,15 @@ class TestFieldOrderings extends $pb.GeneratedMessage {
 }
 
 class TestExtensionOrderings1 extends $pb.GeneratedMessage {
-  factory TestExtensionOrderings1() => create();
+  factory TestExtensionOrderings1({
+    $core.String? myString,
+  }) {
+    final $result = create();
+    if (myString != null) {
+      $result.myString = myString;
+    }
+    return $result;
+  }
   TestExtensionOrderings1._() : super();
   factory TestExtensionOrderings1.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestExtensionOrderings1.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3868,7 +4955,15 @@ class TestExtensionOrderings1 extends $pb.GeneratedMessage {
 }
 
 class TestExtensionOrderings2_TestExtensionOrderings3 extends $pb.GeneratedMessage {
-  factory TestExtensionOrderings2_TestExtensionOrderings3() => create();
+  factory TestExtensionOrderings2_TestExtensionOrderings3({
+    $core.String? myString,
+  }) {
+    final $result = create();
+    if (myString != null) {
+      $result.myString = myString;
+    }
+    return $result;
+  }
   TestExtensionOrderings2_TestExtensionOrderings3._() : super();
   factory TestExtensionOrderings2_TestExtensionOrderings3.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestExtensionOrderings2_TestExtensionOrderings3.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3911,7 +5006,15 @@ class TestExtensionOrderings2_TestExtensionOrderings3 extends $pb.GeneratedMessa
 }
 
 class TestExtensionOrderings2 extends $pb.GeneratedMessage {
-  factory TestExtensionOrderings2() => create();
+  factory TestExtensionOrderings2({
+    $core.String? myString,
+  }) {
+    final $result = create();
+    if (myString != null) {
+      $result.myString = myString;
+    }
+    return $result;
+  }
   TestExtensionOrderings2._() : super();
   factory TestExtensionOrderings2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestExtensionOrderings2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -3954,7 +5057,119 @@ class TestExtensionOrderings2 extends $pb.GeneratedMessage {
 }
 
 class TestExtremeDefaultValues extends $pb.GeneratedMessage {
-  factory TestExtremeDefaultValues() => create();
+  factory TestExtremeDefaultValues({
+    $core.List<$core.int>? escapedBytes,
+    $core.int? largeUint32,
+    $fixnum.Int64? largeUint64,
+    $core.int? smallInt32,
+    $fixnum.Int64? smallInt64,
+    $core.String? utf8String,
+    $core.double? zeroFloat,
+    $core.double? oneFloat,
+    $core.double? smallFloat,
+    $core.double? negativeOneFloat,
+    $core.double? negativeFloat,
+    $core.double? largeFloat,
+    $core.double? smallNegativeFloat,
+    $core.double? infDouble,
+    $core.double? negInfDouble,
+    $core.double? nanDouble,
+    $core.double? infFloat,
+    $core.double? negInfFloat,
+    $core.double? nanFloat,
+    $core.String? cppTrigraph,
+    $core.int? reallySmallInt32,
+    $fixnum.Int64? reallySmallInt64,
+    $core.String? stringWithZero,
+    $core.List<$core.int>? bytesWithZero,
+    $core.String? stringPieceWithZero,
+    $core.String? cordWithZero,
+    $core.String? replacementString,
+  }) {
+    final $result = create();
+    if (escapedBytes != null) {
+      $result.escapedBytes = escapedBytes;
+    }
+    if (largeUint32 != null) {
+      $result.largeUint32 = largeUint32;
+    }
+    if (largeUint64 != null) {
+      $result.largeUint64 = largeUint64;
+    }
+    if (smallInt32 != null) {
+      $result.smallInt32 = smallInt32;
+    }
+    if (smallInt64 != null) {
+      $result.smallInt64 = smallInt64;
+    }
+    if (utf8String != null) {
+      $result.utf8String = utf8String;
+    }
+    if (zeroFloat != null) {
+      $result.zeroFloat = zeroFloat;
+    }
+    if (oneFloat != null) {
+      $result.oneFloat = oneFloat;
+    }
+    if (smallFloat != null) {
+      $result.smallFloat = smallFloat;
+    }
+    if (negativeOneFloat != null) {
+      $result.negativeOneFloat = negativeOneFloat;
+    }
+    if (negativeFloat != null) {
+      $result.negativeFloat = negativeFloat;
+    }
+    if (largeFloat != null) {
+      $result.largeFloat = largeFloat;
+    }
+    if (smallNegativeFloat != null) {
+      $result.smallNegativeFloat = smallNegativeFloat;
+    }
+    if (infDouble != null) {
+      $result.infDouble = infDouble;
+    }
+    if (negInfDouble != null) {
+      $result.negInfDouble = negInfDouble;
+    }
+    if (nanDouble != null) {
+      $result.nanDouble = nanDouble;
+    }
+    if (infFloat != null) {
+      $result.infFloat = infFloat;
+    }
+    if (negInfFloat != null) {
+      $result.negInfFloat = negInfFloat;
+    }
+    if (nanFloat != null) {
+      $result.nanFloat = nanFloat;
+    }
+    if (cppTrigraph != null) {
+      $result.cppTrigraph = cppTrigraph;
+    }
+    if (reallySmallInt32 != null) {
+      $result.reallySmallInt32 = reallySmallInt32;
+    }
+    if (reallySmallInt64 != null) {
+      $result.reallySmallInt64 = reallySmallInt64;
+    }
+    if (stringWithZero != null) {
+      $result.stringWithZero = stringWithZero;
+    }
+    if (bytesWithZero != null) {
+      $result.bytesWithZero = bytesWithZero;
+    }
+    if (stringPieceWithZero != null) {
+      $result.stringPieceWithZero = stringPieceWithZero;
+    }
+    if (cordWithZero != null) {
+      $result.cordWithZero = cordWithZero;
+    }
+    if (replacementString != null) {
+      $result.replacementString = replacementString;
+    }
+    return $result;
+  }
   TestExtremeDefaultValues._() : super();
   factory TestExtremeDefaultValues.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestExtremeDefaultValues.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4056,6 +5271,9 @@ class TestExtremeDefaultValues extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearSmallInt64() => clearField(5);
 
+  /// The default value here is UTF-8 for "\u1234".  (We could also just type
+  /// the UTF-8 text directly into this text file rather than escape it, but
+  /// lots of people use editors that would be confused by this.)
   @$pb.TagNumber(6)
   $core.String get utf8String => $_getS(5, 'ሴ');
   @$pb.TagNumber(6)
@@ -4065,6 +5283,7 @@ class TestExtremeDefaultValues extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearUtf8String() => clearField(6);
 
+  /// Tests for single-precision floating-point values.
   @$pb.TagNumber(7)
   $core.double get zeroFloat => $_getN(6);
   @$pb.TagNumber(7)
@@ -4110,6 +5329,7 @@ class TestExtremeDefaultValues extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   void clearNegativeFloat() => clearField(11);
 
+  /// Using exponents
   @$pb.TagNumber(12)
   $core.double get largeFloat => $_getN(11);
   @$pb.TagNumber(12)
@@ -4128,6 +5348,7 @@ class TestExtremeDefaultValues extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   void clearSmallNegativeFloat() => clearField(13);
 
+  /// Text for nonfinite floating-point values.
   @$pb.TagNumber(14)
   $core.double get infDouble => $_getN(13);
   @$pb.TagNumber(14)
@@ -4182,6 +5403,11 @@ class TestExtremeDefaultValues extends $pb.GeneratedMessage {
   @$pb.TagNumber(19)
   void clearNanFloat() => clearField(19);
 
+  /// Tests for C++ trigraphs.
+  /// Trigraphs should be escaped in C++ generated files, but they should not be
+  /// escaped for other languages.
+  /// Note that in .proto file, "\?" is a valid way to escape ? in string
+  /// literals.
   @$pb.TagNumber(20)
   $core.String get cppTrigraph => $_getS(19, '? ? ?? ?? ??? ??/ ??-');
   @$pb.TagNumber(20)
@@ -4209,6 +5435,7 @@ class TestExtremeDefaultValues extends $pb.GeneratedMessage {
   @$pb.TagNumber(22)
   void clearReallySmallInt64() => clearField(22);
 
+  /// String defaults containing the character '\000'
   @$pb.TagNumber(23)
   $core.String get stringWithZero => $_getS(22, 'hel\x00lo');
   @$pb.TagNumber(23)
@@ -4256,7 +5483,15 @@ class TestExtremeDefaultValues extends $pb.GeneratedMessage {
 }
 
 class SparseEnumMessage extends $pb.GeneratedMessage {
-  factory SparseEnumMessage() => create();
+  factory SparseEnumMessage({
+    TestSparseEnum? sparseEnum,
+  }) {
+    final $result = create();
+    if (sparseEnum != null) {
+      $result.sparseEnum = sparseEnum;
+    }
+    return $result;
+  }
   SparseEnumMessage._() : super();
   factory SparseEnumMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SparseEnumMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4297,8 +5532,17 @@ class SparseEnumMessage extends $pb.GeneratedMessage {
   void clearSparseEnum() => clearField(1);
 }
 
+/// Test String and Bytes: string is for valid UTF-8 strings
 class OneString extends $pb.GeneratedMessage {
-  factory OneString() => create();
+  factory OneString({
+    $core.String? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   OneString._() : super();
   factory OneString.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OneString.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4340,7 +5584,15 @@ class OneString extends $pb.GeneratedMessage {
 }
 
 class MoreString extends $pb.GeneratedMessage {
-  factory MoreString() => create();
+  factory MoreString({
+    $core.Iterable<$core.String>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
   MoreString._() : super();
   factory MoreString.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoreString.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4376,7 +5628,15 @@ class MoreString extends $pb.GeneratedMessage {
 }
 
 class OneBytes extends $pb.GeneratedMessage {
-  factory OneBytes() => create();
+  factory OneBytes({
+    $core.List<$core.int>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   OneBytes._() : super();
   factory OneBytes.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OneBytes.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4418,7 +5678,15 @@ class OneBytes extends $pb.GeneratedMessage {
 }
 
 class MoreBytes extends $pb.GeneratedMessage {
-  factory MoreBytes() => create();
+  factory MoreBytes({
+    $core.Iterable<$core.List<$core.int>>? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data.addAll(data);
+    }
+    return $result;
+  }
   MoreBytes._() : super();
   factory MoreBytes.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MoreBytes.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4454,7 +5722,139 @@ class MoreBytes extends $pb.GeneratedMessage {
 }
 
 class ManyOptionalString extends $pb.GeneratedMessage {
-  factory ManyOptionalString() => create();
+  factory ManyOptionalString({
+    $core.String? str1,
+    $core.String? str2,
+    $core.String? str3,
+    $core.String? str4,
+    $core.String? str5,
+    $core.String? str6,
+    $core.String? str7,
+    $core.String? str8,
+    $core.String? str9,
+    $core.String? str10,
+    $core.String? str11,
+    $core.String? str12,
+    $core.String? str13,
+    $core.String? str14,
+    $core.String? str15,
+    $core.String? str16,
+    $core.String? str17,
+    $core.String? str18,
+    $core.String? str19,
+    $core.String? str20,
+    $core.String? str21,
+    $core.String? str22,
+    $core.String? str23,
+    $core.String? str24,
+    $core.String? str25,
+    $core.String? str26,
+    $core.String? str27,
+    $core.String? str28,
+    $core.String? str29,
+    $core.String? str30,
+    $core.String? str31,
+    $core.String? str32,
+  }) {
+    final $result = create();
+    if (str1 != null) {
+      $result.str1 = str1;
+    }
+    if (str2 != null) {
+      $result.str2 = str2;
+    }
+    if (str3 != null) {
+      $result.str3 = str3;
+    }
+    if (str4 != null) {
+      $result.str4 = str4;
+    }
+    if (str5 != null) {
+      $result.str5 = str5;
+    }
+    if (str6 != null) {
+      $result.str6 = str6;
+    }
+    if (str7 != null) {
+      $result.str7 = str7;
+    }
+    if (str8 != null) {
+      $result.str8 = str8;
+    }
+    if (str9 != null) {
+      $result.str9 = str9;
+    }
+    if (str10 != null) {
+      $result.str10 = str10;
+    }
+    if (str11 != null) {
+      $result.str11 = str11;
+    }
+    if (str12 != null) {
+      $result.str12 = str12;
+    }
+    if (str13 != null) {
+      $result.str13 = str13;
+    }
+    if (str14 != null) {
+      $result.str14 = str14;
+    }
+    if (str15 != null) {
+      $result.str15 = str15;
+    }
+    if (str16 != null) {
+      $result.str16 = str16;
+    }
+    if (str17 != null) {
+      $result.str17 = str17;
+    }
+    if (str18 != null) {
+      $result.str18 = str18;
+    }
+    if (str19 != null) {
+      $result.str19 = str19;
+    }
+    if (str20 != null) {
+      $result.str20 = str20;
+    }
+    if (str21 != null) {
+      $result.str21 = str21;
+    }
+    if (str22 != null) {
+      $result.str22 = str22;
+    }
+    if (str23 != null) {
+      $result.str23 = str23;
+    }
+    if (str24 != null) {
+      $result.str24 = str24;
+    }
+    if (str25 != null) {
+      $result.str25 = str25;
+    }
+    if (str26 != null) {
+      $result.str26 = str26;
+    }
+    if (str27 != null) {
+      $result.str27 = str27;
+    }
+    if (str28 != null) {
+      $result.str28 = str28;
+    }
+    if (str29 != null) {
+      $result.str29 = str29;
+    }
+    if (str30 != null) {
+      $result.str30 = str30;
+    }
+    if (str31 != null) {
+      $result.str31 = str31;
+    }
+    if (str32 != null) {
+      $result.str32 = str32;
+    }
+    return $result;
+  }
   ManyOptionalString._() : super();
   factory ManyOptionalString.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ManyOptionalString.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4805,8 +6205,17 @@ class ManyOptionalString extends $pb.GeneratedMessage {
   void clearStr32() => clearField(32);
 }
 
+/// Test int32, uint32, int64, uint64, and bool are all compatible
 class Int32Message extends $pb.GeneratedMessage {
-  factory Int32Message() => create();
+  factory Int32Message({
+    $core.int? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   Int32Message._() : super();
   factory Int32Message.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Int32Message.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4848,7 +6257,15 @@ class Int32Message extends $pb.GeneratedMessage {
 }
 
 class Uint32Message extends $pb.GeneratedMessage {
-  factory Uint32Message() => create();
+  factory Uint32Message({
+    $core.int? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   Uint32Message._() : super();
   factory Uint32Message.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Uint32Message.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4890,7 +6307,15 @@ class Uint32Message extends $pb.GeneratedMessage {
 }
 
 class Int64Message extends $pb.GeneratedMessage {
-  factory Int64Message() => create();
+  factory Int64Message({
+    $fixnum.Int64? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   Int64Message._() : super();
   factory Int64Message.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Int64Message.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4932,7 +6357,15 @@ class Int64Message extends $pb.GeneratedMessage {
 }
 
 class Uint64Message extends $pb.GeneratedMessage {
-  factory Uint64Message() => create();
+  factory Uint64Message({
+    $fixnum.Int64? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   Uint64Message._() : super();
   factory Uint64Message.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Uint64Message.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -4974,7 +6407,15 @@ class Uint64Message extends $pb.GeneratedMessage {
 }
 
 class BoolMessage extends $pb.GeneratedMessage {
-  factory BoolMessage() => create();
+  factory BoolMessage({
+    $core.bool? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   BoolMessage._() : super();
   factory BoolMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BoolMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5016,7 +6457,19 @@ class BoolMessage extends $pb.GeneratedMessage {
 }
 
 class TestOneof_FooGroup extends $pb.GeneratedMessage {
-  factory TestOneof_FooGroup() => create();
+  factory TestOneof_FooGroup({
+    $core.int? a,
+    $core.String? b,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (b != null) {
+      $result.b = b;
+    }
+    return $result;
+  }
   TestOneof_FooGroup._() : super();
   factory TestOneof_FooGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestOneof_FooGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5075,8 +6528,29 @@ enum TestOneof_Foo {
   notSet
 }
 
+/// Test oneofs.
 class TestOneof extends $pb.GeneratedMessage {
-  factory TestOneof() => create();
+  factory TestOneof({
+    $core.int? fooInt,
+    $core.String? fooString,
+    TestAllTypes? fooMessage,
+    TestOneof_FooGroup? fooGroup,
+  }) {
+    final $result = create();
+    if (fooInt != null) {
+      $result.fooInt = fooInt;
+    }
+    if (fooString != null) {
+      $result.fooString = fooString;
+    }
+    if (fooMessage != null) {
+      $result.fooMessage = fooMessage;
+    }
+    if (fooGroup != null) {
+      $result.fooGroup = fooGroup;
+    }
+    return $result;
+  }
   TestOneof._() : super();
   factory TestOneof.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestOneof.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5161,7 +6635,19 @@ class TestOneof extends $pb.GeneratedMessage {
 }
 
 class TestOneofBackwardsCompatible_FooGroup extends $pb.GeneratedMessage {
-  factory TestOneofBackwardsCompatible_FooGroup() => create();
+  factory TestOneofBackwardsCompatible_FooGroup({
+    $core.int? a,
+    $core.String? b,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (b != null) {
+      $result.b = b;
+    }
+    return $result;
+  }
   TestOneofBackwardsCompatible_FooGroup._() : super();
   factory TestOneofBackwardsCompatible_FooGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestOneofBackwardsCompatible_FooGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5213,7 +6699,27 @@ class TestOneofBackwardsCompatible_FooGroup extends $pb.GeneratedMessage {
 }
 
 class TestOneofBackwardsCompatible extends $pb.GeneratedMessage {
-  factory TestOneofBackwardsCompatible() => create();
+  factory TestOneofBackwardsCompatible({
+    $core.int? fooInt,
+    $core.String? fooString,
+    TestAllTypes? fooMessage,
+    TestOneofBackwardsCompatible_FooGroup? fooGroup,
+  }) {
+    final $result = create();
+    if (fooInt != null) {
+      $result.fooInt = fooInt;
+    }
+    if (fooString != null) {
+      $result.fooString = fooString;
+    }
+    if (fooMessage != null) {
+      $result.fooMessage = fooMessage;
+    }
+    if (fooGroup != null) {
+      $result.fooGroup = fooGroup;
+    }
+    return $result;
+  }
   TestOneofBackwardsCompatible._() : super();
   factory TestOneofBackwardsCompatible.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestOneofBackwardsCompatible.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5287,7 +6793,19 @@ class TestOneofBackwardsCompatible extends $pb.GeneratedMessage {
 }
 
 class TestOneof2_FooGroup extends $pb.GeneratedMessage {
-  factory TestOneof2_FooGroup() => create();
+  factory TestOneof2_FooGroup({
+    $core.int? a,
+    $core.String? b,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    if (b != null) {
+      $result.b = b;
+    }
+    return $result;
+  }
   TestOneof2_FooGroup._() : super();
   factory TestOneof2_FooGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestOneof2_FooGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5339,7 +6857,19 @@ class TestOneof2_FooGroup extends $pb.GeneratedMessage {
 }
 
 class TestOneof2_NestedMessage extends $pb.GeneratedMessage {
-  factory TestOneof2_NestedMessage() => create();
+  factory TestOneof2_NestedMessage({
+    $fixnum.Int64? mooInt,
+    $core.Iterable<$core.int>? corgeInt,
+  }) {
+    final $result = create();
+    if (mooInt != null) {
+      $result.mooInt = mooInt;
+    }
+    if (corgeInt != null) {
+      $result.corgeInt.addAll(corgeInt);
+    }
+    return $result;
+  }
   TestOneof2_NestedMessage._() : super();
   factory TestOneof2_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestOneof2_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5413,7 +6943,99 @@ enum TestOneof2_Bar {
 }
 
 class TestOneof2 extends $pb.GeneratedMessage {
-  factory TestOneof2() => create();
+  factory TestOneof2({
+    $core.int? fooInt,
+    $core.String? fooString,
+    $core.String? fooCord,
+    $core.String? fooStringPiece,
+    $core.List<$core.int>? fooBytes,
+    TestOneof2_NestedEnum? fooEnum,
+    TestOneof2_NestedMessage? fooMessage,
+    TestOneof2_FooGroup? fooGroup,
+    TestOneof2_NestedMessage? fooLazyMessage,
+    $core.int? barInt,
+    $core.String? barString,
+    $core.String? barCord,
+    $core.String? barStringPiece,
+    $core.List<$core.int>? barBytes,
+    TestOneof2_NestedEnum? barEnum,
+    $core.int? bazInt,
+    $core.String? bazString,
+    $core.String? barStringWithEmptyDefault,
+    $core.String? barCordWithEmptyDefault,
+    $core.String? barStringPieceWithEmptyDefault,
+    $core.List<$core.int>? barBytesWithEmptyDefault,
+    $core.List<$core.int>? fooBytesCord,
+  }) {
+    final $result = create();
+    if (fooInt != null) {
+      $result.fooInt = fooInt;
+    }
+    if (fooString != null) {
+      $result.fooString = fooString;
+    }
+    if (fooCord != null) {
+      $result.fooCord = fooCord;
+    }
+    if (fooStringPiece != null) {
+      $result.fooStringPiece = fooStringPiece;
+    }
+    if (fooBytes != null) {
+      $result.fooBytes = fooBytes;
+    }
+    if (fooEnum != null) {
+      $result.fooEnum = fooEnum;
+    }
+    if (fooMessage != null) {
+      $result.fooMessage = fooMessage;
+    }
+    if (fooGroup != null) {
+      $result.fooGroup = fooGroup;
+    }
+    if (fooLazyMessage != null) {
+      $result.fooLazyMessage = fooLazyMessage;
+    }
+    if (barInt != null) {
+      $result.barInt = barInt;
+    }
+    if (barString != null) {
+      $result.barString = barString;
+    }
+    if (barCord != null) {
+      $result.barCord = barCord;
+    }
+    if (barStringPiece != null) {
+      $result.barStringPiece = barStringPiece;
+    }
+    if (barBytes != null) {
+      $result.barBytes = barBytes;
+    }
+    if (barEnum != null) {
+      $result.barEnum = barEnum;
+    }
+    if (bazInt != null) {
+      $result.bazInt = bazInt;
+    }
+    if (bazString != null) {
+      $result.bazString = bazString;
+    }
+    if (barStringWithEmptyDefault != null) {
+      $result.barStringWithEmptyDefault = barStringWithEmptyDefault;
+    }
+    if (barCordWithEmptyDefault != null) {
+      $result.barCordWithEmptyDefault = barCordWithEmptyDefault;
+    }
+    if (barStringPieceWithEmptyDefault != null) {
+      $result.barStringPieceWithEmptyDefault = barStringPieceWithEmptyDefault;
+    }
+    if (barBytesWithEmptyDefault != null) {
+      $result.barBytesWithEmptyDefault = barBytesWithEmptyDefault;
+    }
+    if (fooBytesCord != null) {
+      $result.fooBytesCord = fooBytesCord;
+    }
+    return $result;
+  }
   TestOneof2._() : super();
   factory TestOneof2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestOneof2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5703,7 +7325,15 @@ class TestOneof2 extends $pb.GeneratedMessage {
 }
 
 class TestRequiredOneof_NestedMessage extends $pb.GeneratedMessage {
-  factory TestRequiredOneof_NestedMessage() => create();
+  factory TestRequiredOneof_NestedMessage({
+    $core.double? requiredDouble,
+  }) {
+    final $result = create();
+    if (requiredDouble != null) {
+      $result.requiredDouble = requiredDouble;
+    }
+    return $result;
+  }
   TestRequiredOneof_NestedMessage._() : super();
   factory TestRequiredOneof_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestRequiredOneof_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5752,7 +7382,27 @@ enum TestRequiredOneof_Foo {
 }
 
 class TestRequiredOneof extends $pb.GeneratedMessage {
-  factory TestRequiredOneof() => create();
+  factory TestRequiredOneof({
+    $core.int? fooInt,
+    $core.String? fooString,
+    TestRequiredOneof_NestedMessage? fooMessage,
+    TestRequiredOneof_NestedMessage? fooLazyMessage,
+  }) {
+    final $result = create();
+    if (fooInt != null) {
+      $result.fooInt = fooInt;
+    }
+    if (fooString != null) {
+      $result.fooString = fooString;
+    }
+    if (fooMessage != null) {
+      $result.fooMessage = fooMessage;
+    }
+    if (fooLazyMessage != null) {
+      $result.fooLazyMessage = fooLazyMessage;
+    }
+    return $result;
+  }
   TestRequiredOneof._() : super();
   factory TestRequiredOneof.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestRequiredOneof.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5838,7 +7488,67 @@ class TestRequiredOneof extends $pb.GeneratedMessage {
 }
 
 class TestPackedTypes extends $pb.GeneratedMessage {
-  factory TestPackedTypes() => create();
+  factory TestPackedTypes({
+    $core.Iterable<$core.int>? packedInt32,
+    $core.Iterable<$fixnum.Int64>? packedInt64,
+    $core.Iterable<$core.int>? packedUint32,
+    $core.Iterable<$fixnum.Int64>? packedUint64,
+    $core.Iterable<$core.int>? packedSint32,
+    $core.Iterable<$fixnum.Int64>? packedSint64,
+    $core.Iterable<$core.int>? packedFixed32,
+    $core.Iterable<$fixnum.Int64>? packedFixed64,
+    $core.Iterable<$core.int>? packedSfixed32,
+    $core.Iterable<$fixnum.Int64>? packedSfixed64,
+    $core.Iterable<$core.double>? packedFloat,
+    $core.Iterable<$core.double>? packedDouble,
+    $core.Iterable<$core.bool>? packedBool,
+    $core.Iterable<ForeignEnum>? packedEnum,
+  }) {
+    final $result = create();
+    if (packedInt32 != null) {
+      $result.packedInt32.addAll(packedInt32);
+    }
+    if (packedInt64 != null) {
+      $result.packedInt64.addAll(packedInt64);
+    }
+    if (packedUint32 != null) {
+      $result.packedUint32.addAll(packedUint32);
+    }
+    if (packedUint64 != null) {
+      $result.packedUint64.addAll(packedUint64);
+    }
+    if (packedSint32 != null) {
+      $result.packedSint32.addAll(packedSint32);
+    }
+    if (packedSint64 != null) {
+      $result.packedSint64.addAll(packedSint64);
+    }
+    if (packedFixed32 != null) {
+      $result.packedFixed32.addAll(packedFixed32);
+    }
+    if (packedFixed64 != null) {
+      $result.packedFixed64.addAll(packedFixed64);
+    }
+    if (packedSfixed32 != null) {
+      $result.packedSfixed32.addAll(packedSfixed32);
+    }
+    if (packedSfixed64 != null) {
+      $result.packedSfixed64.addAll(packedSfixed64);
+    }
+    if (packedFloat != null) {
+      $result.packedFloat.addAll(packedFloat);
+    }
+    if (packedDouble != null) {
+      $result.packedDouble.addAll(packedDouble);
+    }
+    if (packedBool != null) {
+      $result.packedBool.addAll(packedBool);
+    }
+    if (packedEnum != null) {
+      $result.packedEnum.addAll(packedEnum);
+    }
+    return $result;
+  }
   TestPackedTypes._() : super();
   factory TestPackedTypes.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestPackedTypes.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -5925,8 +7635,70 @@ class TestPackedTypes extends $pb.GeneratedMessage {
   $core.List<ForeignEnum> get packedEnum => $_getList(13);
 }
 
+/// A message with the same fields as TestPackedTypes, but without packing. Used
+/// to test packed <-> unpacked wire compatibility.
 class TestUnpackedTypes extends $pb.GeneratedMessage {
-  factory TestUnpackedTypes() => create();
+  factory TestUnpackedTypes({
+    $core.Iterable<$core.int>? unpackedInt32,
+    $core.Iterable<$fixnum.Int64>? unpackedInt64,
+    $core.Iterable<$core.int>? unpackedUint32,
+    $core.Iterable<$fixnum.Int64>? unpackedUint64,
+    $core.Iterable<$core.int>? unpackedSint32,
+    $core.Iterable<$fixnum.Int64>? unpackedSint64,
+    $core.Iterable<$core.int>? unpackedFixed32,
+    $core.Iterable<$fixnum.Int64>? unpackedFixed64,
+    $core.Iterable<$core.int>? unpackedSfixed32,
+    $core.Iterable<$fixnum.Int64>? unpackedSfixed64,
+    $core.Iterable<$core.double>? unpackedFloat,
+    $core.Iterable<$core.double>? unpackedDouble,
+    $core.Iterable<$core.bool>? unpackedBool,
+    $core.Iterable<ForeignEnum>? unpackedEnum,
+  }) {
+    final $result = create();
+    if (unpackedInt32 != null) {
+      $result.unpackedInt32.addAll(unpackedInt32);
+    }
+    if (unpackedInt64 != null) {
+      $result.unpackedInt64.addAll(unpackedInt64);
+    }
+    if (unpackedUint32 != null) {
+      $result.unpackedUint32.addAll(unpackedUint32);
+    }
+    if (unpackedUint64 != null) {
+      $result.unpackedUint64.addAll(unpackedUint64);
+    }
+    if (unpackedSint32 != null) {
+      $result.unpackedSint32.addAll(unpackedSint32);
+    }
+    if (unpackedSint64 != null) {
+      $result.unpackedSint64.addAll(unpackedSint64);
+    }
+    if (unpackedFixed32 != null) {
+      $result.unpackedFixed32.addAll(unpackedFixed32);
+    }
+    if (unpackedFixed64 != null) {
+      $result.unpackedFixed64.addAll(unpackedFixed64);
+    }
+    if (unpackedSfixed32 != null) {
+      $result.unpackedSfixed32.addAll(unpackedSfixed32);
+    }
+    if (unpackedSfixed64 != null) {
+      $result.unpackedSfixed64.addAll(unpackedSfixed64);
+    }
+    if (unpackedFloat != null) {
+      $result.unpackedFloat.addAll(unpackedFloat);
+    }
+    if (unpackedDouble != null) {
+      $result.unpackedDouble.addAll(unpackedDouble);
+    }
+    if (unpackedBool != null) {
+      $result.unpackedBool.addAll(unpackedBool);
+    }
+    if (unpackedEnum != null) {
+      $result.unpackedEnum.addAll(unpackedEnum);
+    }
+    return $result;
+  }
   TestUnpackedTypes._() : super();
   factory TestUnpackedTypes.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestUnpackedTypes.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6078,7 +7850,15 @@ class TestUnpackedExtensions extends $pb.GeneratedMessage {
 }
 
 class TestDynamicExtensions_DynamicMessageType extends $pb.GeneratedMessage {
-  factory TestDynamicExtensions_DynamicMessageType() => create();
+  factory TestDynamicExtensions_DynamicMessageType({
+    $core.int? dynamicField,
+  }) {
+    final $result = create();
+    if (dynamicField != null) {
+      $result.dynamicField = dynamicField;
+    }
+    return $result;
+  }
   TestDynamicExtensions_DynamicMessageType._() : super();
   factory TestDynamicExtensions_DynamicMessageType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestDynamicExtensions_DynamicMessageType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6119,8 +7899,43 @@ class TestDynamicExtensions_DynamicMessageType extends $pb.GeneratedMessage {
   void clearDynamicField() => clearField(2100);
 }
 
+/// Used by ExtensionSetTest/DynamicExtensions.  The test actually builds
+/// a set of extensions to TestAllExtensions dynamically, based on the fields
+/// of this message type.
 class TestDynamicExtensions extends $pb.GeneratedMessage {
-  factory TestDynamicExtensions() => create();
+  factory TestDynamicExtensions({
+    $core.int? scalarExtension,
+    ForeignEnum? enumExtension,
+    TestDynamicExtensions_DynamicEnumType? dynamicEnumExtension,
+    ForeignMessage? messageExtension,
+    TestDynamicExtensions_DynamicMessageType? dynamicMessageExtension,
+    $core.Iterable<$core.String>? repeatedExtension,
+    $core.Iterable<$core.int>? packedExtension,
+  }) {
+    final $result = create();
+    if (scalarExtension != null) {
+      $result.scalarExtension = scalarExtension;
+    }
+    if (enumExtension != null) {
+      $result.enumExtension = enumExtension;
+    }
+    if (dynamicEnumExtension != null) {
+      $result.dynamicEnumExtension = dynamicEnumExtension;
+    }
+    if (messageExtension != null) {
+      $result.messageExtension = messageExtension;
+    }
+    if (dynamicMessageExtension != null) {
+      $result.dynamicMessageExtension = dynamicMessageExtension;
+    }
+    if (repeatedExtension != null) {
+      $result.repeatedExtension.addAll(repeatedExtension);
+    }
+    if (packedExtension != null) {
+      $result.packedExtension.addAll(packedExtension);
+    }
+    return $result;
+  }
   TestDynamicExtensions._() : super();
   factory TestDynamicExtensions.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestDynamicExtensions.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6214,7 +8029,27 @@ class TestDynamicExtensions extends $pb.GeneratedMessage {
 }
 
 class TestRepeatedString extends $pb.GeneratedMessage {
-  factory TestRepeatedString() => create();
+  factory TestRepeatedString({
+    $core.Iterable<$core.String>? repeatedString1,
+    $core.Iterable<$core.String>? repeatedString2,
+    $core.Iterable<$core.List<$core.int>>? repeatedBytes11,
+    $core.Iterable<$core.List<$core.int>>? repeatedBytes12,
+  }) {
+    final $result = create();
+    if (repeatedString1 != null) {
+      $result.repeatedString1.addAll(repeatedString1);
+    }
+    if (repeatedString2 != null) {
+      $result.repeatedString2.addAll(repeatedString2);
+    }
+    if (repeatedBytes11 != null) {
+      $result.repeatedBytes11.addAll(repeatedBytes11);
+    }
+    if (repeatedBytes12 != null) {
+      $result.repeatedBytes12.addAll(repeatedBytes12);
+    }
+    return $result;
+  }
   TestRepeatedString._() : super();
   factory TestRepeatedString.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestRepeatedString.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6262,7 +8097,35 @@ class TestRepeatedString extends $pb.GeneratedMessage {
 }
 
 class TestRepeatedScalarDifferentTagSizes extends $pb.GeneratedMessage {
-  factory TestRepeatedScalarDifferentTagSizes() => create();
+  factory TestRepeatedScalarDifferentTagSizes({
+    $core.Iterable<$core.int>? repeatedFixed32,
+    $core.Iterable<$core.int>? repeatedInt32,
+    $core.Iterable<$fixnum.Int64>? repeatedFixed64,
+    $core.Iterable<$fixnum.Int64>? repeatedInt64,
+    $core.Iterable<$core.double>? repeatedFloat,
+    $core.Iterable<$fixnum.Int64>? repeatedUint64,
+  }) {
+    final $result = create();
+    if (repeatedFixed32 != null) {
+      $result.repeatedFixed32.addAll(repeatedFixed32);
+    }
+    if (repeatedInt32 != null) {
+      $result.repeatedInt32.addAll(repeatedInt32);
+    }
+    if (repeatedFixed64 != null) {
+      $result.repeatedFixed64.addAll(repeatedFixed64);
+    }
+    if (repeatedInt64 != null) {
+      $result.repeatedInt64.addAll(repeatedInt64);
+    }
+    if (repeatedFloat != null) {
+      $result.repeatedFloat.addAll(repeatedFloat);
+    }
+    if (repeatedUint64 != null) {
+      $result.repeatedUint64.addAll(repeatedUint64);
+    }
+    return $result;
+  }
   TestRepeatedScalarDifferentTagSizes._() : super();
   factory TestRepeatedScalarDifferentTagSizes.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestRepeatedScalarDifferentTagSizes.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6298,18 +8161,24 @@ class TestRepeatedScalarDifferentTagSizes extends $pb.GeneratedMessage {
   static TestRepeatedScalarDifferentTagSizes getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TestRepeatedScalarDifferentTagSizes>(create);
   static TestRepeatedScalarDifferentTagSizes? _defaultInstance;
 
+  /// Parsing repeated fixed size values used to fail. This message needs to be
+  /// used in order to get a tag of the right size; all of the repeated fields
+  /// in TestAllTypes didn't trigger the check.
   @$pb.TagNumber(12)
   $core.List<$core.int> get repeatedFixed32 => $_getList(0);
 
+  /// Check for a varint type, just for good measure.
   @$pb.TagNumber(13)
   $core.List<$core.int> get repeatedInt32 => $_getList(1);
 
+  /// These have two-byte tags.
   @$pb.TagNumber(2046)
   $core.List<$fixnum.Int64> get repeatedFixed64 => $_getList(2);
 
   @$pb.TagNumber(2047)
   $core.List<$fixnum.Int64> get repeatedInt64 => $_getList(3);
 
+  /// Three byte tags.
   @$pb.TagNumber(262142)
   $core.List<$core.double> get repeatedFloat => $_getList(4);
 
@@ -6318,7 +8187,15 @@ class TestRepeatedScalarDifferentTagSizes extends $pb.GeneratedMessage {
 }
 
 class TestParsingMerge_RepeatedFieldsGenerator_Group1 extends $pb.GeneratedMessage {
-  factory TestParsingMerge_RepeatedFieldsGenerator_Group1() => create();
+  factory TestParsingMerge_RepeatedFieldsGenerator_Group1({
+    TestAllTypes? field1,
+  }) {
+    final $result = create();
+    if (field1 != null) {
+      $result.field1 = field1;
+    }
+    return $result;
+  }
   TestParsingMerge_RepeatedFieldsGenerator_Group1._() : super();
   factory TestParsingMerge_RepeatedFieldsGenerator_Group1.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMerge_RepeatedFieldsGenerator_Group1.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6362,7 +8239,15 @@ class TestParsingMerge_RepeatedFieldsGenerator_Group1 extends $pb.GeneratedMessa
 }
 
 class TestParsingMerge_RepeatedFieldsGenerator_Group2 extends $pb.GeneratedMessage {
-  factory TestParsingMerge_RepeatedFieldsGenerator_Group2() => create();
+  factory TestParsingMerge_RepeatedFieldsGenerator_Group2({
+    TestAllTypes? field1,
+  }) {
+    final $result = create();
+    if (field1 != null) {
+      $result.field1 = field1;
+    }
+    return $result;
+  }
   TestParsingMerge_RepeatedFieldsGenerator_Group2._() : super();
   factory TestParsingMerge_RepeatedFieldsGenerator_Group2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMerge_RepeatedFieldsGenerator_Group2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6405,8 +8290,45 @@ class TestParsingMerge_RepeatedFieldsGenerator_Group2 extends $pb.GeneratedMessa
   TestAllTypes ensureField1() => $_ensure(0);
 }
 
+/// RepeatedFieldsGenerator defines matching field types as TestParsingMerge,
+/// except that all fields are repeated. In the tests, we will serialize the
+/// RepeatedFieldsGenerator to bytes, and parse the bytes to TestParsingMerge.
+/// Repeated fields in RepeatedFieldsGenerator are expected to be merged into
+/// the corresponding required/optional fields in TestParsingMerge.
 class TestParsingMerge_RepeatedFieldsGenerator extends $pb.GeneratedMessage {
-  factory TestParsingMerge_RepeatedFieldsGenerator() => create();
+  factory TestParsingMerge_RepeatedFieldsGenerator({
+    $core.Iterable<TestAllTypes>? field1,
+    $core.Iterable<TestAllTypes>? field2,
+    $core.Iterable<TestAllTypes>? field3,
+    $core.Iterable<TestParsingMerge_RepeatedFieldsGenerator_Group1>? group1,
+    $core.Iterable<TestParsingMerge_RepeatedFieldsGenerator_Group2>? group2,
+    $core.Iterable<TestAllTypes>? ext1,
+    $core.Iterable<TestAllTypes>? ext2,
+  }) {
+    final $result = create();
+    if (field1 != null) {
+      $result.field1.addAll(field1);
+    }
+    if (field2 != null) {
+      $result.field2.addAll(field2);
+    }
+    if (field3 != null) {
+      $result.field3.addAll(field3);
+    }
+    if (group1 != null) {
+      $result.group1.addAll(group1);
+    }
+    if (group2 != null) {
+      $result.group2.addAll(group2);
+    }
+    if (ext1 != null) {
+      $result.ext1.addAll(ext1);
+    }
+    if (ext2 != null) {
+      $result.ext2.addAll(ext2);
+    }
+    return $result;
+  }
   TestParsingMerge_RepeatedFieldsGenerator._() : super();
   factory TestParsingMerge_RepeatedFieldsGenerator.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMerge_RepeatedFieldsGenerator.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6466,7 +8388,15 @@ class TestParsingMerge_RepeatedFieldsGenerator extends $pb.GeneratedMessage {
 }
 
 class TestParsingMerge_OptionalGroup extends $pb.GeneratedMessage {
-  factory TestParsingMerge_OptionalGroup() => create();
+  factory TestParsingMerge_OptionalGroup({
+    TestAllTypes? optionalGroupAllTypes,
+  }) {
+    final $result = create();
+    if (optionalGroupAllTypes != null) {
+      $result.optionalGroupAllTypes = optionalGroupAllTypes;
+    }
+    return $result;
+  }
   TestParsingMerge_OptionalGroup._() : super();
   factory TestParsingMerge_OptionalGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMerge_OptionalGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6510,7 +8440,15 @@ class TestParsingMerge_OptionalGroup extends $pb.GeneratedMessage {
 }
 
 class TestParsingMerge_RepeatedGroup extends $pb.GeneratedMessage {
-  factory TestParsingMerge_RepeatedGroup() => create();
+  factory TestParsingMerge_RepeatedGroup({
+    TestAllTypes? repeatedGroupAllTypes,
+  }) {
+    final $result = create();
+    if (repeatedGroupAllTypes != null) {
+      $result.repeatedGroupAllTypes = repeatedGroupAllTypes;
+    }
+    return $result;
+  }
   TestParsingMerge_RepeatedGroup._() : super();
   factory TestParsingMerge_RepeatedGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMerge_RepeatedGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6553,8 +8491,34 @@ class TestParsingMerge_RepeatedGroup extends $pb.GeneratedMessage {
   TestAllTypes ensureRepeatedGroupAllTypes() => $_ensure(0);
 }
 
+/// Test that if an optional or required message/group field appears multiple
+/// times in the input, they need to be merged.
 class TestParsingMerge extends $pb.GeneratedMessage {
-  factory TestParsingMerge() => create();
+  factory TestParsingMerge({
+    TestAllTypes? requiredAllTypes,
+    TestAllTypes? optionalAllTypes,
+    $core.Iterable<TestAllTypes>? repeatedAllTypes,
+    TestParsingMerge_OptionalGroup? optionalGroup,
+    $core.Iterable<TestParsingMerge_RepeatedGroup>? repeatedGroup,
+  }) {
+    final $result = create();
+    if (requiredAllTypes != null) {
+      $result.requiredAllTypes = requiredAllTypes;
+    }
+    if (optionalAllTypes != null) {
+      $result.optionalAllTypes = optionalAllTypes;
+    }
+    if (repeatedAllTypes != null) {
+      $result.repeatedAllTypes.addAll(repeatedAllTypes);
+    }
+    if (optionalGroup != null) {
+      $result.optionalGroup = optionalGroup;
+    }
+    if (repeatedGroup != null) {
+      $result.repeatedGroup.addAll(repeatedGroup);
+    }
+    return $result;
+  }
   TestParsingMerge._() : super();
   factory TestParsingMerge.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMerge.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6629,8 +8593,18 @@ class TestParsingMerge extends $pb.GeneratedMessage {
   $core.List<TestParsingMerge_RepeatedGroup> get repeatedGroup => $_getList(4);
 }
 
+/// Test that the correct exception is thrown by parseFrom in a corner case
+/// involving merging, extensions, and required fields.
 class TestMergeException extends $pb.GeneratedMessage {
-  factory TestMergeException() => create();
+  factory TestMergeException({
+    TestAllExtensions? allExtensions,
+  }) {
+    final $result = create();
+    if (allExtensions != null) {
+      $result.allExtensions = allExtensions;
+    }
+    return $result;
+  }
   TestMergeException._() : super();
   factory TestMergeException.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMergeException.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6673,7 +8647,15 @@ class TestMergeException extends $pb.GeneratedMessage {
 }
 
 class TestCommentInjectionMessage extends $pb.GeneratedMessage {
-  factory TestCommentInjectionMessage() => create();
+  factory TestCommentInjectionMessage({
+    $core.String? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   TestCommentInjectionMessage._() : super();
   factory TestCommentInjectionMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestCommentInjectionMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6704,6 +8686,7 @@ class TestCommentInjectionMessage extends $pb.GeneratedMessage {
   static TestCommentInjectionMessage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TestCommentInjectionMessage>(create);
   static TestCommentInjectionMessage? _defaultInstance;
 
+  /// */ <- This should not close the generated doc comment
   @$pb.TagNumber(1)
   $core.String get a => $_getS(0, '*/ <- Neither should this.');
   @$pb.TagNumber(1)
@@ -6714,8 +8697,38 @@ class TestCommentInjectionMessage extends $pb.GeneratedMessage {
   void clearA() => clearField(1);
 }
 
+/// Used to check that the c++ code generator re-orders messages to reduce
+/// padding.
 class TestMessageSize extends $pb.GeneratedMessage {
-  factory TestMessageSize() => create();
+  factory TestMessageSize({
+    $core.bool? m1,
+    $fixnum.Int64? m2,
+    $core.bool? m3,
+    $core.String? m4,
+    $core.int? m5,
+    $fixnum.Int64? m6,
+  }) {
+    final $result = create();
+    if (m1 != null) {
+      $result.m1 = m1;
+    }
+    if (m2 != null) {
+      $result.m2 = m2;
+    }
+    if (m3 != null) {
+      $result.m3 = m3;
+    }
+    if (m4 != null) {
+      $result.m4 = m4;
+    }
+    if (m5 != null) {
+      $result.m5 = m5;
+    }
+    if (m6 != null) {
+      $result.m6 = m6;
+    }
+    return $result;
+  }
   TestMessageSize._() : super();
   factory TestMessageSize.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMessageSize.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -6806,6 +8819,7 @@ class TestMessageSize extends $pb.GeneratedMessage {
   void clearM6() => clearField(6);
 }
 
+/// Test that RPC services work.
 class FooRequest extends $pb.GeneratedMessage {
   factory FooRequest() => create();
   FooRequest._() : super();
@@ -6999,7 +9013,39 @@ class BarResponse extends $pb.GeneratedMessage {
 }
 
 class TestJsonName extends $pb.GeneratedMessage {
-  factory TestJsonName() => create();
+  factory TestJsonName({
+    $core.int? fieldName1,
+    $core.int? fieldName2,
+    $core.int? fieldName3,
+    $core.int? fieldName4,
+    $core.int? fIELDNAME5,
+    $core.int? fieldName6,
+    $core.int? fieldname7,
+  }) {
+    final $result = create();
+    if (fieldName1 != null) {
+      $result.fieldName1 = fieldName1;
+    }
+    if (fieldName2 != null) {
+      $result.fieldName2 = fieldName2;
+    }
+    if (fieldName3 != null) {
+      $result.fieldName3 = fieldName3;
+    }
+    if (fieldName4 != null) {
+      $result.fieldName4 = fieldName4;
+    }
+    if (fIELDNAME5 != null) {
+      $result.fIELDNAME5 = fIELDNAME5;
+    }
+    if (fieldName6 != null) {
+      $result.fieldName6 = fieldName6;
+    }
+    if (fieldname7 != null) {
+      $result.fieldname7 = fieldname7;
+    }
+    return $result;
+  }
   TestJsonName._() : super();
   factory TestJsonName.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestJsonName.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7101,7 +9147,15 @@ class TestJsonName extends $pb.GeneratedMessage {
 }
 
 class TestHugeFieldNumbers_OptionalGroup extends $pb.GeneratedMessage {
-  factory TestHugeFieldNumbers_OptionalGroup() => create();
+  factory TestHugeFieldNumbers_OptionalGroup({
+    $core.int? groupA,
+  }) {
+    final $result = create();
+    if (groupA != null) {
+      $result.groupA = groupA;
+    }
+    return $result;
+  }
   TestHugeFieldNumbers_OptionalGroup._() : super();
   factory TestHugeFieldNumbers_OptionalGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestHugeFieldNumbers_OptionalGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7151,7 +9205,67 @@ enum TestHugeFieldNumbers_OneofField {
 }
 
 class TestHugeFieldNumbers extends $pb.GeneratedMessage {
-  factory TestHugeFieldNumbers() => create();
+  factory TestHugeFieldNumbers({
+    $core.int? optionalInt32,
+    $core.int? fixed32,
+    $core.Iterable<$core.int>? repeatedInt32,
+    $core.Iterable<$core.int>? packedInt32,
+    ForeignEnum? optionalEnum,
+    $core.String? optionalString,
+    $core.List<$core.int>? optionalBytes,
+    ForeignMessage? optionalMessage,
+    TestHugeFieldNumbers_OptionalGroup? optionalGroup,
+    $core.Map<$core.String, $core.String>? stringStringMap,
+    $core.int? oneofUint32,
+    TestAllTypes? oneofTestAllTypes,
+    $core.String? oneofString,
+    $core.List<$core.int>? oneofBytes,
+  }) {
+    final $result = create();
+    if (optionalInt32 != null) {
+      $result.optionalInt32 = optionalInt32;
+    }
+    if (fixed32 != null) {
+      $result.fixed32 = fixed32;
+    }
+    if (repeatedInt32 != null) {
+      $result.repeatedInt32.addAll(repeatedInt32);
+    }
+    if (packedInt32 != null) {
+      $result.packedInt32.addAll(packedInt32);
+    }
+    if (optionalEnum != null) {
+      $result.optionalEnum = optionalEnum;
+    }
+    if (optionalString != null) {
+      $result.optionalString = optionalString;
+    }
+    if (optionalBytes != null) {
+      $result.optionalBytes = optionalBytes;
+    }
+    if (optionalMessage != null) {
+      $result.optionalMessage = optionalMessage;
+    }
+    if (optionalGroup != null) {
+      $result.optionalGroup = optionalGroup;
+    }
+    if (stringStringMap != null) {
+      $result.stringStringMap.addAll(stringStringMap);
+    }
+    if (oneofUint32 != null) {
+      $result.oneofUint32 = oneofUint32;
+    }
+    if (oneofTestAllTypes != null) {
+      $result.oneofTestAllTypes = oneofTestAllTypes;
+    }
+    if (oneofString != null) {
+      $result.oneofString = oneofString;
+    }
+    if (oneofBytes != null) {
+      $result.oneofBytes = oneofBytes;
+    }
+    return $result;
+  }
   TestHugeFieldNumbers._() : super();
   factory TestHugeFieldNumbers.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestHugeFieldNumbers.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7320,7 +9434,47 @@ class TestHugeFieldNumbers extends $pb.GeneratedMessage {
 }
 
 class TestExtensionInsideTable extends $pb.GeneratedMessage {
-  factory TestExtensionInsideTable() => create();
+  factory TestExtensionInsideTable({
+    $core.int? field1,
+    $core.int? field2,
+    $core.int? field3,
+    $core.int? field4,
+    $core.int? field6,
+    $core.int? field7,
+    $core.int? field8,
+    $core.int? field9,
+    $core.int? field10,
+  }) {
+    final $result = create();
+    if (field1 != null) {
+      $result.field1 = field1;
+    }
+    if (field2 != null) {
+      $result.field2 = field2;
+    }
+    if (field3 != null) {
+      $result.field3 = field3;
+    }
+    if (field4 != null) {
+      $result.field4 = field4;
+    }
+    if (field6 != null) {
+      $result.field6 = field6;
+    }
+    if (field7 != null) {
+      $result.field7 = field7;
+    }
+    if (field8 != null) {
+      $result.field8 = field8;
+    }
+    if (field9 != null) {
+      $result.field9 = field9;
+    }
+    if (field10 != null) {
+      $result.field10 = field10;
+    }
+    return $result;
+  }
   TestExtensionInsideTable._() : super();
   factory TestExtensionInsideTable.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestExtensionInsideTable.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7442,7 +9596,15 @@ class TestExtensionInsideTable extends $pb.GeneratedMessage {
 }
 
 class TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2RepeatedGroup extends $pb.GeneratedMessage {
-  factory TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2RepeatedGroup() => create();
+  factory TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2RepeatedGroup({
+    $core.String? anotherField,
+  }) {
+    final $result = create();
+    if (anotherField != null) {
+      $result.anotherField = anotherField;
+    }
+    return $result;
+  }
   TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2RepeatedGroup._() : super();
   factory TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2RepeatedGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2RepeatedGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7484,7 +9646,15 @@ class TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2RepeatedGroup exte
 }
 
 class TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2AnotherOptionalRepeatedGroup extends $pb.GeneratedMessage {
-  factory TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2AnotherOptionalRepeatedGroup() => create();
+  factory TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2AnotherOptionalRepeatedGroup({
+    $core.String? butWhyTho,
+  }) {
+    final $result = create();
+    if (butWhyTho != null) {
+      $result.butWhyTho = butWhyTho;
+    }
+    return $result;
+  }
   TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2AnotherOptionalRepeatedGroup._() : super();
   factory TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2AnotherOptionalRepeatedGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2AnotherOptionalRepeatedGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7526,7 +9696,19 @@ class TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2AnotherOptionalRep
 }
 
 class TestNestedGroupExtensionOuter_Layer1OptionalGroup extends $pb.GeneratedMessage {
-  factory TestNestedGroupExtensionOuter_Layer1OptionalGroup() => create();
+  factory TestNestedGroupExtensionOuter_Layer1OptionalGroup({
+    $core.Iterable<TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2RepeatedGroup>? layer2RepeatedGroup,
+    $core.Iterable<TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2AnotherOptionalRepeatedGroup>? layer2AnotherOptionalRepeatedGroup,
+  }) {
+    final $result = create();
+    if (layer2RepeatedGroup != null) {
+      $result.layer2RepeatedGroup.addAll(layer2RepeatedGroup);
+    }
+    if (layer2AnotherOptionalRepeatedGroup != null) {
+      $result.layer2AnotherOptionalRepeatedGroup.addAll(layer2AnotherOptionalRepeatedGroup);
+    }
+    return $result;
+  }
   TestNestedGroupExtensionOuter_Layer1OptionalGroup._() : super();
   factory TestNestedGroupExtensionOuter_Layer1OptionalGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestNestedGroupExtensionOuter_Layer1OptionalGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7565,8 +9747,17 @@ class TestNestedGroupExtensionOuter_Layer1OptionalGroup extends $pb.GeneratedMes
   $core.List<TestNestedGroupExtensionOuter_Layer1OptionalGroup_Layer2AnotherOptionalRepeatedGroup> get layer2AnotherOptionalRepeatedGroup => $_getList(1);
 }
 
+/// NOTE(b/202996544): Intentionally nested to mirror go/glep.
 class TestNestedGroupExtensionOuter extends $pb.GeneratedMessage {
-  factory TestNestedGroupExtensionOuter() => create();
+  factory TestNestedGroupExtensionOuter({
+    TestNestedGroupExtensionOuter_Layer1OptionalGroup? layer1OptionalGroup,
+  }) {
+    final $result = create();
+    if (layer1OptionalGroup != null) {
+      $result.layer1OptionalGroup = layer1OptionalGroup;
+    }
+    return $result;
+  }
   TestNestedGroupExtensionOuter._() : super();
   factory TestNestedGroupExtensionOuter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestNestedGroupExtensionOuter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7608,7 +9799,15 @@ class TestNestedGroupExtensionOuter extends $pb.GeneratedMessage {
 }
 
 class TestNestedGroupExtensionInnerExtension extends $pb.GeneratedMessage {
-  factory TestNestedGroupExtensionInnerExtension() => create();
+  factory TestNestedGroupExtensionInnerExtension({
+    $core.String? innerName,
+  }) {
+    final $result = create();
+    if (innerName != null) {
+      $result.innerName = innerName;
+    }
+    return $result;
+  }
   TestNestedGroupExtensionInnerExtension._() : super();
   factory TestNestedGroupExtensionInnerExtension.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestNestedGroupExtensionInnerExtension.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7650,7 +9849,27 @@ class TestNestedGroupExtensionInnerExtension extends $pb.GeneratedMessage {
 }
 
 class TestExtensionRangeSerialize extends $pb.GeneratedMessage {
-  factory TestExtensionRangeSerialize() => create();
+  factory TestExtensionRangeSerialize({
+    $core.int? fooOne,
+    $core.int? fooTwo,
+    $core.int? fooThree,
+    $core.int? fooFour,
+  }) {
+    final $result = create();
+    if (fooOne != null) {
+      $result.fooOne = fooOne;
+    }
+    if (fooTwo != null) {
+      $result.fooTwo = fooTwo;
+    }
+    if (fooThree != null) {
+      $result.fooThree = fooThree;
+    }
+    if (fooFour != null) {
+      $result.fooFour = fooFour;
+    }
+    return $result;
+  }
   TestExtensionRangeSerialize._() : super();
   factory TestExtensionRangeSerialize.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestExtensionRangeSerialize.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7727,7 +9946,27 @@ class TestExtensionRangeSerialize extends $pb.GeneratedMessage {
 }
 
 class TestVerifyInt32Simple extends $pb.GeneratedMessage {
-  factory TestVerifyInt32Simple() => create();
+  factory TestVerifyInt32Simple({
+    $core.int? optionalInt321,
+    $core.int? optionalInt322,
+    $core.int? optionalInt3263,
+    $core.int? optionalInt3264,
+  }) {
+    final $result = create();
+    if (optionalInt321 != null) {
+      $result.optionalInt321 = optionalInt321;
+    }
+    if (optionalInt322 != null) {
+      $result.optionalInt322 = optionalInt322;
+    }
+    if (optionalInt3263 != null) {
+      $result.optionalInt3263 = optionalInt3263;
+    }
+    if (optionalInt3264 != null) {
+      $result.optionalInt3264 = optionalInt3264;
+    }
+    return $result;
+  }
   TestVerifyInt32Simple._() : super();
   factory TestVerifyInt32Simple.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyInt32Simple.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7799,7 +10038,35 @@ class TestVerifyInt32Simple extends $pb.GeneratedMessage {
 }
 
 class TestVerifyInt32 extends $pb.GeneratedMessage {
-  factory TestVerifyInt32() => create();
+  factory TestVerifyInt32({
+    $core.int? optionalInt321,
+    $core.int? optionalInt322,
+    TestAllTypes? optionalAllTypes,
+    $core.Iterable<TestAllTypes>? repeatedAllTypes,
+    $core.int? optionalInt3263,
+    $core.int? optionalInt3264,
+  }) {
+    final $result = create();
+    if (optionalInt321 != null) {
+      $result.optionalInt321 = optionalInt321;
+    }
+    if (optionalInt322 != null) {
+      $result.optionalInt322 = optionalInt322;
+    }
+    if (optionalAllTypes != null) {
+      $result.optionalAllTypes = optionalAllTypes;
+    }
+    if (repeatedAllTypes != null) {
+      $result.repeatedAllTypes.addAll(repeatedAllTypes);
+    }
+    if (optionalInt3263 != null) {
+      $result.optionalInt3263 = optionalInt3263;
+    }
+    if (optionalInt3264 != null) {
+      $result.optionalInt3264 = optionalInt3264;
+    }
+    return $result;
+  }
   TestVerifyInt32._() : super();
   factory TestVerifyInt32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyInt32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -7887,7 +10154,47 @@ class TestVerifyInt32 extends $pb.GeneratedMessage {
 }
 
 class TestVerifyMostlyInt32 extends $pb.GeneratedMessage {
-  factory TestVerifyMostlyInt32() => create();
+  factory TestVerifyMostlyInt32({
+    $core.int? optionalInt321,
+    $core.int? optionalInt322,
+    $core.int? optionalInt323,
+    $core.int? optionalInt324,
+    TestAllTypes? optionalAllTypes,
+    $core.Iterable<TestAllTypes>? repeatedAllTypes,
+    $fixnum.Int64? optionalInt6430,
+    $core.int? optionalInt3263,
+    $core.int? optionalInt3264,
+  }) {
+    final $result = create();
+    if (optionalInt321 != null) {
+      $result.optionalInt321 = optionalInt321;
+    }
+    if (optionalInt322 != null) {
+      $result.optionalInt322 = optionalInt322;
+    }
+    if (optionalInt323 != null) {
+      $result.optionalInt323 = optionalInt323;
+    }
+    if (optionalInt324 != null) {
+      $result.optionalInt324 = optionalInt324;
+    }
+    if (optionalAllTypes != null) {
+      $result.optionalAllTypes = optionalAllTypes;
+    }
+    if (repeatedAllTypes != null) {
+      $result.repeatedAllTypes.addAll(repeatedAllTypes);
+    }
+    if (optionalInt6430 != null) {
+      $result.optionalInt6430 = optionalInt6430;
+    }
+    if (optionalInt3263 != null) {
+      $result.optionalInt3263 = optionalInt3263;
+    }
+    if (optionalInt3264 != null) {
+      $result.optionalInt3264 = optionalInt3264;
+    }
+    return $result;
+  }
   TestVerifyMostlyInt32._() : super();
   factory TestVerifyMostlyInt32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyMostlyInt32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -8005,7 +10312,51 @@ class TestVerifyMostlyInt32 extends $pb.GeneratedMessage {
 }
 
 class TestVerifyMostlyInt32BigFieldNumber extends $pb.GeneratedMessage {
-  factory TestVerifyMostlyInt32BigFieldNumber() => create();
+  factory TestVerifyMostlyInt32BigFieldNumber({
+    $core.int? optionalInt321,
+    $core.int? optionalInt322,
+    $core.int? optionalInt323,
+    $core.int? optionalInt324,
+    TestAllTypes? optionalAllTypes,
+    $core.Iterable<TestAllTypes>? repeatedAllTypes,
+    $fixnum.Int64? optionalInt6430,
+    $core.int? optionalInt3263,
+    $core.int? optionalInt3264,
+    $core.int? optionalInt32300,
+  }) {
+    final $result = create();
+    if (optionalInt321 != null) {
+      $result.optionalInt321 = optionalInt321;
+    }
+    if (optionalInt322 != null) {
+      $result.optionalInt322 = optionalInt322;
+    }
+    if (optionalInt323 != null) {
+      $result.optionalInt323 = optionalInt323;
+    }
+    if (optionalInt324 != null) {
+      $result.optionalInt324 = optionalInt324;
+    }
+    if (optionalAllTypes != null) {
+      $result.optionalAllTypes = optionalAllTypes;
+    }
+    if (repeatedAllTypes != null) {
+      $result.repeatedAllTypes.addAll(repeatedAllTypes);
+    }
+    if (optionalInt6430 != null) {
+      $result.optionalInt6430 = optionalInt6430;
+    }
+    if (optionalInt3263 != null) {
+      $result.optionalInt3263 = optionalInt3263;
+    }
+    if (optionalInt3264 != null) {
+      $result.optionalInt3264 = optionalInt3264;
+    }
+    if (optionalInt32300 != null) {
+      $result.optionalInt32300 = optionalInt32300;
+    }
+    return $result;
+  }
   TestVerifyMostlyInt32BigFieldNumber._() : super();
   factory TestVerifyMostlyInt32BigFieldNumber.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyMostlyInt32BigFieldNumber.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -8133,7 +10484,27 @@ class TestVerifyMostlyInt32BigFieldNumber extends $pb.GeneratedMessage {
 }
 
 class TestVerifyUint32Simple extends $pb.GeneratedMessage {
-  factory TestVerifyUint32Simple() => create();
+  factory TestVerifyUint32Simple({
+    $core.int? optionalUint321,
+    $core.int? optionalUint322,
+    $core.int? optionalUint3263,
+    $core.int? optionalUint3264,
+  }) {
+    final $result = create();
+    if (optionalUint321 != null) {
+      $result.optionalUint321 = optionalUint321;
+    }
+    if (optionalUint322 != null) {
+      $result.optionalUint322 = optionalUint322;
+    }
+    if (optionalUint3263 != null) {
+      $result.optionalUint3263 = optionalUint3263;
+    }
+    if (optionalUint3264 != null) {
+      $result.optionalUint3264 = optionalUint3264;
+    }
+    return $result;
+  }
   TestVerifyUint32Simple._() : super();
   factory TestVerifyUint32Simple.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyUint32Simple.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -8205,7 +10576,35 @@ class TestVerifyUint32Simple extends $pb.GeneratedMessage {
 }
 
 class TestVerifyUint32 extends $pb.GeneratedMessage {
-  factory TestVerifyUint32() => create();
+  factory TestVerifyUint32({
+    $core.int? optionalUint321,
+    $core.int? optionalUint322,
+    TestAllTypes? optionalAllTypes,
+    $core.Iterable<TestAllTypes>? repeatedAllTypes,
+    $core.int? optionalUint3263,
+    $core.int? optionalUint3264,
+  }) {
+    final $result = create();
+    if (optionalUint321 != null) {
+      $result.optionalUint321 = optionalUint321;
+    }
+    if (optionalUint322 != null) {
+      $result.optionalUint322 = optionalUint322;
+    }
+    if (optionalAllTypes != null) {
+      $result.optionalAllTypes = optionalAllTypes;
+    }
+    if (repeatedAllTypes != null) {
+      $result.repeatedAllTypes.addAll(repeatedAllTypes);
+    }
+    if (optionalUint3263 != null) {
+      $result.optionalUint3263 = optionalUint3263;
+    }
+    if (optionalUint3264 != null) {
+      $result.optionalUint3264 = optionalUint3264;
+    }
+    return $result;
+  }
   TestVerifyUint32._() : super();
   factory TestVerifyUint32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyUint32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -8293,7 +10692,35 @@ class TestVerifyUint32 extends $pb.GeneratedMessage {
 }
 
 class TestVerifyOneUint32 extends $pb.GeneratedMessage {
-  factory TestVerifyOneUint32() => create();
+  factory TestVerifyOneUint32({
+    $core.int? optionalUint321,
+    $core.int? optionalInt322,
+    TestAllTypes? optionalAllTypes,
+    $core.Iterable<TestAllTypes>? repeatedAllTypes,
+    $core.int? optionalInt3263,
+    $core.int? optionalInt3264,
+  }) {
+    final $result = create();
+    if (optionalUint321 != null) {
+      $result.optionalUint321 = optionalUint321;
+    }
+    if (optionalInt322 != null) {
+      $result.optionalInt322 = optionalInt322;
+    }
+    if (optionalAllTypes != null) {
+      $result.optionalAllTypes = optionalAllTypes;
+    }
+    if (repeatedAllTypes != null) {
+      $result.repeatedAllTypes.addAll(repeatedAllTypes);
+    }
+    if (optionalInt3263 != null) {
+      $result.optionalInt3263 = optionalInt3263;
+    }
+    if (optionalInt3264 != null) {
+      $result.optionalInt3264 = optionalInt3264;
+    }
+    return $result;
+  }
   TestVerifyOneUint32._() : super();
   factory TestVerifyOneUint32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyOneUint32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -8381,7 +10808,39 @@ class TestVerifyOneUint32 extends $pb.GeneratedMessage {
 }
 
 class TestVerifyOneInt32BigFieldNumber extends $pb.GeneratedMessage {
-  factory TestVerifyOneInt32BigFieldNumber() => create();
+  factory TestVerifyOneInt32BigFieldNumber({
+    $fixnum.Int64? optionalInt641,
+    $fixnum.Int64? optionalInt642,
+    TestAllTypes? optionalAllTypes,
+    $core.Iterable<TestAllTypes>? repeatedAllTypes,
+    $fixnum.Int64? optionalInt6463,
+    $fixnum.Int64? optionalInt6464,
+    $core.int? optionalInt3265,
+  }) {
+    final $result = create();
+    if (optionalInt641 != null) {
+      $result.optionalInt641 = optionalInt641;
+    }
+    if (optionalInt642 != null) {
+      $result.optionalInt642 = optionalInt642;
+    }
+    if (optionalAllTypes != null) {
+      $result.optionalAllTypes = optionalAllTypes;
+    }
+    if (repeatedAllTypes != null) {
+      $result.repeatedAllTypes.addAll(repeatedAllTypes);
+    }
+    if (optionalInt6463 != null) {
+      $result.optionalInt6463 = optionalInt6463;
+    }
+    if (optionalInt6464 != null) {
+      $result.optionalInt6464 = optionalInt6464;
+    }
+    if (optionalInt3265 != null) {
+      $result.optionalInt3265 = optionalInt3265;
+    }
+    return $result;
+  }
   TestVerifyOneInt32BigFieldNumber._() : super();
   factory TestVerifyOneInt32BigFieldNumber.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyOneInt32BigFieldNumber.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -8479,7 +10938,43 @@ class TestVerifyOneInt32BigFieldNumber extends $pb.GeneratedMessage {
 }
 
 class TestVerifyInt32BigFieldNumber extends $pb.GeneratedMessage {
-  factory TestVerifyInt32BigFieldNumber() => create();
+  factory TestVerifyInt32BigFieldNumber({
+    $core.int? optionalInt321,
+    $core.int? optionalInt322,
+    TestAllTypes? optionalAllTypes,
+    $core.Iterable<TestAllTypes>? repeatedAllTypes,
+    $core.int? optionalInt3263,
+    $core.int? optionalInt3264,
+    $core.int? optionalInt3265,
+    $core.int? optionalInt321000,
+  }) {
+    final $result = create();
+    if (optionalInt321 != null) {
+      $result.optionalInt321 = optionalInt321;
+    }
+    if (optionalInt322 != null) {
+      $result.optionalInt322 = optionalInt322;
+    }
+    if (optionalAllTypes != null) {
+      $result.optionalAllTypes = optionalAllTypes;
+    }
+    if (repeatedAllTypes != null) {
+      $result.repeatedAllTypes.addAll(repeatedAllTypes);
+    }
+    if (optionalInt3263 != null) {
+      $result.optionalInt3263 = optionalInt3263;
+    }
+    if (optionalInt3264 != null) {
+      $result.optionalInt3264 = optionalInt3264;
+    }
+    if (optionalInt3265 != null) {
+      $result.optionalInt3265 = optionalInt3265;
+    }
+    if (optionalInt321000 != null) {
+      $result.optionalInt321000 = optionalInt321000;
+    }
+    return $result;
+  }
   TestVerifyInt32BigFieldNumber._() : super();
   factory TestVerifyInt32BigFieldNumber.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyInt32BigFieldNumber.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -8587,7 +11082,43 @@ class TestVerifyInt32BigFieldNumber extends $pb.GeneratedMessage {
 }
 
 class TestVerifyUint32BigFieldNumber extends $pb.GeneratedMessage {
-  factory TestVerifyUint32BigFieldNumber() => create();
+  factory TestVerifyUint32BigFieldNumber({
+    $core.int? optionalUint321,
+    $core.int? optionalUint322,
+    TestAllTypes? optionalAllTypes,
+    $core.Iterable<TestAllTypes>? repeatedAllTypes,
+    $core.int? optionalUint3263,
+    $core.int? optionalUint3264,
+    $core.int? optionalUint3265,
+    $core.int? optionalUint321000,
+  }) {
+    final $result = create();
+    if (optionalUint321 != null) {
+      $result.optionalUint321 = optionalUint321;
+    }
+    if (optionalUint322 != null) {
+      $result.optionalUint322 = optionalUint322;
+    }
+    if (optionalAllTypes != null) {
+      $result.optionalAllTypes = optionalAllTypes;
+    }
+    if (repeatedAllTypes != null) {
+      $result.repeatedAllTypes.addAll(repeatedAllTypes);
+    }
+    if (optionalUint3263 != null) {
+      $result.optionalUint3263 = optionalUint3263;
+    }
+    if (optionalUint3264 != null) {
+      $result.optionalUint3264 = optionalUint3264;
+    }
+    if (optionalUint3265 != null) {
+      $result.optionalUint3265 = optionalUint3265;
+    }
+    if (optionalUint321000 != null) {
+      $result.optionalUint321000 = optionalUint321000;
+    }
+    return $result;
+  }
   TestVerifyUint32BigFieldNumber._() : super();
   factory TestVerifyUint32BigFieldNumber.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyUint32BigFieldNumber.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -8695,7 +11226,51 @@ class TestVerifyUint32BigFieldNumber extends $pb.GeneratedMessage {
 }
 
 class TestVerifyBigFieldNumberUint32_Nested extends $pb.GeneratedMessage {
-  factory TestVerifyBigFieldNumberUint32_Nested() => create();
+  factory TestVerifyBigFieldNumberUint32_Nested({
+    $core.int? optionalUint321,
+    $core.int? optionalUint322,
+    TestVerifyBigFieldNumberUint32_Nested? optionalNested,
+    $core.Iterable<TestVerifyBigFieldNumberUint32_Nested>? repeatedNested,
+    $core.int? optionalUint3263,
+    $core.int? optionalUint3264,
+    $core.int? optionalUint3265,
+    $core.int? optionalUint3266,
+    $core.int? optionalUint321000,
+    $core.int? optionalUint325000,
+  }) {
+    final $result = create();
+    if (optionalUint321 != null) {
+      $result.optionalUint321 = optionalUint321;
+    }
+    if (optionalUint322 != null) {
+      $result.optionalUint322 = optionalUint322;
+    }
+    if (optionalNested != null) {
+      $result.optionalNested = optionalNested;
+    }
+    if (repeatedNested != null) {
+      $result.repeatedNested.addAll(repeatedNested);
+    }
+    if (optionalUint3263 != null) {
+      $result.optionalUint3263 = optionalUint3263;
+    }
+    if (optionalUint3264 != null) {
+      $result.optionalUint3264 = optionalUint3264;
+    }
+    if (optionalUint3265 != null) {
+      $result.optionalUint3265 = optionalUint3265;
+    }
+    if (optionalUint3266 != null) {
+      $result.optionalUint3266 = optionalUint3266;
+    }
+    if (optionalUint321000 != null) {
+      $result.optionalUint321000 = optionalUint321000;
+    }
+    if (optionalUint325000 != null) {
+      $result.optionalUint325000 = optionalUint325000;
+    }
+    return $result;
+  }
   TestVerifyBigFieldNumberUint32_Nested._() : super();
   factory TestVerifyBigFieldNumberUint32_Nested.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyBigFieldNumberUint32_Nested.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -8823,7 +11398,15 @@ class TestVerifyBigFieldNumberUint32_Nested extends $pb.GeneratedMessage {
 }
 
 class TestVerifyBigFieldNumberUint32 extends $pb.GeneratedMessage {
-  factory TestVerifyBigFieldNumberUint32() => create();
+  factory TestVerifyBigFieldNumberUint32({
+    TestVerifyBigFieldNumberUint32_Nested? optionalNested,
+  }) {
+    final $result = create();
+    if (optionalNested != null) {
+      $result.optionalNested = optionalNested;
+    }
+    return $result;
+  }
   TestVerifyBigFieldNumberUint32._() : super();
   factory TestVerifyBigFieldNumberUint32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestVerifyBigFieldNumberUint32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -8866,8 +11449,162 @@ class TestVerifyBigFieldNumberUint32 extends $pb.GeneratedMessage {
   TestVerifyBigFieldNumberUint32_Nested ensureOptionalNested() => $_ensure(0);
 }
 
+/// This message contains different kind of enums to exercise the different
+/// parsers in table-driven.
 class EnumParseTester extends $pb.GeneratedMessage {
-  factory EnumParseTester() => create();
+  factory EnumParseTester({
+    EnumParseTester_SeqSmall0? optionalSeqSmall0Lowfield,
+    $core.Iterable<EnumParseTester_SeqSmall0>? repeatedSeqSmall0Lowfield,
+    $core.Iterable<EnumParseTester_SeqSmall0>? packedSeqSmall0Lowfield,
+    EnumParseTester_SeqSmall1? optionalSeqSmall1Lowfield,
+    $core.Iterable<EnumParseTester_SeqSmall1>? repeatedSeqSmall1Lowfield,
+    $core.Iterable<EnumParseTester_SeqSmall1>? packedSeqSmall1Lowfield,
+    EnumParseTester_SeqLarge? optionalSeqLargeLowfield,
+    $core.Iterable<EnumParseTester_SeqLarge>? repeatedSeqLargeLowfield,
+    $core.Iterable<EnumParseTester_SeqLarge>? packedSeqLargeLowfield,
+    EnumParseTester_Arbitrary? optionalArbitraryLowfield,
+    $core.Iterable<EnumParseTester_Arbitrary>? repeatedArbitraryLowfield,
+    $core.Iterable<EnumParseTester_Arbitrary>? packedArbitraryLowfield,
+    $core.int? otherField,
+    EnumParseTester_SeqSmall0? optionalSeqSmall0Midfield,
+    $core.Iterable<EnumParseTester_SeqSmall0>? repeatedSeqSmall0Midfield,
+    $core.Iterable<EnumParseTester_SeqSmall0>? packedSeqSmall0Midfield,
+    EnumParseTester_SeqSmall1? optionalSeqSmall1Midfield,
+    $core.Iterable<EnumParseTester_SeqSmall1>? repeatedSeqSmall1Midfield,
+    $core.Iterable<EnumParseTester_SeqSmall1>? packedSeqSmall1Midfield,
+    EnumParseTester_SeqLarge? optionalSeqLargeMidfield,
+    $core.Iterable<EnumParseTester_SeqLarge>? repeatedSeqLargeMidfield,
+    $core.Iterable<EnumParseTester_SeqLarge>? packedSeqLargeMidfield,
+    EnumParseTester_Arbitrary? optionalArbitraryMidfield,
+    $core.Iterable<EnumParseTester_Arbitrary>? repeatedArbitraryMidfield,
+    $core.Iterable<EnumParseTester_Arbitrary>? packedArbitraryMidfield,
+    EnumParseTester_SeqSmall0? optionalSeqSmall0Hifield,
+    $core.Iterable<EnumParseTester_SeqSmall0>? repeatedSeqSmall0Hifield,
+    $core.Iterable<EnumParseTester_SeqSmall0>? packedSeqSmall0Hifield,
+    EnumParseTester_SeqSmall1? optionalSeqSmall1Hifield,
+    $core.Iterable<EnumParseTester_SeqSmall1>? repeatedSeqSmall1Hifield,
+    $core.Iterable<EnumParseTester_SeqSmall1>? packedSeqSmall1Hifield,
+    EnumParseTester_SeqLarge? optionalSeqLargeHifield,
+    $core.Iterable<EnumParseTester_SeqLarge>? repeatedSeqLargeHifield,
+    $core.Iterable<EnumParseTester_SeqLarge>? packedSeqLargeHifield,
+    EnumParseTester_Arbitrary? optionalArbitraryHifield,
+    $core.Iterable<EnumParseTester_Arbitrary>? repeatedArbitraryHifield,
+    $core.Iterable<EnumParseTester_Arbitrary>? packedArbitraryHifield,
+  }) {
+    final $result = create();
+    if (optionalSeqSmall0Lowfield != null) {
+      $result.optionalSeqSmall0Lowfield = optionalSeqSmall0Lowfield;
+    }
+    if (repeatedSeqSmall0Lowfield != null) {
+      $result.repeatedSeqSmall0Lowfield.addAll(repeatedSeqSmall0Lowfield);
+    }
+    if (packedSeqSmall0Lowfield != null) {
+      $result.packedSeqSmall0Lowfield.addAll(packedSeqSmall0Lowfield);
+    }
+    if (optionalSeqSmall1Lowfield != null) {
+      $result.optionalSeqSmall1Lowfield = optionalSeqSmall1Lowfield;
+    }
+    if (repeatedSeqSmall1Lowfield != null) {
+      $result.repeatedSeqSmall1Lowfield.addAll(repeatedSeqSmall1Lowfield);
+    }
+    if (packedSeqSmall1Lowfield != null) {
+      $result.packedSeqSmall1Lowfield.addAll(packedSeqSmall1Lowfield);
+    }
+    if (optionalSeqLargeLowfield != null) {
+      $result.optionalSeqLargeLowfield = optionalSeqLargeLowfield;
+    }
+    if (repeatedSeqLargeLowfield != null) {
+      $result.repeatedSeqLargeLowfield.addAll(repeatedSeqLargeLowfield);
+    }
+    if (packedSeqLargeLowfield != null) {
+      $result.packedSeqLargeLowfield.addAll(packedSeqLargeLowfield);
+    }
+    if (optionalArbitraryLowfield != null) {
+      $result.optionalArbitraryLowfield = optionalArbitraryLowfield;
+    }
+    if (repeatedArbitraryLowfield != null) {
+      $result.repeatedArbitraryLowfield.addAll(repeatedArbitraryLowfield);
+    }
+    if (packedArbitraryLowfield != null) {
+      $result.packedArbitraryLowfield.addAll(packedArbitraryLowfield);
+    }
+    if (otherField != null) {
+      $result.otherField = otherField;
+    }
+    if (optionalSeqSmall0Midfield != null) {
+      $result.optionalSeqSmall0Midfield = optionalSeqSmall0Midfield;
+    }
+    if (repeatedSeqSmall0Midfield != null) {
+      $result.repeatedSeqSmall0Midfield.addAll(repeatedSeqSmall0Midfield);
+    }
+    if (packedSeqSmall0Midfield != null) {
+      $result.packedSeqSmall0Midfield.addAll(packedSeqSmall0Midfield);
+    }
+    if (optionalSeqSmall1Midfield != null) {
+      $result.optionalSeqSmall1Midfield = optionalSeqSmall1Midfield;
+    }
+    if (repeatedSeqSmall1Midfield != null) {
+      $result.repeatedSeqSmall1Midfield.addAll(repeatedSeqSmall1Midfield);
+    }
+    if (packedSeqSmall1Midfield != null) {
+      $result.packedSeqSmall1Midfield.addAll(packedSeqSmall1Midfield);
+    }
+    if (optionalSeqLargeMidfield != null) {
+      $result.optionalSeqLargeMidfield = optionalSeqLargeMidfield;
+    }
+    if (repeatedSeqLargeMidfield != null) {
+      $result.repeatedSeqLargeMidfield.addAll(repeatedSeqLargeMidfield);
+    }
+    if (packedSeqLargeMidfield != null) {
+      $result.packedSeqLargeMidfield.addAll(packedSeqLargeMidfield);
+    }
+    if (optionalArbitraryMidfield != null) {
+      $result.optionalArbitraryMidfield = optionalArbitraryMidfield;
+    }
+    if (repeatedArbitraryMidfield != null) {
+      $result.repeatedArbitraryMidfield.addAll(repeatedArbitraryMidfield);
+    }
+    if (packedArbitraryMidfield != null) {
+      $result.packedArbitraryMidfield.addAll(packedArbitraryMidfield);
+    }
+    if (optionalSeqSmall0Hifield != null) {
+      $result.optionalSeqSmall0Hifield = optionalSeqSmall0Hifield;
+    }
+    if (repeatedSeqSmall0Hifield != null) {
+      $result.repeatedSeqSmall0Hifield.addAll(repeatedSeqSmall0Hifield);
+    }
+    if (packedSeqSmall0Hifield != null) {
+      $result.packedSeqSmall0Hifield.addAll(packedSeqSmall0Hifield);
+    }
+    if (optionalSeqSmall1Hifield != null) {
+      $result.optionalSeqSmall1Hifield = optionalSeqSmall1Hifield;
+    }
+    if (repeatedSeqSmall1Hifield != null) {
+      $result.repeatedSeqSmall1Hifield.addAll(repeatedSeqSmall1Hifield);
+    }
+    if (packedSeqSmall1Hifield != null) {
+      $result.packedSeqSmall1Hifield.addAll(packedSeqSmall1Hifield);
+    }
+    if (optionalSeqLargeHifield != null) {
+      $result.optionalSeqLargeHifield = optionalSeqLargeHifield;
+    }
+    if (repeatedSeqLargeHifield != null) {
+      $result.repeatedSeqLargeHifield.addAll(repeatedSeqLargeHifield);
+    }
+    if (packedSeqLargeHifield != null) {
+      $result.packedSeqLargeHifield.addAll(packedSeqLargeHifield);
+    }
+    if (optionalArbitraryHifield != null) {
+      $result.optionalArbitraryHifield = optionalArbitraryHifield;
+    }
+    if (repeatedArbitraryHifield != null) {
+      $result.repeatedArbitraryHifield.addAll(repeatedArbitraryHifield);
+    }
+    if (packedArbitraryHifield != null) {
+      $result.packedArbitraryHifield.addAll(packedArbitraryHifield);
+    }
+    return $result;
+  }
   EnumParseTester._() : super();
   factory EnumParseTester.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EnumParseTester.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -8997,6 +11734,7 @@ class EnumParseTester extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.List<EnumParseTester_Arbitrary> get packedArbitraryLowfield => $_getList(11);
 
+  /// An arbitrary field we can append to to break the runs of repeated fields.
   @$pb.TagNumber(99)
   $core.int get otherField => $_getIZ(12);
   @$pb.TagNumber(99)
@@ -9127,8 +11865,54 @@ class EnumParseTester extends $pb.GeneratedMessage {
   $core.List<EnumParseTester_Arbitrary> get packedArbitraryHifield => $_getList(36);
 }
 
+/// This message contains different kind of bool fields to exercise the different
+/// parsers in table-drived.
 class BoolParseTester extends $pb.GeneratedMessage {
-  factory BoolParseTester() => create();
+  factory BoolParseTester({
+    $core.bool? optionalBoolLowfield,
+    $core.Iterable<$core.bool>? repeatedBoolLowfield,
+    $core.Iterable<$core.bool>? packedBoolLowfield,
+    $core.int? otherField,
+    $core.bool? optionalBoolMidfield,
+    $core.Iterable<$core.bool>? repeatedBoolMidfield,
+    $core.Iterable<$core.bool>? packedBoolMidfield,
+    $core.bool? optionalBoolHifield,
+    $core.Iterable<$core.bool>? repeatedBoolHifield,
+    $core.Iterable<$core.bool>? packedBoolHifield,
+  }) {
+    final $result = create();
+    if (optionalBoolLowfield != null) {
+      $result.optionalBoolLowfield = optionalBoolLowfield;
+    }
+    if (repeatedBoolLowfield != null) {
+      $result.repeatedBoolLowfield.addAll(repeatedBoolLowfield);
+    }
+    if (packedBoolLowfield != null) {
+      $result.packedBoolLowfield.addAll(packedBoolLowfield);
+    }
+    if (otherField != null) {
+      $result.otherField = otherField;
+    }
+    if (optionalBoolMidfield != null) {
+      $result.optionalBoolMidfield = optionalBoolMidfield;
+    }
+    if (repeatedBoolMidfield != null) {
+      $result.repeatedBoolMidfield.addAll(repeatedBoolMidfield);
+    }
+    if (packedBoolMidfield != null) {
+      $result.packedBoolMidfield.addAll(packedBoolMidfield);
+    }
+    if (optionalBoolHifield != null) {
+      $result.optionalBoolHifield = optionalBoolHifield;
+    }
+    if (repeatedBoolHifield != null) {
+      $result.repeatedBoolHifield.addAll(repeatedBoolHifield);
+    }
+    if (packedBoolHifield != null) {
+      $result.packedBoolHifield.addAll(packedBoolHifield);
+    }
+    return $result;
+  }
   BoolParseTester._() : super();
   factory BoolParseTester.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BoolParseTester.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -9186,6 +11970,7 @@ class BoolParseTester extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.List<$core.bool> get packedBoolLowfield => $_getList(2);
 
+  /// An arbitrary field we can append to to break the runs of repeated fields.
   @$pb.TagNumber(99)
   $core.int get otherField => $_getIZ(3);
   @$pb.TagNumber(99)
@@ -9227,7 +12012,51 @@ class BoolParseTester extends $pb.GeneratedMessage {
 }
 
 class Int32ParseTester extends $pb.GeneratedMessage {
-  factory Int32ParseTester() => create();
+  factory Int32ParseTester({
+    $core.int? optionalInt32Lowfield,
+    $core.Iterable<$core.int>? repeatedInt32Lowfield,
+    $core.Iterable<$core.int>? packedInt32Lowfield,
+    $core.int? otherField,
+    $core.int? optionalInt32Midfield,
+    $core.Iterable<$core.int>? repeatedInt32Midfield,
+    $core.Iterable<$core.int>? packedInt32Midfield,
+    $core.int? optionalInt32Hifield,
+    $core.Iterable<$core.int>? repeatedInt32Hifield,
+    $core.Iterable<$core.int>? packedInt32Hifield,
+  }) {
+    final $result = create();
+    if (optionalInt32Lowfield != null) {
+      $result.optionalInt32Lowfield = optionalInt32Lowfield;
+    }
+    if (repeatedInt32Lowfield != null) {
+      $result.repeatedInt32Lowfield.addAll(repeatedInt32Lowfield);
+    }
+    if (packedInt32Lowfield != null) {
+      $result.packedInt32Lowfield.addAll(packedInt32Lowfield);
+    }
+    if (otherField != null) {
+      $result.otherField = otherField;
+    }
+    if (optionalInt32Midfield != null) {
+      $result.optionalInt32Midfield = optionalInt32Midfield;
+    }
+    if (repeatedInt32Midfield != null) {
+      $result.repeatedInt32Midfield.addAll(repeatedInt32Midfield);
+    }
+    if (packedInt32Midfield != null) {
+      $result.packedInt32Midfield.addAll(packedInt32Midfield);
+    }
+    if (optionalInt32Hifield != null) {
+      $result.optionalInt32Hifield = optionalInt32Hifield;
+    }
+    if (repeatedInt32Hifield != null) {
+      $result.repeatedInt32Hifield.addAll(repeatedInt32Hifield);
+    }
+    if (packedInt32Hifield != null) {
+      $result.packedInt32Hifield.addAll(packedInt32Hifield);
+    }
+    return $result;
+  }
   Int32ParseTester._() : super();
   factory Int32ParseTester.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Int32ParseTester.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -9285,6 +12114,7 @@ class Int32ParseTester extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.List<$core.int> get packedInt32Lowfield => $_getList(2);
 
+  /// An arbitrary field we can append to to break the runs of repeated fields.
   @$pb.TagNumber(99)
   $core.int get otherField => $_getIZ(3);
   @$pb.TagNumber(99)
@@ -9326,7 +12156,51 @@ class Int32ParseTester extends $pb.GeneratedMessage {
 }
 
 class Int64ParseTester extends $pb.GeneratedMessage {
-  factory Int64ParseTester() => create();
+  factory Int64ParseTester({
+    $fixnum.Int64? optionalInt64Lowfield,
+    $core.Iterable<$fixnum.Int64>? repeatedInt64Lowfield,
+    $core.Iterable<$fixnum.Int64>? packedInt64Lowfield,
+    $core.int? otherField,
+    $fixnum.Int64? optionalInt64Midfield,
+    $core.Iterable<$fixnum.Int64>? repeatedInt64Midfield,
+    $core.Iterable<$fixnum.Int64>? packedInt64Midfield,
+    $fixnum.Int64? optionalInt64Hifield,
+    $core.Iterable<$fixnum.Int64>? repeatedInt64Hifield,
+    $core.Iterable<$fixnum.Int64>? packedInt64Hifield,
+  }) {
+    final $result = create();
+    if (optionalInt64Lowfield != null) {
+      $result.optionalInt64Lowfield = optionalInt64Lowfield;
+    }
+    if (repeatedInt64Lowfield != null) {
+      $result.repeatedInt64Lowfield.addAll(repeatedInt64Lowfield);
+    }
+    if (packedInt64Lowfield != null) {
+      $result.packedInt64Lowfield.addAll(packedInt64Lowfield);
+    }
+    if (otherField != null) {
+      $result.otherField = otherField;
+    }
+    if (optionalInt64Midfield != null) {
+      $result.optionalInt64Midfield = optionalInt64Midfield;
+    }
+    if (repeatedInt64Midfield != null) {
+      $result.repeatedInt64Midfield.addAll(repeatedInt64Midfield);
+    }
+    if (packedInt64Midfield != null) {
+      $result.packedInt64Midfield.addAll(packedInt64Midfield);
+    }
+    if (optionalInt64Hifield != null) {
+      $result.optionalInt64Hifield = optionalInt64Hifield;
+    }
+    if (repeatedInt64Hifield != null) {
+      $result.repeatedInt64Hifield.addAll(repeatedInt64Hifield);
+    }
+    if (packedInt64Hifield != null) {
+      $result.packedInt64Hifield.addAll(packedInt64Hifield);
+    }
+    return $result;
+  }
   Int64ParseTester._() : super();
   factory Int64ParseTester.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Int64ParseTester.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -9384,6 +12258,7 @@ class Int64ParseTester extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.List<$fixnum.Int64> get packedInt64Lowfield => $_getList(2);
 
+  /// An arbitrary field we can append to to break the runs of repeated fields.
   @$pb.TagNumber(99)
   $core.int get otherField => $_getIZ(3);
   @$pb.TagNumber(99)
@@ -9425,7 +12300,27 @@ class Int64ParseTester extends $pb.GeneratedMessage {
 }
 
 class InlinedStringIdxRegressionProto extends $pb.GeneratedMessage {
-  factory InlinedStringIdxRegressionProto() => create();
+  factory InlinedStringIdxRegressionProto({
+    $core.String? str1,
+    InlinedStringIdxRegressionProto? sub,
+    $core.String? str2,
+    $core.List<$core.int>? str3,
+  }) {
+    final $result = create();
+    if (str1 != null) {
+      $result.str1 = str1;
+    }
+    if (sub != null) {
+      $result.sub = sub;
+    }
+    if (str2 != null) {
+      $result.str2 = str2;
+    }
+    if (str3 != null) {
+      $result.str3 = str3;
+    }
+    return $result;
+  }
   InlinedStringIdxRegressionProto._() : super();
   factory InlinedStringIdxRegressionProto.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory InlinedStringIdxRegressionProto.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -9459,6 +12354,8 @@ class InlinedStringIdxRegressionProto extends $pb.GeneratedMessage {
   static InlinedStringIdxRegressionProto getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InlinedStringIdxRegressionProto>(create);
   static InlinedStringIdxRegressionProto? _defaultInstance;
 
+  /// We mix data to make sure aux ids and inlined string idx do not match.
+  /// aux_idx == inlined_string_idx == 1
   @$pb.TagNumber(1)
   $core.String get str1 => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -9468,6 +12365,7 @@ class InlinedStringIdxRegressionProto extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearStr1() => clearField(1);
 
+  /// aux_idx == 2
   @$pb.TagNumber(2)
   InlinedStringIdxRegressionProto get sub => $_getN(1);
   @$pb.TagNumber(2)
@@ -9479,6 +12377,7 @@ class InlinedStringIdxRegressionProto extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   InlinedStringIdxRegressionProto ensureSub() => $_ensure(1);
 
+  /// aux_idx == 3, inlined_string_idx == 2
   @$pb.TagNumber(3)
   $core.String get str2 => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -9488,6 +12387,7 @@ class InlinedStringIdxRegressionProto extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearStr2() => clearField(3);
 
+  /// aux_idx == 4, inlined_string_idx == 3
   @$pb.TagNumber(4)
   $core.List<$core.int> get str3 => $_getN(3);
   @$pb.TagNumber(4)
@@ -9499,7 +12399,35 @@ class InlinedStringIdxRegressionProto extends $pb.GeneratedMessage {
 }
 
 class StringParseTester extends $pb.GeneratedMessage {
-  factory StringParseTester() => create();
+  factory StringParseTester({
+    $core.String? optionalStringLowfield,
+    $core.Iterable<$core.String>? repeatedStringLowfield,
+    $core.String? optionalStringMidfield,
+    $core.Iterable<$core.String>? repeatedStringMidfield,
+    $core.String? optionalStringHifield,
+    $core.Iterable<$core.String>? repeatedStringHifield,
+  }) {
+    final $result = create();
+    if (optionalStringLowfield != null) {
+      $result.optionalStringLowfield = optionalStringLowfield;
+    }
+    if (repeatedStringLowfield != null) {
+      $result.repeatedStringLowfield.addAll(repeatedStringLowfield);
+    }
+    if (optionalStringMidfield != null) {
+      $result.optionalStringMidfield = optionalStringMidfield;
+    }
+    if (repeatedStringMidfield != null) {
+      $result.repeatedStringMidfield.addAll(repeatedStringMidfield);
+    }
+    if (optionalStringHifield != null) {
+      $result.optionalStringHifield = optionalStringHifield;
+    }
+    if (repeatedStringHifield != null) {
+      $result.repeatedStringHifield.addAll(repeatedStringHifield);
+    }
+    return $result;
+  }
   StringParseTester._() : super();
   factory StringParseTester.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StringParseTester.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -9575,7 +12503,19 @@ class StringParseTester extends $pb.GeneratedMessage {
 }
 
 class BadFieldNames extends $pb.GeneratedMessage {
-  factory BadFieldNames() => create();
+  factory BadFieldNames({
+    $core.int? optionalInt32,
+    $core.int? for_2,
+  }) {
+    final $result = create();
+    if (optionalInt32 != null) {
+      $result.optionalInt32 = optionalInt32;
+    }
+    if (for_2 != null) {
+      $result.for_2 = for_2;
+    }
+    return $result;
+  }
   BadFieldNames._() : super();
   factory BadFieldNames.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BadFieldNames.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -9627,7 +12567,15 @@ class BadFieldNames extends $pb.GeneratedMessage {
 }
 
 class RedactedFields extends $pb.GeneratedMessage {
-  factory RedactedFields() => create();
+  factory RedactedFields({
+    $core.String? optionalRedactedString,
+  }) {
+    final $result = create();
+    if (optionalRedactedString != null) {
+      $result.optionalRedactedString = optionalRedactedString;
+    }
+    return $result;
+  }
   RedactedFields._() : super();
   factory RedactedFields.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RedactedFields.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -9669,7 +12617,19 @@ class RedactedFields extends $pb.GeneratedMessage {
 }
 
 class TestCord extends $pb.GeneratedMessage {
-  factory TestCord() => create();
+  factory TestCord({
+    $core.List<$core.int>? optionalBytesCord,
+    $core.List<$core.int>? optionalBytesCordDefault,
+  }) {
+    final $result = create();
+    if (optionalBytesCord != null) {
+      $result.optionalBytesCord = optionalBytesCord;
+    }
+    if (optionalBytesCordDefault != null) {
+      $result.optionalBytesCordDefault = optionalBytesCordDefault;
+    }
+    return $result;
+  }
   TestCord._() : super();
   factory TestCord.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestCord.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -9739,13 +12699,13 @@ class Unittest {
   static final optionalGroupExtension = $pb.Extension<OptionalGroup_extension>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalGroupExtension', 16, $pb.PbFieldType.OG, defaultOrMaker: OptionalGroup_extension.getDefault, subBuilder: OptionalGroup_extension.create);
   static final optionalNestedMessageExtension = $pb.Extension<TestAllTypes_NestedMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalNestedMessageExtension', 18, $pb.PbFieldType.OM, defaultOrMaker: TestAllTypes_NestedMessage.getDefault, subBuilder: TestAllTypes_NestedMessage.create);
   static final optionalForeignMessageExtension = $pb.Extension<ForeignMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalForeignMessageExtension', 19, $pb.PbFieldType.OM, defaultOrMaker: ForeignMessage.getDefault, subBuilder: ForeignMessage.create);
-  static final optionalImportMessageExtension = $pb.Extension<$95.ImportMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalImportMessageExtension', 20, $pb.PbFieldType.OM, defaultOrMaker: $95.ImportMessage.getDefault, subBuilder: $95.ImportMessage.create);
+  static final optionalImportMessageExtension = $pb.Extension<$97.ImportMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalImportMessageExtension', 20, $pb.PbFieldType.OM, defaultOrMaker: $97.ImportMessage.getDefault, subBuilder: $97.ImportMessage.create);
   static final optionalNestedEnumExtension = $pb.Extension<TestAllTypes_NestedEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalNestedEnumExtension', 21, $pb.PbFieldType.OE, defaultOrMaker: TestAllTypes_NestedEnum.FOO, valueOf: TestAllTypes_NestedEnum.valueOf, enumValues: TestAllTypes_NestedEnum.values);
   static final optionalForeignEnumExtension = $pb.Extension<ForeignEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalForeignEnumExtension', 22, $pb.PbFieldType.OE, defaultOrMaker: ForeignEnum.FOREIGN_FOO, valueOf: ForeignEnum.valueOf, enumValues: ForeignEnum.values);
-  static final optionalImportEnumExtension = $pb.Extension<$95.ImportEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalImportEnumExtension', 23, $pb.PbFieldType.OE, defaultOrMaker: $95.ImportEnum.IMPORT_FOO, valueOf: $95.ImportEnum.valueOf, enumValues: $95.ImportEnum.values);
+  static final optionalImportEnumExtension = $pb.Extension<$97.ImportEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalImportEnumExtension', 23, $pb.PbFieldType.OE, defaultOrMaker: $97.ImportEnum.IMPORT_FOO, valueOf: $97.ImportEnum.valueOf, enumValues: $97.ImportEnum.values);
   static final optionalStringPieceExtension = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalStringPieceExtension', 24, $pb.PbFieldType.OS);
   static final optionalCordExtension = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalCordExtension', 25, $pb.PbFieldType.OS);
-  static final optionalPublicImportMessageExtension = $pb.Extension<$96.PublicImportMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalPublicImportMessageExtension', 26, $pb.PbFieldType.OM, defaultOrMaker: $96.PublicImportMessage.getDefault, subBuilder: $96.PublicImportMessage.create);
+  static final optionalPublicImportMessageExtension = $pb.Extension<$98.PublicImportMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalPublicImportMessageExtension', 26, $pb.PbFieldType.OM, defaultOrMaker: $98.PublicImportMessage.getDefault, subBuilder: $98.PublicImportMessage.create);
   static final optionalLazyMessageExtension = $pb.Extension<TestAllTypes_NestedMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalLazyMessageExtension', 27, $pb.PbFieldType.OM, defaultOrMaker: TestAllTypes_NestedMessage.getDefault, subBuilder: TestAllTypes_NestedMessage.create);
   static final optionalUnverifiedLazyMessageExtension = $pb.Extension<TestAllTypes_NestedMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'optionalUnverifiedLazyMessageExtension', 28, $pb.PbFieldType.OM, defaultOrMaker: TestAllTypes_NestedMessage.getDefault, subBuilder: TestAllTypes_NestedMessage.create);
   static final repeatedInt32Extension = $pb.Extension<$core.int>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedInt32Extension', 31, $pb.PbFieldType.P3, check: $pb.getCheckFunction($pb.PbFieldType.P3));
@@ -9766,10 +12726,10 @@ class Unittest {
   static final repeatedGroupExtension = $pb.Extension<RepeatedGroup_extension>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedGroupExtension', 46, $pb.PbFieldType.PG, check: $pb.getCheckFunction($pb.PbFieldType.PG), subBuilder: RepeatedGroup_extension.create);
   static final repeatedNestedMessageExtension = $pb.Extension<TestAllTypes_NestedMessage>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedNestedMessageExtension', 48, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: TestAllTypes_NestedMessage.create);
   static final repeatedForeignMessageExtension = $pb.Extension<ForeignMessage>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedForeignMessageExtension', 49, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: ForeignMessage.create);
-  static final repeatedImportMessageExtension = $pb.Extension<$95.ImportMessage>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedImportMessageExtension', 50, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: $95.ImportMessage.create);
+  static final repeatedImportMessageExtension = $pb.Extension<$97.ImportMessage>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedImportMessageExtension', 50, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: $97.ImportMessage.create);
   static final repeatedNestedEnumExtension = $pb.Extension<TestAllTypes_NestedEnum>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedNestedEnumExtension', 51, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: TestAllTypes_NestedEnum.valueOf, enumValues: TestAllTypes_NestedEnum.values);
   static final repeatedForeignEnumExtension = $pb.Extension<ForeignEnum>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedForeignEnumExtension', 52, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: ForeignEnum.valueOf, enumValues: ForeignEnum.values);
-  static final repeatedImportEnumExtension = $pb.Extension<$95.ImportEnum>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedImportEnumExtension', 53, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: $95.ImportEnum.valueOf, enumValues: $95.ImportEnum.values);
+  static final repeatedImportEnumExtension = $pb.Extension<$97.ImportEnum>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedImportEnumExtension', 53, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: $97.ImportEnum.valueOf, enumValues: $97.ImportEnum.values);
   static final repeatedStringPieceExtension = $pb.Extension<$core.String>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedStringPieceExtension', 54, $pb.PbFieldType.PS, check: $pb.getCheckFunction($pb.PbFieldType.PS));
   static final repeatedCordExtension = $pb.Extension<$core.String>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedCordExtension', 55, $pb.PbFieldType.PS, check: $pb.getCheckFunction($pb.PbFieldType.PS));
   static final repeatedLazyMessageExtension = $pb.Extension<TestAllTypes_NestedMessage>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'repeatedLazyMessageExtension', 57, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: TestAllTypes_NestedMessage.create);
@@ -9790,7 +12750,7 @@ class Unittest {
   static final defaultBytesExtension = $pb.Extension<$core.List<$core.int>>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'defaultBytesExtension', 75, $pb.PbFieldType.OY, defaultOrMaker: () => <$core.int>[0x77,0x6f,0x72,0x6c,0x64]);
   static final defaultNestedEnumExtension = $pb.Extension<TestAllTypes_NestedEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'defaultNestedEnumExtension', 81, $pb.PbFieldType.OE, defaultOrMaker: TestAllTypes_NestedEnum.BAR, valueOf: TestAllTypes_NestedEnum.valueOf, enumValues: TestAllTypes_NestedEnum.values);
   static final defaultForeignEnumExtension = $pb.Extension<ForeignEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'defaultForeignEnumExtension', 82, $pb.PbFieldType.OE, defaultOrMaker: ForeignEnum.FOREIGN_BAR, valueOf: ForeignEnum.valueOf, enumValues: ForeignEnum.values);
-  static final defaultImportEnumExtension = $pb.Extension<$95.ImportEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'defaultImportEnumExtension', 83, $pb.PbFieldType.OE, defaultOrMaker: $95.ImportEnum.IMPORT_BAR, valueOf: $95.ImportEnum.valueOf, enumValues: $95.ImportEnum.values);
+  static final defaultImportEnumExtension = $pb.Extension<$97.ImportEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'defaultImportEnumExtension', 83, $pb.PbFieldType.OE, defaultOrMaker: $97.ImportEnum.IMPORT_BAR, valueOf: $97.ImportEnum.valueOf, enumValues: $97.ImportEnum.values);
   static final defaultStringPieceExtension = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'defaultStringPieceExtension', 84, $pb.PbFieldType.OS, defaultOrMaker: 'abc');
   static final defaultCordExtension = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'defaultCordExtension', 85, $pb.PbFieldType.OS, defaultOrMaker: '123');
   static final oneofUint32Extension = $pb.Extension<$core.int>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensions', _omitFieldNames ? '' : 'oneofUint32Extension', 111, $pb.PbFieldType.OU3);

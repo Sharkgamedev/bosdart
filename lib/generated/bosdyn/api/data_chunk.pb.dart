@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,8 +14,23 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Represents a chunk of (possibly serialized) data.
+/// Chunks will be concatenated together to produce a datagram.
+/// This is to avoid size limit restrictions in grpc implementations.
 class DataChunk extends $pb.GeneratedMessage {
-  factory DataChunk() => create();
+  factory DataChunk({
+    $fixnum.Int64? totalSize,
+    $core.List<$core.int>? data,
+  }) {
+    final $result = create();
+    if (totalSize != null) {
+      $result.totalSize = totalSize;
+    }
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
   DataChunk._() : super();
   factory DataChunk.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DataChunk.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -47,6 +62,7 @@ class DataChunk extends $pb.GeneratedMessage {
   static DataChunk getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DataChunk>(create);
   static DataChunk? _defaultInstance;
 
+  /// The total size in bytes of the datagram that this chunk is a part of.
   @$pb.TagNumber(1)
   $fixnum.Int64 get totalSize => $_getI64(0);
   @$pb.TagNumber(1)
@@ -56,6 +72,7 @@ class DataChunk extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearTotalSize() => clearField(1);
 
+  /// Bytes in this data chunk. Bytes are sent sequentially.
   @$pb.TagNumber(2)
   $core.List<$core.int> get data => $_getN(1);
   @$pb.TagNumber(2)

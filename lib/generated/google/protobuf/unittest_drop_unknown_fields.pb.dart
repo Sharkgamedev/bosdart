@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -18,7 +18,19 @@ import 'unittest_drop_unknown_fields.pbenum.dart';
 export 'unittest_drop_unknown_fields.pbenum.dart';
 
 class Foo extends $pb.GeneratedMessage {
-  factory Foo() => create();
+  factory Foo({
+    $core.int? int32Value,
+    Foo_NestedEnum? enumValue,
+  }) {
+    final $result = create();
+    if (int32Value != null) {
+      $result.int32Value = int32Value;
+    }
+    if (enumValue != null) {
+      $result.enumValue = enumValue;
+    }
+    return $result;
+  }
   Foo._() : super();
   factory Foo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Foo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -70,7 +82,23 @@ class Foo extends $pb.GeneratedMessage {
 }
 
 class FooWithExtraFields extends $pb.GeneratedMessage {
-  factory FooWithExtraFields() => create();
+  factory FooWithExtraFields({
+    $core.int? int32Value,
+    FooWithExtraFields_NestedEnum? enumValue,
+    $core.int? extraInt32Value,
+  }) {
+    final $result = create();
+    if (int32Value != null) {
+      $result.int32Value = int32Value;
+    }
+    if (enumValue != null) {
+      $result.enumValue = enumValue;
+    }
+    if (extraInt32Value != null) {
+      $result.extraInt32Value = extraInt32Value;
+    }
+    return $result;
+  }
   FooWithExtraFields._() : super();
   factory FooWithExtraFields.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FooWithExtraFields.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

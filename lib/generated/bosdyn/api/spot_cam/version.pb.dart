@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,17 +13,26 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../header.pb.dart' as $67;
+import '../header.pb.dart' as $68;
 import '../robot_id.pb.dart' as $25;
 
+/// Request the software version running on the SpotCam.
 class GetSoftwareVersionRequest extends $pb.GeneratedMessage {
-  factory GetSoftwareVersionRequest() => create();
+  factory GetSoftwareVersionRequest({
+    $68.RequestHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   GetSoftwareVersionRequest._() : super();
   factory GetSoftwareVersionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetSoftwareVersionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSoftwareVersionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -48,26 +57,44 @@ class GetSoftwareVersionRequest extends $pb.GeneratedMessage {
   static GetSoftwareVersionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSoftwareVersionRequest>(create);
   static GetSoftwareVersionRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 }
 
+/// Provide the SpotCam's software release version.
 class GetSoftwareVersionResponse extends $pb.GeneratedMessage {
-  factory GetSoftwareVersionResponse() => create();
+  factory GetSoftwareVersionResponse({
+    $68.ResponseHeader? header,
+    $25.SoftwareVersion? version,
+    $core.String? detail,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (detail != null) {
+      $result.detail = detail;
+    }
+    return $result;
+  }
   GetSoftwareVersionResponse._() : super();
   factory GetSoftwareVersionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetSoftwareVersionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSoftwareVersionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<$25.SoftwareVersion>(2, _omitFieldNames ? '' : 'version', subBuilder: $25.SoftwareVersion.create)
     ..aOS(3, _omitFieldNames ? '' : 'detail')
     ..hasRequiredFields = false
@@ -94,17 +121,19 @@ class GetSoftwareVersionResponse extends $pb.GeneratedMessage {
   static GetSoftwareVersionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSoftwareVersionResponse>(create);
   static GetSoftwareVersionResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Version of the software currently running on the SpotCam.
   @$pb.TagNumber(2)
   $25.SoftwareVersion get version => $_getN(1);
   @$pb.TagNumber(2)
@@ -116,6 +145,8 @@ class GetSoftwareVersionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $25.SoftwareVersion ensureVersion() => $_ensure(1);
 
+  /// Extra detail about the version of software running on spotcam.
+  /// May contain metadata about build dates and configuration.
   @$pb.TagNumber(3)
   $core.String get detail => $_getSZ(2);
   @$pb.TagNumber(3)

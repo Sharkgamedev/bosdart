@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,13 +14,24 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../google/protobuf/timestamp.pb.dart' as $60;
 import 'data_acquisition.pb.dart' as $2;
-import 'header.pb.dart' as $67;
+import 'header.pb.dart' as $68;
 import 'image.pb.dart' as $11;
 
+/// A query parameter which filters the possible set of data identifiters to those
+/// which contain the same action/group names matching any of the names in the
+/// set of CaptureActionIds.
 class ActionIdQuery extends $pb.GeneratedMessage {
-  factory ActionIdQuery() => create();
+  factory ActionIdQuery({
+    $core.Iterable<$2.CaptureActionId>? actionIds,
+  }) {
+    final $result = create();
+    if (actionIds != null) {
+      $result.actionIds.addAll(actionIds);
+    }
+    return $result;
+  }
   ActionIdQuery._() : super();
   factory ActionIdQuery.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ActionIdQuery.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -51,19 +62,34 @@ class ActionIdQuery extends $pb.GeneratedMessage {
   static ActionIdQuery getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ActionIdQuery>(create);
   static ActionIdQuery? _defaultInstance;
 
+  /// The action ids to filter with.
   @$pb.TagNumber(1)
   $core.List<$2.CaptureActionId> get actionIds => $_getList(0);
 }
 
+/// A query parameter which filters the possible set of data identifiers to
+/// those with timestamps within the specified range.
 class TimeRangeQuery extends $pb.GeneratedMessage {
-  factory TimeRangeQuery() => create();
+  factory TimeRangeQuery({
+    $60.Timestamp? fromTimestamp,
+    $60.Timestamp? toTimestamp,
+  }) {
+    final $result = create();
+    if (fromTimestamp != null) {
+      $result.fromTimestamp = fromTimestamp;
+    }
+    if (toTimestamp != null) {
+      $result.toTimestamp = toTimestamp;
+    }
+    return $result;
+  }
   TimeRangeQuery._() : super();
   factory TimeRangeQuery.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TimeRangeQuery.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeRangeQuery', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'fromTimestamp', subBuilder: $59.Timestamp.create)
-    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'toTimestamp', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'fromTimestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'toTimestamp', subBuilder: $60.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -88,27 +114,29 @@ class TimeRangeQuery extends $pb.GeneratedMessage {
   static TimeRangeQuery getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeRangeQuery>(create);
   static TimeRangeQuery? _defaultInstance;
 
+  /// Start of the time range to query.
   @$pb.TagNumber(1)
-  $59.Timestamp get fromTimestamp => $_getN(0);
+  $60.Timestamp get fromTimestamp => $_getN(0);
   @$pb.TagNumber(1)
-  set fromTimestamp($59.Timestamp v) { setField(1, v); }
+  set fromTimestamp($60.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFromTimestamp() => $_has(0);
   @$pb.TagNumber(1)
   void clearFromTimestamp() => clearField(1);
   @$pb.TagNumber(1)
-  $59.Timestamp ensureFromTimestamp() => $_ensure(0);
+  $60.Timestamp ensureFromTimestamp() => $_ensure(0);
 
+  /// End of the time range to query.
   @$pb.TagNumber(2)
-  $59.Timestamp get toTimestamp => $_getN(1);
+  $60.Timestamp get toTimestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set toTimestamp($59.Timestamp v) { setField(2, v); }
+  set toTimestamp($60.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasToTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearToTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $59.Timestamp ensureToTimestamp() => $_ensure(1);
+  $60.Timestamp ensureToTimestamp() => $_ensure(1);
 }
 
 enum DataQueryParams_Query {
@@ -117,8 +145,22 @@ enum DataQueryParams_Query {
   notSet
 }
 
+/// The message containing the different query parameters which can be applied to
+/// the ListData requests.
 class DataQueryParams extends $pb.GeneratedMessage {
-  factory DataQueryParams() => create();
+  factory DataQueryParams({
+    TimeRangeQuery? timeRange,
+    ActionIdQuery? actionIds,
+  }) {
+    final $result = create();
+    if (timeRange != null) {
+      $result.timeRange = timeRange;
+    }
+    if (actionIds != null) {
+      $result.actionIds = actionIds;
+    }
+    return $result;
+  }
   DataQueryParams._() : super();
   factory DataQueryParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DataQueryParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -159,6 +201,7 @@ class DataQueryParams extends $pb.GeneratedMessage {
   DataQueryParams_Query whichQuery() => _DataQueryParams_QueryByTag[$_whichOneof(0)]!;
   void clearQuery() => clearField($_whichOneof(0));
 
+  /// Time range to query.
   @$pb.TagNumber(1)
   TimeRangeQuery get timeRange => $_getN(0);
   @$pb.TagNumber(1)
@@ -170,6 +213,7 @@ class DataQueryParams extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   TimeRangeQuery ensureTimeRange() => $_ensure(0);
 
+  /// List of action ids to query.
   @$pb.TagNumber(2)
   ActionIdQuery get actionIds => $_getN(1);
   @$pb.TagNumber(2)
@@ -183,13 +227,29 @@ class DataQueryParams extends $pb.GeneratedMessage {
 }
 
 class StoreImageRequest extends $pb.GeneratedMessage {
-  factory StoreImageRequest() => create();
+  factory StoreImageRequest({
+    $68.RequestHeader? header,
+    $11.ImageCapture? image,
+    $2.DataIdentifier? dataId,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (image != null) {
+      $result.image = image;
+    }
+    if (dataId != null) {
+      $result.dataId = dataId;
+    }
+    return $result;
+  }
   StoreImageRequest._() : super();
   factory StoreImageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StoreImageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreImageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<$11.ImageCapture>(2, _omitFieldNames ? '' : 'image', subBuilder: $11.ImageCapture.create)
     ..aOM<$2.DataIdentifier>(3, _omitFieldNames ? '' : 'dataId', subBuilder: $2.DataIdentifier.create)
     ..hasRequiredFields = false
@@ -216,17 +276,19 @@ class StoreImageRequest extends $pb.GeneratedMessage {
   static StoreImageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreImageRequest>(create);
   static StoreImageRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Image to store.
   @$pb.TagNumber(2)
   $11.ImageCapture get image => $_getN(1);
   @$pb.TagNumber(2)
@@ -238,6 +300,7 @@ class StoreImageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $11.ImageCapture ensureImage() => $_ensure(1);
 
+  /// Data identifier of the image.
   @$pb.TagNumber(3)
   $2.DataIdentifier get dataId => $_getN(2);
   @$pb.TagNumber(3)
@@ -251,13 +314,25 @@ class StoreImageRequest extends $pb.GeneratedMessage {
 }
 
 class StoreImageResponse extends $pb.GeneratedMessage {
-  factory StoreImageResponse() => create();
+  factory StoreImageResponse({
+    $68.ResponseHeader? header,
+    $fixnum.Int64? id,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   StoreImageResponse._() : super();
   factory StoreImageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StoreImageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreImageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
@@ -283,16 +358,17 @@ class StoreImageResponse extends $pb.GeneratedMessage {
   static StoreImageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreImageResponse>(create);
   static StoreImageResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get id => $_getI64(1);
@@ -305,13 +381,29 @@ class StoreImageResponse extends $pb.GeneratedMessage {
 }
 
 class StoreMetadataRequest extends $pb.GeneratedMessage {
-  factory StoreMetadataRequest() => create();
+  factory StoreMetadataRequest({
+    $68.RequestHeader? header,
+    $2.AssociatedMetadata? metadata,
+    $2.DataIdentifier? dataId,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (metadata != null) {
+      $result.metadata = metadata;
+    }
+    if (dataId != null) {
+      $result.dataId = dataId;
+    }
+    return $result;
+  }
   StoreMetadataRequest._() : super();
   factory StoreMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StoreMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<$2.AssociatedMetadata>(2, _omitFieldNames ? '' : 'metadata', subBuilder: $2.AssociatedMetadata.create)
     ..aOM<$2.DataIdentifier>(3, _omitFieldNames ? '' : 'dataId', subBuilder: $2.DataIdentifier.create)
     ..hasRequiredFields = false
@@ -338,17 +430,19 @@ class StoreMetadataRequest extends $pb.GeneratedMessage {
   static StoreMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreMetadataRequest>(create);
   static StoreMetadataRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Metadata to store.
   @$pb.TagNumber(2)
   $2.AssociatedMetadata get metadata => $_getN(1);
   @$pb.TagNumber(2)
@@ -360,6 +454,7 @@ class StoreMetadataRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $2.AssociatedMetadata ensureMetadata() => $_ensure(1);
 
+  /// Data identifier of the metadata.
   @$pb.TagNumber(3)
   $2.DataIdentifier get dataId => $_getN(2);
   @$pb.TagNumber(3)
@@ -373,13 +468,25 @@ class StoreMetadataRequest extends $pb.GeneratedMessage {
 }
 
 class StoreMetadataResponse extends $pb.GeneratedMessage {
-  factory StoreMetadataResponse() => create();
+  factory StoreMetadataResponse({
+    $68.ResponseHeader? header,
+    $fixnum.Int64? id,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   StoreMetadataResponse._() : super();
   factory StoreMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StoreMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
@@ -405,16 +512,17 @@ class StoreMetadataResponse extends $pb.GeneratedMessage {
   static StoreMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreMetadataResponse>(create);
   static StoreMetadataResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get id => $_getI64(1);
@@ -427,13 +535,29 @@ class StoreMetadataResponse extends $pb.GeneratedMessage {
 }
 
 class StoreAlertDataRequest extends $pb.GeneratedMessage {
-  factory StoreAlertDataRequest() => create();
+  factory StoreAlertDataRequest({
+    $68.RequestHeader? header,
+    $2.AssociatedAlertData? alertData,
+    $2.DataIdentifier? dataId,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (alertData != null) {
+      $result.alertData = alertData;
+    }
+    if (dataId != null) {
+      $result.dataId = dataId;
+    }
+    return $result;
+  }
   StoreAlertDataRequest._() : super();
   factory StoreAlertDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StoreAlertDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreAlertDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<$2.AssociatedAlertData>(2, _omitFieldNames ? '' : 'alertData', subBuilder: $2.AssociatedAlertData.create)
     ..aOM<$2.DataIdentifier>(3, _omitFieldNames ? '' : 'dataId', subBuilder: $2.DataIdentifier.create)
     ..hasRequiredFields = false
@@ -460,17 +584,19 @@ class StoreAlertDataRequest extends $pb.GeneratedMessage {
   static StoreAlertDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreAlertDataRequest>(create);
   static StoreAlertDataRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// AlertData to store.
   @$pb.TagNumber(2)
   $2.AssociatedAlertData get alertData => $_getN(1);
   @$pb.TagNumber(2)
@@ -482,6 +608,7 @@ class StoreAlertDataRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $2.AssociatedAlertData ensureAlertData() => $_ensure(1);
 
+  /// Data identifier of the alert.
   @$pb.TagNumber(3)
   $2.DataIdentifier get dataId => $_getN(2);
   @$pb.TagNumber(3)
@@ -495,13 +622,25 @@ class StoreAlertDataRequest extends $pb.GeneratedMessage {
 }
 
 class StoreAlertDataResponse extends $pb.GeneratedMessage {
-  factory StoreAlertDataResponse() => create();
+  factory StoreAlertDataResponse({
+    $68.ResponseHeader? header,
+    $fixnum.Int64? id,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   StoreAlertDataResponse._() : super();
   factory StoreAlertDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StoreAlertDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreAlertDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
@@ -527,16 +666,17 @@ class StoreAlertDataResponse extends $pb.GeneratedMessage {
   static StoreAlertDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreAlertDataResponse>(create);
   static StoreAlertDataResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get id => $_getI64(1);
@@ -549,13 +689,33 @@ class StoreAlertDataResponse extends $pb.GeneratedMessage {
 }
 
 class StoreDataRequest extends $pb.GeneratedMessage {
-  factory StoreDataRequest() => create();
+  factory StoreDataRequest({
+    $68.RequestHeader? header,
+    $core.List<$core.int>? data,
+    $2.DataIdentifier? dataId,
+    $core.String? fileExtension,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (data != null) {
+      $result.data = data;
+    }
+    if (dataId != null) {
+      $result.dataId = dataId;
+    }
+    if (fileExtension != null) {
+      $result.fileExtension = fileExtension;
+    }
+    return $result;
+  }
   StoreDataRequest._() : super();
   factory StoreDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StoreDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
     ..aOM<$2.DataIdentifier>(3, _omitFieldNames ? '' : 'dataId', subBuilder: $2.DataIdentifier.create)
     ..aOS(4, _omitFieldNames ? '' : 'fileExtension')
@@ -583,17 +743,19 @@ class StoreDataRequest extends $pb.GeneratedMessage {
   static StoreDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreDataRequest>(create);
   static StoreDataRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Data to store.
   @$pb.TagNumber(2)
   $core.List<$core.int> get data => $_getN(1);
   @$pb.TagNumber(2)
@@ -603,6 +765,7 @@ class StoreDataRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearData() => clearField(2);
 
+  /// Data identifier of the data.
   @$pb.TagNumber(3)
   $2.DataIdentifier get dataId => $_getN(2);
   @$pb.TagNumber(3)
@@ -614,6 +777,7 @@ class StoreDataRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $2.DataIdentifier ensureDataId() => $_ensure(2);
 
+  /// File extension to use when writing the data to file.
   @$pb.TagNumber(4)
   $core.String get fileExtension => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -625,13 +789,25 @@ class StoreDataRequest extends $pb.GeneratedMessage {
 }
 
 class StoreDataResponse extends $pb.GeneratedMessage {
-  factory StoreDataResponse() => create();
+  factory StoreDataResponse({
+    $68.ResponseHeader? header,
+    $fixnum.Int64? id,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   StoreDataResponse._() : super();
   factory StoreDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StoreDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
@@ -657,16 +833,17 @@ class StoreDataResponse extends $pb.GeneratedMessage {
   static StoreDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreDataResponse>(create);
   static StoreDataResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get id => $_getI64(1);
@@ -679,13 +856,25 @@ class StoreDataResponse extends $pb.GeneratedMessage {
 }
 
 class ListCaptureActionsRequest extends $pb.GeneratedMessage {
-  factory ListCaptureActionsRequest() => create();
+  factory ListCaptureActionsRequest({
+    $68.RequestHeader? header,
+    DataQueryParams? query,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (query != null) {
+      $result.query = query;
+    }
+    return $result;
+  }
   ListCaptureActionsRequest._() : super();
   factory ListCaptureActionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListCaptureActionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCaptureActionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<DataQueryParams>(2, _omitFieldNames ? '' : 'query', subBuilder: DataQueryParams.create)
     ..hasRequiredFields = false
   ;
@@ -711,17 +900,19 @@ class ListCaptureActionsRequest extends $pb.GeneratedMessage {
   static ListCaptureActionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCaptureActionsRequest>(create);
   static ListCaptureActionsRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Query parameters for finding action ids.
   @$pb.TagNumber(2)
   DataQueryParams get query => $_getN(1);
   @$pb.TagNumber(2)
@@ -735,13 +926,25 @@ class ListCaptureActionsRequest extends $pb.GeneratedMessage {
 }
 
 class ListCaptureActionsResponse extends $pb.GeneratedMessage {
-  factory ListCaptureActionsResponse() => create();
+  factory ListCaptureActionsResponse({
+    $68.ResponseHeader? header,
+    $core.Iterable<$2.CaptureActionId>? actionIds,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (actionIds != null) {
+      $result.actionIds.addAll(actionIds);
+    }
+    return $result;
+  }
   ListCaptureActionsResponse._() : super();
   factory ListCaptureActionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListCaptureActionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCaptureActionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..pc<$2.CaptureActionId>(2, _omitFieldNames ? '' : 'actionIds', $pb.PbFieldType.PM, subBuilder: $2.CaptureActionId.create)
     ..hasRequiredFields = false
   ;
@@ -767,29 +970,43 @@ class ListCaptureActionsResponse extends $pb.GeneratedMessage {
   static ListCaptureActionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCaptureActionsResponse>(create);
   static ListCaptureActionsResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// List of action ids that satisfied the query parameters.
   @$pb.TagNumber(2)
   $core.List<$2.CaptureActionId> get actionIds => $_getList(1);
 }
 
 class ListStoredImagesRequest extends $pb.GeneratedMessage {
-  factory ListStoredImagesRequest() => create();
+  factory ListStoredImagesRequest({
+    $68.RequestHeader? header,
+    DataQueryParams? query,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (query != null) {
+      $result.query = query;
+    }
+    return $result;
+  }
   ListStoredImagesRequest._() : super();
   factory ListStoredImagesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListStoredImagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoredImagesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<DataQueryParams>(2, _omitFieldNames ? '' : 'query', subBuilder: DataQueryParams.create)
     ..hasRequiredFields = false
   ;
@@ -815,17 +1032,19 @@ class ListStoredImagesRequest extends $pb.GeneratedMessage {
   static ListStoredImagesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListStoredImagesRequest>(create);
   static ListStoredImagesRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Query parameters for finding images.
   @$pb.TagNumber(2)
   DataQueryParams get query => $_getN(1);
   @$pb.TagNumber(2)
@@ -839,13 +1058,25 @@ class ListStoredImagesRequest extends $pb.GeneratedMessage {
 }
 
 class ListStoredImagesResponse extends $pb.GeneratedMessage {
-  factory ListStoredImagesResponse() => create();
+  factory ListStoredImagesResponse({
+    $68.ResponseHeader? header,
+    $core.Iterable<$2.DataIdentifier>? dataIds,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (dataIds != null) {
+      $result.dataIds.addAll(dataIds);
+    }
+    return $result;
+  }
   ListStoredImagesResponse._() : super();
   factory ListStoredImagesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListStoredImagesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoredImagesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..pc<$2.DataIdentifier>(2, _omitFieldNames ? '' : 'dataIds', $pb.PbFieldType.PM, subBuilder: $2.DataIdentifier.create)
     ..hasRequiredFields = false
   ;
@@ -871,29 +1102,43 @@ class ListStoredImagesResponse extends $pb.GeneratedMessage {
   static ListStoredImagesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListStoredImagesResponse>(create);
   static ListStoredImagesResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// List of image data identifiers that satisfied the query parameters.
   @$pb.TagNumber(2)
   $core.List<$2.DataIdentifier> get dataIds => $_getList(1);
 }
 
 class ListStoredMetadataRequest extends $pb.GeneratedMessage {
-  factory ListStoredMetadataRequest() => create();
+  factory ListStoredMetadataRequest({
+    $68.RequestHeader? header,
+    DataQueryParams? query,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (query != null) {
+      $result.query = query;
+    }
+    return $result;
+  }
   ListStoredMetadataRequest._() : super();
   factory ListStoredMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListStoredMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoredMetadataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<DataQueryParams>(2, _omitFieldNames ? '' : 'query', subBuilder: DataQueryParams.create)
     ..hasRequiredFields = false
   ;
@@ -919,17 +1164,19 @@ class ListStoredMetadataRequest extends $pb.GeneratedMessage {
   static ListStoredMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListStoredMetadataRequest>(create);
   static ListStoredMetadataRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Query parameters for finding metadata.
   @$pb.TagNumber(2)
   DataQueryParams get query => $_getN(1);
   @$pb.TagNumber(2)
@@ -943,13 +1190,25 @@ class ListStoredMetadataRequest extends $pb.GeneratedMessage {
 }
 
 class ListStoredMetadataResponse extends $pb.GeneratedMessage {
-  factory ListStoredMetadataResponse() => create();
+  factory ListStoredMetadataResponse({
+    $68.ResponseHeader? header,
+    $core.Iterable<$2.DataIdentifier>? dataIds,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (dataIds != null) {
+      $result.dataIds.addAll(dataIds);
+    }
+    return $result;
+  }
   ListStoredMetadataResponse._() : super();
   factory ListStoredMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListStoredMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoredMetadataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..pc<$2.DataIdentifier>(2, _omitFieldNames ? '' : 'dataIds', $pb.PbFieldType.PM, subBuilder: $2.DataIdentifier.create)
     ..hasRequiredFields = false
   ;
@@ -975,29 +1234,43 @@ class ListStoredMetadataResponse extends $pb.GeneratedMessage {
   static ListStoredMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListStoredMetadataResponse>(create);
   static ListStoredMetadataResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// List of metadata data identifiers that satisfied the query parameters.
   @$pb.TagNumber(2)
   $core.List<$2.DataIdentifier> get dataIds => $_getList(1);
 }
 
 class ListStoredAlertDataRequest extends $pb.GeneratedMessage {
-  factory ListStoredAlertDataRequest() => create();
+  factory ListStoredAlertDataRequest({
+    $68.RequestHeader? header,
+    DataQueryParams? query,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (query != null) {
+      $result.query = query;
+    }
+    return $result;
+  }
   ListStoredAlertDataRequest._() : super();
   factory ListStoredAlertDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListStoredAlertDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoredAlertDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<DataQueryParams>(2, _omitFieldNames ? '' : 'query', subBuilder: DataQueryParams.create)
     ..hasRequiredFields = false
   ;
@@ -1023,17 +1296,19 @@ class ListStoredAlertDataRequest extends $pb.GeneratedMessage {
   static ListStoredAlertDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListStoredAlertDataRequest>(create);
   static ListStoredAlertDataRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Query parameters for finding AlertData.
   @$pb.TagNumber(2)
   DataQueryParams get query => $_getN(1);
   @$pb.TagNumber(2)
@@ -1047,13 +1322,25 @@ class ListStoredAlertDataRequest extends $pb.GeneratedMessage {
 }
 
 class ListStoredAlertDataResponse extends $pb.GeneratedMessage {
-  factory ListStoredAlertDataResponse() => create();
+  factory ListStoredAlertDataResponse({
+    $68.ResponseHeader? header,
+    $core.Iterable<$2.DataIdentifier>? dataIds,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (dataIds != null) {
+      $result.dataIds.addAll(dataIds);
+    }
+    return $result;
+  }
   ListStoredAlertDataResponse._() : super();
   factory ListStoredAlertDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListStoredAlertDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoredAlertDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..pc<$2.DataIdentifier>(2, _omitFieldNames ? '' : 'dataIds', $pb.PbFieldType.PM, subBuilder: $2.DataIdentifier.create)
     ..hasRequiredFields = false
   ;
@@ -1079,29 +1366,43 @@ class ListStoredAlertDataResponse extends $pb.GeneratedMessage {
   static ListStoredAlertDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListStoredAlertDataResponse>(create);
   static ListStoredAlertDataResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// List of AlertData data identifiers that satisfied the query parameters.
   @$pb.TagNumber(2)
   $core.List<$2.DataIdentifier> get dataIds => $_getList(1);
 }
 
 class ListStoredDataRequest extends $pb.GeneratedMessage {
-  factory ListStoredDataRequest() => create();
+  factory ListStoredDataRequest({
+    $68.RequestHeader? header,
+    DataQueryParams? query,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (query != null) {
+      $result.query = query;
+    }
+    return $result;
+  }
   ListStoredDataRequest._() : super();
   factory ListStoredDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListStoredDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoredDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<DataQueryParams>(2, _omitFieldNames ? '' : 'query', subBuilder: DataQueryParams.create)
     ..hasRequiredFields = false
   ;
@@ -1127,17 +1428,19 @@ class ListStoredDataRequest extends $pb.GeneratedMessage {
   static ListStoredDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListStoredDataRequest>(create);
   static ListStoredDataRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Query parameters for finding data.
   @$pb.TagNumber(2)
   DataQueryParams get query => $_getN(1);
   @$pb.TagNumber(2)
@@ -1151,13 +1454,25 @@ class ListStoredDataRequest extends $pb.GeneratedMessage {
 }
 
 class ListStoredDataResponse extends $pb.GeneratedMessage {
-  factory ListStoredDataResponse() => create();
+  factory ListStoredDataResponse({
+    $68.ResponseHeader? header,
+    $core.Iterable<$2.DataIdentifier>? dataIds,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (dataIds != null) {
+      $result.dataIds.addAll(dataIds);
+    }
+    return $result;
+  }
   ListStoredDataResponse._() : super();
   factory ListStoredDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListStoredDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoredDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..pc<$2.DataIdentifier>(2, _omitFieldNames ? '' : 'dataIds', $pb.PbFieldType.PM, subBuilder: $2.DataIdentifier.create)
     ..hasRequiredFields = false
   ;
@@ -1183,17 +1498,19 @@ class ListStoredDataResponse extends $pb.GeneratedMessage {
   static ListStoredDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListStoredDataResponse>(create);
   static ListStoredDataResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// List of data identifiers that satisfied the query parameters.
   @$pb.TagNumber(2)
   $core.List<$2.DataIdentifier> get dataIds => $_getList(1);
 }

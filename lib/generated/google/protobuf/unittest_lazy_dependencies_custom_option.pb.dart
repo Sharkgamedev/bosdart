@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,10 +13,18 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest_lazy_dependencies_enum.pbenum.dart' as $99;
+import 'unittest_lazy_dependencies_enum.pbenum.dart' as $101;
 
 class LazyMessage extends $pb.GeneratedMessage {
-  factory LazyMessage() => create();
+  factory LazyMessage({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   LazyMessage._() : super();
   factory LazyMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LazyMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -58,7 +66,7 @@ class LazyMessage extends $pb.GeneratedMessage {
 }
 
 class Unittest_lazy_dependencies_custom_option {
-  static final lazyEnumOption = $pb.Extension<$99.LazyEnum>(_omitMessageNames ? '' : 'google.protobuf.MessageOptions', _omitFieldNames ? '' : 'lazyEnumOption', 138596335, $pb.PbFieldType.OE, defaultOrMaker: $99.LazyEnum.LAZY_ENUM_1, valueOf: $99.LazyEnum.valueOf, enumValues: $99.LazyEnum.values);
+  static final lazyEnumOption = $pb.Extension<$101.LazyEnum>(_omitMessageNames ? '' : 'google.protobuf.MessageOptions', _omitFieldNames ? '' : 'lazyEnumOption', 138596335, $pb.PbFieldType.OE, defaultOrMaker: $101.LazyEnum.LAZY_ENUM_1, valueOf: $101.LazyEnum.valueOf, enumValues: $101.LazyEnum.values);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(lazyEnumOption);
   }

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -15,12 +15,93 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'map_unittest.pbenum.dart';
-import 'unittest.pb.dart' as $53;
+import 'unittest.pb.dart' as $54;
 
 export 'map_unittest.pbenum.dart';
 
+/// Tests maps.
 class TestMap extends $pb.GeneratedMessage {
-  factory TestMap() => create();
+  factory TestMap({
+    $core.Map<$core.int, $core.int>? mapInt32Int32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapInt64Int64,
+    $core.Map<$core.int, $core.int>? mapUint32Uint32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapUint64Uint64,
+    $core.Map<$core.int, $core.int>? mapSint32Sint32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapSint64Sint64,
+    $core.Map<$core.int, $core.int>? mapFixed32Fixed32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapFixed64Fixed64,
+    $core.Map<$core.int, $core.int>? mapSfixed32Sfixed32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapSfixed64Sfixed64,
+    $core.Map<$core.int, $core.double>? mapInt32Float,
+    $core.Map<$core.int, $core.double>? mapInt32Double,
+    $core.Map<$core.bool, $core.bool>? mapBoolBool,
+    $core.Map<$core.String, $core.String>? mapStringString,
+    $core.Map<$core.int, $core.List<$core.int>>? mapInt32Bytes,
+    $core.Map<$core.int, MapEnum>? mapInt32Enum,
+    $core.Map<$core.int, $54.ForeignMessage>? mapInt32ForeignMessage,
+    $core.Map<$core.String, $54.ForeignMessage>? mapStringForeignMessage,
+    $core.Map<$core.int, $54.TestAllTypes>? mapInt32AllTypes,
+  }) {
+    final $result = create();
+    if (mapInt32Int32 != null) {
+      $result.mapInt32Int32.addAll(mapInt32Int32);
+    }
+    if (mapInt64Int64 != null) {
+      $result.mapInt64Int64.addAll(mapInt64Int64);
+    }
+    if (mapUint32Uint32 != null) {
+      $result.mapUint32Uint32.addAll(mapUint32Uint32);
+    }
+    if (mapUint64Uint64 != null) {
+      $result.mapUint64Uint64.addAll(mapUint64Uint64);
+    }
+    if (mapSint32Sint32 != null) {
+      $result.mapSint32Sint32.addAll(mapSint32Sint32);
+    }
+    if (mapSint64Sint64 != null) {
+      $result.mapSint64Sint64.addAll(mapSint64Sint64);
+    }
+    if (mapFixed32Fixed32 != null) {
+      $result.mapFixed32Fixed32.addAll(mapFixed32Fixed32);
+    }
+    if (mapFixed64Fixed64 != null) {
+      $result.mapFixed64Fixed64.addAll(mapFixed64Fixed64);
+    }
+    if (mapSfixed32Sfixed32 != null) {
+      $result.mapSfixed32Sfixed32.addAll(mapSfixed32Sfixed32);
+    }
+    if (mapSfixed64Sfixed64 != null) {
+      $result.mapSfixed64Sfixed64.addAll(mapSfixed64Sfixed64);
+    }
+    if (mapInt32Float != null) {
+      $result.mapInt32Float.addAll(mapInt32Float);
+    }
+    if (mapInt32Double != null) {
+      $result.mapInt32Double.addAll(mapInt32Double);
+    }
+    if (mapBoolBool != null) {
+      $result.mapBoolBool.addAll(mapBoolBool);
+    }
+    if (mapStringString != null) {
+      $result.mapStringString.addAll(mapStringString);
+    }
+    if (mapInt32Bytes != null) {
+      $result.mapInt32Bytes.addAll(mapInt32Bytes);
+    }
+    if (mapInt32Enum != null) {
+      $result.mapInt32Enum.addAll(mapInt32Enum);
+    }
+    if (mapInt32ForeignMessage != null) {
+      $result.mapInt32ForeignMessage.addAll(mapInt32ForeignMessage);
+    }
+    if (mapStringForeignMessage != null) {
+      $result.mapStringForeignMessage.addAll(mapStringForeignMessage);
+    }
+    if (mapInt32AllTypes != null) {
+      $result.mapInt32AllTypes.addAll(mapInt32AllTypes);
+    }
+    return $result;
+  }
   TestMap._() : super();
   factory TestMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -42,9 +123,9 @@ class TestMap extends $pb.GeneratedMessage {
     ..m<$core.String, $core.String>(14, _omitFieldNames ? '' : 'mapStringString', entryClassName: 'TestMap.MapStringStringEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('protobuf_unittest'))
     ..m<$core.int, $core.List<$core.int>>(15, _omitFieldNames ? '' : 'mapInt32Bytes', entryClassName: 'TestMap.MapInt32BytesEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OY, packageName: const $pb.PackageName('protobuf_unittest'))
     ..m<$core.int, MapEnum>(16, _omitFieldNames ? '' : 'mapInt32Enum', entryClassName: 'TestMap.MapInt32EnumEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OE, valueOf: MapEnum.valueOf, enumValues: MapEnum.values, valueDefaultOrMaker: MapEnum.MAP_ENUM_FOO, defaultEnumValue: MapEnum.MAP_ENUM_FOO, packageName: const $pb.PackageName('protobuf_unittest'))
-    ..m<$core.int, $53.ForeignMessage>(17, _omitFieldNames ? '' : 'mapInt32ForeignMessage', entryClassName: 'TestMap.MapInt32ForeignMessageEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $53.ForeignMessage.create, valueDefaultOrMaker: $53.ForeignMessage.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
-    ..m<$core.String, $53.ForeignMessage>(18, _omitFieldNames ? '' : 'mapStringForeignMessage', entryClassName: 'TestMap.MapStringForeignMessageEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $53.ForeignMessage.create, valueDefaultOrMaker: $53.ForeignMessage.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
-    ..m<$core.int, $53.TestAllTypes>(19, _omitFieldNames ? '' : 'mapInt32AllTypes', entryClassName: 'TestMap.MapInt32AllTypesEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $53.TestAllTypes.create, valueDefaultOrMaker: $53.TestAllTypes.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
+    ..m<$core.int, $54.ForeignMessage>(17, _omitFieldNames ? '' : 'mapInt32ForeignMessage', entryClassName: 'TestMap.MapInt32ForeignMessageEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $54.ForeignMessage.create, valueDefaultOrMaker: $54.ForeignMessage.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
+    ..m<$core.String, $54.ForeignMessage>(18, _omitFieldNames ? '' : 'mapStringForeignMessage', entryClassName: 'TestMap.MapStringForeignMessageEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $54.ForeignMessage.create, valueDefaultOrMaker: $54.ForeignMessage.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
+    ..m<$core.int, $54.TestAllTypes>(19, _omitFieldNames ? '' : 'mapInt32AllTypes', entryClassName: 'TestMap.MapInt32AllTypesEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $54.TestAllTypes.create, valueDefaultOrMaker: $54.TestAllTypes.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
     ..hasRequiredFields = false
   ;
 
@@ -118,17 +199,25 @@ class TestMap extends $pb.GeneratedMessage {
   $core.Map<$core.int, MapEnum> get mapInt32Enum => $_getMap(15);
 
   @$pb.TagNumber(17)
-  $core.Map<$core.int, $53.ForeignMessage> get mapInt32ForeignMessage => $_getMap(16);
+  $core.Map<$core.int, $54.ForeignMessage> get mapInt32ForeignMessage => $_getMap(16);
 
   @$pb.TagNumber(18)
-  $core.Map<$core.String, $53.ForeignMessage> get mapStringForeignMessage => $_getMap(17);
+  $core.Map<$core.String, $54.ForeignMessage> get mapStringForeignMessage => $_getMap(17);
 
   @$pb.TagNumber(19)
-  $core.Map<$core.int, $53.TestAllTypes> get mapInt32AllTypes => $_getMap(18);
+  $core.Map<$core.int, $54.TestAllTypes> get mapInt32AllTypes => $_getMap(18);
 }
 
 class TestMapSubmessage extends $pb.GeneratedMessage {
-  factory TestMapSubmessage() => create();
+  factory TestMapSubmessage({
+    TestMap? testMap,
+  }) {
+    final $result = create();
+    if (testMap != null) {
+      $result.testMap = testMap;
+    }
+    return $result;
+  }
   TestMapSubmessage._() : super();
   factory TestMapSubmessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMapSubmessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -172,13 +261,21 @@ class TestMapSubmessage extends $pb.GeneratedMessage {
 }
 
 class TestMessageMap extends $pb.GeneratedMessage {
-  factory TestMessageMap() => create();
+  factory TestMessageMap({
+    $core.Map<$core.int, $54.TestAllTypes>? mapInt32Message,
+  }) {
+    final $result = create();
+    if (mapInt32Message != null) {
+      $result.mapInt32Message.addAll(mapInt32Message);
+    }
+    return $result;
+  }
   TestMessageMap._() : super();
   factory TestMessageMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMessageMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestMessageMap', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest'), createEmptyInstance: create)
-    ..m<$core.int, $53.TestAllTypes>(1, _omitFieldNames ? '' : 'mapInt32Message', entryClassName: 'TestMessageMap.MapInt32MessageEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $53.TestAllTypes.create, valueDefaultOrMaker: $53.TestAllTypes.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
+    ..m<$core.int, $54.TestAllTypes>(1, _omitFieldNames ? '' : 'mapInt32Message', entryClassName: 'TestMessageMap.MapInt32MessageEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $54.TestAllTypes.create, valueDefaultOrMaker: $54.TestAllTypes.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
     ..hasRequiredFields = false
   ;
 
@@ -204,11 +301,24 @@ class TestMessageMap extends $pb.GeneratedMessage {
   static TestMessageMap? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.int, $53.TestAllTypes> get mapInt32Message => $_getMap(0);
+  $core.Map<$core.int, $54.TestAllTypes> get mapInt32Message => $_getMap(0);
 }
 
+/// Two map fields share the same entry default instance.
 class TestSameTypeMap extends $pb.GeneratedMessage {
-  factory TestSameTypeMap() => create();
+  factory TestSameTypeMap({
+    $core.Map<$core.int, $core.int>? map1,
+    $core.Map<$core.int, $core.int>? map2,
+  }) {
+    final $result = create();
+    if (map1 != null) {
+      $result.map1.addAll(map1);
+    }
+    if (map2 != null) {
+      $result.map2.addAll(map2);
+    }
+    return $result;
+  }
   TestSameTypeMap._() : super();
   factory TestSameTypeMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestSameTypeMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -247,14 +357,23 @@ class TestSameTypeMap extends $pb.GeneratedMessage {
   $core.Map<$core.int, $core.int> get map2 => $_getMap(1);
 }
 
+/// Test embedded message with required fields
 class TestRequiredMessageMap extends $pb.GeneratedMessage {
-  factory TestRequiredMessageMap() => create();
+  factory TestRequiredMessageMap({
+    $core.Map<$core.int, $54.TestRequired>? mapField,
+  }) {
+    final $result = create();
+    if (mapField != null) {
+      $result.mapField.addAll(mapField);
+    }
+    return $result;
+  }
   TestRequiredMessageMap._() : super();
   factory TestRequiredMessageMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestRequiredMessageMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestRequiredMessageMap', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest'), createEmptyInstance: create)
-    ..m<$core.int, $53.TestRequired>(1, _omitFieldNames ? '' : 'mapField', entryClassName: 'TestRequiredMessageMap.MapFieldEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $53.TestRequired.create, valueDefaultOrMaker: $53.TestRequired.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
+    ..m<$core.int, $54.TestRequired>(1, _omitFieldNames ? '' : 'mapField', entryClassName: 'TestRequiredMessageMap.MapFieldEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $54.TestRequired.create, valueDefaultOrMaker: $54.TestRequired.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
   ;
 
   @$core.Deprecated(
@@ -279,11 +398,83 @@ class TestRequiredMessageMap extends $pb.GeneratedMessage {
   static TestRequiredMessageMap? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.int, $53.TestRequired> get mapField => $_getMap(0);
+  $core.Map<$core.int, $54.TestRequired> get mapField => $_getMap(0);
 }
 
 class TestArenaMap extends $pb.GeneratedMessage {
-  factory TestArenaMap() => create();
+  factory TestArenaMap({
+    $core.Map<$core.int, $core.int>? mapInt32Int32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapInt64Int64,
+    $core.Map<$core.int, $core.int>? mapUint32Uint32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapUint64Uint64,
+    $core.Map<$core.int, $core.int>? mapSint32Sint32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapSint64Sint64,
+    $core.Map<$core.int, $core.int>? mapFixed32Fixed32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapFixed64Fixed64,
+    $core.Map<$core.int, $core.int>? mapSfixed32Sfixed32,
+    $core.Map<$fixnum.Int64, $fixnum.Int64>? mapSfixed64Sfixed64,
+    $core.Map<$core.int, $core.double>? mapInt32Float,
+    $core.Map<$core.int, $core.double>? mapInt32Double,
+    $core.Map<$core.bool, $core.bool>? mapBoolBool,
+    $core.Map<$core.String, $core.String>? mapStringString,
+    $core.Map<$core.int, $core.List<$core.int>>? mapInt32Bytes,
+    $core.Map<$core.int, MapEnum>? mapInt32Enum,
+    $core.Map<$core.int, $54.ForeignMessage>? mapInt32ForeignMessage,
+  }) {
+    final $result = create();
+    if (mapInt32Int32 != null) {
+      $result.mapInt32Int32.addAll(mapInt32Int32);
+    }
+    if (mapInt64Int64 != null) {
+      $result.mapInt64Int64.addAll(mapInt64Int64);
+    }
+    if (mapUint32Uint32 != null) {
+      $result.mapUint32Uint32.addAll(mapUint32Uint32);
+    }
+    if (mapUint64Uint64 != null) {
+      $result.mapUint64Uint64.addAll(mapUint64Uint64);
+    }
+    if (mapSint32Sint32 != null) {
+      $result.mapSint32Sint32.addAll(mapSint32Sint32);
+    }
+    if (mapSint64Sint64 != null) {
+      $result.mapSint64Sint64.addAll(mapSint64Sint64);
+    }
+    if (mapFixed32Fixed32 != null) {
+      $result.mapFixed32Fixed32.addAll(mapFixed32Fixed32);
+    }
+    if (mapFixed64Fixed64 != null) {
+      $result.mapFixed64Fixed64.addAll(mapFixed64Fixed64);
+    }
+    if (mapSfixed32Sfixed32 != null) {
+      $result.mapSfixed32Sfixed32.addAll(mapSfixed32Sfixed32);
+    }
+    if (mapSfixed64Sfixed64 != null) {
+      $result.mapSfixed64Sfixed64.addAll(mapSfixed64Sfixed64);
+    }
+    if (mapInt32Float != null) {
+      $result.mapInt32Float.addAll(mapInt32Float);
+    }
+    if (mapInt32Double != null) {
+      $result.mapInt32Double.addAll(mapInt32Double);
+    }
+    if (mapBoolBool != null) {
+      $result.mapBoolBool.addAll(mapBoolBool);
+    }
+    if (mapStringString != null) {
+      $result.mapStringString.addAll(mapStringString);
+    }
+    if (mapInt32Bytes != null) {
+      $result.mapInt32Bytes.addAll(mapInt32Bytes);
+    }
+    if (mapInt32Enum != null) {
+      $result.mapInt32Enum.addAll(mapInt32Enum);
+    }
+    if (mapInt32ForeignMessage != null) {
+      $result.mapInt32ForeignMessage.addAll(mapInt32ForeignMessage);
+    }
+    return $result;
+  }
   TestArenaMap._() : super();
   factory TestArenaMap.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestArenaMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -305,7 +496,7 @@ class TestArenaMap extends $pb.GeneratedMessage {
     ..m<$core.String, $core.String>(14, _omitFieldNames ? '' : 'mapStringString', entryClassName: 'TestArenaMap.MapStringStringEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('protobuf_unittest'))
     ..m<$core.int, $core.List<$core.int>>(15, _omitFieldNames ? '' : 'mapInt32Bytes', entryClassName: 'TestArenaMap.MapInt32BytesEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OY, packageName: const $pb.PackageName('protobuf_unittest'))
     ..m<$core.int, MapEnum>(16, _omitFieldNames ? '' : 'mapInt32Enum', entryClassName: 'TestArenaMap.MapInt32EnumEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OE, valueOf: MapEnum.valueOf, enumValues: MapEnum.values, valueDefaultOrMaker: MapEnum.MAP_ENUM_FOO, defaultEnumValue: MapEnum.MAP_ENUM_FOO, packageName: const $pb.PackageName('protobuf_unittest'))
-    ..m<$core.int, $53.ForeignMessage>(17, _omitFieldNames ? '' : 'mapInt32ForeignMessage', entryClassName: 'TestArenaMap.MapInt32ForeignMessageEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $53.ForeignMessage.create, valueDefaultOrMaker: $53.ForeignMessage.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
+    ..m<$core.int, $54.ForeignMessage>(17, _omitFieldNames ? '' : 'mapInt32ForeignMessage', entryClassName: 'TestArenaMap.MapInt32ForeignMessageEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $54.ForeignMessage.create, valueDefaultOrMaker: $54.ForeignMessage.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
     ..hasRequiredFields = false
   ;
 
@@ -379,11 +570,21 @@ class TestArenaMap extends $pb.GeneratedMessage {
   $core.Map<$core.int, MapEnum> get mapInt32Enum => $_getMap(15);
 
   @$pb.TagNumber(17)
-  $core.Map<$core.int, $53.ForeignMessage> get mapInt32ForeignMessage => $_getMap(16);
+  $core.Map<$core.int, $54.ForeignMessage> get mapInt32ForeignMessage => $_getMap(16);
 }
 
+/// Previously, message containing enum called Type cannot be used as value of
+/// map field.
 class MessageContainingEnumCalledType extends $pb.GeneratedMessage {
-  factory MessageContainingEnumCalledType() => create();
+  factory MessageContainingEnumCalledType({
+    $core.Map<$core.String, MessageContainingEnumCalledType>? type,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type.addAll(type);
+    }
+    return $result;
+  }
   MessageContainingEnumCalledType._() : super();
   factory MessageContainingEnumCalledType.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MessageContainingEnumCalledType.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -418,8 +619,17 @@ class MessageContainingEnumCalledType extends $pb.GeneratedMessage {
   $core.Map<$core.String, MessageContainingEnumCalledType> get type => $_getMap(0);
 }
 
+/// Previously, message cannot contain map field called "entry".
 class MessageContainingMapCalledEntry extends $pb.GeneratedMessage {
-  factory MessageContainingMapCalledEntry() => create();
+  factory MessageContainingMapCalledEntry({
+    $core.Map<$core.int, $core.int>? entry,
+  }) {
+    final $result = create();
+    if (entry != null) {
+      $result.entry.addAll(entry);
+    }
+    return $result;
+  }
   MessageContainingMapCalledEntry._() : super();
   factory MessageContainingMapCalledEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MessageContainingMapCalledEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -455,7 +665,15 @@ class MessageContainingMapCalledEntry extends $pb.GeneratedMessage {
 }
 
 class TestRecursiveMapMessage extends $pb.GeneratedMessage {
-  factory TestRecursiveMapMessage() => create();
+  factory TestRecursiveMapMessage({
+    $core.Map<$core.String, TestRecursiveMapMessage>? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a.addAll(a);
+    }
+    return $result;
+  }
   TestRecursiveMapMessage._() : super();
   factory TestRecursiveMapMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestRecursiveMapMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -17,7 +17,15 @@ export 'unittest_import_lite.pbenum.dart';
 export 'unittest_import_public_lite.pb.dart';
 
 class ImportMessageLite extends $pb.GeneratedMessage {
-  factory ImportMessageLite() => create();
+  factory ImportMessageLite({
+    $core.int? d,
+  }) {
+    final $result = create();
+    if (d != null) {
+      $result.d = d;
+    }
+    return $result;
+  }
   ImportMessageLite._() : super();
   factory ImportMessageLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ImportMessageLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

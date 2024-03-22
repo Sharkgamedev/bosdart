@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,13 +14,26 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $66;
+import '../../../google/protobuf/any.pb.dart' as $67;
 import 'util.pbenum.dart';
 
 export 'util.pbenum.dart';
 
+/// Key/Value pair, used in other messages.
 class KeyValue extends $pb.GeneratedMessage {
-  factory KeyValue() => create();
+  factory KeyValue({
+    $core.String? key,
+    Value? value,
+  }) {
+    final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
   KeyValue._() : super();
   factory KeyValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory KeyValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -80,8 +93,25 @@ enum Value_Source {
   notSet
 }
 
+/// A value of a run-time or compile-time variable.
 class Value extends $pb.GeneratedMessage {
-  factory Value() => create();
+  factory Value({
+    ConstantValue? constant,
+    VariableDeclaration? runtimeVar,
+    VariableDeclaration? parameter,
+  }) {
+    final $result = create();
+    if (constant != null) {
+      $result.constant = constant;
+    }
+    if (runtimeVar != null) {
+      $result.runtimeVar = runtimeVar;
+    }
+    if (parameter != null) {
+      $result.parameter = parameter;
+    }
+    return $result;
+  }
   Value._() : super();
   factory Value.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Value.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -158,8 +188,21 @@ class Value extends $pb.GeneratedMessage {
   VariableDeclaration ensureParameter() => $_ensure(2);
 }
 
+/// Declaration of a run-time or compile-time variable.
 class VariableDeclaration extends $pb.GeneratedMessage {
-  factory VariableDeclaration() => create();
+  factory VariableDeclaration({
+    $core.String? name,
+    VariableDeclaration_Type? type,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    return $result;
+  }
   VariableDeclaration._() : super();
   factory VariableDeclaration.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VariableDeclaration.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -191,6 +234,7 @@ class VariableDeclaration extends $pb.GeneratedMessage {
   static VariableDeclaration getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VariableDeclaration>(create);
   static VariableDeclaration? _defaultInstance;
 
+  /// Name of the variable, to be used as the key in KeyValue pairs.
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -200,6 +244,7 @@ class VariableDeclaration extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
 
+  /// Type that this variable is expected to have. Used to verify assignments and comparisons.
   @$pb.TagNumber(2)
   VariableDeclaration_Type get type => $_getN(1);
   @$pb.TagNumber(2)
@@ -219,8 +264,33 @@ enum ConstantValue_Value {
   notSet
 }
 
+/// A constant value. Corresponds to the VariableDeclaration Type enum.
 class ConstantValue extends $pb.GeneratedMessage {
-  factory ConstantValue() => create();
+  factory ConstantValue({
+    $core.double? floatValue,
+    $core.String? stringValue,
+    $fixnum.Int64? intValue,
+    $core.bool? boolValue,
+    $67.Any? msgValue,
+  }) {
+    final $result = create();
+    if (floatValue != null) {
+      $result.floatValue = floatValue;
+    }
+    if (stringValue != null) {
+      $result.stringValue = stringValue;
+    }
+    if (intValue != null) {
+      $result.intValue = intValue;
+    }
+    if (boolValue != null) {
+      $result.boolValue = boolValue;
+    }
+    if (msgValue != null) {
+      $result.msgValue = msgValue;
+    }
+    return $result;
+  }
   ConstantValue._() : super();
   factory ConstantValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ConstantValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -239,7 +309,7 @@ class ConstantValue extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'stringValue')
     ..aInt64(3, _omitFieldNames ? '' : 'intValue')
     ..aOB(4, _omitFieldNames ? '' : 'boolValue')
-    ..aOM<$66.Any>(5, _omitFieldNames ? '' : 'msgValue', subBuilder: $66.Any.create)
+    ..aOM<$67.Any>(5, _omitFieldNames ? '' : 'msgValue', subBuilder: $67.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -304,19 +374,36 @@ class ConstantValue extends $pb.GeneratedMessage {
   void clearBoolValue() => clearField(4);
 
   @$pb.TagNumber(5)
-  $66.Any get msgValue => $_getN(4);
+  $67.Any get msgValue => $_getN(4);
   @$pb.TagNumber(5)
-  set msgValue($66.Any v) { setField(5, v); }
+  set msgValue($67.Any v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMsgValue() => $_has(4);
   @$pb.TagNumber(5)
   void clearMsgValue() => clearField(5);
   @$pb.TagNumber(5)
-  $66.Any ensureMsgValue() => $_ensure(4);
+  $67.Any ensureMsgValue() => $_ensure(4);
 }
 
+/// Data a user can associate with a node.
 class UserData extends $pb.GeneratedMessage {
-  factory UserData() => create();
+  factory UserData({
+    $core.String? id,
+    $core.List<$core.int>? bytestring,
+    $67.Any? sourceRepresentation,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (bytestring != null) {
+      $result.bytestring = bytestring;
+    }
+    if (sourceRepresentation != null) {
+      $result.sourceRepresentation = sourceRepresentation;
+    }
+    return $result;
+  }
   UserData._() : super();
   factory UserData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UserData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -324,7 +411,7 @@ class UserData extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserData', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'bytestring', $pb.PbFieldType.OY)
-    ..aOM<$66.Any>(4, _omitFieldNames ? '' : 'sourceRepresentation', subBuilder: $66.Any.create)
+    ..aOM<$67.Any>(4, _omitFieldNames ? '' : 'sourceRepresentation', subBuilder: $67.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -349,6 +436,8 @@ class UserData extends $pb.GeneratedMessage {
   static UserData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserData>(create);
   static UserData? _defaultInstance;
 
+  /// Identifier. Enables matching the Node uploaded to the MissionService with the NodeInfo
+  /// downloaded from the MissionService.
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -358,6 +447,7 @@ class UserData extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  /// Arbitrary data. We recommend keeping it small, to avoid bloating the size of the mission.
   @$pb.TagNumber(3)
   $core.List<$core.int> get bytestring => $_getN(1);
   @$pb.TagNumber(3)
@@ -367,16 +457,21 @@ class UserData extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearBytestring() => clearField(3);
 
+  /// The source representation is a high level representation of this mission.
+  /// By analogy, it is the "source code" to this "compiled" mission.
+  /// At this time this field can either contain:
+  ///      - Nothing
+  ///      - A [bosdyn.api.autowalk.Walk] if the mission was compiled using the Autowalk service.
   @$pb.TagNumber(4)
-  $66.Any get sourceRepresentation => $_getN(2);
+  $67.Any get sourceRepresentation => $_getN(2);
   @$pb.TagNumber(4)
-  set sourceRepresentation($66.Any v) { setField(4, v); }
+  set sourceRepresentation($67.Any v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSourceRepresentation() => $_has(2);
   @$pb.TagNumber(4)
   void clearSourceRepresentation() => clearField(4);
   @$pb.TagNumber(4)
-  $66.Any ensureSourceRepresentation() => $_ensure(2);
+  $67.Any ensureSourceRepresentation() => $_ensure(2);
 }
 
 

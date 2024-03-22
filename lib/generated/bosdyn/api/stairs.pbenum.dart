@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -34,6 +34,9 @@ class Staircase_KnowledgeType extends $pb.ProtobufEnum {
   const Staircase_KnowledgeType._($core.int v, $core.String n) : super(v, n);
 }
 
+/// The two sides of a staircase are designated "east" and "west" as if north is up.
+/// The "west" side is the left when facing up the stairs and the right when facing down.
+/// The "east" side is the right when facing up the stairs and the left when facing down.
 class Staircase_Width_BoundedWidth extends $pb.ProtobufEnum {
   static const Staircase_Width_BoundedWidth BOUNDED_WIDTH_UNKNOWN = Staircase_Width_BoundedWidth._(0, _omitEnumNames ? '' : 'BOUNDED_WIDTH_UNKNOWN');
   static const Staircase_Width_BoundedWidth BOUNDED_WIDTH_NEITHER = Staircase_Width_BoundedWidth._(1, _omitEnumNames ? '' : 'BOUNDED_WIDTH_NEITHER');

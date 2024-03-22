@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -25,7 +25,27 @@ enum Units_Units {
 }
 
 class Units extends $pb.GeneratedMessage {
-  factory Units() => create();
+  factory Units({
+    $core.String? name,
+    TemperatureEnum? temp,
+    PressureEnum? press,
+    $core.bool? isRelative,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (temp != null) {
+      $result.temp = temp;
+    }
+    if (press != null) {
+      $result.press = press;
+    }
+    if (isRelative != null) {
+      $result.isRelative = isRelative;
+    }
+    return $result;
+  }
   Units._() : super();
   factory Units.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Units.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -96,6 +116,15 @@ class Units extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearPress() => clearField(3);
 
+  ///  If a service wants an absolute temperature threshold between 0 C  and 100 C, that would show
+  ///  up as 32 F to 212 F on any Fahrenheit loving clients IF is_relative is set to false.  Note
+  ///  the change from 0 C to 32 F.
+  ///
+  ///  If a service wants a relative temperate threshold (region A must be no more than X degrees
+  ///  hotter than region B), between 0 and 100 C, that would show up as 0 F to 180 F on any
+  ///  Fahrenheit loving clients IF is_relative is set to true.  Note that 0 C now maps to 0 F.
+  ///
+  ///  NOTE: Only relevant for units with non equal zero points.
   @$pb.TagNumber(4)
   $core.bool get isRelative => $_getBF(3);
   @$pb.TagNumber(4)

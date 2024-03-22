@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,15 +14,31 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest_import_lite.pb.dart' as $92;
-import 'unittest_import_lite.pbenum.dart' as $92;
-import 'unittest_import_public_lite.pb.dart' as $93;
+import 'unittest_import_lite.pb.dart' as $94;
+import 'unittest_import_lite.pbenum.dart' as $94;
+import 'unittest_import_public_lite.pb.dart' as $95;
 import 'unittest_lite.pbenum.dart';
 
 export 'unittest_lite.pbenum.dart';
 
 class TestAllTypesLite_NestedMessage extends $pb.GeneratedMessage {
-  factory TestAllTypesLite_NestedMessage() => create();
+  factory TestAllTypesLite_NestedMessage({
+    $core.int? bb,
+    $fixnum.Int64? cc,
+    $core.Iterable<$core.int>? dd,
+  }) {
+    final $result = create();
+    if (bb != null) {
+      $result.bb = bb;
+    }
+    if (cc != null) {
+      $result.cc = cc;
+    }
+    if (dd != null) {
+      $result.dd.addAll(dd);
+    }
+    return $result;
+  }
   TestAllTypesLite_NestedMessage._() : super();
   factory TestAllTypesLite_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypesLite_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -78,7 +94,15 @@ class TestAllTypesLite_NestedMessage extends $pb.GeneratedMessage {
 }
 
 class TestAllTypesLite_NestedMessage2 extends $pb.GeneratedMessage {
-  factory TestAllTypesLite_NestedMessage2() => create();
+  factory TestAllTypesLite_NestedMessage2({
+    $core.int? dd,
+  }) {
+    final $result = create();
+    if (dd != null) {
+      $result.dd = dd;
+    }
+    return $result;
+  }
   TestAllTypesLite_NestedMessage2._() : super();
   factory TestAllTypesLite_NestedMessage2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypesLite_NestedMessage2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -120,7 +144,15 @@ class TestAllTypesLite_NestedMessage2 extends $pb.GeneratedMessage {
 }
 
 class TestAllTypesLite_OptionalGroup extends $pb.GeneratedMessage {
-  factory TestAllTypesLite_OptionalGroup() => create();
+  factory TestAllTypesLite_OptionalGroup({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   TestAllTypesLite_OptionalGroup._() : super();
   factory TestAllTypesLite_OptionalGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypesLite_OptionalGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -162,7 +194,15 @@ class TestAllTypesLite_OptionalGroup extends $pb.GeneratedMessage {
 }
 
 class TestAllTypesLite_RepeatedGroup extends $pb.GeneratedMessage {
-  factory TestAllTypesLite_RepeatedGroup() => create();
+  factory TestAllTypesLite_RepeatedGroup({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   TestAllTypesLite_RepeatedGroup._() : super();
   factory TestAllTypesLite_RepeatedGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypesLite_RepeatedGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -213,8 +253,329 @@ enum TestAllTypesLite_OneofField {
   notSet
 }
 
+/// Same as TestAllTypes but with the lite runtime.
 class TestAllTypesLite extends $pb.GeneratedMessage {
-  factory TestAllTypesLite() => create();
+  factory TestAllTypesLite({
+    $core.int? optionalInt32,
+    $fixnum.Int64? optionalInt64,
+    $core.int? optionalUint32,
+    $fixnum.Int64? optionalUint64,
+    $core.int? optionalSint32,
+    $fixnum.Int64? optionalSint64,
+    $core.int? optionalFixed32,
+    $fixnum.Int64? optionalFixed64,
+    $core.int? optionalSfixed32,
+    $fixnum.Int64? optionalSfixed64,
+    $core.double? optionalFloat,
+    $core.double? optionalDouble,
+    $core.bool? optionalBool,
+    $core.String? optionalString,
+    $core.List<$core.int>? optionalBytes,
+    TestAllTypesLite_OptionalGroup? optionalGroup,
+    TestAllTypesLite_NestedMessage? optionalNestedMessage,
+    ForeignMessageLite? optionalForeignMessage,
+    $94.ImportMessageLite? optionalImportMessage,
+    TestAllTypesLite_NestedEnum? optionalNestedEnum,
+    ForeignEnumLite? optionalForeignEnum,
+    $94.ImportEnumLite? optionalImportEnum,
+    $core.String? optionalStringPiece,
+    $core.String? optionalCord,
+    $95.PublicImportMessageLite? optionalPublicImportMessage,
+    TestAllTypesLite_NestedMessage? optionalLazyMessage,
+    TestAllTypesLite_NestedMessage? optionalUnverifiedLazyMessage,
+    $core.Iterable<$core.int>? repeatedInt32,
+    $core.Iterable<$fixnum.Int64>? repeatedInt64,
+    $core.Iterable<$core.int>? repeatedUint32,
+    $core.Iterable<$fixnum.Int64>? repeatedUint64,
+    $core.Iterable<$core.int>? repeatedSint32,
+    $core.Iterable<$fixnum.Int64>? repeatedSint64,
+    $core.Iterable<$core.int>? repeatedFixed32,
+    $core.Iterable<$fixnum.Int64>? repeatedFixed64,
+    $core.Iterable<$core.int>? repeatedSfixed32,
+    $core.Iterable<$fixnum.Int64>? repeatedSfixed64,
+    $core.Iterable<$core.double>? repeatedFloat,
+    $core.Iterable<$core.double>? repeatedDouble,
+    $core.Iterable<$core.bool>? repeatedBool,
+    $core.Iterable<$core.String>? repeatedString,
+    $core.Iterable<$core.List<$core.int>>? repeatedBytes,
+    $core.Iterable<TestAllTypesLite_RepeatedGroup>? repeatedGroup,
+    $core.Iterable<TestAllTypesLite_NestedMessage>? repeatedNestedMessage,
+    $core.Iterable<ForeignMessageLite>? repeatedForeignMessage,
+    $core.Iterable<$94.ImportMessageLite>? repeatedImportMessage,
+    $core.Iterable<TestAllTypesLite_NestedEnum>? repeatedNestedEnum,
+    $core.Iterable<ForeignEnumLite>? repeatedForeignEnum,
+    $core.Iterable<$94.ImportEnumLite>? repeatedImportEnum,
+    $core.Iterable<$core.String>? repeatedStringPiece,
+    $core.Iterable<$core.String>? repeatedCord,
+    $core.Iterable<TestAllTypesLite_NestedMessage>? repeatedLazyMessage,
+    $core.int? defaultInt32,
+    $fixnum.Int64? defaultInt64,
+    $core.int? defaultUint32,
+    $fixnum.Int64? defaultUint64,
+    $core.int? defaultSint32,
+    $fixnum.Int64? defaultSint64,
+    $core.int? defaultFixed32,
+    $fixnum.Int64? defaultFixed64,
+    $core.int? defaultSfixed32,
+    $fixnum.Int64? defaultSfixed64,
+    $core.double? defaultFloat,
+    $core.double? defaultDouble,
+    $core.bool? defaultBool,
+    $core.String? defaultString,
+    $core.List<$core.int>? defaultBytes,
+    TestAllTypesLite_NestedEnum? defaultNestedEnum,
+    ForeignEnumLite? defaultForeignEnum,
+    $94.ImportEnumLite? defaultImportEnum,
+    $core.String? defaultStringPiece,
+    $core.String? defaultCord,
+    $core.int? oneofUint32,
+    TestAllTypesLite_NestedMessage? oneofNestedMessage,
+    $core.String? oneofString,
+    $core.List<$core.int>? oneofBytes,
+    TestAllTypesLite_NestedMessage? oneofLazyNestedMessage,
+    $core.int? deceptivelyNamedList,
+    TestAllTypesLite_NestedMessage2? oneofNestedMessage2,
+  }) {
+    final $result = create();
+    if (optionalInt32 != null) {
+      $result.optionalInt32 = optionalInt32;
+    }
+    if (optionalInt64 != null) {
+      $result.optionalInt64 = optionalInt64;
+    }
+    if (optionalUint32 != null) {
+      $result.optionalUint32 = optionalUint32;
+    }
+    if (optionalUint64 != null) {
+      $result.optionalUint64 = optionalUint64;
+    }
+    if (optionalSint32 != null) {
+      $result.optionalSint32 = optionalSint32;
+    }
+    if (optionalSint64 != null) {
+      $result.optionalSint64 = optionalSint64;
+    }
+    if (optionalFixed32 != null) {
+      $result.optionalFixed32 = optionalFixed32;
+    }
+    if (optionalFixed64 != null) {
+      $result.optionalFixed64 = optionalFixed64;
+    }
+    if (optionalSfixed32 != null) {
+      $result.optionalSfixed32 = optionalSfixed32;
+    }
+    if (optionalSfixed64 != null) {
+      $result.optionalSfixed64 = optionalSfixed64;
+    }
+    if (optionalFloat != null) {
+      $result.optionalFloat = optionalFloat;
+    }
+    if (optionalDouble != null) {
+      $result.optionalDouble = optionalDouble;
+    }
+    if (optionalBool != null) {
+      $result.optionalBool = optionalBool;
+    }
+    if (optionalString != null) {
+      $result.optionalString = optionalString;
+    }
+    if (optionalBytes != null) {
+      $result.optionalBytes = optionalBytes;
+    }
+    if (optionalGroup != null) {
+      $result.optionalGroup = optionalGroup;
+    }
+    if (optionalNestedMessage != null) {
+      $result.optionalNestedMessage = optionalNestedMessage;
+    }
+    if (optionalForeignMessage != null) {
+      $result.optionalForeignMessage = optionalForeignMessage;
+    }
+    if (optionalImportMessage != null) {
+      $result.optionalImportMessage = optionalImportMessage;
+    }
+    if (optionalNestedEnum != null) {
+      $result.optionalNestedEnum = optionalNestedEnum;
+    }
+    if (optionalForeignEnum != null) {
+      $result.optionalForeignEnum = optionalForeignEnum;
+    }
+    if (optionalImportEnum != null) {
+      $result.optionalImportEnum = optionalImportEnum;
+    }
+    if (optionalStringPiece != null) {
+      $result.optionalStringPiece = optionalStringPiece;
+    }
+    if (optionalCord != null) {
+      $result.optionalCord = optionalCord;
+    }
+    if (optionalPublicImportMessage != null) {
+      $result.optionalPublicImportMessage = optionalPublicImportMessage;
+    }
+    if (optionalLazyMessage != null) {
+      $result.optionalLazyMessage = optionalLazyMessage;
+    }
+    if (optionalUnverifiedLazyMessage != null) {
+      $result.optionalUnverifiedLazyMessage = optionalUnverifiedLazyMessage;
+    }
+    if (repeatedInt32 != null) {
+      $result.repeatedInt32.addAll(repeatedInt32);
+    }
+    if (repeatedInt64 != null) {
+      $result.repeatedInt64.addAll(repeatedInt64);
+    }
+    if (repeatedUint32 != null) {
+      $result.repeatedUint32.addAll(repeatedUint32);
+    }
+    if (repeatedUint64 != null) {
+      $result.repeatedUint64.addAll(repeatedUint64);
+    }
+    if (repeatedSint32 != null) {
+      $result.repeatedSint32.addAll(repeatedSint32);
+    }
+    if (repeatedSint64 != null) {
+      $result.repeatedSint64.addAll(repeatedSint64);
+    }
+    if (repeatedFixed32 != null) {
+      $result.repeatedFixed32.addAll(repeatedFixed32);
+    }
+    if (repeatedFixed64 != null) {
+      $result.repeatedFixed64.addAll(repeatedFixed64);
+    }
+    if (repeatedSfixed32 != null) {
+      $result.repeatedSfixed32.addAll(repeatedSfixed32);
+    }
+    if (repeatedSfixed64 != null) {
+      $result.repeatedSfixed64.addAll(repeatedSfixed64);
+    }
+    if (repeatedFloat != null) {
+      $result.repeatedFloat.addAll(repeatedFloat);
+    }
+    if (repeatedDouble != null) {
+      $result.repeatedDouble.addAll(repeatedDouble);
+    }
+    if (repeatedBool != null) {
+      $result.repeatedBool.addAll(repeatedBool);
+    }
+    if (repeatedString != null) {
+      $result.repeatedString.addAll(repeatedString);
+    }
+    if (repeatedBytes != null) {
+      $result.repeatedBytes.addAll(repeatedBytes);
+    }
+    if (repeatedGroup != null) {
+      $result.repeatedGroup.addAll(repeatedGroup);
+    }
+    if (repeatedNestedMessage != null) {
+      $result.repeatedNestedMessage.addAll(repeatedNestedMessage);
+    }
+    if (repeatedForeignMessage != null) {
+      $result.repeatedForeignMessage.addAll(repeatedForeignMessage);
+    }
+    if (repeatedImportMessage != null) {
+      $result.repeatedImportMessage.addAll(repeatedImportMessage);
+    }
+    if (repeatedNestedEnum != null) {
+      $result.repeatedNestedEnum.addAll(repeatedNestedEnum);
+    }
+    if (repeatedForeignEnum != null) {
+      $result.repeatedForeignEnum.addAll(repeatedForeignEnum);
+    }
+    if (repeatedImportEnum != null) {
+      $result.repeatedImportEnum.addAll(repeatedImportEnum);
+    }
+    if (repeatedStringPiece != null) {
+      $result.repeatedStringPiece.addAll(repeatedStringPiece);
+    }
+    if (repeatedCord != null) {
+      $result.repeatedCord.addAll(repeatedCord);
+    }
+    if (repeatedLazyMessage != null) {
+      $result.repeatedLazyMessage.addAll(repeatedLazyMessage);
+    }
+    if (defaultInt32 != null) {
+      $result.defaultInt32 = defaultInt32;
+    }
+    if (defaultInt64 != null) {
+      $result.defaultInt64 = defaultInt64;
+    }
+    if (defaultUint32 != null) {
+      $result.defaultUint32 = defaultUint32;
+    }
+    if (defaultUint64 != null) {
+      $result.defaultUint64 = defaultUint64;
+    }
+    if (defaultSint32 != null) {
+      $result.defaultSint32 = defaultSint32;
+    }
+    if (defaultSint64 != null) {
+      $result.defaultSint64 = defaultSint64;
+    }
+    if (defaultFixed32 != null) {
+      $result.defaultFixed32 = defaultFixed32;
+    }
+    if (defaultFixed64 != null) {
+      $result.defaultFixed64 = defaultFixed64;
+    }
+    if (defaultSfixed32 != null) {
+      $result.defaultSfixed32 = defaultSfixed32;
+    }
+    if (defaultSfixed64 != null) {
+      $result.defaultSfixed64 = defaultSfixed64;
+    }
+    if (defaultFloat != null) {
+      $result.defaultFloat = defaultFloat;
+    }
+    if (defaultDouble != null) {
+      $result.defaultDouble = defaultDouble;
+    }
+    if (defaultBool != null) {
+      $result.defaultBool = defaultBool;
+    }
+    if (defaultString != null) {
+      $result.defaultString = defaultString;
+    }
+    if (defaultBytes != null) {
+      $result.defaultBytes = defaultBytes;
+    }
+    if (defaultNestedEnum != null) {
+      $result.defaultNestedEnum = defaultNestedEnum;
+    }
+    if (defaultForeignEnum != null) {
+      $result.defaultForeignEnum = defaultForeignEnum;
+    }
+    if (defaultImportEnum != null) {
+      $result.defaultImportEnum = defaultImportEnum;
+    }
+    if (defaultStringPiece != null) {
+      $result.defaultStringPiece = defaultStringPiece;
+    }
+    if (defaultCord != null) {
+      $result.defaultCord = defaultCord;
+    }
+    if (oneofUint32 != null) {
+      $result.oneofUint32 = oneofUint32;
+    }
+    if (oneofNestedMessage != null) {
+      $result.oneofNestedMessage = oneofNestedMessage;
+    }
+    if (oneofString != null) {
+      $result.oneofString = oneofString;
+    }
+    if (oneofBytes != null) {
+      $result.oneofBytes = oneofBytes;
+    }
+    if (oneofLazyNestedMessage != null) {
+      $result.oneofLazyNestedMessage = oneofLazyNestedMessage;
+    }
+    if (deceptivelyNamedList != null) {
+      $result.deceptivelyNamedList = deceptivelyNamedList;
+    }
+    if (oneofNestedMessage2 != null) {
+      $result.oneofNestedMessage2 = oneofNestedMessage2;
+    }
+    return $result;
+  }
   TestAllTypesLite._() : super();
   factory TestAllTypesLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestAllTypesLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -248,13 +609,13 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
     ..a<TestAllTypesLite_OptionalGroup>(16, _omitFieldNames ? '' : 'optionalgroup', $pb.PbFieldType.OG, subBuilder: TestAllTypesLite_OptionalGroup.create, defaultOrMaker: TestAllTypesLite_OptionalGroup.getDefault)
     ..aOM<TestAllTypesLite_NestedMessage>(18, _omitFieldNames ? '' : 'optionalNestedMessage', subBuilder: TestAllTypesLite_NestedMessage.create)
     ..aOM<ForeignMessageLite>(19, _omitFieldNames ? '' : 'optionalForeignMessage', subBuilder: ForeignMessageLite.create)
-    ..aOM<$92.ImportMessageLite>(20, _omitFieldNames ? '' : 'optionalImportMessage', subBuilder: $92.ImportMessageLite.create)
+    ..aOM<$94.ImportMessageLite>(20, _omitFieldNames ? '' : 'optionalImportMessage', subBuilder: $94.ImportMessageLite.create)
     ..e<TestAllTypesLite_NestedEnum>(21, _omitFieldNames ? '' : 'optionalNestedEnum', $pb.PbFieldType.OE, defaultOrMaker: TestAllTypesLite_NestedEnum.FOO, valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values)
     ..e<ForeignEnumLite>(22, _omitFieldNames ? '' : 'optionalForeignEnum', $pb.PbFieldType.OE, defaultOrMaker: ForeignEnumLite.FOREIGN_LITE_FOO, valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values)
-    ..e<$92.ImportEnumLite>(23, _omitFieldNames ? '' : 'optionalImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $92.ImportEnumLite.IMPORT_LITE_FOO, valueOf: $92.ImportEnumLite.valueOf, enumValues: $92.ImportEnumLite.values)
+    ..e<$94.ImportEnumLite>(23, _omitFieldNames ? '' : 'optionalImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $94.ImportEnumLite.IMPORT_LITE_FOO, valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values)
     ..aOS(24, _omitFieldNames ? '' : 'optionalStringPiece')
     ..aOS(25, _omitFieldNames ? '' : 'optionalCord')
-    ..aOM<$93.PublicImportMessageLite>(26, _omitFieldNames ? '' : 'optionalPublicImportMessage', subBuilder: $93.PublicImportMessageLite.create)
+    ..aOM<$95.PublicImportMessageLite>(26, _omitFieldNames ? '' : 'optionalPublicImportMessage', subBuilder: $95.PublicImportMessageLite.create)
     ..aOM<TestAllTypesLite_NestedMessage>(27, _omitFieldNames ? '' : 'optionalLazyMessage', subBuilder: TestAllTypesLite_NestedMessage.create)
     ..aOM<TestAllTypesLite_NestedMessage>(28, _omitFieldNames ? '' : 'optionalUnverifiedLazyMessage', subBuilder: TestAllTypesLite_NestedMessage.create)
     ..p<$core.int>(31, _omitFieldNames ? '' : 'repeatedInt32', $pb.PbFieldType.P3)
@@ -275,10 +636,10 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
     ..pc<TestAllTypesLite_RepeatedGroup>(46, _omitFieldNames ? '' : 'repeatedgroup', $pb.PbFieldType.PG, subBuilder: TestAllTypesLite_RepeatedGroup.create)
     ..pc<TestAllTypesLite_NestedMessage>(48, _omitFieldNames ? '' : 'repeatedNestedMessage', $pb.PbFieldType.PM, subBuilder: TestAllTypesLite_NestedMessage.create)
     ..pc<ForeignMessageLite>(49, _omitFieldNames ? '' : 'repeatedForeignMessage', $pb.PbFieldType.PM, subBuilder: ForeignMessageLite.create)
-    ..pc<$92.ImportMessageLite>(50, _omitFieldNames ? '' : 'repeatedImportMessage', $pb.PbFieldType.PM, subBuilder: $92.ImportMessageLite.create)
+    ..pc<$94.ImportMessageLite>(50, _omitFieldNames ? '' : 'repeatedImportMessage', $pb.PbFieldType.PM, subBuilder: $94.ImportMessageLite.create)
     ..pc<TestAllTypesLite_NestedEnum>(51, _omitFieldNames ? '' : 'repeatedNestedEnum', $pb.PbFieldType.PE, valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values, defaultEnumValue: TestAllTypesLite_NestedEnum.FOO)
     ..pc<ForeignEnumLite>(52, _omitFieldNames ? '' : 'repeatedForeignEnum', $pb.PbFieldType.PE, valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values, defaultEnumValue: ForeignEnumLite.FOREIGN_LITE_FOO)
-    ..pc<$92.ImportEnumLite>(53, _omitFieldNames ? '' : 'repeatedImportEnum', $pb.PbFieldType.PE, valueOf: $92.ImportEnumLite.valueOf, enumValues: $92.ImportEnumLite.values, defaultEnumValue: $92.ImportEnumLite.IMPORT_LITE_FOO)
+    ..pc<$94.ImportEnumLite>(53, _omitFieldNames ? '' : 'repeatedImportEnum', $pb.PbFieldType.PE, valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values, defaultEnumValue: $94.ImportEnumLite.IMPORT_LITE_FOO)
     ..pPS(54, _omitFieldNames ? '' : 'repeatedStringPiece')
     ..pPS(55, _omitFieldNames ? '' : 'repeatedCord')
     ..pc<TestAllTypesLite_NestedMessage>(57, _omitFieldNames ? '' : 'repeatedLazyMessage', $pb.PbFieldType.PM, subBuilder: TestAllTypesLite_NestedMessage.create)
@@ -299,7 +660,7 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(75, _omitFieldNames ? '' : 'defaultBytes', $pb.PbFieldType.OY, defaultOrMaker: () => <$core.int>[0x77,0x6f,0x72,0x6c,0x64])
     ..e<TestAllTypesLite_NestedEnum>(81, _omitFieldNames ? '' : 'defaultNestedEnum', $pb.PbFieldType.OE, defaultOrMaker: TestAllTypesLite_NestedEnum.BAR, valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values)
     ..e<ForeignEnumLite>(82, _omitFieldNames ? '' : 'defaultForeignEnum', $pb.PbFieldType.OE, defaultOrMaker: ForeignEnumLite.FOREIGN_LITE_BAR, valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values)
-    ..e<$92.ImportEnumLite>(83, _omitFieldNames ? '' : 'defaultImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $92.ImportEnumLite.IMPORT_LITE_BAR, valueOf: $92.ImportEnumLite.valueOf, enumValues: $92.ImportEnumLite.values)
+    ..e<$94.ImportEnumLite>(83, _omitFieldNames ? '' : 'defaultImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $94.ImportEnumLite.IMPORT_LITE_BAR, valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values)
     ..a<$core.String>(84, _omitFieldNames ? '' : 'defaultStringPiece', $pb.PbFieldType.OS, defaultOrMaker: 'abc')
     ..a<$core.String>(85, _omitFieldNames ? '' : 'defaultCord', $pb.PbFieldType.OS, defaultOrMaker: '123')
     ..a<$core.int>(111, _omitFieldNames ? '' : 'oneofUint32', $pb.PbFieldType.OU3)
@@ -336,6 +697,7 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   TestAllTypesLite_OneofField whichOneofField() => _TestAllTypesLite_OneofFieldByTag[$_whichOneof(0)]!;
   void clearOneofField() => clearField($_whichOneof(0));
 
+  /// Singular
   @$pb.TagNumber(1)
   $core.int get optionalInt32 => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -503,15 +865,15 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   ForeignMessageLite ensureOptionalForeignMessage() => $_ensure(17);
 
   @$pb.TagNumber(20)
-  $92.ImportMessageLite get optionalImportMessage => $_getN(18);
+  $94.ImportMessageLite get optionalImportMessage => $_getN(18);
   @$pb.TagNumber(20)
-  set optionalImportMessage($92.ImportMessageLite v) { setField(20, v); }
+  set optionalImportMessage($94.ImportMessageLite v) { setField(20, v); }
   @$pb.TagNumber(20)
   $core.bool hasOptionalImportMessage() => $_has(18);
   @$pb.TagNumber(20)
   void clearOptionalImportMessage() => clearField(20);
   @$pb.TagNumber(20)
-  $92.ImportMessageLite ensureOptionalImportMessage() => $_ensure(18);
+  $94.ImportMessageLite ensureOptionalImportMessage() => $_ensure(18);
 
   @$pb.TagNumber(21)
   TestAllTypesLite_NestedEnum get optionalNestedEnum => $_getN(19);
@@ -532,9 +894,9 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   void clearOptionalForeignEnum() => clearField(22);
 
   @$pb.TagNumber(23)
-  $92.ImportEnumLite get optionalImportEnum => $_getN(21);
+  $94.ImportEnumLite get optionalImportEnum => $_getN(21);
   @$pb.TagNumber(23)
-  set optionalImportEnum($92.ImportEnumLite v) { setField(23, v); }
+  set optionalImportEnum($94.ImportEnumLite v) { setField(23, v); }
   @$pb.TagNumber(23)
   $core.bool hasOptionalImportEnum() => $_has(21);
   @$pb.TagNumber(23)
@@ -558,16 +920,17 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   @$pb.TagNumber(25)
   void clearOptionalCord() => clearField(25);
 
+  /// Defined in unittest_import_public.proto
   @$pb.TagNumber(26)
-  $93.PublicImportMessageLite get optionalPublicImportMessage => $_getN(24);
+  $95.PublicImportMessageLite get optionalPublicImportMessage => $_getN(24);
   @$pb.TagNumber(26)
-  set optionalPublicImportMessage($93.PublicImportMessageLite v) { setField(26, v); }
+  set optionalPublicImportMessage($95.PublicImportMessageLite v) { setField(26, v); }
   @$pb.TagNumber(26)
   $core.bool hasOptionalPublicImportMessage() => $_has(24);
   @$pb.TagNumber(26)
   void clearOptionalPublicImportMessage() => clearField(26);
   @$pb.TagNumber(26)
-  $93.PublicImportMessageLite ensureOptionalPublicImportMessage() => $_ensure(24);
+  $95.PublicImportMessageLite ensureOptionalPublicImportMessage() => $_ensure(24);
 
   @$pb.TagNumber(27)
   TestAllTypesLite_NestedMessage get optionalLazyMessage => $_getN(25);
@@ -591,6 +954,7 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   @$pb.TagNumber(28)
   TestAllTypesLite_NestedMessage ensureOptionalUnverifiedLazyMessage() => $_ensure(26);
 
+  /// Repeated
   @$pb.TagNumber(31)
   $core.List<$core.int> get repeatedInt32 => $_getList(27);
 
@@ -646,7 +1010,7 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   $core.List<ForeignMessageLite> get repeatedForeignMessage => $_getList(44);
 
   @$pb.TagNumber(50)
-  $core.List<$92.ImportMessageLite> get repeatedImportMessage => $_getList(45);
+  $core.List<$94.ImportMessageLite> get repeatedImportMessage => $_getList(45);
 
   @$pb.TagNumber(51)
   $core.List<TestAllTypesLite_NestedEnum> get repeatedNestedEnum => $_getList(46);
@@ -655,7 +1019,7 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   $core.List<ForeignEnumLite> get repeatedForeignEnum => $_getList(47);
 
   @$pb.TagNumber(53)
-  $core.List<$92.ImportEnumLite> get repeatedImportEnum => $_getList(48);
+  $core.List<$94.ImportEnumLite> get repeatedImportEnum => $_getList(48);
 
   @$pb.TagNumber(54)
   $core.List<$core.String> get repeatedStringPiece => $_getList(49);
@@ -666,6 +1030,7 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   @$pb.TagNumber(57)
   $core.List<TestAllTypesLite_NestedMessage> get repeatedLazyMessage => $_getList(51);
 
+  /// Singular with defaults
   @$pb.TagNumber(61)
   $core.int get defaultInt32 => $_getI(52, 41);
   @$pb.TagNumber(61)
@@ -820,9 +1185,9 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   void clearDefaultForeignEnum() => clearField(82);
 
   @$pb.TagNumber(83)
-  $92.ImportEnumLite get defaultImportEnum => $_getN(69);
+  $94.ImportEnumLite get defaultImportEnum => $_getN(69);
   @$pb.TagNumber(83)
-  set defaultImportEnum($92.ImportEnumLite v) { setField(83, v); }
+  set defaultImportEnum($94.ImportEnumLite v) { setField(83, v); }
   @$pb.TagNumber(83)
   $core.bool hasDefaultImportEnum() => $_has(69);
   @$pb.TagNumber(83)
@@ -895,6 +1260,7 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   @$pb.TagNumber(115)
   TestAllTypesLite_NestedMessage ensureOneofLazyNestedMessage() => $_ensure(76);
 
+  /// Tests toString for non-repeated fields with a list suffix
   @$pb.TagNumber(116)
   $core.int get deceptivelyNamedList => $_getIZ(77);
   @$pb.TagNumber(116)
@@ -917,7 +1283,15 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
 }
 
 class ForeignMessageLite extends $pb.GeneratedMessage {
-  factory ForeignMessageLite() => create();
+  factory ForeignMessageLite({
+    $core.int? c,
+  }) {
+    final $result = create();
+    if (c != null) {
+      $result.c = c;
+    }
+    return $result;
+  }
   ForeignMessageLite._() : super();
   factory ForeignMessageLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ForeignMessageLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -959,7 +1333,67 @@ class ForeignMessageLite extends $pb.GeneratedMessage {
 }
 
 class TestPackedTypesLite extends $pb.GeneratedMessage {
-  factory TestPackedTypesLite() => create();
+  factory TestPackedTypesLite({
+    $core.Iterable<$core.int>? packedInt32,
+    $core.Iterable<$fixnum.Int64>? packedInt64,
+    $core.Iterable<$core.int>? packedUint32,
+    $core.Iterable<$fixnum.Int64>? packedUint64,
+    $core.Iterable<$core.int>? packedSint32,
+    $core.Iterable<$fixnum.Int64>? packedSint64,
+    $core.Iterable<$core.int>? packedFixed32,
+    $core.Iterable<$fixnum.Int64>? packedFixed64,
+    $core.Iterable<$core.int>? packedSfixed32,
+    $core.Iterable<$fixnum.Int64>? packedSfixed64,
+    $core.Iterable<$core.double>? packedFloat,
+    $core.Iterable<$core.double>? packedDouble,
+    $core.Iterable<$core.bool>? packedBool,
+    $core.Iterable<ForeignEnumLite>? packedEnum,
+  }) {
+    final $result = create();
+    if (packedInt32 != null) {
+      $result.packedInt32.addAll(packedInt32);
+    }
+    if (packedInt64 != null) {
+      $result.packedInt64.addAll(packedInt64);
+    }
+    if (packedUint32 != null) {
+      $result.packedUint32.addAll(packedUint32);
+    }
+    if (packedUint64 != null) {
+      $result.packedUint64.addAll(packedUint64);
+    }
+    if (packedSint32 != null) {
+      $result.packedSint32.addAll(packedSint32);
+    }
+    if (packedSint64 != null) {
+      $result.packedSint64.addAll(packedSint64);
+    }
+    if (packedFixed32 != null) {
+      $result.packedFixed32.addAll(packedFixed32);
+    }
+    if (packedFixed64 != null) {
+      $result.packedFixed64.addAll(packedFixed64);
+    }
+    if (packedSfixed32 != null) {
+      $result.packedSfixed32.addAll(packedSfixed32);
+    }
+    if (packedSfixed64 != null) {
+      $result.packedSfixed64.addAll(packedSfixed64);
+    }
+    if (packedFloat != null) {
+      $result.packedFloat.addAll(packedFloat);
+    }
+    if (packedDouble != null) {
+      $result.packedDouble.addAll(packedDouble);
+    }
+    if (packedBool != null) {
+      $result.packedBool.addAll(packedBool);
+    }
+    if (packedEnum != null) {
+      $result.packedEnum.addAll(packedEnum);
+    }
+    return $result;
+  }
   TestPackedTypesLite._() : super();
   factory TestPackedTypesLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestPackedTypesLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1079,7 +1513,15 @@ class TestAllExtensionsLite extends $pb.GeneratedMessage {
 }
 
 class OptionalGroup_extension_lite extends $pb.GeneratedMessage {
-  factory OptionalGroup_extension_lite() => create();
+  factory OptionalGroup_extension_lite({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   OptionalGroup_extension_lite._() : super();
   factory OptionalGroup_extension_lite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OptionalGroup_extension_lite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1121,7 +1563,15 @@ class OptionalGroup_extension_lite extends $pb.GeneratedMessage {
 }
 
 class RepeatedGroup_extension_lite extends $pb.GeneratedMessage {
-  factory RepeatedGroup_extension_lite() => create();
+  factory RepeatedGroup_extension_lite({
+    $core.int? a,
+  }) {
+    final $result = create();
+    if (a != null) {
+      $result.a = a;
+    }
+    return $result;
+  }
   RepeatedGroup_extension_lite._() : super();
   factory RepeatedGroup_extension_lite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RepeatedGroup_extension_lite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1227,8 +1677,38 @@ class TestNestedExtensionLite extends $pb.GeneratedMessage {
   static TestNestedExtensionLite? _defaultInstance;
 }
 
+/// Test that deprecated fields work.  We only verify that they compile (at one
+/// point this failed).
 class TestDeprecatedLite extends $pb.GeneratedMessage {
-  factory TestDeprecatedLite() => create();
+  factory TestDeprecatedLite({
+  @$core.Deprecated('This field is deprecated.')
+    $core.int? deprecatedField,
+  @$core.Deprecated('This field is deprecated.')
+    $core.int? deprecatedField2,
+  @$core.Deprecated('This field is deprecated.')
+    $core.String? deprecatedField3,
+  @$core.Deprecated('This field is deprecated.')
+    TestDeprecatedLite? deprecatedField4,
+  }) {
+    final $result = create();
+    if (deprecatedField != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.deprecatedField = deprecatedField;
+    }
+    if (deprecatedField2 != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.deprecatedField2 = deprecatedField2;
+    }
+    if (deprecatedField3 != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.deprecatedField3 = deprecatedField3;
+    }
+    if (deprecatedField4 != null) {
+      // ignore: deprecated_member_use_from_same_package
+      $result.deprecatedField4 = deprecatedField4;
+    }
+    return $result;
+  }
   TestDeprecatedLite._() : super();
   factory TestDeprecatedLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestDeprecatedLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1318,7 +1798,15 @@ class TestDeprecatedLite extends $pb.GeneratedMessage {
 }
 
 class TestParsingMergeLite_RepeatedFieldsGenerator_Group1 extends $pb.GeneratedMessage {
-  factory TestParsingMergeLite_RepeatedFieldsGenerator_Group1() => create();
+  factory TestParsingMergeLite_RepeatedFieldsGenerator_Group1({
+    TestAllTypesLite? field1,
+  }) {
+    final $result = create();
+    if (field1 != null) {
+      $result.field1 = field1;
+    }
+    return $result;
+  }
   TestParsingMergeLite_RepeatedFieldsGenerator_Group1._() : super();
   factory TestParsingMergeLite_RepeatedFieldsGenerator_Group1.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMergeLite_RepeatedFieldsGenerator_Group1.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1362,7 +1850,15 @@ class TestParsingMergeLite_RepeatedFieldsGenerator_Group1 extends $pb.GeneratedM
 }
 
 class TestParsingMergeLite_RepeatedFieldsGenerator_Group2 extends $pb.GeneratedMessage {
-  factory TestParsingMergeLite_RepeatedFieldsGenerator_Group2() => create();
+  factory TestParsingMergeLite_RepeatedFieldsGenerator_Group2({
+    TestAllTypesLite? field1,
+  }) {
+    final $result = create();
+    if (field1 != null) {
+      $result.field1 = field1;
+    }
+    return $result;
+  }
   TestParsingMergeLite_RepeatedFieldsGenerator_Group2._() : super();
   factory TestParsingMergeLite_RepeatedFieldsGenerator_Group2.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMergeLite_RepeatedFieldsGenerator_Group2.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1406,7 +1902,39 @@ class TestParsingMergeLite_RepeatedFieldsGenerator_Group2 extends $pb.GeneratedM
 }
 
 class TestParsingMergeLite_RepeatedFieldsGenerator extends $pb.GeneratedMessage {
-  factory TestParsingMergeLite_RepeatedFieldsGenerator() => create();
+  factory TestParsingMergeLite_RepeatedFieldsGenerator({
+    $core.Iterable<TestAllTypesLite>? field1,
+    $core.Iterable<TestAllTypesLite>? field2,
+    $core.Iterable<TestAllTypesLite>? field3,
+    $core.Iterable<TestParsingMergeLite_RepeatedFieldsGenerator_Group1>? group1,
+    $core.Iterable<TestParsingMergeLite_RepeatedFieldsGenerator_Group2>? group2,
+    $core.Iterable<TestAllTypesLite>? ext1,
+    $core.Iterable<TestAllTypesLite>? ext2,
+  }) {
+    final $result = create();
+    if (field1 != null) {
+      $result.field1.addAll(field1);
+    }
+    if (field2 != null) {
+      $result.field2.addAll(field2);
+    }
+    if (field3 != null) {
+      $result.field3.addAll(field3);
+    }
+    if (group1 != null) {
+      $result.group1.addAll(group1);
+    }
+    if (group2 != null) {
+      $result.group2.addAll(group2);
+    }
+    if (ext1 != null) {
+      $result.ext1.addAll(ext1);
+    }
+    if (ext2 != null) {
+      $result.ext2.addAll(ext2);
+    }
+    return $result;
+  }
   TestParsingMergeLite_RepeatedFieldsGenerator._() : super();
   factory TestParsingMergeLite_RepeatedFieldsGenerator.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMergeLite_RepeatedFieldsGenerator.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1466,7 +1994,15 @@ class TestParsingMergeLite_RepeatedFieldsGenerator extends $pb.GeneratedMessage 
 }
 
 class TestParsingMergeLite_OptionalGroup extends $pb.GeneratedMessage {
-  factory TestParsingMergeLite_OptionalGroup() => create();
+  factory TestParsingMergeLite_OptionalGroup({
+    TestAllTypesLite? optionalGroupAllTypes,
+  }) {
+    final $result = create();
+    if (optionalGroupAllTypes != null) {
+      $result.optionalGroupAllTypes = optionalGroupAllTypes;
+    }
+    return $result;
+  }
   TestParsingMergeLite_OptionalGroup._() : super();
   factory TestParsingMergeLite_OptionalGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMergeLite_OptionalGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1510,7 +2046,15 @@ class TestParsingMergeLite_OptionalGroup extends $pb.GeneratedMessage {
 }
 
 class TestParsingMergeLite_RepeatedGroup extends $pb.GeneratedMessage {
-  factory TestParsingMergeLite_RepeatedGroup() => create();
+  factory TestParsingMergeLite_RepeatedGroup({
+    TestAllTypesLite? repeatedGroupAllTypes,
+  }) {
+    final $result = create();
+    if (repeatedGroupAllTypes != null) {
+      $result.repeatedGroupAllTypes = repeatedGroupAllTypes;
+    }
+    return $result;
+  }
   TestParsingMergeLite_RepeatedGroup._() : super();
   factory TestParsingMergeLite_RepeatedGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMergeLite_RepeatedGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1553,8 +2097,33 @@ class TestParsingMergeLite_RepeatedGroup extends $pb.GeneratedMessage {
   TestAllTypesLite ensureRepeatedGroupAllTypes() => $_ensure(0);
 }
 
+/// See the comments of the same type in unittest.proto.
 class TestParsingMergeLite extends $pb.GeneratedMessage {
-  factory TestParsingMergeLite() => create();
+  factory TestParsingMergeLite({
+    TestAllTypesLite? requiredAllTypes,
+    TestAllTypesLite? optionalAllTypes,
+    $core.Iterable<TestAllTypesLite>? repeatedAllTypes,
+    TestParsingMergeLite_OptionalGroup? optionalGroup,
+    $core.Iterable<TestParsingMergeLite_RepeatedGroup>? repeatedGroup,
+  }) {
+    final $result = create();
+    if (requiredAllTypes != null) {
+      $result.requiredAllTypes = requiredAllTypes;
+    }
+    if (optionalAllTypes != null) {
+      $result.optionalAllTypes = optionalAllTypes;
+    }
+    if (repeatedAllTypes != null) {
+      $result.repeatedAllTypes.addAll(repeatedAllTypes);
+    }
+    if (optionalGroup != null) {
+      $result.optionalGroup = optionalGroup;
+    }
+    if (repeatedGroup != null) {
+      $result.repeatedGroup.addAll(repeatedGroup);
+    }
+    return $result;
+  }
   TestParsingMergeLite._() : super();
   factory TestParsingMergeLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestParsingMergeLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1629,8 +2198,18 @@ class TestParsingMergeLite extends $pb.GeneratedMessage {
   $core.List<TestParsingMergeLite_RepeatedGroup> get repeatedGroup => $_getList(4);
 }
 
+/// Test that the correct exception is thrown by parseFrom in a corner case
+/// involving merging, extensions, and required fields.
 class TestMergeExceptionLite extends $pb.GeneratedMessage {
-  factory TestMergeExceptionLite() => create();
+  factory TestMergeExceptionLite({
+    TestAllExtensionsLite? allExtensions,
+  }) {
+    final $result = create();
+    if (allExtensions != null) {
+      $result.allExtensions = allExtensions;
+    }
+    return $result;
+  }
   TestMergeExceptionLite._() : super();
   factory TestMergeExceptionLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestMergeExceptionLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1672,6 +2251,7 @@ class TestMergeExceptionLite extends $pb.GeneratedMessage {
   TestAllExtensionsLite ensureAllExtensions() => $_ensure(0);
 }
 
+/// TestEmptyMessageLite is used to test unknown fields support in lite mode.
 class TestEmptyMessageLite extends $pb.GeneratedMessage {
   factory TestEmptyMessageLite() => create();
   TestEmptyMessageLite._() : super();
@@ -1704,6 +2284,8 @@ class TestEmptyMessageLite extends $pb.GeneratedMessage {
   static TestEmptyMessageLite? _defaultInstance;
 }
 
+/// Like above, but declare all field numbers as potential extensions.  No
+/// actual extensions should ever be defined for this type.
 class TestEmptyMessageWithExtensionsLite extends $pb.GeneratedMessage {
   factory TestEmptyMessageWithExtensionsLite() => create();
   TestEmptyMessageWithExtensionsLite._() : super();
@@ -1737,7 +2319,19 @@ class TestEmptyMessageWithExtensionsLite extends $pb.GeneratedMessage {
 }
 
 class V1MessageLite extends $pb.GeneratedMessage {
-  factory V1MessageLite() => create();
+  factory V1MessageLite({
+    $core.int? intField,
+    V1EnumLite? enumField,
+  }) {
+    final $result = create();
+    if (intField != null) {
+      $result.intField = intField;
+    }
+    if (enumField != null) {
+      $result.enumField = enumField;
+    }
+    return $result;
+  }
   V1MessageLite._() : super();
   factory V1MessageLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory V1MessageLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1788,7 +2382,19 @@ class V1MessageLite extends $pb.GeneratedMessage {
 }
 
 class V2MessageLite extends $pb.GeneratedMessage {
-  factory V2MessageLite() => create();
+  factory V2MessageLite({
+    $core.int? intField,
+    V2EnumLite? enumField,
+  }) {
+    final $result = create();
+    if (intField != null) {
+      $result.intField = intField;
+    }
+    if (enumField != null) {
+      $result.enumField = enumField;
+    }
+    return $result;
+  }
   V2MessageLite._() : super();
   factory V2MessageLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory V2MessageLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1839,7 +2445,15 @@ class V2MessageLite extends $pb.GeneratedMessage {
 }
 
 class TestHugeFieldNumbersLite_OptionalGroup extends $pb.GeneratedMessage {
-  factory TestHugeFieldNumbersLite_OptionalGroup() => create();
+  factory TestHugeFieldNumbersLite_OptionalGroup({
+    $core.int? groupA,
+  }) {
+    final $result = create();
+    if (groupA != null) {
+      $result.groupA = groupA;
+    }
+    return $result;
+  }
   TestHugeFieldNumbersLite_OptionalGroup._() : super();
   factory TestHugeFieldNumbersLite_OptionalGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestHugeFieldNumbersLite_OptionalGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -1889,7 +2503,67 @@ enum TestHugeFieldNumbersLite_OneofField {
 }
 
 class TestHugeFieldNumbersLite extends $pb.GeneratedMessage {
-  factory TestHugeFieldNumbersLite() => create();
+  factory TestHugeFieldNumbersLite({
+    $core.int? optionalInt32,
+    $core.int? fixed32,
+    $core.Iterable<$core.int>? repeatedInt32,
+    $core.Iterable<$core.int>? packedInt32,
+    ForeignEnumLite? optionalEnum,
+    $core.String? optionalString,
+    $core.List<$core.int>? optionalBytes,
+    ForeignMessageLite? optionalMessage,
+    TestHugeFieldNumbersLite_OptionalGroup? optionalGroup,
+    $core.Map<$core.String, $core.String>? stringStringMap,
+    $core.int? oneofUint32,
+    TestAllTypesLite? oneofTestAllTypes,
+    $core.String? oneofString,
+    $core.List<$core.int>? oneofBytes,
+  }) {
+    final $result = create();
+    if (optionalInt32 != null) {
+      $result.optionalInt32 = optionalInt32;
+    }
+    if (fixed32 != null) {
+      $result.fixed32 = fixed32;
+    }
+    if (repeatedInt32 != null) {
+      $result.repeatedInt32.addAll(repeatedInt32);
+    }
+    if (packedInt32 != null) {
+      $result.packedInt32.addAll(packedInt32);
+    }
+    if (optionalEnum != null) {
+      $result.optionalEnum = optionalEnum;
+    }
+    if (optionalString != null) {
+      $result.optionalString = optionalString;
+    }
+    if (optionalBytes != null) {
+      $result.optionalBytes = optionalBytes;
+    }
+    if (optionalMessage != null) {
+      $result.optionalMessage = optionalMessage;
+    }
+    if (optionalGroup != null) {
+      $result.optionalGroup = optionalGroup;
+    }
+    if (stringStringMap != null) {
+      $result.stringStringMap.addAll(stringStringMap);
+    }
+    if (oneofUint32 != null) {
+      $result.oneofUint32 = oneofUint32;
+    }
+    if (oneofTestAllTypes != null) {
+      $result.oneofTestAllTypes = oneofTestAllTypes;
+    }
+    if (oneofString != null) {
+      $result.oneofString = oneofString;
+    }
+    if (oneofBytes != null) {
+      $result.oneofBytes = oneofBytes;
+    }
+    return $result;
+  }
   TestHugeFieldNumbersLite._() : super();
   factory TestHugeFieldNumbersLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestHugeFieldNumbersLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2071,7 +2745,47 @@ enum TestOneofParsingLite_OneofField {
 }
 
 class TestOneofParsingLite extends $pb.GeneratedMessage {
-  factory TestOneofParsingLite() => create();
+  factory TestOneofParsingLite({
+    $core.int? oneofInt32,
+    TestAllTypesLite? oneofSubmessage,
+    $core.String? oneofString,
+    $core.List<$core.int>? oneofBytes,
+    $core.String? oneofStringCord,
+    $core.List<$core.int>? oneofBytesCord,
+    $core.String? oneofStringStringPiece,
+    $core.List<$core.int>? oneofBytesStringPiece,
+    V2EnumLite? oneofEnum,
+  }) {
+    final $result = create();
+    if (oneofInt32 != null) {
+      $result.oneofInt32 = oneofInt32;
+    }
+    if (oneofSubmessage != null) {
+      $result.oneofSubmessage = oneofSubmessage;
+    }
+    if (oneofString != null) {
+      $result.oneofString = oneofString;
+    }
+    if (oneofBytes != null) {
+      $result.oneofBytes = oneofBytes;
+    }
+    if (oneofStringCord != null) {
+      $result.oneofStringCord = oneofStringCord;
+    }
+    if (oneofBytesCord != null) {
+      $result.oneofBytesCord = oneofBytesCord;
+    }
+    if (oneofStringStringPiece != null) {
+      $result.oneofStringStringPiece = oneofStringStringPiece;
+    }
+    if (oneofBytesStringPiece != null) {
+      $result.oneofBytesStringPiece = oneofBytesStringPiece;
+    }
+    if (oneofEnum != null) {
+      $result.oneofEnum = oneofEnum;
+    }
+    return $result;
+  }
   TestOneofParsingLite._() : super();
   factory TestOneofParsingLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestOneofParsingLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2210,7 +2924,7 @@ class TestOneofParsingLite extends $pb.GeneratedMessage {
   void clearOneofEnum() => clearField(9);
 }
 
-class TestMessageSetLite extends $pb.GeneratedMessage {
+class TestMessageSetLite extends $pb.$_MessageSet {
   factory TestMessageSetLite() => create();
   TestMessageSetLite._() : super();
   factory TestMessageSetLite.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
@@ -2242,8 +2956,19 @@ class TestMessageSetLite extends $pb.GeneratedMessage {
   static TestMessageSetLite? _defaultInstance;
 }
 
+/// The following four messages are set up to test for wire compatibility between
+/// packed and non-packed repeated fields. We use the field number 2048, because
+/// that is large enough to require a 3-byte varint for the tag.
 class PackedInt32 extends $pb.GeneratedMessage {
-  factory PackedInt32() => create();
+  factory PackedInt32({
+    $core.Iterable<$core.int>? repeatedInt32,
+  }) {
+    final $result = create();
+    if (repeatedInt32 != null) {
+      $result.repeatedInt32.addAll(repeatedInt32);
+    }
+    return $result;
+  }
   PackedInt32._() : super();
   factory PackedInt32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PackedInt32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2279,7 +3004,15 @@ class PackedInt32 extends $pb.GeneratedMessage {
 }
 
 class NonPackedInt32 extends $pb.GeneratedMessage {
-  factory NonPackedInt32() => create();
+  factory NonPackedInt32({
+    $core.Iterable<$core.int>? repeatedInt32,
+  }) {
+    final $result = create();
+    if (repeatedInt32 != null) {
+      $result.repeatedInt32.addAll(repeatedInt32);
+    }
+    return $result;
+  }
   NonPackedInt32._() : super();
   factory NonPackedInt32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NonPackedInt32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2315,7 +3048,15 @@ class NonPackedInt32 extends $pb.GeneratedMessage {
 }
 
 class PackedFixed32 extends $pb.GeneratedMessage {
-  factory PackedFixed32() => create();
+  factory PackedFixed32({
+    $core.Iterable<$core.int>? repeatedFixed32,
+  }) {
+    final $result = create();
+    if (repeatedFixed32 != null) {
+      $result.repeatedFixed32.addAll(repeatedFixed32);
+    }
+    return $result;
+  }
   PackedFixed32._() : super();
   factory PackedFixed32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PackedFixed32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2351,7 +3092,15 @@ class PackedFixed32 extends $pb.GeneratedMessage {
 }
 
 class NonPackedFixed32 extends $pb.GeneratedMessage {
-  factory NonPackedFixed32() => create();
+  factory NonPackedFixed32({
+    $core.Iterable<$core.int>? repeatedFixed32,
+  }) {
+    final $result = create();
+    if (repeatedFixed32 != null) {
+      $result.repeatedFixed32.addAll(repeatedFixed32);
+    }
+    return $result;
+  }
   NonPackedFixed32._() : super();
   factory NonPackedFixed32.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NonPackedFixed32.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2386,6 +3135,7 @@ class NonPackedFixed32 extends $pb.GeneratedMessage {
   $core.List<$core.int> get repeatedFixed32 => $_getList(0);
 }
 
+/// Test an enum that has multiple values with the same number.
 class DupEnum extends $pb.GeneratedMessage {
   factory DupEnum() => create();
   DupEnum._() : super();
@@ -2419,7 +3169,19 @@ class DupEnum extends $pb.GeneratedMessage {
 }
 
 class RecursiveMessage extends $pb.GeneratedMessage {
-  factory RecursiveMessage() => create();
+  factory RecursiveMessage({
+    RecursiveMessage? recurse,
+    $core.List<$core.int>? payload,
+  }) {
+    final $result = create();
+    if (recurse != null) {
+      $result.recurse = recurse;
+    }
+    if (payload != null) {
+      $result.payload = payload;
+    }
+    return $result;
+  }
   RecursiveMessage._() : super();
   factory RecursiveMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RecursiveMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -2491,13 +3253,13 @@ class Unittest_lite {
   static final optionalGroupExtensionLite = $pb.Extension<OptionalGroup_extension_lite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalGroupExtensionLite', 16, $pb.PbFieldType.OG, defaultOrMaker: OptionalGroup_extension_lite.getDefault, subBuilder: OptionalGroup_extension_lite.create);
   static final optionalNestedMessageExtensionLite = $pb.Extension<TestAllTypesLite_NestedMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalNestedMessageExtensionLite', 18, $pb.PbFieldType.OM, defaultOrMaker: TestAllTypesLite_NestedMessage.getDefault, subBuilder: TestAllTypesLite_NestedMessage.create);
   static final optionalForeignMessageExtensionLite = $pb.Extension<ForeignMessageLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalForeignMessageExtensionLite', 19, $pb.PbFieldType.OM, defaultOrMaker: ForeignMessageLite.getDefault, subBuilder: ForeignMessageLite.create);
-  static final optionalImportMessageExtensionLite = $pb.Extension<$92.ImportMessageLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalImportMessageExtensionLite', 20, $pb.PbFieldType.OM, defaultOrMaker: $92.ImportMessageLite.getDefault, subBuilder: $92.ImportMessageLite.create);
+  static final optionalImportMessageExtensionLite = $pb.Extension<$94.ImportMessageLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalImportMessageExtensionLite', 20, $pb.PbFieldType.OM, defaultOrMaker: $94.ImportMessageLite.getDefault, subBuilder: $94.ImportMessageLite.create);
   static final optionalNestedEnumExtensionLite = $pb.Extension<TestAllTypesLite_NestedEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalNestedEnumExtensionLite', 21, $pb.PbFieldType.OE, defaultOrMaker: TestAllTypesLite_NestedEnum.FOO, valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values);
   static final optionalForeignEnumExtensionLite = $pb.Extension<ForeignEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalForeignEnumExtensionLite', 22, $pb.PbFieldType.OE, defaultOrMaker: ForeignEnumLite.FOREIGN_LITE_FOO, valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values);
-  static final optionalImportEnumExtensionLite = $pb.Extension<$92.ImportEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalImportEnumExtensionLite', 23, $pb.PbFieldType.OE, defaultOrMaker: $92.ImportEnumLite.IMPORT_LITE_FOO, valueOf: $92.ImportEnumLite.valueOf, enumValues: $92.ImportEnumLite.values);
+  static final optionalImportEnumExtensionLite = $pb.Extension<$94.ImportEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalImportEnumExtensionLite', 23, $pb.PbFieldType.OE, defaultOrMaker: $94.ImportEnumLite.IMPORT_LITE_FOO, valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values);
   static final optionalStringPieceExtensionLite = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalStringPieceExtensionLite', 24, $pb.PbFieldType.OS);
   static final optionalCordExtensionLite = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalCordExtensionLite', 25, $pb.PbFieldType.OS);
-  static final optionalPublicImportMessageExtensionLite = $pb.Extension<$93.PublicImportMessageLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalPublicImportMessageExtensionLite', 26, $pb.PbFieldType.OM, defaultOrMaker: $93.PublicImportMessageLite.getDefault, subBuilder: $93.PublicImportMessageLite.create);
+  static final optionalPublicImportMessageExtensionLite = $pb.Extension<$95.PublicImportMessageLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalPublicImportMessageExtensionLite', 26, $pb.PbFieldType.OM, defaultOrMaker: $95.PublicImportMessageLite.getDefault, subBuilder: $95.PublicImportMessageLite.create);
   static final optionalLazyMessageExtensionLite = $pb.Extension<TestAllTypesLite_NestedMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalLazyMessageExtensionLite', 27, $pb.PbFieldType.OM, defaultOrMaker: TestAllTypesLite_NestedMessage.getDefault, subBuilder: TestAllTypesLite_NestedMessage.create);
   static final optionalUnverifiedLazyMessageExtensionLite = $pb.Extension<TestAllTypesLite_NestedMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalUnverifiedLazyMessageExtensionLite', 28, $pb.PbFieldType.OM, defaultOrMaker: TestAllTypesLite_NestedMessage.getDefault, subBuilder: TestAllTypesLite_NestedMessage.create);
   static final repeatedInt32ExtensionLite = $pb.Extension<$core.int>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedInt32ExtensionLite', 31, $pb.PbFieldType.P3, check: $pb.getCheckFunction($pb.PbFieldType.P3));
@@ -2518,10 +3280,10 @@ class Unittest_lite {
   static final repeatedGroupExtensionLite = $pb.Extension<RepeatedGroup_extension_lite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedGroupExtensionLite', 46, $pb.PbFieldType.PG, check: $pb.getCheckFunction($pb.PbFieldType.PG), subBuilder: RepeatedGroup_extension_lite.create);
   static final repeatedNestedMessageExtensionLite = $pb.Extension<TestAllTypesLite_NestedMessage>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedNestedMessageExtensionLite', 48, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: TestAllTypesLite_NestedMessage.create);
   static final repeatedForeignMessageExtensionLite = $pb.Extension<ForeignMessageLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedForeignMessageExtensionLite', 49, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: ForeignMessageLite.create);
-  static final repeatedImportMessageExtensionLite = $pb.Extension<$92.ImportMessageLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedImportMessageExtensionLite', 50, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: $92.ImportMessageLite.create);
+  static final repeatedImportMessageExtensionLite = $pb.Extension<$94.ImportMessageLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedImportMessageExtensionLite', 50, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: $94.ImportMessageLite.create);
   static final repeatedNestedEnumExtensionLite = $pb.Extension<TestAllTypesLite_NestedEnum>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedNestedEnumExtensionLite', 51, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values);
   static final repeatedForeignEnumExtensionLite = $pb.Extension<ForeignEnumLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedForeignEnumExtensionLite', 52, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values);
-  static final repeatedImportEnumExtensionLite = $pb.Extension<$92.ImportEnumLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedImportEnumExtensionLite', 53, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: $92.ImportEnumLite.valueOf, enumValues: $92.ImportEnumLite.values);
+  static final repeatedImportEnumExtensionLite = $pb.Extension<$94.ImportEnumLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedImportEnumExtensionLite', 53, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values);
   static final repeatedStringPieceExtensionLite = $pb.Extension<$core.String>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedStringPieceExtensionLite', 54, $pb.PbFieldType.PS, check: $pb.getCheckFunction($pb.PbFieldType.PS));
   static final repeatedCordExtensionLite = $pb.Extension<$core.String>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedCordExtensionLite', 55, $pb.PbFieldType.PS, check: $pb.getCheckFunction($pb.PbFieldType.PS));
   static final repeatedLazyMessageExtensionLite = $pb.Extension<TestAllTypesLite_NestedMessage>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedLazyMessageExtensionLite', 57, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: TestAllTypesLite_NestedMessage.create);
@@ -2542,7 +3304,7 @@ class Unittest_lite {
   static final defaultBytesExtensionLite = $pb.Extension<$core.List<$core.int>>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultBytesExtensionLite', 75, $pb.PbFieldType.OY, defaultOrMaker: () => <$core.int>[0x77,0x6f,0x72,0x6c,0x64]);
   static final defaultNestedEnumExtensionLite = $pb.Extension<TestAllTypesLite_NestedEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultNestedEnumExtensionLite', 81, $pb.PbFieldType.OE, defaultOrMaker: TestAllTypesLite_NestedEnum.BAR, valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values);
   static final defaultForeignEnumExtensionLite = $pb.Extension<ForeignEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultForeignEnumExtensionLite', 82, $pb.PbFieldType.OE, defaultOrMaker: ForeignEnumLite.FOREIGN_LITE_BAR, valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values);
-  static final defaultImportEnumExtensionLite = $pb.Extension<$92.ImportEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultImportEnumExtensionLite', 83, $pb.PbFieldType.OE, defaultOrMaker: $92.ImportEnumLite.IMPORT_LITE_BAR, valueOf: $92.ImportEnumLite.valueOf, enumValues: $92.ImportEnumLite.values);
+  static final defaultImportEnumExtensionLite = $pb.Extension<$94.ImportEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultImportEnumExtensionLite', 83, $pb.PbFieldType.OE, defaultOrMaker: $94.ImportEnumLite.IMPORT_LITE_BAR, valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values);
   static final defaultStringPieceExtensionLite = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultStringPieceExtensionLite', 84, $pb.PbFieldType.OS, defaultOrMaker: 'abc');
   static final defaultCordExtensionLite = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultCordExtensionLite', 85, $pb.PbFieldType.OS, defaultOrMaker: '123');
   static final oneofUint32ExtensionLite = $pb.Extension<$core.int>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'oneofUint32ExtensionLite', 111, $pb.PbFieldType.OU3);

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/duration.pb.dart' as $61;
-import '../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../google/protobuf/duration.pb.dart' as $62;
+import '../../google/protobuf/timestamp.pb.dart' as $60;
 
 enum Parameter_Values {
   intValue, 
@@ -28,8 +28,54 @@ enum Parameter_Values {
   notSet
 }
 
+/// A generic parameter message used by the robot state service to describe different,
+/// parameterized aspects of the robot.
 class Parameter extends $pb.GeneratedMessage {
-  factory Parameter() => create();
+  factory Parameter({
+    $core.String? label,
+    $core.String? units,
+    $fixnum.Int64? intValue,
+    $core.double? floatValue,
+    $60.Timestamp? timestamp,
+    $62.Duration? duration,
+    $core.String? stringValue,
+    $core.bool? boolValue,
+    $core.String? notes,
+    $fixnum.Int64? uintValue,
+  }) {
+    final $result = create();
+    if (label != null) {
+      $result.label = label;
+    }
+    if (units != null) {
+      $result.units = units;
+    }
+    if (intValue != null) {
+      $result.intValue = intValue;
+    }
+    if (floatValue != null) {
+      $result.floatValue = floatValue;
+    }
+    if (timestamp != null) {
+      $result.timestamp = timestamp;
+    }
+    if (duration != null) {
+      $result.duration = duration;
+    }
+    if (stringValue != null) {
+      $result.stringValue = stringValue;
+    }
+    if (boolValue != null) {
+      $result.boolValue = boolValue;
+    }
+    if (notes != null) {
+      $result.notes = notes;
+    }
+    if (uintValue != null) {
+      $result.uintValue = uintValue;
+    }
+    return $result;
+  }
   Parameter._() : super();
   factory Parameter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Parameter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -50,8 +96,8 @@ class Parameter extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'units')
     ..aInt64(3, _omitFieldNames ? '' : 'intValue')
     ..a<$core.double>(4, _omitFieldNames ? '' : 'floatValue', $pb.PbFieldType.OD)
-    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
-    ..aOM<$61.Duration>(6, _omitFieldNames ? '' : 'duration', subBuilder: $61.Duration.create)
+    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$62.Duration>(6, _omitFieldNames ? '' : 'duration', subBuilder: $62.Duration.create)
     ..aOS(7, _omitFieldNames ? '' : 'stringValue')
     ..aOB(8, _omitFieldNames ? '' : 'boolValue')
     ..aOS(9, _omitFieldNames ? '' : 'notes')
@@ -83,6 +129,7 @@ class Parameter extends $pb.GeneratedMessage {
   Parameter_Values whichValues() => _Parameter_ValuesByTag[$_whichOneof(0)]!;
   void clearValues() => clearField($_whichOneof(0));
 
+  /// Name of parameter.
   @$pb.TagNumber(1)
   $core.String get label => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -92,6 +139,7 @@ class Parameter extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearLabel() => clearField(1);
 
+  /// Units of parameter value.
   @$pb.TagNumber(2)
   $core.String get units => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -101,6 +149,7 @@ class Parameter extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearUnits() => clearField(2);
 
+  /// Value of a countable measure.
   @$pb.TagNumber(3)
   $fixnum.Int64 get intValue => $_getI64(2);
   @$pb.TagNumber(3)
@@ -110,6 +159,7 @@ class Parameter extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearIntValue() => clearField(3);
 
+  /// Value of a continuous measure.
   @$pb.TagNumber(4)
   $core.double get floatValue => $_getN(3);
   @$pb.TagNumber(4)
@@ -119,28 +169,31 @@ class Parameter extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearFloatValue() => clearField(4);
 
+  /// A point in time.
   @$pb.TagNumber(5)
-  $59.Timestamp get timestamp => $_getN(4);
+  $60.Timestamp get timestamp => $_getN(4);
   @$pb.TagNumber(5)
-  set timestamp($59.Timestamp v) { setField(5, v); }
+  set timestamp($60.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTimestamp() => $_has(4);
   @$pb.TagNumber(5)
   void clearTimestamp() => clearField(5);
   @$pb.TagNumber(5)
-  $59.Timestamp ensureTimestamp() => $_ensure(4);
+  $60.Timestamp ensureTimestamp() => $_ensure(4);
 
+  /// A time duration.
   @$pb.TagNumber(6)
-  $61.Duration get duration => $_getN(5);
+  $62.Duration get duration => $_getN(5);
   @$pb.TagNumber(6)
-  set duration($61.Duration v) { setField(6, v); }
+  set duration($62.Duration v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasDuration() => $_has(5);
   @$pb.TagNumber(6)
   void clearDuration() => clearField(6);
   @$pb.TagNumber(6)
-  $61.Duration ensureDuration() => $_ensure(5);
+  $62.Duration ensureDuration() => $_ensure(5);
 
+  /// Value as a string.
   @$pb.TagNumber(7)
   $core.String get stringValue => $_getSZ(6);
   @$pb.TagNumber(7)
@@ -150,6 +203,7 @@ class Parameter extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearStringValue() => clearField(7);
 
+  /// Value as true/false.
   @$pb.TagNumber(8)
   $core.bool get boolValue => $_getBF(7);
   @$pb.TagNumber(8)
@@ -159,6 +213,7 @@ class Parameter extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearBoolValue() => clearField(8);
 
+  /// Description of the parameter or its value.
   @$pb.TagNumber(9)
   $core.String get notes => $_getSZ(8);
   @$pb.TagNumber(9)
@@ -168,6 +223,7 @@ class Parameter extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearNotes() => clearField(9);
 
+  /// Unsigned integer
   @$pb.TagNumber(10)
   $fixnum.Int64 get uintValue => $_getI64(9);
   @$pb.TagNumber(10)

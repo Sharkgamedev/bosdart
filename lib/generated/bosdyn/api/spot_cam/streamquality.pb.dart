@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -13,15 +13,24 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $61;
-import '../../../google/protobuf/wrappers.pb.dart' as $58;
-import '../header.pb.dart' as $67;
+import '../../../google/protobuf/duration.pb.dart' as $62;
+import '../../../google/protobuf/wrappers.pb.dart' as $59;
+import '../header.pb.dart' as $68;
 import 'streamquality.pbenum.dart';
 
 export 'streamquality.pbenum.dart';
 
+/// Wrapper for AwbModeEnum to allow it to be optionally set.
 class StreamParams_AwbMode extends $pb.GeneratedMessage {
-  factory StreamParams_AwbMode() => create();
+  factory StreamParams_AwbMode({
+    StreamParams_AwbModeEnum? awb,
+  }) {
+    final $result = create();
+    if (awb != null) {
+      $result.awb = awb;
+    }
+    return $result;
+  }
   StreamParams_AwbMode._() : super();
   factory StreamParams_AwbMode.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StreamParams_AwbMode.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -95,13 +104,21 @@ class StreamParams_AutoExposure extends $pb.GeneratedMessage {
 }
 
 class StreamParams_SyncAutoExposure extends $pb.GeneratedMessage {
-  factory StreamParams_SyncAutoExposure() => create();
+  factory StreamParams_SyncAutoExposure({
+    $59.Int32Value? brightnessTarget,
+  }) {
+    final $result = create();
+    if (brightnessTarget != null) {
+      $result.brightnessTarget = brightnessTarget;
+    }
+    return $result;
+  }
   StreamParams_SyncAutoExposure._() : super();
   factory StreamParams_SyncAutoExposure.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StreamParams_SyncAutoExposure.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamParams.SyncAutoExposure', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$58.Int32Value>(1, _omitFieldNames ? '' : 'brightnessTarget', subBuilder: $58.Int32Value.create)
+    ..aOM<$59.Int32Value>(1, _omitFieldNames ? '' : 'brightnessTarget', subBuilder: $59.Int32Value.create)
     ..hasRequiredFields = false
   ;
 
@@ -126,27 +143,42 @@ class StreamParams_SyncAutoExposure extends $pb.GeneratedMessage {
   static StreamParams_SyncAutoExposure getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamParams_SyncAutoExposure>(create);
   static StreamParams_SyncAutoExposure? _defaultInstance;
 
+  /// brightness_target is a value between 0 and 255 which
+  /// controls the setpoint for the exposure control algorithm
+  /// if brightness_target is not set, a sensible default is chosen by the system
   @$pb.TagNumber(1)
-  $58.Int32Value get brightnessTarget => $_getN(0);
+  $59.Int32Value get brightnessTarget => $_getN(0);
   @$pb.TagNumber(1)
-  set brightnessTarget($58.Int32Value v) { setField(1, v); }
+  set brightnessTarget($59.Int32Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBrightnessTarget() => $_has(0);
   @$pb.TagNumber(1)
   void clearBrightnessTarget() => clearField(1);
   @$pb.TagNumber(1)
-  $58.Int32Value ensureBrightnessTarget() => $_ensure(0);
+  $59.Int32Value ensureBrightnessTarget() => $_ensure(0);
 }
 
 class StreamParams_ManualExposure extends $pb.GeneratedMessage {
-  factory StreamParams_ManualExposure() => create();
+  factory StreamParams_ManualExposure({
+    $62.Duration? exposure,
+    $59.FloatValue? gain,
+  }) {
+    final $result = create();
+    if (exposure != null) {
+      $result.exposure = exposure;
+    }
+    if (gain != null) {
+      $result.gain = gain;
+    }
+    return $result;
+  }
   StreamParams_ManualExposure._() : super();
   factory StreamParams_ManualExposure.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StreamParams_ManualExposure.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamParams.ManualExposure', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$61.Duration>(1, _omitFieldNames ? '' : 'exposure', subBuilder: $61.Duration.create)
-    ..aOM<$58.FloatValue>(2, _omitFieldNames ? '' : 'gain', subBuilder: $58.FloatValue.create)
+    ..aOM<$62.Duration>(1, _omitFieldNames ? '' : 'exposure', subBuilder: $62.Duration.create)
+    ..aOM<$59.FloatValue>(2, _omitFieldNames ? '' : 'gain', subBuilder: $59.FloatValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -171,27 +203,30 @@ class StreamParams_ManualExposure extends $pb.GeneratedMessage {
   static StreamParams_ManualExposure getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamParams_ManualExposure>(create);
   static StreamParams_ManualExposure? _defaultInstance;
 
+  /// duration is required, and may be clamped depending
+  /// on the parameters of the camera
   @$pb.TagNumber(1)
-  $61.Duration get exposure => $_getN(0);
+  $62.Duration get exposure => $_getN(0);
   @$pb.TagNumber(1)
-  set exposure($61.Duration v) { setField(1, v); }
+  set exposure($62.Duration v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasExposure() => $_has(0);
   @$pb.TagNumber(1)
   void clearExposure() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Duration ensureExposure() => $_ensure(0);
+  $62.Duration ensureExposure() => $_ensure(0);
 
+  /// if gain is omitted, it is assumed to be 1.0
   @$pb.TagNumber(2)
-  $58.FloatValue get gain => $_getN(1);
+  $59.FloatValue get gain => $_getN(1);
   @$pb.TagNumber(2)
-  set gain($58.FloatValue v) { setField(2, v); }
+  set gain($59.FloatValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasGain() => $_has(1);
   @$pb.TagNumber(2)
   void clearGain() => clearField(2);
   @$pb.TagNumber(2)
-  $58.FloatValue ensureGain() => $_ensure(1);
+  $59.FloatValue ensureGain() => $_ensure(1);
 }
 
 enum StreamParams_Exposure {
@@ -201,8 +236,41 @@ enum StreamParams_Exposure {
   notSet
 }
 
+/// Parameters for how the video stream should be processed and compressed.
 class StreamParams extends $pb.GeneratedMessage {
-  factory StreamParams() => create();
+  factory StreamParams({
+    $59.Int64Value? targetbitrate,
+    $59.Int64Value? refreshinterval,
+    $59.Int64Value? idrinterval,
+    StreamParams_AwbMode? awb,
+    StreamParams_AutoExposure? autoExposure,
+    StreamParams_SyncAutoExposure? syncExposure,
+    StreamParams_ManualExposure? manualExposure,
+  }) {
+    final $result = create();
+    if (targetbitrate != null) {
+      $result.targetbitrate = targetbitrate;
+    }
+    if (refreshinterval != null) {
+      $result.refreshinterval = refreshinterval;
+    }
+    if (idrinterval != null) {
+      $result.idrinterval = idrinterval;
+    }
+    if (awb != null) {
+      $result.awb = awb;
+    }
+    if (autoExposure != null) {
+      $result.autoExposure = autoExposure;
+    }
+    if (syncExposure != null) {
+      $result.syncExposure = syncExposure;
+    }
+    if (manualExposure != null) {
+      $result.manualExposure = manualExposure;
+    }
+    return $result;
+  }
   StreamParams._() : super();
   factory StreamParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StreamParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -215,9 +283,9 @@ class StreamParams extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StreamParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
     ..oo(0, [5, 6, 7])
-    ..aOM<$58.Int64Value>(1, _omitFieldNames ? '' : 'targetbitrate', subBuilder: $58.Int64Value.create)
-    ..aOM<$58.Int64Value>(2, _omitFieldNames ? '' : 'refreshinterval', subBuilder: $58.Int64Value.create)
-    ..aOM<$58.Int64Value>(3, _omitFieldNames ? '' : 'idrinterval', subBuilder: $58.Int64Value.create)
+    ..aOM<$59.Int64Value>(1, _omitFieldNames ? '' : 'targetbitrate', subBuilder: $59.Int64Value.create)
+    ..aOM<$59.Int64Value>(2, _omitFieldNames ? '' : 'refreshinterval', subBuilder: $59.Int64Value.create)
+    ..aOM<$59.Int64Value>(3, _omitFieldNames ? '' : 'idrinterval', subBuilder: $59.Int64Value.create)
     ..aOM<StreamParams_AwbMode>(4, _omitFieldNames ? '' : 'awb', subBuilder: StreamParams_AwbMode.create)
     ..aOM<StreamParams_AutoExposure>(5, _omitFieldNames ? '' : 'autoExposure', subBuilder: StreamParams_AutoExposure.create)
     ..aOM<StreamParams_SyncAutoExposure>(6, _omitFieldNames ? '' : 'syncExposure', subBuilder: StreamParams_SyncAutoExposure.create)
@@ -249,39 +317,44 @@ class StreamParams extends $pb.GeneratedMessage {
   StreamParams_Exposure whichExposure() => _StreamParams_ExposureByTag[$_whichOneof(0)]!;
   void clearExposure() => clearField($_whichOneof(0));
 
+  /// The compression level in target BPS
   @$pb.TagNumber(1)
-  $58.Int64Value get targetbitrate => $_getN(0);
+  $59.Int64Value get targetbitrate => $_getN(0);
   @$pb.TagNumber(1)
-  set targetbitrate($58.Int64Value v) { setField(1, v); }
+  set targetbitrate($59.Int64Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTargetbitrate() => $_has(0);
   @$pb.TagNumber(1)
   void clearTargetbitrate() => clearField(1);
   @$pb.TagNumber(1)
-  $58.Int64Value ensureTargetbitrate() => $_ensure(0);
+  $59.Int64Value ensureTargetbitrate() => $_ensure(0);
 
+  /// How often should the entire feed be refreshed? (in frames)
+  /// Note: the feed is refreshed on a macroblock level; there are no full I-frames
   @$pb.TagNumber(2)
-  $58.Int64Value get refreshinterval => $_getN(1);
+  $59.Int64Value get refreshinterval => $_getN(1);
   @$pb.TagNumber(2)
-  set refreshinterval($58.Int64Value v) { setField(2, v); }
+  set refreshinterval($59.Int64Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasRefreshinterval() => $_has(1);
   @$pb.TagNumber(2)
   void clearRefreshinterval() => clearField(2);
   @$pb.TagNumber(2)
-  $58.Int64Value ensureRefreshinterval() => $_ensure(1);
+  $59.Int64Value ensureRefreshinterval() => $_ensure(1);
 
+  /// How often should an IDR message get sent? (in frames)
   @$pb.TagNumber(3)
-  $58.Int64Value get idrinterval => $_getN(2);
+  $59.Int64Value get idrinterval => $_getN(2);
   @$pb.TagNumber(3)
-  set idrinterval($58.Int64Value v) { setField(3, v); }
+  set idrinterval($59.Int64Value v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasIdrinterval() => $_has(2);
   @$pb.TagNumber(3)
   void clearIdrinterval() => clearField(3);
   @$pb.TagNumber(3)
-  $58.Int64Value ensureIdrinterval() => $_ensure(2);
+  $59.Int64Value ensureIdrinterval() => $_ensure(2);
 
+  /// Optional setting of automatic white balancing mode.
   @$pb.TagNumber(4)
   StreamParams_AwbMode get awb => $_getN(3);
   @$pb.TagNumber(4)
@@ -293,6 +366,7 @@ class StreamParams extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   StreamParams_AwbMode ensureAwb() => $_ensure(3);
 
+  /// the AutoExposure option runs exposure independently on each of the ring cameras
   @$pb.TagNumber(5)
   StreamParams_AutoExposure get autoExposure => $_getN(4);
   @$pb.TagNumber(5)
@@ -304,6 +378,8 @@ class StreamParams extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   StreamParams_AutoExposure ensureAutoExposure() => $_ensure(4);
 
+  /// the SyncAutoExposure option runs a single autoexposure algorithm that takes into
+  /// account data from all ring cameras
   @$pb.TagNumber(6)
   StreamParams_SyncAutoExposure get syncExposure => $_getN(5);
   @$pb.TagNumber(6)
@@ -315,6 +391,7 @@ class StreamParams extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   StreamParams_SyncAutoExposure ensureSyncExposure() => $_ensure(5);
 
+  /// manual exposure sets an exposure for all ring cameras.
   @$pb.TagNumber(7)
   StreamParams_ManualExposure get manualExposure => $_getN(6);
   @$pb.TagNumber(7)
@@ -327,14 +404,23 @@ class StreamParams extends $pb.GeneratedMessage {
   StreamParams_ManualExposure ensureManualExposure() => $_ensure(6);
 }
 
+/// Request the current video stream parameters.
 class GetStreamParamsRequest extends $pb.GeneratedMessage {
-  factory GetStreamParamsRequest() => create();
+  factory GetStreamParamsRequest({
+    $68.RequestHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   GetStreamParamsRequest._() : super();
   factory GetStreamParamsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetStreamParamsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStreamParamsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -359,26 +445,40 @@ class GetStreamParamsRequest extends $pb.GeneratedMessage {
   static GetStreamParamsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetStreamParamsRequest>(create);
   static GetStreamParamsRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 }
 
+/// Provides the current video stream parameters.
 class GetStreamParamsResponse extends $pb.GeneratedMessage {
-  factory GetStreamParamsResponse() => create();
+  factory GetStreamParamsResponse({
+    $68.ResponseHeader? header,
+    StreamParams? params,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (params != null) {
+      $result.params = params;
+    }
+    return $result;
+  }
   GetStreamParamsResponse._() : super();
   factory GetStreamParamsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetStreamParamsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStreamParamsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<StreamParams>(2, _omitFieldNames ? '' : 'params', subBuilder: StreamParams.create)
     ..hasRequiredFields = false
   ;
@@ -404,17 +504,19 @@ class GetStreamParamsResponse extends $pb.GeneratedMessage {
   static GetStreamParamsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetStreamParamsResponse>(create);
   static GetStreamParamsResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Current video stream parameters.
   @$pb.TagNumber(2)
   StreamParams get params => $_getN(1);
   @$pb.TagNumber(2)
@@ -427,14 +529,27 @@ class GetStreamParamsResponse extends $pb.GeneratedMessage {
   StreamParams ensureParams() => $_ensure(1);
 }
 
+/// Modify the video stream parameters.
 class SetStreamParamsRequest extends $pb.GeneratedMessage {
-  factory SetStreamParamsRequest() => create();
+  factory SetStreamParamsRequest({
+    $68.RequestHeader? header,
+    StreamParams? params,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (params != null) {
+      $result.params = params;
+    }
+    return $result;
+  }
   SetStreamParamsRequest._() : super();
   factory SetStreamParamsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetStreamParamsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetStreamParamsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOM<StreamParams>(2, _omitFieldNames ? '' : 'params', subBuilder: StreamParams.create)
     ..hasRequiredFields = false
   ;
@@ -460,17 +575,19 @@ class SetStreamParamsRequest extends $pb.GeneratedMessage {
   static SetStreamParamsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetStreamParamsRequest>(create);
   static SetStreamParamsRequest? _defaultInstance;
 
+  /// Common request header.
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// Set only the fields that should be modified.
   @$pb.TagNumber(2)
   StreamParams get params => $_getN(1);
   @$pb.TagNumber(2)
@@ -483,14 +600,27 @@ class SetStreamParamsRequest extends $pb.GeneratedMessage {
   StreamParams ensureParams() => $_ensure(1);
 }
 
+/// Result of setting video stream parameters.
 class SetStreamParamsResponse extends $pb.GeneratedMessage {
-  factory SetStreamParamsResponse() => create();
+  factory SetStreamParamsResponse({
+    $68.ResponseHeader? header,
+    StreamParams? params,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (params != null) {
+      $result.params = params;
+    }
+    return $result;
+  }
   SetStreamParamsResponse._() : super();
   factory SetStreamParamsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SetStreamParamsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetStreamParamsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..aOM<StreamParams>(2, _omitFieldNames ? '' : 'params', subBuilder: StreamParams.create)
     ..hasRequiredFields = false
   ;
@@ -516,17 +646,19 @@ class SetStreamParamsResponse extends $pb.GeneratedMessage {
   static SetStreamParamsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetStreamParamsResponse>(create);
   static SetStreamParamsResponse? _defaultInstance;
 
+  /// Common response header.
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 
+  /// Applied video stream parameters.
   @$pb.TagNumber(2)
   StreamParams get params => $_getN(1);
   @$pb.TagNumber(2)
@@ -540,13 +672,25 @@ class SetStreamParamsResponse extends $pb.GeneratedMessage {
 }
 
 class EnableCongestionControlRequest extends $pb.GeneratedMessage {
-  factory EnableCongestionControlRequest() => create();
+  factory EnableCongestionControlRequest({
+    $68.RequestHeader? header,
+    $core.bool? enableCongestionControl,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (enableCongestionControl != null) {
+      $result.enableCongestionControl = enableCongestionControl;
+    }
+    return $result;
+  }
   EnableCongestionControlRequest._() : super();
   factory EnableCongestionControlRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EnableCongestionControlRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnableCongestionControlRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
     ..aOB(2, _omitFieldNames ? '' : 'enableCongestionControl')
     ..hasRequiredFields = false
   ;
@@ -573,16 +717,17 @@ class EnableCongestionControlRequest extends $pb.GeneratedMessage {
   static EnableCongestionControlRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.RequestHeader get header => $_getN(0);
+  $68.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.RequestHeader v) { setField(1, v); }
+  set header($68.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.RequestHeader ensureHeader() => $_ensure(0);
+  $68.RequestHeader ensureHeader() => $_ensure(0);
 
+  /// A boolean 'true' enables receiver congestion control while 'false' disables it
   @$pb.TagNumber(2)
   $core.bool get enableCongestionControl => $_getBF(1);
   @$pb.TagNumber(2)
@@ -594,13 +739,21 @@ class EnableCongestionControlRequest extends $pb.GeneratedMessage {
 }
 
 class EnableCongestionControlResponse extends $pb.GeneratedMessage {
-  factory EnableCongestionControlResponse() => create();
+  factory EnableCongestionControlResponse({
+    $68.ResponseHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
   EnableCongestionControlResponse._() : super();
   factory EnableCongestionControlResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EnableCongestionControlResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnableCongestionControlResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -626,15 +779,15 @@ class EnableCongestionControlResponse extends $pb.GeneratedMessage {
   static EnableCongestionControlResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $67.ResponseHeader get header => $_getN(0);
+  $68.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($67.ResponseHeader v) { setField(1, v); }
+  set header($68.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $67.ResponseHeader ensureHeader() => $_ensure(0);
+  $68.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 

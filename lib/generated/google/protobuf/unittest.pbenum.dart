@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -43,6 +43,7 @@ class TestReservedEnumFields extends $pb.ProtobufEnum {
   const TestReservedEnumFields._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Test an enum that has multiple values with the same number.
 class TestEnumWithDupValue extends $pb.ProtobufEnum {
   static const TestEnumWithDupValue FOO1 = TestEnumWithDupValue._(1, _omitEnumNames ? '' : 'FOO1');
   static const TestEnumWithDupValue BAR1 = TestEnumWithDupValue._(2, _omitEnumNames ? '' : 'BAR1');
@@ -63,6 +64,7 @@ class TestEnumWithDupValue extends $pb.ProtobufEnum {
   const TestEnumWithDupValue._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Test an enum with large, unordered values.
 class TestSparseEnum extends $pb.ProtobufEnum {
   static const TestSparseEnum SPARSE_A = TestSparseEnum._(123, _omitEnumNames ? '' : 'SPARSE_A');
   static const TestSparseEnum SPARSE_B = TestSparseEnum._(62374, _omitEnumNames ? '' : 'SPARSE_B');

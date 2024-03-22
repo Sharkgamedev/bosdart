@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -32,6 +32,8 @@ class OpenDoorCommandResponse_Status extends $pb.ProtobufEnum {
   const OpenDoorCommandResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Specify if the hinge is on the left or right side of the door, when looking at the door,
+/// relative to the door handle.
 class DoorCommand_HingeSide extends $pb.ProtobufEnum {
   static const DoorCommand_HingeSide HINGE_SIDE_UNKNOWN = DoorCommand_HingeSide._(0, _omitEnumNames ? '' : 'HINGE_SIDE_UNKNOWN');
   static const DoorCommand_HingeSide HINGE_SIDE_LEFT = DoorCommand_HingeSide._(1, _omitEnumNames ? '' : 'HINGE_SIDE_LEFT');
@@ -49,6 +51,7 @@ class DoorCommand_HingeSide extends $pb.ProtobufEnum {
   const DoorCommand_HingeSide._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Specify if the door is push or pull, when looking at the door.
 class DoorCommand_SwingDirection extends $pb.ProtobufEnum {
   static const DoorCommand_SwingDirection SWING_DIRECTION_UNKNOWN = DoorCommand_SwingDirection._(0, _omitEnumNames ? '' : 'SWING_DIRECTION_UNKNOWN');
   static const DoorCommand_SwingDirection SWING_DIRECTION_INSWING = DoorCommand_SwingDirection._(1, _omitEnumNames ? '' : 'SWING_DIRECTION_INSWING');
@@ -69,6 +72,7 @@ class DoorCommand_SwingDirection extends $pb.ProtobufEnum {
   const DoorCommand_SwingDirection._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Specify type of door handle.
 class DoorCommand_HandleType extends $pb.ProtobufEnum {
   static const DoorCommand_HandleType HANDLE_TYPE_UNKNOWN = DoorCommand_HandleType._(0, _omitEnumNames ? '' : 'HANDLE_TYPE_UNKNOWN');
   static const DoorCommand_HandleType HANDLE_TYPE_LEVER = DoorCommand_HandleType._(1, _omitEnumNames ? '' : 'HANDLE_TYPE_LEVER');

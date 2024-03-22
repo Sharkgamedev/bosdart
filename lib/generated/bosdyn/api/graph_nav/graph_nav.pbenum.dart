@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -90,6 +90,7 @@ class SetLocalizationResponse_QualityCheckResult extends $pb.ProtobufEnum {
   const SetLocalizationResponse_QualityCheckResult._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Indicates whether robot will navigate through areas with poor quality features
 class TravelParams_FeatureQualityTolerance extends $pb.ProtobufEnum {
   static const TravelParams_FeatureQualityTolerance TOLERANCE_UNKNOWN = TravelParams_FeatureQualityTolerance._(0, _omitEnumNames ? '' : 'TOLERANCE_UNKNOWN');
   static const TravelParams_FeatureQualityTolerance TOLERANCE_DEFAULT = TravelParams_FeatureQualityTolerance._(1, _omitEnumNames ? '' : 'TOLERANCE_DEFAULT');
@@ -167,6 +168,8 @@ class NavigateToResponse_Status extends $pb.ProtobufEnum {
   const NavigateToResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// This setting applies when a new NavigateRoute command is issued (different route or
+/// final-waypoint-offset), and command_id indicates a new command.
 class RouteFollowingParams_StartRouteBehavior extends $pb.ProtobufEnum {
   static const RouteFollowingParams_StartRouteBehavior START_UNKNOWN = RouteFollowingParams_StartRouteBehavior._(0, _omitEnumNames ? '' : 'START_UNKNOWN');
   static const RouteFollowingParams_StartRouteBehavior START_GOTO_START = RouteFollowingParams_StartRouteBehavior._(1, _omitEnumNames ? '' : 'START_GOTO_START');
@@ -186,6 +189,9 @@ class RouteFollowingParams_StartRouteBehavior extends $pb.ProtobufEnum {
   const RouteFollowingParams_StartRouteBehavior._($core.int v, $core.String n) : super(v, n);
 }
 
+/// This setting applies when a NavigateRoute command is issued with the same route and
+/// final-waypoint-offset. It is not necessary that command_id indicate the same command.
+/// The expected waypoint is the last waypoint that GraphNav was autonomously navigating to.
 class RouteFollowingParams_ResumeBehavior extends $pb.ProtobufEnum {
   static const RouteFollowingParams_ResumeBehavior RESUME_UNKNOWN = RouteFollowingParams_ResumeBehavior._(0, _omitEnumNames ? '' : 'RESUME_UNKNOWN');
   static const RouteFollowingParams_ResumeBehavior RESUME_RETURN_TO_UNFINISHED_ROUTE = RouteFollowingParams_ResumeBehavior._(1, _omitEnumNames ? '' : 'RESUME_RETURN_TO_UNFINISHED_ROUTE');
@@ -203,6 +209,7 @@ class RouteFollowingParams_ResumeBehavior extends $pb.ProtobufEnum {
   const RouteFollowingParams_ResumeBehavior._($core.int v, $core.String n) : super(v, n);
 }
 
+/// This setting applies when the robot discovers that the route is blocked.
 class RouteFollowingParams_RouteBlockedBehavior extends $pb.ProtobufEnum {
   static const RouteFollowingParams_RouteBlockedBehavior ROUTE_BLOCKED_UNKNOWN = RouteFollowingParams_RouteBlockedBehavior._(0, _omitEnumNames ? '' : 'ROUTE_BLOCKED_UNKNOWN');
   static const RouteFollowingParams_RouteBlockedBehavior ROUTE_BLOCKED_REROUTE = RouteFollowingParams_RouteBlockedBehavior._(1, _omitEnumNames ? '' : 'ROUTE_BLOCKED_REROUTE');
@@ -353,6 +360,9 @@ class NavigationFeedbackResponse_Status extends $pb.ProtobufEnum {
   const NavigationFeedbackResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// When the robot is following a route (and Status is STATUS_FOLLOWING_ROUTE), this gives additional
+/// detail about what the robot is doing to follow that route. When Status is not STATUS_FOLLOWING_ROUTE,
+/// this will be set to ROUTE_FOLLOWING_STATUS_UNKNOWN.
 class NavigationFeedbackResponse_RouteFollowingStatus extends $pb.ProtobufEnum {
   static const NavigationFeedbackResponse_RouteFollowingStatus ROUTE_FOLLOWING_STATUS_UNKNOWN = NavigationFeedbackResponse_RouteFollowingStatus._(0, _omitEnumNames ? '' : 'ROUTE_FOLLOWING_STATUS_UNKNOWN');
   static const NavigationFeedbackResponse_RouteFollowingStatus ROUTE_FOLLOWING_STATUS_FOLLOWING_ROUTE = NavigationFeedbackResponse_RouteFollowingStatus._(1, _omitEnumNames ? '' : 'ROUTE_FOLLOWING_STATUS_FOLLOWING_ROUTE');
@@ -374,6 +384,8 @@ class NavigationFeedbackResponse_RouteFollowingStatus extends $pb.ProtobufEnum {
   const NavigationFeedbackResponse_RouteFollowingStatus._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Indicates whether the robot thinks its current path is blocked by an obstacle. This will be set when
+/// Status is STATUS_FOLLOWING_ROUTE, or STATUS_STUCK, and will be BLOCKAGE_STATUS_UNKNOWN in all other cases.
 class NavigationFeedbackResponse_BlockageStatus extends $pb.ProtobufEnum {
   static const NavigationFeedbackResponse_BlockageStatus BLOCKAGE_STATUS_UNKNOWN = NavigationFeedbackResponse_BlockageStatus._(0, _omitEnumNames ? '' : 'BLOCKAGE_STATUS_UNKNOWN');
   static const NavigationFeedbackResponse_BlockageStatus BLOCKAGE_STATUS_ROUTE_CLEAR = NavigationFeedbackResponse_BlockageStatus._(1, _omitEnumNames ? '' : 'BLOCKAGE_STATUS_ROUTE_CLEAR');
@@ -393,6 +405,8 @@ class NavigationFeedbackResponse_BlockageStatus extends $pb.ProtobufEnum {
   const NavigationFeedbackResponse_BlockageStatus._($core.int v, $core.String n) : super(v, n);
 }
 
+/// If status is STATUS_STUCK, this enum provides reasons differentiating various cases that
+/// can cause the robot to re
 class NavigationFeedbackResponse_StuckReason extends $pb.ProtobufEnum {
   static const NavigationFeedbackResponse_StuckReason STUCK_REASON_UNKNOWN = NavigationFeedbackResponse_StuckReason._(0, _omitEnumNames ? '' : 'STUCK_REASON_UNKNOWN');
   static const NavigationFeedbackResponse_StuckReason STUCK_REASON_OBSTACLE = NavigationFeedbackResponse_StuckReason._(1, _omitEnumNames ? '' : 'STUCK_REASON_OBSTACLE');

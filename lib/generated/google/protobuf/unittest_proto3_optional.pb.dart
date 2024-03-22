@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -19,7 +19,15 @@ import 'unittest_proto3_optional.pbenum.dart';
 export 'unittest_proto3_optional.pbenum.dart';
 
 class TestProto3Optional_NestedMessage extends $pb.GeneratedMessage {
-  factory TestProto3Optional_NestedMessage() => create();
+  factory TestProto3Optional_NestedMessage({
+    $core.int? bb,
+  }) {
+    final $result = create();
+    if (bb != null) {
+      $result.bb = bb;
+    }
+    return $result;
+  }
   TestProto3Optional_NestedMessage._() : super();
   factory TestProto3Optional_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestProto3Optional_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -50,6 +58,9 @@ class TestProto3Optional_NestedMessage extends $pb.GeneratedMessage {
   static TestProto3Optional_NestedMessage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TestProto3Optional_NestedMessage>(create);
   static TestProto3Optional_NestedMessage? _defaultInstance;
 
+  /// The field name "b" fails to compile in proto1 because it conflicts with
+  /// a local variable named "b" in one of the generated methods.  Doh.
+  /// This file needs to compile in proto1 to test backwards-compatibility.
   @$pb.TagNumber(1)
   $core.int get bb => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -61,7 +72,95 @@ class TestProto3Optional_NestedMessage extends $pb.GeneratedMessage {
 }
 
 class TestProto3Optional extends $pb.GeneratedMessage {
-  factory TestProto3Optional() => create();
+  factory TestProto3Optional({
+    $core.int? optionalInt32,
+    $fixnum.Int64? optionalInt64,
+    $core.int? optionalUint32,
+    $fixnum.Int64? optionalUint64,
+    $core.int? optionalSint32,
+    $fixnum.Int64? optionalSint64,
+    $core.int? optionalFixed32,
+    $fixnum.Int64? optionalFixed64,
+    $core.int? optionalSfixed32,
+    $fixnum.Int64? optionalSfixed64,
+    $core.double? optionalFloat,
+    $core.double? optionalDouble,
+    $core.bool? optionalBool,
+    $core.String? optionalString,
+    $core.List<$core.int>? optionalBytes,
+    $core.String? optionalCord,
+    TestProto3Optional_NestedMessage? optionalNestedMessage,
+    TestProto3Optional_NestedMessage? lazyNestedMessage,
+    TestProto3Optional_NestedEnum? optionalNestedEnum,
+    $core.int? singularInt32,
+    $fixnum.Int64? singularInt64,
+  }) {
+    final $result = create();
+    if (optionalInt32 != null) {
+      $result.optionalInt32 = optionalInt32;
+    }
+    if (optionalInt64 != null) {
+      $result.optionalInt64 = optionalInt64;
+    }
+    if (optionalUint32 != null) {
+      $result.optionalUint32 = optionalUint32;
+    }
+    if (optionalUint64 != null) {
+      $result.optionalUint64 = optionalUint64;
+    }
+    if (optionalSint32 != null) {
+      $result.optionalSint32 = optionalSint32;
+    }
+    if (optionalSint64 != null) {
+      $result.optionalSint64 = optionalSint64;
+    }
+    if (optionalFixed32 != null) {
+      $result.optionalFixed32 = optionalFixed32;
+    }
+    if (optionalFixed64 != null) {
+      $result.optionalFixed64 = optionalFixed64;
+    }
+    if (optionalSfixed32 != null) {
+      $result.optionalSfixed32 = optionalSfixed32;
+    }
+    if (optionalSfixed64 != null) {
+      $result.optionalSfixed64 = optionalSfixed64;
+    }
+    if (optionalFloat != null) {
+      $result.optionalFloat = optionalFloat;
+    }
+    if (optionalDouble != null) {
+      $result.optionalDouble = optionalDouble;
+    }
+    if (optionalBool != null) {
+      $result.optionalBool = optionalBool;
+    }
+    if (optionalString != null) {
+      $result.optionalString = optionalString;
+    }
+    if (optionalBytes != null) {
+      $result.optionalBytes = optionalBytes;
+    }
+    if (optionalCord != null) {
+      $result.optionalCord = optionalCord;
+    }
+    if (optionalNestedMessage != null) {
+      $result.optionalNestedMessage = optionalNestedMessage;
+    }
+    if (lazyNestedMessage != null) {
+      $result.lazyNestedMessage = lazyNestedMessage;
+    }
+    if (optionalNestedEnum != null) {
+      $result.optionalNestedEnum = optionalNestedEnum;
+    }
+    if (singularInt32 != null) {
+      $result.singularInt32 = singularInt32;
+    }
+    if (singularInt64 != null) {
+      $result.singularInt64 = singularInt64;
+    }
+    return $result;
+  }
   TestProto3Optional._() : super();
   factory TestProto3Optional.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestProto3Optional.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -112,6 +211,7 @@ class TestProto3Optional extends $pb.GeneratedMessage {
   static TestProto3Optional getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TestProto3Optional>(create);
   static TestProto3Optional? _defaultInstance;
 
+  /// Singular
   @$pb.TagNumber(1)
   $core.int get optionalInt32 => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -287,6 +387,7 @@ class TestProto3Optional extends $pb.GeneratedMessage {
   @$pb.TagNumber(21)
   void clearOptionalNestedEnum() => clearField(21);
 
+  /// Add some non-optional fields to verify we can mix them.
   @$pb.TagNumber(22)
   $core.int get singularInt32 => $_getIZ(19);
   @$pb.TagNumber(22)
@@ -307,7 +408,15 @@ class TestProto3Optional extends $pb.GeneratedMessage {
 }
 
 class TestProto3OptionalMessage_NestedMessage extends $pb.GeneratedMessage {
-  factory TestProto3OptionalMessage_NestedMessage() => create();
+  factory TestProto3OptionalMessage_NestedMessage({
+    $core.String? s,
+  }) {
+    final $result = create();
+    if (s != null) {
+      $result.s = s;
+    }
+    return $result;
+  }
   TestProto3OptionalMessage_NestedMessage._() : super();
   factory TestProto3OptionalMessage_NestedMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestProto3OptionalMessage_NestedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -349,7 +458,19 @@ class TestProto3OptionalMessage_NestedMessage extends $pb.GeneratedMessage {
 }
 
 class TestProto3OptionalMessage extends $pb.GeneratedMessage {
-  factory TestProto3OptionalMessage() => create();
+  factory TestProto3OptionalMessage({
+    TestProto3OptionalMessage_NestedMessage? nestedMessage,
+    TestProto3OptionalMessage_NestedMessage? optionalNestedMessage,
+  }) {
+    final $result = create();
+    if (nestedMessage != null) {
+      $result.nestedMessage = nestedMessage;
+    }
+    if (optionalNestedMessage != null) {
+      $result.optionalNestedMessage = optionalNestedMessage;
+    }
+    return $result;
+  }
   TestProto3OptionalMessage._() : super();
   factory TestProto3OptionalMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TestProto3OptionalMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
