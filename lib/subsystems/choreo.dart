@@ -12,6 +12,12 @@ import 'package:bosdart/subsystems/command.dart';
 import 'package:bosdart/subsystems/time.dart';
 
 extension ChoreoClient on Robot {
+  Future<ChoreographySequence> loadChoreoFromJSONString(String json) async {
+    ChoreographySequence sequence = ChoreographySequence();
+    sequence.mergeFromProto3Json(jsonDecode(json));
+    return sequence;
+  }
+
   Future<ChoreographySequence> loadChoreoFromFile(String path) async {
     if (!await File(path).exists()) throw 'No File exists at $path';
 
