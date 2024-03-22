@@ -13,13 +13,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $60;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
 
 /// Representation of a time range from a start time through an end time.
 class TimeRange extends $pb.GeneratedMessage {
   factory TimeRange({
-    $60.Timestamp? start,
-    $60.Timestamp? end,
+    $59.Timestamp? start,
+    $59.Timestamp? end,
   }) {
     final $result = create();
     if (start != null) {
@@ -35,8 +35,8 @@ class TimeRange extends $pb.GeneratedMessage {
   factory TimeRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'start', subBuilder: $60.Timestamp.create)
-    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'end', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'start', subBuilder: $59.Timestamp.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'end', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -62,26 +62,26 @@ class TimeRange extends $pb.GeneratedMessage {
   static TimeRange? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $60.Timestamp get start => $_getN(0);
+  $59.Timestamp get start => $_getN(0);
   @$pb.TagNumber(1)
-  set start($60.Timestamp v) { setField(1, v); }
+  set start($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStart() => $_has(0);
   @$pb.TagNumber(1)
   void clearStart() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureStart() => $_ensure(0);
+  $59.Timestamp ensureStart() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $60.Timestamp get end => $_getN(1);
+  $59.Timestamp get end => $_getN(1);
   @$pb.TagNumber(2)
-  set end($60.Timestamp v) { setField(2, v); }
+  set end($59.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEnd() => $_has(1);
   @$pb.TagNumber(2)
   void clearEnd() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Timestamp ensureEnd() => $_ensure(1);
+  $59.Timestamp ensureEnd() => $_ensure(1);
 }
 
 

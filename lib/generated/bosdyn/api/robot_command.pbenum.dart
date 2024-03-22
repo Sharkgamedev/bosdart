@@ -46,27 +46,6 @@ class RobotCommandResponse_Status extends $pb.ProtobufEnum {
   const RobotCommandResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
-class RobotCommandFeedbackResponse_Status extends $pb.ProtobufEnum {
-  static const RobotCommandFeedbackResponse_Status STATUS_UNKNOWN = RobotCommandFeedbackResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
-  static const RobotCommandFeedbackResponse_Status STATUS_PROCESSING = RobotCommandFeedbackResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_PROCESSING');
-  static const RobotCommandFeedbackResponse_Status STATUS_COMMAND_OVERRIDDEN = RobotCommandFeedbackResponse_Status._(2, _omitEnumNames ? '' : 'STATUS_COMMAND_OVERRIDDEN');
-  static const RobotCommandFeedbackResponse_Status STATUS_COMMAND_TIMED_OUT = RobotCommandFeedbackResponse_Status._(3, _omitEnumNames ? '' : 'STATUS_COMMAND_TIMED_OUT');
-  static const RobotCommandFeedbackResponse_Status STATUS_ROBOT_FROZEN = RobotCommandFeedbackResponse_Status._(4, _omitEnumNames ? '' : 'STATUS_ROBOT_FROZEN');
-
-  static const $core.List<RobotCommandFeedbackResponse_Status> values = <RobotCommandFeedbackResponse_Status> [
-    STATUS_UNKNOWN,
-    STATUS_PROCESSING,
-    STATUS_COMMAND_OVERRIDDEN,
-    STATUS_COMMAND_TIMED_OUT,
-    STATUS_ROBOT_FROZEN,
-  ];
-
-  static final $core.Map<$core.int, RobotCommandFeedbackResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static RobotCommandFeedbackResponse_Status? valueOf($core.int value) => _byValue[value];
-
-  const RobotCommandFeedbackResponse_Status._($core.int v, $core.String n) : super(v, n);
-}
-
 class ClearBehaviorFaultResponse_Status extends $pb.ProtobufEnum {
   static const ClearBehaviorFaultResponse_Status STATUS_UNKNOWN = ClearBehaviorFaultResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const ClearBehaviorFaultResponse_Status STATUS_CLEARED = ClearBehaviorFaultResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_CLEARED');
@@ -82,6 +61,29 @@ class ClearBehaviorFaultResponse_Status extends $pb.ProtobufEnum {
   static ClearBehaviorFaultResponse_Status? valueOf($core.int value) => _byValue[value];
 
   const ClearBehaviorFaultResponse_Status._($core.int v, $core.String n) : super(v, n);
+}
+
+class JointControlStreamResponse_Status extends $pb.ProtobufEnum {
+  static const JointControlStreamResponse_Status STATUS_UNKNOWN = JointControlStreamResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
+  static const JointControlStreamResponse_Status STATUS_OK = JointControlStreamResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
+  static const JointControlStreamResponse_Status STATUS_INVALID_REQUEST = JointControlStreamResponse_Status._(2, _omitEnumNames ? '' : 'STATUS_INVALID_REQUEST');
+  static const JointControlStreamResponse_Status STATUS_INACTIVE = JointControlStreamResponse_Status._(3, _omitEnumNames ? '' : 'STATUS_INACTIVE');
+  static const JointControlStreamResponse_Status STATUS_EXPIRED = JointControlStreamResponse_Status._(4, _omitEnumNames ? '' : 'STATUS_EXPIRED');
+  static const JointControlStreamResponse_Status STATUS_TOO_DISTANT = JointControlStreamResponse_Status._(5, _omitEnumNames ? '' : 'STATUS_TOO_DISTANT');
+
+  static const $core.List<JointControlStreamResponse_Status> values = <JointControlStreamResponse_Status> [
+    STATUS_UNKNOWN,
+    STATUS_OK,
+    STATUS_INVALID_REQUEST,
+    STATUS_INACTIVE,
+    STATUS_EXPIRED,
+    STATUS_TOO_DISTANT,
+  ];
+
+  static final $core.Map<$core.int, JointControlStreamResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static JointControlStreamResponse_Status? valueOf($core.int value) => _byValue[value];
+
+  const JointControlStreamResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
 

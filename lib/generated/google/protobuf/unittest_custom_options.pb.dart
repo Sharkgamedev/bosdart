@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'any.pb.dart' as $67;
-import 'descriptor.pb.dart' as $99;
+import 'any.pb.dart' as $66;
+import 'descriptor.pb.dart' as $102;
 import 'unittest_custom_options.pbenum.dart';
 
 export 'unittest_custom_options.pbenum.dart';
@@ -974,9 +974,9 @@ class Aggregate extends $pb.GeneratedMessage {
     $core.int? i,
     $core.String? s,
     Aggregate? sub,
-    $99.FileOptions? file,
+    $102.FileOptions? file,
     AggregateMessageSet? mset,
-    $67.Any? any,
+    $66.Any? any,
   }) {
     final $result = create();
     if (i != null) {
@@ -1007,9 +1007,9 @@ class Aggregate extends $pb.GeneratedMessage {
     ..a<$core.int>(1, _omitFieldNames ? '' : 'i', $pb.PbFieldType.O3)
     ..aOS(2, _omitFieldNames ? '' : 's')
     ..aOM<Aggregate>(3, _omitFieldNames ? '' : 'sub', subBuilder: Aggregate.create)
-    ..aOM<$99.FileOptions>(4, _omitFieldNames ? '' : 'file', subBuilder: $99.FileOptions.create)
+    ..aOM<$102.FileOptions>(4, _omitFieldNames ? '' : 'file', subBuilder: $102.FileOptions.create)
     ..aOM<AggregateMessageSet>(5, _omitFieldNames ? '' : 'mset', subBuilder: AggregateMessageSet.create)
-    ..aOM<$67.Any>(6, _omitFieldNames ? '' : 'any', subBuilder: $67.Any.create)
+    ..aOM<$66.Any>(6, _omitFieldNames ? '' : 'any', subBuilder: $66.Any.create)
   ;
   static final nested = $pb.Extension<Aggregate>(_omitMessageNames ? '' : 'google.protobuf.FileOptions', _omitFieldNames ? '' : 'nested', 15476903, $pb.PbFieldType.OM, defaultOrMaker: Aggregate.getDefault, subBuilder: Aggregate.create);
 
@@ -1066,15 +1066,15 @@ class Aggregate extends $pb.GeneratedMessage {
 
   /// To test the parsing of extensions inside aggregate values
   @$pb.TagNumber(4)
-  $99.FileOptions get file => $_getN(3);
+  $102.FileOptions get file => $_getN(3);
   @$pb.TagNumber(4)
-  set file($99.FileOptions v) { setField(4, v); }
+  set file($102.FileOptions v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasFile() => $_has(3);
   @$pb.TagNumber(4)
   void clearFile() => clearField(4);
   @$pb.TagNumber(4)
-  $99.FileOptions ensureFile() => $_ensure(3);
+  $102.FileOptions ensureFile() => $_ensure(3);
 
   /// An embedded message set
   @$pb.TagNumber(5)
@@ -1090,15 +1090,15 @@ class Aggregate extends $pb.GeneratedMessage {
 
   /// An any
   @$pb.TagNumber(6)
-  $67.Any get any => $_getN(5);
+  $66.Any get any => $_getN(5);
   @$pb.TagNumber(6)
-  set any($67.Any v) { setField(6, v); }
+  set any($66.Any v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasAny() => $_has(5);
   @$pb.TagNumber(6)
   void clearAny() => clearField(6);
   @$pb.TagNumber(6)
-  $67.Any ensureAny() => $_ensure(5);
+  $66.Any ensureAny() => $_ensure(5);
 }
 
 class AggregateMessage extends $pb.GeneratedMessage {

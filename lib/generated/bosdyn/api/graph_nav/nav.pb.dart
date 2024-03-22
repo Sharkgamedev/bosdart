@@ -13,15 +13,15 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $60;
-import '../geometry.pb.dart' as $61;
-import 'map.pb.dart' as $87;
+import '../../../google/protobuf/timestamp.pb.dart' as $59;
+import '../geometry.pb.dart' as $60;
+import 'map.pb.dart' as $89;
 
 /// Route that the robot should follow or is currently following.
 class Route extends $pb.GeneratedMessage {
   factory Route({
     $core.Iterable<$core.String>? waypointId,
-    $core.Iterable<$87.Edge_Id>? edgeId,
+    $core.Iterable<$89.Edge_Id>? edgeId,
   }) {
     final $result = create();
     if (waypointId != null) {
@@ -38,7 +38,7 @@ class Route extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Route', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..pPS(2, _omitFieldNames ? '' : 'waypointId')
-    ..pc<$87.Edge_Id>(3, _omitFieldNames ? '' : 'edgeId', $pb.PbFieldType.PM, subBuilder: $87.Edge_Id.create)
+    ..pc<$89.Edge_Id>(3, _omitFieldNames ? '' : 'edgeId', $pb.PbFieldType.PM, subBuilder: $89.Edge_Id.create)
     ..hasRequiredFields = false
   ;
 
@@ -69,7 +69,130 @@ class Route extends $pb.GeneratedMessage {
 
   /// Ordered list of edges to traverse between those waypoints.
   @$pb.TagNumber(3)
-  $core.List<$87.Edge_Id> get edgeId => $_getList(1);
+  $core.List<$89.Edge_Id> get edgeId => $_getList(1);
+}
+
+class CompletedRoute_CompletedEdge extends $pb.GeneratedMessage {
+  factory CompletedRoute_CompletedEdge({
+    $89.Edge_Id? edgeId,
+    $core.bool? notInMap,
+  }) {
+    final $result = create();
+    if (edgeId != null) {
+      $result.edgeId = edgeId;
+    }
+    if (notInMap != null) {
+      $result.notInMap = notInMap;
+    }
+    return $result;
+  }
+  CompletedRoute_CompletedEdge._() : super();
+  factory CompletedRoute_CompletedEdge.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CompletedRoute_CompletedEdge.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompletedRoute.CompletedEdge', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
+    ..aOM<$89.Edge_Id>(1, _omitFieldNames ? '' : 'edgeId', subBuilder: $89.Edge_Id.create)
+    ..aOB(2, _omitFieldNames ? '' : 'notInMap')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CompletedRoute_CompletedEdge clone() => CompletedRoute_CompletedEdge()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CompletedRoute_CompletedEdge copyWith(void Function(CompletedRoute_CompletedEdge) updates) => super.copyWith((message) => updates(message as CompletedRoute_CompletedEdge)) as CompletedRoute_CompletedEdge;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompletedRoute_CompletedEdge create() => CompletedRoute_CompletedEdge._();
+  CompletedRoute_CompletedEdge createEmptyInstance() => create();
+  static $pb.PbList<CompletedRoute_CompletedEdge> createRepeated() => $pb.PbList<CompletedRoute_CompletedEdge>();
+  @$core.pragma('dart2js:noInline')
+  static CompletedRoute_CompletedEdge getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompletedRoute_CompletedEdge>(create);
+  static CompletedRoute_CompletedEdge? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $89.Edge_Id get edgeId => $_getN(0);
+  @$pb.TagNumber(1)
+  set edgeId($89.Edge_Id v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasEdgeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEdgeId() => clearField(1);
+  @$pb.TagNumber(1)
+  $89.Edge_Id ensureEdgeId() => $_ensure(0);
+
+  /// If true, this edge was specially constructed to bypass a blockage, and does not exist
+  /// in the map.
+  @$pb.TagNumber(2)
+  $core.bool get notInMap => $_getBF(1);
+  @$pb.TagNumber(2)
+  set notInMap($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNotInMap() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNotInMap() => clearField(2);
+}
+
+/// Information about the route that a robot has followed during a command.
+class CompletedRoute extends $pb.GeneratedMessage {
+  factory CompletedRoute({
+    $core.Iterable<$core.String>? waypointIds,
+    $core.Iterable<CompletedRoute_CompletedEdge>? edges,
+  }) {
+    final $result = create();
+    if (waypointIds != null) {
+      $result.waypointIds.addAll(waypointIds);
+    }
+    if (edges != null) {
+      $result.edges.addAll(edges);
+    }
+    return $result;
+  }
+  CompletedRoute._() : super();
+  factory CompletedRoute.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CompletedRoute.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompletedRoute', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'waypointIds')
+    ..pc<CompletedRoute_CompletedEdge>(2, _omitFieldNames ? '' : 'edges', $pb.PbFieldType.PM, subBuilder: CompletedRoute_CompletedEdge.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CompletedRoute clone() => CompletedRoute()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CompletedRoute copyWith(void Function(CompletedRoute) updates) => super.copyWith((message) => updates(message as CompletedRoute)) as CompletedRoute;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompletedRoute create() => CompletedRoute._();
+  CompletedRoute createEmptyInstance() => create();
+  static $pb.PbList<CompletedRoute> createRepeated() => $pb.PbList<CompletedRoute>();
+  @$core.pragma('dart2js:noInline')
+  static CompletedRoute getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompletedRoute>(create);
+  static CompletedRoute? _defaultInstance;
+
+  /// List of waypoints reached in the order they were reached.
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get waypointIds => $_getList(0);
+
+  /// Information about the completed edges, in the order they were completed.
+  @$pb.TagNumber(2)
+  $core.List<CompletedRoute_CompletedEdge> get edges => $_getList(1);
 }
 
 /// The localization state of the robot. This reports the pose of the robot relative
@@ -77,9 +200,9 @@ class Route extends $pb.GeneratedMessage {
 class Localization extends $pb.GeneratedMessage {
   factory Localization({
     $core.String? waypointId,
-    $61.SE3Pose? waypointTformBody,
-    $60.Timestamp? timestamp,
-    $61.SE3Pose? seedTformBody,
+    $60.SE3Pose? waypointTformBody,
+    $59.Timestamp? timestamp,
+    $60.SE3Pose? seedTformBody,
   }) {
     final $result = create();
     if (waypointId != null) {
@@ -102,9 +225,9 @@ class Localization extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Localization', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'waypointId')
-    ..aOM<$61.SE3Pose>(2, _omitFieldNames ? '' : 'waypointTformBody', subBuilder: $61.SE3Pose.create)
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
-    ..aOM<$61.SE3Pose>(5, _omitFieldNames ? '' : 'seedTformBody', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(2, _omitFieldNames ? '' : 'waypointTformBody', subBuilder: $60.SE3Pose.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.SE3Pose>(5, _omitFieldNames ? '' : 'seedTformBody', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -141,40 +264,40 @@ class Localization extends $pb.GeneratedMessage {
 
   /// Pose of body in waypoint frame.
   @$pb.TagNumber(2)
-  $61.SE3Pose get waypointTformBody => $_getN(1);
+  $60.SE3Pose get waypointTformBody => $_getN(1);
   @$pb.TagNumber(2)
-  set waypointTformBody($61.SE3Pose v) { setField(2, v); }
+  set waypointTformBody($60.SE3Pose v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasWaypointTformBody() => $_has(1);
   @$pb.TagNumber(2)
   void clearWaypointTformBody() => clearField(2);
   @$pb.TagNumber(2)
-  $61.SE3Pose ensureWaypointTformBody() => $_ensure(1);
+  $60.SE3Pose ensureWaypointTformBody() => $_ensure(1);
 
   /// Time (in robot time basis) that this localization was valid.
   @$pb.TagNumber(3)
-  $60.Timestamp get timestamp => $_getN(2);
+  $59.Timestamp get timestamp => $_getN(2);
   @$pb.TagNumber(3)
-  set timestamp($60.Timestamp v) { setField(3, v); }
+  set timestamp($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimestamp() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimestamp() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureTimestamp() => $_ensure(2);
+  $59.Timestamp ensureTimestamp() => $_ensure(2);
 
   /// Pose of body in a common reference frame. The common reference frame defaults to the starting
   /// fiducial frame, but can be changed. See Anchoring for more info.
   @$pb.TagNumber(5)
-  $61.SE3Pose get seedTformBody => $_getN(3);
+  $60.SE3Pose get seedTformBody => $_getN(3);
   @$pb.TagNumber(5)
-  set seedTformBody($61.SE3Pose v) { setField(5, v); }
+  set seedTformBody($60.SE3Pose v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasSeedTformBody() => $_has(3);
   @$pb.TagNumber(5)
   void clearSeedTformBody() => clearField(5);
   @$pb.TagNumber(5)
-  $61.SE3Pose ensureSeedTformBody() => $_ensure(3);
+  $60.SE3Pose ensureSeedTformBody() => $_ensure(3);
 }
 
 

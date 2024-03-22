@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $60;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
 import 'bddf.pbenum.dart';
 
 export 'bddf.pbenum.dart';
@@ -147,7 +147,7 @@ class DescriptorBlock extends $pb.GeneratedMessage {
 class DataDescriptor extends $pb.GeneratedMessage {
   factory DataDescriptor({
     $core.int? seriesIndex,
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
     $core.Iterable<$fixnum.Int64>? additionalIndexes,
   }) {
     final $result = create();
@@ -168,7 +168,7 @@ class DataDescriptor extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataDescriptor', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'seriesIndex', $pb.PbFieldType.OU3)
-    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'additionalIndexes', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
   ;
@@ -207,15 +207,15 @@ class DataDescriptor extends $pb.GeneratedMessage {
   /// The time at which the data is considered to be captured/sampled.
   /// E.g., the shutter-close time of a captured image.
   @$pb.TagNumber(2)
-  $60.Timestamp get timestamp => $_getN(1);
+  $59.Timestamp get timestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set timestamp($60.Timestamp v) { setField(2, v); }
+  set timestamp($59.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Timestamp ensureTimestamp() => $_ensure(1);
+  $59.Timestamp ensureTimestamp() => $_ensure(1);
 
   /// Sometimes a visualizer will want to organize message by data timestamp, sometimes by
   ///  the time messages were published or logged.
@@ -608,7 +608,7 @@ class SeriesDescriptor extends $pb.GeneratedMessage {
 }
 
 /// If a data series contains a sequence of binary messages, the encoding and format of these
-///  messages is described by a MesssageTypeDescriptor.
+///  messages is described by a MessageTypeDescriptor.
 class MessageTypeDescriptor extends $pb.GeneratedMessage {
   factory MessageTypeDescriptor({
     $core.String? contentType,
@@ -808,7 +808,7 @@ class StructTypeDescriptor extends $pb.GeneratedMessage {
   static StructTypeDescriptor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StructTypeDescriptor>(create);
   static StructTypeDescriptor? _defaultInstance;
 
-  /// A map of a name-reference to a series, identified by its series_identifer_hash.
+  /// A map of a name-reference to a series, identified by its series_identifier_hash.
   @$pb.TagNumber(1)
   $core.Map<$core.String, $fixnum.Int64> get keyToSeriesIdentifierHash => $_getMap(0);
 }
@@ -870,7 +870,7 @@ class FileIndex extends $pb.GeneratedMessage {
   static FileIndex getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FileIndex>(create);
   static FileIndex? _defaultInstance;
 
-  /// SeriesIdentifer for each series in this file.
+  /// SeriesIdentifier for each series in this file.
   @$pb.TagNumber(1)
   $core.List<SeriesIdentifier> get seriesIdentifiers => $_getList(0);
 
@@ -885,7 +885,7 @@ class FileIndex extends $pb.GeneratedMessage {
 
 class SeriesBlockIndex_BlockEntry extends $pb.GeneratedMessage {
   factory SeriesBlockIndex_BlockEntry({
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
     $fixnum.Int64? fileOffset,
     $core.Iterable<$fixnum.Int64>? additionalIndexes,
   }) {
@@ -906,7 +906,7 @@ class SeriesBlockIndex_BlockEntry extends $pb.GeneratedMessage {
   factory SeriesBlockIndex_BlockEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SeriesBlockIndex.BlockEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'fileOffset', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'additionalIndexes', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
@@ -935,15 +935,15 @@ class SeriesBlockIndex_BlockEntry extends $pb.GeneratedMessage {
 
   /// The timestamp of data in this block.
   @$pb.TagNumber(1)
-  $60.Timestamp get timestamp => $_getN(0);
+  $59.Timestamp get timestamp => $_getN(0);
   @$pb.TagNumber(1)
-  set timestamp($60.Timestamp v) { setField(1, v); }
+  set timestamp($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimestamp() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimestamp() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureTimestamp() => $_ensure(0);
+  $59.Timestamp ensureTimestamp() => $_ensure(0);
 
   /// The offset of the data block from the start of the file.
   @$pb.TagNumber(2)

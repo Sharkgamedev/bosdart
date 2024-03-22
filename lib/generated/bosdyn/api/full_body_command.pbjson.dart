@@ -30,6 +30,7 @@ const FullBodyCommand_Request$json = {
     {'1': 'battery_change_pose_request', '3': 5, '4': 1, '5': 11, '6': '.bosdyn.api.BatteryChangePoseCommand.Request', '9': 0, '10': 'batteryChangePoseRequest'},
     {'1': 'payload_estimation_request', '3': 6, '4': 1, '5': 11, '6': '.bosdyn.api.PayloadEstimationCommand.Request', '9': 0, '10': 'payloadEstimationRequest'},
     {'1': 'constrained_manipulation_request', '3': 7, '4': 1, '5': 11, '6': '.bosdyn.api.ConstrainedManipulationCommand.Request', '9': 0, '10': 'constrainedManipulationRequest'},
+    {'1': 'joint_request', '3': 8, '4': 1, '5': 11, '6': '.bosdyn.api.JointCommand.Request', '9': 0, '10': 'jointRequest'},
     {'1': 'params', '3': 100, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'params'},
   ],
   '8': [
@@ -48,6 +49,7 @@ const FullBodyCommand_Feedback$json = {
     {'1': 'battery_change_pose_feedback', '3': 5, '4': 1, '5': 11, '6': '.bosdyn.api.BatteryChangePoseCommand.Feedback', '9': 0, '10': 'batteryChangePoseFeedback'},
     {'1': 'payload_estimation_feedback', '3': 6, '4': 1, '5': 11, '6': '.bosdyn.api.PayloadEstimationCommand.Feedback', '9': 0, '10': 'payloadEstimationFeedback'},
     {'1': 'constrained_manipulation_feedback', '3': 7, '4': 1, '5': 11, '6': '.bosdyn.api.ConstrainedManipulationCommand.Feedback', '9': 0, '10': 'constrainedManipulationFeedback'},
+    {'1': 'joint_feedback', '3': 8, '4': 1, '5': 11, '6': '.bosdyn.api.JointCommand.Feedback', '9': 0, '10': 'jointFeedback'},
     {'1': 'status', '3': 100, '4': 1, '5': 14, '6': '.bosdyn.api.RobotCommandFeedbackStatus.Status', '10': 'status'},
   ],
   '8': [
@@ -57,7 +59,7 @@ const FullBodyCommand_Feedback$json = {
 
 /// Descriptor for `FullBodyCommand`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List fullBodyCommandDescriptor = $convert.base64Decode(
-    'Cg9GdWxsQm9keUNvbW1hbmQa5gUKB1JlcXVlc3QSRAoMc3RvcF9yZXF1ZXN0GAEgASgLMh8uYm'
+    'Cg9GdWxsQm9keUNvbW1hbmQarwYKB1JlcXVlc3QSRAoMc3RvcF9yZXF1ZXN0GAEgASgLMh8uYm'
     '9zZHluLmFwaS5TdG9wQ29tbWFuZC5SZXF1ZXN0SABSC3N0b3BSZXF1ZXN0EkoKDmZyZWV6ZV9y'
     'ZXF1ZXN0GAIgASgLMiEuYm9zZHluLmFwaS5GcmVlemVDb21tYW5kLlJlcXVlc3RIAFINZnJlZX'
     'plUmVxdWVzdBJTChFzZWxmcmlnaHRfcmVxdWVzdBgDIAEoCzIkLmJvc2R5bi5hcGkuU2VsZlJp'
@@ -69,21 +71,23 @@ final $typed_data.Uint8List fullBodyCommandDescriptor = $convert.base64Decode(
     'ABKAsyLC5ib3NkeW4uYXBpLlBheWxvYWRFc3RpbWF0aW9uQ29tbWFuZC5SZXF1ZXN0SABSGHBh'
     'eWxvYWRFc3RpbWF0aW9uUmVxdWVzdBJ+CiBjb25zdHJhaW5lZF9tYW5pcHVsYXRpb25fcmVxdW'
     'VzdBgHIAEoCzIyLmJvc2R5bi5hcGkuQ29uc3RyYWluZWRNYW5pcHVsYXRpb25Db21tYW5kLlJl'
-    'cXVlc3RIAFIeY29uc3RyYWluZWRNYW5pcHVsYXRpb25SZXF1ZXN0EiwKBnBhcmFtcxhkIAEoCz'
-    'IULmdvb2dsZS5wcm90b2J1Zi5BbnlSBnBhcmFtc0IJCgdjb21tYW5kGpcGCghGZWVkYmFjaxJH'
-    'Cg1zdG9wX2ZlZWRiYWNrGAEgASgLMiAuYm9zZHluLmFwaS5TdG9wQ29tbWFuZC5GZWVkYmFja0'
-    'gAUgxzdG9wRmVlZGJhY2sSTQoPZnJlZXplX2ZlZWRiYWNrGAIgASgLMiIuYm9zZHluLmFwaS5G'
-    'cmVlemVDb21tYW5kLkZlZWRiYWNrSABSDmZyZWV6ZUZlZWRiYWNrElYKEnNlbGZyaWdodF9mZW'
-    'VkYmFjaxgDIAEoCzIlLmJvc2R5bi5hcGkuU2VsZlJpZ2h0Q29tbWFuZC5GZWVkYmFja0gAUhFz'
-    'ZWxmcmlnaHRGZWVkYmFjaxJhChdzYWZlX3Bvd2VyX29mZl9mZWVkYmFjaxgEIAEoCzIoLmJvc2'
-    'R5bi5hcGkuU2FmZVBvd2VyT2ZmQ29tbWFuZC5GZWVkYmFja0gAUhRzYWZlUG93ZXJPZmZGZWVk'
-    'YmFjaxJwChxiYXR0ZXJ5X2NoYW5nZV9wb3NlX2ZlZWRiYWNrGAUgASgLMi0uYm9zZHluLmFwaS'
-    '5CYXR0ZXJ5Q2hhbmdlUG9zZUNvbW1hbmQuRmVlZGJhY2tIAFIZYmF0dGVyeUNoYW5nZVBvc2VG'
-    'ZWVkYmFjaxJvChtwYXlsb2FkX2VzdGltYXRpb25fZmVlZGJhY2sYBiABKAsyLS5ib3NkeW4uYX'
-    'BpLlBheWxvYWRFc3RpbWF0aW9uQ29tbWFuZC5GZWVkYmFja0gAUhlwYXlsb2FkRXN0aW1hdGlv'
-    'bkZlZWRiYWNrEoEBCiFjb25zdHJhaW5lZF9tYW5pcHVsYXRpb25fZmVlZGJhY2sYByABKAsyMy'
-    '5ib3NkeW4uYXBpLkNvbnN0cmFpbmVkTWFuaXB1bGF0aW9uQ29tbWFuZC5GZWVkYmFja0gAUh9j'
-    'b25zdHJhaW5lZE1hbmlwdWxhdGlvbkZlZWRiYWNrEkUKBnN0YXR1cxhkIAEoDjItLmJvc2R5bi'
-    '5hcGkuUm9ib3RDb21tYW5kRmVlZGJhY2tTdGF0dXMuU3RhdHVzUgZzdGF0dXNCCgoIZmVlZGJh'
-    'Y2s=');
+    'cXVlc3RIAFIeY29uc3RyYWluZWRNYW5pcHVsYXRpb25SZXF1ZXN0EkcKDWpvaW50X3JlcXVlc3'
+    'QYCCABKAsyIC5ib3NkeW4uYXBpLkpvaW50Q29tbWFuZC5SZXF1ZXN0SABSDGpvaW50UmVxdWVz'
+    'dBIsCgZwYXJhbXMYZCABKAsyFC5nb29nbGUucHJvdG9idWYuQW55UgZwYXJhbXNCCQoHY29tbW'
+    'FuZBrjBgoIRmVlZGJhY2sSRwoNc3RvcF9mZWVkYmFjaxgBIAEoCzIgLmJvc2R5bi5hcGkuU3Rv'
+    'cENvbW1hbmQuRmVlZGJhY2tIAFIMc3RvcEZlZWRiYWNrEk0KD2ZyZWV6ZV9mZWVkYmFjaxgCIA'
+    'EoCzIiLmJvc2R5bi5hcGkuRnJlZXplQ29tbWFuZC5GZWVkYmFja0gAUg5mcmVlemVGZWVkYmFj'
+    'axJWChJzZWxmcmlnaHRfZmVlZGJhY2sYAyABKAsyJS5ib3NkeW4uYXBpLlNlbGZSaWdodENvbW'
+    '1hbmQuRmVlZGJhY2tIAFIRc2VsZnJpZ2h0RmVlZGJhY2sSYQoXc2FmZV9wb3dlcl9vZmZfZmVl'
+    'ZGJhY2sYBCABKAsyKC5ib3NkeW4uYXBpLlNhZmVQb3dlck9mZkNvbW1hbmQuRmVlZGJhY2tIAF'
+    'IUc2FmZVBvd2VyT2ZmRmVlZGJhY2sScAocYmF0dGVyeV9jaGFuZ2VfcG9zZV9mZWVkYmFjaxgF'
+    'IAEoCzItLmJvc2R5bi5hcGkuQmF0dGVyeUNoYW5nZVBvc2VDb21tYW5kLkZlZWRiYWNrSABSGW'
+    'JhdHRlcnlDaGFuZ2VQb3NlRmVlZGJhY2sSbwobcGF5bG9hZF9lc3RpbWF0aW9uX2ZlZWRiYWNr'
+    'GAYgASgLMi0uYm9zZHluLmFwaS5QYXlsb2FkRXN0aW1hdGlvbkNvbW1hbmQuRmVlZGJhY2tIAF'
+    'IZcGF5bG9hZEVzdGltYXRpb25GZWVkYmFjaxKBAQohY29uc3RyYWluZWRfbWFuaXB1bGF0aW9u'
+    'X2ZlZWRiYWNrGAcgASgLMjMuYm9zZHluLmFwaS5Db25zdHJhaW5lZE1hbmlwdWxhdGlvbkNvbW'
+    '1hbmQuRmVlZGJhY2tIAFIfY29uc3RyYWluZWRNYW5pcHVsYXRpb25GZWVkYmFjaxJKCg5qb2lu'
+    'dF9mZWVkYmFjaxgIIAEoCzIhLmJvc2R5bi5hcGkuSm9pbnRDb21tYW5kLkZlZWRiYWNrSABSDW'
+    'pvaW50RmVlZGJhY2sSRQoGc3RhdHVzGGQgASgOMi0uYm9zZHluLmFwaS5Sb2JvdENvbW1hbmRG'
+    'ZWVkYmFja1N0YXR1cy5TdGF0dXNSBnN0YXR1c0IKCghmZWVkYmFjaw==');
 

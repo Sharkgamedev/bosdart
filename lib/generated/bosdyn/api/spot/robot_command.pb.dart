@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/wrappers.pb.dart' as $59;
-import '../geometry.pb.dart' as $61;
-import '../trajectory.pb.dart' as $63;
+import '../../../google/protobuf/wrappers.pb.dart' as $58;
+import '../geometry.pb.dart' as $60;
+import '../trajectory.pb.dart' as $62;
 import 'robot_command.pbenum.dart';
 
 export 'robot_command.pbenum.dart';
@@ -23,7 +23,7 @@ export 'robot_command.pbenum.dart';
 /// Params common across spot movement and mobility.
 class MobilityParams extends $pb.GeneratedMessage {
   factory MobilityParams({
-    $61.SE2VelocityLimit? velLimit,
+    $60.SE2VelocityLimit? velLimit,
     BodyControlParams? bodyControl,
     LocomotionHint? locomotionHint,
   @$core.Deprecated('This field is deprecated.')
@@ -90,7 +90,7 @@ class MobilityParams extends $pb.GeneratedMessage {
   factory MobilityParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MobilityParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.SE2VelocityLimit>(1, _omitFieldNames ? '' : 'velLimit', subBuilder: $61.SE2VelocityLimit.create)
+    ..aOM<$60.SE2VelocityLimit>(1, _omitFieldNames ? '' : 'velLimit', subBuilder: $60.SE2VelocityLimit.create)
     ..aOM<BodyControlParams>(2, _omitFieldNames ? '' : 'bodyControl', subBuilder: BodyControlParams.create)
     ..e<LocomotionHint>(3, _omitFieldNames ? '' : 'locomotionHint', $pb.PbFieldType.OE, defaultOrMaker: LocomotionHint.HINT_UNKNOWN, valueOf: LocomotionHint.valueOf, enumValues: LocomotionHint.values)
     ..aOB(4, _omitFieldNames ? '' : 'stairHint')
@@ -130,15 +130,15 @@ class MobilityParams extends $pb.GeneratedMessage {
 
   /// Max allowable velocity at any point in trajectory.
   @$pb.TagNumber(1)
-  $61.SE2VelocityLimit get velLimit => $_getN(0);
+  $60.SE2VelocityLimit get velLimit => $_getN(0);
   @$pb.TagNumber(1)
-  set velLimit($61.SE2VelocityLimit v) { setField(1, v); }
+  set velLimit($60.SE2VelocityLimit v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasVelLimit() => $_has(0);
   @$pb.TagNumber(1)
   void clearVelLimit() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE2VelocityLimit ensureVelLimit() => $_ensure(0);
+  $60.SE2VelocityLimit ensureVelLimit() => $_ensure(0);
 
   /// Parameters for controlling Spot's body during motion.
   @$pb.TagNumber(2)
@@ -362,7 +362,7 @@ class BodyControlParams_BodyAssistForManipulation extends $pb.GeneratedMessage {
 class BodyControlParams_BodyPose extends $pb.GeneratedMessage {
   factory BodyControlParams_BodyPose({
     $core.String? rootFrameName,
-    $63.SE3Trajectory? baseOffsetRtRoot,
+    $62.SE3Trajectory? baseOffsetRtRoot,
   }) {
     final $result = create();
     if (rootFrameName != null) {
@@ -379,7 +379,7 @@ class BodyControlParams_BodyPose extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BodyControlParams.BodyPose', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'rootFrameName')
-    ..aOM<$63.SE3Trajectory>(2, _omitFieldNames ? '' : 'baseOffsetRtRoot', subBuilder: $63.SE3Trajectory.create)
+    ..aOM<$62.SE3Trajectory>(2, _omitFieldNames ? '' : 'baseOffsetRtRoot', subBuilder: $62.SE3Trajectory.create)
     ..hasRequiredFields = false
   ;
 
@@ -416,15 +416,15 @@ class BodyControlParams_BodyPose extends $pb.GeneratedMessage {
 
   /// The SE3 pose trajectory
   @$pb.TagNumber(2)
-  $63.SE3Trajectory get baseOffsetRtRoot => $_getN(1);
+  $62.SE3Trajectory get baseOffsetRtRoot => $_getN(1);
   @$pb.TagNumber(2)
-  set baseOffsetRtRoot($63.SE3Trajectory v) { setField(2, v); }
+  set baseOffsetRtRoot($62.SE3Trajectory v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasBaseOffsetRtRoot() => $_has(1);
   @$pb.TagNumber(2)
   void clearBaseOffsetRtRoot() => clearField(2);
   @$pb.TagNumber(2)
-  $63.SE3Trajectory ensureBaseOffsetRtRoot() => $_ensure(1);
+  $62.SE3Trajectory ensureBaseOffsetRtRoot() => $_ensure(1);
 }
 
 enum BodyControlParams_Param {
@@ -437,7 +437,7 @@ enum BodyControlParams_Param {
 /// Parameters for offsetting the body from the normal default.
 class BodyControlParams extends $pb.GeneratedMessage {
   factory BodyControlParams({
-    $63.SE3Trajectory? baseOffsetRtFootprint,
+    $62.SE3Trajectory? baseOffsetRtFootprint,
     BodyControlParams_RotationSetting? rotationSetting,
     BodyControlParams_BodyAssistForManipulation? bodyAssistForManipulation,
     BodyControlParams_BodyPose? bodyPose,
@@ -469,7 +469,7 @@ class BodyControlParams extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BodyControlParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..oo(0, [1, 3, 4])
-    ..aOM<$63.SE3Trajectory>(1, _omitFieldNames ? '' : 'baseOffsetRtFootprint', subBuilder: $63.SE3Trajectory.create)
+    ..aOM<$62.SE3Trajectory>(1, _omitFieldNames ? '' : 'baseOffsetRtFootprint', subBuilder: $62.SE3Trajectory.create)
     ..e<BodyControlParams_RotationSetting>(2, _omitFieldNames ? '' : 'rotationSetting', $pb.PbFieldType.OE, defaultOrMaker: BodyControlParams_RotationSetting.ROTATION_SETTING_UNKNOWN, valueOf: BodyControlParams_RotationSetting.valueOf, enumValues: BodyControlParams_RotationSetting.values)
     ..aOM<BodyControlParams_BodyAssistForManipulation>(3, _omitFieldNames ? '' : 'bodyAssistForManipulation', subBuilder: BodyControlParams_BodyAssistForManipulation.create)
     ..aOM<BodyControlParams_BodyPose>(4, _omitFieldNames ? '' : 'bodyPose', subBuilder: BodyControlParams_BodyPose.create)
@@ -506,15 +506,15 @@ class BodyControlParams extends $pb.GeneratedMessage {
   /// the Z axis. The yaw of the frame (wrt the world) is calcuated by the average foot
   /// locations, and is aligned with the feet.
   @$pb.TagNumber(1)
-  $63.SE3Trajectory get baseOffsetRtFootprint => $_getN(0);
+  $62.SE3Trajectory get baseOffsetRtFootprint => $_getN(0);
   @$pb.TagNumber(1)
-  set baseOffsetRtFootprint($63.SE3Trajectory v) { setField(1, v); }
+  set baseOffsetRtFootprint($62.SE3Trajectory v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBaseOffsetRtFootprint() => $_has(0);
   @$pb.TagNumber(1)
   void clearBaseOffsetRtFootprint() => clearField(1);
   @$pb.TagNumber(1)
-  $63.SE3Trajectory ensureBaseOffsetRtFootprint() => $_ensure(0);
+  $62.SE3Trajectory ensureBaseOffsetRtFootprint() => $_ensure(0);
 
   /// The rotation setting for the robot body.  Ignored if body_assist_for_manipulation or
   /// body_pose are enabled.
@@ -694,7 +694,7 @@ class ObstacleParams extends $pb.GeneratedMessage {
 /// Ground contact parameters that describe the terrain.
 class TerrainParams extends $pb.GeneratedMessage {
   factory TerrainParams({
-    $59.DoubleValue? groundMuHint,
+    $58.DoubleValue? groundMuHint,
   @$core.Deprecated('This field is deprecated.')
     $core.bool? enableGratedFloor,
     TerrainParams_GratedSurfacesMode? gratedSurfacesMode,
@@ -717,7 +717,7 @@ class TerrainParams extends $pb.GeneratedMessage {
   factory TerrainParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TerrainParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'groundMuHint', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'groundMuHint', subBuilder: $58.DoubleValue.create)
     ..aOB(3, _omitFieldNames ? '' : 'enableGratedFloor')
     ..e<TerrainParams_GratedSurfacesMode>(4, _omitFieldNames ? '' : 'gratedSurfacesMode', $pb.PbFieldType.OE, defaultOrMaker: TerrainParams_GratedSurfacesMode.GRATED_SURFACES_MODE_UNKNOWN, valueOf: TerrainParams_GratedSurfacesMode.valueOf, enumValues: TerrainParams_GratedSurfacesMode.values)
     ..hasRequiredFields = false
@@ -748,15 +748,15 @@ class TerrainParams extends $pb.GeneratedMessage {
   /// necessary on the robot side. Best suggested values lie in the range between 0.4 and 0.8
   /// (which is the robot's default.)
   @$pb.TagNumber(2)
-  $59.DoubleValue get groundMuHint => $_getN(0);
+  $58.DoubleValue get groundMuHint => $_getN(0);
   @$pb.TagNumber(2)
-  set groundMuHint($59.DoubleValue v) { setField(2, v); }
+  set groundMuHint($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasGroundMuHint() => $_has(0);
   @$pb.TagNumber(2)
   void clearGroundMuHint() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureGroundMuHint() => $_ensure(0);
+  $58.DoubleValue ensureGroundMuHint() => $_ensure(0);
 
   /// *** Deprecation Warning ***
   /// DEPRECATED as of 3.0.0: The boolean field has been replaced by the field grated_surfaces_mode
@@ -790,7 +790,7 @@ class TerrainParams extends $pb.GeneratedMessage {
 class BodyExternalForceParams extends $pb.GeneratedMessage {
   factory BodyExternalForceParams({
     BodyExternalForceParams_ExternalForceIndicator? externalForceIndicator,
-    $61.Vec3? externalForceOverride,
+    $60.Vec3? externalForceOverride,
     $core.String? frameName,
   }) {
     final $result = create();
@@ -811,7 +811,7 @@ class BodyExternalForceParams extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BodyExternalForceParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..e<BodyExternalForceParams_ExternalForceIndicator>(1, _omitFieldNames ? '' : 'externalForceIndicator', $pb.PbFieldType.OE, defaultOrMaker: BodyExternalForceParams_ExternalForceIndicator.EXTERNAL_FORCE_NONE, valueOf: BodyExternalForceParams_ExternalForceIndicator.valueOf, enumValues: BodyExternalForceParams_ExternalForceIndicator.values)
-    ..aOM<$61.Vec3>(3, _omitFieldNames ? '' : 'externalForceOverride', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(3, _omitFieldNames ? '' : 'externalForceOverride', subBuilder: $60.Vec3.create)
     ..aOS(4, _omitFieldNames ? '' : 'frameName')
     ..hasRequiredFields = false
   ;
@@ -854,15 +854,15 @@ class BodyExternalForceParams extends $pb.GeneratedMessage {
   /// be in the negative x dimension. If the robot was pulling something directly behind it, the
   /// force override would be in the negative x dimension as well.
   @$pb.TagNumber(3)
-  $61.Vec3 get externalForceOverride => $_getN(1);
+  $60.Vec3 get externalForceOverride => $_getN(1);
   @$pb.TagNumber(3)
-  set externalForceOverride($61.Vec3 v) { setField(3, v); }
+  set externalForceOverride($60.Vec3 v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasExternalForceOverride() => $_has(1);
   @$pb.TagNumber(3)
   void clearExternalForceOverride() => clearField(3);
   @$pb.TagNumber(3)
-  $61.Vec3 ensureExternalForceOverride() => $_ensure(1);
+  $60.Vec3 ensureExternalForceOverride() => $_ensure(1);
 
   /// The frame name for which the external_force_override is defined in. The frame must be known
   /// to the robot.

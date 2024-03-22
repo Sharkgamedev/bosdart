@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'geometry.pb.dart' as $61;
+import 'geometry.pb.dart' as $60;
 import 'sparse_features.pbenum.dart';
 
 export 'sparse_features.pbenum.dart';
@@ -21,7 +21,7 @@ export 'sparse_features.pbenum.dart';
 /// A point of interest in an image expressed as a pixel coordinate with associated metadata.
 class Keypoint extends $pb.GeneratedMessage {
   factory Keypoint({
-    $61.Vec2? coordinates,
+    $60.Vec2? coordinates,
     $core.List<$core.int>? binaryDescriptor,
     $core.double? score,
     $core.double? size,
@@ -50,7 +50,7 @@ class Keypoint extends $pb.GeneratedMessage {
   factory Keypoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Keypoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Vec2>(2, _omitFieldNames ? '' : 'coordinates', subBuilder: $61.Vec2.create)
+    ..aOM<$60.Vec2>(2, _omitFieldNames ? '' : 'coordinates', subBuilder: $60.Vec2.create)
     ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'binaryDescriptor', $pb.PbFieldType.OY)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'score', $pb.PbFieldType.OF)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'size', $pb.PbFieldType.OF)
@@ -81,15 +81,15 @@ class Keypoint extends $pb.GeneratedMessage {
 
   /// The image pixel coordinates of the keypoint.
   @$pb.TagNumber(2)
-  $61.Vec2 get coordinates => $_getN(0);
+  $60.Vec2 get coordinates => $_getN(0);
   @$pb.TagNumber(2)
-  set coordinates($61.Vec2 v) { setField(2, v); }
+  set coordinates($60.Vec2 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCoordinates() => $_has(0);
   @$pb.TagNumber(2)
   void clearCoordinates() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec2 ensureCoordinates() => $_ensure(0);
+  $60.Vec2 ensureCoordinates() => $_ensure(0);
 
   /// A binary descriptor representing the keypoint.
   @$pb.TagNumber(3)
@@ -280,6 +280,7 @@ class KeypointMatches extends $pb.GeneratedMessage {
     KeypointSet? referenceKeypoints,
     KeypointSet? liveKeypoints,
     $core.Iterable<Match>? matches,
+    KeypointMatches_MatchType? type,
   }) {
     final $result = create();
     if (referenceKeypoints != null) {
@@ -291,6 +292,9 @@ class KeypointMatches extends $pb.GeneratedMessage {
     if (matches != null) {
       $result.matches.addAll(matches);
     }
+    if (type != null) {
+      $result.type = type;
+    }
     return $result;
   }
   KeypointMatches._() : super();
@@ -301,6 +305,7 @@ class KeypointMatches extends $pb.GeneratedMessage {
     ..aOM<KeypointSet>(2, _omitFieldNames ? '' : 'referenceKeypoints', subBuilder: KeypointSet.create)
     ..aOM<KeypointSet>(3, _omitFieldNames ? '' : 'liveKeypoints', subBuilder: KeypointSet.create)
     ..pc<Match>(4, _omitFieldNames ? '' : 'matches', $pb.PbFieldType.PM, subBuilder: Match.create)
+    ..e<KeypointMatches_MatchType>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: KeypointMatches_MatchType.MATCH_UNKNOWN, valueOf: KeypointMatches_MatchType.valueOf, enumValues: KeypointMatches_MatchType.values)
     ..hasRequiredFields = false
   ;
 
@@ -352,6 +357,16 @@ class KeypointMatches extends $pb.GeneratedMessage {
   /// Indices of pairs of matches in the two KeypointSets and their distance measure.
   @$pb.TagNumber(4)
   $core.List<Match> get matches => $_getList(2);
+
+  /// The algorithm used to compute these matches.
+  @$pb.TagNumber(5)
+  KeypointMatches_MatchType get type => $_getN(3);
+  @$pb.TagNumber(5)
+  set type(KeypointMatches_MatchType v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasType() => $_has(3);
+  @$pb.TagNumber(5)
+  void clearType() => clearField(5);
 }
 
 

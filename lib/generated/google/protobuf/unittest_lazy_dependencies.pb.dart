@@ -13,11 +13,11 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest_lazy_dependencies_custom_option.pb.dart' as $102;
+import 'unittest_lazy_dependencies_custom_option.pb.dart' as $105;
 
 class ImportedMessage extends $pb.GeneratedMessage {
   factory ImportedMessage({
-    $102.LazyMessage? lazyMessage,
+    $105.LazyMessage? lazyMessage,
   }) {
     final $result = create();
     if (lazyMessage != null) {
@@ -30,7 +30,7 @@ class ImportedMessage extends $pb.GeneratedMessage {
   factory ImportedMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImportedMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest.lazy_imports'), createEmptyInstance: create)
-    ..aOM<$102.LazyMessage>(1, _omitFieldNames ? '' : 'lazyMessage', subBuilder: $102.LazyMessage.create)
+    ..aOM<$105.LazyMessage>(1, _omitFieldNames ? '' : 'lazyMessage', subBuilder: $105.LazyMessage.create)
     ..hasRequiredFields = false
   ;
 
@@ -56,15 +56,15 @@ class ImportedMessage extends $pb.GeneratedMessage {
   static ImportedMessage? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $102.LazyMessage get lazyMessage => $_getN(0);
+  $105.LazyMessage get lazyMessage => $_getN(0);
   @$pb.TagNumber(1)
-  set lazyMessage($102.LazyMessage v) { setField(1, v); }
+  set lazyMessage($105.LazyMessage v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasLazyMessage() => $_has(0);
   @$pb.TagNumber(1)
   void clearLazyMessage() => clearField(1);
   @$pb.TagNumber(1)
-  $102.LazyMessage ensureLazyMessage() => $_ensure(0);
+  $105.LazyMessage ensureLazyMessage() => $_ensure(0);
 }
 
 class MessageCustomOption extends $pb.GeneratedMessage {

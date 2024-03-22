@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/struct.pb.dart' as $58;
+import '../../google/protobuf/struct.pb.dart' as $57;
 import 'alerts.pbenum.dart';
 
 export 'alerts.pbenum.dart';
@@ -25,7 +25,7 @@ class AlertData extends $pb.GeneratedMessage {
     AlertData_SeverityLevel? severity,
     $core.String? title,
     $core.String? source,
-    $58.Struct? additionalData,
+    $57.Struct? additionalData,
   }) {
     final $result = create();
     if (severity != null) {
@@ -50,7 +50,7 @@ class AlertData extends $pb.GeneratedMessage {
     ..e<AlertData_SeverityLevel>(1, _omitFieldNames ? '' : 'severity', $pb.PbFieldType.OE, defaultOrMaker: AlertData_SeverityLevel.SEVERITY_LEVEL_UNKNOWN, valueOf: AlertData_SeverityLevel.valueOf, enumValues: AlertData_SeverityLevel.values)
     ..aOS(2, _omitFieldNames ? '' : 'title')
     ..aOS(3, _omitFieldNames ? '' : 'source')
-    ..aOM<$58.Struct>(4, _omitFieldNames ? '' : 'additionalData', subBuilder: $58.Struct.create)
+    ..aOM<$57.Struct>(4, _omitFieldNames ? '' : 'additionalData', subBuilder: $57.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -107,15 +107,15 @@ class AlertData extends $pb.GeneratedMessage {
 
   /// JSON data for any additional info attached to this alert.
   @$pb.TagNumber(4)
-  $58.Struct get additionalData => $_getN(3);
+  $57.Struct get additionalData => $_getN(3);
   @$pb.TagNumber(4)
-  set additionalData($58.Struct v) { setField(4, v); }
+  set additionalData($57.Struct v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasAdditionalData() => $_has(3);
   @$pb.TagNumber(4)
   void clearAdditionalData() => clearField(4);
   @$pb.TagNumber(4)
-  $58.Struct ensureAdditionalData() => $_ensure(3);
+  $57.Struct ensureAdditionalData() => $_ensure(3);
 }
 
 

@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $62;
-import '../../../google/protobuf/timestamp.pb.dart' as $60;
-import '../header.pb.dart' as $68;
+import '../../../google/protobuf/duration.pb.dart' as $61;
+import '../../../google/protobuf/timestamp.pb.dart' as $59;
+import '../header.pb.dart' as $67;
 import 'log_status.pbenum.dart';
 
 export 'log_status.pbenum.dart';
@@ -103,7 +103,7 @@ class LogStatus extends $pb.GeneratedMessage {
 
 class GetLogStatusRequest extends $pb.GeneratedMessage {
   factory GetLogStatusRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? id,
   }) {
     final $result = create();
@@ -120,7 +120,7 @@ class GetLogStatusRequest extends $pb.GeneratedMessage {
   factory GetLogStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLogStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
   ;
@@ -148,15 +148,15 @@ class GetLogStatusRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Id of the log to retrieve.
   @$pb.TagNumber(2)
@@ -171,7 +171,7 @@ class GetLogStatusRequest extends $pb.GeneratedMessage {
 
 class GetLogStatusResponse extends $pb.GeneratedMessage {
   factory GetLogStatusResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     GetLogStatusResponse_Status? status,
     LogStatus? logStatus,
   }) {
@@ -192,7 +192,7 @@ class GetLogStatusResponse extends $pb.GeneratedMessage {
   factory GetLogStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLogStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<GetLogStatusResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: GetLogStatusResponse_Status.STATUS_UNKNOWN, valueOf: GetLogStatusResponse_Status.valueOf, enumValues: GetLogStatusResponse_Status.values)
     ..aOM<LogStatus>(3, _omitFieldNames ? '' : 'logStatus', subBuilder: LogStatus.create)
     ..hasRequiredFields = false
@@ -221,15 +221,15 @@ class GetLogStatusResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Response status.
   @$pb.TagNumber(2)
@@ -256,7 +256,7 @@ class GetLogStatusResponse extends $pb.GeneratedMessage {
 
 class GetActiveLogStatusesRequest extends $pb.GeneratedMessage {
   factory GetActiveLogStatusesRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -269,7 +269,7 @@ class GetActiveLogStatusesRequest extends $pb.GeneratedMessage {
   factory GetActiveLogStatusesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetActiveLogStatusesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -296,20 +296,20 @@ class GetActiveLogStatusesRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class GetActiveLogStatusesResponse extends $pb.GeneratedMessage {
   factory GetActiveLogStatusesResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     GetActiveLogStatusesResponse_Status? status,
     $core.Iterable<LogStatus>? logStatuses,
   }) {
@@ -330,7 +330,7 @@ class GetActiveLogStatusesResponse extends $pb.GeneratedMessage {
   factory GetActiveLogStatusesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetActiveLogStatusesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<GetActiveLogStatusesResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: GetActiveLogStatusesResponse_Status.STATUS_UNKNOWN, valueOf: GetActiveLogStatusesResponse_Status.valueOf, enumValues: GetActiveLogStatusesResponse_Status.values)
     ..pc<LogStatus>(3, _omitFieldNames ? '' : 'logStatuses', $pb.PbFieldType.PM, subBuilder: LogStatus.create)
     ..hasRequiredFields = false
@@ -359,15 +359,15 @@ class GetActiveLogStatusesResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Response status.
   @$pb.TagNumber(2)
@@ -386,8 +386,8 @@ class GetActiveLogStatusesResponse extends $pb.GeneratedMessage {
 
 class StartRetroLogRequest extends $pb.GeneratedMessage {
   factory StartRetroLogRequest({
-    $68.RequestHeader? header,
-    $62.Duration? pastDuration,
+    $67.RequestHeader? header,
+    $61.Duration? pastDuration,
   }) {
     final $result = create();
     if (header != null) {
@@ -403,8 +403,8 @@ class StartRetroLogRequest extends $pb.GeneratedMessage {
   factory StartRetroLogRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartRetroLogRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$62.Duration>(2, _omitFieldNames ? '' : 'pastDuration', subBuilder: $62.Duration.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$61.Duration>(2, _omitFieldNames ? '' : 'pastDuration', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -431,35 +431,35 @@ class StartRetroLogRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// How long into the past should this log start?
   @$pb.TagNumber(2)
-  $62.Duration get pastDuration => $_getN(1);
+  $61.Duration get pastDuration => $_getN(1);
   @$pb.TagNumber(2)
-  set pastDuration($62.Duration v) { setField(2, v); }
+  set pastDuration($61.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPastDuration() => $_has(1);
   @$pb.TagNumber(2)
   void clearPastDuration() => clearField(2);
   @$pb.TagNumber(2)
-  $62.Duration ensurePastDuration() => $_ensure(1);
+  $61.Duration ensurePastDuration() => $_ensure(1);
 }
 
 class StartRetroLogResponse extends $pb.GeneratedMessage {
   factory StartRetroLogResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     StartRetroLogResponse_Status? status,
     LogStatus? logStatus,
-    $60.Timestamp? endTime,
+    $59.Timestamp? endTime,
   }) {
     final $result = create();
     if (header != null) {
@@ -481,10 +481,10 @@ class StartRetroLogResponse extends $pb.GeneratedMessage {
   factory StartRetroLogResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartRetroLogResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<StartRetroLogResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: StartRetroLogResponse_Status.STATUS_UNKNOWN, valueOf: StartRetroLogResponse_Status.valueOf, enumValues: StartRetroLogResponse_Status.values)
     ..aOM<LogStatus>(3, _omitFieldNames ? '' : 'logStatus', subBuilder: LogStatus.create)
-    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -511,15 +511,15 @@ class StartRetroLogResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Response status.
   @$pb.TagNumber(2)
@@ -545,21 +545,21 @@ class StartRetroLogResponse extends $pb.GeneratedMessage {
 
   /// Timestamp of the end of the log, in robot time.
   @$pb.TagNumber(4)
-  $60.Timestamp get endTime => $_getN(3);
+  $59.Timestamp get endTime => $_getN(3);
   @$pb.TagNumber(4)
-  set endTime($60.Timestamp v) { setField(4, v); }
+  set endTime($59.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasEndTime() => $_has(3);
   @$pb.TagNumber(4)
   void clearEndTime() => clearField(4);
   @$pb.TagNumber(4)
-  $60.Timestamp ensureEndTime() => $_ensure(3);
+  $59.Timestamp ensureEndTime() => $_ensure(3);
 }
 
 class StartExperimentLogRequest extends $pb.GeneratedMessage {
   factory StartExperimentLogRequest({
-    $68.RequestHeader? header,
-    $62.Duration? keepAlive,
+    $67.RequestHeader? header,
+    $61.Duration? keepAlive,
   }) {
     final $result = create();
     if (header != null) {
@@ -575,8 +575,8 @@ class StartExperimentLogRequest extends $pb.GeneratedMessage {
   factory StartExperimentLogRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartExperimentLogRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$62.Duration>(2, _omitFieldNames ? '' : 'keepAlive', subBuilder: $62.Duration.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$61.Duration>(2, _omitFieldNames ? '' : 'keepAlive', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -603,35 +603,35 @@ class StartExperimentLogRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// How long into the future should this log end?
   @$pb.TagNumber(2)
-  $62.Duration get keepAlive => $_getN(1);
+  $61.Duration get keepAlive => $_getN(1);
   @$pb.TagNumber(2)
-  set keepAlive($62.Duration v) { setField(2, v); }
+  set keepAlive($61.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasKeepAlive() => $_has(1);
   @$pb.TagNumber(2)
   void clearKeepAlive() => clearField(2);
   @$pb.TagNumber(2)
-  $62.Duration ensureKeepAlive() => $_ensure(1);
+  $61.Duration ensureKeepAlive() => $_ensure(1);
 }
 
 class StartExperimentLogResponse extends $pb.GeneratedMessage {
   factory StartExperimentLogResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     StartExperimentLogResponse_Status? status,
     LogStatus? logStatus,
-    $60.Timestamp? endTime,
+    $59.Timestamp? endTime,
   }) {
     final $result = create();
     if (header != null) {
@@ -653,10 +653,10 @@ class StartExperimentLogResponse extends $pb.GeneratedMessage {
   factory StartExperimentLogResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartExperimentLogResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<StartExperimentLogResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: StartExperimentLogResponse_Status.STATUS_UNKNOWN, valueOf: StartExperimentLogResponse_Status.valueOf, enumValues: StartExperimentLogResponse_Status.values)
     ..aOM<LogStatus>(3, _omitFieldNames ? '' : 'logStatus', subBuilder: LogStatus.create)
-    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -683,15 +683,15 @@ class StartExperimentLogResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Response status.
   @$pb.TagNumber(2)
@@ -717,21 +717,21 @@ class StartExperimentLogResponse extends $pb.GeneratedMessage {
 
   /// Timestamp of the end of the log, in robot time.
   @$pb.TagNumber(4)
-  $60.Timestamp get endTime => $_getN(3);
+  $59.Timestamp get endTime => $_getN(3);
   @$pb.TagNumber(4)
-  set endTime($60.Timestamp v) { setField(4, v); }
+  set endTime($59.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasEndTime() => $_has(3);
   @$pb.TagNumber(4)
   void clearEndTime() => clearField(4);
   @$pb.TagNumber(4)
-  $60.Timestamp ensureEndTime() => $_ensure(3);
+  $59.Timestamp ensureEndTime() => $_ensure(3);
 }
 
 class UpdateExperimentLogRequest extends $pb.GeneratedMessage {
   factory UpdateExperimentLogRequest({
-    $68.RequestHeader? header,
-    $62.Duration? keepAlive,
+    $67.RequestHeader? header,
+    $61.Duration? keepAlive,
     $core.String? id,
   }) {
     final $result = create();
@@ -751,8 +751,8 @@ class UpdateExperimentLogRequest extends $pb.GeneratedMessage {
   factory UpdateExperimentLogRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateExperimentLogRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$62.Duration>(2, _omitFieldNames ? '' : 'keepAlive', subBuilder: $62.Duration.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$61.Duration>(2, _omitFieldNames ? '' : 'keepAlive', subBuilder: $61.Duration.create)
     ..aOS(3, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
   ;
@@ -780,27 +780,27 @@ class UpdateExperimentLogRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// How long into the future should this log continue?
   @$pb.TagNumber(2)
-  $62.Duration get keepAlive => $_getN(1);
+  $61.Duration get keepAlive => $_getN(1);
   @$pb.TagNumber(2)
-  set keepAlive($62.Duration v) { setField(2, v); }
+  set keepAlive($61.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasKeepAlive() => $_has(1);
   @$pb.TagNumber(2)
   void clearKeepAlive() => clearField(2);
   @$pb.TagNumber(2)
-  $62.Duration ensureKeepAlive() => $_ensure(1);
+  $61.Duration ensureKeepAlive() => $_ensure(1);
 
   /// Id of log to be extended.
   @$pb.TagNumber(3)
@@ -815,10 +815,10 @@ class UpdateExperimentLogRequest extends $pb.GeneratedMessage {
 
 class UpdateExperimentLogResponse extends $pb.GeneratedMessage {
   factory UpdateExperimentLogResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     UpdateExperimentLogResponse_Status? status,
     LogStatus? logStatus,
-    $60.Timestamp? endTime,
+    $59.Timestamp? endTime,
   }) {
     final $result = create();
     if (header != null) {
@@ -840,10 +840,10 @@ class UpdateExperimentLogResponse extends $pb.GeneratedMessage {
   factory UpdateExperimentLogResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateExperimentLogResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<UpdateExperimentLogResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UpdateExperimentLogResponse_Status.STATUS_UNKNOWN, valueOf: UpdateExperimentLogResponse_Status.valueOf, enumValues: UpdateExperimentLogResponse_Status.values)
     ..aOM<LogStatus>(3, _omitFieldNames ? '' : 'logStatus', subBuilder: LogStatus.create)
-    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -870,15 +870,15 @@ class UpdateExperimentLogResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Response status.
   @$pb.TagNumber(2)
@@ -904,20 +904,20 @@ class UpdateExperimentLogResponse extends $pb.GeneratedMessage {
 
   /// Timestamp of the end of the log, in robot time.
   @$pb.TagNumber(4)
-  $60.Timestamp get endTime => $_getN(3);
+  $59.Timestamp get endTime => $_getN(3);
   @$pb.TagNumber(4)
-  set endTime($60.Timestamp v) { setField(4, v); }
+  set endTime($59.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasEndTime() => $_has(3);
   @$pb.TagNumber(4)
   void clearEndTime() => clearField(4);
   @$pb.TagNumber(4)
-  $60.Timestamp ensureEndTime() => $_ensure(3);
+  $59.Timestamp ensureEndTime() => $_ensure(3);
 }
 
 class TerminateLogRequest extends $pb.GeneratedMessage {
   factory TerminateLogRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? id,
   }) {
     final $result = create();
@@ -934,7 +934,7 @@ class TerminateLogRequest extends $pb.GeneratedMessage {
   factory TerminateLogRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TerminateLogRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
   ;
@@ -962,15 +962,15 @@ class TerminateLogRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Id of log to terminate.
   @$pb.TagNumber(2)
@@ -985,7 +985,7 @@ class TerminateLogRequest extends $pb.GeneratedMessage {
 
 class TerminateLogResponse extends $pb.GeneratedMessage {
   factory TerminateLogResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     TerminateLogResponse_Status? status,
     LogStatus? logStatus,
   }) {
@@ -1006,7 +1006,7 @@ class TerminateLogResponse extends $pb.GeneratedMessage {
   factory TerminateLogResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TerminateLogResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.log_status'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<TerminateLogResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: TerminateLogResponse_Status.STATUS_UNKNOWN, valueOf: TerminateLogResponse_Status.valueOf, enumValues: TerminateLogResponse_Status.values)
     ..aOM<LogStatus>(3, _omitFieldNames ? '' : 'logStatus', subBuilder: LogStatus.create)
     ..hasRequiredFields = false
@@ -1035,15 +1035,15 @@ class TerminateLogResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Response status.
   @$pb.TagNumber(2)

@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/wrappers.pb.dart' as $59;
-import '../geometry.pb.dart' as $61;
+import '../../../google/protobuf/wrappers.pb.dart' as $58;
+import '../geometry.pb.dart' as $60;
 import 'choreography_params.pbenum.dart';
 
 export 'choreography_params.pbenum.dart';
@@ -102,9 +102,9 @@ class EulerZYX extends $pb.GeneratedMessage {
 /// set.
 class EulerZYXValue extends $pb.GeneratedMessage {
   factory EulerZYXValue({
-    $59.DoubleValue? roll,
-    $59.DoubleValue? pitch,
-    $59.DoubleValue? yaw,
+    $58.DoubleValue? roll,
+    $58.DoubleValue? pitch,
+    $58.DoubleValue? yaw,
   }) {
     final $result = create();
     if (roll != null) {
@@ -123,9 +123,9 @@ class EulerZYXValue extends $pb.GeneratedMessage {
   factory EulerZYXValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EulerZYXValue', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'roll', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'pitch', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'yaw', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'roll', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'pitch', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'yaw', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -151,46 +151,46 @@ class EulerZYXValue extends $pb.GeneratedMessage {
   static EulerZYXValue? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get roll => $_getN(0);
+  $58.DoubleValue get roll => $_getN(0);
   @$pb.TagNumber(1)
-  set roll($59.DoubleValue v) { setField(1, v); }
+  set roll($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRoll() => $_has(0);
   @$pb.TagNumber(1)
   void clearRoll() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureRoll() => $_ensure(0);
+  $58.DoubleValue ensureRoll() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get pitch => $_getN(1);
+  $58.DoubleValue get pitch => $_getN(1);
   @$pb.TagNumber(2)
-  set pitch($59.DoubleValue v) { setField(2, v); }
+  set pitch($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPitch() => $_has(1);
   @$pb.TagNumber(2)
   void clearPitch() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensurePitch() => $_ensure(1);
+  $58.DoubleValue ensurePitch() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get yaw => $_getN(2);
+  $58.DoubleValue get yaw => $_getN(2);
   @$pb.TagNumber(3)
-  set yaw($59.DoubleValue v) { setField(3, v); }
+  set yaw($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasYaw() => $_has(2);
   @$pb.TagNumber(3)
   void clearYaw() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureYaw() => $_ensure(2);
+  $58.DoubleValue ensureYaw() => $_ensure(2);
 }
 
 /// Euler Angle rates (yaw->pitch->roll) vector that uses wrapped values so we can tell which
 /// elements are set.
 class EulerRateZYXValue extends $pb.GeneratedMessage {
   factory EulerRateZYXValue({
-    $59.DoubleValue? roll,
-    $59.DoubleValue? pitch,
-    $59.DoubleValue? yaw,
+    $58.DoubleValue? roll,
+    $58.DoubleValue? pitch,
+    $58.DoubleValue? yaw,
   }) {
     final $result = create();
     if (roll != null) {
@@ -209,9 +209,9 @@ class EulerRateZYXValue extends $pb.GeneratedMessage {
   factory EulerRateZYXValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EulerRateZYXValue', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'roll', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'pitch', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'yaw', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'roll', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'pitch', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'yaw', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -237,46 +237,46 @@ class EulerRateZYXValue extends $pb.GeneratedMessage {
   static EulerRateZYXValue? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get roll => $_getN(0);
+  $58.DoubleValue get roll => $_getN(0);
   @$pb.TagNumber(1)
-  set roll($59.DoubleValue v) { setField(1, v); }
+  set roll($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRoll() => $_has(0);
   @$pb.TagNumber(1)
   void clearRoll() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureRoll() => $_ensure(0);
+  $58.DoubleValue ensureRoll() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get pitch => $_getN(1);
+  $58.DoubleValue get pitch => $_getN(1);
   @$pb.TagNumber(2)
-  set pitch($59.DoubleValue v) { setField(2, v); }
+  set pitch($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPitch() => $_has(1);
   @$pb.TagNumber(2)
   void clearPitch() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensurePitch() => $_ensure(1);
+  $58.DoubleValue ensurePitch() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get yaw => $_getN(2);
+  $58.DoubleValue get yaw => $_getN(2);
   @$pb.TagNumber(3)
-  set yaw($59.DoubleValue v) { setField(3, v); }
+  set yaw($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasYaw() => $_has(2);
   @$pb.TagNumber(3)
   void clearYaw() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureYaw() => $_ensure(2);
+  $58.DoubleValue ensureYaw() => $_ensure(2);
 }
 
 /// Parameters specific to the BodyHold move.
 class BodyHoldParams extends $pb.GeneratedMessage {
   factory BodyHoldParams({
     EulerZYXValue? rotation,
-    $61.Vec3Value? translation,
-    $59.DoubleValue? entrySlices,
-    $59.DoubleValue? exitSlices,
+    $60.Vec3Value? translation,
+    $58.DoubleValue? entrySlices,
+    $58.DoubleValue? exitSlices,
   }) {
     final $result = create();
     if (rotation != null) {
@@ -299,9 +299,9 @@ class BodyHoldParams extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BodyHoldParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..aOM<EulerZYXValue>(1, _omitFieldNames ? '' : 'rotation', subBuilder: EulerZYXValue.create)
-    ..aOM<$61.Vec3Value>(2, _omitFieldNames ? '' : 'translation', subBuilder: $61.Vec3Value.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'entrySlices', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'exitSlices', subBuilder: $59.DoubleValue.create)
+    ..aOM<$60.Vec3Value>(2, _omitFieldNames ? '' : 'translation', subBuilder: $60.Vec3Value.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'entrySlices', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'exitSlices', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -340,52 +340,52 @@ class BodyHoldParams extends $pb.GeneratedMessage {
 
   /// The positional offset to the robot's current location [m].
   @$pb.TagNumber(2)
-  $61.Vec3Value get translation => $_getN(1);
+  $60.Vec3Value get translation => $_getN(1);
   @$pb.TagNumber(2)
-  set translation($61.Vec3Value v) { setField(2, v); }
+  set translation($60.Vec3Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTranslation() => $_has(1);
   @$pb.TagNumber(2)
   void clearTranslation() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3Value ensureTranslation() => $_ensure(1);
+  $60.Vec3Value ensureTranslation() => $_ensure(1);
 
   /// How many "slices" (beats or sub-beats) are allowed before reaching the desired pose.
   @$pb.TagNumber(3)
-  $59.DoubleValue get entrySlices => $_getN(2);
+  $58.DoubleValue get entrySlices => $_getN(2);
   @$pb.TagNumber(3)
-  set entrySlices($59.DoubleValue v) { setField(3, v); }
+  set entrySlices($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEntrySlices() => $_has(2);
   @$pb.TagNumber(3)
   void clearEntrySlices() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureEntrySlices() => $_ensure(2);
+  $58.DoubleValue ensureEntrySlices() => $_ensure(2);
 
   /// How many "slices" (beats or sub-beats) are allowed for the robot to return to the original
   /// pose.
   @$pb.TagNumber(4)
-  $59.DoubleValue get exitSlices => $_getN(3);
+  $58.DoubleValue get exitSlices => $_getN(3);
   @$pb.TagNumber(4)
-  set exitSlices($59.DoubleValue v) { setField(4, v); }
+  set exitSlices($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasExitSlices() => $_has(3);
   @$pb.TagNumber(4)
   void clearExitSlices() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureExitSlices() => $_ensure(3);
+  $58.DoubleValue ensureExitSlices() => $_ensure(3);
 }
 
 /// Parameters specific to Sway move.
 class SwayParams extends $pb.GeneratedMessage {
   factory SwayParams({
-    $59.DoubleValue? vertical,
-    $59.DoubleValue? horizontal,
-    $59.DoubleValue? roll,
+    $58.DoubleValue? vertical,
+    $58.DoubleValue? horizontal,
+    $58.DoubleValue? roll,
     Pivot? pivot,
     SwayParams_SwayStyle? style,
-    $59.DoubleValue? pronounced,
-    $59.BoolValue? holdZeroAxes,
+    $58.DoubleValue? pronounced,
+    $58.BoolValue? holdZeroAxes,
   }) {
     final $result = create();
     if (vertical != null) {
@@ -416,13 +416,13 @@ class SwayParams extends $pb.GeneratedMessage {
   factory SwayParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SwayParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'vertical', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'horizontal', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'roll', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'vertical', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'horizontal', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'roll', subBuilder: $58.DoubleValue.create)
     ..e<Pivot>(4, _omitFieldNames ? '' : 'pivot', $pb.PbFieldType.OE, defaultOrMaker: Pivot.PIVOT_UNKNOWN, valueOf: Pivot.valueOf, enumValues: Pivot.values)
     ..e<SwayParams_SwayStyle>(5, _omitFieldNames ? '' : 'style', $pb.PbFieldType.OE, defaultOrMaker: SwayParams_SwayStyle.SWAY_STYLE_UNKNOWN, valueOf: SwayParams_SwayStyle.valueOf, enumValues: SwayParams_SwayStyle.values)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'pronounced', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(7, _omitFieldNames ? '' : 'holdZeroAxes', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'pronounced', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(7, _omitFieldNames ? '' : 'holdZeroAxes', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -449,39 +449,39 @@ class SwayParams extends $pb.GeneratedMessage {
 
   /// How far to move up/down [m].
   @$pb.TagNumber(1)
-  $59.DoubleValue get vertical => $_getN(0);
+  $58.DoubleValue get vertical => $_getN(0);
   @$pb.TagNumber(1)
-  set vertical($59.DoubleValue v) { setField(1, v); }
+  set vertical($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasVertical() => $_has(0);
   @$pb.TagNumber(1)
   void clearVertical() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureVertical() => $_ensure(0);
+  $58.DoubleValue ensureVertical() => $_ensure(0);
 
   /// How far to move left/right [m].
   @$pb.TagNumber(2)
-  $59.DoubleValue get horizontal => $_getN(1);
+  $58.DoubleValue get horizontal => $_getN(1);
   @$pb.TagNumber(2)
-  set horizontal($59.DoubleValue v) { setField(2, v); }
+  set horizontal($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasHorizontal() => $_has(1);
   @$pb.TagNumber(2)
   void clearHorizontal() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureHorizontal() => $_ensure(1);
+  $58.DoubleValue ensureHorizontal() => $_ensure(1);
 
   /// How much to roll [rad].
   @$pb.TagNumber(3)
-  $59.DoubleValue get roll => $_getN(2);
+  $58.DoubleValue get roll => $_getN(2);
   @$pb.TagNumber(3)
-  set roll($59.DoubleValue v) { setField(3, v); }
+  set roll($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasRoll() => $_has(2);
   @$pb.TagNumber(3)
   void clearRoll() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureRoll() => $_ensure(2);
+  $58.DoubleValue ensureRoll() => $_ensure(2);
 
   /// What point on the robot's body should the swaying be centered at. For example, should the
   /// head move instead of the butt?
@@ -506,41 +506,41 @@ class SwayParams extends $pb.GeneratedMessage {
 
   /// How pronounced should the sway-style be? The value is on a scale from [0,1.0].
   @$pb.TagNumber(6)
-  $59.DoubleValue get pronounced => $_getN(5);
+  $58.DoubleValue get pronounced => $_getN(5);
   @$pb.TagNumber(6)
-  set pronounced($59.DoubleValue v) { setField(6, v); }
+  set pronounced($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasPronounced() => $_has(5);
   @$pb.TagNumber(6)
   void clearPronounced() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensurePronounced() => $_ensure(5);
+  $58.DoubleValue ensurePronounced() => $_ensure(5);
 
   /// Should the robot hold previous values for the vertical, horizontal, and roll axes if the
   /// value is left unspecified (value of zero).
   @$pb.TagNumber(7)
-  $59.BoolValue get holdZeroAxes => $_getN(6);
+  $58.BoolValue get holdZeroAxes => $_getN(6);
   @$pb.TagNumber(7)
-  set holdZeroAxes($59.BoolValue v) { setField(7, v); }
+  set holdZeroAxes($58.BoolValue v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasHoldZeroAxes() => $_has(6);
   @$pb.TagNumber(7)
   void clearHoldZeroAxes() => clearField(7);
   @$pb.TagNumber(7)
-  $59.BoolValue ensureHoldZeroAxes() => $_ensure(6);
+  $58.BoolValue ensureHoldZeroAxes() => $_ensure(6);
 }
 
 /// Parameters specific to ArmMove move.
 class ArmMoveParams extends $pb.GeneratedMessage {
   factory ArmMoveParams({
-    $59.DoubleValue? shoulder0,
-    $59.DoubleValue? shoulder1,
-    $59.DoubleValue? elbow0,
-    $59.DoubleValue? elbow1,
-    $59.DoubleValue? wrist0,
-    $59.DoubleValue? wrist1,
+    $58.DoubleValue? shoulder0,
+    $58.DoubleValue? shoulder1,
+    $58.DoubleValue? elbow0,
+    $58.DoubleValue? elbow1,
+    $58.DoubleValue? wrist0,
+    $58.DoubleValue? wrist1,
     Easing? easing,
-    $59.DoubleValue? gripper,
+    $58.DoubleValue? gripper,
   }) {
     final $result = create();
     if (shoulder0 != null) {
@@ -574,14 +574,14 @@ class ArmMoveParams extends $pb.GeneratedMessage {
   factory ArmMoveParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ArmMoveParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'shoulder0', protoName: 'shoulder_0', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'shoulder1', protoName: 'shoulder_1', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'elbow0', protoName: 'elbow_0', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'elbow1', protoName: 'elbow_1', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'wrist0', protoName: 'wrist_0', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'wrist1', protoName: 'wrist_1', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'shoulder0', protoName: 'shoulder_0', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'shoulder1', protoName: 'shoulder_1', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'elbow0', protoName: 'elbow_0', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'elbow1', protoName: 'elbow_1', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'wrist0', protoName: 'wrist_0', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'wrist1', protoName: 'wrist_1', subBuilder: $58.DoubleValue.create)
     ..e<Easing>(7, _omitFieldNames ? '' : 'easing', $pb.PbFieldType.OE, defaultOrMaker: Easing.EASING_UNKNOWN, valueOf: Easing.valueOf, enumValues: Easing.values)
-    ..aOM<$59.DoubleValue>(8, _omitFieldNames ? '' : 'gripper', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(8, _omitFieldNames ? '' : 'gripper', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -608,70 +608,70 @@ class ArmMoveParams extends $pb.GeneratedMessage {
 
   /// Joint angles in radians for the arm joints.
   @$pb.TagNumber(1)
-  $59.DoubleValue get shoulder0 => $_getN(0);
+  $58.DoubleValue get shoulder0 => $_getN(0);
   @$pb.TagNumber(1)
-  set shoulder0($59.DoubleValue v) { setField(1, v); }
+  set shoulder0($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasShoulder0() => $_has(0);
   @$pb.TagNumber(1)
   void clearShoulder0() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureShoulder0() => $_ensure(0);
+  $58.DoubleValue ensureShoulder0() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get shoulder1 => $_getN(1);
+  $58.DoubleValue get shoulder1 => $_getN(1);
   @$pb.TagNumber(2)
-  set shoulder1($59.DoubleValue v) { setField(2, v); }
+  set shoulder1($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasShoulder1() => $_has(1);
   @$pb.TagNumber(2)
   void clearShoulder1() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureShoulder1() => $_ensure(1);
+  $58.DoubleValue ensureShoulder1() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get elbow0 => $_getN(2);
+  $58.DoubleValue get elbow0 => $_getN(2);
   @$pb.TagNumber(3)
-  set elbow0($59.DoubleValue v) { setField(3, v); }
+  set elbow0($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasElbow0() => $_has(2);
   @$pb.TagNumber(3)
   void clearElbow0() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureElbow0() => $_ensure(2);
+  $58.DoubleValue ensureElbow0() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $59.DoubleValue get elbow1 => $_getN(3);
+  $58.DoubleValue get elbow1 => $_getN(3);
   @$pb.TagNumber(4)
-  set elbow1($59.DoubleValue v) { setField(4, v); }
+  set elbow1($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasElbow1() => $_has(3);
   @$pb.TagNumber(4)
   void clearElbow1() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureElbow1() => $_ensure(3);
+  $58.DoubleValue ensureElbow1() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $59.DoubleValue get wrist0 => $_getN(4);
+  $58.DoubleValue get wrist0 => $_getN(4);
   @$pb.TagNumber(5)
-  set wrist0($59.DoubleValue v) { setField(5, v); }
+  set wrist0($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasWrist0() => $_has(4);
   @$pb.TagNumber(5)
   void clearWrist0() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureWrist0() => $_ensure(4);
+  $58.DoubleValue ensureWrist0() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $59.DoubleValue get wrist1 => $_getN(5);
+  $58.DoubleValue get wrist1 => $_getN(5);
   @$pb.TagNumber(6)
-  set wrist1($59.DoubleValue v) { setField(6, v); }
+  set wrist1($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasWrist1() => $_has(5);
   @$pb.TagNumber(6)
   void clearWrist1() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureWrist1() => $_ensure(5);
+  $58.DoubleValue ensureWrist1() => $_ensure(5);
 
   /// How the motion should be paced.
   @$pb.TagNumber(7)
@@ -685,25 +685,25 @@ class ArmMoveParams extends $pb.GeneratedMessage {
 
   /// Movement for the gripper.
   @$pb.TagNumber(8)
-  $59.DoubleValue get gripper => $_getN(7);
+  $58.DoubleValue get gripper => $_getN(7);
   @$pb.TagNumber(8)
-  set gripper($59.DoubleValue v) { setField(8, v); }
+  set gripper($58.DoubleValue v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasGripper() => $_has(7);
   @$pb.TagNumber(8)
   void clearGripper() => clearField(8);
   @$pb.TagNumber(8)
-  $59.DoubleValue ensureGripper() => $_ensure(7);
+  $58.DoubleValue ensureGripper() => $_ensure(7);
 }
 
 class WorkspaceArmMoveParams extends $pb.GeneratedMessage {
   factory WorkspaceArmMoveParams({
     EulerZYXValue? rotation,
-    $61.Vec3Value? translation,
-    $59.BoolValue? absolute,
+    $60.Vec3Value? translation,
+    $58.BoolValue? absolute,
     ArmMoveFrame? frame,
     Easing? easing,
-    $59.Int32Value? danceFrameId,
+    $58.Int32Value? danceFrameId,
   }) {
     final $result = create();
     if (rotation != null) {
@@ -732,11 +732,11 @@ class WorkspaceArmMoveParams extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WorkspaceArmMoveParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..aOM<EulerZYXValue>(1, _omitFieldNames ? '' : 'rotation', subBuilder: EulerZYXValue.create)
-    ..aOM<$61.Vec3Value>(2, _omitFieldNames ? '' : 'translation', subBuilder: $61.Vec3Value.create)
-    ..aOM<$59.BoolValue>(3, _omitFieldNames ? '' : 'absolute', subBuilder: $59.BoolValue.create)
+    ..aOM<$60.Vec3Value>(2, _omitFieldNames ? '' : 'translation', subBuilder: $60.Vec3Value.create)
+    ..aOM<$58.BoolValue>(3, _omitFieldNames ? '' : 'absolute', subBuilder: $58.BoolValue.create)
     ..e<ArmMoveFrame>(4, _omitFieldNames ? '' : 'frame', $pb.PbFieldType.OE, defaultOrMaker: ArmMoveFrame.ARM_MOVE_FRAME_UNKNOWN, valueOf: ArmMoveFrame.valueOf, enumValues: ArmMoveFrame.values)
     ..e<Easing>(5, _omitFieldNames ? '' : 'easing', $pb.PbFieldType.OE, defaultOrMaker: Easing.EASING_UNKNOWN, valueOf: Easing.valueOf, enumValues: Easing.values)
-    ..aOM<$59.Int32Value>(6, _omitFieldNames ? '' : 'danceFrameId', subBuilder: $59.Int32Value.create)
+    ..aOM<$58.Int32Value>(6, _omitFieldNames ? '' : 'danceFrameId', subBuilder: $58.Int32Value.create)
     ..hasRequiredFields = false
   ;
 
@@ -775,27 +775,27 @@ class WorkspaceArmMoveParams extends $pb.GeneratedMessage {
 
   /// The positional offset to the robot's current location [m].
   @$pb.TagNumber(2)
-  $61.Vec3Value get translation => $_getN(1);
+  $60.Vec3Value get translation => $_getN(1);
   @$pb.TagNumber(2)
-  set translation($61.Vec3Value v) { setField(2, v); }
+  set translation($60.Vec3Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTranslation() => $_has(1);
   @$pb.TagNumber(2)
   void clearTranslation() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3Value ensureTranslation() => $_ensure(1);
+  $60.Vec3Value ensureTranslation() => $_ensure(1);
 
   /// Go to an absolute position/orientation?  Otherwise, relative to starting pose.
   @$pb.TagNumber(3)
-  $59.BoolValue get absolute => $_getN(2);
+  $58.BoolValue get absolute => $_getN(2);
   @$pb.TagNumber(3)
-  set absolute($59.BoolValue v) { setField(3, v); }
+  set absolute($58.BoolValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasAbsolute() => $_has(2);
   @$pb.TagNumber(3)
   void clearAbsolute() => clearField(3);
   @$pb.TagNumber(3)
-  $59.BoolValue ensureAbsolute() => $_ensure(2);
+  $58.BoolValue ensureAbsolute() => $_ensure(2);
 
   /// What frame is the motion specified in.
   @$pb.TagNumber(4)
@@ -819,22 +819,22 @@ class WorkspaceArmMoveParams extends $pb.GeneratedMessage {
 
   /// If we're using the dance frame, which one?
   @$pb.TagNumber(6)
-  $59.Int32Value get danceFrameId => $_getN(5);
+  $58.Int32Value get danceFrameId => $_getN(5);
   @$pb.TagNumber(6)
-  set danceFrameId($59.Int32Value v) { setField(6, v); }
+  set danceFrameId($58.Int32Value v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasDanceFrameId() => $_has(5);
   @$pb.TagNumber(6)
   void clearDanceFrameId() => clearField(6);
   @$pb.TagNumber(6)
-  $59.Int32Value ensureDanceFrameId() => $_ensure(5);
+  $58.Int32Value ensureDanceFrameId() => $_ensure(5);
 }
 
 class Figure8Params extends $pb.GeneratedMessage {
   factory Figure8Params({
-    $59.DoubleValue? height,
-    $59.DoubleValue? width,
-    $59.DoubleValue? beatsPerCycle,
+    $58.DoubleValue? height,
+    $58.DoubleValue? width,
+    $58.DoubleValue? beatsPerCycle,
   }) {
     final $result = create();
     if (height != null) {
@@ -853,9 +853,9 @@ class Figure8Params extends $pb.GeneratedMessage {
   factory Figure8Params.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Figure8Params', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'height', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'width', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'beatsPerCycle', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'height', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'width', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'beatsPerCycle', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -881,44 +881,44 @@ class Figure8Params extends $pb.GeneratedMessage {
   static Figure8Params? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get height => $_getN(0);
+  $58.DoubleValue get height => $_getN(0);
   @$pb.TagNumber(1)
-  set height($59.DoubleValue v) { setField(1, v); }
+  set height($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeight() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeight() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureHeight() => $_ensure(0);
+  $58.DoubleValue ensureHeight() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get width => $_getN(1);
+  $58.DoubleValue get width => $_getN(1);
   @$pb.TagNumber(2)
-  set width($59.DoubleValue v) { setField(2, v); }
+  set width($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasWidth() => $_has(1);
   @$pb.TagNumber(2)
   void clearWidth() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureWidth() => $_ensure(1);
+  $58.DoubleValue ensureWidth() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get beatsPerCycle => $_getN(2);
+  $58.DoubleValue get beatsPerCycle => $_getN(2);
   @$pb.TagNumber(3)
-  set beatsPerCycle($59.DoubleValue v) { setField(3, v); }
+  set beatsPerCycle($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasBeatsPerCycle() => $_has(2);
   @$pb.TagNumber(3)
   void clearBeatsPerCycle() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureBeatsPerCycle() => $_ensure(2);
+  $58.DoubleValue ensureBeatsPerCycle() => $_ensure(2);
 }
 
 /// Parameters for open/close of gripper.
 class GripperParams extends $pb.GeneratedMessage {
   factory GripperParams({
-    $59.DoubleValue? angle,
-    $59.DoubleValue? speed,
+    $58.DoubleValue? angle,
+    $58.DoubleValue? speed,
   }) {
     final $result = create();
     if (angle != null) {
@@ -934,8 +934,8 @@ class GripperParams extends $pb.GeneratedMessage {
   factory GripperParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GripperParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'angle', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'speed', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'angle', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'speed', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -963,36 +963,36 @@ class GripperParams extends $pb.GeneratedMessage {
   /// Angle in radians at which the gripper is open. Note that a 0 radian angle correlates to
   /// completely closed.
   @$pb.TagNumber(1)
-  $59.DoubleValue get angle => $_getN(0);
+  $58.DoubleValue get angle => $_getN(0);
   @$pb.TagNumber(1)
-  set angle($59.DoubleValue v) { setField(1, v); }
+  set angle($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAngle() => $_has(0);
   @$pb.TagNumber(1)
   void clearAngle() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureAngle() => $_ensure(0);
+  $58.DoubleValue ensureAngle() => $_ensure(0);
 
   /// Speed in m/s at which the gripper should open/close to achieve the desired angle.
   @$pb.TagNumber(2)
-  $59.DoubleValue get speed => $_getN(1);
+  $58.DoubleValue get speed => $_getN(1);
   @$pb.TagNumber(2)
-  set speed($59.DoubleValue v) { setField(2, v); }
+  set speed($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasSpeed() => $_has(1);
   @$pb.TagNumber(2)
   void clearSpeed() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureSpeed() => $_ensure(1);
+  $58.DoubleValue ensureSpeed() => $_ensure(1);
 }
 
 /// Parameters specific to KneelLegMove move.
 class KneelLegMoveParams extends $pb.GeneratedMessage {
   factory KneelLegMoveParams({
-    $59.DoubleValue? hipX,
-    $59.DoubleValue? hipY,
-    $59.DoubleValue? knee,
-    $59.BoolValue? mirror,
+    $58.DoubleValue? hipX,
+    $58.DoubleValue? hipY,
+    $58.DoubleValue? knee,
+    $58.BoolValue? mirror,
     Easing? easing,
   }) {
     final $result = create();
@@ -1018,10 +1018,10 @@ class KneelLegMoveParams extends $pb.GeneratedMessage {
   factory KneelLegMoveParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'KneelLegMoveParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'hipX', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'hipY', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'knee', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(4, _omitFieldNames ? '' : 'mirror', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'hipX', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'hipY', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'knee', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(4, _omitFieldNames ? '' : 'mirror', subBuilder: $58.BoolValue.create)
     ..e<Easing>(5, _omitFieldNames ? '' : 'easing', $pb.PbFieldType.OE, defaultOrMaker: Easing.EASING_UNKNOWN, valueOf: Easing.valueOf, enumValues: Easing.values)
     ..hasRequiredFields = false
   ;
@@ -1050,50 +1050,50 @@ class KneelLegMoveParams extends $pb.GeneratedMessage {
   /// Joint angles of the left front leg in radians.
   /// If mirrored, the joints will be flipped for the other leg.
   @$pb.TagNumber(1)
-  $59.DoubleValue get hipX => $_getN(0);
+  $58.DoubleValue get hipX => $_getN(0);
   @$pb.TagNumber(1)
-  set hipX($59.DoubleValue v) { setField(1, v); }
+  set hipX($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHipX() => $_has(0);
   @$pb.TagNumber(1)
   void clearHipX() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureHipX() => $_ensure(0);
+  $58.DoubleValue ensureHipX() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get hipY => $_getN(1);
+  $58.DoubleValue get hipY => $_getN(1);
   @$pb.TagNumber(2)
-  set hipY($59.DoubleValue v) { setField(2, v); }
+  set hipY($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasHipY() => $_has(1);
   @$pb.TagNumber(2)
   void clearHipY() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureHipY() => $_ensure(1);
+  $58.DoubleValue ensureHipY() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get knee => $_getN(2);
+  $58.DoubleValue get knee => $_getN(2);
   @$pb.TagNumber(3)
-  set knee($59.DoubleValue v) { setField(3, v); }
+  set knee($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasKnee() => $_has(2);
   @$pb.TagNumber(3)
   void clearKnee() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureKnee() => $_ensure(2);
+  $58.DoubleValue ensureKnee() => $_ensure(2);
 
   /// If mirrored is true, the joints will be flipped for the leg on the other side (right vs left)
   /// of the body.
   @$pb.TagNumber(4)
-  $59.BoolValue get mirror => $_getN(3);
+  $58.BoolValue get mirror => $_getN(3);
   @$pb.TagNumber(4)
-  set mirror($59.BoolValue v) { setField(4, v); }
+  set mirror($58.BoolValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMirror() => $_has(3);
   @$pb.TagNumber(4)
   void clearMirror() => clearField(4);
   @$pb.TagNumber(4)
-  $59.BoolValue ensureMirror() => $_ensure(3);
+  $58.BoolValue ensureMirror() => $_ensure(3);
 
   /// How the motion should be paced.
   @$pb.TagNumber(5)
@@ -1109,14 +1109,14 @@ class KneelLegMoveParams extends $pb.GeneratedMessage {
 /// Parameters specific to KneelLegMove2 move.
 class KneelLegMove2Params extends $pb.GeneratedMessage {
   factory KneelLegMove2Params({
-    $59.DoubleValue? leftHipX,
-    $59.DoubleValue? leftHipY,
-    $59.DoubleValue? leftKnee,
-    $59.DoubleValue? rightHipX,
-    $59.DoubleValue? rightHipY,
-    $59.DoubleValue? rightKnee,
+    $58.DoubleValue? leftHipX,
+    $58.DoubleValue? leftHipY,
+    $58.DoubleValue? leftKnee,
+    $58.DoubleValue? rightHipX,
+    $58.DoubleValue? rightHipY,
+    $58.DoubleValue? rightKnee,
     Easing? easing,
-    $59.BoolValue? linkToNext,
+    $58.BoolValue? linkToNext,
   }) {
     final $result = create();
     if (leftHipX != null) {
@@ -1150,14 +1150,14 @@ class KneelLegMove2Params extends $pb.GeneratedMessage {
   factory KneelLegMove2Params.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'KneelLegMove2Params', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'leftHipX', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'leftHipY', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'leftKnee', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'rightHipX', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'rightHipY', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'rightKnee', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'leftHipX', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'leftHipY', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'leftKnee', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'rightHipX', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'rightHipY', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'rightKnee', subBuilder: $58.DoubleValue.create)
     ..e<Easing>(7, _omitFieldNames ? '' : 'easing', $pb.PbFieldType.OE, defaultOrMaker: Easing.EASING_UNKNOWN, valueOf: Easing.valueOf, enumValues: Easing.values)
-    ..aOM<$59.BoolValue>(8, _omitFieldNames ? '' : 'linkToNext', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(8, _omitFieldNames ? '' : 'linkToNext', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1184,71 +1184,71 @@ class KneelLegMove2Params extends $pb.GeneratedMessage {
 
   /// Joint angles of the front left leg in radians.
   @$pb.TagNumber(1)
-  $59.DoubleValue get leftHipX => $_getN(0);
+  $58.DoubleValue get leftHipX => $_getN(0);
   @$pb.TagNumber(1)
-  set leftHipX($59.DoubleValue v) { setField(1, v); }
+  set leftHipX($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasLeftHipX() => $_has(0);
   @$pb.TagNumber(1)
   void clearLeftHipX() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureLeftHipX() => $_ensure(0);
+  $58.DoubleValue ensureLeftHipX() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get leftHipY => $_getN(1);
+  $58.DoubleValue get leftHipY => $_getN(1);
   @$pb.TagNumber(2)
-  set leftHipY($59.DoubleValue v) { setField(2, v); }
+  set leftHipY($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeftHipY() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeftHipY() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureLeftHipY() => $_ensure(1);
+  $58.DoubleValue ensureLeftHipY() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get leftKnee => $_getN(2);
+  $58.DoubleValue get leftKnee => $_getN(2);
   @$pb.TagNumber(3)
-  set leftKnee($59.DoubleValue v) { setField(3, v); }
+  set leftKnee($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLeftKnee() => $_has(2);
   @$pb.TagNumber(3)
   void clearLeftKnee() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureLeftKnee() => $_ensure(2);
+  $58.DoubleValue ensureLeftKnee() => $_ensure(2);
 
   /// Joint angles of the front right leg in radians.
   @$pb.TagNumber(4)
-  $59.DoubleValue get rightHipX => $_getN(3);
+  $58.DoubleValue get rightHipX => $_getN(3);
   @$pb.TagNumber(4)
-  set rightHipX($59.DoubleValue v) { setField(4, v); }
+  set rightHipX($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasRightHipX() => $_has(3);
   @$pb.TagNumber(4)
   void clearRightHipX() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureRightHipX() => $_ensure(3);
+  $58.DoubleValue ensureRightHipX() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $59.DoubleValue get rightHipY => $_getN(4);
+  $58.DoubleValue get rightHipY => $_getN(4);
   @$pb.TagNumber(5)
-  set rightHipY($59.DoubleValue v) { setField(5, v); }
+  set rightHipY($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasRightHipY() => $_has(4);
   @$pb.TagNumber(5)
   void clearRightHipY() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureRightHipY() => $_ensure(4);
+  $58.DoubleValue ensureRightHipY() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $59.DoubleValue get rightKnee => $_getN(5);
+  $58.DoubleValue get rightKnee => $_getN(5);
   @$pb.TagNumber(6)
-  set rightKnee($59.DoubleValue v) { setField(6, v); }
+  set rightKnee($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasRightKnee() => $_has(5);
   @$pb.TagNumber(6)
   void clearRightKnee() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureRightKnee() => $_ensure(5);
+  $58.DoubleValue ensureRightKnee() => $_ensure(5);
 
   /// How the motion should be paced.
   @$pb.TagNumber(7)
@@ -1262,28 +1262,28 @@ class KneelLegMove2Params extends $pb.GeneratedMessage {
 
   /// Should we combine with the next move into a smooth trajectory.
   @$pb.TagNumber(8)
-  $59.BoolValue get linkToNext => $_getN(7);
+  $58.BoolValue get linkToNext => $_getN(7);
   @$pb.TagNumber(8)
-  set linkToNext($59.BoolValue v) { setField(8, v); }
+  set linkToNext($58.BoolValue v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasLinkToNext() => $_has(7);
   @$pb.TagNumber(8)
   void clearLinkToNext() => clearField(8);
   @$pb.TagNumber(8)
-  $59.BoolValue ensureLinkToNext() => $_ensure(7);
+  $58.BoolValue ensureLinkToNext() => $_ensure(7);
 }
 
 /// Parameters specific to RunningMan move.
 class RunningManParams extends $pb.GeneratedMessage {
   factory RunningManParams({
-    $61.Vec2Value? velocity,
-    $59.DoubleValue? swingHeight,
-    $59.DoubleValue? spread,
-    $59.BoolValue? reverse,
-    $59.Int32Value? preMoveCycles,
-    $59.DoubleValue? speedMultiplier,
-    $59.DoubleValue? dutyCycle,
-    $59.DoubleValue? comHeight,
+    $60.Vec2Value? velocity,
+    $58.DoubleValue? swingHeight,
+    $58.DoubleValue? spread,
+    $58.BoolValue? reverse,
+    $58.Int32Value? preMoveCycles,
+    $58.DoubleValue? speedMultiplier,
+    $58.DoubleValue? dutyCycle,
+    $58.DoubleValue? comHeight,
   }) {
     final $result = create();
     if (velocity != null) {
@@ -1317,14 +1317,14 @@ class RunningManParams extends $pb.GeneratedMessage {
   factory RunningManParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RunningManParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.Vec2Value>(1, _omitFieldNames ? '' : 'velocity', subBuilder: $61.Vec2Value.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'swingHeight', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'spread', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(4, _omitFieldNames ? '' : 'reverse', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.Int32Value>(5, _omitFieldNames ? '' : 'preMoveCycles', subBuilder: $59.Int32Value.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'speedMultiplier', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(7, _omitFieldNames ? '' : 'dutyCycle', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(8, _omitFieldNames ? '' : 'comHeight', subBuilder: $59.DoubleValue.create)
+    ..aOM<$60.Vec2Value>(1, _omitFieldNames ? '' : 'velocity', subBuilder: $60.Vec2Value.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'swingHeight', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'spread', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(4, _omitFieldNames ? '' : 'reverse', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.Int32Value>(5, _omitFieldNames ? '' : 'preMoveCycles', subBuilder: $58.Int32Value.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'speedMultiplier', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(7, _omitFieldNames ? '' : 'dutyCycle', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(8, _omitFieldNames ? '' : 'comHeight', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1350,108 +1350,108 @@ class RunningManParams extends $pb.GeneratedMessage {
   static RunningManParams? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $61.Vec2Value get velocity => $_getN(0);
+  $60.Vec2Value get velocity => $_getN(0);
   @$pb.TagNumber(1)
-  set velocity($61.Vec2Value v) { setField(1, v); }
+  set velocity($60.Vec2Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasVelocity() => $_has(0);
   @$pb.TagNumber(1)
   void clearVelocity() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec2Value ensureVelocity() => $_ensure(0);
+  $60.Vec2Value ensureVelocity() => $_ensure(0);
 
   /// How high to pick up the forward-moving feet [m].
   @$pb.TagNumber(2)
-  $59.DoubleValue get swingHeight => $_getN(1);
+  $58.DoubleValue get swingHeight => $_getN(1);
   @$pb.TagNumber(2)
-  set swingHeight($59.DoubleValue v) { setField(2, v); }
+  set swingHeight($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasSwingHeight() => $_has(1);
   @$pb.TagNumber(2)
   void clearSwingHeight() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureSwingHeight() => $_ensure(1);
+  $58.DoubleValue ensureSwingHeight() => $_ensure(1);
 
   /// How far to spread the contralateral pair of feet [m].
   @$pb.TagNumber(3)
-  $59.DoubleValue get spread => $_getN(2);
+  $58.DoubleValue get spread => $_getN(2);
   @$pb.TagNumber(3)
-  set spread($59.DoubleValue v) { setField(3, v); }
+  set spread($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasSpread() => $_has(2);
   @$pb.TagNumber(3)
   void clearSpread() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureSpread() => $_ensure(2);
+  $58.DoubleValue ensureSpread() => $_ensure(2);
 
   /// Should we reverse the motion?
   @$pb.TagNumber(4)
-  $59.BoolValue get reverse => $_getN(3);
+  $58.BoolValue get reverse => $_getN(3);
   @$pb.TagNumber(4)
-  set reverse($59.BoolValue v) { setField(4, v); }
+  set reverse($58.BoolValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasReverse() => $_has(3);
   @$pb.TagNumber(4)
   void clearReverse() => clearField(4);
   @$pb.TagNumber(4)
-  $59.BoolValue ensureReverse() => $_ensure(3);
+  $58.BoolValue ensureReverse() => $_ensure(3);
 
   /// How many full running man cycles should the robot complete in place before starting to move
   /// with the desired velocity.
   @$pb.TagNumber(5)
-  $59.Int32Value get preMoveCycles => $_getN(4);
+  $58.Int32Value get preMoveCycles => $_getN(4);
   @$pb.TagNumber(5)
-  set preMoveCycles($59.Int32Value v) { setField(5, v); }
+  set preMoveCycles($58.Int32Value v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasPreMoveCycles() => $_has(4);
   @$pb.TagNumber(5)
   void clearPreMoveCycles() => clearField(5);
   @$pb.TagNumber(5)
-  $59.Int32Value ensurePreMoveCycles() => $_ensure(4);
+  $58.Int32Value ensurePreMoveCycles() => $_ensure(4);
 
   /// Do the move at some multiple of the dance cadence.
   @$pb.TagNumber(6)
-  $59.DoubleValue get speedMultiplier => $_getN(5);
+  $58.DoubleValue get speedMultiplier => $_getN(5);
   @$pb.TagNumber(6)
-  set speedMultiplier($59.DoubleValue v) { setField(6, v); }
+  set speedMultiplier($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasSpeedMultiplier() => $_has(5);
   @$pb.TagNumber(6)
   void clearSpeedMultiplier() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureSpeedMultiplier() => $_ensure(5);
+  $58.DoubleValue ensureSpeedMultiplier() => $_ensure(5);
 
   /// What fraction of the time to have feet on the ground.
   @$pb.TagNumber(7)
-  $59.DoubleValue get dutyCycle => $_getN(6);
+  $58.DoubleValue get dutyCycle => $_getN(6);
   @$pb.TagNumber(7)
-  set dutyCycle($59.DoubleValue v) { setField(7, v); }
+  set dutyCycle($58.DoubleValue v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasDutyCycle() => $_has(6);
   @$pb.TagNumber(7)
   void clearDutyCycle() => clearField(7);
   @$pb.TagNumber(7)
-  $59.DoubleValue ensureDutyCycle() => $_ensure(6);
+  $58.DoubleValue ensureDutyCycle() => $_ensure(6);
 
   /// How high to hold the center of mass above the ground on average.
   @$pb.TagNumber(8)
-  $59.DoubleValue get comHeight => $_getN(7);
+  $58.DoubleValue get comHeight => $_getN(7);
   @$pb.TagNumber(8)
-  set comHeight($59.DoubleValue v) { setField(8, v); }
+  set comHeight($58.DoubleValue v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasComHeight() => $_has(7);
   @$pb.TagNumber(8)
   void clearComHeight() => clearField(8);
   @$pb.TagNumber(8)
-  $59.DoubleValue ensureComHeight() => $_ensure(7);
+  $58.DoubleValue ensureComHeight() => $_ensure(7);
 }
 
 /// Parameters specific to Hop move.
 class HopParams extends $pb.GeneratedMessage {
   factory HopParams({
-    $61.Vec2Value? velocity,
-    $59.DoubleValue? yawRate,
-    $59.DoubleValue? standTime,
+    $60.Vec2Value? velocity,
+    $58.DoubleValue? yawRate,
+    $58.DoubleValue? standTime,
   }) {
     final $result = create();
     if (velocity != null) {
@@ -1470,9 +1470,9 @@ class HopParams extends $pb.GeneratedMessage {
   factory HopParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HopParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.Vec2Value>(1, _omitFieldNames ? '' : 'velocity', subBuilder: $61.Vec2Value.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'yawRate', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'standTime', subBuilder: $59.DoubleValue.create)
+    ..aOM<$60.Vec2Value>(1, _omitFieldNames ? '' : 'velocity', subBuilder: $60.Vec2Value.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'yawRate', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'standTime', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1499,39 +1499,39 @@ class HopParams extends $pb.GeneratedMessage {
 
   /// The velocity of the hop gait (X is forward; y is left)[m/s].
   @$pb.TagNumber(1)
-  $61.Vec2Value get velocity => $_getN(0);
+  $60.Vec2Value get velocity => $_getN(0);
   @$pb.TagNumber(1)
-  set velocity($61.Vec2Value v) { setField(1, v); }
+  set velocity($60.Vec2Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasVelocity() => $_has(0);
   @$pb.TagNumber(1)
   void clearVelocity() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec2Value ensureVelocity() => $_ensure(0);
+  $60.Vec2Value ensureVelocity() => $_ensure(0);
 
   /// How fast the hop gait should turn [rad/s].
   @$pb.TagNumber(2)
-  $59.DoubleValue get yawRate => $_getN(1);
+  $58.DoubleValue get yawRate => $_getN(1);
   @$pb.TagNumber(2)
-  set yawRate($59.DoubleValue v) { setField(2, v); }
+  set yawRate($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasYawRate() => $_has(1);
   @$pb.TagNumber(2)
   void clearYawRate() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureYawRate() => $_ensure(1);
+  $58.DoubleValue ensureYawRate() => $_ensure(1);
 
   /// How long the robot should stand in between each hop.
   @$pb.TagNumber(3)
-  $59.DoubleValue get standTime => $_getN(2);
+  $58.DoubleValue get standTime => $_getN(2);
   @$pb.TagNumber(3)
-  set standTime($59.DoubleValue v) { setField(3, v); }
+  set standTime($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasStandTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearStandTime() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureStandTime() => $_ensure(2);
+  $58.DoubleValue ensureStandTime() => $_ensure(2);
 }
 
 /// Parameters specific to the RandomRotate move.
@@ -1539,9 +1539,9 @@ class RandomRotateParams extends $pb.GeneratedMessage {
   factory RandomRotateParams({
     EulerZYXValue? amplitude,
     EulerRateZYXValue? speed,
-    $59.DoubleValue? speedVariation,
-    $59.Int32Value? numSpeedTiers,
-    $59.DoubleValue? tierVariation,
+    $58.DoubleValue? speedVariation,
+    $58.Int32Value? numSpeedTiers,
+    $58.DoubleValue? tierVariation,
   }) {
     final $result = create();
     if (amplitude != null) {
@@ -1568,9 +1568,9 @@ class RandomRotateParams extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RandomRotateParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..aOM<EulerZYXValue>(1, _omitFieldNames ? '' : 'amplitude', subBuilder: EulerZYXValue.create)
     ..aOM<EulerRateZYXValue>(2, _omitFieldNames ? '' : 'speed', subBuilder: EulerRateZYXValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'speedVariation', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.Int32Value>(4, _omitFieldNames ? '' : 'numSpeedTiers', subBuilder: $59.Int32Value.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'tierVariation', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'speedVariation', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.Int32Value>(4, _omitFieldNames ? '' : 'numSpeedTiers', subBuilder: $58.Int32Value.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'tierVariation', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1622,50 +1622,50 @@ class RandomRotateParams extends $pb.GeneratedMessage {
   /// The amount of variation allowed in the speed of the random rotations [m/s]. Note,
   /// this must be a positive value.
   @$pb.TagNumber(3)
-  $59.DoubleValue get speedVariation => $_getN(2);
+  $58.DoubleValue get speedVariation => $_getN(2);
   @$pb.TagNumber(3)
-  set speedVariation($59.DoubleValue v) { setField(3, v); }
+  set speedVariation($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasSpeedVariation() => $_has(2);
   @$pb.TagNumber(3)
   void clearSpeedVariation() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureSpeedVariation() => $_ensure(2);
+  $58.DoubleValue ensureSpeedVariation() => $_ensure(2);
 
   /// The specified speed values will be split into this many number of tiers between
   /// the bounds of [speed - speed_variation, speed + speed variation]. Then a tier (with
-  /// a specified speed) will be randomly choosen and performed for each axis.
+  /// a specified speed) will be randomly chosen and performed for each axis.
   @$pb.TagNumber(4)
-  $59.Int32Value get numSpeedTiers => $_getN(3);
+  $58.Int32Value get numSpeedTiers => $_getN(3);
   @$pb.TagNumber(4)
-  set numSpeedTiers($59.Int32Value v) { setField(4, v); }
+  set numSpeedTiers($58.Int32Value v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasNumSpeedTiers() => $_has(3);
   @$pb.TagNumber(4)
   void clearNumSpeedTiers() => clearField(4);
   @$pb.TagNumber(4)
-  $59.Int32Value ensureNumSpeedTiers() => $_ensure(3);
+  $58.Int32Value ensureNumSpeedTiers() => $_ensure(3);
 
-  /// How much can the output speed vary from the choosen tiered speed.
+  /// How much can the output speed vary from the chosen tiered speed.
   @$pb.TagNumber(5)
-  $59.DoubleValue get tierVariation => $_getN(4);
+  $58.DoubleValue get tierVariation => $_getN(4);
   @$pb.TagNumber(5)
-  set tierVariation($59.DoubleValue v) { setField(5, v); }
+  set tierVariation($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTierVariation() => $_has(4);
   @$pb.TagNumber(5)
   void clearTierVariation() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureTierVariation() => $_ensure(4);
+  $58.DoubleValue ensureTierVariation() => $_ensure(4);
 }
 
 /// Parameters for the robot's crawling gait.
 class CrawlParams extends $pb.GeneratedMessage {
   factory CrawlParams({
-    $59.DoubleValue? swingSlices,
-    $61.Vec2Value? velocity,
-    $59.DoubleValue? stanceWidth,
-    $59.DoubleValue? stanceLength,
+    $58.DoubleValue? swingSlices,
+    $60.Vec2Value? velocity,
+    $58.DoubleValue? stanceWidth,
+    $58.DoubleValue? stanceLength,
   }) {
     final $result = create();
     if (swingSlices != null) {
@@ -1687,10 +1687,10 @@ class CrawlParams extends $pb.GeneratedMessage {
   factory CrawlParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CrawlParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'swingSlices', subBuilder: $59.DoubleValue.create)
-    ..aOM<$61.Vec2Value>(2, _omitFieldNames ? '' : 'velocity', subBuilder: $61.Vec2Value.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'stanceWidth', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'stanceLength', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'swingSlices', subBuilder: $58.DoubleValue.create)
+    ..aOM<$60.Vec2Value>(2, _omitFieldNames ? '' : 'velocity', subBuilder: $60.Vec2Value.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'stanceWidth', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'stanceLength', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1718,60 +1718,60 @@ class CrawlParams extends $pb.GeneratedMessage {
   /// The number of slices (beats/sub-beats) the duration of a leg swing in the crawl gait should
   /// be.
   @$pb.TagNumber(1)
-  $59.DoubleValue get swingSlices => $_getN(0);
+  $58.DoubleValue get swingSlices => $_getN(0);
   @$pb.TagNumber(1)
-  set swingSlices($59.DoubleValue v) { setField(1, v); }
+  set swingSlices($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSwingSlices() => $_has(0);
   @$pb.TagNumber(1)
   void clearSwingSlices() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureSwingSlices() => $_ensure(0);
+  $58.DoubleValue ensureSwingSlices() => $_ensure(0);
 
   /// The speed at which we should crawl [m/s].  X is forward.  Y is left.
   @$pb.TagNumber(2)
-  $61.Vec2Value get velocity => $_getN(1);
+  $60.Vec2Value get velocity => $_getN(1);
   @$pb.TagNumber(2)
-  set velocity($61.Vec2Value v) { setField(2, v); }
+  set velocity($60.Vec2Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasVelocity() => $_has(1);
   @$pb.TagNumber(2)
   void clearVelocity() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec2Value ensureVelocity() => $_ensure(1);
+  $60.Vec2Value ensureVelocity() => $_ensure(1);
 
   /// The distance between the robot's left and right feet [m].
   @$pb.TagNumber(3)
-  $59.DoubleValue get stanceWidth => $_getN(2);
+  $58.DoubleValue get stanceWidth => $_getN(2);
   @$pb.TagNumber(3)
-  set stanceWidth($59.DoubleValue v) { setField(3, v); }
+  set stanceWidth($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasStanceWidth() => $_has(2);
   @$pb.TagNumber(3)
   void clearStanceWidth() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureStanceWidth() => $_ensure(2);
+  $58.DoubleValue ensureStanceWidth() => $_ensure(2);
 
   /// The distance between the robot's front and back feet [m].
   @$pb.TagNumber(4)
-  $59.DoubleValue get stanceLength => $_getN(3);
+  $58.DoubleValue get stanceLength => $_getN(3);
   @$pb.TagNumber(4)
-  set stanceLength($59.DoubleValue v) { setField(4, v); }
+  set stanceLength($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasStanceLength() => $_has(3);
   @$pb.TagNumber(4)
   void clearStanceLength() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureStanceLength() => $_ensure(3);
+  $58.DoubleValue ensureStanceLength() => $_ensure(3);
 }
 
 class GotoParams extends $pb.GeneratedMessage {
   factory GotoParams({
-    $61.Vec2Value? absolutePosition,
-    $59.DoubleValue? absoluteYaw,
-    $59.DoubleValue? stepPositionStiffness,
-    $59.DoubleValue? dutyCycle,
-    $59.BoolValue? linkToNext,
+    $60.Vec2Value? absolutePosition,
+    $58.DoubleValue? absoluteYaw,
+    $58.DoubleValue? stepPositionStiffness,
+    $58.DoubleValue? dutyCycle,
+    $58.BoolValue? linkToNext,
   }) {
     final $result = create();
     if (absolutePosition != null) {
@@ -1796,11 +1796,11 @@ class GotoParams extends $pb.GeneratedMessage {
   factory GotoParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GotoParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.Vec2Value>(1, _omitFieldNames ? '' : 'absolutePosition', subBuilder: $61.Vec2Value.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'absoluteYaw', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'stepPositionStiffness', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'dutyCycle', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(5, _omitFieldNames ? '' : 'linkToNext', subBuilder: $59.BoolValue.create)
+    ..aOM<$60.Vec2Value>(1, _omitFieldNames ? '' : 'absolutePosition', subBuilder: $60.Vec2Value.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'absoluteYaw', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'stepPositionStiffness', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'dutyCycle', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(5, _omitFieldNames ? '' : 'linkToNext', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1826,68 +1826,68 @@ class GotoParams extends $pb.GeneratedMessage {
   static GotoParams? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $61.Vec2Value get absolutePosition => $_getN(0);
+  $60.Vec2Value get absolutePosition => $_getN(0);
   @$pb.TagNumber(1)
-  set absolutePosition($61.Vec2Value v) { setField(1, v); }
+  set absolutePosition($60.Vec2Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAbsolutePosition() => $_has(0);
   @$pb.TagNumber(1)
   void clearAbsolutePosition() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec2Value ensureAbsolutePosition() => $_ensure(0);
+  $60.Vec2Value ensureAbsolutePosition() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get absoluteYaw => $_getN(1);
+  $58.DoubleValue get absoluteYaw => $_getN(1);
   @$pb.TagNumber(2)
-  set absoluteYaw($59.DoubleValue v) { setField(2, v); }
+  set absoluteYaw($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAbsoluteYaw() => $_has(1);
   @$pb.TagNumber(2)
   void clearAbsoluteYaw() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureAbsoluteYaw() => $_ensure(1);
+  $58.DoubleValue ensureAbsoluteYaw() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get stepPositionStiffness => $_getN(2);
+  $58.DoubleValue get stepPositionStiffness => $_getN(2);
   @$pb.TagNumber(3)
-  set stepPositionStiffness($59.DoubleValue v) { setField(3, v); }
+  set stepPositionStiffness($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasStepPositionStiffness() => $_has(2);
   @$pb.TagNumber(3)
   void clearStepPositionStiffness() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureStepPositionStiffness() => $_ensure(2);
+  $58.DoubleValue ensureStepPositionStiffness() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $59.DoubleValue get dutyCycle => $_getN(3);
+  $58.DoubleValue get dutyCycle => $_getN(3);
   @$pb.TagNumber(4)
-  set dutyCycle($59.DoubleValue v) { setField(4, v); }
+  set dutyCycle($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasDutyCycle() => $_has(3);
   @$pb.TagNumber(4)
   void clearDutyCycle() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureDutyCycle() => $_ensure(3);
+  $58.DoubleValue ensureDutyCycle() => $_ensure(3);
 
   /// Should we combine with the next move into a smooth trajectory.
   @$pb.TagNumber(5)
-  $59.BoolValue get linkToNext => $_getN(4);
+  $58.BoolValue get linkToNext => $_getN(4);
   @$pb.TagNumber(5)
-  set linkToNext($59.BoolValue v) { setField(5, v); }
+  set linkToNext($58.BoolValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasLinkToNext() => $_has(4);
   @$pb.TagNumber(5)
   void clearLinkToNext() => clearField(5);
   @$pb.TagNumber(5)
-  $59.BoolValue ensureLinkToNext() => $_ensure(4);
+  $58.BoolValue ensureLinkToNext() => $_ensure(4);
 }
 
 /// Parameters for the Bourree move.
 class BourreeParams extends $pb.GeneratedMessage {
   factory BourreeParams({
-    $61.Vec2Value? velocity,
-    $59.DoubleValue? yawRate,
-    $59.DoubleValue? stanceLength,
+    $60.Vec2Value? velocity,
+    $58.DoubleValue? yawRate,
+    $58.DoubleValue? stanceLength,
   }) {
     final $result = create();
     if (velocity != null) {
@@ -1906,9 +1906,9 @@ class BourreeParams extends $pb.GeneratedMessage {
   factory BourreeParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BourreeParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.Vec2Value>(1, _omitFieldNames ? '' : 'velocity', subBuilder: $61.Vec2Value.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'yawRate', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'stanceLength', subBuilder: $59.DoubleValue.create)
+    ..aOM<$60.Vec2Value>(1, _omitFieldNames ? '' : 'velocity', subBuilder: $60.Vec2Value.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'yawRate', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'stanceLength', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1935,39 +1935,39 @@ class BourreeParams extends $pb.GeneratedMessage {
 
   /// The speed at which we should bourree [m/s].  X is forward.  Y is left.
   @$pb.TagNumber(1)
-  $61.Vec2Value get velocity => $_getN(0);
+  $60.Vec2Value get velocity => $_getN(0);
   @$pb.TagNumber(1)
-  set velocity($61.Vec2Value v) { setField(1, v); }
+  set velocity($60.Vec2Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasVelocity() => $_has(0);
   @$pb.TagNumber(1)
   void clearVelocity() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec2Value ensureVelocity() => $_ensure(0);
+  $60.Vec2Value ensureVelocity() => $_ensure(0);
 
   /// How fast the bourree should turn [rad/s].
   @$pb.TagNumber(2)
-  $59.DoubleValue get yawRate => $_getN(1);
+  $58.DoubleValue get yawRate => $_getN(1);
   @$pb.TagNumber(2)
-  set yawRate($59.DoubleValue v) { setField(2, v); }
+  set yawRate($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasYawRate() => $_has(1);
   @$pb.TagNumber(2)
   void clearYawRate() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureYawRate() => $_ensure(1);
+  $58.DoubleValue ensureYawRate() => $_ensure(1);
 
   /// How far apart front and hind feet should be. [m]
   @$pb.TagNumber(3)
-  $59.DoubleValue get stanceLength => $_getN(2);
+  $58.DoubleValue get stanceLength => $_getN(2);
   @$pb.TagNumber(3)
-  set stanceLength($59.DoubleValue v) { setField(3, v); }
+  set stanceLength($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasStanceLength() => $_has(2);
   @$pb.TagNumber(3)
   void clearStanceLength() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureStanceLength() => $_ensure(2);
+  $58.DoubleValue ensureStanceLength() => $_ensure(2);
 }
 
 /// Parameters for moves that can go to either side.
@@ -2024,20 +2024,20 @@ class SideParams extends $pb.GeneratedMessage {
 /// Parameters for the robot making a jump.
 class JumpParams extends $pb.GeneratedMessage {
   factory JumpParams({
-    $59.DoubleValue? yaw,
-    $59.DoubleValue? flightSlices,
-    $59.DoubleValue? stanceWidth,
-    $59.DoubleValue? stanceLength,
+    $58.DoubleValue? yaw,
+    $58.DoubleValue? flightSlices,
+    $58.DoubleValue? stanceWidth,
+    $58.DoubleValue? stanceLength,
   @$core.Deprecated('This field is deprecated.')
-    $59.BoolValue? absolute,
-    $61.Vec2Value? translation,
-    $59.DoubleValue? splitFraction,
+    $58.BoolValue? absolute,
+    $60.Vec2Value? translation,
+    $58.DoubleValue? splitFraction,
     JumpParams_Lead? leadLegPair,
-    $59.DoubleValue? absoluteYaw,
-    $61.Vec2Value? absoluteTranslation,
-    $59.BoolValue? yawIsAbsolute,
-    $59.BoolValue? translationIsAbsolute,
-    $59.DoubleValue? swingHeight,
+    $58.DoubleValue? absoluteYaw,
+    $60.Vec2Value? absoluteTranslation,
+    $58.BoolValue? yawIsAbsolute,
+    $58.BoolValue? translationIsAbsolute,
+    $58.DoubleValue? swingHeight,
   }) {
     final $result = create();
     if (yaw != null) {
@@ -2087,19 +2087,19 @@ class JumpParams extends $pb.GeneratedMessage {
   factory JumpParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JumpParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'yaw', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'flightSlices', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'stanceWidth', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'stanceLength', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(5, _omitFieldNames ? '' : 'absolute', subBuilder: $59.BoolValue.create)
-    ..aOM<$61.Vec2Value>(6, _omitFieldNames ? '' : 'translation', subBuilder: $61.Vec2Value.create)
-    ..aOM<$59.DoubleValue>(7, _omitFieldNames ? '' : 'splitFraction', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'yaw', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'flightSlices', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'stanceWidth', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'stanceLength', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(5, _omitFieldNames ? '' : 'absolute', subBuilder: $58.BoolValue.create)
+    ..aOM<$60.Vec2Value>(6, _omitFieldNames ? '' : 'translation', subBuilder: $60.Vec2Value.create)
+    ..aOM<$58.DoubleValue>(7, _omitFieldNames ? '' : 'splitFraction', subBuilder: $58.DoubleValue.create)
     ..e<JumpParams_Lead>(8, _omitFieldNames ? '' : 'leadLegPair', $pb.PbFieldType.OE, defaultOrMaker: JumpParams_Lead.LEAD_UNKNOWN, valueOf: JumpParams_Lead.valueOf, enumValues: JumpParams_Lead.values)
-    ..aOM<$59.DoubleValue>(9, _omitFieldNames ? '' : 'absoluteYaw', subBuilder: $59.DoubleValue.create)
-    ..aOM<$61.Vec2Value>(10, _omitFieldNames ? '' : 'absoluteTranslation', subBuilder: $61.Vec2Value.create)
-    ..aOM<$59.BoolValue>(11, _omitFieldNames ? '' : 'yawIsAbsolute', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(12, _omitFieldNames ? '' : 'translationIsAbsolute', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.DoubleValue>(13, _omitFieldNames ? '' : 'swingHeight', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(9, _omitFieldNames ? '' : 'absoluteYaw', subBuilder: $58.DoubleValue.create)
+    ..aOM<$60.Vec2Value>(10, _omitFieldNames ? '' : 'absoluteTranslation', subBuilder: $60.Vec2Value.create)
+    ..aOM<$58.BoolValue>(11, _omitFieldNames ? '' : 'yawIsAbsolute', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(12, _omitFieldNames ? '' : 'translationIsAbsolute', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.DoubleValue>(13, _omitFieldNames ? '' : 'swingHeight', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -2126,51 +2126,51 @@ class JumpParams extends $pb.GeneratedMessage {
 
   /// The amount in radians that the robot will turn while in the air.
   @$pb.TagNumber(1)
-  $59.DoubleValue get yaw => $_getN(0);
+  $58.DoubleValue get yaw => $_getN(0);
   @$pb.TagNumber(1)
-  set yaw($59.DoubleValue v) { setField(1, v); }
+  set yaw($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasYaw() => $_has(0);
   @$pb.TagNumber(1)
   void clearYaw() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureYaw() => $_ensure(0);
+  $58.DoubleValue ensureYaw() => $_ensure(0);
 
   /// The amount of time in slices (beats) that the robot will be in the air.
   @$pb.TagNumber(2)
-  $59.DoubleValue get flightSlices => $_getN(1);
+  $58.DoubleValue get flightSlices => $_getN(1);
   @$pb.TagNumber(2)
-  set flightSlices($59.DoubleValue v) { setField(2, v); }
+  set flightSlices($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFlightSlices() => $_has(1);
   @$pb.TagNumber(2)
   void clearFlightSlices() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureFlightSlices() => $_ensure(1);
+  $58.DoubleValue ensureFlightSlices() => $_ensure(1);
 
   /// The distance between the robot's left and right feet [m].
   @$pb.TagNumber(3)
-  $59.DoubleValue get stanceWidth => $_getN(2);
+  $58.DoubleValue get stanceWidth => $_getN(2);
   @$pb.TagNumber(3)
-  set stanceWidth($59.DoubleValue v) { setField(3, v); }
+  set stanceWidth($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasStanceWidth() => $_has(2);
   @$pb.TagNumber(3)
   void clearStanceWidth() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureStanceWidth() => $_ensure(2);
+  $58.DoubleValue ensureStanceWidth() => $_ensure(2);
 
   /// The distance between the robot's front and back feet [m].
   @$pb.TagNumber(4)
-  $59.DoubleValue get stanceLength => $_getN(3);
+  $58.DoubleValue get stanceLength => $_getN(3);
   @$pb.TagNumber(4)
-  set stanceLength($59.DoubleValue v) { setField(4, v); }
+  set stanceLength($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasStanceLength() => $_has(3);
   @$pb.TagNumber(4)
   void clearStanceLength() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureStanceLength() => $_ensure(3);
+  $58.DoubleValue ensureStanceLength() => $_ensure(3);
 
   /// *** Deprecation Warning ***
   /// DEPRECATED as of 3.0.0: The absolute field has been deprecated and split into the
@@ -2178,10 +2178,10 @@ class JumpParams extends $pb.GeneratedMessage {
   /// and moved to 'reserved' in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
-  $59.BoolValue get absolute => $_getN(4);
+  $58.BoolValue get absolute => $_getN(4);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
-  set absolute($59.BoolValue v) { setField(5, v); }
+  set absolute($58.BoolValue v) { setField(5, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $core.bool hasAbsolute() => $_has(4);
@@ -2190,32 +2190,32 @@ class JumpParams extends $pb.GeneratedMessage {
   void clearAbsolute() => clearField(5);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
-  $59.BoolValue ensureAbsolute() => $_ensure(4);
+  $58.BoolValue ensureAbsolute() => $_ensure(4);
 
   /// How far the robot should jump [m].
   @$pb.TagNumber(6)
-  $61.Vec2Value get translation => $_getN(5);
+  $60.Vec2Value get translation => $_getN(5);
   @$pb.TagNumber(6)
-  set translation($61.Vec2Value v) { setField(6, v); }
+  set translation($60.Vec2Value v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasTranslation() => $_has(5);
   @$pb.TagNumber(6)
   void clearTranslation() => clearField(6);
   @$pb.TagNumber(6)
-  $61.Vec2Value ensureTranslation() => $_ensure(5);
+  $60.Vec2Value ensureTranslation() => $_ensure(5);
 
   /// How much it should lo/td the first pair of lets ahead of the other pair.  In fraction of
   /// flight time.
   @$pb.TagNumber(7)
-  $59.DoubleValue get splitFraction => $_getN(6);
+  $58.DoubleValue get splitFraction => $_getN(6);
   @$pb.TagNumber(7)
-  set splitFraction($59.DoubleValue v) { setField(7, v); }
+  set splitFraction($58.DoubleValue v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasSplitFraction() => $_has(6);
   @$pb.TagNumber(7)
   void clearSplitFraction() => clearField(7);
   @$pb.TagNumber(7)
-  $59.DoubleValue ensureSplitFraction() => $_ensure(6);
+  $58.DoubleValue ensureSplitFraction() => $_ensure(6);
 
   @$pb.TagNumber(8)
   JumpParams_Lead get leadLegPair => $_getN(7);
@@ -2229,80 +2229,80 @@ class JumpParams extends $pb.GeneratedMessage {
   /// The direction the robot should face upon landing relative to pose at the start of the dance.
   /// [rad]
   @$pb.TagNumber(9)
-  $59.DoubleValue get absoluteYaw => $_getN(8);
+  $58.DoubleValue get absoluteYaw => $_getN(8);
   @$pb.TagNumber(9)
-  set absoluteYaw($59.DoubleValue v) { setField(9, v); }
+  set absoluteYaw($58.DoubleValue v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasAbsoluteYaw() => $_has(8);
   @$pb.TagNumber(9)
   void clearAbsoluteYaw() => clearField(9);
   @$pb.TagNumber(9)
-  $59.DoubleValue ensureAbsoluteYaw() => $_ensure(8);
+  $58.DoubleValue ensureAbsoluteYaw() => $_ensure(8);
 
   /// Where the robot should land relative to the pose at the start of the dance. [m]
   @$pb.TagNumber(10)
-  $61.Vec2Value get absoluteTranslation => $_getN(9);
+  $60.Vec2Value get absoluteTranslation => $_getN(9);
   @$pb.TagNumber(10)
-  set absoluteTranslation($61.Vec2Value v) { setField(10, v); }
+  set absoluteTranslation($60.Vec2Value v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasAbsoluteTranslation() => $_has(9);
   @$pb.TagNumber(10)
   void clearAbsoluteTranslation() => clearField(10);
   @$pb.TagNumber(10)
-  $61.Vec2Value ensureAbsoluteTranslation() => $_ensure(9);
+  $60.Vec2Value ensureAbsoluteTranslation() => $_ensure(9);
 
   /// Should we turn to a yaw in choreography sequence frame?
   @$pb.TagNumber(11)
-  $59.BoolValue get yawIsAbsolute => $_getN(10);
+  $58.BoolValue get yawIsAbsolute => $_getN(10);
   @$pb.TagNumber(11)
-  set yawIsAbsolute($59.BoolValue v) { setField(11, v); }
+  set yawIsAbsolute($58.BoolValue v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasYawIsAbsolute() => $_has(10);
   @$pb.TagNumber(11)
   void clearYawIsAbsolute() => clearField(11);
   @$pb.TagNumber(11)
-  $59.BoolValue ensureYawIsAbsolute() => $_ensure(10);
+  $58.BoolValue ensureYawIsAbsolute() => $_ensure(10);
 
   /// Should we translate in choreography sequence frame?
   @$pb.TagNumber(12)
-  $59.BoolValue get translationIsAbsolute => $_getN(11);
+  $58.BoolValue get translationIsAbsolute => $_getN(11);
   @$pb.TagNumber(12)
-  set translationIsAbsolute($59.BoolValue v) { setField(12, v); }
+  set translationIsAbsolute($58.BoolValue v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasTranslationIsAbsolute() => $_has(11);
   @$pb.TagNumber(12)
   void clearTranslationIsAbsolute() => clearField(12);
   @$pb.TagNumber(12)
-  $59.BoolValue ensureTranslationIsAbsolute() => $_ensure(11);
+  $58.BoolValue ensureTranslationIsAbsolute() => $_ensure(11);
 
   @$pb.TagNumber(13)
-  $59.DoubleValue get swingHeight => $_getN(12);
+  $58.DoubleValue get swingHeight => $_getN(12);
   @$pb.TagNumber(13)
-  set swingHeight($59.DoubleValue v) { setField(13, v); }
+  set swingHeight($58.DoubleValue v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasSwingHeight() => $_has(12);
   @$pb.TagNumber(13)
   void clearSwingHeight() => clearField(13);
   @$pb.TagNumber(13)
-  $59.DoubleValue ensureSwingHeight() => $_ensure(12);
+  $58.DoubleValue ensureSwingHeight() => $_ensure(12);
 }
 
 class StepParams extends $pb.GeneratedMessage {
   factory StepParams({
     Leg? foot,
-    $61.Vec2Value? offset,
+    $60.Vec2Value? offset,
     Leg? secondFoot,
   @$core.Deprecated('This field is deprecated.')
-    $59.BoolValue? mirror,
-    $61.Vec3Value? swingWaypoint,
-    $59.DoubleValue? swingHeight,
-    $59.DoubleValue? liftoffVelocity,
-    $59.DoubleValue? touchdownVelocity,
-    $59.BoolValue? mirrorX,
-    $59.BoolValue? mirrorY,
-    $59.DoubleValue? waypointDwell,
-    $59.BoolValue? touch,
-    $61.Vec2Value? touchOffset,
+    $58.BoolValue? mirror,
+    $60.Vec3Value? swingWaypoint,
+    $58.DoubleValue? swingHeight,
+    $58.DoubleValue? liftoffVelocity,
+    $58.DoubleValue? touchdownVelocity,
+    $58.BoolValue? mirrorX,
+    $58.BoolValue? mirrorY,
+    $58.DoubleValue? waypointDwell,
+    $58.BoolValue? touch,
+    $60.Vec2Value? touchOffset,
   }) {
     final $result = create();
     if (foot != null) {
@@ -2353,18 +2353,18 @@ class StepParams extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StepParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..e<Leg>(1, _omitFieldNames ? '' : 'foot', $pb.PbFieldType.OE, defaultOrMaker: Leg.LEG_UNKNOWN, valueOf: Leg.valueOf, enumValues: Leg.values)
-    ..aOM<$61.Vec2Value>(2, _omitFieldNames ? '' : 'offset', subBuilder: $61.Vec2Value.create)
+    ..aOM<$60.Vec2Value>(2, _omitFieldNames ? '' : 'offset', subBuilder: $60.Vec2Value.create)
     ..e<Leg>(3, _omitFieldNames ? '' : 'secondFoot', $pb.PbFieldType.OE, defaultOrMaker: Leg.LEG_UNKNOWN, valueOf: Leg.valueOf, enumValues: Leg.values)
-    ..aOM<$59.BoolValue>(4, _omitFieldNames ? '' : 'mirror', subBuilder: $59.BoolValue.create)
-    ..aOM<$61.Vec3Value>(5, _omitFieldNames ? '' : 'swingWaypoint', subBuilder: $61.Vec3Value.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'swingHeight', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(7, _omitFieldNames ? '' : 'liftoffVelocity', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(8, _omitFieldNames ? '' : 'touchdownVelocity', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(9, _omitFieldNames ? '' : 'mirrorX', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(10, _omitFieldNames ? '' : 'mirrorY', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.DoubleValue>(11, _omitFieldNames ? '' : 'waypointDwell', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(12, _omitFieldNames ? '' : 'touch', subBuilder: $59.BoolValue.create)
-    ..aOM<$61.Vec2Value>(13, _omitFieldNames ? '' : 'touchOffset', subBuilder: $61.Vec2Value.create)
+    ..aOM<$58.BoolValue>(4, _omitFieldNames ? '' : 'mirror', subBuilder: $58.BoolValue.create)
+    ..aOM<$60.Vec3Value>(5, _omitFieldNames ? '' : 'swingWaypoint', subBuilder: $60.Vec3Value.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'swingHeight', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(7, _omitFieldNames ? '' : 'liftoffVelocity', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(8, _omitFieldNames ? '' : 'touchdownVelocity', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(9, _omitFieldNames ? '' : 'mirrorX', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(10, _omitFieldNames ? '' : 'mirrorY', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.DoubleValue>(11, _omitFieldNames ? '' : 'waypointDwell', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(12, _omitFieldNames ? '' : 'touch', subBuilder: $58.BoolValue.create)
+    ..aOM<$60.Vec2Value>(13, _omitFieldNames ? '' : 'touchOffset', subBuilder: $60.Vec2Value.create)
     ..hasRequiredFields = false
   ;
 
@@ -2401,15 +2401,15 @@ class StepParams extends $pb.GeneratedMessage {
 
   /// Offset of the foot from it's nominal position, in meters.
   @$pb.TagNumber(2)
-  $61.Vec2Value get offset => $_getN(1);
+  $60.Vec2Value get offset => $_getN(1);
   @$pb.TagNumber(2)
-  set offset($61.Vec2Value v) { setField(2, v); }
+  set offset($60.Vec2Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasOffset() => $_has(1);
   @$pb.TagNumber(2)
   void clearOffset() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec2Value ensureOffset() => $_ensure(1);
+  $60.Vec2Value ensureOffset() => $_ensure(1);
 
   /// Should we use a second foot?  (None = 0, FL = 1, FR = 2, HL = 3, HR = 4).
   @$pb.TagNumber(3)
@@ -2427,10 +2427,10 @@ class StepParams extends $pb.GeneratedMessage {
   /// The following field will be deprecated and moved to 'reserved' in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $59.BoolValue get mirror => $_getN(3);
+  $58.BoolValue get mirror => $_getN(3);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  set mirror($59.BoolValue v) { setField(4, v); }
+  set mirror($58.BoolValue v) { setField(4, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.bool hasMirror() => $_has(3);
@@ -2439,123 +2439,123 @@ class StepParams extends $pb.GeneratedMessage {
   void clearMirror() => clearField(4);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $59.BoolValue ensureMirror() => $_ensure(3);
+  $58.BoolValue ensureMirror() => $_ensure(3);
 
   /// Where should the swing foot go?  This vector should be described in a gravity-aligned body
   /// frame relative to the centerpoint of the swing. If set to {0,0,0}, uses the default swing
   /// path.
   @$pb.TagNumber(5)
-  $61.Vec3Value get swingWaypoint => $_getN(4);
+  $60.Vec3Value get swingWaypoint => $_getN(4);
   @$pb.TagNumber(5)
-  set swingWaypoint($61.Vec3Value v) { setField(5, v); }
+  set swingWaypoint($60.Vec3Value v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasSwingWaypoint() => $_has(4);
   @$pb.TagNumber(5)
   void clearSwingWaypoint() => clearField(5);
   @$pb.TagNumber(5)
-  $61.Vec3Value ensureSwingWaypoint() => $_ensure(4);
+  $60.Vec3Value ensureSwingWaypoint() => $_ensure(4);
 
   /// Parameters for altering swing.
   /// Note that these will have no effect if swing_waypoint is specified. As well, a zero (or
   /// nearly zero) value will be considered as an unspecified parameter.
   @$pb.TagNumber(6)
-  $59.DoubleValue get swingHeight => $_getN(5);
+  $58.DoubleValue get swingHeight => $_getN(5);
   @$pb.TagNumber(6)
-  set swingHeight($59.DoubleValue v) { setField(6, v); }
+  set swingHeight($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasSwingHeight() => $_has(5);
   @$pb.TagNumber(6)
   void clearSwingHeight() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureSwingHeight() => $_ensure(5);
+  $58.DoubleValue ensureSwingHeight() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $59.DoubleValue get liftoffVelocity => $_getN(6);
+  $58.DoubleValue get liftoffVelocity => $_getN(6);
   @$pb.TagNumber(7)
-  set liftoffVelocity($59.DoubleValue v) { setField(7, v); }
+  set liftoffVelocity($58.DoubleValue v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasLiftoffVelocity() => $_has(6);
   @$pb.TagNumber(7)
   void clearLiftoffVelocity() => clearField(7);
   @$pb.TagNumber(7)
-  $59.DoubleValue ensureLiftoffVelocity() => $_ensure(6);
+  $58.DoubleValue ensureLiftoffVelocity() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $59.DoubleValue get touchdownVelocity => $_getN(7);
+  $58.DoubleValue get touchdownVelocity => $_getN(7);
   @$pb.TagNumber(8)
-  set touchdownVelocity($59.DoubleValue v) { setField(8, v); }
+  set touchdownVelocity($58.DoubleValue v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasTouchdownVelocity() => $_has(7);
   @$pb.TagNumber(8)
   void clearTouchdownVelocity() => clearField(8);
   @$pb.TagNumber(8)
-  $59.DoubleValue ensureTouchdownVelocity() => $_ensure(7);
+  $58.DoubleValue ensureTouchdownVelocity() => $_ensure(7);
 
   /// Should we mirror the offset for the second foot?
   /// Ignored if second_foot is set to None
   @$pb.TagNumber(9)
-  $59.BoolValue get mirrorX => $_getN(8);
+  $58.BoolValue get mirrorX => $_getN(8);
   @$pb.TagNumber(9)
-  set mirrorX($59.BoolValue v) { setField(9, v); }
+  set mirrorX($58.BoolValue v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasMirrorX() => $_has(8);
   @$pb.TagNumber(9)
   void clearMirrorX() => clearField(9);
   @$pb.TagNumber(9)
-  $59.BoolValue ensureMirrorX() => $_ensure(8);
+  $58.BoolValue ensureMirrorX() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $59.BoolValue get mirrorY => $_getN(9);
+  $58.BoolValue get mirrorY => $_getN(9);
   @$pb.TagNumber(10)
-  set mirrorY($59.BoolValue v) { setField(10, v); }
+  set mirrorY($58.BoolValue v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasMirrorY() => $_has(9);
   @$pb.TagNumber(10)
   void clearMirrorY() => clearField(10);
   @$pb.TagNumber(10)
-  $59.BoolValue ensureMirrorY() => $_ensure(9);
+  $58.BoolValue ensureMirrorY() => $_ensure(9);
 
   /// What fraction of the swing should be spent near the waypoint.
   @$pb.TagNumber(11)
-  $59.DoubleValue get waypointDwell => $_getN(10);
+  $58.DoubleValue get waypointDwell => $_getN(10);
   @$pb.TagNumber(11)
-  set waypointDwell($59.DoubleValue v) { setField(11, v); }
+  set waypointDwell($58.DoubleValue v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasWaypointDwell() => $_has(10);
   @$pb.TagNumber(11)
   void clearWaypointDwell() => clearField(11);
   @$pb.TagNumber(11)
-  $59.DoubleValue ensureWaypointDwell() => $_ensure(10);
+  $58.DoubleValue ensureWaypointDwell() => $_ensure(10);
 
   /// Should we touch the ground and come back rather than stepping to a new place?
   @$pb.TagNumber(12)
-  $59.BoolValue get touch => $_getN(11);
+  $58.BoolValue get touch => $_getN(11);
   @$pb.TagNumber(12)
-  set touch($59.BoolValue v) { setField(12, v); }
+  set touch($58.BoolValue v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasTouch() => $_has(11);
   @$pb.TagNumber(12)
   void clearTouch() => clearField(12);
   @$pb.TagNumber(12)
-  $59.BoolValue ensureTouch() => $_ensure(11);
+  $58.BoolValue ensureTouch() => $_ensure(11);
 
   @$pb.TagNumber(13)
-  $61.Vec2Value get touchOffset => $_getN(12);
+  $60.Vec2Value get touchOffset => $_getN(12);
   @$pb.TagNumber(13)
-  set touchOffset($61.Vec2Value v) { setField(13, v); }
+  set touchOffset($60.Vec2Value v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasTouchOffset() => $_has(12);
   @$pb.TagNumber(13)
   void clearTouchOffset() => clearField(13);
   @$pb.TagNumber(13)
-  $61.Vec2Value ensureTouchOffset() => $_ensure(12);
+  $60.Vec2Value ensureTouchOffset() => $_ensure(12);
 }
 
 /// Parameters for the robot rotating the body.
 class RotateBodyParams extends $pb.GeneratedMessage {
   factory RotateBodyParams({
     EulerZYXValue? rotation,
-    $59.BoolValue? returnToStartPose,
+    $58.BoolValue? returnToStartPose,
   }) {
     final $result = create();
     if (rotation != null) {
@@ -2572,7 +2572,7 @@ class RotateBodyParams extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RotateBodyParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..aOM<EulerZYXValue>(1, _omitFieldNames ? '' : 'rotation', subBuilder: EulerZYXValue.create)
-    ..aOM<$59.BoolValue>(2, _omitFieldNames ? '' : 'returnToStartPose', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(2, _omitFieldNames ? '' : 'returnToStartPose', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -2613,26 +2613,26 @@ class RotateBodyParams extends $pb.GeneratedMessage {
   /// choreography sequence move begin execution, and otherwise it will remain in whatever pose it
   /// is in after completing the choreography sequence move.
   @$pb.TagNumber(2)
-  $59.BoolValue get returnToStartPose => $_getN(1);
+  $58.BoolValue get returnToStartPose => $_getN(1);
   @$pb.TagNumber(2)
-  set returnToStartPose($59.BoolValue v) { setField(2, v); }
+  set returnToStartPose($58.BoolValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasReturnToStartPose() => $_has(1);
   @$pb.TagNumber(2)
   void clearReturnToStartPose() => clearField(2);
   @$pb.TagNumber(2)
-  $59.BoolValue ensureReturnToStartPose() => $_ensure(1);
+  $58.BoolValue ensureReturnToStartPose() => $_ensure(1);
 }
 
 /// Parameters specific to the ButtCircle DanceMove.
 class ButtCircleParams extends $pb.GeneratedMessage {
   factory ButtCircleParams({
-    $59.DoubleValue? radius,
-    $59.DoubleValue? beatsPerCircle,
-    $59.DoubleValue? numberOfCircles,
+    $58.DoubleValue? radius,
+    $58.DoubleValue? beatsPerCircle,
+    $58.DoubleValue? numberOfCircles,
     Pivot? pivot,
-    $59.BoolValue? clockwise,
-    $59.DoubleValue? startingAngle,
+    $58.BoolValue? clockwise,
+    $58.DoubleValue? startingAngle,
   }) {
     final $result = create();
     if (radius != null) {
@@ -2660,12 +2660,12 @@ class ButtCircleParams extends $pb.GeneratedMessage {
   factory ButtCircleParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ButtCircleParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'radius', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'beatsPerCircle', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'numberOfCircles', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'radius', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'beatsPerCircle', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'numberOfCircles', subBuilder: $58.DoubleValue.create)
     ..e<Pivot>(4, _omitFieldNames ? '' : 'pivot', $pb.PbFieldType.OE, defaultOrMaker: Pivot.PIVOT_UNKNOWN, valueOf: Pivot.valueOf, enumValues: Pivot.values)
-    ..aOM<$59.BoolValue>(5, _omitFieldNames ? '' : 'clockwise', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'startingAngle', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.BoolValue>(5, _omitFieldNames ? '' : 'clockwise', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'startingAngle', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -2692,40 +2692,40 @@ class ButtCircleParams extends $pb.GeneratedMessage {
 
   /// How big a circle the robutt will move in. Described in meters.
   @$pb.TagNumber(1)
-  $59.DoubleValue get radius => $_getN(0);
+  $58.DoubleValue get radius => $_getN(0);
   @$pb.TagNumber(1)
-  set radius($59.DoubleValue v) { setField(1, v); }
+  set radius($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRadius() => $_has(0);
   @$pb.TagNumber(1)
   void clearRadius() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureRadius() => $_ensure(0);
+  $58.DoubleValue ensureRadius() => $_ensure(0);
 
   /// The number of beats that elapse while performing the butt circle.
   @$pb.TagNumber(2)
-  $59.DoubleValue get beatsPerCircle => $_getN(1);
+  $58.DoubleValue get beatsPerCircle => $_getN(1);
   @$pb.TagNumber(2)
-  set beatsPerCircle($59.DoubleValue v) { setField(2, v); }
+  set beatsPerCircle($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasBeatsPerCircle() => $_has(1);
   @$pb.TagNumber(2)
   void clearBeatsPerCircle() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureBeatsPerCircle() => $_ensure(1);
+  $58.DoubleValue ensureBeatsPerCircle() => $_ensure(1);
 
   /// The number of circles that will be performed.  If non-zero, takes precedence over
   /// beats_per_circle.
   @$pb.TagNumber(3)
-  $59.DoubleValue get numberOfCircles => $_getN(2);
+  $58.DoubleValue get numberOfCircles => $_getN(2);
   @$pb.TagNumber(3)
-  set numberOfCircles($59.DoubleValue v) { setField(3, v); }
+  set numberOfCircles($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasNumberOfCircles() => $_has(2);
   @$pb.TagNumber(3)
   void clearNumberOfCircles() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureNumberOfCircles() => $_ensure(2);
+  $58.DoubleValue ensureNumberOfCircles() => $_ensure(2);
 
   /// The pivot point the butt circles should be centered around.
   @$pb.TagNumber(4)
@@ -2739,33 +2739,33 @@ class ButtCircleParams extends $pb.GeneratedMessage {
 
   /// Which way to rotate.
   @$pb.TagNumber(5)
-  $59.BoolValue get clockwise => $_getN(4);
+  $58.BoolValue get clockwise => $_getN(4);
   @$pb.TagNumber(5)
-  set clockwise($59.BoolValue v) { setField(5, v); }
+  set clockwise($58.BoolValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasClockwise() => $_has(4);
   @$pb.TagNumber(5)
   void clearClockwise() => clearField(5);
   @$pb.TagNumber(5)
-  $59.BoolValue ensureClockwise() => $_ensure(4);
+  $58.BoolValue ensureClockwise() => $_ensure(4);
 
   /// Where to start.  Zero is up.
   @$pb.TagNumber(6)
-  $59.DoubleValue get startingAngle => $_getN(5);
+  $58.DoubleValue get startingAngle => $_getN(5);
   @$pb.TagNumber(6)
-  set startingAngle($59.DoubleValue v) { setField(6, v); }
+  set startingAngle($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasStartingAngle() => $_has(5);
   @$pb.TagNumber(6)
   void clearStartingAngle() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureStartingAngle() => $_ensure(5);
+  $58.DoubleValue ensureStartingAngle() => $_ensure(5);
 }
 
 /// Parameters specific to twerking
 class TwerkParams extends $pb.GeneratedMessage {
   factory TwerkParams({
-    $59.DoubleValue? height,
+    $58.DoubleValue? height,
   }) {
     final $result = create();
     if (height != null) {
@@ -2778,7 +2778,7 @@ class TwerkParams extends $pb.GeneratedMessage {
   factory TwerkParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TwerkParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'height', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'height', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -2805,30 +2805,30 @@ class TwerkParams extends $pb.GeneratedMessage {
 
   /// How far the robot should twerk in meters.
   @$pb.TagNumber(1)
-  $59.DoubleValue get height => $_getN(0);
+  $58.DoubleValue get height => $_getN(0);
   @$pb.TagNumber(1)
-  set height($59.DoubleValue v) { setField(1, v); }
+  set height($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeight() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeight() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureHeight() => $_ensure(0);
+  $58.DoubleValue ensureHeight() => $_ensure(0);
 }
 
 /// Parameters specific to turning.
 class TurnParams extends $pb.GeneratedMessage {
   factory TurnParams({
-    $59.DoubleValue? yaw,
+    $58.DoubleValue? yaw,
   @$core.Deprecated('This field is deprecated.')
-    $59.BoolValue? absolute,
-    $59.DoubleValue? swingHeight,
-    $59.DoubleValue? swingVelocity,
-    $59.DoubleValue? absoluteYaw,
-    $59.BoolValue? yawIsAbsolute,
-    $61.Vec2Value? motion,
-    $61.Vec2Value? absoluteMotion,
-    $59.BoolValue? motionIsAbsolute,
+    $58.BoolValue? absolute,
+    $58.DoubleValue? swingHeight,
+    $58.DoubleValue? swingVelocity,
+    $58.DoubleValue? absoluteYaw,
+    $58.BoolValue? yawIsAbsolute,
+    $60.Vec2Value? motion,
+    $60.Vec2Value? absoluteMotion,
+    $58.BoolValue? motionIsAbsolute,
   }) {
     final $result = create();
     if (yaw != null) {
@@ -2866,15 +2866,15 @@ class TurnParams extends $pb.GeneratedMessage {
   factory TurnParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TurnParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'yaw', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(2, _omitFieldNames ? '' : 'absolute', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'swingHeight', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'swingVelocity', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'absoluteYaw', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(6, _omitFieldNames ? '' : 'yawIsAbsolute', subBuilder: $59.BoolValue.create)
-    ..aOM<$61.Vec2Value>(7, _omitFieldNames ? '' : 'motion', subBuilder: $61.Vec2Value.create)
-    ..aOM<$61.Vec2Value>(8, _omitFieldNames ? '' : 'absoluteMotion', subBuilder: $61.Vec2Value.create)
-    ..aOM<$59.BoolValue>(9, _omitFieldNames ? '' : 'motionIsAbsolute', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'yaw', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(2, _omitFieldNames ? '' : 'absolute', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'swingHeight', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'swingVelocity', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'absoluteYaw', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(6, _omitFieldNames ? '' : 'yawIsAbsolute', subBuilder: $58.BoolValue.create)
+    ..aOM<$60.Vec2Value>(7, _omitFieldNames ? '' : 'motion', subBuilder: $60.Vec2Value.create)
+    ..aOM<$60.Vec2Value>(8, _omitFieldNames ? '' : 'absoluteMotion', subBuilder: $60.Vec2Value.create)
+    ..aOM<$58.BoolValue>(9, _omitFieldNames ? '' : 'motionIsAbsolute', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -2901,15 +2901,15 @@ class TurnParams extends $pb.GeneratedMessage {
 
   /// How far to turn, described in radians with a positive value representing a turn to the left.
   @$pb.TagNumber(1)
-  $59.DoubleValue get yaw => $_getN(0);
+  $58.DoubleValue get yaw => $_getN(0);
   @$pb.TagNumber(1)
-  set yaw($59.DoubleValue v) { setField(1, v); }
+  set yaw($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasYaw() => $_has(0);
   @$pb.TagNumber(1)
   void clearYaw() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureYaw() => $_ensure(0);
+  $58.DoubleValue ensureYaw() => $_ensure(0);
 
   /// *** Deprecation Warning ***
   /// DEPRECATED as of 3.0.0: The absolute field has been deprecated and split into the
@@ -2917,10 +2917,10 @@ class TurnParams extends $pb.GeneratedMessage {
   /// and moved to 'reserved' in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $59.BoolValue get absolute => $_getN(1);
+  $58.BoolValue get absolute => $_getN(1);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  set absolute($59.BoolValue v) { setField(2, v); }
+  set absolute($58.BoolValue v) { setField(2, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasAbsolute() => $_has(1);
@@ -2929,107 +2929,107 @@ class TurnParams extends $pb.GeneratedMessage {
   void clearAbsolute() => clearField(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $59.BoolValue ensureAbsolute() => $_ensure(1);
+  $58.BoolValue ensureAbsolute() => $_ensure(1);
 
   /// Swing parameters to describe the footstep pattern during the turning [height in meters].
   /// Note, a zero (or nearly zero) value will be considered as an unspecified parameter.
   @$pb.TagNumber(3)
-  $59.DoubleValue get swingHeight => $_getN(2);
+  $58.DoubleValue get swingHeight => $_getN(2);
   @$pb.TagNumber(3)
-  set swingHeight($59.DoubleValue v) { setField(3, v); }
+  set swingHeight($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasSwingHeight() => $_has(2);
   @$pb.TagNumber(3)
   void clearSwingHeight() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureSwingHeight() => $_ensure(2);
+  $58.DoubleValue ensureSwingHeight() => $_ensure(2);
 
   /// Swing parameter to describe the foot's swing velocity during the turning [m/s]. Note, a zero
   /// (or nearly zero) value will be considered as an unspecified parameter.
   @$pb.TagNumber(4)
-  $59.DoubleValue get swingVelocity => $_getN(3);
+  $58.DoubleValue get swingVelocity => $_getN(3);
   @$pb.TagNumber(4)
-  set swingVelocity($59.DoubleValue v) { setField(4, v); }
+  set swingVelocity($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSwingVelocity() => $_has(3);
   @$pb.TagNumber(4)
   void clearSwingVelocity() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureSwingVelocity() => $_ensure(3);
+  $58.DoubleValue ensureSwingVelocity() => $_ensure(3);
 
   /// Orientation to turn to, relative to the orientation at the start of the script. [rad]
   @$pb.TagNumber(5)
-  $59.DoubleValue get absoluteYaw => $_getN(4);
+  $58.DoubleValue get absoluteYaw => $_getN(4);
   @$pb.TagNumber(5)
-  set absoluteYaw($59.DoubleValue v) { setField(5, v); }
+  set absoluteYaw($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasAbsoluteYaw() => $_has(4);
   @$pb.TagNumber(5)
   void clearAbsoluteYaw() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureAbsoluteYaw() => $_ensure(4);
+  $58.DoubleValue ensureAbsoluteYaw() => $_ensure(4);
 
   /// Should we turn to a yaw in choreography sequence frame?
   @$pb.TagNumber(6)
-  $59.BoolValue get yawIsAbsolute => $_getN(5);
+  $58.BoolValue get yawIsAbsolute => $_getN(5);
   @$pb.TagNumber(6)
-  set yawIsAbsolute($59.BoolValue v) { setField(6, v); }
+  set yawIsAbsolute($58.BoolValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasYawIsAbsolute() => $_has(5);
   @$pb.TagNumber(6)
   void clearYawIsAbsolute() => clearField(6);
   @$pb.TagNumber(6)
-  $59.BoolValue ensureYawIsAbsolute() => $_ensure(5);
+  $58.BoolValue ensureYawIsAbsolute() => $_ensure(5);
 
   /// How far to move relative to starting position. [m]
   @$pb.TagNumber(7)
-  $61.Vec2Value get motion => $_getN(6);
+  $60.Vec2Value get motion => $_getN(6);
   @$pb.TagNumber(7)
-  set motion($61.Vec2Value v) { setField(7, v); }
+  set motion($60.Vec2Value v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasMotion() => $_has(6);
   @$pb.TagNumber(7)
   void clearMotion() => clearField(7);
   @$pb.TagNumber(7)
-  $61.Vec2Value ensureMotion() => $_ensure(6);
+  $60.Vec2Value ensureMotion() => $_ensure(6);
 
   /// Where to move relative to position at start of script. [m]
   @$pb.TagNumber(8)
-  $61.Vec2Value get absoluteMotion => $_getN(7);
+  $60.Vec2Value get absoluteMotion => $_getN(7);
   @$pb.TagNumber(8)
-  set absoluteMotion($61.Vec2Value v) { setField(8, v); }
+  set absoluteMotion($60.Vec2Value v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasAbsoluteMotion() => $_has(7);
   @$pb.TagNumber(8)
   void clearAbsoluteMotion() => clearField(8);
   @$pb.TagNumber(8)
-  $61.Vec2Value ensureAbsoluteMotion() => $_ensure(7);
+  $60.Vec2Value ensureAbsoluteMotion() => $_ensure(7);
 
   /// Is motion specified relative to pose at start of dance?
   @$pb.TagNumber(9)
-  $59.BoolValue get motionIsAbsolute => $_getN(8);
+  $58.BoolValue get motionIsAbsolute => $_getN(8);
   @$pb.TagNumber(9)
-  set motionIsAbsolute($59.BoolValue v) { setField(9, v); }
+  set motionIsAbsolute($58.BoolValue v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasMotionIsAbsolute() => $_has(8);
   @$pb.TagNumber(9)
   void clearMotionIsAbsolute() => clearField(9);
   @$pb.TagNumber(9)
-  $59.BoolValue ensureMotionIsAbsolute() => $_ensure(8);
+  $58.BoolValue ensureMotionIsAbsolute() => $_ensure(8);
 }
 
 /// Parameters specific to pace translation.
 class Pace2StepParams extends $pb.GeneratedMessage {
   factory Pace2StepParams({
-    $61.Vec2Value? motion,
-    $59.DoubleValue? swingHeight,
-    $59.DoubleValue? swingVelocity,
-    $59.BoolValue? absolute,
-    $61.Vec2Value? absoluteMotion,
-    $59.BoolValue? motionIsAbsolute,
-    $59.DoubleValue? yaw,
-    $59.DoubleValue? absoluteYaw,
-    $59.BoolValue? yawIsAbsolute,
+    $60.Vec2Value? motion,
+    $58.DoubleValue? swingHeight,
+    $58.DoubleValue? swingVelocity,
+    $58.BoolValue? absolute,
+    $60.Vec2Value? absoluteMotion,
+    $58.BoolValue? motionIsAbsolute,
+    $58.DoubleValue? yaw,
+    $58.DoubleValue? absoluteYaw,
+    $58.BoolValue? yawIsAbsolute,
   }) {
     final $result = create();
     if (motion != null) {
@@ -3066,15 +3066,15 @@ class Pace2StepParams extends $pb.GeneratedMessage {
   factory Pace2StepParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Pace2StepParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.Vec2Value>(1, _omitFieldNames ? '' : 'motion', subBuilder: $61.Vec2Value.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'swingHeight', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'swingVelocity', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(5, _omitFieldNames ? '' : 'absolute', subBuilder: $59.BoolValue.create)
-    ..aOM<$61.Vec2Value>(6, _omitFieldNames ? '' : 'absoluteMotion', subBuilder: $61.Vec2Value.create)
-    ..aOM<$59.BoolValue>(7, _omitFieldNames ? '' : 'motionIsAbsolute', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.DoubleValue>(8, _omitFieldNames ? '' : 'yaw', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(9, _omitFieldNames ? '' : 'absoluteYaw', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(10, _omitFieldNames ? '' : 'yawIsAbsolute', subBuilder: $59.BoolValue.create)
+    ..aOM<$60.Vec2Value>(1, _omitFieldNames ? '' : 'motion', subBuilder: $60.Vec2Value.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'swingHeight', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'swingVelocity', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(5, _omitFieldNames ? '' : 'absolute', subBuilder: $58.BoolValue.create)
+    ..aOM<$60.Vec2Value>(6, _omitFieldNames ? '' : 'absoluteMotion', subBuilder: $60.Vec2Value.create)
+    ..aOM<$58.BoolValue>(7, _omitFieldNames ? '' : 'motionIsAbsolute', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.DoubleValue>(8, _omitFieldNames ? '' : 'yaw', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(9, _omitFieldNames ? '' : 'absoluteYaw', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(10, _omitFieldNames ? '' : 'yawIsAbsolute', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -3101,122 +3101,122 @@ class Pace2StepParams extends $pb.GeneratedMessage {
 
   /// How far to move relative to starting position. [m]
   @$pb.TagNumber(1)
-  $61.Vec2Value get motion => $_getN(0);
+  $60.Vec2Value get motion => $_getN(0);
   @$pb.TagNumber(1)
-  set motion($61.Vec2Value v) { setField(1, v); }
+  set motion($60.Vec2Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMotion() => $_has(0);
   @$pb.TagNumber(1)
   void clearMotion() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec2Value ensureMotion() => $_ensure(0);
+  $60.Vec2Value ensureMotion() => $_ensure(0);
 
   /// Swing parameters to describe the footstep pattern during the pace translation gait. Note, a
   /// zero (or nearly zero) value will be considered as an unspecified parameter.
   @$pb.TagNumber(3)
-  $59.DoubleValue get swingHeight => $_getN(1);
+  $58.DoubleValue get swingHeight => $_getN(1);
   @$pb.TagNumber(3)
-  set swingHeight($59.DoubleValue v) { setField(3, v); }
+  set swingHeight($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasSwingHeight() => $_has(1);
   @$pb.TagNumber(3)
   void clearSwingHeight() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureSwingHeight() => $_ensure(1);
+  $58.DoubleValue ensureSwingHeight() => $_ensure(1);
 
   @$pb.TagNumber(4)
-  $59.DoubleValue get swingVelocity => $_getN(2);
+  $58.DoubleValue get swingVelocity => $_getN(2);
   @$pb.TagNumber(4)
-  set swingVelocity($59.DoubleValue v) { setField(4, v); }
+  set swingVelocity($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSwingVelocity() => $_has(2);
   @$pb.TagNumber(4)
   void clearSwingVelocity() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureSwingVelocity() => $_ensure(2);
+  $58.DoubleValue ensureSwingVelocity() => $_ensure(2);
 
   /// *** Deprecation Warning ***
   /// DEPRECATED as of 3.0.0: The absolute field has been deprecated and split into the
   /// yaw_is_absolute and translation_is_absolute fields. The following field will be deprecated
   /// and moved to 'reserved' in a future release.
   @$pb.TagNumber(5)
-  $59.BoolValue get absolute => $_getN(3);
+  $58.BoolValue get absolute => $_getN(3);
   @$pb.TagNumber(5)
-  set absolute($59.BoolValue v) { setField(5, v); }
+  set absolute($58.BoolValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasAbsolute() => $_has(3);
   @$pb.TagNumber(5)
   void clearAbsolute() => clearField(5);
   @$pb.TagNumber(5)
-  $59.BoolValue ensureAbsolute() => $_ensure(3);
+  $58.BoolValue ensureAbsolute() => $_ensure(3);
 
   /// Where to move relative to position at start of script. [m]
   @$pb.TagNumber(6)
-  $61.Vec2Value get absoluteMotion => $_getN(4);
+  $60.Vec2Value get absoluteMotion => $_getN(4);
   @$pb.TagNumber(6)
-  set absoluteMotion($61.Vec2Value v) { setField(6, v); }
+  set absoluteMotion($60.Vec2Value v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasAbsoluteMotion() => $_has(4);
   @$pb.TagNumber(6)
   void clearAbsoluteMotion() => clearField(6);
   @$pb.TagNumber(6)
-  $61.Vec2Value ensureAbsoluteMotion() => $_ensure(4);
+  $60.Vec2Value ensureAbsoluteMotion() => $_ensure(4);
 
   /// Is motion specified relative to pose at start of dance?
   @$pb.TagNumber(7)
-  $59.BoolValue get motionIsAbsolute => $_getN(5);
+  $58.BoolValue get motionIsAbsolute => $_getN(5);
   @$pb.TagNumber(7)
-  set motionIsAbsolute($59.BoolValue v) { setField(7, v); }
+  set motionIsAbsolute($58.BoolValue v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasMotionIsAbsolute() => $_has(5);
   @$pb.TagNumber(7)
   void clearMotionIsAbsolute() => clearField(7);
   @$pb.TagNumber(7)
-  $59.BoolValue ensureMotionIsAbsolute() => $_ensure(5);
+  $58.BoolValue ensureMotionIsAbsolute() => $_ensure(5);
 
   /// How far to turn, described in radians with a positive value representing a turn to the left.
   @$pb.TagNumber(8)
-  $59.DoubleValue get yaw => $_getN(6);
+  $58.DoubleValue get yaw => $_getN(6);
   @$pb.TagNumber(8)
-  set yaw($59.DoubleValue v) { setField(8, v); }
+  set yaw($58.DoubleValue v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasYaw() => $_has(6);
   @$pb.TagNumber(8)
   void clearYaw() => clearField(8);
   @$pb.TagNumber(8)
-  $59.DoubleValue ensureYaw() => $_ensure(6);
+  $58.DoubleValue ensureYaw() => $_ensure(6);
 
   /// Orientation to turn to, relative to the orientation at the start of the script. [rad]
   @$pb.TagNumber(9)
-  $59.DoubleValue get absoluteYaw => $_getN(7);
+  $58.DoubleValue get absoluteYaw => $_getN(7);
   @$pb.TagNumber(9)
-  set absoluteYaw($59.DoubleValue v) { setField(9, v); }
+  set absoluteYaw($58.DoubleValue v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasAbsoluteYaw() => $_has(7);
   @$pb.TagNumber(9)
   void clearAbsoluteYaw() => clearField(9);
   @$pb.TagNumber(9)
-  $59.DoubleValue ensureAbsoluteYaw() => $_ensure(7);
+  $58.DoubleValue ensureAbsoluteYaw() => $_ensure(7);
 
   /// Should we turn to a yaw in choreography sequence frame?
   @$pb.TagNumber(10)
-  $59.BoolValue get yawIsAbsolute => $_getN(8);
+  $58.BoolValue get yawIsAbsolute => $_getN(8);
   @$pb.TagNumber(10)
-  set yawIsAbsolute($59.BoolValue v) { setField(10, v); }
+  set yawIsAbsolute($58.BoolValue v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasYawIsAbsolute() => $_has(8);
   @$pb.TagNumber(10)
   void clearYawIsAbsolute() => clearField(10);
   @$pb.TagNumber(10)
-  $59.BoolValue ensureYawIsAbsolute() => $_ensure(8);
+  $58.BoolValue ensureYawIsAbsolute() => $_ensure(8);
 }
 
 /// Parameters specific to the chicken head move.
 class ChickenHeadParams extends $pb.GeneratedMessage {
   factory ChickenHeadParams({
-    $61.Vec3Value? bobMagnitude,
-    $59.Int32Value? beatsPerCycle,
-    $59.BoolValue? follow,
+    $60.Vec3Value? bobMagnitude,
+    $58.Int32Value? beatsPerCycle,
+    $58.BoolValue? follow,
   }) {
     final $result = create();
     if (bobMagnitude != null) {
@@ -3235,9 +3235,9 @@ class ChickenHeadParams extends $pb.GeneratedMessage {
   factory ChickenHeadParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChickenHeadParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.Vec3Value>(1, _omitFieldNames ? '' : 'bobMagnitude', subBuilder: $61.Vec3Value.create)
-    ..aOM<$59.Int32Value>(2, _omitFieldNames ? '' : 'beatsPerCycle', subBuilder: $59.Int32Value.create)
-    ..aOM<$59.BoolValue>(3, _omitFieldNames ? '' : 'follow', subBuilder: $59.BoolValue.create)
+    ..aOM<$60.Vec3Value>(1, _omitFieldNames ? '' : 'bobMagnitude', subBuilder: $60.Vec3Value.create)
+    ..aOM<$58.Int32Value>(2, _omitFieldNames ? '' : 'beatsPerCycle', subBuilder: $58.Int32Value.create)
+    ..aOM<$58.BoolValue>(3, _omitFieldNames ? '' : 'follow', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -3264,48 +3264,48 @@ class ChickenHeadParams extends $pb.GeneratedMessage {
 
   /// Bobs the head in this direction in the robot footprint frame.
   @$pb.TagNumber(1)
-  $61.Vec3Value get bobMagnitude => $_getN(0);
+  $60.Vec3Value get bobMagnitude => $_getN(0);
   @$pb.TagNumber(1)
-  set bobMagnitude($61.Vec3Value v) { setField(1, v); }
+  set bobMagnitude($60.Vec3Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBobMagnitude() => $_has(0);
   @$pb.TagNumber(1)
   void clearBobMagnitude() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3Value ensureBobMagnitude() => $_ensure(0);
+  $60.Vec3Value ensureBobMagnitude() => $_ensure(0);
 
   /// How fast to bob the head.
   @$pb.TagNumber(2)
-  $59.Int32Value get beatsPerCycle => $_getN(1);
+  $58.Int32Value get beatsPerCycle => $_getN(1);
   @$pb.TagNumber(2)
-  set beatsPerCycle($59.Int32Value v) { setField(2, v); }
+  set beatsPerCycle($58.Int32Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasBeatsPerCycle() => $_has(1);
   @$pb.TagNumber(2)
   void clearBeatsPerCycle() => clearField(2);
   @$pb.TagNumber(2)
-  $59.Int32Value ensureBeatsPerCycle() => $_ensure(1);
+  $58.Int32Value ensureBeatsPerCycle() => $_ensure(1);
 
   /// Should we move the frame when the robot steps?
   @$pb.TagNumber(3)
-  $59.BoolValue get follow => $_getN(2);
+  $58.BoolValue get follow => $_getN(2);
   @$pb.TagNumber(3)
-  set follow($59.BoolValue v) { setField(3, v); }
+  set follow($58.BoolValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFollow() => $_has(2);
   @$pb.TagNumber(3)
   void clearFollow() => clearField(3);
   @$pb.TagNumber(3)
-  $59.BoolValue ensureFollow() => $_ensure(2);
+  $58.BoolValue ensureFollow() => $_ensure(2);
 }
 
 /// Parameters specific to clapping.
 class ClapParams extends $pb.GeneratedMessage {
   factory ClapParams({
-    $61.Vec3Value? direction,
-    $61.Vec3Value? location,
-    $59.DoubleValue? speed,
-    $59.DoubleValue? clapDistance,
+    $60.Vec3Value? direction,
+    $60.Vec3Value? location,
+    $58.DoubleValue? speed,
+    $58.DoubleValue? clapDistance,
   }) {
     final $result = create();
     if (direction != null) {
@@ -3327,10 +3327,10 @@ class ClapParams extends $pb.GeneratedMessage {
   factory ClapParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClapParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.Vec3Value>(1, _omitFieldNames ? '' : 'direction', subBuilder: $61.Vec3Value.create)
-    ..aOM<$61.Vec3Value>(2, _omitFieldNames ? '' : 'location', subBuilder: $61.Vec3Value.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'speed', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'clapDistance', subBuilder: $59.DoubleValue.create)
+    ..aOM<$60.Vec3Value>(1, _omitFieldNames ? '' : 'direction', subBuilder: $60.Vec3Value.create)
+    ..aOM<$60.Vec3Value>(2, _omitFieldNames ? '' : 'location', subBuilder: $60.Vec3Value.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'speed', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'clapDistance', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -3358,62 +3358,62 @@ class ClapParams extends $pb.GeneratedMessage {
   /// Direction in a gravity-aligned body frame of clapping motion. A typical value for the
   /// location is (0, 1, 0).
   @$pb.TagNumber(1)
-  $61.Vec3Value get direction => $_getN(0);
+  $60.Vec3Value get direction => $_getN(0);
   @$pb.TagNumber(1)
-  set direction($61.Vec3Value v) { setField(1, v); }
+  set direction($60.Vec3Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDirection() => $_has(0);
   @$pb.TagNumber(1)
   void clearDirection() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3Value ensureDirection() => $_ensure(0);
+  $60.Vec3Value ensureDirection() => $_ensure(0);
 
   /// Location in body frame of the clap. A typical value for the location is (0.4, 0, -0.5).
   @$pb.TagNumber(2)
-  $61.Vec3Value get location => $_getN(1);
+  $60.Vec3Value get location => $_getN(1);
   @$pb.TagNumber(2)
-  set location($61.Vec3Value v) { setField(2, v); }
+  set location($60.Vec3Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLocation() => $_has(1);
   @$pb.TagNumber(2)
   void clearLocation() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3Value ensureLocation() => $_ensure(1);
+  $60.Vec3Value ensureLocation() => $_ensure(1);
 
   /// Speed of the clap [m/s].
   @$pb.TagNumber(3)
-  $59.DoubleValue get speed => $_getN(2);
+  $58.DoubleValue get speed => $_getN(2);
   @$pb.TagNumber(3)
-  set speed($59.DoubleValue v) { setField(3, v); }
+  set speed($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasSpeed() => $_has(2);
   @$pb.TagNumber(3)
   void clearSpeed() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureSpeed() => $_ensure(2);
+  $58.DoubleValue ensureSpeed() => $_ensure(2);
 
   /// How far apart the limbs are before clapping [m].
   @$pb.TagNumber(4)
-  $59.DoubleValue get clapDistance => $_getN(3);
+  $58.DoubleValue get clapDistance => $_getN(3);
   @$pb.TagNumber(4)
-  set clapDistance($59.DoubleValue v) { setField(4, v); }
+  set clapDistance($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasClapDistance() => $_has(3);
   @$pb.TagNumber(4)
   void clearClapDistance() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureClapDistance() => $_ensure(3);
+  $58.DoubleValue ensureClapDistance() => $_ensure(3);
 }
 
 /// Parameters specific to the kneel_circles move.
 class KneelCircleParams extends $pb.GeneratedMessage {
   factory KneelCircleParams({
-    $61.Vec3Value? location,
-    $59.Int32Value? beatsPerCircle,
-    $59.DoubleValue? numberOfCircles,
-    $59.DoubleValue? offset,
-    $59.DoubleValue? radius,
-    $59.BoolValue? reverse,
+    $60.Vec3Value? location,
+    $58.Int32Value? beatsPerCircle,
+    $58.DoubleValue? numberOfCircles,
+    $58.DoubleValue? offset,
+    $58.DoubleValue? radius,
+    $58.BoolValue? reverse,
   }) {
     final $result = create();
     if (location != null) {
@@ -3441,12 +3441,12 @@ class KneelCircleParams extends $pb.GeneratedMessage {
   factory KneelCircleParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'KneelCircleParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.Vec3Value>(1, _omitFieldNames ? '' : 'location', subBuilder: $61.Vec3Value.create)
-    ..aOM<$59.Int32Value>(2, _omitFieldNames ? '' : 'beatsPerCircle', subBuilder: $59.Int32Value.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'numberOfCircles', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'offset', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'radius', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(6, _omitFieldNames ? '' : 'reverse', subBuilder: $59.BoolValue.create)
+    ..aOM<$60.Vec3Value>(1, _omitFieldNames ? '' : 'location', subBuilder: $60.Vec3Value.create)
+    ..aOM<$58.Int32Value>(2, _omitFieldNames ? '' : 'beatsPerCircle', subBuilder: $58.Int32Value.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'numberOfCircles', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'offset', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'radius', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(6, _omitFieldNames ? '' : 'reverse', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -3474,81 +3474,81 @@ class KneelCircleParams extends $pb.GeneratedMessage {
   /// Location in body frame of the circle center. A typical value for the location is (0.4, 0,
   /// -0.5).
   @$pb.TagNumber(1)
-  $61.Vec3Value get location => $_getN(0);
+  $60.Vec3Value get location => $_getN(0);
   @$pb.TagNumber(1)
-  set location($61.Vec3Value v) { setField(1, v); }
+  set location($60.Vec3Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasLocation() => $_has(0);
   @$pb.TagNumber(1)
   void clearLocation() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3Value ensureLocation() => $_ensure(0);
+  $60.Vec3Value ensureLocation() => $_ensure(0);
 
   /// How beats per circle.  One or two are reasonable values.
   @$pb.TagNumber(2)
-  $59.Int32Value get beatsPerCircle => $_getN(1);
+  $58.Int32Value get beatsPerCircle => $_getN(1);
   @$pb.TagNumber(2)
-  set beatsPerCircle($59.Int32Value v) { setField(2, v); }
+  set beatsPerCircle($58.Int32Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasBeatsPerCircle() => $_has(1);
   @$pb.TagNumber(2)
   void clearBeatsPerCircle() => clearField(2);
   @$pb.TagNumber(2)
-  $59.Int32Value ensureBeatsPerCircle() => $_ensure(1);
+  $58.Int32Value ensureBeatsPerCircle() => $_ensure(1);
 
   /// How many circles to perform.  Mutually exclusive with beats_per_circle.
   @$pb.TagNumber(3)
-  $59.DoubleValue get numberOfCircles => $_getN(2);
+  $58.DoubleValue get numberOfCircles => $_getN(2);
   @$pb.TagNumber(3)
-  set numberOfCircles($59.DoubleValue v) { setField(3, v); }
+  set numberOfCircles($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasNumberOfCircles() => $_has(2);
   @$pb.TagNumber(3)
   void clearNumberOfCircles() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureNumberOfCircles() => $_ensure(2);
+  $58.DoubleValue ensureNumberOfCircles() => $_ensure(2);
 
   /// How far apart the feet are when circling [m].
   @$pb.TagNumber(4)
-  $59.DoubleValue get offset => $_getN(3);
+  $58.DoubleValue get offset => $_getN(3);
   @$pb.TagNumber(4)
-  set offset($59.DoubleValue v) { setField(4, v); }
+  set offset($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasOffset() => $_has(3);
   @$pb.TagNumber(4)
   void clearOffset() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureOffset() => $_ensure(3);
+  $58.DoubleValue ensureOffset() => $_ensure(3);
 
   /// Size of the circles [m].
   @$pb.TagNumber(5)
-  $59.DoubleValue get radius => $_getN(4);
+  $58.DoubleValue get radius => $_getN(4);
   @$pb.TagNumber(5)
-  set radius($59.DoubleValue v) { setField(5, v); }
+  set radius($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasRadius() => $_has(4);
   @$pb.TagNumber(5)
   void clearRadius() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureRadius() => $_ensure(4);
+  $58.DoubleValue ensureRadius() => $_ensure(4);
 
   /// Which way to circle.
   @$pb.TagNumber(6)
-  $59.BoolValue get reverse => $_getN(5);
+  $58.BoolValue get reverse => $_getN(5);
   @$pb.TagNumber(6)
-  set reverse($59.BoolValue v) { setField(6, v); }
+  set reverse($58.BoolValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasReverse() => $_has(5);
   @$pb.TagNumber(6)
   void clearReverse() => clearField(6);
   @$pb.TagNumber(6)
-  $59.BoolValue ensureReverse() => $_ensure(5);
+  $58.BoolValue ensureReverse() => $_ensure(5);
 }
 
 /// Parameters specific to FrontUp move.
 class FrontUpParams extends $pb.GeneratedMessage {
   factory FrontUpParams({
-    $59.BoolValue? mirror,
+    $58.BoolValue? mirror,
   }) {
     final $result = create();
     if (mirror != null) {
@@ -3561,7 +3561,7 @@ class FrontUpParams extends $pb.GeneratedMessage {
   factory FrontUpParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FrontUpParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.BoolValue>(1, _omitFieldNames ? '' : 'mirror', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(1, _omitFieldNames ? '' : 'mirror', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -3588,33 +3588,33 @@ class FrontUpParams extends $pb.GeneratedMessage {
 
   /// Should we raise the hind feet instead.
   @$pb.TagNumber(1)
-  $59.BoolValue get mirror => $_getN(0);
+  $58.BoolValue get mirror => $_getN(0);
   @$pb.TagNumber(1)
-  set mirror($59.BoolValue v) { setField(1, v); }
+  set mirror($58.BoolValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMirror() => $_has(0);
   @$pb.TagNumber(1)
   void clearMirror() => clearField(1);
   @$pb.TagNumber(1)
-  $59.BoolValue ensureMirror() => $_ensure(0);
+  $58.BoolValue ensureMirror() => $_ensure(0);
 }
 
 class FidgetStandParams extends $pb.GeneratedMessage {
   factory FidgetStandParams({
     FidgetStandParams_FidgetPreset? preset,
-    $59.DoubleValue? minGazePitch,
-    $59.DoubleValue? maxGazePitch,
-    $59.DoubleValue? gazeMeanPeriod,
-    $61.Vec3Value? gazeCenterCfp,
-    $59.DoubleValue? shiftMeanPeriod,
-    $59.DoubleValue? shiftMaxTransitionTime,
-    $59.DoubleValue? breathMinZ,
-    $59.DoubleValue? breathMaxZ,
-    $59.DoubleValue? breathMaxPeriod,
-    $59.DoubleValue? legGestureMeanPeriod,
-    $59.DoubleValue? gazeSlewRate,
-    $61.Vec3Value? gazePositionGenerationGain,
-    $59.DoubleValue? gazeRollGenerationGain,
+    $58.DoubleValue? minGazePitch,
+    $58.DoubleValue? maxGazePitch,
+    $58.DoubleValue? gazeMeanPeriod,
+    $60.Vec3Value? gazeCenterCfp,
+    $58.DoubleValue? shiftMeanPeriod,
+    $58.DoubleValue? shiftMaxTransitionTime,
+    $58.DoubleValue? breathMinZ,
+    $58.DoubleValue? breathMaxZ,
+    $58.DoubleValue? breathMaxPeriod,
+    $58.DoubleValue? legGestureMeanPeriod,
+    $58.DoubleValue? gazeSlewRate,
+    $60.Vec3Value? gazePositionGenerationGain,
+    $58.DoubleValue? gazeRollGenerationGain,
   }) {
     final $result = create();
     if (preset != null) {
@@ -3667,19 +3667,19 @@ class FidgetStandParams extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FidgetStandParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..e<FidgetStandParams_FidgetPreset>(1, _omitFieldNames ? '' : 'preset', $pb.PbFieldType.OE, defaultOrMaker: FidgetStandParams_FidgetPreset.PRESET_UNKNOWN, valueOf: FidgetStandParams_FidgetPreset.valueOf, enumValues: FidgetStandParams_FidgetPreset.values)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'minGazePitch', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'maxGazePitch', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'gazeMeanPeriod', subBuilder: $59.DoubleValue.create)
-    ..aOM<$61.Vec3Value>(5, _omitFieldNames ? '' : 'gazeCenterCfp', subBuilder: $61.Vec3Value.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'shiftMeanPeriod', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(7, _omitFieldNames ? '' : 'shiftMaxTransitionTime', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(8, _omitFieldNames ? '' : 'breathMinZ', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(9, _omitFieldNames ? '' : 'breathMaxZ', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(10, _omitFieldNames ? '' : 'breathMaxPeriod', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(11, _omitFieldNames ? '' : 'legGestureMeanPeriod', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(12, _omitFieldNames ? '' : 'gazeSlewRate', subBuilder: $59.DoubleValue.create)
-    ..aOM<$61.Vec3Value>(13, _omitFieldNames ? '' : 'gazePositionGenerationGain', subBuilder: $61.Vec3Value.create)
-    ..aOM<$59.DoubleValue>(14, _omitFieldNames ? '' : 'gazeRollGenerationGain', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'minGazePitch', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'maxGazePitch', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'gazeMeanPeriod', subBuilder: $58.DoubleValue.create)
+    ..aOM<$60.Vec3Value>(5, _omitFieldNames ? '' : 'gazeCenterCfp', subBuilder: $60.Vec3Value.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'shiftMeanPeriod', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(7, _omitFieldNames ? '' : 'shiftMaxTransitionTime', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(8, _omitFieldNames ? '' : 'breathMinZ', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(9, _omitFieldNames ? '' : 'breathMaxZ', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(10, _omitFieldNames ? '' : 'breathMaxPeriod', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(11, _omitFieldNames ? '' : 'legGestureMeanPeriod', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(12, _omitFieldNames ? '' : 'gazeSlewRate', subBuilder: $58.DoubleValue.create)
+    ..aOM<$60.Vec3Value>(13, _omitFieldNames ? '' : 'gazePositionGenerationGain', subBuilder: $60.Vec3Value.create)
+    ..aOM<$58.DoubleValue>(14, _omitFieldNames ? '' : 'gazeRollGenerationGain', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -3714,158 +3714,158 @@ class FidgetStandParams extends $pb.GeneratedMessage {
   void clearPreset() => clearField(1);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get minGazePitch => $_getN(1);
+  $58.DoubleValue get minGazePitch => $_getN(1);
   @$pb.TagNumber(2)
-  set minGazePitch($59.DoubleValue v) { setField(2, v); }
+  set minGazePitch($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasMinGazePitch() => $_has(1);
   @$pb.TagNumber(2)
   void clearMinGazePitch() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureMinGazePitch() => $_ensure(1);
+  $58.DoubleValue ensureMinGazePitch() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get maxGazePitch => $_getN(2);
+  $58.DoubleValue get maxGazePitch => $_getN(2);
   @$pb.TagNumber(3)
-  set maxGazePitch($59.DoubleValue v) { setField(3, v); }
+  set maxGazePitch($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMaxGazePitch() => $_has(2);
   @$pb.TagNumber(3)
   void clearMaxGazePitch() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureMaxGazePitch() => $_ensure(2);
+  $58.DoubleValue ensureMaxGazePitch() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $59.DoubleValue get gazeMeanPeriod => $_getN(3);
+  $58.DoubleValue get gazeMeanPeriod => $_getN(3);
   @$pb.TagNumber(4)
-  set gazeMeanPeriod($59.DoubleValue v) { setField(4, v); }
+  set gazeMeanPeriod($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasGazeMeanPeriod() => $_has(3);
   @$pb.TagNumber(4)
   void clearGazeMeanPeriod() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureGazeMeanPeriod() => $_ensure(3);
+  $58.DoubleValue ensureGazeMeanPeriod() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $61.Vec3Value get gazeCenterCfp => $_getN(4);
+  $60.Vec3Value get gazeCenterCfp => $_getN(4);
   @$pb.TagNumber(5)
-  set gazeCenterCfp($61.Vec3Value v) { setField(5, v); }
+  set gazeCenterCfp($60.Vec3Value v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasGazeCenterCfp() => $_has(4);
   @$pb.TagNumber(5)
   void clearGazeCenterCfp() => clearField(5);
   @$pb.TagNumber(5)
-  $61.Vec3Value ensureGazeCenterCfp() => $_ensure(4);
+  $60.Vec3Value ensureGazeCenterCfp() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $59.DoubleValue get shiftMeanPeriod => $_getN(5);
+  $58.DoubleValue get shiftMeanPeriod => $_getN(5);
   @$pb.TagNumber(6)
-  set shiftMeanPeriod($59.DoubleValue v) { setField(6, v); }
+  set shiftMeanPeriod($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasShiftMeanPeriod() => $_has(5);
   @$pb.TagNumber(6)
   void clearShiftMeanPeriod() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureShiftMeanPeriod() => $_ensure(5);
+  $58.DoubleValue ensureShiftMeanPeriod() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $59.DoubleValue get shiftMaxTransitionTime => $_getN(6);
+  $58.DoubleValue get shiftMaxTransitionTime => $_getN(6);
   @$pb.TagNumber(7)
-  set shiftMaxTransitionTime($59.DoubleValue v) { setField(7, v); }
+  set shiftMaxTransitionTime($58.DoubleValue v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasShiftMaxTransitionTime() => $_has(6);
   @$pb.TagNumber(7)
   void clearShiftMaxTransitionTime() => clearField(7);
   @$pb.TagNumber(7)
-  $59.DoubleValue ensureShiftMaxTransitionTime() => $_ensure(6);
+  $58.DoubleValue ensureShiftMaxTransitionTime() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $59.DoubleValue get breathMinZ => $_getN(7);
+  $58.DoubleValue get breathMinZ => $_getN(7);
   @$pb.TagNumber(8)
-  set breathMinZ($59.DoubleValue v) { setField(8, v); }
+  set breathMinZ($58.DoubleValue v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasBreathMinZ() => $_has(7);
   @$pb.TagNumber(8)
   void clearBreathMinZ() => clearField(8);
   @$pb.TagNumber(8)
-  $59.DoubleValue ensureBreathMinZ() => $_ensure(7);
+  $58.DoubleValue ensureBreathMinZ() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  $59.DoubleValue get breathMaxZ => $_getN(8);
+  $58.DoubleValue get breathMaxZ => $_getN(8);
   @$pb.TagNumber(9)
-  set breathMaxZ($59.DoubleValue v) { setField(9, v); }
+  set breathMaxZ($58.DoubleValue v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasBreathMaxZ() => $_has(8);
   @$pb.TagNumber(9)
   void clearBreathMaxZ() => clearField(9);
   @$pb.TagNumber(9)
-  $59.DoubleValue ensureBreathMaxZ() => $_ensure(8);
+  $58.DoubleValue ensureBreathMaxZ() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $59.DoubleValue get breathMaxPeriod => $_getN(9);
+  $58.DoubleValue get breathMaxPeriod => $_getN(9);
   @$pb.TagNumber(10)
-  set breathMaxPeriod($59.DoubleValue v) { setField(10, v); }
+  set breathMaxPeriod($58.DoubleValue v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasBreathMaxPeriod() => $_has(9);
   @$pb.TagNumber(10)
   void clearBreathMaxPeriod() => clearField(10);
   @$pb.TagNumber(10)
-  $59.DoubleValue ensureBreathMaxPeriod() => $_ensure(9);
+  $58.DoubleValue ensureBreathMaxPeriod() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  $59.DoubleValue get legGestureMeanPeriod => $_getN(10);
+  $58.DoubleValue get legGestureMeanPeriod => $_getN(10);
   @$pb.TagNumber(11)
-  set legGestureMeanPeriod($59.DoubleValue v) { setField(11, v); }
+  set legGestureMeanPeriod($58.DoubleValue v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasLegGestureMeanPeriod() => $_has(10);
   @$pb.TagNumber(11)
   void clearLegGestureMeanPeriod() => clearField(11);
   @$pb.TagNumber(11)
-  $59.DoubleValue ensureLegGestureMeanPeriod() => $_ensure(10);
+  $58.DoubleValue ensureLegGestureMeanPeriod() => $_ensure(10);
 
   @$pb.TagNumber(12)
-  $59.DoubleValue get gazeSlewRate => $_getN(11);
+  $58.DoubleValue get gazeSlewRate => $_getN(11);
   @$pb.TagNumber(12)
-  set gazeSlewRate($59.DoubleValue v) { setField(12, v); }
+  set gazeSlewRate($58.DoubleValue v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasGazeSlewRate() => $_has(11);
   @$pb.TagNumber(12)
   void clearGazeSlewRate() => clearField(12);
   @$pb.TagNumber(12)
-  $59.DoubleValue ensureGazeSlewRate() => $_ensure(11);
+  $58.DoubleValue ensureGazeSlewRate() => $_ensure(11);
 
   @$pb.TagNumber(13)
-  $61.Vec3Value get gazePositionGenerationGain => $_getN(12);
+  $60.Vec3Value get gazePositionGenerationGain => $_getN(12);
   @$pb.TagNumber(13)
-  set gazePositionGenerationGain($61.Vec3Value v) { setField(13, v); }
+  set gazePositionGenerationGain($60.Vec3Value v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasGazePositionGenerationGain() => $_has(12);
   @$pb.TagNumber(13)
   void clearGazePositionGenerationGain() => clearField(13);
   @$pb.TagNumber(13)
-  $61.Vec3Value ensureGazePositionGenerationGain() => $_ensure(12);
+  $60.Vec3Value ensureGazePositionGenerationGain() => $_ensure(12);
 
   @$pb.TagNumber(14)
-  $59.DoubleValue get gazeRollGenerationGain => $_getN(13);
+  $58.DoubleValue get gazeRollGenerationGain => $_getN(13);
   @$pb.TagNumber(14)
-  set gazeRollGenerationGain($59.DoubleValue v) { setField(14, v); }
+  set gazeRollGenerationGain($58.DoubleValue v) { setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasGazeRollGenerationGain() => $_has(13);
   @$pb.TagNumber(14)
   void clearGazeRollGenerationGain() => clearField(14);
   @$pb.TagNumber(14)
-  $59.DoubleValue ensureGazeRollGenerationGain() => $_ensure(13);
+  $58.DoubleValue ensureGazeRollGenerationGain() => $_ensure(13);
 }
 
 class FrameSnapshotParams extends $pb.GeneratedMessage {
   factory FrameSnapshotParams({
-    $59.Int32Value? frameId,
-    $59.Int32Value? fiducialNumber,
+    $58.Int32Value? frameId,
+    $58.Int32Value? fiducialNumber,
     FrameSnapshotParams_Inclusion? includeFrontLeftLeg,
     FrameSnapshotParams_Inclusion? includeFrontRightLeg,
     FrameSnapshotParams_Inclusion? includeHindLeftLeg,
     FrameSnapshotParams_Inclusion? includeHindRightLeg,
-    $59.BoolValue? compensated,
+    $58.BoolValue? compensated,
   }) {
     final $result = create();
     if (frameId != null) {
@@ -3896,13 +3896,13 @@ class FrameSnapshotParams extends $pb.GeneratedMessage {
   factory FrameSnapshotParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FrameSnapshotParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.Int32Value>(1, _omitFieldNames ? '' : 'frameId', subBuilder: $59.Int32Value.create)
-    ..aOM<$59.Int32Value>(2, _omitFieldNames ? '' : 'fiducialNumber', subBuilder: $59.Int32Value.create)
+    ..aOM<$58.Int32Value>(1, _omitFieldNames ? '' : 'frameId', subBuilder: $58.Int32Value.create)
+    ..aOM<$58.Int32Value>(2, _omitFieldNames ? '' : 'fiducialNumber', subBuilder: $58.Int32Value.create)
     ..e<FrameSnapshotParams_Inclusion>(3, _omitFieldNames ? '' : 'includeFrontLeftLeg', $pb.PbFieldType.OE, defaultOrMaker: FrameSnapshotParams_Inclusion.INCLUSION_UNKNOWN, valueOf: FrameSnapshotParams_Inclusion.valueOf, enumValues: FrameSnapshotParams_Inclusion.values)
     ..e<FrameSnapshotParams_Inclusion>(4, _omitFieldNames ? '' : 'includeFrontRightLeg', $pb.PbFieldType.OE, defaultOrMaker: FrameSnapshotParams_Inclusion.INCLUSION_UNKNOWN, valueOf: FrameSnapshotParams_Inclusion.valueOf, enumValues: FrameSnapshotParams_Inclusion.values)
     ..e<FrameSnapshotParams_Inclusion>(5, _omitFieldNames ? '' : 'includeHindLeftLeg', $pb.PbFieldType.OE, defaultOrMaker: FrameSnapshotParams_Inclusion.INCLUSION_UNKNOWN, valueOf: FrameSnapshotParams_Inclusion.valueOf, enumValues: FrameSnapshotParams_Inclusion.values)
     ..e<FrameSnapshotParams_Inclusion>(6, _omitFieldNames ? '' : 'includeHindRightLeg', $pb.PbFieldType.OE, defaultOrMaker: FrameSnapshotParams_Inclusion.INCLUSION_UNKNOWN, valueOf: FrameSnapshotParams_Inclusion.valueOf, enumValues: FrameSnapshotParams_Inclusion.values)
-    ..aOM<$59.BoolValue>(7, _omitFieldNames ? '' : 'compensated', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(7, _omitFieldNames ? '' : 'compensated', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -3928,26 +3928,26 @@ class FrameSnapshotParams extends $pb.GeneratedMessage {
   static FrameSnapshotParams? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.Int32Value get frameId => $_getN(0);
+  $58.Int32Value get frameId => $_getN(0);
   @$pb.TagNumber(1)
-  set frameId($59.Int32Value v) { setField(1, v); }
+  set frameId($58.Int32Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFrameId() => $_has(0);
   @$pb.TagNumber(1)
   void clearFrameId() => clearField(1);
   @$pb.TagNumber(1)
-  $59.Int32Value ensureFrameId() => $_ensure(0);
+  $58.Int32Value ensureFrameId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.Int32Value get fiducialNumber => $_getN(1);
+  $58.Int32Value get fiducialNumber => $_getN(1);
   @$pb.TagNumber(2)
-  set fiducialNumber($59.Int32Value v) { setField(2, v); }
+  set fiducialNumber($58.Int32Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFiducialNumber() => $_has(1);
   @$pb.TagNumber(2)
   void clearFiducialNumber() => clearField(2);
   @$pb.TagNumber(2)
-  $59.Int32Value ensureFiducialNumber() => $_ensure(1);
+  $58.Int32Value ensureFiducialNumber() => $_ensure(1);
 
   @$pb.TagNumber(3)
   FrameSnapshotParams_Inclusion get includeFrontLeftLeg => $_getN(2);
@@ -3986,24 +3986,24 @@ class FrameSnapshotParams extends $pb.GeneratedMessage {
   void clearIncludeHindRightLeg() => clearField(6);
 
   @$pb.TagNumber(7)
-  $59.BoolValue get compensated => $_getN(6);
+  $58.BoolValue get compensated => $_getN(6);
   @$pb.TagNumber(7)
-  set compensated($59.BoolValue v) { setField(7, v); }
+  set compensated($58.BoolValue v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasCompensated() => $_has(6);
   @$pb.TagNumber(7)
   void clearCompensated() => clearField(7);
   @$pb.TagNumber(7)
-  $59.BoolValue ensureCompensated() => $_ensure(6);
+  $58.BoolValue ensureCompensated() => $_ensure(6);
 }
 
 class SetColorParams extends $pb.GeneratedMessage {
   factory SetColorParams({
     Color? leftColor,
-    $59.BoolValue? rightSameAsLeft,
+    $58.BoolValue? rightSameAsLeft,
     Color? rightColor,
-    $59.DoubleValue? fadeInSlices,
-    $59.DoubleValue? fadeOutSlices,
+    $58.DoubleValue? fadeInSlices,
+    $58.DoubleValue? fadeOutSlices,
   }) {
     final $result = create();
     if (leftColor != null) {
@@ -4029,10 +4029,10 @@ class SetColorParams extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetColorParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..aOM<Color>(1, _omitFieldNames ? '' : 'leftColor', subBuilder: Color.create)
-    ..aOM<$59.BoolValue>(2, _omitFieldNames ? '' : 'rightSameAsLeft', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(2, _omitFieldNames ? '' : 'rightSameAsLeft', subBuilder: $58.BoolValue.create)
     ..aOM<Color>(3, _omitFieldNames ? '' : 'rightColor', subBuilder: Color.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'fadeInSlices', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'fadeOutSlices', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'fadeInSlices', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'fadeOutSlices', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -4069,15 +4069,15 @@ class SetColorParams extends $pb.GeneratedMessage {
   Color ensureLeftColor() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.BoolValue get rightSameAsLeft => $_getN(1);
+  $58.BoolValue get rightSameAsLeft => $_getN(1);
   @$pb.TagNumber(2)
-  set rightSameAsLeft($59.BoolValue v) { setField(2, v); }
+  set rightSameAsLeft($58.BoolValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasRightSameAsLeft() => $_has(1);
   @$pb.TagNumber(2)
   void clearRightSameAsLeft() => clearField(2);
   @$pb.TagNumber(2)
-  $59.BoolValue ensureRightSameAsLeft() => $_ensure(1);
+  $58.BoolValue ensureRightSameAsLeft() => $_ensure(1);
 
   @$pb.TagNumber(3)
   Color get rightColor => $_getN(2);
@@ -4091,34 +4091,34 @@ class SetColorParams extends $pb.GeneratedMessage {
   Color ensureRightColor() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $59.DoubleValue get fadeInSlices => $_getN(3);
+  $58.DoubleValue get fadeInSlices => $_getN(3);
   @$pb.TagNumber(4)
-  set fadeInSlices($59.DoubleValue v) { setField(4, v); }
+  set fadeInSlices($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasFadeInSlices() => $_has(3);
   @$pb.TagNumber(4)
   void clearFadeInSlices() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureFadeInSlices() => $_ensure(3);
+  $58.DoubleValue ensureFadeInSlices() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $59.DoubleValue get fadeOutSlices => $_getN(4);
+  $58.DoubleValue get fadeOutSlices => $_getN(4);
   @$pb.TagNumber(5)
-  set fadeOutSlices($59.DoubleValue v) { setField(5, v); }
+  set fadeOutSlices($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasFadeOutSlices() => $_has(4);
   @$pb.TagNumber(5)
   void clearFadeOutSlices() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureFadeOutSlices() => $_ensure(4);
+  $58.DoubleValue ensureFadeOutSlices() => $_ensure(4);
 }
 
 class FadeColorParams extends $pb.GeneratedMessage {
   factory FadeColorParams({
     Color? topColor,
     Color? bottomColor,
-    $59.DoubleValue? fadeInSlices,
-    $59.DoubleValue? fadeOutSlices,
+    $58.DoubleValue? fadeInSlices,
+    $58.DoubleValue? fadeOutSlices,
   }) {
     final $result = create();
     if (topColor != null) {
@@ -4142,8 +4142,8 @@ class FadeColorParams extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FadeColorParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..aOM<Color>(1, _omitFieldNames ? '' : 'topColor', subBuilder: Color.create)
     ..aOM<Color>(2, _omitFieldNames ? '' : 'bottomColor', subBuilder: Color.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'fadeInSlices', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'fadeOutSlices', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'fadeInSlices', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'fadeOutSlices', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -4191,26 +4191,26 @@ class FadeColorParams extends $pb.GeneratedMessage {
   Color ensureBottomColor() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get fadeInSlices => $_getN(2);
+  $58.DoubleValue get fadeInSlices => $_getN(2);
   @$pb.TagNumber(3)
-  set fadeInSlices($59.DoubleValue v) { setField(3, v); }
+  set fadeInSlices($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFadeInSlices() => $_has(2);
   @$pb.TagNumber(3)
   void clearFadeInSlices() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureFadeInSlices() => $_ensure(2);
+  $58.DoubleValue ensureFadeInSlices() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $59.DoubleValue get fadeOutSlices => $_getN(3);
+  $58.DoubleValue get fadeOutSlices => $_getN(3);
   @$pb.TagNumber(4)
-  set fadeOutSlices($59.DoubleValue v) { setField(4, v); }
+  set fadeOutSlices($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasFadeOutSlices() => $_has(3);
   @$pb.TagNumber(4)
   void clearFadeOutSlices() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureFadeOutSlices() => $_ensure(3);
+  $58.DoubleValue ensureFadeOutSlices() => $_ensure(3);
 }
 
 class IndependentColorParams extends $pb.GeneratedMessage {
@@ -4223,8 +4223,8 @@ class IndependentColorParams extends $pb.GeneratedMessage {
     Color? upperMidRight,
     Color? lowerMidRight,
     Color? bottomRight,
-    $59.DoubleValue? fadeInSlices,
-    $59.DoubleValue? fadeOutSlices,
+    $58.DoubleValue? fadeInSlices,
+    $58.DoubleValue? fadeOutSlices,
   }) {
     final $result = create();
     if (topLeft != null) {
@@ -4272,8 +4272,8 @@ class IndependentColorParams extends $pb.GeneratedMessage {
     ..aOM<Color>(6, _omitFieldNames ? '' : 'upperMidRight', subBuilder: Color.create)
     ..aOM<Color>(7, _omitFieldNames ? '' : 'lowerMidRight', subBuilder: Color.create)
     ..aOM<Color>(8, _omitFieldNames ? '' : 'bottomRight', subBuilder: Color.create)
-    ..aOM<$59.DoubleValue>(9, _omitFieldNames ? '' : 'fadeInSlices', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(10, _omitFieldNames ? '' : 'fadeOutSlices', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(9, _omitFieldNames ? '' : 'fadeInSlices', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(10, _omitFieldNames ? '' : 'fadeOutSlices', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -4387,33 +4387,33 @@ class IndependentColorParams extends $pb.GeneratedMessage {
   Color ensureBottomRight() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  $59.DoubleValue get fadeInSlices => $_getN(8);
+  $58.DoubleValue get fadeInSlices => $_getN(8);
   @$pb.TagNumber(9)
-  set fadeInSlices($59.DoubleValue v) { setField(9, v); }
+  set fadeInSlices($58.DoubleValue v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasFadeInSlices() => $_has(8);
   @$pb.TagNumber(9)
   void clearFadeInSlices() => clearField(9);
   @$pb.TagNumber(9)
-  $59.DoubleValue ensureFadeInSlices() => $_ensure(8);
+  $58.DoubleValue ensureFadeInSlices() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $59.DoubleValue get fadeOutSlices => $_getN(9);
+  $58.DoubleValue get fadeOutSlices => $_getN(9);
   @$pb.TagNumber(10)
-  set fadeOutSlices($59.DoubleValue v) { setField(10, v); }
+  set fadeOutSlices($58.DoubleValue v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasFadeOutSlices() => $_has(9);
   @$pb.TagNumber(10)
   void clearFadeOutSlices() => clearField(10);
   @$pb.TagNumber(10)
-  $59.DoubleValue ensureFadeOutSlices() => $_ensure(9);
+  $58.DoubleValue ensureFadeOutSlices() => $_ensure(9);
 }
 
 class Color extends $pb.GeneratedMessage {
   factory Color({
-    $59.DoubleValue? red,
-    $59.DoubleValue? green,
-    $59.DoubleValue? blue,
+    $58.DoubleValue? red,
+    $58.DoubleValue? green,
+    $58.DoubleValue? blue,
   }) {
     final $result = create();
     if (red != null) {
@@ -4432,9 +4432,9 @@ class Color extends $pb.GeneratedMessage {
   factory Color.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Color', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'red', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'green', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'blue', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'red', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'green', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'blue', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -4460,37 +4460,37 @@ class Color extends $pb.GeneratedMessage {
   static Color? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get red => $_getN(0);
+  $58.DoubleValue get red => $_getN(0);
   @$pb.TagNumber(1)
-  set red($59.DoubleValue v) { setField(1, v); }
+  set red($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRed() => $_has(0);
   @$pb.TagNumber(1)
   void clearRed() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureRed() => $_ensure(0);
+  $58.DoubleValue ensureRed() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get green => $_getN(1);
+  $58.DoubleValue get green => $_getN(1);
   @$pb.TagNumber(2)
-  set green($59.DoubleValue v) { setField(2, v); }
+  set green($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasGreen() => $_has(1);
   @$pb.TagNumber(2)
   void clearGreen() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureGreen() => $_ensure(1);
+  $58.DoubleValue ensureGreen() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get blue => $_getN(2);
+  $58.DoubleValue get blue => $_getN(2);
   @$pb.TagNumber(3)
-  set blue($59.DoubleValue v) { setField(3, v); }
+  set blue($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasBlue() => $_has(2);
   @$pb.TagNumber(3)
   void clearBlue() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureBlue() => $_ensure(2);
+  $58.DoubleValue ensureBlue() => $_ensure(2);
 }
 
 class RippleColorParams extends $pb.GeneratedMessage {
@@ -4499,7 +4499,7 @@ class RippleColorParams extends $pb.GeneratedMessage {
     Color? secondary,
     RippleColorParams_Pattern? pattern,
     RippleColorParams_LightSide? lightSide,
-    $59.DoubleValue? incrementSlices,
+    $58.DoubleValue? incrementSlices,
   }) {
     final $result = create();
     if (main != null) {
@@ -4528,7 +4528,7 @@ class RippleColorParams extends $pb.GeneratedMessage {
     ..aOM<Color>(2, _omitFieldNames ? '' : 'secondary', subBuilder: Color.create)
     ..e<RippleColorParams_Pattern>(3, _omitFieldNames ? '' : 'pattern', $pb.PbFieldType.OE, defaultOrMaker: RippleColorParams_Pattern.PATTERN_UNKNOWN, valueOf: RippleColorParams_Pattern.valueOf, enumValues: RippleColorParams_Pattern.values)
     ..e<RippleColorParams_LightSide>(4, _omitFieldNames ? '' : 'lightSide', $pb.PbFieldType.OE, defaultOrMaker: RippleColorParams_LightSide.LIGHT_SIDE_UNKNOWN, valueOf: RippleColorParams_LightSide.valueOf, enumValues: RippleColorParams_LightSide.values)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'incrementSlices', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'incrementSlices', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -4594,31 +4594,31 @@ class RippleColorParams extends $pb.GeneratedMessage {
   void clearLightSide() => clearField(4);
 
   @$pb.TagNumber(5)
-  $59.DoubleValue get incrementSlices => $_getN(4);
+  $58.DoubleValue get incrementSlices => $_getN(4);
   @$pb.TagNumber(5)
-  set incrementSlices($59.DoubleValue v) { setField(5, v); }
+  set incrementSlices($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasIncrementSlices() => $_has(4);
   @$pb.TagNumber(5)
   void clearIncrementSlices() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureIncrementSlices() => $_ensure(4);
+  $58.DoubleValue ensureIncrementSlices() => $_ensure(4);
 }
 
 class LegJointParams extends $pb.GeneratedMessage {
   factory LegJointParams({
-    $59.DoubleValue? flHx,
-    $59.DoubleValue? flHy,
-    $59.DoubleValue? flKn,
-    $59.DoubleValue? frHx,
-    $59.DoubleValue? frHy,
-    $59.DoubleValue? frKn,
-    $59.DoubleValue? hlHx,
-    $59.DoubleValue? hlHy,
-    $59.DoubleValue? hlKn,
-    $59.DoubleValue? hrHx,
-    $59.DoubleValue? hrHy,
-    $59.DoubleValue? hrKn,
+    $58.DoubleValue? flHx,
+    $58.DoubleValue? flHy,
+    $58.DoubleValue? flKn,
+    $58.DoubleValue? frHx,
+    $58.DoubleValue? frHy,
+    $58.DoubleValue? frKn,
+    $58.DoubleValue? hlHx,
+    $58.DoubleValue? hlHy,
+    $58.DoubleValue? hlKn,
+    $58.DoubleValue? hrHx,
+    $58.DoubleValue? hrHy,
+    $58.DoubleValue? hrKn,
   }) {
     final $result = create();
     if (flHx != null) {
@@ -4664,18 +4664,18 @@ class LegJointParams extends $pb.GeneratedMessage {
   factory LegJointParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LegJointParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'flHx', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'flHy', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'flKn', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'frHx', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'frHy', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'frKn', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(7, _omitFieldNames ? '' : 'hlHx', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(8, _omitFieldNames ? '' : 'hlHy', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(9, _omitFieldNames ? '' : 'hlKn', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(10, _omitFieldNames ? '' : 'hrHx', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(11, _omitFieldNames ? '' : 'hrHy', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(12, _omitFieldNames ? '' : 'hrKn', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'flHx', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'flHy', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'flKn', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'frHx', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'frHy', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'frKn', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(7, _omitFieldNames ? '' : 'hlHx', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(8, _omitFieldNames ? '' : 'hlHy', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(9, _omitFieldNames ? '' : 'hlKn', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(10, _omitFieldNames ? '' : 'hrHx', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(11, _omitFieldNames ? '' : 'hrHy', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(12, _omitFieldNames ? '' : 'hrKn', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -4701,145 +4701,145 @@ class LegJointParams extends $pb.GeneratedMessage {
   static LegJointParams? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get flHx => $_getN(0);
+  $58.DoubleValue get flHx => $_getN(0);
   @$pb.TagNumber(1)
-  set flHx($59.DoubleValue v) { setField(1, v); }
+  set flHx($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFlHx() => $_has(0);
   @$pb.TagNumber(1)
   void clearFlHx() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureFlHx() => $_ensure(0);
+  $58.DoubleValue ensureFlHx() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get flHy => $_getN(1);
+  $58.DoubleValue get flHy => $_getN(1);
   @$pb.TagNumber(2)
-  set flHy($59.DoubleValue v) { setField(2, v); }
+  set flHy($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFlHy() => $_has(1);
   @$pb.TagNumber(2)
   void clearFlHy() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureFlHy() => $_ensure(1);
+  $58.DoubleValue ensureFlHy() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get flKn => $_getN(2);
+  $58.DoubleValue get flKn => $_getN(2);
   @$pb.TagNumber(3)
-  set flKn($59.DoubleValue v) { setField(3, v); }
+  set flKn($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFlKn() => $_has(2);
   @$pb.TagNumber(3)
   void clearFlKn() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureFlKn() => $_ensure(2);
+  $58.DoubleValue ensureFlKn() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $59.DoubleValue get frHx => $_getN(3);
+  $58.DoubleValue get frHx => $_getN(3);
   @$pb.TagNumber(4)
-  set frHx($59.DoubleValue v) { setField(4, v); }
+  set frHx($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasFrHx() => $_has(3);
   @$pb.TagNumber(4)
   void clearFrHx() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureFrHx() => $_ensure(3);
+  $58.DoubleValue ensureFrHx() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $59.DoubleValue get frHy => $_getN(4);
+  $58.DoubleValue get frHy => $_getN(4);
   @$pb.TagNumber(5)
-  set frHy($59.DoubleValue v) { setField(5, v); }
+  set frHy($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasFrHy() => $_has(4);
   @$pb.TagNumber(5)
   void clearFrHy() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureFrHy() => $_ensure(4);
+  $58.DoubleValue ensureFrHy() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $59.DoubleValue get frKn => $_getN(5);
+  $58.DoubleValue get frKn => $_getN(5);
   @$pb.TagNumber(6)
-  set frKn($59.DoubleValue v) { setField(6, v); }
+  set frKn($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasFrKn() => $_has(5);
   @$pb.TagNumber(6)
   void clearFrKn() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureFrKn() => $_ensure(5);
+  $58.DoubleValue ensureFrKn() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $59.DoubleValue get hlHx => $_getN(6);
+  $58.DoubleValue get hlHx => $_getN(6);
   @$pb.TagNumber(7)
-  set hlHx($59.DoubleValue v) { setField(7, v); }
+  set hlHx($58.DoubleValue v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasHlHx() => $_has(6);
   @$pb.TagNumber(7)
   void clearHlHx() => clearField(7);
   @$pb.TagNumber(7)
-  $59.DoubleValue ensureHlHx() => $_ensure(6);
+  $58.DoubleValue ensureHlHx() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $59.DoubleValue get hlHy => $_getN(7);
+  $58.DoubleValue get hlHy => $_getN(7);
   @$pb.TagNumber(8)
-  set hlHy($59.DoubleValue v) { setField(8, v); }
+  set hlHy($58.DoubleValue v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasHlHy() => $_has(7);
   @$pb.TagNumber(8)
   void clearHlHy() => clearField(8);
   @$pb.TagNumber(8)
-  $59.DoubleValue ensureHlHy() => $_ensure(7);
+  $58.DoubleValue ensureHlHy() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  $59.DoubleValue get hlKn => $_getN(8);
+  $58.DoubleValue get hlKn => $_getN(8);
   @$pb.TagNumber(9)
-  set hlKn($59.DoubleValue v) { setField(9, v); }
+  set hlKn($58.DoubleValue v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasHlKn() => $_has(8);
   @$pb.TagNumber(9)
   void clearHlKn() => clearField(9);
   @$pb.TagNumber(9)
-  $59.DoubleValue ensureHlKn() => $_ensure(8);
+  $58.DoubleValue ensureHlKn() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $59.DoubleValue get hrHx => $_getN(9);
+  $58.DoubleValue get hrHx => $_getN(9);
   @$pb.TagNumber(10)
-  set hrHx($59.DoubleValue v) { setField(10, v); }
+  set hrHx($58.DoubleValue v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasHrHx() => $_has(9);
   @$pb.TagNumber(10)
   void clearHrHx() => clearField(10);
   @$pb.TagNumber(10)
-  $59.DoubleValue ensureHrHx() => $_ensure(9);
+  $58.DoubleValue ensureHrHx() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  $59.DoubleValue get hrHy => $_getN(10);
+  $58.DoubleValue get hrHy => $_getN(10);
   @$pb.TagNumber(11)
-  set hrHy($59.DoubleValue v) { setField(11, v); }
+  set hrHy($58.DoubleValue v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasHrHy() => $_has(10);
   @$pb.TagNumber(11)
   void clearHrHy() => clearField(11);
   @$pb.TagNumber(11)
-  $59.DoubleValue ensureHrHy() => $_ensure(10);
+  $58.DoubleValue ensureHrHy() => $_ensure(10);
 
   @$pb.TagNumber(12)
-  $59.DoubleValue get hrKn => $_getN(11);
+  $58.DoubleValue get hrKn => $_getN(11);
   @$pb.TagNumber(12)
-  set hrKn($59.DoubleValue v) { setField(12, v); }
+  set hrKn($58.DoubleValue v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasHrKn() => $_has(11);
   @$pb.TagNumber(12)
   void clearHrKn() => clearField(12);
   @$pb.TagNumber(12)
-  $59.DoubleValue ensureHrKn() => $_ensure(11);
+  $58.DoubleValue ensureHrKn() => $_ensure(11);
 }
 
 class StanceShape extends $pb.GeneratedMessage {
   factory StanceShape({
-    $59.DoubleValue? length,
-    $59.DoubleValue? width,
-    $59.DoubleValue? frontWiderThanHind,
-    $59.DoubleValue? leftLongerThanRight,
-    $59.DoubleValue? leftForwardOfRight,
+    $58.DoubleValue? length,
+    $58.DoubleValue? width,
+    $58.DoubleValue? frontWiderThanHind,
+    $58.DoubleValue? leftLongerThanRight,
+    $58.DoubleValue? leftForwardOfRight,
   }) {
     final $result = create();
     if (length != null) {
@@ -4864,11 +4864,11 @@ class StanceShape extends $pb.GeneratedMessage {
   factory StanceShape.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StanceShape', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'length', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'width', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'frontWiderThanHind', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'leftLongerThanRight', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'leftForwardOfRight', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'length', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'width', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'frontWiderThanHind', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'leftLongerThanRight', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'leftForwardOfRight', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -4894,65 +4894,65 @@ class StanceShape extends $pb.GeneratedMessage {
   static StanceShape? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get length => $_getN(0);
+  $58.DoubleValue get length => $_getN(0);
   @$pb.TagNumber(1)
-  set length($59.DoubleValue v) { setField(1, v); }
+  set length($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasLength() => $_has(0);
   @$pb.TagNumber(1)
   void clearLength() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureLength() => $_ensure(0);
+  $58.DoubleValue ensureLength() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get width => $_getN(1);
+  $58.DoubleValue get width => $_getN(1);
   @$pb.TagNumber(2)
-  set width($59.DoubleValue v) { setField(2, v); }
+  set width($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasWidth() => $_has(1);
   @$pb.TagNumber(2)
   void clearWidth() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureWidth() => $_ensure(1);
+  $58.DoubleValue ensureWidth() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get frontWiderThanHind => $_getN(2);
+  $58.DoubleValue get frontWiderThanHind => $_getN(2);
   @$pb.TagNumber(3)
-  set frontWiderThanHind($59.DoubleValue v) { setField(3, v); }
+  set frontWiderThanHind($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFrontWiderThanHind() => $_has(2);
   @$pb.TagNumber(3)
   void clearFrontWiderThanHind() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureFrontWiderThanHind() => $_ensure(2);
+  $58.DoubleValue ensureFrontWiderThanHind() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $59.DoubleValue get leftLongerThanRight => $_getN(3);
+  $58.DoubleValue get leftLongerThanRight => $_getN(3);
   @$pb.TagNumber(4)
-  set leftLongerThanRight($59.DoubleValue v) { setField(4, v); }
+  set leftLongerThanRight($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLeftLongerThanRight() => $_has(3);
   @$pb.TagNumber(4)
   void clearLeftLongerThanRight() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureLeftLongerThanRight() => $_ensure(3);
+  $58.DoubleValue ensureLeftLongerThanRight() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $59.DoubleValue get leftForwardOfRight => $_getN(4);
+  $58.DoubleValue get leftForwardOfRight => $_getN(4);
   @$pb.TagNumber(5)
-  set leftForwardOfRight($59.DoubleValue v) { setField(5, v); }
+  set leftForwardOfRight($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasLeftForwardOfRight() => $_has(4);
   @$pb.TagNumber(5)
   void clearLeftForwardOfRight() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureLeftForwardOfRight() => $_ensure(4);
+  $58.DoubleValue ensureLeftForwardOfRight() => $_ensure(4);
 }
 
 class SwingPhases extends $pb.GeneratedMessage {
   factory SwingPhases({
-    $59.DoubleValue? liftoffPhase,
-    $59.DoubleValue? touchdownPhase,
+    $58.DoubleValue? liftoffPhase,
+    $58.DoubleValue? touchdownPhase,
   }) {
     final $result = create();
     if (liftoffPhase != null) {
@@ -4968,8 +4968,8 @@ class SwingPhases extends $pb.GeneratedMessage {
   factory SwingPhases.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SwingPhases', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'liftoffPhase', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'touchdownPhase', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'liftoffPhase', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'touchdownPhase', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -4995,37 +4995,37 @@ class SwingPhases extends $pb.GeneratedMessage {
   static SwingPhases? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get liftoffPhase => $_getN(0);
+  $58.DoubleValue get liftoffPhase => $_getN(0);
   @$pb.TagNumber(1)
-  set liftoffPhase($59.DoubleValue v) { setField(1, v); }
+  set liftoffPhase($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasLiftoffPhase() => $_has(0);
   @$pb.TagNumber(1)
   void clearLiftoffPhase() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureLiftoffPhase() => $_ensure(0);
+  $58.DoubleValue ensureLiftoffPhase() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get touchdownPhase => $_getN(1);
+  $58.DoubleValue get touchdownPhase => $_getN(1);
   @$pb.TagNumber(2)
-  set touchdownPhase($59.DoubleValue v) { setField(2, v); }
+  set touchdownPhase($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTouchdownPhase() => $_has(1);
   @$pb.TagNumber(2)
   void clearTouchdownPhase() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureTouchdownPhase() => $_ensure(1);
+  $58.DoubleValue ensureTouchdownPhase() => $_ensure(1);
 }
 
 class SwingParams extends $pb.GeneratedMessage {
   factory SwingParams({
-    $59.DoubleValue? height,
-    $59.DoubleValue? liftoffSpeed,
-    $59.DoubleValue? verticalSpeed,
-    $59.DoubleValue? verticalAcceleration,
-    $59.DoubleValue? overlayOutside,
-    $59.DoubleValue? overlayForward,
-    $59.DoubleValue? lowSpeedFraction,
+    $58.DoubleValue? height,
+    $58.DoubleValue? liftoffSpeed,
+    $58.DoubleValue? verticalSpeed,
+    $58.DoubleValue? verticalAcceleration,
+    $58.DoubleValue? overlayOutside,
+    $58.DoubleValue? overlayForward,
+    $58.DoubleValue? lowSpeedFraction,
   }) {
     final $result = create();
     if (height != null) {
@@ -5056,13 +5056,13 @@ class SwingParams extends $pb.GeneratedMessage {
   factory SwingParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SwingParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'height', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'liftoffSpeed', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'verticalSpeed', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'verticalAcceleration', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'overlayOutside', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'overlayForward', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(7, _omitFieldNames ? '' : 'lowSpeedFraction', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'height', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'liftoffSpeed', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'verticalSpeed', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'verticalAcceleration', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'overlayOutside', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'overlayForward', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(7, _omitFieldNames ? '' : 'lowSpeedFraction', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -5088,89 +5088,89 @@ class SwingParams extends $pb.GeneratedMessage {
   static SwingParams? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get height => $_getN(0);
+  $58.DoubleValue get height => $_getN(0);
   @$pb.TagNumber(1)
-  set height($59.DoubleValue v) { setField(1, v); }
+  set height($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeight() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeight() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureHeight() => $_ensure(0);
+  $58.DoubleValue ensureHeight() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get liftoffSpeed => $_getN(1);
+  $58.DoubleValue get liftoffSpeed => $_getN(1);
   @$pb.TagNumber(2)
-  set liftoffSpeed($59.DoubleValue v) { setField(2, v); }
+  set liftoffSpeed($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLiftoffSpeed() => $_has(1);
   @$pb.TagNumber(2)
   void clearLiftoffSpeed() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureLiftoffSpeed() => $_ensure(1);
+  $58.DoubleValue ensureLiftoffSpeed() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get verticalSpeed => $_getN(2);
+  $58.DoubleValue get verticalSpeed => $_getN(2);
   @$pb.TagNumber(3)
-  set verticalSpeed($59.DoubleValue v) { setField(3, v); }
+  set verticalSpeed($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasVerticalSpeed() => $_has(2);
   @$pb.TagNumber(3)
   void clearVerticalSpeed() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureVerticalSpeed() => $_ensure(2);
+  $58.DoubleValue ensureVerticalSpeed() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $59.DoubleValue get verticalAcceleration => $_getN(3);
+  $58.DoubleValue get verticalAcceleration => $_getN(3);
   @$pb.TagNumber(4)
-  set verticalAcceleration($59.DoubleValue v) { setField(4, v); }
+  set verticalAcceleration($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasVerticalAcceleration() => $_has(3);
   @$pb.TagNumber(4)
   void clearVerticalAcceleration() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureVerticalAcceleration() => $_ensure(3);
+  $58.DoubleValue ensureVerticalAcceleration() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $59.DoubleValue get overlayOutside => $_getN(4);
+  $58.DoubleValue get overlayOutside => $_getN(4);
   @$pb.TagNumber(5)
-  set overlayOutside($59.DoubleValue v) { setField(5, v); }
+  set overlayOutside($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasOverlayOutside() => $_has(4);
   @$pb.TagNumber(5)
   void clearOverlayOutside() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureOverlayOutside() => $_ensure(4);
+  $58.DoubleValue ensureOverlayOutside() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $59.DoubleValue get overlayForward => $_getN(5);
+  $58.DoubleValue get overlayForward => $_getN(5);
   @$pb.TagNumber(6)
-  set overlayForward($59.DoubleValue v) { setField(6, v); }
+  set overlayForward($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasOverlayForward() => $_has(5);
   @$pb.TagNumber(6)
   void clearOverlayForward() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureOverlayForward() => $_ensure(5);
+  $58.DoubleValue ensureOverlayForward() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $59.DoubleValue get lowSpeedFraction => $_getN(6);
+  $58.DoubleValue get lowSpeedFraction => $_getN(6);
   @$pb.TagNumber(7)
-  set lowSpeedFraction($59.DoubleValue v) { setField(7, v); }
+  set lowSpeedFraction($58.DoubleValue v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasLowSpeedFraction() => $_has(6);
   @$pb.TagNumber(7)
   void clearLowSpeedFraction() => clearField(7);
   @$pb.TagNumber(7)
-  $59.DoubleValue ensureLowSpeedFraction() => $_ensure(6);
+  $58.DoubleValue ensureLowSpeedFraction() => $_ensure(6);
 }
 
 class AnimatedCycleParams extends $pb.GeneratedMessage {
   factory AnimatedCycleParams({
-    $59.StringValue? animationName,
-    $59.BoolValue? enableAnimationDuration,
-    $59.BoolValue? enableLegTiming,
-    $59.BoolValue? enableStanceShape,
+    $58.StringValue? animationName,
+    $58.BoolValue? enableAnimationDuration,
+    $58.BoolValue? enableLegTiming,
+    $58.BoolValue? enableStanceShape,
   }) {
     final $result = create();
     if (animationName != null) {
@@ -5192,10 +5192,10 @@ class AnimatedCycleParams extends $pb.GeneratedMessage {
   factory AnimatedCycleParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnimatedCycleParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.StringValue>(1, _omitFieldNames ? '' : 'animationName', subBuilder: $59.StringValue.create)
-    ..aOM<$59.BoolValue>(2, _omitFieldNames ? '' : 'enableAnimationDuration', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(3, _omitFieldNames ? '' : 'enableLegTiming', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(4, _omitFieldNames ? '' : 'enableStanceShape', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.StringValue>(1, _omitFieldNames ? '' : 'animationName', subBuilder: $58.StringValue.create)
+    ..aOM<$58.BoolValue>(2, _omitFieldNames ? '' : 'enableAnimationDuration', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(3, _omitFieldNames ? '' : 'enableLegTiming', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(4, _omitFieldNames ? '' : 'enableStanceShape', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -5221,95 +5221,95 @@ class AnimatedCycleParams extends $pb.GeneratedMessage {
   static AnimatedCycleParams? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.StringValue get animationName => $_getN(0);
+  $58.StringValue get animationName => $_getN(0);
   @$pb.TagNumber(1)
-  set animationName($59.StringValue v) { setField(1, v); }
+  set animationName($58.StringValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAnimationName() => $_has(0);
   @$pb.TagNumber(1)
   void clearAnimationName() => clearField(1);
   @$pb.TagNumber(1)
-  $59.StringValue ensureAnimationName() => $_ensure(0);
+  $58.StringValue ensureAnimationName() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.BoolValue get enableAnimationDuration => $_getN(1);
+  $58.BoolValue get enableAnimationDuration => $_getN(1);
   @$pb.TagNumber(2)
-  set enableAnimationDuration($59.BoolValue v) { setField(2, v); }
+  set enableAnimationDuration($58.BoolValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEnableAnimationDuration() => $_has(1);
   @$pb.TagNumber(2)
   void clearEnableAnimationDuration() => clearField(2);
   @$pb.TagNumber(2)
-  $59.BoolValue ensureEnableAnimationDuration() => $_ensure(1);
+  $58.BoolValue ensureEnableAnimationDuration() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.BoolValue get enableLegTiming => $_getN(2);
+  $58.BoolValue get enableLegTiming => $_getN(2);
   @$pb.TagNumber(3)
-  set enableLegTiming($59.BoolValue v) { setField(3, v); }
+  set enableLegTiming($58.BoolValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEnableLegTiming() => $_has(2);
   @$pb.TagNumber(3)
   void clearEnableLegTiming() => clearField(3);
   @$pb.TagNumber(3)
-  $59.BoolValue ensureEnableLegTiming() => $_ensure(2);
+  $58.BoolValue ensureEnableLegTiming() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $59.BoolValue get enableStanceShape => $_getN(3);
+  $58.BoolValue get enableStanceShape => $_getN(3);
   @$pb.TagNumber(4)
-  set enableStanceShape($59.BoolValue v) { setField(4, v); }
+  set enableStanceShape($58.BoolValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasEnableStanceShape() => $_has(3);
   @$pb.TagNumber(4)
   void clearEnableStanceShape() => clearField(4);
   @$pb.TagNumber(4)
-  $59.BoolValue ensureEnableStanceShape() => $_ensure(3);
+  $58.BoolValue ensureEnableStanceShape() => $_ensure(3);
 }
 
 class CustomGaitParams extends $pb.GeneratedMessage {
   factory CustomGaitParams({
-    $61.Vec2Value? maxVelocity,
-    $59.DoubleValue? maxYawRate,
-    $59.DoubleValue? accelerationScaling,
-    $59.DoubleValue? lowSpeedBodyFraction,
-    $59.BoolValue? showStanceShape,
+    $60.Vec2Value? maxVelocity,
+    $58.DoubleValue? maxYawRate,
+    $58.DoubleValue? accelerationScaling,
+    $58.DoubleValue? lowSpeedBodyFraction,
+    $58.BoolValue? showStanceShape,
     StanceShape? stanceShape,
-    $59.DoubleValue? comHeight,
-    $61.Vec3Value? bodyTranslationOffset,
+    $58.DoubleValue? comHeight,
+    $60.Vec3Value? bodyTranslationOffset,
     EulerZYXValue? bodyRotationOffset,
-    $59.DoubleValue? cycleDuration,
+    $58.DoubleValue? cycleDuration,
     SwingPhases? flSwing,
-    $59.BoolValue? twoFlSwings,
+    $58.BoolValue? twoFlSwings,
     SwingPhases? secondFlSwing,
     SwingPhases? frSwing,
-    $59.BoolValue? twoFrSwings,
+    $58.BoolValue? twoFrSwings,
     SwingPhases? secondFrSwing,
     SwingPhases? hlSwing,
-    $59.BoolValue? twoHlSwings,
+    $58.BoolValue? twoHlSwings,
     SwingPhases? secondHlSwing,
     SwingPhases? hrSwing,
-    $59.BoolValue? twoHrSwings,
+    $58.BoolValue? twoHrSwings,
     SwingPhases? secondHrSwing,
     SwingParams? generalSwingParams,
-    $59.BoolValue? useFlSwingParams,
+    $58.BoolValue? useFlSwingParams,
     SwingParams? flSwingParams,
-    $59.BoolValue? useFrSwingParams,
+    $58.BoolValue? useFrSwingParams,
     SwingParams? frSwingParams,
-    $59.BoolValue? useHlSwingParams,
+    $58.BoolValue? useHlSwingParams,
     SwingParams? hlSwingParams,
-    $59.BoolValue? useHrSwingParams,
+    $58.BoolValue? useHrSwingParams,
     SwingParams? hrSwingParams,
-    $59.BoolValue? standInPlace,
-    $59.BoolValue? standardFinalStance,
-    $59.BoolValue? showStabilityParams,
-    $59.DoubleValue? mu,
-    $59.DoubleValue? timingStiffness,
-    $59.DoubleValue? stepPositionStiffness,
-    $59.BoolValue? enablePerceptionObstacleAvoidance,
-    $59.DoubleValue? obstacleAvoidancePadding,
-    $59.BoolValue? enablePerceptionTerrainHeight,
-    $59.BoolValue? enablePerceptionStepPlacement,
-    $59.DoubleValue? maximumStumbleDistance,
-    $59.DoubleValue? tripSensitivity,
+    $58.BoolValue? standInPlace,
+    $58.BoolValue? standardFinalStance,
+    $58.BoolValue? showStabilityParams,
+    $58.DoubleValue? mu,
+    $58.DoubleValue? timingStiffness,
+    $58.DoubleValue? stepPositionStiffness,
+    $58.BoolValue? enablePerceptionObstacleAvoidance,
+    $58.DoubleValue? obstacleAvoidancePadding,
+    $58.BoolValue? enablePerceptionTerrainHeight,
+    $58.BoolValue? enablePerceptionStepPlacement,
+    $58.DoubleValue? maximumStumbleDistance,
+    $58.DoubleValue? tripSensitivity,
     AnimatedCycleParams? animatedCycleParams,
   }) {
     final $result = create();
@@ -5452,49 +5452,49 @@ class CustomGaitParams extends $pb.GeneratedMessage {
   factory CustomGaitParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CustomGaitParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.Vec2Value>(3, _omitFieldNames ? '' : 'maxVelocity', subBuilder: $61.Vec2Value.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'maxYawRate', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'accelerationScaling', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(8, _omitFieldNames ? '' : 'lowSpeedBodyFraction', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(10, _omitFieldNames ? '' : 'showStanceShape', subBuilder: $59.BoolValue.create)
+    ..aOM<$60.Vec2Value>(3, _omitFieldNames ? '' : 'maxVelocity', subBuilder: $60.Vec2Value.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'maxYawRate', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'accelerationScaling', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(8, _omitFieldNames ? '' : 'lowSpeedBodyFraction', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(10, _omitFieldNames ? '' : 'showStanceShape', subBuilder: $58.BoolValue.create)
     ..aOM<StanceShape>(11, _omitFieldNames ? '' : 'stanceShape', subBuilder: StanceShape.create)
-    ..aOM<$59.DoubleValue>(20, _omitFieldNames ? '' : 'comHeight', subBuilder: $59.DoubleValue.create)
-    ..aOM<$61.Vec3Value>(21, _omitFieldNames ? '' : 'bodyTranslationOffset', subBuilder: $61.Vec3Value.create)
+    ..aOM<$58.DoubleValue>(20, _omitFieldNames ? '' : 'comHeight', subBuilder: $58.DoubleValue.create)
+    ..aOM<$60.Vec3Value>(21, _omitFieldNames ? '' : 'bodyTranslationOffset', subBuilder: $60.Vec3Value.create)
     ..aOM<EulerZYXValue>(22, _omitFieldNames ? '' : 'bodyRotationOffset', subBuilder: EulerZYXValue.create)
-    ..aOM<$59.DoubleValue>(51, _omitFieldNames ? '' : 'cycleDuration', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(51, _omitFieldNames ? '' : 'cycleDuration', subBuilder: $58.DoubleValue.create)
     ..aOM<SwingPhases>(52, _omitFieldNames ? '' : 'flSwing', subBuilder: SwingPhases.create)
-    ..aOM<$59.BoolValue>(53, _omitFieldNames ? '' : 'twoFlSwings', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(53, _omitFieldNames ? '' : 'twoFlSwings', subBuilder: $58.BoolValue.create)
     ..aOM<SwingPhases>(54, _omitFieldNames ? '' : 'secondFlSwing', subBuilder: SwingPhases.create)
     ..aOM<SwingPhases>(55, _omitFieldNames ? '' : 'frSwing', subBuilder: SwingPhases.create)
-    ..aOM<$59.BoolValue>(56, _omitFieldNames ? '' : 'twoFrSwings', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(56, _omitFieldNames ? '' : 'twoFrSwings', subBuilder: $58.BoolValue.create)
     ..aOM<SwingPhases>(57, _omitFieldNames ? '' : 'secondFrSwing', subBuilder: SwingPhases.create)
     ..aOM<SwingPhases>(58, _omitFieldNames ? '' : 'hlSwing', subBuilder: SwingPhases.create)
-    ..aOM<$59.BoolValue>(59, _omitFieldNames ? '' : 'twoHlSwings', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(59, _omitFieldNames ? '' : 'twoHlSwings', subBuilder: $58.BoolValue.create)
     ..aOM<SwingPhases>(60, _omitFieldNames ? '' : 'secondHlSwing', subBuilder: SwingPhases.create)
     ..aOM<SwingPhases>(61, _omitFieldNames ? '' : 'hrSwing', subBuilder: SwingPhases.create)
-    ..aOM<$59.BoolValue>(62, _omitFieldNames ? '' : 'twoHrSwings', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(62, _omitFieldNames ? '' : 'twoHrSwings', subBuilder: $58.BoolValue.create)
     ..aOM<SwingPhases>(63, _omitFieldNames ? '' : 'secondHrSwing', subBuilder: SwingPhases.create)
     ..aOM<SwingParams>(80, _omitFieldNames ? '' : 'generalSwingParams', subBuilder: SwingParams.create)
-    ..aOM<$59.BoolValue>(81, _omitFieldNames ? '' : 'useFlSwingParams', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(81, _omitFieldNames ? '' : 'useFlSwingParams', subBuilder: $58.BoolValue.create)
     ..aOM<SwingParams>(82, _omitFieldNames ? '' : 'flSwingParams', subBuilder: SwingParams.create)
-    ..aOM<$59.BoolValue>(83, _omitFieldNames ? '' : 'useFrSwingParams', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(83, _omitFieldNames ? '' : 'useFrSwingParams', subBuilder: $58.BoolValue.create)
     ..aOM<SwingParams>(84, _omitFieldNames ? '' : 'frSwingParams', subBuilder: SwingParams.create)
-    ..aOM<$59.BoolValue>(85, _omitFieldNames ? '' : 'useHlSwingParams', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(85, _omitFieldNames ? '' : 'useHlSwingParams', subBuilder: $58.BoolValue.create)
     ..aOM<SwingParams>(86, _omitFieldNames ? '' : 'hlSwingParams', subBuilder: SwingParams.create)
-    ..aOM<$59.BoolValue>(87, _omitFieldNames ? '' : 'useHrSwingParams', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(87, _omitFieldNames ? '' : 'useHrSwingParams', subBuilder: $58.BoolValue.create)
     ..aOM<SwingParams>(88, _omitFieldNames ? '' : 'hrSwingParams', subBuilder: SwingParams.create)
-    ..aOM<$59.BoolValue>(90, _omitFieldNames ? '' : 'standInPlace', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(91, _omitFieldNames ? '' : 'standardFinalStance', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(100, _omitFieldNames ? '' : 'showStabilityParams', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.DoubleValue>(101, _omitFieldNames ? '' : 'mu', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(102, _omitFieldNames ? '' : 'timingStiffness', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(103, _omitFieldNames ? '' : 'stepPositionStiffness', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(130, _omitFieldNames ? '' : 'enablePerceptionObstacleAvoidance', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.DoubleValue>(131, _omitFieldNames ? '' : 'obstacleAvoidancePadding', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(132, _omitFieldNames ? '' : 'enablePerceptionTerrainHeight', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(133, _omitFieldNames ? '' : 'enablePerceptionStepPlacement', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.DoubleValue>(140, _omitFieldNames ? '' : 'maximumStumbleDistance', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(141, _omitFieldNames ? '' : 'tripSensitivity', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.BoolValue>(90, _omitFieldNames ? '' : 'standInPlace', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(91, _omitFieldNames ? '' : 'standardFinalStance', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(100, _omitFieldNames ? '' : 'showStabilityParams', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.DoubleValue>(101, _omitFieldNames ? '' : 'mu', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(102, _omitFieldNames ? '' : 'timingStiffness', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(103, _omitFieldNames ? '' : 'stepPositionStiffness', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(130, _omitFieldNames ? '' : 'enablePerceptionObstacleAvoidance', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.DoubleValue>(131, _omitFieldNames ? '' : 'obstacleAvoidancePadding', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(132, _omitFieldNames ? '' : 'enablePerceptionTerrainHeight', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(133, _omitFieldNames ? '' : 'enablePerceptionStepPlacement', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.DoubleValue>(140, _omitFieldNames ? '' : 'maximumStumbleDistance', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(141, _omitFieldNames ? '' : 'tripSensitivity', subBuilder: $58.DoubleValue.create)
     ..aOM<AnimatedCycleParams>(161, _omitFieldNames ? '' : 'animatedCycleParams', subBuilder: AnimatedCycleParams.create)
     ..hasRequiredFields = false
   ;
@@ -5522,61 +5522,61 @@ class CustomGaitParams extends $pb.GeneratedMessage {
 
   /// Maximum steering commands that will be accepted.
   @$pb.TagNumber(3)
-  $61.Vec2Value get maxVelocity => $_getN(0);
+  $60.Vec2Value get maxVelocity => $_getN(0);
   @$pb.TagNumber(3)
-  set maxVelocity($61.Vec2Value v) { setField(3, v); }
+  set maxVelocity($60.Vec2Value v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMaxVelocity() => $_has(0);
   @$pb.TagNumber(3)
   void clearMaxVelocity() => clearField(3);
   @$pb.TagNumber(3)
-  $61.Vec2Value ensureMaxVelocity() => $_ensure(0);
+  $60.Vec2Value ensureMaxVelocity() => $_ensure(0);
 
   @$pb.TagNumber(4)
-  $59.DoubleValue get maxYawRate => $_getN(1);
+  $58.DoubleValue get maxYawRate => $_getN(1);
   @$pb.TagNumber(4)
-  set maxYawRate($59.DoubleValue v) { setField(4, v); }
+  set maxYawRate($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMaxYawRate() => $_has(1);
   @$pb.TagNumber(4)
   void clearMaxYawRate() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureMaxYawRate() => $_ensure(1);
+  $58.DoubleValue ensureMaxYawRate() => $_ensure(1);
 
   /// How much to limit steering acceleration.  1 is normal.  Smaller is less acceleration.
   @$pb.TagNumber(5)
-  $59.DoubleValue get accelerationScaling => $_getN(2);
+  $58.DoubleValue get accelerationScaling => $_getN(2);
   @$pb.TagNumber(5)
-  set accelerationScaling($59.DoubleValue v) { setField(5, v); }
+  set accelerationScaling($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasAccelerationScaling() => $_has(2);
   @$pb.TagNumber(5)
   void clearAccelerationScaling() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureAccelerationScaling() => $_ensure(2);
+  $58.DoubleValue ensureAccelerationScaling() => $_ensure(2);
 
   @$pb.TagNumber(8)
-  $59.DoubleValue get lowSpeedBodyFraction => $_getN(3);
+  $58.DoubleValue get lowSpeedBodyFraction => $_getN(3);
   @$pb.TagNumber(8)
-  set lowSpeedBodyFraction($59.DoubleValue v) { setField(8, v); }
+  set lowSpeedBodyFraction($58.DoubleValue v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasLowSpeedBodyFraction() => $_has(3);
   @$pb.TagNumber(8)
   void clearLowSpeedBodyFraction() => clearField(8);
   @$pb.TagNumber(8)
-  $59.DoubleValue ensureLowSpeedBodyFraction() => $_ensure(3);
+  $58.DoubleValue ensureLowSpeedBodyFraction() => $_ensure(3);
 
   /// Relative positions of feet.
   @$pb.TagNumber(10)
-  $59.BoolValue get showStanceShape => $_getN(4);
+  $58.BoolValue get showStanceShape => $_getN(4);
   @$pb.TagNumber(10)
-  set showStanceShape($59.BoolValue v) { setField(10, v); }
+  set showStanceShape($58.BoolValue v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasShowStanceShape() => $_has(4);
   @$pb.TagNumber(10)
   void clearShowStanceShape() => clearField(10);
   @$pb.TagNumber(10)
-  $59.BoolValue ensureShowStanceShape() => $_ensure(4);
+  $58.BoolValue ensureShowStanceShape() => $_ensure(4);
 
   @$pb.TagNumber(11)
   StanceShape get stanceShape => $_getN(5);
@@ -5592,26 +5592,26 @@ class CustomGaitParams extends $pb.GeneratedMessage {
   /// Constant posture.
   /// For a phase-dependent posture, combine with a Body move.
   @$pb.TagNumber(20)
-  $59.DoubleValue get comHeight => $_getN(6);
+  $58.DoubleValue get comHeight => $_getN(6);
   @$pb.TagNumber(20)
-  set comHeight($59.DoubleValue v) { setField(20, v); }
+  set comHeight($58.DoubleValue v) { setField(20, v); }
   @$pb.TagNumber(20)
   $core.bool hasComHeight() => $_has(6);
   @$pb.TagNumber(20)
   void clearComHeight() => clearField(20);
   @$pb.TagNumber(20)
-  $59.DoubleValue ensureComHeight() => $_ensure(6);
+  $58.DoubleValue ensureComHeight() => $_ensure(6);
 
   @$pb.TagNumber(21)
-  $61.Vec3Value get bodyTranslationOffset => $_getN(7);
+  $60.Vec3Value get bodyTranslationOffset => $_getN(7);
   @$pb.TagNumber(21)
-  set bodyTranslationOffset($61.Vec3Value v) { setField(21, v); }
+  set bodyTranslationOffset($60.Vec3Value v) { setField(21, v); }
   @$pb.TagNumber(21)
   $core.bool hasBodyTranslationOffset() => $_has(7);
   @$pb.TagNumber(21)
   void clearBodyTranslationOffset() => clearField(21);
   @$pb.TagNumber(21)
-  $61.Vec3Value ensureBodyTranslationOffset() => $_ensure(7);
+  $60.Vec3Value ensureBodyTranslationOffset() => $_ensure(7);
 
   @$pb.TagNumber(22)
   EulerZYXValue get bodyRotationOffset => $_getN(8);
@@ -5626,15 +5626,15 @@ class CustomGaitParams extends $pb.GeneratedMessage {
 
   /// Gait pattern.  When to liftoff and touchdown each leg.
   @$pb.TagNumber(51)
-  $59.DoubleValue get cycleDuration => $_getN(9);
+  $58.DoubleValue get cycleDuration => $_getN(9);
   @$pb.TagNumber(51)
-  set cycleDuration($59.DoubleValue v) { setField(51, v); }
+  set cycleDuration($58.DoubleValue v) { setField(51, v); }
   @$pb.TagNumber(51)
   $core.bool hasCycleDuration() => $_has(9);
   @$pb.TagNumber(51)
   void clearCycleDuration() => clearField(51);
   @$pb.TagNumber(51)
-  $59.DoubleValue ensureCycleDuration() => $_ensure(9);
+  $58.DoubleValue ensureCycleDuration() => $_ensure(9);
 
   @$pb.TagNumber(52)
   SwingPhases get flSwing => $_getN(10);
@@ -5648,15 +5648,15 @@ class CustomGaitParams extends $pb.GeneratedMessage {
   SwingPhases ensureFlSwing() => $_ensure(10);
 
   @$pb.TagNumber(53)
-  $59.BoolValue get twoFlSwings => $_getN(11);
+  $58.BoolValue get twoFlSwings => $_getN(11);
   @$pb.TagNumber(53)
-  set twoFlSwings($59.BoolValue v) { setField(53, v); }
+  set twoFlSwings($58.BoolValue v) { setField(53, v); }
   @$pb.TagNumber(53)
   $core.bool hasTwoFlSwings() => $_has(11);
   @$pb.TagNumber(53)
   void clearTwoFlSwings() => clearField(53);
   @$pb.TagNumber(53)
-  $59.BoolValue ensureTwoFlSwings() => $_ensure(11);
+  $58.BoolValue ensureTwoFlSwings() => $_ensure(11);
 
   @$pb.TagNumber(54)
   SwingPhases get secondFlSwing => $_getN(12);
@@ -5681,15 +5681,15 @@ class CustomGaitParams extends $pb.GeneratedMessage {
   SwingPhases ensureFrSwing() => $_ensure(13);
 
   @$pb.TagNumber(56)
-  $59.BoolValue get twoFrSwings => $_getN(14);
+  $58.BoolValue get twoFrSwings => $_getN(14);
   @$pb.TagNumber(56)
-  set twoFrSwings($59.BoolValue v) { setField(56, v); }
+  set twoFrSwings($58.BoolValue v) { setField(56, v); }
   @$pb.TagNumber(56)
   $core.bool hasTwoFrSwings() => $_has(14);
   @$pb.TagNumber(56)
   void clearTwoFrSwings() => clearField(56);
   @$pb.TagNumber(56)
-  $59.BoolValue ensureTwoFrSwings() => $_ensure(14);
+  $58.BoolValue ensureTwoFrSwings() => $_ensure(14);
 
   @$pb.TagNumber(57)
   SwingPhases get secondFrSwing => $_getN(15);
@@ -5714,15 +5714,15 @@ class CustomGaitParams extends $pb.GeneratedMessage {
   SwingPhases ensureHlSwing() => $_ensure(16);
 
   @$pb.TagNumber(59)
-  $59.BoolValue get twoHlSwings => $_getN(17);
+  $58.BoolValue get twoHlSwings => $_getN(17);
   @$pb.TagNumber(59)
-  set twoHlSwings($59.BoolValue v) { setField(59, v); }
+  set twoHlSwings($58.BoolValue v) { setField(59, v); }
   @$pb.TagNumber(59)
   $core.bool hasTwoHlSwings() => $_has(17);
   @$pb.TagNumber(59)
   void clearTwoHlSwings() => clearField(59);
   @$pb.TagNumber(59)
-  $59.BoolValue ensureTwoHlSwings() => $_ensure(17);
+  $58.BoolValue ensureTwoHlSwings() => $_ensure(17);
 
   @$pb.TagNumber(60)
   SwingPhases get secondHlSwing => $_getN(18);
@@ -5747,15 +5747,15 @@ class CustomGaitParams extends $pb.GeneratedMessage {
   SwingPhases ensureHrSwing() => $_ensure(19);
 
   @$pb.TagNumber(62)
-  $59.BoolValue get twoHrSwings => $_getN(20);
+  $58.BoolValue get twoHrSwings => $_getN(20);
   @$pb.TagNumber(62)
-  set twoHrSwings($59.BoolValue v) { setField(62, v); }
+  set twoHrSwings($58.BoolValue v) { setField(62, v); }
   @$pb.TagNumber(62)
   $core.bool hasTwoHrSwings() => $_has(20);
   @$pb.TagNumber(62)
   void clearTwoHrSwings() => clearField(62);
   @$pb.TagNumber(62)
-  $59.BoolValue ensureTwoHrSwings() => $_ensure(20);
+  $58.BoolValue ensureTwoHrSwings() => $_ensure(20);
 
   @$pb.TagNumber(63)
   SwingPhases get secondHrSwing => $_getN(21);
@@ -5784,15 +5784,15 @@ class CustomGaitParams extends $pb.GeneratedMessage {
 
   /// Individual legs can have their own parameters or use the general swing parameters.
   @$pb.TagNumber(81)
-  $59.BoolValue get useFlSwingParams => $_getN(23);
+  $58.BoolValue get useFlSwingParams => $_getN(23);
   @$pb.TagNumber(81)
-  set useFlSwingParams($59.BoolValue v) { setField(81, v); }
+  set useFlSwingParams($58.BoolValue v) { setField(81, v); }
   @$pb.TagNumber(81)
   $core.bool hasUseFlSwingParams() => $_has(23);
   @$pb.TagNumber(81)
   void clearUseFlSwingParams() => clearField(81);
   @$pb.TagNumber(81)
-  $59.BoolValue ensureUseFlSwingParams() => $_ensure(23);
+  $58.BoolValue ensureUseFlSwingParams() => $_ensure(23);
 
   @$pb.TagNumber(82)
   SwingParams get flSwingParams => $_getN(24);
@@ -5806,15 +5806,15 @@ class CustomGaitParams extends $pb.GeneratedMessage {
   SwingParams ensureFlSwingParams() => $_ensure(24);
 
   @$pb.TagNumber(83)
-  $59.BoolValue get useFrSwingParams => $_getN(25);
+  $58.BoolValue get useFrSwingParams => $_getN(25);
   @$pb.TagNumber(83)
-  set useFrSwingParams($59.BoolValue v) { setField(83, v); }
+  set useFrSwingParams($58.BoolValue v) { setField(83, v); }
   @$pb.TagNumber(83)
   $core.bool hasUseFrSwingParams() => $_has(25);
   @$pb.TagNumber(83)
   void clearUseFrSwingParams() => clearField(83);
   @$pb.TagNumber(83)
-  $59.BoolValue ensureUseFrSwingParams() => $_ensure(25);
+  $58.BoolValue ensureUseFrSwingParams() => $_ensure(25);
 
   @$pb.TagNumber(84)
   SwingParams get frSwingParams => $_getN(26);
@@ -5828,15 +5828,15 @@ class CustomGaitParams extends $pb.GeneratedMessage {
   SwingParams ensureFrSwingParams() => $_ensure(26);
 
   @$pb.TagNumber(85)
-  $59.BoolValue get useHlSwingParams => $_getN(27);
+  $58.BoolValue get useHlSwingParams => $_getN(27);
   @$pb.TagNumber(85)
-  set useHlSwingParams($59.BoolValue v) { setField(85, v); }
+  set useHlSwingParams($58.BoolValue v) { setField(85, v); }
   @$pb.TagNumber(85)
   $core.bool hasUseHlSwingParams() => $_has(27);
   @$pb.TagNumber(85)
   void clearUseHlSwingParams() => clearField(85);
   @$pb.TagNumber(85)
-  $59.BoolValue ensureUseHlSwingParams() => $_ensure(27);
+  $58.BoolValue ensureUseHlSwingParams() => $_ensure(27);
 
   @$pb.TagNumber(86)
   SwingParams get hlSwingParams => $_getN(28);
@@ -5850,15 +5850,15 @@ class CustomGaitParams extends $pb.GeneratedMessage {
   SwingParams ensureHlSwingParams() => $_ensure(28);
 
   @$pb.TagNumber(87)
-  $59.BoolValue get useHrSwingParams => $_getN(29);
+  $58.BoolValue get useHrSwingParams => $_getN(29);
   @$pb.TagNumber(87)
-  set useHrSwingParams($59.BoolValue v) { setField(87, v); }
+  set useHrSwingParams($58.BoolValue v) { setField(87, v); }
   @$pb.TagNumber(87)
   $core.bool hasUseHrSwingParams() => $_has(29);
   @$pb.TagNumber(87)
   void clearUseHrSwingParams() => clearField(87);
   @$pb.TagNumber(87)
-  $59.BoolValue ensureUseHrSwingParams() => $_ensure(29);
+  $58.BoolValue ensureUseHrSwingParams() => $_ensure(29);
 
   @$pb.TagNumber(88)
   SwingParams get hrSwingParams => $_getN(30);
@@ -5873,52 +5873,52 @@ class CustomGaitParams extends $pb.GeneratedMessage {
 
   /// Stand rather than stepping in place when not moving.
   @$pb.TagNumber(90)
-  $59.BoolValue get standInPlace => $_getN(31);
+  $58.BoolValue get standInPlace => $_getN(31);
   @$pb.TagNumber(90)
-  set standInPlace($59.BoolValue v) { setField(90, v); }
+  set standInPlace($58.BoolValue v) { setField(90, v); }
   @$pb.TagNumber(90)
   $core.bool hasStandInPlace() => $_has(31);
   @$pb.TagNumber(90)
   void clearStandInPlace() => clearField(90);
   @$pb.TagNumber(90)
-  $59.BoolValue ensureStandInPlace() => $_ensure(31);
+  $58.BoolValue ensureStandInPlace() => $_ensure(31);
 
   /// Go back to a standard rectangular stance when ending the gait.
   /// Otherwise maintains the customized stance shape.
   @$pb.TagNumber(91)
-  $59.BoolValue get standardFinalStance => $_getN(32);
+  $58.BoolValue get standardFinalStance => $_getN(32);
   @$pb.TagNumber(91)
-  set standardFinalStance($59.BoolValue v) { setField(91, v); }
+  set standardFinalStance($58.BoolValue v) { setField(91, v); }
   @$pb.TagNumber(91)
   $core.bool hasStandardFinalStance() => $_has(32);
   @$pb.TagNumber(91)
   void clearStandardFinalStance() => clearField(91);
   @$pb.TagNumber(91)
-  $59.BoolValue ensureStandardFinalStance() => $_ensure(32);
+  $58.BoolValue ensureStandardFinalStance() => $_ensure(32);
 
   /// Parameters that impact the stability of the gait rather than its appearance.
   @$pb.TagNumber(100)
-  $59.BoolValue get showStabilityParams => $_getN(33);
+  $58.BoolValue get showStabilityParams => $_getN(33);
   @$pb.TagNumber(100)
-  set showStabilityParams($59.BoolValue v) { setField(100, v); }
+  set showStabilityParams($58.BoolValue v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasShowStabilityParams() => $_has(33);
   @$pb.TagNumber(100)
   void clearShowStabilityParams() => clearField(100);
   @$pb.TagNumber(100)
-  $59.BoolValue ensureShowStabilityParams() => $_ensure(33);
+  $58.BoolValue ensureShowStabilityParams() => $_ensure(33);
 
   /// Friction coefficient between the feet and the ground.
   @$pb.TagNumber(101)
-  $59.DoubleValue get mu => $_getN(34);
+  $58.DoubleValue get mu => $_getN(34);
   @$pb.TagNumber(101)
-  set mu($59.DoubleValue v) { setField(101, v); }
+  set mu($58.DoubleValue v) { setField(101, v); }
   @$pb.TagNumber(101)
   $core.bool hasMu() => $_has(34);
   @$pb.TagNumber(101)
   void clearMu() => clearField(101);
   @$pb.TagNumber(101)
-  $59.DoubleValue ensureMu() => $_ensure(34);
+  $58.DoubleValue ensureMu() => $_ensure(34);
 
   /// How much the robot is allowed to deviate from the specified timing.
   /// 0 means no deviation.
@@ -5927,101 +5927,101 @@ class CustomGaitParams extends $pb.GeneratedMessage {
   /// At least a little timing adjustment is recommended for gaits with flight phases (periods with
   /// 0 feet on the ground).
   @$pb.TagNumber(102)
-  $59.DoubleValue get timingStiffness => $_getN(35);
+  $58.DoubleValue get timingStiffness => $_getN(35);
   @$pb.TagNumber(102)
-  set timingStiffness($59.DoubleValue v) { setField(102, v); }
+  set timingStiffness($58.DoubleValue v) { setField(102, v); }
   @$pb.TagNumber(102)
   $core.bool hasTimingStiffness() => $_has(35);
   @$pb.TagNumber(102)
   void clearTimingStiffness() => clearField(102);
   @$pb.TagNumber(102)
-  $59.DoubleValue ensureTimingStiffness() => $_ensure(35);
+  $58.DoubleValue ensureTimingStiffness() => $_ensure(35);
 
   /// How much the robot is allowed to deviate from the specified stance shape.
   /// 0 means no deviation.
   /// Otherwise: large values mean less deviation and small values mean more is acceptable.
   /// Too much position adjustment (low, non-zero values) may make the gait unstable.
   @$pb.TagNumber(103)
-  $59.DoubleValue get stepPositionStiffness => $_getN(36);
+  $58.DoubleValue get stepPositionStiffness => $_getN(36);
   @$pb.TagNumber(103)
-  set stepPositionStiffness($59.DoubleValue v) { setField(103, v); }
+  set stepPositionStiffness($58.DoubleValue v) { setField(103, v); }
   @$pb.TagNumber(103)
   $core.bool hasStepPositionStiffness() => $_has(36);
   @$pb.TagNumber(103)
   void clearStepPositionStiffness() => clearField(103);
   @$pb.TagNumber(103)
-  $59.DoubleValue ensureStepPositionStiffness() => $_ensure(36);
+  $58.DoubleValue ensureStepPositionStiffness() => $_ensure(36);
 
   /// Enable/disable various aspects of perception.
   @$pb.TagNumber(130)
-  $59.BoolValue get enablePerceptionObstacleAvoidance => $_getN(37);
+  $58.BoolValue get enablePerceptionObstacleAvoidance => $_getN(37);
   @$pb.TagNumber(130)
-  set enablePerceptionObstacleAvoidance($59.BoolValue v) { setField(130, v); }
+  set enablePerceptionObstacleAvoidance($58.BoolValue v) { setField(130, v); }
   @$pb.TagNumber(130)
   $core.bool hasEnablePerceptionObstacleAvoidance() => $_has(37);
   @$pb.TagNumber(130)
   void clearEnablePerceptionObstacleAvoidance() => clearField(130);
   @$pb.TagNumber(130)
-  $59.BoolValue ensureEnablePerceptionObstacleAvoidance() => $_ensure(37);
+  $58.BoolValue ensureEnablePerceptionObstacleAvoidance() => $_ensure(37);
 
   @$pb.TagNumber(131)
-  $59.DoubleValue get obstacleAvoidancePadding => $_getN(38);
+  $58.DoubleValue get obstacleAvoidancePadding => $_getN(38);
   @$pb.TagNumber(131)
-  set obstacleAvoidancePadding($59.DoubleValue v) { setField(131, v); }
+  set obstacleAvoidancePadding($58.DoubleValue v) { setField(131, v); }
   @$pb.TagNumber(131)
   $core.bool hasObstacleAvoidancePadding() => $_has(38);
   @$pb.TagNumber(131)
   void clearObstacleAvoidancePadding() => clearField(131);
   @$pb.TagNumber(131)
-  $59.DoubleValue ensureObstacleAvoidancePadding() => $_ensure(38);
+  $58.DoubleValue ensureObstacleAvoidancePadding() => $_ensure(38);
 
   @$pb.TagNumber(132)
-  $59.BoolValue get enablePerceptionTerrainHeight => $_getN(39);
+  $58.BoolValue get enablePerceptionTerrainHeight => $_getN(39);
   @$pb.TagNumber(132)
-  set enablePerceptionTerrainHeight($59.BoolValue v) { setField(132, v); }
+  set enablePerceptionTerrainHeight($58.BoolValue v) { setField(132, v); }
   @$pb.TagNumber(132)
   $core.bool hasEnablePerceptionTerrainHeight() => $_has(39);
   @$pb.TagNumber(132)
   void clearEnablePerceptionTerrainHeight() => clearField(132);
   @$pb.TagNumber(132)
-  $59.BoolValue ensureEnablePerceptionTerrainHeight() => $_ensure(39);
+  $58.BoolValue ensureEnablePerceptionTerrainHeight() => $_ensure(39);
 
   @$pb.TagNumber(133)
-  $59.BoolValue get enablePerceptionStepPlacement => $_getN(40);
+  $58.BoolValue get enablePerceptionStepPlacement => $_getN(40);
   @$pb.TagNumber(133)
-  set enablePerceptionStepPlacement($59.BoolValue v) { setField(133, v); }
+  set enablePerceptionStepPlacement($58.BoolValue v) { setField(133, v); }
   @$pb.TagNumber(133)
   $core.bool hasEnablePerceptionStepPlacement() => $_has(40);
   @$pb.TagNumber(133)
   void clearEnablePerceptionStepPlacement() => clearField(133);
   @$pb.TagNumber(133)
-  $59.BoolValue ensureEnablePerceptionStepPlacement() => $_ensure(40);
+  $58.BoolValue ensureEnablePerceptionStepPlacement() => $_ensure(40);
 
   /// How far the robot should stumble before giving up and freezing.
   @$pb.TagNumber(140)
-  $59.DoubleValue get maximumStumbleDistance => $_getN(41);
+  $58.DoubleValue get maximumStumbleDistance => $_getN(41);
   @$pb.TagNumber(140)
-  set maximumStumbleDistance($59.DoubleValue v) { setField(140, v); }
+  set maximumStumbleDistance($58.DoubleValue v) { setField(140, v); }
   @$pb.TagNumber(140)
   $core.bool hasMaximumStumbleDistance() => $_has(41);
   @$pb.TagNumber(140)
   void clearMaximumStumbleDistance() => clearField(140);
   @$pb.TagNumber(140)
-  $59.DoubleValue ensureMaximumStumbleDistance() => $_ensure(41);
+  $58.DoubleValue ensureMaximumStumbleDistance() => $_ensure(41);
 
   /// How sensitive we should be to trip detection.
   /// On the range [0, 1], where 1 is normal sensitivity and 0 is ignoring all trips.
   /// Useful for very aggressive gaits or when a costume is restricting leg motion.
   @$pb.TagNumber(141)
-  $59.DoubleValue get tripSensitivity => $_getN(42);
+  $58.DoubleValue get tripSensitivity => $_getN(42);
   @$pb.TagNumber(141)
-  set tripSensitivity($59.DoubleValue v) { setField(141, v); }
+  set tripSensitivity($58.DoubleValue v) { setField(141, v); }
   @$pb.TagNumber(141)
   $core.bool hasTripSensitivity() => $_has(42);
   @$pb.TagNumber(141)
   void clearTripSensitivity() => clearField(141);
   @$pb.TagNumber(141)
-  $59.DoubleValue ensureTripSensitivity() => $_ensure(42);
+  $58.DoubleValue ensureTripSensitivity() => $_ensure(42);
 
   /// Using an animated cycle to define the gait style
   @$pb.TagNumber(161)
@@ -6038,9 +6038,9 @@ class CustomGaitParams extends $pb.GeneratedMessage {
 
 class CustomGaitCommand extends $pb.GeneratedMessage {
   factory CustomGaitCommand({
-    $61.SE2Velocity? driveVelocityBody,
+    $60.SE2Velocity? driveVelocityBody,
     $core.bool? finished,
-    $61.Vec3? bodyTranslationOffset,
+    $60.Vec3? bodyTranslationOffset,
     EulerZYX? bodyOrientationOffset,
   }) {
     final $result = create();
@@ -6063,9 +6063,9 @@ class CustomGaitCommand extends $pb.GeneratedMessage {
   factory CustomGaitCommand.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CustomGaitCommand', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.SE2Velocity>(1, _omitFieldNames ? '' : 'driveVelocityBody', subBuilder: $61.SE2Velocity.create)
+    ..aOM<$60.SE2Velocity>(1, _omitFieldNames ? '' : 'driveVelocityBody', subBuilder: $60.SE2Velocity.create)
     ..aOB(2, _omitFieldNames ? '' : 'finished')
-    ..aOM<$61.Vec3>(3, _omitFieldNames ? '' : 'bodyTranslationOffset', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(3, _omitFieldNames ? '' : 'bodyTranslationOffset', subBuilder: $60.Vec3.create)
     ..aOM<EulerZYX>(4, _omitFieldNames ? '' : 'bodyOrientationOffset', subBuilder: EulerZYX.create)
     ..hasRequiredFields = false
   ;
@@ -6093,15 +6093,15 @@ class CustomGaitCommand extends $pb.GeneratedMessage {
 
   /// Locomotion velocity in the horizontal plane in robot body frame. (m/s, m/s, rad/s)
   @$pb.TagNumber(1)
-  $61.SE2Velocity get driveVelocityBody => $_getN(0);
+  $60.SE2Velocity get driveVelocityBody => $_getN(0);
   @$pb.TagNumber(1)
-  set driveVelocityBody($61.SE2Velocity v) { setField(1, v); }
+  set driveVelocityBody($60.SE2Velocity v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDriveVelocityBody() => $_has(0);
   @$pb.TagNumber(1)
   void clearDriveVelocityBody() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE2Velocity ensureDriveVelocityBody() => $_ensure(0);
+  $60.SE2Velocity ensureDriveVelocityBody() => $_ensure(0);
 
   /// When true, robot will transition to a stand, then continue the sequence.
   /// Until then, the sequence will keep looping through this move.
@@ -6116,15 +6116,15 @@ class CustomGaitCommand extends $pb.GeneratedMessage {
 
   /// How much to offset the body pose.  Additive with other offsets.
   @$pb.TagNumber(3)
-  $61.Vec3 get bodyTranslationOffset => $_getN(2);
+  $60.Vec3 get bodyTranslationOffset => $_getN(2);
   @$pb.TagNumber(3)
-  set bodyTranslationOffset($61.Vec3 v) { setField(3, v); }
+  set bodyTranslationOffset($60.Vec3 v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasBodyTranslationOffset() => $_has(2);
   @$pb.TagNumber(3)
   void clearBodyTranslationOffset() => clearField(3);
   @$pb.TagNumber(3)
-  $61.Vec3 ensureBodyTranslationOffset() => $_ensure(2);
+  $60.Vec3 ensureBodyTranslationOffset() => $_ensure(2);
 
   @$pb.TagNumber(4)
   EulerZYX get bodyOrientationOffset => $_getN(3);
@@ -6140,8 +6140,8 @@ class CustomGaitCommand extends $pb.GeneratedMessage {
 
 class CustomGaitCommandLimits extends $pb.GeneratedMessage {
   factory CustomGaitCommandLimits({
-    $61.SE2Velocity? maximumDriveVelocityBody,
-    $61.Vec3? maximumBodyTranslationOffset,
+    $60.SE2Velocity? maximumDriveVelocityBody,
+    $60.Vec3? maximumBodyTranslationOffset,
     EulerZYX? maximumBodyOrientationOffset,
   }) {
     final $result = create();
@@ -6161,8 +6161,8 @@ class CustomGaitCommandLimits extends $pb.GeneratedMessage {
   factory CustomGaitCommandLimits.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CustomGaitCommandLimits', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.SE2Velocity>(1, _omitFieldNames ? '' : 'maximumDriveVelocityBody', subBuilder: $61.SE2Velocity.create)
-    ..aOM<$61.Vec3>(3, _omitFieldNames ? '' : 'maximumBodyTranslationOffset', subBuilder: $61.Vec3.create)
+    ..aOM<$60.SE2Velocity>(1, _omitFieldNames ? '' : 'maximumDriveVelocityBody', subBuilder: $60.SE2Velocity.create)
+    ..aOM<$60.Vec3>(3, _omitFieldNames ? '' : 'maximumBodyTranslationOffset', subBuilder: $60.Vec3.create)
     ..aOM<EulerZYX>(4, _omitFieldNames ? '' : 'maximumBodyOrientationOffset', subBuilder: EulerZYX.create)
     ..hasRequiredFields = false
   ;
@@ -6191,27 +6191,27 @@ class CustomGaitCommandLimits extends $pb.GeneratedMessage {
   /// Maximum absolute value of locomotion velocity in the horizontal plane in robot body frame.
   /// (m/s, m/s, rad/s)
   @$pb.TagNumber(1)
-  $61.SE2Velocity get maximumDriveVelocityBody => $_getN(0);
+  $60.SE2Velocity get maximumDriveVelocityBody => $_getN(0);
   @$pb.TagNumber(1)
-  set maximumDriveVelocityBody($61.SE2Velocity v) { setField(1, v); }
+  set maximumDriveVelocityBody($60.SE2Velocity v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMaximumDriveVelocityBody() => $_has(0);
   @$pb.TagNumber(1)
   void clearMaximumDriveVelocityBody() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE2Velocity ensureMaximumDriveVelocityBody() => $_ensure(0);
+  $60.SE2Velocity ensureMaximumDriveVelocityBody() => $_ensure(0);
 
   /// Maximum absolute value of the body offsets.
   @$pb.TagNumber(3)
-  $61.Vec3 get maximumBodyTranslationOffset => $_getN(1);
+  $60.Vec3 get maximumBodyTranslationOffset => $_getN(1);
   @$pb.TagNumber(3)
-  set maximumBodyTranslationOffset($61.Vec3 v) { setField(3, v); }
+  set maximumBodyTranslationOffset($60.Vec3 v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMaximumBodyTranslationOffset() => $_has(1);
   @$pb.TagNumber(3)
   void clearMaximumBodyTranslationOffset() => clearField(3);
   @$pb.TagNumber(3)
-  $61.Vec3 ensureMaximumBodyTranslationOffset() => $_ensure(1);
+  $60.Vec3 ensureMaximumBodyTranslationOffset() => $_ensure(1);
 
   @$pb.TagNumber(4)
   EulerZYX get maximumBodyOrientationOffset => $_getN(2);
@@ -6228,24 +6228,24 @@ class CustomGaitCommandLimits extends $pb.GeneratedMessage {
 class AnimateParams extends $pb.GeneratedMessage {
   factory AnimateParams({
     $core.String? animationName,
-    $59.DoubleValue? bodyEntrySlices,
-    $59.DoubleValue? bodyExitSlices,
-    $61.Vec3Value? translationMultiplier,
+    $58.DoubleValue? bodyEntrySlices,
+    $58.DoubleValue? bodyExitSlices,
+    $60.Vec3Value? translationMultiplier,
     EulerZYXValue? rotationMultiplier,
-    $59.DoubleValue? armEntrySlices,
-    $59.DoubleValue? shoulder0Offset,
-    $59.DoubleValue? shoulder1Offset,
-    $59.DoubleValue? elbow0Offset,
-    $59.DoubleValue? elbow1Offset,
-    $59.DoubleValue? wrist0Offset,
-    $59.DoubleValue? wrist1Offset,
-    $59.DoubleValue? gripperOffset,
-    $59.DoubleValue? speed,
-    $59.DoubleValue? offsetSlices,
-    $59.DoubleValue? gripperMultiplier,
-    $59.DoubleValue? gripperStrengthFraction,
-    $59.Int32Value? armDanceFrameId,
-    $59.DoubleValue? bodyTrackingStiffness,
+    $58.DoubleValue? armEntrySlices,
+    $58.DoubleValue? shoulder0Offset,
+    $58.DoubleValue? shoulder1Offset,
+    $58.DoubleValue? elbow0Offset,
+    $58.DoubleValue? elbow1Offset,
+    $58.DoubleValue? wrist0Offset,
+    $58.DoubleValue? wrist1Offset,
+    $58.DoubleValue? gripperOffset,
+    $58.DoubleValue? speed,
+    $58.DoubleValue? offsetSlices,
+    $58.DoubleValue? gripperMultiplier,
+    $58.DoubleValue? gripperStrengthFraction,
+    $58.Int32Value? armDanceFrameId,
+    $58.DoubleValue? bodyTrackingStiffness,
   }) {
     final $result = create();
     if (animationName != null) {
@@ -6313,24 +6313,24 @@ class AnimateParams extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnimateParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'animationName')
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'bodyEntrySlices', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'bodyExitSlices', subBuilder: $59.DoubleValue.create)
-    ..aOM<$61.Vec3Value>(4, _omitFieldNames ? '' : 'translationMultiplier', subBuilder: $61.Vec3Value.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'bodyEntrySlices', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'bodyExitSlices', subBuilder: $58.DoubleValue.create)
+    ..aOM<$60.Vec3Value>(4, _omitFieldNames ? '' : 'translationMultiplier', subBuilder: $60.Vec3Value.create)
     ..aOM<EulerZYXValue>(5, _omitFieldNames ? '' : 'rotationMultiplier', subBuilder: EulerZYXValue.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'armEntrySlices', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(7, _omitFieldNames ? '' : 'shoulder0Offset', protoName: 'shoulder_0_offset', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(8, _omitFieldNames ? '' : 'shoulder1Offset', protoName: 'shoulder_1_offset', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(9, _omitFieldNames ? '' : 'elbow0Offset', protoName: 'elbow_0_offset', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(10, _omitFieldNames ? '' : 'elbow1Offset', protoName: 'elbow_1_offset', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(11, _omitFieldNames ? '' : 'wrist0Offset', protoName: 'wrist_0_offset', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(12, _omitFieldNames ? '' : 'wrist1Offset', protoName: 'wrist_1_offset', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(13, _omitFieldNames ? '' : 'gripperOffset', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(14, _omitFieldNames ? '' : 'speed', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(15, _omitFieldNames ? '' : 'offsetSlices', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(16, _omitFieldNames ? '' : 'gripperMultiplier', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(17, _omitFieldNames ? '' : 'gripperStrengthFraction', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.Int32Value>(18, _omitFieldNames ? '' : 'armDanceFrameId', subBuilder: $59.Int32Value.create)
-    ..aOM<$59.DoubleValue>(19, _omitFieldNames ? '' : 'bodyTrackingStiffness', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'armEntrySlices', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(7, _omitFieldNames ? '' : 'shoulder0Offset', protoName: 'shoulder_0_offset', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(8, _omitFieldNames ? '' : 'shoulder1Offset', protoName: 'shoulder_1_offset', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(9, _omitFieldNames ? '' : 'elbow0Offset', protoName: 'elbow_0_offset', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(10, _omitFieldNames ? '' : 'elbow1Offset', protoName: 'elbow_1_offset', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(11, _omitFieldNames ? '' : 'wrist0Offset', protoName: 'wrist_0_offset', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(12, _omitFieldNames ? '' : 'wrist1Offset', protoName: 'wrist_1_offset', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(13, _omitFieldNames ? '' : 'gripperOffset', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(14, _omitFieldNames ? '' : 'speed', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(15, _omitFieldNames ? '' : 'offsetSlices', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(16, _omitFieldNames ? '' : 'gripperMultiplier', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(17, _omitFieldNames ? '' : 'gripperStrengthFraction', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.Int32Value>(18, _omitFieldNames ? '' : 'armDanceFrameId', subBuilder: $58.Int32Value.create)
+    ..aOM<$58.DoubleValue>(19, _omitFieldNames ? '' : 'bodyTrackingStiffness', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -6367,41 +6367,41 @@ class AnimateParams extends $pb.GeneratedMessage {
 
   /// How many slices to smoothly transition from previous pose to animation.
   @$pb.TagNumber(2)
-  $59.DoubleValue get bodyEntrySlices => $_getN(1);
+  $58.DoubleValue get bodyEntrySlices => $_getN(1);
   @$pb.TagNumber(2)
-  set bodyEntrySlices($59.DoubleValue v) { setField(2, v); }
+  set bodyEntrySlices($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasBodyEntrySlices() => $_has(1);
   @$pb.TagNumber(2)
   void clearBodyEntrySlices() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureBodyEntrySlices() => $_ensure(1);
+  $58.DoubleValue ensureBodyEntrySlices() => $_ensure(1);
 
   /// How many slices to return from animation to nominal pose.  Zero indicates to keep final
   /// animated pose.
   @$pb.TagNumber(3)
-  $59.DoubleValue get bodyExitSlices => $_getN(2);
+  $58.DoubleValue get bodyExitSlices => $_getN(2);
   @$pb.TagNumber(3)
-  set bodyExitSlices($59.DoubleValue v) { setField(3, v); }
+  set bodyExitSlices($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasBodyExitSlices() => $_has(2);
   @$pb.TagNumber(3)
   void clearBodyExitSlices() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureBodyExitSlices() => $_ensure(2);
+  $58.DoubleValue ensureBodyExitSlices() => $_ensure(2);
 
   /// Multiplier for animated translation by axis to exaggerate or suppress motion along specific
   /// axes.
   @$pb.TagNumber(4)
-  $61.Vec3Value get translationMultiplier => $_getN(3);
+  $60.Vec3Value get translationMultiplier => $_getN(3);
   @$pb.TagNumber(4)
-  set translationMultiplier($61.Vec3Value v) { setField(4, v); }
+  set translationMultiplier($60.Vec3Value v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTranslationMultiplier() => $_has(3);
   @$pb.TagNumber(4)
   void clearTranslationMultiplier() => clearField(4);
   @$pb.TagNumber(4)
-  $61.Vec3Value ensureTranslationMultiplier() => $_ensure(3);
+  $60.Vec3Value ensureTranslationMultiplier() => $_ensure(3);
 
   /// Multiplier for the animated orientation by axis to exaggerate or suppress motion along
   /// specific axes.
@@ -6418,154 +6418,154 @@ class AnimateParams extends $pb.GeneratedMessage {
 
   /// How many slices to smoothly transition from previous pose to animation.
   @$pb.TagNumber(6)
-  $59.DoubleValue get armEntrySlices => $_getN(5);
+  $58.DoubleValue get armEntrySlices => $_getN(5);
   @$pb.TagNumber(6)
-  set armEntrySlices($59.DoubleValue v) { setField(6, v); }
+  set armEntrySlices($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasArmEntrySlices() => $_has(5);
   @$pb.TagNumber(6)
   void clearArmEntrySlices() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureArmEntrySlices() => $_ensure(5);
+  $58.DoubleValue ensureArmEntrySlices() => $_ensure(5);
 
   /// Joint angle offsets in radians for the arm joints.
   @$pb.TagNumber(7)
-  $59.DoubleValue get shoulder0Offset => $_getN(6);
+  $58.DoubleValue get shoulder0Offset => $_getN(6);
   @$pb.TagNumber(7)
-  set shoulder0Offset($59.DoubleValue v) { setField(7, v); }
+  set shoulder0Offset($58.DoubleValue v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasShoulder0Offset() => $_has(6);
   @$pb.TagNumber(7)
   void clearShoulder0Offset() => clearField(7);
   @$pb.TagNumber(7)
-  $59.DoubleValue ensureShoulder0Offset() => $_ensure(6);
+  $58.DoubleValue ensureShoulder0Offset() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $59.DoubleValue get shoulder1Offset => $_getN(7);
+  $58.DoubleValue get shoulder1Offset => $_getN(7);
   @$pb.TagNumber(8)
-  set shoulder1Offset($59.DoubleValue v) { setField(8, v); }
+  set shoulder1Offset($58.DoubleValue v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasShoulder1Offset() => $_has(7);
   @$pb.TagNumber(8)
   void clearShoulder1Offset() => clearField(8);
   @$pb.TagNumber(8)
-  $59.DoubleValue ensureShoulder1Offset() => $_ensure(7);
+  $58.DoubleValue ensureShoulder1Offset() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  $59.DoubleValue get elbow0Offset => $_getN(8);
+  $58.DoubleValue get elbow0Offset => $_getN(8);
   @$pb.TagNumber(9)
-  set elbow0Offset($59.DoubleValue v) { setField(9, v); }
+  set elbow0Offset($58.DoubleValue v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasElbow0Offset() => $_has(8);
   @$pb.TagNumber(9)
   void clearElbow0Offset() => clearField(9);
   @$pb.TagNumber(9)
-  $59.DoubleValue ensureElbow0Offset() => $_ensure(8);
+  $58.DoubleValue ensureElbow0Offset() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $59.DoubleValue get elbow1Offset => $_getN(9);
+  $58.DoubleValue get elbow1Offset => $_getN(9);
   @$pb.TagNumber(10)
-  set elbow1Offset($59.DoubleValue v) { setField(10, v); }
+  set elbow1Offset($58.DoubleValue v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasElbow1Offset() => $_has(9);
   @$pb.TagNumber(10)
   void clearElbow1Offset() => clearField(10);
   @$pb.TagNumber(10)
-  $59.DoubleValue ensureElbow1Offset() => $_ensure(9);
+  $58.DoubleValue ensureElbow1Offset() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  $59.DoubleValue get wrist0Offset => $_getN(10);
+  $58.DoubleValue get wrist0Offset => $_getN(10);
   @$pb.TagNumber(11)
-  set wrist0Offset($59.DoubleValue v) { setField(11, v); }
+  set wrist0Offset($58.DoubleValue v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasWrist0Offset() => $_has(10);
   @$pb.TagNumber(11)
   void clearWrist0Offset() => clearField(11);
   @$pb.TagNumber(11)
-  $59.DoubleValue ensureWrist0Offset() => $_ensure(10);
+  $58.DoubleValue ensureWrist0Offset() => $_ensure(10);
 
   @$pb.TagNumber(12)
-  $59.DoubleValue get wrist1Offset => $_getN(11);
+  $58.DoubleValue get wrist1Offset => $_getN(11);
   @$pb.TagNumber(12)
-  set wrist1Offset($59.DoubleValue v) { setField(12, v); }
+  set wrist1Offset($58.DoubleValue v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasWrist1Offset() => $_has(11);
   @$pb.TagNumber(12)
   void clearWrist1Offset() => clearField(12);
   @$pb.TagNumber(12)
-  $59.DoubleValue ensureWrist1Offset() => $_ensure(11);
+  $58.DoubleValue ensureWrist1Offset() => $_ensure(11);
 
   @$pb.TagNumber(13)
-  $59.DoubleValue get gripperOffset => $_getN(12);
+  $58.DoubleValue get gripperOffset => $_getN(12);
   @$pb.TagNumber(13)
-  set gripperOffset($59.DoubleValue v) { setField(13, v); }
+  set gripperOffset($58.DoubleValue v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasGripperOffset() => $_has(12);
   @$pb.TagNumber(13)
   void clearGripperOffset() => clearField(13);
   @$pb.TagNumber(13)
-  $59.DoubleValue ensureGripperOffset() => $_ensure(12);
+  $58.DoubleValue ensureGripperOffset() => $_ensure(12);
 
   /// How fast to playback.  1.0 is normal speed. larger is faster.
   @$pb.TagNumber(14)
-  $59.DoubleValue get speed => $_getN(13);
+  $58.DoubleValue get speed => $_getN(13);
   @$pb.TagNumber(14)
-  set speed($59.DoubleValue v) { setField(14, v); }
+  set speed($58.DoubleValue v) { setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasSpeed() => $_has(13);
   @$pb.TagNumber(14)
   void clearSpeed() => clearField(14);
   @$pb.TagNumber(14)
-  $59.DoubleValue ensureSpeed() => $_ensure(13);
+  $58.DoubleValue ensureSpeed() => $_ensure(13);
 
   /// How late into the nominal script to start.
   @$pb.TagNumber(15)
-  $59.DoubleValue get offsetSlices => $_getN(14);
+  $58.DoubleValue get offsetSlices => $_getN(14);
   @$pb.TagNumber(15)
-  set offsetSlices($59.DoubleValue v) { setField(15, v); }
+  set offsetSlices($58.DoubleValue v) { setField(15, v); }
   @$pb.TagNumber(15)
   $core.bool hasOffsetSlices() => $_has(14);
   @$pb.TagNumber(15)
   void clearOffsetSlices() => clearField(15);
   @$pb.TagNumber(15)
-  $59.DoubleValue ensureOffsetSlices() => $_ensure(14);
+  $58.DoubleValue ensureOffsetSlices() => $_ensure(14);
 
   /// Multiply all gripper angles by this value.
   @$pb.TagNumber(16)
-  $59.DoubleValue get gripperMultiplier => $_getN(15);
+  $58.DoubleValue get gripperMultiplier => $_getN(15);
   @$pb.TagNumber(16)
-  set gripperMultiplier($59.DoubleValue v) { setField(16, v); }
+  set gripperMultiplier($58.DoubleValue v) { setField(16, v); }
   @$pb.TagNumber(16)
   $core.bool hasGripperMultiplier() => $_has(15);
   @$pb.TagNumber(16)
   void clearGripperMultiplier() => clearField(16);
   @$pb.TagNumber(16)
-  $59.DoubleValue ensureGripperMultiplier() => $_ensure(15);
+  $58.DoubleValue ensureGripperMultiplier() => $_ensure(15);
 
   /// How hard the gripper can squeeze.  Fraction of full strength.
   @$pb.TagNumber(17)
-  $59.DoubleValue get gripperStrengthFraction => $_getN(16);
+  $58.DoubleValue get gripperStrengthFraction => $_getN(16);
   @$pb.TagNumber(17)
-  set gripperStrengthFraction($59.DoubleValue v) { setField(17, v); }
+  set gripperStrengthFraction($58.DoubleValue v) { setField(17, v); }
   @$pb.TagNumber(17)
   $core.bool hasGripperStrengthFraction() => $_has(16);
   @$pb.TagNumber(17)
   void clearGripperStrengthFraction() => clearField(17);
   @$pb.TagNumber(17)
-  $59.DoubleValue ensureGripperStrengthFraction() => $_ensure(16);
+  $58.DoubleValue ensureGripperStrengthFraction() => $_ensure(16);
 
   /// Which dance frame to use as a reference for workspace arm moves. Including this parameter
   /// overrides the animation frame.
   @$pb.TagNumber(18)
-  $59.Int32Value get armDanceFrameId => $_getN(17);
+  $58.Int32Value get armDanceFrameId => $_getN(17);
   @$pb.TagNumber(18)
-  set armDanceFrameId($59.Int32Value v) { setField(18, v); }
+  set armDanceFrameId($58.Int32Value v) { setField(18, v); }
   @$pb.TagNumber(18)
   $core.bool hasArmDanceFrameId() => $_has(17);
   @$pb.TagNumber(18)
   void clearArmDanceFrameId() => clearField(18);
   @$pb.TagNumber(18)
-  $59.Int32Value ensureArmDanceFrameId() => $_ensure(17);
+  $58.Int32Value ensureArmDanceFrameId() => $_ensure(17);
 
   /// How hard to try to track the animated body motion.
   /// Only applicable to animations that control both the body and the legs.
@@ -6573,15 +6573,15 @@ class AnimateParams extends $pb.GeneratedMessage {
   /// Higher will result in more closely tracking the animated body motion, but possibly at the
   /// expense of balance for more difficult animations.
   @$pb.TagNumber(19)
-  $59.DoubleValue get bodyTrackingStiffness => $_getN(18);
+  $58.DoubleValue get bodyTrackingStiffness => $_getN(18);
   @$pb.TagNumber(19)
-  set bodyTrackingStiffness($59.DoubleValue v) { setField(19, v); }
+  set bodyTrackingStiffness($58.DoubleValue v) { setField(19, v); }
   @$pb.TagNumber(19)
   $core.bool hasBodyTrackingStiffness() => $_has(18);
   @$pb.TagNumber(19)
   void clearBodyTrackingStiffness() => clearField(19);
   @$pb.TagNumber(19)
-  $59.DoubleValue ensureBodyTrackingStiffness() => $_ensure(18);
+  $58.DoubleValue ensureBodyTrackingStiffness() => $_ensure(18);
 }
 
 

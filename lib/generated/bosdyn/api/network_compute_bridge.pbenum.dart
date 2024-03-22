@@ -20,6 +20,7 @@ class NetworkComputeStatus extends $pb.ProtobufEnum {
   static const NetworkComputeStatus NETWORK_COMPUTE_STATUS_EXTERNAL_SERVER_ERROR = NetworkComputeStatus._(3, _omitEnumNames ? '' : 'NETWORK_COMPUTE_STATUS_EXTERNAL_SERVER_ERROR');
   static const NetworkComputeStatus NETWORK_COMPUTE_STATUS_ROTATION_ERROR = NetworkComputeStatus._(4, _omitEnumNames ? '' : 'NETWORK_COMPUTE_STATUS_ROTATION_ERROR');
   static const NetworkComputeStatus NETWORK_COMPUTE_STATUS_CUSTOM_PARAMS_ERROR = NetworkComputeStatus._(5, _omitEnumNames ? '' : 'NETWORK_COMPUTE_STATUS_CUSTOM_PARAMS_ERROR');
+  static const NetworkComputeStatus NETWORK_COMPUTE_STATUS_ANALYSIS_FAILED = NetworkComputeStatus._(6, _omitEnumNames ? '' : 'NETWORK_COMPUTE_STATUS_ANALYSIS_FAILED');
 
   static const $core.List<NetworkComputeStatus> values = <NetworkComputeStatus> [
     NETWORK_COMPUTE_STATUS_UNKNOWN,
@@ -28,6 +29,7 @@ class NetworkComputeStatus extends $pb.ProtobufEnum {
     NETWORK_COMPUTE_STATUS_EXTERNAL_SERVER_ERROR,
     NETWORK_COMPUTE_STATUS_ROTATION_ERROR,
     NETWORK_COMPUTE_STATUS_CUSTOM_PARAMS_ERROR,
+    NETWORK_COMPUTE_STATUS_ANALYSIS_FAILED,
   ];
 
   static final $core.Map<$core.int, NetworkComputeStatus> _byValue = $pb.ProtobufEnum.initByValue(values);

@@ -71,7 +71,11 @@ const State_AnsweredQuestion$json = {
   '1': 'AnsweredQuestion',
   '2': [
     {'1': 'question', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Question', '10': 'question'},
-    {'1': 'accepted_answer_code', '3': 2, '4': 1, '5': 3, '10': 'acceptedAnswerCode'},
+    {'1': 'accepted_answer_code', '3': 2, '4': 1, '5': 3, '9': 0, '10': 'acceptedAnswerCode'},
+    {'1': 'custom_params', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.DictParam', '9': 0, '10': 'customParams'},
+  ],
+  '8': [
+    {'1': 'accepted_answer'},
   ],
 };
 
@@ -129,22 +133,23 @@ final $typed_data.Uint8List stateDescriptor = $convert.base64Decode(
     '9yeRgDIAMoCzIqLmJvc2R5bi5hcGkubWlzc2lvbi5TdGF0ZS5Ob2RlU3RhdGVzQXRUaWNrUgdo'
     'aXN0b3J5EjgKBnN0YXR1cxgEIAEoDjIgLmJvc2R5bi5hcGkubWlzc2lvbi5TdGF0ZS5TdGF0dX'
     'NSBnN0YXR1cxIUCgVlcnJvchgFIAEoCVIFZXJyb3ISIQoMdGlja19jb3VudGVyGAYgASgDUgt0'
-    'aWNrQ291bnRlchIdCgptaXNzaW9uX2lkGAcgASgDUgltaXNzaW9uSWQafgoQQW5zd2VyZWRRdW'
-    'VzdGlvbhI4CghxdWVzdGlvbhgBIAEoCzIcLmJvc2R5bi5hcGkubWlzc2lvbi5RdWVzdGlvblII'
-    'cXVlc3Rpb24SMAoUYWNjZXB0ZWRfYW5zd2VyX2NvZGUYAiABKANSEmFjY2VwdGVkQW5zd2VyQ2'
-    '9kZRr3AwoQTm9kZVN0YXRlc0F0VGljaxIhCgx0aWNrX2NvdW50ZXIYASABKANSC3RpY2tDb3Vu'
-    'dGVyEkwKFHRpY2tfc3RhcnRfdGltZXN0YW1wGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
-    'VzdGFtcFISdGlja1N0YXJ0VGltZXN0YW1wElUKC25vZGVfc3RhdGVzGAMgAygLMjQuYm9zZHlu'
-    'LmFwaS5taXNzaW9uLlN0YXRlLk5vZGVTdGF0ZXNBdFRpY2suTm9kZVN0YXRlUgpub2RlU3RhdG'
-    'VzGpoCCglOb2RlU3RhdGUSMgoGcmVzdWx0GAEgASgOMhouYm9zZHluLmFwaS5taXNzaW9uLlJl'
-    'c3VsdFIGcmVzdWx0EhQKBWVycm9yGAIgASgJUgVlcnJvchIOCgJpZBgDIAEoA1ICaWQSZAoKYm'
-    'xhY2tib2FyZBgFIAEoCzJELmJvc2R5bi5hcGkubWlzc2lvbi5TdGF0ZS5Ob2RlU3RhdGVzQXRU'
-    'aWNrLk5vZGVTdGF0ZS5CbGFja2JvYXJkU3RhdGVSCmJsYWNrYm9hcmQaTQoPQmxhY2tib2FyZF'
-    'N0YXRlEjoKCXZhcmlhYmxlcxgBIAMoCzIcLmJvc2R5bi5hcGkubWlzc2lvbi5LZXlWYWx1ZVIJ'
-    'dmFyaWFibGVzIqIBCgZTdGF0dXMSEgoOU1RBVFVTX1VOS05PV04QABISCg5TVEFUVVNfRkFJTF'
-    'VSRRABEhIKDlNUQVRVU19SVU5OSU5HEAISEgoOU1RBVFVTX1NVQ0NFU1MQAxIRCg1TVEFUVVNf'
-    'UEFVU0VEEAQSEAoMU1RBVFVTX0VSUk9SEAUSDwoLU1RBVFVTX05PTkUQBhISCg5TVEFUVVNfU1'
-    'RPUFBFRBAH');
+    'aWNrQ291bnRlchIdCgptaXNzaW9uX2lkGAcgASgDUgltaXNzaW9uSWQa0QEKEEFuc3dlcmVkUX'
+    'Vlc3Rpb24SOAoIcXVlc3Rpb24YASABKAsyHC5ib3NkeW4uYXBpLm1pc3Npb24uUXVlc3Rpb25S'
+    'CHF1ZXN0aW9uEjIKFGFjY2VwdGVkX2Fuc3dlcl9jb2RlGAIgASgDSABSEmFjY2VwdGVkQW5zd2'
+    'VyQ29kZRI8Cg1jdXN0b21fcGFyYW1zGAMgASgLMhUuYm9zZHluLmFwaS5EaWN0UGFyYW1IAFIM'
+    'Y3VzdG9tUGFyYW1zQhEKD2FjY2VwdGVkX2Fuc3dlchr3AwoQTm9kZVN0YXRlc0F0VGljaxIhCg'
+    'x0aWNrX2NvdW50ZXIYASABKANSC3RpY2tDb3VudGVyEkwKFHRpY2tfc3RhcnRfdGltZXN0YW1w'
+    'GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFISdGlja1N0YXJ0VGltZXN0YW1wEl'
+    'UKC25vZGVfc3RhdGVzGAMgAygLMjQuYm9zZHluLmFwaS5taXNzaW9uLlN0YXRlLk5vZGVTdGF0'
+    'ZXNBdFRpY2suTm9kZVN0YXRlUgpub2RlU3RhdGVzGpoCCglOb2RlU3RhdGUSMgoGcmVzdWx0GA'
+    'EgASgOMhouYm9zZHluLmFwaS5taXNzaW9uLlJlc3VsdFIGcmVzdWx0EhQKBWVycm9yGAIgASgJ'
+    'UgVlcnJvchIOCgJpZBgDIAEoA1ICaWQSZAoKYmxhY2tib2FyZBgFIAEoCzJELmJvc2R5bi5hcG'
+    'kubWlzc2lvbi5TdGF0ZS5Ob2RlU3RhdGVzQXRUaWNrLk5vZGVTdGF0ZS5CbGFja2JvYXJkU3Rh'
+    'dGVSCmJsYWNrYm9hcmQaTQoPQmxhY2tib2FyZFN0YXRlEjoKCXZhcmlhYmxlcxgBIAMoCzIcLm'
+    'Jvc2R5bi5hcGkubWlzc2lvbi5LZXlWYWx1ZVIJdmFyaWFibGVzIqIBCgZTdGF0dXMSEgoOU1RB'
+    'VFVTX1VOS05PV04QABISCg5TVEFUVVNfRkFJTFVSRRABEhIKDlNUQVRVU19SVU5OSU5HEAISEg'
+    'oOU1RBVFVTX1NVQ0NFU1MQAxIRCg1TVEFUVVNfUEFVU0VEEAQSEAoMU1RBVFVTX0VSUk9SEAUS'
+    'DwoLU1RBVFVTX05PTkUQBhISCg5TVEFUVVNfU1RPUFBFRBAH');
 
 @$core.Deprecated('Use questionDescriptor instead')
 const Question$json = {
@@ -154,6 +159,7 @@ const Question$json = {
     {'1': 'source', '3': 2, '4': 1, '5': 9, '10': 'source'},
     {'1': 'text', '3': 3, '4': 1, '5': 9, '10': 'text'},
     {'1': 'options', '3': 4, '4': 3, '5': 11, '6': '.bosdyn.api.mission.Prompt.Option', '10': 'options'},
+    {'1': 'custom_params', '3': 7, '4': 1, '5': 11, '6': '.bosdyn.api.DictParam.Spec', '10': 'customParams'},
     {'1': 'for_autonomous_processing', '3': 5, '4': 1, '5': 8, '10': 'forAutonomousProcessing'},
     {'1': 'severity', '3': 6, '4': 1, '5': 14, '6': '.bosdyn.api.AlertData.SeverityLevel', '10': 'severity'},
   ],
@@ -163,9 +169,10 @@ const Question$json = {
 final $typed_data.Uint8List questionDescriptor = $convert.base64Decode(
     'CghRdWVzdGlvbhIOCgJpZBgBIAEoA1ICaWQSFgoGc291cmNlGAIgASgJUgZzb3VyY2USEgoEdG'
     'V4dBgDIAEoCVIEdGV4dBI7CgdvcHRpb25zGAQgAygLMiEuYm9zZHluLmFwaS5taXNzaW9uLlBy'
-    'b21wdC5PcHRpb25SB29wdGlvbnMSOgoZZm9yX2F1dG9ub21vdXNfcHJvY2Vzc2luZxgFIAEoCF'
-    'IXZm9yQXV0b25vbW91c1Byb2Nlc3NpbmcSPwoIc2V2ZXJpdHkYBiABKA4yIy5ib3NkeW4uYXBp'
-    'LkFsZXJ0RGF0YS5TZXZlcml0eUxldmVsUghzZXZlcml0eQ==');
+    'b21wdC5PcHRpb25SB29wdGlvbnMSPwoNY3VzdG9tX3BhcmFtcxgHIAEoCzIaLmJvc2R5bi5hcG'
+    'kuRGljdFBhcmFtLlNwZWNSDGN1c3RvbVBhcmFtcxI6Chlmb3JfYXV0b25vbW91c19wcm9jZXNz'
+    'aW5nGAUgASgIUhdmb3JBdXRvbm9tb3VzUHJvY2Vzc2luZxI/CghzZXZlcml0eRgGIAEoDjIjLm'
+    'Jvc2R5bi5hcGkuQWxlcnREYXRhLlNldmVyaXR5TGV2ZWxSCHNldmVyaXR5');
 
 @$core.Deprecated('Use answerQuestionRequestDescriptor instead')
 const AnswerQuestionRequest$json = {
@@ -173,15 +180,20 @@ const AnswerQuestionRequest$json = {
   '2': [
     {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
     {'1': 'question_id', '3': 2, '4': 1, '5': 3, '10': 'questionId'},
-    {'1': 'code', '3': 3, '4': 1, '5': 3, '10': 'code'},
+    {'1': 'code', '3': 3, '4': 1, '5': 3, '9': 0, '10': 'code'},
+    {'1': 'custom_params', '3': 4, '4': 1, '5': 11, '6': '.bosdyn.api.DictParam', '9': 0, '10': 'customParams'},
+  ],
+  '8': [
+    {'1': 'answer'},
   ],
 };
 
 /// Descriptor for `AnswerQuestionRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List answerQuestionRequestDescriptor = $convert.base64Decode(
     'ChVBbnN3ZXJRdWVzdGlvblJlcXVlc3QSMQoGaGVhZGVyGAEgASgLMhkuYm9zZHluLmFwaS5SZX'
-    'F1ZXN0SGVhZGVyUgZoZWFkZXISHwoLcXVlc3Rpb25faWQYAiABKANSCnF1ZXN0aW9uSWQSEgoE'
-    'Y29kZRgDIAEoA1IEY29kZQ==');
+    'F1ZXN0SGVhZGVyUgZoZWFkZXISHwoLcXVlc3Rpb25faWQYAiABKANSCnF1ZXN0aW9uSWQSFAoE'
+    'Y29kZRgDIAEoA0gAUgRjb2RlEjwKDWN1c3RvbV9wYXJhbXMYBCABKAsyFS5ib3NkeW4uYXBpLk'
+    'RpY3RQYXJhbUgAUgxjdXN0b21QYXJhbXNCCAoGYW5zd2Vy');
 
 @$core.Deprecated('Use answerQuestionResponseDescriptor instead')
 const AnswerQuestionResponse$json = {
@@ -189,6 +201,7 @@ const AnswerQuestionResponse$json = {
   '2': [
     {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
     {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.bosdyn.api.mission.AnswerQuestionResponse.Status', '10': 'status'},
+    {'1': 'custom_param_error', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.CustomParamError', '10': 'customParamError'},
   ],
   '4': [AnswerQuestionResponse_Status$json],
 };
@@ -202,6 +215,8 @@ const AnswerQuestionResponse_Status$json = {
     {'1': 'STATUS_INVALID_QUESTION_ID', '2': 2},
     {'1': 'STATUS_INVALID_CODE', '2': 3},
     {'1': 'STATUS_ALREADY_ANSWERED', '2': 4},
+    {'1': 'STATUS_CUSTOM_PARAMS_ERROR', '2': 5},
+    {'1': 'STATUS_INCOMPATIBLE_ANSWER', '2': 6},
   ],
 };
 
@@ -209,10 +224,12 @@ const AnswerQuestionResponse_Status$json = {
 final $typed_data.Uint8List answerQuestionResponseDescriptor = $convert.base64Decode(
     'ChZBbnN3ZXJRdWVzdGlvblJlc3BvbnNlEjIKBmhlYWRlchgBIAEoCzIaLmJvc2R5bi5hcGkuUm'
     'VzcG9uc2VIZWFkZXJSBmhlYWRlchJJCgZzdGF0dXMYAiABKA4yMS5ib3NkeW4uYXBpLm1pc3Np'
-    'b24uQW5zd2VyUXVlc3Rpb25SZXNwb25zZS5TdGF0dXNSBnN0YXR1cyKBAQoGU3RhdHVzEhIKDl'
-    'NUQVRVU19VTktOT1dOEAASDQoJU1RBVFVTX09LEAESHgoaU1RBVFVTX0lOVkFMSURfUVVFU1RJ'
-    'T05fSUQQAhIXChNTVEFUVVNfSU5WQUxJRF9DT0RFEAMSGwoXU1RBVFVTX0FMUkVBRFlfQU5TV0'
-    'VSRUQQBA==');
+    'b24uQW5zd2VyUXVlc3Rpb25SZXNwb25zZS5TdGF0dXNSBnN0YXR1cxJKChJjdXN0b21fcGFyYW'
+    '1fZXJyb3IYAyABKAsyHC5ib3NkeW4uYXBpLkN1c3RvbVBhcmFtRXJyb3JSEGN1c3RvbVBhcmFt'
+    'RXJyb3IiwQEKBlN0YXR1cxISCg5TVEFUVVNfVU5LTk9XThAAEg0KCVNUQVRVU19PSxABEh4KGl'
+    'NUQVRVU19JTlZBTElEX1FVRVNUSU9OX0lEEAISFwoTU1RBVFVTX0lOVkFMSURfQ09ERRADEhsK'
+    'F1NUQVRVU19BTFJFQURZX0FOU1dFUkVEEAQSHgoaU1RBVFVTX0NVU1RPTV9QQVJBTVNfRVJST1'
+    'IQBRIeChpTVEFUVVNfSU5DT01QQVRJQkxFX0FOU1dFUhAG');
 
 @$core.Deprecated('Use missionInfoDescriptor instead')
 const MissionInfo$json = {

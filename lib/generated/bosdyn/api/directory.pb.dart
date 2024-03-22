@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $60;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
 import 'directory.pbenum.dart';
-import 'header.pb.dart' as $68;
+import 'header.pb.dart' as $67;
 
 export 'directory.pbenum.dart';
 
@@ -32,7 +32,7 @@ class ServiceEntry extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? type,
     $core.String? authority,
-    $60.Timestamp? lastUpdate,
+    $59.Timestamp? lastUpdate,
     $core.bool? userTokenRequired,
     $core.String? permissionRequired,
     $core.double? livenessTimeoutSecs,
@@ -78,7 +78,7 @@ class ServiceEntry extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'type')
     ..aOS(3, _omitFieldNames ? '' : 'authority')
-    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'lastUpdate', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'lastUpdate', subBuilder: $59.Timestamp.create)
     ..aOB(5, _omitFieldNames ? '' : 'userTokenRequired')
     ..aOS(7, _omitFieldNames ? '' : 'permissionRequired')
     ..a<$core.double>(8, _omitFieldNames ? '' : 'livenessTimeoutSecs', $pb.PbFieldType.OD)
@@ -146,15 +146,15 @@ class ServiceEntry extends $pb.GeneratedMessage {
   /// Last update time in robot timebase for this service record. This serves as the time of
   /// the last heartbeat to the robot.
   @$pb.TagNumber(4)
-  $60.Timestamp get lastUpdate => $_getN(3);
+  $59.Timestamp get lastUpdate => $_getN(3);
   @$pb.TagNumber(4)
-  set lastUpdate($60.Timestamp v) { setField(4, v); }
+  set lastUpdate($59.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLastUpdate() => $_has(3);
   @$pb.TagNumber(4)
   void clearLastUpdate() => clearField(4);
   @$pb.TagNumber(4)
-  $60.Timestamp ensureLastUpdate() => $_ensure(3);
+  $59.Timestamp ensureLastUpdate() => $_ensure(3);
 
   /// If 'user_token_required' field is true, any requests to this service must contain
   /// a user token for the machine.  Requests without a user token will result in a
@@ -276,7 +276,7 @@ class Endpoint extends $pb.GeneratedMessage {
 /// The GetServiceEntry request message sends the service name to the robot.
 class GetServiceEntryRequest extends $pb.GeneratedMessage {
   factory GetServiceEntryRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? serviceName,
   }) {
     final $result = create();
@@ -293,7 +293,7 @@ class GetServiceEntryRequest extends $pb.GeneratedMessage {
   factory GetServiceEntryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServiceEntryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'serviceName')
     ..hasRequiredFields = false
   ;
@@ -321,15 +321,15 @@ class GetServiceEntryRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The unique user-friendly name of the service.
   @$pb.TagNumber(2)
@@ -345,7 +345,7 @@ class GetServiceEntryRequest extends $pb.GeneratedMessage {
 /// The GetServiceEntry response message returns a ServiceEntry for the desired service name.
 class GetServiceEntryResponse extends $pb.GeneratedMessage {
   factory GetServiceEntryResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     GetServiceEntryResponse_Status? status,
     ServiceEntry? serviceEntry,
   }) {
@@ -366,7 +366,7 @@ class GetServiceEntryResponse extends $pb.GeneratedMessage {
   factory GetServiceEntryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServiceEntryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<GetServiceEntryResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: GetServiceEntryResponse_Status.STATUS_UNKNOWN, valueOf: GetServiceEntryResponse_Status.valueOf, enumValues: GetServiceEntryResponse_Status.values)
     ..aOM<ServiceEntry>(3, _omitFieldNames ? '' : 'serviceEntry', subBuilder: ServiceEntry.create)
     ..hasRequiredFields = false
@@ -395,15 +395,15 @@ class GetServiceEntryResponse extends $pb.GeneratedMessage {
 
   /// Common response Header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Current status of the request.
   @$pb.TagNumber(2)
@@ -431,7 +431,7 @@ class GetServiceEntryResponse extends $pb.GeneratedMessage {
 /// The ListServiceEntries request message will ask the robot for all services.
 class ListServiceEntriesRequest extends $pb.GeneratedMessage {
   factory ListServiceEntriesRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -444,7 +444,7 @@ class ListServiceEntriesRequest extends $pb.GeneratedMessage {
   factory ListServiceEntriesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListServiceEntriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -471,22 +471,22 @@ class ListServiceEntriesRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The ListServiceEntries response message returns all known services at the time the request
 /// was recieved.
 class ListServiceEntriesResponse extends $pb.GeneratedMessage {
   factory ListServiceEntriesResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<ServiceEntry>? serviceEntries,
   }) {
     final $result = create();
@@ -503,7 +503,7 @@ class ListServiceEntriesResponse extends $pb.GeneratedMessage {
   factory ListServiceEntriesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListServiceEntriesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<ServiceEntry>(2, _omitFieldNames ? '' : 'serviceEntries', $pb.PbFieldType.PM, subBuilder: ServiceEntry.create)
     ..hasRequiredFields = false
   ;
@@ -531,15 +531,15 @@ class ListServiceEntriesResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The resources managed by the LeaseService.
   @$pb.TagNumber(2)

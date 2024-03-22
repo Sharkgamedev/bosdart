@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/wrappers.pb.dart' as $59;
+import '../../google/protobuf/wrappers.pb.dart' as $58;
 
 /// Two dimensional vector primitive.
 class Vec2 extends $pb.GeneratedMessage {
@@ -1830,7 +1830,8 @@ class SE3Covariance extends $pb.GeneratedMessage {
 
   /// Variance of the yaw component of the SE3 Pose.
   /// Warning: DEPRECATED as of 2.1. This should equal cov_rzrz, inside `matrix`. Will be removed
-  /// in 4.0.
+  /// in a future release.
+  /// FIXME(sberard): https://bostondynamics.atlassian.net/browse/SPOT-12523
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.double get yawVariance => $_getN(1);
@@ -1844,7 +1845,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearYawVariance() => clearField(2);
 
-  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.double get covXx => $_getN(2);
@@ -1858,7 +1859,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearCovXx() => clearField(3);
 
-  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.double get covXy => $_getN(3);
@@ -1872,7 +1873,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearCovXy() => clearField(4);
 
-  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $core.double get covXz => $_getN(4);
@@ -1886,7 +1887,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearCovXz() => clearField(5);
 
-  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   $core.double get covYx => $_getN(5);
@@ -1900,7 +1901,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearCovYx() => clearField(6);
 
-  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(7)
   $core.double get covYy => $_getN(6);
@@ -1914,7 +1915,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearCovYy() => clearField(7);
 
-  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(8)
   $core.double get covYz => $_getN(7);
@@ -1928,7 +1929,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearCovYz() => clearField(8);
 
-  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(9)
   $core.double get covZx => $_getN(8);
@@ -1942,7 +1943,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearCovZx() => clearField(9);
 
-  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(10)
   $core.double get covZy => $_getN(9);
@@ -1956,7 +1957,7 @@ class SE3Covariance extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearCovZy() => clearField(10);
 
-  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in 4.0.
+  /// Warning: DEPRECATED as of 2.1. Use 'matrix.' Will be removed in a future release.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(11)
   $core.double get covZz => $_getN(10);
@@ -2419,8 +2420,8 @@ class Bounds extends $pb.GeneratedMessage {
 /// A 2D vector of doubles that uses wrapped values so we can tell which elements are set.
 class Vec2Value extends $pb.GeneratedMessage {
   factory Vec2Value({
-    $59.DoubleValue? x,
-    $59.DoubleValue? y,
+    $58.DoubleValue? x,
+    $58.DoubleValue? y,
   }) {
     final $result = create();
     if (x != null) {
@@ -2436,8 +2437,8 @@ class Vec2Value extends $pb.GeneratedMessage {
   factory Vec2Value.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Vec2Value', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'x', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'y', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'x', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'y', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -2463,34 +2464,34 @@ class Vec2Value extends $pb.GeneratedMessage {
   static Vec2Value? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get x => $_getN(0);
+  $58.DoubleValue get x => $_getN(0);
   @$pb.TagNumber(1)
-  set x($59.DoubleValue v) { setField(1, v); }
+  set x($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasX() => $_has(0);
   @$pb.TagNumber(1)
   void clearX() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureX() => $_ensure(0);
+  $58.DoubleValue ensureX() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get y => $_getN(1);
+  $58.DoubleValue get y => $_getN(1);
   @$pb.TagNumber(2)
-  set y($59.DoubleValue v) { setField(2, v); }
+  set y($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasY() => $_has(1);
   @$pb.TagNumber(2)
   void clearY() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureY() => $_ensure(1);
+  $58.DoubleValue ensureY() => $_ensure(1);
 }
 
 /// A 3D vector of doubles that uses wrapped values so we can tell which elements are set.
 class Vec3Value extends $pb.GeneratedMessage {
   factory Vec3Value({
-    $59.DoubleValue? x,
-    $59.DoubleValue? y,
-    $59.DoubleValue? z,
+    $58.DoubleValue? x,
+    $58.DoubleValue? y,
+    $58.DoubleValue? z,
   }) {
     final $result = create();
     if (x != null) {
@@ -2509,9 +2510,9 @@ class Vec3Value extends $pb.GeneratedMessage {
   factory Vec3Value.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Vec3Value', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'x', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'y', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'z', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'x', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'y', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'z', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -2537,37 +2538,37 @@ class Vec3Value extends $pb.GeneratedMessage {
   static Vec3Value? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get x => $_getN(0);
+  $58.DoubleValue get x => $_getN(0);
   @$pb.TagNumber(1)
-  set x($59.DoubleValue v) { setField(1, v); }
+  set x($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasX() => $_has(0);
   @$pb.TagNumber(1)
   void clearX() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureX() => $_ensure(0);
+  $58.DoubleValue ensureX() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get y => $_getN(1);
+  $58.DoubleValue get y => $_getN(1);
   @$pb.TagNumber(2)
-  set y($59.DoubleValue v) { setField(2, v); }
+  set y($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasY() => $_has(1);
   @$pb.TagNumber(2)
   void clearY() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureY() => $_ensure(1);
+  $58.DoubleValue ensureY() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get z => $_getN(2);
+  $58.DoubleValue get z => $_getN(2);
   @$pb.TagNumber(3)
-  set z($59.DoubleValue v) { setField(3, v); }
+  set z($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasZ() => $_has(2);
   @$pb.TagNumber(3)
   void clearZ() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureZ() => $_ensure(2);
+  $58.DoubleValue ensureZ() => $_ensure(2);
 }
 
 

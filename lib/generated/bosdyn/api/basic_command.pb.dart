@@ -11,13 +11,15 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $60;
-import '../../google/protobuf/wrappers.pb.dart' as $59;
+import '../../google/protobuf/duration.pb.dart' as $61;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../google/protobuf/wrappers.pb.dart' as $58;
 import 'basic_command.pbenum.dart';
-import 'geometry.pb.dart' as $61;
-import 'trajectory.pb.dart' as $63;
+import 'geometry.pb.dart' as $60;
+import 'trajectory.pb.dart' as $62;
 
 export 'basic_command.pbenum.dart';
 
@@ -634,8 +636,8 @@ class SafePowerOffCommand extends $pb.GeneratedMessage {
 
 class SE2TrajectoryCommand_Request extends $pb.GeneratedMessage {
   factory SE2TrajectoryCommand_Request({
-    $60.Timestamp? endTime,
-    $63.SE2Trajectory? trajectory,
+    $59.Timestamp? endTime,
+    $62.SE2Trajectory? trajectory,
     $core.String? se2FrameName,
   }) {
     final $result = create();
@@ -655,8 +657,8 @@ class SE2TrajectoryCommand_Request extends $pb.GeneratedMessage {
   factory SE2TrajectoryCommand_Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SE2TrajectoryCommand.Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
-    ..aOM<$63.SE2Trajectory>(2, _omitFieldNames ? '' : 'trajectory', subBuilder: $63.SE2Trajectory.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$62.SE2Trajectory>(2, _omitFieldNames ? '' : 'trajectory', subBuilder: $62.SE2Trajectory.create)
     ..aOS(3, _omitFieldNames ? '' : 'se2FrameName')
     ..hasRequiredFields = false
   ;
@@ -685,28 +687,28 @@ class SE2TrajectoryCommand_Request extends $pb.GeneratedMessage {
   /// The timestamp (in robot time) by which a command must finish executing.
   /// This is a required field and used to prevent runaway commands.
   @$pb.TagNumber(1)
-  $60.Timestamp get endTime => $_getN(0);
+  $59.Timestamp get endTime => $_getN(0);
   @$pb.TagNumber(1)
-  set endTime($60.Timestamp v) { setField(1, v); }
+  set endTime($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasEndTime() => $_has(0);
   @$pb.TagNumber(1)
   void clearEndTime() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureEndTime() => $_ensure(0);
+  $59.Timestamp ensureEndTime() => $_ensure(0);
 
   /// The trajectory that the robot should follow, expressed in the frame
   /// identified by se2_frame_name.
   @$pb.TagNumber(2)
-  $63.SE2Trajectory get trajectory => $_getN(1);
+  $62.SE2Trajectory get trajectory => $_getN(1);
   @$pb.TagNumber(2)
-  set trajectory($63.SE2Trajectory v) { setField(2, v); }
+  set trajectory($62.SE2Trajectory v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTrajectory() => $_has(1);
   @$pb.TagNumber(2)
   void clearTrajectory() => clearField(2);
   @$pb.TagNumber(2)
-  $63.SE2Trajectory ensureTrajectory() => $_ensure(1);
+  $62.SE2Trajectory ensureTrajectory() => $_ensure(1);
 
   /// The name of the frame that trajectory is relative to. The trajectory
   /// must be expressed in a gravity aligned frame, so either "vision",
@@ -726,6 +728,7 @@ class SE2TrajectoryCommand_Feedback extends $pb.GeneratedMessage {
   factory SE2TrajectoryCommand_Feedback({
     SE2TrajectoryCommand_Feedback_Status? status,
     SE2TrajectoryCommand_Feedback_BodyMovementStatus? bodyMovementStatus,
+    SE2TrajectoryCommand_Feedback_FinalGoalStatus? finalGoalStatus,
   }) {
     final $result = create();
     if (status != null) {
@@ -733,6 +736,9 @@ class SE2TrajectoryCommand_Feedback extends $pb.GeneratedMessage {
     }
     if (bodyMovementStatus != null) {
       $result.bodyMovementStatus = bodyMovementStatus;
+    }
+    if (finalGoalStatus != null) {
+      $result.finalGoalStatus = finalGoalStatus;
     }
     return $result;
   }
@@ -743,6 +749,7 @@ class SE2TrajectoryCommand_Feedback extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SE2TrajectoryCommand.Feedback', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..e<SE2TrajectoryCommand_Feedback_Status>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: SE2TrajectoryCommand_Feedback_Status.STATUS_UNKNOWN, valueOf: SE2TrajectoryCommand_Feedback_Status.valueOf, enumValues: SE2TrajectoryCommand_Feedback_Status.values)
     ..e<SE2TrajectoryCommand_Feedback_BodyMovementStatus>(2, _omitFieldNames ? '' : 'bodyMovementStatus', $pb.PbFieldType.OE, defaultOrMaker: SE2TrajectoryCommand_Feedback_BodyMovementStatus.BODY_STATUS_UNKNOWN, valueOf: SE2TrajectoryCommand_Feedback_BodyMovementStatus.valueOf, enumValues: SE2TrajectoryCommand_Feedback_BodyMovementStatus.values)
+    ..e<SE2TrajectoryCommand_Feedback_FinalGoalStatus>(5, _omitFieldNames ? '' : 'finalGoalStatus', $pb.PbFieldType.OE, defaultOrMaker: SE2TrajectoryCommand_Feedback_FinalGoalStatus.FINAL_GOAL_STATUS_UNKNOWN, valueOf: SE2TrajectoryCommand_Feedback_FinalGoalStatus.valueOf, enumValues: SE2TrajectoryCommand_Feedback_FinalGoalStatus.values)
     ..hasRequiredFields = false
   ;
 
@@ -786,6 +793,16 @@ class SE2TrajectoryCommand_Feedback extends $pb.GeneratedMessage {
   $core.bool hasBodyMovementStatus() => $_has(1);
   @$pb.TagNumber(2)
   void clearBodyMovementStatus() => clearField(2);
+
+  /// Flag indicating if the final requested position was achievable.
+  @$pb.TagNumber(5)
+  SE2TrajectoryCommand_Feedback_FinalGoalStatus get finalGoalStatus => $_getN(2);
+  @$pb.TagNumber(5)
+  set finalGoalStatus(SE2TrajectoryCommand_Feedback_FinalGoalStatus v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasFinalGoalStatus() => $_has(2);
+  @$pb.TagNumber(5)
+  void clearFinalGoalStatus() => clearField(5);
 }
 
 /// Move along a trajectory in 2D space.
@@ -823,9 +840,9 @@ class SE2TrajectoryCommand extends $pb.GeneratedMessage {
 
 class SE2VelocityCommand_Request extends $pb.GeneratedMessage {
   factory SE2VelocityCommand_Request({
-    $60.Timestamp? endTime,
-    $61.SE2Velocity? velocity,
-    $61.SE2Velocity? slewRateLimit,
+    $59.Timestamp? endTime,
+    $60.SE2Velocity? velocity,
+    $60.SE2Velocity? slewRateLimit,
     $core.String? se2FrameName,
   }) {
     final $result = create();
@@ -848,9 +865,9 @@ class SE2VelocityCommand_Request extends $pb.GeneratedMessage {
   factory SE2VelocityCommand_Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SE2VelocityCommand.Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
-    ..aOM<$61.SE2Velocity>(2, _omitFieldNames ? '' : 'velocity', subBuilder: $61.SE2Velocity.create)
-    ..aOM<$61.SE2Velocity>(4, _omitFieldNames ? '' : 'slewRateLimit', subBuilder: $61.SE2Velocity.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.SE2Velocity>(2, _omitFieldNames ? '' : 'velocity', subBuilder: $60.SE2Velocity.create)
+    ..aOM<$60.SE2Velocity>(4, _omitFieldNames ? '' : 'slewRateLimit', subBuilder: $60.SE2Velocity.create)
     ..aOS(5, _omitFieldNames ? '' : 'se2FrameName')
     ..hasRequiredFields = false
   ;
@@ -879,41 +896,41 @@ class SE2VelocityCommand_Request extends $pb.GeneratedMessage {
   /// The timestamp (in robot time) by which a command must finish executing. This is a
   /// required field and used to prevent runaway commands.
   @$pb.TagNumber(1)
-  $60.Timestamp get endTime => $_getN(0);
+  $59.Timestamp get endTime => $_getN(0);
   @$pb.TagNumber(1)
-  set endTime($60.Timestamp v) { setField(1, v); }
+  set endTime($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasEndTime() => $_has(0);
   @$pb.TagNumber(1)
   void clearEndTime() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureEndTime() => $_ensure(0);
+  $59.Timestamp ensureEndTime() => $_ensure(0);
 
   /// Desired planar velocity of the robot body relative to se2_frame_name.
   @$pb.TagNumber(2)
-  $61.SE2Velocity get velocity => $_getN(1);
+  $60.SE2Velocity get velocity => $_getN(1);
   @$pb.TagNumber(2)
-  set velocity($61.SE2Velocity v) { setField(2, v); }
+  set velocity($60.SE2Velocity v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasVelocity() => $_has(1);
   @$pb.TagNumber(2)
   void clearVelocity() => clearField(2);
   @$pb.TagNumber(2)
-  $61.SE2Velocity ensureVelocity() => $_ensure(1);
+  $60.SE2Velocity ensureVelocity() => $_ensure(1);
 
   /// If set, limits how quickly velocity can change relative to se2_frame_name.
   /// Otherwise, robot may decide to limit velocities using default settings.
   /// These values should be non-negative.
   @$pb.TagNumber(4)
-  $61.SE2Velocity get slewRateLimit => $_getN(2);
+  $60.SE2Velocity get slewRateLimit => $_getN(2);
   @$pb.TagNumber(4)
-  set slewRateLimit($61.SE2Velocity v) { setField(4, v); }
+  set slewRateLimit($60.SE2Velocity v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSlewRateLimit() => $_has(2);
   @$pb.TagNumber(4)
   void clearSlewRateLimit() => clearField(4);
   @$pb.TagNumber(4)
-  $61.SE2Velocity ensureSlewRateLimit() => $_ensure(2);
+  $60.SE2Velocity ensureSlewRateLimit() => $_ensure(2);
 
   /// The name of the frame that velocity and slew_rate_limit are relative to.
   /// The trajectory must be expressed in a gravity aligned frame, so either
@@ -1243,7 +1260,7 @@ class StandCommand extends $pb.GeneratedMessage {
 
 class StanceCommand_Request extends $pb.GeneratedMessage {
   factory StanceCommand_Request({
-    $60.Timestamp? endTime,
+    $59.Timestamp? endTime,
     Stance? stance,
   }) {
     final $result = create();
@@ -1260,7 +1277,7 @@ class StanceCommand_Request extends $pb.GeneratedMessage {
   factory StanceCommand_Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StanceCommand.Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
     ..aOM<Stance>(2, _omitFieldNames ? '' : 'stance', subBuilder: Stance.create)
     ..hasRequiredFields = false
   ;
@@ -1289,15 +1306,15 @@ class StanceCommand_Request extends $pb.GeneratedMessage {
   /// / The timestamp (in robot time) by which a command must finish executing.
   /// / This is a required field and used to prevent runaway commands.
   @$pb.TagNumber(1)
-  $60.Timestamp get endTime => $_getN(0);
+  $59.Timestamp get endTime => $_getN(0);
   @$pb.TagNumber(1)
-  set endTime($60.Timestamp v) { setField(1, v); }
+  set endTime($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasEndTime() => $_has(0);
   @$pb.TagNumber(1)
   void clearEndTime() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureEndTime() => $_ensure(0);
+  $59.Timestamp ensureEndTime() => $_ensure(0);
 
   @$pb.TagNumber(2)
   Stance get stance => $_getN(1);
@@ -1397,7 +1414,7 @@ class StanceCommand extends $pb.GeneratedMessage {
 
 class Stance extends $pb.GeneratedMessage {
   factory Stance({
-    $core.Map<$core.String, $61.Vec2>? footPositions,
+    $core.Map<$core.String, $60.Vec2>? footPositions,
     $core.String? se2FrameName,
     $core.double? accuracy,
   }) {
@@ -1418,7 +1435,7 @@ class Stance extends $pb.GeneratedMessage {
   factory Stance.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Stance', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..m<$core.String, $61.Vec2>(2, _omitFieldNames ? '' : 'footPositions', entryClassName: 'Stance.FootPositionsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $61.Vec2.create, valueDefaultOrMaker: $61.Vec2.getDefault, packageName: const $pb.PackageName('bosdyn.api'))
+    ..m<$core.String, $60.Vec2>(2, _omitFieldNames ? '' : 'footPositions', entryClassName: 'Stance.FootPositionsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $60.Vec2.create, valueDefaultOrMaker: $60.Vec2.getDefault, packageName: const $pb.PackageName('bosdyn.api'))
     ..aOS(3, _omitFieldNames ? '' : 'se2FrameName')
     ..a<$core.double>(4, _omitFieldNames ? '' : 'accuracy', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
@@ -1448,7 +1465,7 @@ class Stance extends $pb.GeneratedMessage {
   /// Map of foot name to its x,y location in specified frame.
   /// Required positions for spot: "fl", "fr", "hl", "hr".
   @$pb.TagNumber(2)
-  $core.Map<$core.String, $61.Vec2> get footPositions => $_getMap(0);
+  $core.Map<$core.String, $60.Vec2> get footPositions => $_getMap(0);
 
   /// The frame name which the desired foot_positions are described in.
   @$pb.TagNumber(3)
@@ -1476,7 +1493,7 @@ class Stance extends $pb.GeneratedMessage {
 
 class FollowArmCommand_Request extends $pb.GeneratedMessage {
   factory FollowArmCommand_Request({
-    $61.Vec3? bodyOffsetFromHand,
+    $60.Vec3? bodyOffsetFromHand,
   @$core.Deprecated('This field is deprecated.')
     $core.bool? disableWalking,
   }) {
@@ -1495,7 +1512,7 @@ class FollowArmCommand_Request extends $pb.GeneratedMessage {
   factory FollowArmCommand_Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FollowArmCommand.Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'bodyOffsetFromHand', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'bodyOffsetFromHand', subBuilder: $60.Vec3.create)
     ..aOB(2, _omitFieldNames ? '' : 'disableWalking')
     ..hasRequiredFields = false
   ;
@@ -1524,15 +1541,15 @@ class FollowArmCommand_Request extends $pb.GeneratedMessage {
   /// Optional body offset from the hand.
   /// For example, to have the body 0.75 meters behind the hand, use (0.75, 0, 0)
   @$pb.TagNumber(1)
-  $61.Vec3 get bodyOffsetFromHand => $_getN(0);
+  $60.Vec3 get bodyOffsetFromHand => $_getN(0);
   @$pb.TagNumber(1)
-  set bodyOffsetFromHand($61.Vec3 v) { setField(1, v); }
+  set bodyOffsetFromHand($60.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBodyOffsetFromHand() => $_has(0);
   @$pb.TagNumber(1)
   void clearBodyOffsetFromHand() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3 ensureBodyOffsetFromHand() => $_ensure(0);
+  $60.Vec3 ensureBodyOffsetFromHand() => $_ensure(0);
 
   /// DEPRECATED as of 3.1.
   /// To reproduce the robot's behavior of disable_walking == true,
@@ -1750,19 +1767,19 @@ enum ConstrainedManipulationCommand_Request_TaskTargetPosition {
 class ConstrainedManipulationCommand_Request extends $pb.GeneratedMessage {
   factory ConstrainedManipulationCommand_Request({
     $core.String? frameName,
-    $61.Wrench? initWrenchDirectionInFrameName,
+    $60.Wrench? initWrenchDirectionInFrameName,
     $core.double? tangentialSpeed,
     $core.double? rotationalSpeed,
-    $59.DoubleValue? forceLimit,
-    $59.DoubleValue? torqueLimit,
+    $58.DoubleValue? forceLimit,
+    $58.DoubleValue? torqueLimit,
     ConstrainedManipulationCommand_Request_TaskType? taskType,
-    $60.Timestamp? endTime,
-    $59.BoolValue? enableRobotLocomotion,
+    $59.Timestamp? endTime,
+    $58.BoolValue? enableRobotLocomotion,
     ConstrainedManipulationCommand_Request_ControlMode? controlMode,
     $core.double? targetLinearPosition,
     $core.double? targetAngle,
-    $59.DoubleValue? accelLimit,
-    $59.BoolValue? resetEstimator,
+    $58.DoubleValue? accelLimit,
+    $58.BoolValue? resetEstimator,
   }) {
     final $result = create();
     if (frameName != null) {
@@ -1827,19 +1844,19 @@ class ConstrainedManipulationCommand_Request extends $pb.GeneratedMessage {
     ..oo(0, [3, 4])
     ..oo(1, [11, 12])
     ..aOS(1, _omitFieldNames ? '' : 'frameName')
-    ..aOM<$61.Wrench>(2, _omitFieldNames ? '' : 'initWrenchDirectionInFrameName', subBuilder: $61.Wrench.create)
+    ..aOM<$60.Wrench>(2, _omitFieldNames ? '' : 'initWrenchDirectionInFrameName', subBuilder: $60.Wrench.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'tangentialSpeed', $pb.PbFieldType.OD)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'rotationalSpeed', $pb.PbFieldType.OD)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'forceLimit', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'torqueLimit', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'forceLimit', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'torqueLimit', subBuilder: $58.DoubleValue.create)
     ..e<ConstrainedManipulationCommand_Request_TaskType>(7, _omitFieldNames ? '' : 'taskType', $pb.PbFieldType.OE, defaultOrMaker: ConstrainedManipulationCommand_Request_TaskType.TASK_TYPE_UNKNOWN, valueOf: ConstrainedManipulationCommand_Request_TaskType.valueOf, enumValues: ConstrainedManipulationCommand_Request_TaskType.values)
-    ..aOM<$60.Timestamp>(8, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
-    ..aOM<$59.BoolValue>(9, _omitFieldNames ? '' : 'enableRobotLocomotion', subBuilder: $59.BoolValue.create)
+    ..aOM<$59.Timestamp>(8, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$58.BoolValue>(9, _omitFieldNames ? '' : 'enableRobotLocomotion', subBuilder: $58.BoolValue.create)
     ..e<ConstrainedManipulationCommand_Request_ControlMode>(10, _omitFieldNames ? '' : 'controlMode', $pb.PbFieldType.OE, defaultOrMaker: ConstrainedManipulationCommand_Request_ControlMode.CONTROL_MODE_UNKNOWN, valueOf: ConstrainedManipulationCommand_Request_ControlMode.valueOf, enumValues: ConstrainedManipulationCommand_Request_ControlMode.values)
     ..a<$core.double>(11, _omitFieldNames ? '' : 'targetLinearPosition', $pb.PbFieldType.OD)
     ..a<$core.double>(12, _omitFieldNames ? '' : 'targetAngle', $pb.PbFieldType.OD)
-    ..aOM<$59.DoubleValue>(13, _omitFieldNames ? '' : 'accelLimit', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(14, _omitFieldNames ? '' : 'resetEstimator', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.DoubleValue>(13, _omitFieldNames ? '' : 'accelLimit', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(14, _omitFieldNames ? '' : 'resetEstimator', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1893,15 +1910,15 @@ class ConstrainedManipulationCommand_Request extends $pb.GeneratedMessage {
   /// constraint, the init_wrench_direction and frame_name
   /// will no longer be used.
   @$pb.TagNumber(2)
-  $61.Wrench get initWrenchDirectionInFrameName => $_getN(1);
+  $60.Wrench get initWrenchDirectionInFrameName => $_getN(1);
   @$pb.TagNumber(2)
-  set initWrenchDirectionInFrameName($61.Wrench v) { setField(2, v); }
+  set initWrenchDirectionInFrameName($60.Wrench v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasInitWrenchDirectionInFrameName() => $_has(1);
   @$pb.TagNumber(2)
   void clearInitWrenchDirectionInFrameName() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Wrench ensureInitWrenchDirectionInFrameName() => $_ensure(1);
+  $60.Wrench ensureInitWrenchDirectionInFrameName() => $_ensure(1);
 
   /// Recommended values are in the range of [-4, 4] m/s
   @$pb.TagNumber(3)
@@ -1927,29 +1944,29 @@ class ConstrainedManipulationCommand_Request extends $pb.GeneratedMessage {
   /// Value must be positive
   /// If unspecified, a default value of 40 N will be used.
   @$pb.TagNumber(5)
-  $59.DoubleValue get forceLimit => $_getN(4);
+  $58.DoubleValue get forceLimit => $_getN(4);
   @$pb.TagNumber(5)
-  set forceLimit($59.DoubleValue v) { setField(5, v); }
+  set forceLimit($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasForceLimit() => $_has(4);
   @$pb.TagNumber(5)
   void clearForceLimit() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureForceLimit() => $_ensure(4);
+  $58.DoubleValue ensureForceLimit() => $_ensure(4);
 
   /// The limit on the torque that is applied on any rotational direction
   /// Value must be positive
   /// If unspecified, a default value of 4 Nm will be used.
   @$pb.TagNumber(6)
-  $59.DoubleValue get torqueLimit => $_getN(5);
+  $58.DoubleValue get torqueLimit => $_getN(5);
   @$pb.TagNumber(6)
-  set torqueLimit($59.DoubleValue v) { setField(6, v); }
+  set torqueLimit($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasTorqueLimit() => $_has(5);
   @$pb.TagNumber(6)
   void clearTorqueLimit() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureTorqueLimit() => $_ensure(5);
+  $58.DoubleValue ensureTorqueLimit() => $_ensure(5);
 
   @$pb.TagNumber(7)
   ConstrainedManipulationCommand_Request_TaskType get taskType => $_getN(6);
@@ -1963,28 +1980,28 @@ class ConstrainedManipulationCommand_Request extends $pb.GeneratedMessage {
   /// The timestamp (in robot time) by which a command must finish executing.
   /// This is a required field and used to prevent runaway commands.
   @$pb.TagNumber(8)
-  $60.Timestamp get endTime => $_getN(7);
+  $59.Timestamp get endTime => $_getN(7);
   @$pb.TagNumber(8)
-  set endTime($60.Timestamp v) { setField(8, v); }
+  set endTime($59.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasEndTime() => $_has(7);
   @$pb.TagNumber(8)
   void clearEndTime() => clearField(8);
   @$pb.TagNumber(8)
-  $60.Timestamp ensureEndTime() => $_ensure(7);
+  $59.Timestamp ensureEndTime() => $_ensure(7);
 
   /// Whether to enable the robot to take steps during constrained manip to keep the hand in
   /// the workspace.
   @$pb.TagNumber(9)
-  $59.BoolValue get enableRobotLocomotion => $_getN(8);
+  $58.BoolValue get enableRobotLocomotion => $_getN(8);
   @$pb.TagNumber(9)
-  set enableRobotLocomotion($59.BoolValue v) { setField(9, v); }
+  set enableRobotLocomotion($58.BoolValue v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasEnableRobotLocomotion() => $_has(8);
   @$pb.TagNumber(9)
   void clearEnableRobotLocomotion() => clearField(9);
   @$pb.TagNumber(9)
-  $59.BoolValue ensureEnableRobotLocomotion() => $_ensure(8);
+  $58.BoolValue ensureEnableRobotLocomotion() => $_ensure(8);
 
   @$pb.TagNumber(10)
   ConstrainedManipulationCommand_Request_ControlMode get controlMode => $_getN(9);
@@ -2022,36 +2039,36 @@ class ConstrainedManipulationCommand_Request extends $pb.GeneratedMessage {
   /// Note that the units of this variable will be m/(s^2) or rad/(s^2) depending
   /// on the choice of target_linear_position vs. target_angle above.
   @$pb.TagNumber(13)
-  $59.DoubleValue get accelLimit => $_getN(12);
+  $58.DoubleValue get accelLimit => $_getN(12);
   @$pb.TagNumber(13)
-  set accelLimit($59.DoubleValue v) { setField(13, v); }
+  set accelLimit($58.DoubleValue v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasAccelLimit() => $_has(12);
   @$pb.TagNumber(13)
   void clearAccelLimit() => clearField(13);
   @$pb.TagNumber(13)
-  $59.DoubleValue ensureAccelLimit() => $_ensure(12);
+  $58.DoubleValue ensureAccelLimit() => $_ensure(12);
 
   /// Constrained manipulation estimates the task frame given the observed initial motion.
   /// Setting this to false saves and uses the estimation state from the previous
   /// constrained manipulation move. This is true by default.
   @$pb.TagNumber(14)
-  $59.BoolValue get resetEstimator => $_getN(13);
+  $58.BoolValue get resetEstimator => $_getN(13);
   @$pb.TagNumber(14)
-  set resetEstimator($59.BoolValue v) { setField(14, v); }
+  set resetEstimator($58.BoolValue v) { setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasResetEstimator() => $_has(13);
   @$pb.TagNumber(14)
   void clearResetEstimator() => clearField(14);
   @$pb.TagNumber(14)
-  $59.BoolValue ensureResetEstimator() => $_ensure(13);
+  $58.BoolValue ensureResetEstimator() => $_ensure(13);
 }
 
 class ConstrainedManipulationCommand_Feedback extends $pb.GeneratedMessage {
   factory ConstrainedManipulationCommand_Feedback({
     ConstrainedManipulationCommand_Feedback_Status? status,
-    $61.Wrench? desiredWrenchOdomFrame,
-    $59.BoolValue? estimationActivated,
+    $60.Wrench? desiredWrenchOdomFrame,
+    $58.BoolValue? estimationActivated,
   }) {
     final $result = create();
     if (status != null) {
@@ -2071,8 +2088,8 @@ class ConstrainedManipulationCommand_Feedback extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConstrainedManipulationCommand.Feedback', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..e<ConstrainedManipulationCommand_Feedback_Status>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ConstrainedManipulationCommand_Feedback_Status.STATUS_UNKNOWN, valueOf: ConstrainedManipulationCommand_Feedback_Status.valueOf, enumValues: ConstrainedManipulationCommand_Feedback_Status.values)
-    ..aOM<$61.Wrench>(2, _omitFieldNames ? '' : 'desiredWrenchOdomFrame', subBuilder: $61.Wrench.create)
-    ..aOM<$59.BoolValue>(3, _omitFieldNames ? '' : 'estimationActivated', subBuilder: $59.BoolValue.create)
+    ..aOM<$60.Wrench>(2, _omitFieldNames ? '' : 'desiredWrenchOdomFrame', subBuilder: $60.Wrench.create)
+    ..aOM<$58.BoolValue>(3, _omitFieldNames ? '' : 'estimationActivated', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -2108,29 +2125,29 @@ class ConstrainedManipulationCommand_Feedback extends $pb.GeneratedMessage {
 
   /// Desired wrench in odom world frame, applied at hand frame origin
   @$pb.TagNumber(2)
-  $61.Wrench get desiredWrenchOdomFrame => $_getN(1);
+  $60.Wrench get desiredWrenchOdomFrame => $_getN(1);
   @$pb.TagNumber(2)
-  set desiredWrenchOdomFrame($61.Wrench v) { setField(2, v); }
+  set desiredWrenchOdomFrame($60.Wrench v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDesiredWrenchOdomFrame() => $_has(1);
   @$pb.TagNumber(2)
   void clearDesiredWrenchOdomFrame() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Wrench ensureDesiredWrenchOdomFrame() => $_ensure(1);
+  $60.Wrench ensureDesiredWrenchOdomFrame() => $_ensure(1);
 
   /// A boolean signal indicating constrained manipulation has seen
   /// enough motion to estimate the constraint and that the wrench
   /// is being applied along the estimated directions.
   @$pb.TagNumber(3)
-  $59.BoolValue get estimationActivated => $_getN(2);
+  $58.BoolValue get estimationActivated => $_getN(2);
   @$pb.TagNumber(3)
-  set estimationActivated($59.BoolValue v) { setField(3, v); }
+  set estimationActivated($58.BoolValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEstimationActivated() => $_has(2);
   @$pb.TagNumber(3)
   void clearEstimationActivated() => clearField(3);
   @$pb.TagNumber(3)
-  $59.BoolValue ensureEstimationActivated() => $_ensure(2);
+  $58.BoolValue ensureEstimationActivated() => $_ensure(2);
 }
 
 class ConstrainedManipulationCommand extends $pb.GeneratedMessage {
@@ -2163,6 +2180,361 @@ class ConstrainedManipulationCommand extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static ConstrainedManipulationCommand getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConstrainedManipulationCommand>(create);
   static ConstrainedManipulationCommand? _defaultInstance;
+}
+
+class JointCommand_Request extends $pb.GeneratedMessage {
+  factory JointCommand_Request() => create();
+  JointCommand_Request._() : super();
+  factory JointCommand_Request.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JointCommand_Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JointCommand.Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JointCommand_Request clone() => JointCommand_Request()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JointCommand_Request copyWith(void Function(JointCommand_Request) updates) => super.copyWith((message) => updates(message as JointCommand_Request)) as JointCommand_Request;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JointCommand_Request create() => JointCommand_Request._();
+  JointCommand_Request createEmptyInstance() => create();
+  static $pb.PbList<JointCommand_Request> createRepeated() => $pb.PbList<JointCommand_Request>();
+  @$core.pragma('dart2js:noInline')
+  static JointCommand_Request getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JointCommand_Request>(create);
+  static JointCommand_Request? _defaultInstance;
+}
+
+class JointCommand_Feedback extends $pb.GeneratedMessage {
+  factory JointCommand_Feedback({
+    JointCommand_Feedback_Status? status,
+    $fixnum.Int64? numMessagesReceived,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    if (numMessagesReceived != null) {
+      $result.numMessagesReceived = numMessagesReceived;
+    }
+    return $result;
+  }
+  JointCommand_Feedback._() : super();
+  factory JointCommand_Feedback.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JointCommand_Feedback.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JointCommand.Feedback', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..e<JointCommand_Feedback_Status>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: JointCommand_Feedback_Status.STATUS_UNKNOWN, valueOf: JointCommand_Feedback_Status.valueOf, enumValues: JointCommand_Feedback_Status.values)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'numMessagesReceived', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JointCommand_Feedback clone() => JointCommand_Feedback()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JointCommand_Feedback copyWith(void Function(JointCommand_Feedback) updates) => super.copyWith((message) => updates(message as JointCommand_Feedback)) as JointCommand_Feedback;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JointCommand_Feedback create() => JointCommand_Feedback._();
+  JointCommand_Feedback createEmptyInstance() => create();
+  static $pb.PbList<JointCommand_Feedback> createRepeated() => $pb.PbList<JointCommand_Feedback>();
+  @$core.pragma('dart2js:noInline')
+  static JointCommand_Feedback getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JointCommand_Feedback>(create);
+  static JointCommand_Feedback? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  JointCommand_Feedback_Status get status => $_getN(0);
+  @$pb.TagNumber(1)
+  set status(JointCommand_Feedback_Status v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => clearField(1);
+
+  /// Number of UpdateRequest messages received through the stream
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get numMessagesReceived => $_getI64(1);
+  @$pb.TagNumber(2)
+  set numMessagesReceived($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNumMessagesReceived() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNumMessagesReceived() => clearField(2);
+}
+
+class JointCommand_UpdateRequest_Gains extends $pb.GeneratedMessage {
+  factory JointCommand_UpdateRequest_Gains({
+    $core.Iterable<$core.double>? kQP,
+    $core.Iterable<$core.double>? kQdP,
+  }) {
+    final $result = create();
+    if (kQP != null) {
+      $result.kQP.addAll(kQP);
+    }
+    if (kQdP != null) {
+      $result.kQdP.addAll(kQdP);
+    }
+    return $result;
+  }
+  JointCommand_UpdateRequest_Gains._() : super();
+  factory JointCommand_UpdateRequest_Gains.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JointCommand_UpdateRequest_Gains.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JointCommand.UpdateRequest.Gains', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..p<$core.double>(1, _omitFieldNames ? '' : 'kQP', $pb.PbFieldType.KF)
+    ..p<$core.double>(2, _omitFieldNames ? '' : 'kQdP', $pb.PbFieldType.KF)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JointCommand_UpdateRequest_Gains clone() => JointCommand_UpdateRequest_Gains()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JointCommand_UpdateRequest_Gains copyWith(void Function(JointCommand_UpdateRequest_Gains) updates) => super.copyWith((message) => updates(message as JointCommand_UpdateRequest_Gains)) as JointCommand_UpdateRequest_Gains;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JointCommand_UpdateRequest_Gains create() => JointCommand_UpdateRequest_Gains._();
+  JointCommand_UpdateRequest_Gains createEmptyInstance() => create();
+  static $pb.PbList<JointCommand_UpdateRequest_Gains> createRepeated() => $pb.PbList<JointCommand_UpdateRequest_Gains>();
+  @$core.pragma('dart2js:noInline')
+  static JointCommand_UpdateRequest_Gains getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JointCommand_UpdateRequest_Gains>(create);
+  static JointCommand_UpdateRequest_Gains? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.double> get kQP => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.double> get kQdP => $_getList(1);
+}
+
+class JointCommand_UpdateRequest extends $pb.GeneratedMessage {
+  factory JointCommand_UpdateRequest({
+    $59.Timestamp? endTime,
+    $core.Iterable<$core.double>? position,
+    $core.Iterable<$core.double>? velocity,
+    $core.Iterable<$core.double>? load,
+    JointCommand_UpdateRequest_Gains? gains,
+    $core.int? userCommandKey,
+    $59.Timestamp? referenceTime,
+    $61.Duration? extrapolationDuration,
+    $58.FloatValue? velocitySafetyLimit,
+  }) {
+    final $result = create();
+    if (endTime != null) {
+      $result.endTime = endTime;
+    }
+    if (position != null) {
+      $result.position.addAll(position);
+    }
+    if (velocity != null) {
+      $result.velocity.addAll(velocity);
+    }
+    if (load != null) {
+      $result.load.addAll(load);
+    }
+    if (gains != null) {
+      $result.gains = gains;
+    }
+    if (userCommandKey != null) {
+      $result.userCommandKey = userCommandKey;
+    }
+    if (referenceTime != null) {
+      $result.referenceTime = referenceTime;
+    }
+    if (extrapolationDuration != null) {
+      $result.extrapolationDuration = extrapolationDuration;
+    }
+    if (velocitySafetyLimit != null) {
+      $result.velocitySafetyLimit = velocitySafetyLimit;
+    }
+    return $result;
+  }
+  JointCommand_UpdateRequest._() : super();
+  factory JointCommand_UpdateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JointCommand_UpdateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JointCommand.UpdateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
+    ..p<$core.double>(2, _omitFieldNames ? '' : 'position', $pb.PbFieldType.KF)
+    ..p<$core.double>(3, _omitFieldNames ? '' : 'velocity', $pb.PbFieldType.KF)
+    ..p<$core.double>(4, _omitFieldNames ? '' : 'load', $pb.PbFieldType.KF)
+    ..aOM<JointCommand_UpdateRequest_Gains>(5, _omitFieldNames ? '' : 'gains', subBuilder: JointCommand_UpdateRequest_Gains.create)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'userCommandKey', $pb.PbFieldType.OU3)
+    ..aOM<$59.Timestamp>(7, _omitFieldNames ? '' : 'referenceTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$61.Duration>(8, _omitFieldNames ? '' : 'extrapolationDuration', subBuilder: $61.Duration.create)
+    ..aOM<$58.FloatValue>(9, _omitFieldNames ? '' : 'velocitySafetyLimit', subBuilder: $58.FloatValue.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JointCommand_UpdateRequest clone() => JointCommand_UpdateRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JointCommand_UpdateRequest copyWith(void Function(JointCommand_UpdateRequest) updates) => super.copyWith((message) => updates(message as JointCommand_UpdateRequest)) as JointCommand_UpdateRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JointCommand_UpdateRequest create() => JointCommand_UpdateRequest._();
+  JointCommand_UpdateRequest createEmptyInstance() => create();
+  static $pb.PbList<JointCommand_UpdateRequest> createRepeated() => $pb.PbList<JointCommand_UpdateRequest>();
+  @$core.pragma('dart2js:noInline')
+  static JointCommand_UpdateRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JointCommand_UpdateRequest>(create);
+  static JointCommand_UpdateRequest? _defaultInstance;
+
+  /// The timestamp (in robot time) when the command will stop executing. This is a
+  /// required field and used to prevent runaway commands.
+  @$pb.TagNumber(1)
+  $59.Timestamp get endTime => $_getN(0);
+  @$pb.TagNumber(1)
+  set endTime($59.Timestamp v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasEndTime() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEndTime() => clearField(1);
+  @$pb.TagNumber(1)
+  $59.Timestamp ensureEndTime() => $_ensure(0);
+
+  /// Commanded joint details
+  @$pb.TagNumber(2)
+  $core.List<$core.double> get position => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.double> get velocity => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.double> get load => $_getList(3);
+
+  /// Gains are required to be specified on the first message. After that can be optionally
+  /// updated by filling out the gains message again. Partial updates of gains are not
+  /// supported, a full gain set must be specified each time.
+  @$pb.TagNumber(5)
+  JointCommand_UpdateRequest_Gains get gains => $_getN(4);
+  @$pb.TagNumber(5)
+  set gains(JointCommand_UpdateRequest_Gains v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasGains() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearGains() => clearField(5);
+  @$pb.TagNumber(5)
+  JointCommand_UpdateRequest_Gains ensureGains() => $_ensure(4);
+
+  /// user_command_key is optional, but it can be used for tracking when commands take effect
+  /// on the robot and calculating latencies. Avoid using 0
+  @$pb.TagNumber(6)
+  $core.int get userCommandKey => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set userCommandKey($core.int v) { $_setUnsignedInt32(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasUserCommandKey() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUserCommandKey() => clearField(6);
+
+  /// (Optional) joint trajectory reference time. See extrapolation_time for detailed
+  /// explanation. If unspecified, this will default to the time the command is received.
+  /// If the time is in the future, no extrapolation will be performed until that time
+  /// (extrapolation never goes backwards in time)
+  @$pb.TagNumber(7)
+  $59.Timestamp get referenceTime => $_getN(6);
+  @$pb.TagNumber(7)
+  set referenceTime($59.Timestamp v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasReferenceTime() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearReferenceTime() => clearField(7);
+  @$pb.TagNumber(7)
+  $59.Timestamp ensureReferenceTime() => $_ensure(6);
+
+  /// (Optional) joint trajectory extrapolation time. If specified, the robot will extrapolate
+  /// desired position based on desired velocity, starting at reference_time for at most
+  /// extrapolation_duration (or until end_time, whichever is sooner)
+  @$pb.TagNumber(8)
+  $61.Duration get extrapolationDuration => $_getN(7);
+  @$pb.TagNumber(8)
+  set extrapolationDuration($61.Duration v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasExtrapolationDuration() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearExtrapolationDuration() => clearField(8);
+  @$pb.TagNumber(8)
+  $61.Duration ensureExtrapolationDuration() => $_ensure(7);
+
+  /// (Optional) Joint velocity safety limit. Possibly useful during initial development or
+  /// gain tuning. If the magnitude of any joint velocity passes the threshold the robot will
+  /// trigger a behavior fault and go into a safety state. Client must power down the robot or
+  /// clear the behavior fault via the Robot Command Service. Values less than or equal to 0
+  /// will be considered invalid and must be sent in every UpdateRequest for use.
+  @$pb.TagNumber(9)
+  $58.FloatValue get velocitySafetyLimit => $_getN(8);
+  @$pb.TagNumber(9)
+  set velocitySafetyLimit($58.FloatValue v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasVelocitySafetyLimit() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVelocitySafetyLimit() => clearField(9);
+  @$pb.TagNumber(9)
+  $58.FloatValue ensureVelocitySafetyLimit() => $_ensure(8);
+}
+
+class JointCommand extends $pb.GeneratedMessage {
+  factory JointCommand() => create();
+  JointCommand._() : super();
+  factory JointCommand.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JointCommand.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JointCommand', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JointCommand clone() => JointCommand()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JointCommand copyWith(void Function(JointCommand) updates) => super.copyWith((message) => updates(message as JointCommand)) as JointCommand;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JointCommand create() => JointCommand._();
+  JointCommand createEmptyInstance() => create();
+  static $pb.PbList<JointCommand> createRepeated() => $pb.PbList<JointCommand>();
+  @$core.pragma('dart2js:noInline')
+  static JointCommand getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JointCommand>(create);
+  static JointCommand? _defaultInstance;
 }
 
 

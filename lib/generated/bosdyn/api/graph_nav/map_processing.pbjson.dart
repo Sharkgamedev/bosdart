@@ -269,6 +269,7 @@ const ProcessAnchoringRequest$json = {
     {'1': 'initial_hint', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.AnchoringHint', '10': 'initialHint'},
     {'1': 'modify_anchoring_on_server', '3': 4, '4': 1, '5': 8, '10': 'modifyAnchoringOnServer'},
     {'1': 'stream_intermediate_results', '3': 5, '4': 1, '5': 8, '10': 'streamIntermediateResults'},
+    {'1': 'apply_gps_result_to_waypoints_on_server', '3': 6, '4': 1, '5': 8, '10': 'applyGpsResultToWaypointsOnServer'},
   ],
   '3': [ProcessAnchoringRequest_Params$json],
 };
@@ -304,6 +305,7 @@ const ProcessAnchoringRequest_Params_MeasurementParams$json = {
     {'1': 'use_gyroscope_measurements', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.BoolValue', '10': 'useGyroscopeMeasurements'},
     {'1': 'use_loop_closures', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.BoolValue', '10': 'useLoopClosures'},
     {'1': 'use_world_objects', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.BoolValue', '10': 'useWorldObjects'},
+    {'1': 'use_gps', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.BoolValue', '10': 'useGps'},
   ],
 };
 
@@ -317,6 +319,7 @@ const ProcessAnchoringRequest_Params_Weights$json = {
     {'1': 'hint_weight', '3': 4, '4': 1, '5': 1, '10': 'hintWeight'},
     {'1': 'gyroscope_weight', '3': 5, '4': 1, '5': 1, '10': 'gyroscopeWeight'},
     {'1': 'loop_closure_weight', '3': 6, '4': 1, '5': 1, '10': 'loopClosureWeight'},
+    {'1': 'gps_weight', '3': 7, '4': 1, '5': 1, '10': 'gpsWeight'},
   ],
 };
 
@@ -328,31 +331,34 @@ final $typed_data.Uint8List processAnchoringRequestDescriptor = $convert.base64D
     'hpbnQYAyABKAsyIy5ib3NkeW4uYXBpLmdyYXBoX25hdi5BbmNob3JpbmdIaW50Ugtpbml0aWFs'
     'SGludBI7Chptb2RpZnlfYW5jaG9yaW5nX29uX3NlcnZlchgEIAEoCFIXbW9kaWZ5QW5jaG9yaW'
     '5nT25TZXJ2ZXISPgobc3RyZWFtX2ludGVybWVkaWF0ZV9yZXN1bHRzGAUgASgIUhlzdHJlYW1J'
-    'bnRlcm1lZGlhdGVSZXN1bHRzGsAKCgZQYXJhbXMSbwoQb3B0aW1pemVyX3BhcmFtcxgBIAEoCz'
-    'JELmJvc2R5bi5hcGkuZ3JhcGhfbmF2LlByb2Nlc3NBbmNob3JpbmdSZXF1ZXN0LlBhcmFtcy5P'
-    'cHRpbWl6ZXJQYXJhbXNSD29wdGltaXplclBhcmFtcxJ1ChJtZWFzdXJlbWVudF9wYXJhbXMYAi'
-    'ABKAsyRi5ib3NkeW4uYXBpLmdyYXBoX25hdi5Qcm9jZXNzQW5jaG9yaW5nUmVxdWVzdC5QYXJh'
-    'bXMuTWVhc3VyZW1lbnRQYXJhbXNSEW1lYXN1cmVtZW50UGFyYW1zElYKB3dlaWdodHMYAyABKA'
-    'syPC5ib3NkeW4uYXBpLmdyYXBoX25hdi5Qcm9jZXNzQW5jaG9yaW5nUmVxdWVzdC5QYXJhbXMu'
-    'V2VpZ2h0c1IHd2VpZ2h0cxJaChtvcHRpbWl6ZV9leGlzdGluZ19hbmNob3JpbmcYBCABKAsyGi'
-    '5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlUhlvcHRpbWl6ZUV4aXN0aW5nQW5jaG9yaW5nEjwK'
-    'EWdyYXZpdHlfZXdydF9zZWVkGAUgASgLMhAuYm9zZHluLmFwaS5WZWMzUg9ncmF2aXR5RXdydF'
-    'NlZWQakwEKD09wdGltaXplclBhcmFtcxI4CgltYXhfaXRlcnMYASABKAsyGy5nb29nbGUucHJv'
-    'dG9idWYuSW50MzJWYWx1ZVIIbWF4SXRlcnMSRgoQbWF4X3RpbWVfc2Vjb25kcxgCIAEoCzIcLm'
-    'dvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZVIObWF4VGltZVNlY29uZHMamwMKEU1lYXN1cmVt'
-    'ZW50UGFyYW1zElAKFnVzZV9raW5lbWF0aWNfb2RvbWV0cnkYASABKAsyGi5nb29nbGUucHJvdG'
-    '9idWYuQm9vbFZhbHVlUhR1c2VLaW5lbWF0aWNPZG9tZXRyeRJKChN1c2VfdmlzdWFsX29kb21l'
-    'dHJ5GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLkJvb2xWYWx1ZVIRdXNlVmlzdWFsT2RvbWV0cn'
-    'kSWAoadXNlX2d5cm9zY29wZV9tZWFzdXJlbWVudHMYAyABKAsyGi5nb29nbGUucHJvdG9idWYu'
-    'Qm9vbFZhbHVlUhh1c2VHeXJvc2NvcGVNZWFzdXJlbWVudHMSRgoRdXNlX2xvb3BfY2xvc3VyZX'
-    'MYBCABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlUg91c2VMb29wQ2xvc3VyZXMSRgoR'
-    'dXNlX3dvcmxkX29iamVjdHMYBSABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlUg91c2'
-    'VXb3JsZE9iamVjdHMapwIKB1dlaWdodHMSOgoZa2luZW1hdGljX29kb21ldHJ5X3dlaWdodBgB'
-    'IAEoAVIXa2luZW1hdGljT2RvbWV0cnlXZWlnaHQSNAoWdmlzdWFsX29kb21ldHJ5X3dlaWdodB'
-    'gCIAEoAVIUdmlzdWFsT2RvbWV0cnlXZWlnaHQSLgoTd29ybGRfb2JqZWN0X3dlaWdodBgDIAEo'
-    'AVIRd29ybGRPYmplY3RXZWlnaHQSHwoLaGludF93ZWlnaHQYBCABKAFSCmhpbnRXZWlnaHQSKQ'
-    'oQZ3lyb3Njb3BlX3dlaWdodBgFIAEoAVIPZ3lyb3Njb3BlV2VpZ2h0Ei4KE2xvb3BfY2xvc3Vy'
-    'ZV93ZWlnaHQYBiABKAFSEWxvb3BDbG9zdXJlV2VpZ2h0');
+    'bnRlcm1lZGlhdGVSZXN1bHRzElIKJ2FwcGx5X2dwc19yZXN1bHRfdG9fd2F5cG9pbnRzX29uX3'
+    'NlcnZlchgGIAEoCFIhYXBwbHlHcHNSZXN1bHRUb1dheXBvaW50c09uU2VydmVyGpQLCgZQYXJh'
+    'bXMSbwoQb3B0aW1pemVyX3BhcmFtcxgBIAEoCzJELmJvc2R5bi5hcGkuZ3JhcGhfbmF2LlByb2'
+    'Nlc3NBbmNob3JpbmdSZXF1ZXN0LlBhcmFtcy5PcHRpbWl6ZXJQYXJhbXNSD29wdGltaXplclBh'
+    'cmFtcxJ1ChJtZWFzdXJlbWVudF9wYXJhbXMYAiABKAsyRi5ib3NkeW4uYXBpLmdyYXBoX25hdi'
+    '5Qcm9jZXNzQW5jaG9yaW5nUmVxdWVzdC5QYXJhbXMuTWVhc3VyZW1lbnRQYXJhbXNSEW1lYXN1'
+    'cmVtZW50UGFyYW1zElYKB3dlaWdodHMYAyABKAsyPC5ib3NkeW4uYXBpLmdyYXBoX25hdi5Qcm'
+    '9jZXNzQW5jaG9yaW5nUmVxdWVzdC5QYXJhbXMuV2VpZ2h0c1IHd2VpZ2h0cxJaChtvcHRpbWl6'
+    'ZV9leGlzdGluZ19hbmNob3JpbmcYBCABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlUh'
+    'lvcHRpbWl6ZUV4aXN0aW5nQW5jaG9yaW5nEjwKEWdyYXZpdHlfZXdydF9zZWVkGAUgASgLMhAu'
+    'Ym9zZHluLmFwaS5WZWMzUg9ncmF2aXR5RXdydFNlZWQakwEKD09wdGltaXplclBhcmFtcxI4Cg'
+    'ltYXhfaXRlcnMYASABKAsyGy5nb29nbGUucHJvdG9idWYuSW50MzJWYWx1ZVIIbWF4SXRlcnMS'
+    'RgoQbWF4X3RpbWVfc2Vjb25kcxgCIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZV'
+    'IObWF4VGltZVNlY29uZHMa0AMKEU1lYXN1cmVtZW50UGFyYW1zElAKFnVzZV9raW5lbWF0aWNf'
+    'b2RvbWV0cnkYASABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlUhR1c2VLaW5lbWF0aW'
+    'NPZG9tZXRyeRJKChN1c2VfdmlzdWFsX29kb21ldHJ5GAIgASgLMhouZ29vZ2xlLnByb3RvYnVm'
+    'LkJvb2xWYWx1ZVIRdXNlVmlzdWFsT2RvbWV0cnkSWAoadXNlX2d5cm9zY29wZV9tZWFzdXJlbW'
+    'VudHMYAyABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlUhh1c2VHeXJvc2NvcGVNZWFz'
+    'dXJlbWVudHMSRgoRdXNlX2xvb3BfY2xvc3VyZXMYBCABKAsyGi5nb29nbGUucHJvdG9idWYuQm'
+    '9vbFZhbHVlUg91c2VMb29wQ2xvc3VyZXMSRgoRdXNlX3dvcmxkX29iamVjdHMYBSABKAsyGi5n'
+    'b29nbGUucHJvdG9idWYuQm9vbFZhbHVlUg91c2VXb3JsZE9iamVjdHMSMwoHdXNlX2dwcxgGIA'
+    'EoCzIaLmdvb2dsZS5wcm90b2J1Zi5Cb29sVmFsdWVSBnVzZUdwcxrGAgoHV2VpZ2h0cxI6Chlr'
+    'aW5lbWF0aWNfb2RvbWV0cnlfd2VpZ2h0GAEgASgBUhdraW5lbWF0aWNPZG9tZXRyeVdlaWdodB'
+    'I0ChZ2aXN1YWxfb2RvbWV0cnlfd2VpZ2h0GAIgASgBUhR2aXN1YWxPZG9tZXRyeVdlaWdodBIu'
+    'ChN3b3JsZF9vYmplY3Rfd2VpZ2h0GAMgASgBUhF3b3JsZE9iamVjdFdlaWdodBIfCgtoaW50X3'
+    'dlaWdodBgEIAEoAVIKaGludFdlaWdodBIpChBneXJvc2NvcGVfd2VpZ2h0GAUgASgBUg9neXJv'
+    'c2NvcGVXZWlnaHQSLgoTbG9vcF9jbG9zdXJlX3dlaWdodBgGIAEoAVIRbG9vcENsb3N1cmVXZW'
+    'lnaHQSHQoKZ3BzX3dlaWdodBgHIAEoAVIJZ3BzV2VpZ2h0');
 
 @$core.Deprecated('Use processAnchoringResponseDescriptor instead')
 const ProcessAnchoringResponse$json = {
@@ -372,8 +378,31 @@ const ProcessAnchoringResponse$json = {
     {'1': 'missing_waypoint_ids', '3': 12, '4': 3, '5': 9, '10': 'missingWaypointIds'},
     {'1': 'invalid_hints', '3': 13, '4': 3, '5': 9, '10': 'invalidHints'},
     {'1': 'inconsistent_edges', '3': 14, '4': 3, '5': 11, '6': '.bosdyn.api.graph_nav.Edge.Id', '10': 'inconsistentEdges'},
+    {'1': 'gps_result', '3': 15, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.ProcessAnchoringResponse.GPSResult', '10': 'gpsResult'},
   ],
+  '3': [ProcessAnchoringResponse_GPSResult$json],
   '4': [ProcessAnchoringResponse_Status$json],
+};
+
+@$core.Deprecated('Use processAnchoringResponseDescriptor instead')
+const ProcessAnchoringResponse_GPSResult$json = {
+  '1': 'GPSResult',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 14, '6': '.bosdyn.api.graph_nav.ProcessAnchoringResponse.GPSResult.GPSStatus', '10': 'status'},
+    {'1': 'ecef_tform_seed', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.SE3Pose', '10': 'ecefTformSeed'},
+    {'1': 'num_measurements_used', '3': 3, '4': 1, '5': 5, '10': 'numMeasurementsUsed'},
+  ],
+  '4': [ProcessAnchoringResponse_GPSResult_GPSStatus$json],
+};
+
+@$core.Deprecated('Use processAnchoringResponseDescriptor instead')
+const ProcessAnchoringResponse_GPSResult_GPSStatus$json = {
+  '1': 'GPSStatus',
+  '2': [
+    {'1': 'GPS_STATUS_UNKNOWN', '2': 0},
+    {'1': 'GPS_STATUS_OK', '2': 1},
+    {'1': 'GPS_STATUS_NOT_ENOUGH_MEASUREMENTS', '2': 2},
+  ],
 };
 
 @$core.Deprecated('Use processAnchoringResponseDescriptor instead')
@@ -413,12 +442,19 @@ final $typed_data.Uint8List processAnchoringResponseDescriptor = $convert.base64
     'Nob3RfaWRzGAsgAygJUhJtaXNzaW5nU25hcHNob3RJZHMSMAoUbWlzc2luZ193YXlwb2ludF9p'
     'ZHMYDCADKAlSEm1pc3NpbmdXYXlwb2ludElkcxIjCg1pbnZhbGlkX2hpbnRzGA0gAygJUgxpbn'
     'ZhbGlkSGludHMSTAoSaW5jb25zaXN0ZW50X2VkZ2VzGA4gAygLMh0uYm9zZHluLmFwaS5ncmFw'
-    'aF9uYXYuRWRnZS5JZFIRaW5jb25zaXN0ZW50RWRnZXMi5AIKBlN0YXR1cxISCg5TVEFUVVNfVU'
-    '5LTk9XThAAEg0KCVNUQVRVU19PSxABEiUKIVNUQVRVU19NSVNTSU5HX1dBWVBPSU5UX1NOQVBT'
-    'SE9UUxACEhgKFFNUQVRVU19JTlZBTElEX0dSQVBIEAMSHwobU1RBVFVTX09QVElNSVpBVElPTl'
-    '9GQUlMVVJFEAQSGQoVU1RBVFVTX0lOVkFMSURfUEFSQU1TEAUSHwobU1RBVFVTX0NPTlNUUkFJ'
-    'TlRfVklPTEFUSU9OEAYSGQoVU1RBVFVTX01BWF9JVEVSQVRJT05TEAcSEwoPU1RBVFVTX01BWF'
-    '9USU1FEAgSGAoUU1RBVFVTX0lOVkFMSURfSElOVFMQCRIpCiVTVEFUVVNfTUFQX01PRElGSUVE'
-    'X0RVUklOR19QUk9DRVNTSU5HEAoSJAogU1RBVFVTX0lOVkFMSURfR1JBVklUWV9BTElHTk1FTl'
-    'QQCw==');
+    'aF9uYXYuRWRnZS5JZFIRaW5jb25zaXN0ZW50RWRnZXMSVwoKZ3BzX3Jlc3VsdBgPIAEoCzI4Lm'
+    'Jvc2R5bi5hcGkuZ3JhcGhfbmF2LlByb2Nlc3NBbmNob3JpbmdSZXNwb25zZS5HUFNSZXN1bHRS'
+    'CWdwc1Jlc3VsdBq4AgoJR1BTUmVzdWx0EloKBnN0YXR1cxgBIAEoDjJCLmJvc2R5bi5hcGkuZ3'
+    'JhcGhfbmF2LlByb2Nlc3NBbmNob3JpbmdSZXNwb25zZS5HUFNSZXN1bHQuR1BTU3RhdHVzUgZz'
+    'dGF0dXMSOwoPZWNlZl90Zm9ybV9zZWVkGAIgASgLMhMuYm9zZHluLmFwaS5TRTNQb3NlUg1lY2'
+    'VmVGZvcm1TZWVkEjIKFW51bV9tZWFzdXJlbWVudHNfdXNlZBgDIAEoBVITbnVtTWVhc3VyZW1l'
+    'bnRzVXNlZCJeCglHUFNTdGF0dXMSFgoSR1BTX1NUQVRVU19VTktOT1dOEAASEQoNR1BTX1NUQV'
+    'RVU19PSxABEiYKIkdQU19TVEFUVVNfTk9UX0VOT1VHSF9NRUFTVVJFTUVOVFMQAiLkAgoGU3Rh'
+    'dHVzEhIKDlNUQVRVU19VTktOT1dOEAASDQoJU1RBVFVTX09LEAESJQohU1RBVFVTX01JU1NJTk'
+    'dfV0FZUE9JTlRfU05BUFNIT1RTEAISGAoUU1RBVFVTX0lOVkFMSURfR1JBUEgQAxIfChtTVEFU'
+    'VVNfT1BUSU1JWkFUSU9OX0ZBSUxVUkUQBBIZChVTVEFUVVNfSU5WQUxJRF9QQVJBTVMQBRIfCh'
+    'tTVEFUVVNfQ09OU1RSQUlOVF9WSU9MQVRJT04QBhIZChVTVEFUVVNfTUFYX0lURVJBVElPTlMQ'
+    'BxITCg9TVEFUVVNfTUFYX1RJTUUQCBIYChRTVEFUVVNfSU5WQUxJRF9ISU5UUxAJEikKJVNUQV'
+    'RVU19NQVBfTU9ESUZJRURfRFVSSU5HX1BST0NFU1NJTkcQChIkCiBTVEFUVVNfSU5WQUxJRF9H'
+    'UkFWSVRZX0FMSUdOTUVOVBAL');
 

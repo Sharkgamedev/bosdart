@@ -49,6 +49,7 @@ const KeypointSet_KeypointType$json = {
     {'1': 'KEYPOINT_UNKNOWN', '2': 0},
     {'1': 'KEYPOINT_SIMPLE', '2': 1},
     {'1': 'KEYPOINT_ORB', '2': 2},
+    {'1': 'KEYPOINT_DISK', '2': 3},
   ],
 };
 
@@ -56,8 +57,8 @@ const KeypointSet_KeypointType$json = {
 final $typed_data.Uint8List keypointSetDescriptor = $convert.base64Decode(
     'CgtLZXlwb2ludFNldBIyCglrZXlwb2ludHMYAiADKAsyFC5ib3NkeW4uYXBpLktleXBvaW50Ug'
     'lrZXlwb2ludHMSOAoEdHlwZRgDIAEoDjIkLmJvc2R5bi5hcGkuS2V5cG9pbnRTZXQuS2V5cG9p'
-    'bnRUeXBlUgR0eXBlIksKDEtleXBvaW50VHlwZRIUChBLRVlQT0lOVF9VTktOT1dOEAASEwoPS0'
-    'VZUE9JTlRfU0lNUExFEAESEAoMS0VZUE9JTlRfT1JCEAI=');
+    'bnRUeXBlUgR0eXBlIl4KDEtleXBvaW50VHlwZRIUChBLRVlQT0lOVF9VTktOT1dOEAASEwoPS0'
+    'VZUE9JTlRfU0lNUExFEAESEAoMS0VZUE9JTlRfT1JCEAISEQoNS0VZUE9JTlRfRElTSxAD');
 
 @$core.Deprecated('Use matchDescriptor instead')
 const Match$json = {
@@ -81,6 +82,18 @@ const KeypointMatches$json = {
     {'1': 'reference_keypoints', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.KeypointSet', '10': 'referenceKeypoints'},
     {'1': 'live_keypoints', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.KeypointSet', '10': 'liveKeypoints'},
     {'1': 'matches', '3': 4, '4': 3, '5': 11, '6': '.bosdyn.api.Match', '10': 'matches'},
+    {'1': 'type', '3': 5, '4': 1, '5': 14, '6': '.bosdyn.api.KeypointMatches.MatchType', '10': 'type'},
+  ],
+  '4': [KeypointMatches_MatchType$json],
+};
+
+@$core.Deprecated('Use keypointMatchesDescriptor instead')
+const KeypointMatches_MatchType$json = {
+  '1': 'MatchType',
+  '2': [
+    {'1': 'MATCH_UNKNOWN', '2': 0},
+    {'1': 'MATCH_ORB', '2': 1},
+    {'1': 'MATCH_LIGHTGLUE', '2': 2},
   ],
 };
 
@@ -89,5 +102,7 @@ final $typed_data.Uint8List keypointMatchesDescriptor = $convert.base64Decode(
     'Cg9LZXlwb2ludE1hdGNoZXMSSAoTcmVmZXJlbmNlX2tleXBvaW50cxgCIAEoCzIXLmJvc2R5bi'
     '5hcGkuS2V5cG9pbnRTZXRSEnJlZmVyZW5jZUtleXBvaW50cxI+Cg5saXZlX2tleXBvaW50cxgD'
     'IAEoCzIXLmJvc2R5bi5hcGkuS2V5cG9pbnRTZXRSDWxpdmVLZXlwb2ludHMSKwoHbWF0Y2hlcx'
-    'gEIAMoCzIRLmJvc2R5bi5hcGkuTWF0Y2hSB21hdGNoZXM=');
+    'gEIAMoCzIRLmJvc2R5bi5hcGkuTWF0Y2hSB21hdGNoZXMSOQoEdHlwZRgFIAEoDjIlLmJvc2R5'
+    'bi5hcGkuS2V5cG9pbnRNYXRjaGVzLk1hdGNoVHlwZVIEdHlwZSJCCglNYXRjaFR5cGUSEQoNTU'
+    'FUQ0hfVU5LTk9XThAAEg0KCU1BVENIX09SQhABEhMKD01BVENIX0xJR0hUR0xVRRAC');
 

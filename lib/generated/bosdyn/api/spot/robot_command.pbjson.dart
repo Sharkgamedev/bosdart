@@ -49,13 +49,15 @@ const SwingHeight$json = {
     {'1': 'SWING_HEIGHT_LOW', '2': 1},
     {'1': 'SWING_HEIGHT_MEDIUM', '2': 2},
     {'1': 'SWING_HEIGHT_HIGH', '2': 3},
+    {'1': 'SWING_HEIGHT_AUTO', '2': 4},
   ],
 };
 
 /// Descriptor for `SwingHeight`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List swingHeightDescriptor = $convert.base64Decode(
     'CgtTd2luZ0hlaWdodBIYChRTV0lOR19IRUlHSFRfVU5LTk9XThAAEhQKEFNXSU5HX0hFSUdIVF'
-    '9MT1cQARIXChNTV0lOR19IRUlHSFRfTUVESVVNEAISFQoRU1dJTkdfSEVJR0hUX0hJR0gQAw==');
+    '9MT1cQARIXChNTV0lOR19IRUlHSFRfTUVESVVNEAISFQoRU1dJTkdfSEVJR0hUX0hJR0gQAxIV'
+    'ChFTV0lOR19IRUlHSFRfQVVUTxAE');
 
 @$core.Deprecated('Use mobilityParamsDescriptor instead')
 const MobilityParams$json = {

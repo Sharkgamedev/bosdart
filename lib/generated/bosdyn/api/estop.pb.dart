@@ -14,9 +14,9 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/duration.pb.dart' as $62;
+import '../../google/protobuf/duration.pb.dart' as $61;
 import 'estop.pbenum.dart';
-import 'header.pb.dart' as $68;
+import 'header.pb.dart' as $67;
 
 export 'estop.pbenum.dart';
 
@@ -26,8 +26,8 @@ class EstopEndpoint extends $pb.GeneratedMessage {
     $core.String? role,
     $core.String? name,
     $core.String? uniqueId,
-    $62.Duration? timeout,
-    $62.Duration? cutPowerTimeout,
+    $61.Duration? timeout,
+    $61.Duration? cutPowerTimeout,
   }) {
     final $result = create();
     if (role != null) {
@@ -55,8 +55,8 @@ class EstopEndpoint extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'role')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'uniqueId')
-    ..aOM<$62.Duration>(4, _omitFieldNames ? '' : 'timeout', subBuilder: $62.Duration.create)
-    ..aOM<$62.Duration>(5, _omitFieldNames ? '' : 'cutPowerTimeout', subBuilder: $62.Duration.create)
+    ..aOM<$61.Duration>(4, _omitFieldNames ? '' : 'timeout', subBuilder: $61.Duration.create)
+    ..aOM<$61.Duration>(5, _omitFieldNames ? '' : 'cutPowerTimeout', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -116,15 +116,15 @@ class EstopEndpoint extends $pb.GeneratedMessage {
   /// to disabling motor power. The robot response is equivalent to an ESTOP_LEVEL_SETTLE_THEN_CUT
   /// which may involve the robot sitting down in order to prepare for disabling motor power.
   @$pb.TagNumber(4)
-  $62.Duration get timeout => $_getN(3);
+  $61.Duration get timeout => $_getN(3);
   @$pb.TagNumber(4)
-  set timeout($62.Duration v) { setField(4, v); }
+  set timeout($61.Duration v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTimeout() => $_has(3);
   @$pb.TagNumber(4)
   void clearTimeout() => clearField(4);
   @$pb.TagNumber(4)
-  $62.Duration ensureTimeout() => $_ensure(3);
+  $61.Duration ensureTimeout() => $_ensure(3);
 
   /// Optional maximum delay between challenge and response for this endpoint prior to disabling
   /// motor power. After cut_power_timeout seconds has passed, motor power will be disconnected
@@ -132,15 +132,15 @@ class EstopEndpoint extends $pb.GeneratedMessage {
   /// to timeout plus a nominal expected duration to reach a safe state. In practice this
   /// is typically 3-4 seconds. The response is equivalent to an ESTOP_LEVEL_CUT.
   @$pb.TagNumber(5)
-  $62.Duration get cutPowerTimeout => $_getN(4);
+  $61.Duration get cutPowerTimeout => $_getN(4);
   @$pb.TagNumber(5)
-  set cutPowerTimeout($62.Duration v) { setField(5, v); }
+  set cutPowerTimeout($61.Duration v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCutPowerTimeout() => $_has(4);
   @$pb.TagNumber(5)
   void clearCutPowerTimeout() => clearField(5);
   @$pb.TagNumber(5)
-  $62.Duration ensureCutPowerTimeout() => $_ensure(4);
+  $61.Duration ensureCutPowerTimeout() => $_ensure(4);
 }
 
 /// Configuration of a root / server.
@@ -210,7 +210,7 @@ class EstopEndpointWithStatus extends $pb.GeneratedMessage {
   factory EstopEndpointWithStatus({
     EstopEndpoint? endpoint,
     EstopStopLevel? stopLevel,
-    $62.Duration? timeSinceValidResponse,
+    $61.Duration? timeSinceValidResponse,
   }) {
     final $result = create();
     if (endpoint != null) {
@@ -231,7 +231,7 @@ class EstopEndpointWithStatus extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EstopEndpointWithStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOM<EstopEndpoint>(1, _omitFieldNames ? '' : 'endpoint', subBuilder: EstopEndpoint.create)
     ..e<EstopStopLevel>(2, _omitFieldNames ? '' : 'stopLevel', $pb.PbFieldType.OE, defaultOrMaker: EstopStopLevel.ESTOP_LEVEL_UNKNOWN, valueOf: EstopStopLevel.valueOf, enumValues: EstopStopLevel.values)
-    ..aOM<$62.Duration>(3, _omitFieldNames ? '' : 'timeSinceValidResponse', subBuilder: $62.Duration.create)
+    ..aOM<$61.Duration>(3, _omitFieldNames ? '' : 'timeSinceValidResponse', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -280,15 +280,15 @@ class EstopEndpointWithStatus extends $pb.GeneratedMessage {
 
   /// Time since a valid response was provided by the endpoint.
   @$pb.TagNumber(3)
-  $62.Duration get timeSinceValidResponse => $_getN(2);
+  $61.Duration get timeSinceValidResponse => $_getN(2);
   @$pb.TagNumber(3)
-  set timeSinceValidResponse($62.Duration v) { setField(3, v); }
+  set timeSinceValidResponse($61.Duration v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeSinceValidResponse() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimeSinceValidResponse() => clearField(3);
   @$pb.TagNumber(3)
-  $62.Duration ensureTimeSinceValidResponse() => $_ensure(2);
+  $61.Duration ensureTimeSinceValidResponse() => $_ensure(2);
 }
 
 /// Status of Estop system.
@@ -373,7 +373,7 @@ class EstopSystemStatus extends $pb.GeneratedMessage {
 /// After the first CheckIn, must include response to previous challenge.
 class EstopCheckInRequest extends $pb.GeneratedMessage {
   factory EstopCheckInRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     EstopEndpoint? endpoint,
     $fixnum.Int64? challenge,
     $fixnum.Int64? response,
@@ -402,7 +402,7 @@ class EstopCheckInRequest extends $pb.GeneratedMessage {
   factory EstopCheckInRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EstopCheckInRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<EstopEndpoint>(2, _omitFieldNames ? '' : 'endpoint', subBuilder: EstopEndpoint.create)
     ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'challenge', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'response', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
@@ -433,15 +433,15 @@ class EstopCheckInRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The endpoint making the request.
   @$pb.TagNumber(2)
@@ -491,7 +491,7 @@ class EstopCheckInRequest extends $pb.GeneratedMessage {
 /// Server response to EstopCheckInRequest.
 class EstopCheckInResponse extends $pb.GeneratedMessage {
   factory EstopCheckInResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     EstopCheckInRequest? request,
     $fixnum.Int64? challenge,
     EstopCheckInResponse_Status? status,
@@ -516,7 +516,7 @@ class EstopCheckInResponse extends $pb.GeneratedMessage {
   factory EstopCheckInResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EstopCheckInResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<EstopCheckInRequest>(2, _omitFieldNames ? '' : 'request', subBuilder: EstopCheckInRequest.create)
     ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'challenge', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..e<EstopCheckInResponse_Status>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: EstopCheckInResponse_Status.STATUS_UNKNOWN, valueOf: EstopCheckInResponse_Status.valueOf, enumValues: EstopCheckInResponse_Status.values)
@@ -546,15 +546,15 @@ class EstopCheckInResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Copy of initial request.
   @$pb.TagNumber(2)
@@ -593,7 +593,7 @@ class EstopCheckInResponse extends $pb.GeneratedMessage {
 /// EstopEndpoints must be registered before they can send commands or request challenges.
 class RegisterEstopEndpointRequest extends $pb.GeneratedMessage {
   factory RegisterEstopEndpointRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     EstopEndpoint? targetEndpoint,
     $core.String? targetConfigId,
     EstopEndpoint? newEndpoint,
@@ -618,7 +618,7 @@ class RegisterEstopEndpointRequest extends $pb.GeneratedMessage {
   factory RegisterEstopEndpointRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterEstopEndpointRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<EstopEndpoint>(2, _omitFieldNames ? '' : 'targetEndpoint', subBuilder: EstopEndpoint.create)
     ..aOS(3, _omitFieldNames ? '' : 'targetConfigId')
     ..aOM<EstopEndpoint>(4, _omitFieldNames ? '' : 'newEndpoint', subBuilder: EstopEndpoint.create)
@@ -648,15 +648,15 @@ class RegisterEstopEndpointRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The endpoint to replace.
   /// Set the endpoint's unique ID if replacing an active endpoint.
@@ -698,7 +698,7 @@ class RegisterEstopEndpointRequest extends $pb.GeneratedMessage {
 /// Response to registration request.
 class RegisterEstopEndpointResponse extends $pb.GeneratedMessage {
   factory RegisterEstopEndpointResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     RegisterEstopEndpointRequest? request,
     EstopEndpoint? newEndpoint,
     RegisterEstopEndpointResponse_Status? status,
@@ -723,7 +723,7 @@ class RegisterEstopEndpointResponse extends $pb.GeneratedMessage {
   factory RegisterEstopEndpointResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterEstopEndpointResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<RegisterEstopEndpointRequest>(2, _omitFieldNames ? '' : 'request', subBuilder: RegisterEstopEndpointRequest.create)
     ..aOM<EstopEndpoint>(3, _omitFieldNames ? '' : 'newEndpoint', subBuilder: EstopEndpoint.create)
     ..e<RegisterEstopEndpointResponse_Status>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: RegisterEstopEndpointResponse_Status.STATUS_UNKNOWN, valueOf: RegisterEstopEndpointResponse_Status.valueOf, enumValues: RegisterEstopEndpointResponse_Status.values)
@@ -753,15 +753,15 @@ class RegisterEstopEndpointResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Copy of the initial request.
   @$pb.TagNumber(2)
@@ -801,7 +801,7 @@ class RegisterEstopEndpointResponse extends $pb.GeneratedMessage {
 /// Deregister the specified E-Stop endpoint registration.
 class DeregisterEstopEndpointRequest extends $pb.GeneratedMessage {
   factory DeregisterEstopEndpointRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     EstopEndpoint? targetEndpoint,
     $core.String? targetConfigId,
   }) {
@@ -822,7 +822,7 @@ class DeregisterEstopEndpointRequest extends $pb.GeneratedMessage {
   factory DeregisterEstopEndpointRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeregisterEstopEndpointRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<EstopEndpoint>(2, _omitFieldNames ? '' : 'targetEndpoint', subBuilder: EstopEndpoint.create)
     ..aOS(3, _omitFieldNames ? '' : 'targetConfigId')
     ..hasRequiredFields = false
@@ -851,15 +851,15 @@ class DeregisterEstopEndpointRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The endpoint to deregister.
   @$pb.TagNumber(2)
@@ -887,7 +887,7 @@ class DeregisterEstopEndpointRequest extends $pb.GeneratedMessage {
 /// Response to E-Stop endpoint  deregistration request.
 class DeregisterEstopEndpointResponse extends $pb.GeneratedMessage {
   factory DeregisterEstopEndpointResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     DeregisterEstopEndpointRequest? request,
     DeregisterEstopEndpointResponse_Status? status,
   }) {
@@ -908,7 +908,7 @@ class DeregisterEstopEndpointResponse extends $pb.GeneratedMessage {
   factory DeregisterEstopEndpointResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeregisterEstopEndpointResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<DeregisterEstopEndpointRequest>(2, _omitFieldNames ? '' : 'request', subBuilder: DeregisterEstopEndpointRequest.create)
     ..e<DeregisterEstopEndpointResponse_Status>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: DeregisterEstopEndpointResponse_Status.STATUS_UNKNOWN, valueOf: DeregisterEstopEndpointResponse_Status.valueOf, enumValues: DeregisterEstopEndpointResponse_Status.values)
     ..hasRequiredFields = false
@@ -937,15 +937,15 @@ class DeregisterEstopEndpointResponse extends $pb.GeneratedMessage {
 
   /// Common resonse header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Copy of the initial request.
   @$pb.TagNumber(2)
@@ -973,7 +973,7 @@ class DeregisterEstopEndpointResponse extends $pb.GeneratedMessage {
 /// Get the active EstopConfig.
 class GetEstopConfigRequest extends $pb.GeneratedMessage {
   factory GetEstopConfigRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? targetConfigId,
   }) {
     final $result = create();
@@ -990,7 +990,7 @@ class GetEstopConfigRequest extends $pb.GeneratedMessage {
   factory GetEstopConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEstopConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(4, _omitFieldNames ? '' : 'targetConfigId')
     ..hasRequiredFields = false
   ;
@@ -1018,15 +1018,15 @@ class GetEstopConfigRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The 'unique_id' of EstopConfig to get.
   @$pb.TagNumber(4)
@@ -1042,7 +1042,7 @@ class GetEstopConfigRequest extends $pb.GeneratedMessage {
 /// Response to EstopConfigRequest.
 class GetEstopConfigResponse extends $pb.GeneratedMessage {
   factory GetEstopConfigResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     GetEstopConfigRequest? request,
     EstopConfig? activeConfig,
   }) {
@@ -1063,7 +1063,7 @@ class GetEstopConfigResponse extends $pb.GeneratedMessage {
   factory GetEstopConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEstopConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<GetEstopConfigRequest>(2, _omitFieldNames ? '' : 'request', subBuilder: GetEstopConfigRequest.create)
     ..aOM<EstopConfig>(3, _omitFieldNames ? '' : 'activeConfig', subBuilder: EstopConfig.create)
     ..hasRequiredFields = false
@@ -1092,15 +1092,15 @@ class GetEstopConfigResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Copy of the request.
   @$pb.TagNumber(2)
@@ -1130,7 +1130,7 @@ class GetEstopConfigResponse extends $pb.GeneratedMessage {
 /// Set a new active EstopConfig.
 class SetEstopConfigRequest extends $pb.GeneratedMessage {
   factory SetEstopConfigRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     EstopConfig? config,
     $core.String? targetConfigId,
   }) {
@@ -1151,7 +1151,7 @@ class SetEstopConfigRequest extends $pb.GeneratedMessage {
   factory SetEstopConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetEstopConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<EstopConfig>(3, _omitFieldNames ? '' : 'config', subBuilder: EstopConfig.create)
     ..aOS(4, _omitFieldNames ? '' : 'targetConfigId')
     ..hasRequiredFields = false
@@ -1180,15 +1180,15 @@ class SetEstopConfigRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// New configuration to set.
   @$pb.TagNumber(3)
@@ -1216,7 +1216,7 @@ class SetEstopConfigRequest extends $pb.GeneratedMessage {
 /// Response to EstopConfigRequest.
 class SetEstopConfigResponse extends $pb.GeneratedMessage {
   factory SetEstopConfigResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     SetEstopConfigRequest? request,
     EstopConfig? activeConfig,
     SetEstopConfigResponse_Status? status,
@@ -1241,7 +1241,7 @@ class SetEstopConfigResponse extends $pb.GeneratedMessage {
   factory SetEstopConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetEstopConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<SetEstopConfigRequest>(2, _omitFieldNames ? '' : 'request', subBuilder: SetEstopConfigRequest.create)
     ..aOM<EstopConfig>(3, _omitFieldNames ? '' : 'activeConfig', subBuilder: EstopConfig.create)
     ..e<SetEstopConfigResponse_Status>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: SetEstopConfigResponse_Status.STATUS_UNKNOWN, valueOf: SetEstopConfigResponse_Status.valueOf, enumValues: SetEstopConfigResponse_Status.values)
@@ -1271,15 +1271,15 @@ class SetEstopConfigResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Copy of the request.
   @$pb.TagNumber(2)
@@ -1318,7 +1318,7 @@ class SetEstopConfigResponse extends $pb.GeneratedMessage {
 /// Ask for the current status of the Estop system.
 class GetEstopSystemStatusRequest extends $pb.GeneratedMessage {
   factory GetEstopSystemStatusRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1331,7 +1331,7 @@ class GetEstopSystemStatusRequest extends $pb.GeneratedMessage {
   factory GetEstopSystemStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEstopSystemStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1358,21 +1358,21 @@ class GetEstopSystemStatusRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Respond with the current Estop system status.
 class GetEstopSystemStatusResponse extends $pb.GeneratedMessage {
   factory GetEstopSystemStatusResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     EstopSystemStatus? status,
   }) {
     final $result = create();
@@ -1389,7 +1389,7 @@ class GetEstopSystemStatusResponse extends $pb.GeneratedMessage {
   factory GetEstopSystemStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEstopSystemStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<EstopSystemStatus>(3, _omitFieldNames ? '' : 'status', subBuilder: EstopSystemStatus.create)
     ..hasRequiredFields = false
   ;
@@ -1417,15 +1417,15 @@ class GetEstopSystemStatusResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Status of the Estop system.
   @$pb.TagNumber(3)

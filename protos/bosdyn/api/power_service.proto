@@ -26,6 +26,9 @@ service PowerService {
     rpc FanPowerCommand(FanPowerCommandRequest) returns (FanPowerCommandResponse) {}
 
     // Check the status of a fan power command.
-    rpc FanPowerCommandFeedback(FanPowerCommandFeedbackRequest) returns (FanPowerCommandFeedbackResponse) {}
+    rpc FanPowerCommandFeedback(FanPowerCommandFeedbackRequest)
+        returns (FanPowerCommandFeedbackResponse) {}
 
+    // Reset the safety stop bit on SRSF-configured robots.
+    rpc ResetSafetyStop(ResetSafetyStopRequest) returns (ResetSafetyStopResponse) {}
 }

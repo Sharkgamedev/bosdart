@@ -15,16 +15,16 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'ir_enable_disable.pb.dart' as $12;
+import 'ir_enable_disable.pb.dart' as $13;
 
 export 'ir_enable_disable_service.pb.dart';
 
 @$pb.GrpcServiceName('bosdyn.api.IREnableDisableService')
 class IREnableDisableServiceClient extends $grpc.Client {
-  static final _$iREnableDisable = $grpc.ClientMethod<$12.IREnableDisableRequest, $12.IREnableDisableResponse>(
+  static final _$iREnableDisable = $grpc.ClientMethod<$13.IREnableDisableRequest, $13.IREnableDisableResponse>(
       '/bosdyn.api.IREnableDisableService/IREnableDisable',
-      ($12.IREnableDisableRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $12.IREnableDisableResponse.fromBuffer(value));
+      ($13.IREnableDisableRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $13.IREnableDisableResponse.fromBuffer(value));
 
   IREnableDisableServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -32,7 +32,7 @@ class IREnableDisableServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$12.IREnableDisableResponse> iREnableDisable($12.IREnableDisableRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$13.IREnableDisableResponse> iREnableDisable($13.IREnableDisableRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$iREnableDisable, request, options: options);
   }
 }
@@ -42,18 +42,18 @@ abstract class IREnableDisableServiceBase extends $grpc.Service {
   $core.String get $name => 'bosdyn.api.IREnableDisableService';
 
   IREnableDisableServiceBase() {
-    $addMethod($grpc.ServiceMethod<$12.IREnableDisableRequest, $12.IREnableDisableResponse>(
+    $addMethod($grpc.ServiceMethod<$13.IREnableDisableRequest, $13.IREnableDisableResponse>(
         'IREnableDisable',
         iREnableDisable_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $12.IREnableDisableRequest.fromBuffer(value),
-        ($12.IREnableDisableResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $13.IREnableDisableRequest.fromBuffer(value),
+        ($13.IREnableDisableResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$12.IREnableDisableResponse> iREnableDisable_Pre($grpc.ServiceCall call, $async.Future<$12.IREnableDisableRequest> request) async {
+  $async.Future<$13.IREnableDisableResponse> iREnableDisable_Pre($grpc.ServiceCall call, $async.Future<$13.IREnableDisableRequest> request) async {
     return iREnableDisable(call, await request);
   }
 
-  $async.Future<$12.IREnableDisableResponse> iREnableDisable($grpc.ServiceCall call, $12.IREnableDisableRequest request);
+  $async.Future<$13.IREnableDisableResponse> iREnableDisable($grpc.ServiceCall call, $13.IREnableDisableRequest request);
 }

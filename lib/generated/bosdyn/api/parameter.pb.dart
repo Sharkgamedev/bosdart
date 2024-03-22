@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/duration.pb.dart' as $62;
-import '../../google/protobuf/timestamp.pb.dart' as $60;
+import '../../google/protobuf/duration.pb.dart' as $61;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
 
 enum Parameter_Values {
   intValue, 
@@ -36,8 +36,8 @@ class Parameter extends $pb.GeneratedMessage {
     $core.String? units,
     $fixnum.Int64? intValue,
     $core.double? floatValue,
-    $60.Timestamp? timestamp,
-    $62.Duration? duration,
+    $59.Timestamp? timestamp,
+    $61.Duration? duration,
     $core.String? stringValue,
     $core.bool? boolValue,
     $core.String? notes,
@@ -96,8 +96,8 @@ class Parameter extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'units')
     ..aInt64(3, _omitFieldNames ? '' : 'intValue')
     ..a<$core.double>(4, _omitFieldNames ? '' : 'floatValue', $pb.PbFieldType.OD)
-    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
-    ..aOM<$62.Duration>(6, _omitFieldNames ? '' : 'duration', subBuilder: $62.Duration.create)
+    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
+    ..aOM<$61.Duration>(6, _omitFieldNames ? '' : 'duration', subBuilder: $61.Duration.create)
     ..aOS(7, _omitFieldNames ? '' : 'stringValue')
     ..aOB(8, _omitFieldNames ? '' : 'boolValue')
     ..aOS(9, _omitFieldNames ? '' : 'notes')
@@ -171,27 +171,27 @@ class Parameter extends $pb.GeneratedMessage {
 
   /// A point in time.
   @$pb.TagNumber(5)
-  $60.Timestamp get timestamp => $_getN(4);
+  $59.Timestamp get timestamp => $_getN(4);
   @$pb.TagNumber(5)
-  set timestamp($60.Timestamp v) { setField(5, v); }
+  set timestamp($59.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTimestamp() => $_has(4);
   @$pb.TagNumber(5)
   void clearTimestamp() => clearField(5);
   @$pb.TagNumber(5)
-  $60.Timestamp ensureTimestamp() => $_ensure(4);
+  $59.Timestamp ensureTimestamp() => $_ensure(4);
 
   /// A time duration.
   @$pb.TagNumber(6)
-  $62.Duration get duration => $_getN(5);
+  $61.Duration get duration => $_getN(5);
   @$pb.TagNumber(6)
-  set duration($62.Duration v) { setField(6, v); }
+  set duration($61.Duration v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasDuration() => $_has(5);
   @$pb.TagNumber(6)
   void clearDuration() => clearField(6);
   @$pb.TagNumber(6)
-  $62.Duration ensureDuration() => $_ensure(5);
+  $61.Duration ensureDuration() => $_ensure(5);
 
   /// Value as a string.
   @$pb.TagNumber(7)

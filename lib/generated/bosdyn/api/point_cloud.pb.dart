@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $60;
-import 'geometry.pb.dart' as $61;
-import 'header.pb.dart' as $68;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
+import 'geometry.pb.dart' as $60;
+import 'header.pb.dart' as $67;
 import 'point_cloud.pbenum.dart';
 
 export 'point_cloud.pbenum.dart';
@@ -25,8 +25,8 @@ class PointCloudSource extends $pb.GeneratedMessage {
   factory PointCloudSource({
     $core.String? name,
     $core.String? frameNameSensor,
-    $60.Timestamp? acquisitionTime,
-    $61.FrameTreeSnapshot? transformsSnapshot,
+    $59.Timestamp? acquisitionTime,
+    $60.FrameTreeSnapshot? transformsSnapshot,
   }) {
     final $result = create();
     if (name != null) {
@@ -50,8 +50,8 @@ class PointCloudSource extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PointCloudSource', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'frameNameSensor')
-    ..aOM<$60.Timestamp>(30, _omitFieldNames ? '' : 'acquisitionTime', subBuilder: $60.Timestamp.create)
-    ..aOM<$61.FrameTreeSnapshot>(31, _omitFieldNames ? '' : 'transformsSnapshot', subBuilder: $61.FrameTreeSnapshot.create)
+    ..aOM<$59.Timestamp>(30, _omitFieldNames ? '' : 'acquisitionTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.FrameTreeSnapshot>(31, _omitFieldNames ? '' : 'transformsSnapshot', subBuilder: $60.FrameTreeSnapshot.create)
     ..hasRequiredFields = false
   ;
 
@@ -100,28 +100,28 @@ class PointCloudSource extends $pb.GeneratedMessage {
 
   /// Time that the data was produced on the sensor in the robot's clock.
   @$pb.TagNumber(30)
-  $60.Timestamp get acquisitionTime => $_getN(2);
+  $59.Timestamp get acquisitionTime => $_getN(2);
   @$pb.TagNumber(30)
-  set acquisitionTime($60.Timestamp v) { setField(30, v); }
+  set acquisitionTime($59.Timestamp v) { setField(30, v); }
   @$pb.TagNumber(30)
   $core.bool hasAcquisitionTime() => $_has(2);
   @$pb.TagNumber(30)
   void clearAcquisitionTime() => clearField(30);
   @$pb.TagNumber(30)
-  $60.Timestamp ensureAcquisitionTime() => $_ensure(2);
+  $59.Timestamp ensureAcquisitionTime() => $_ensure(2);
 
   /// A tree-based collection of transformations, which will include the transformations
   /// to the point cloud data frame and the point cloud sensor frame.
   @$pb.TagNumber(31)
-  $61.FrameTreeSnapshot get transformsSnapshot => $_getN(3);
+  $60.FrameTreeSnapshot get transformsSnapshot => $_getN(3);
   @$pb.TagNumber(31)
-  set transformsSnapshot($61.FrameTreeSnapshot v) { setField(31, v); }
+  set transformsSnapshot($60.FrameTreeSnapshot v) { setField(31, v); }
   @$pb.TagNumber(31)
   $core.bool hasTransformsSnapshot() => $_has(3);
   @$pb.TagNumber(31)
   void clearTransformsSnapshot() => clearField(31);
   @$pb.TagNumber(31)
-  $61.FrameTreeSnapshot ensureTransformsSnapshot() => $_ensure(3);
+  $60.FrameTreeSnapshot ensureTransformsSnapshot() => $_ensure(3);
 }
 
 /// Parameters needed to decode the point cloud.
@@ -374,7 +374,7 @@ class PointCloud extends $pb.GeneratedMessage {
 
 class ListPointCloudSourcesRequest extends $pb.GeneratedMessage {
   factory ListPointCloudSourcesRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -387,7 +387,7 @@ class ListPointCloudSourcesRequest extends $pb.GeneratedMessage {
   factory ListPointCloudSourcesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPointCloudSourcesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -414,21 +414,21 @@ class ListPointCloudSourcesRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The GetPointCloud response message which returns any point cloud data associated with that service.
 class ListPointCloudSourcesResponse extends $pb.GeneratedMessage {
   factory ListPointCloudSourcesResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<PointCloudSource>? pointCloudSources,
   }) {
     final $result = create();
@@ -445,7 +445,7 @@ class ListPointCloudSourcesResponse extends $pb.GeneratedMessage {
   factory ListPointCloudSourcesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPointCloudSourcesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<PointCloudSource>(2, _omitFieldNames ? '' : 'pointCloudSources', $pb.PbFieldType.PM, subBuilder: PointCloudSource.create)
     ..hasRequiredFields = false
   ;
@@ -473,15 +473,15 @@ class ListPointCloudSourcesResponse extends $pb.GeneratedMessage {
 
   /// Common response Header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The set of PointCloudSources available from this service.
   /// May be empty if the service serves no point clouds (e.g., if no sensors were found on startup).
@@ -543,7 +543,7 @@ class PointCloudRequest extends $pb.GeneratedMessage {
 /// The GetPointCloud request message to ask a specific point cloud service for data.
 class GetPointCloudRequest extends $pb.GeneratedMessage {
   factory GetPointCloudRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<PointCloudRequest>? pointCloudRequests,
   }) {
     final $result = create();
@@ -560,7 +560,7 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
   factory GetPointCloudRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPointCloudRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pc<PointCloudRequest>(2, _omitFieldNames ? '' : 'pointCloudRequests', $pb.PbFieldType.PM, subBuilder: PointCloudRequest.create)
     ..hasRequiredFields = false
   ;
@@ -588,15 +588,15 @@ class GetPointCloudRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Sources to retrieve from. The service will return a response for each PointCloudRequest.
   @$pb.TagNumber(2)
@@ -673,7 +673,7 @@ class PointCloudResponse extends $pb.GeneratedMessage {
 
 class GetPointCloudResponse extends $pb.GeneratedMessage {
   factory GetPointCloudResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<PointCloudResponse>? pointCloudResponses,
   }) {
     final $result = create();
@@ -690,7 +690,7 @@ class GetPointCloudResponse extends $pb.GeneratedMessage {
   factory GetPointCloudResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPointCloudResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<PointCloudResponse>(4, _omitFieldNames ? '' : 'pointCloudResponses', $pb.PbFieldType.PM, subBuilder: PointCloudResponse.create)
     ..hasRequiredFields = false
   ;
@@ -718,15 +718,15 @@ class GetPointCloudResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The resulting point clouds for each requested source.
   @$pb.TagNumber(4)

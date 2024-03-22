@@ -248,8 +248,9 @@ const SE2TrajectoryCommand_Feedback$json = {
   '2': [
     {'1': 'status', '3': 1, '4': 1, '5': 14, '6': '.bosdyn.api.SE2TrajectoryCommand.Feedback.Status', '10': 'status'},
     {'1': 'body_movement_status', '3': 2, '4': 1, '5': 14, '6': '.bosdyn.api.SE2TrajectoryCommand.Feedback.BodyMovementStatus', '10': 'bodyMovementStatus'},
+    {'1': 'final_goal_status', '3': 5, '4': 1, '5': 14, '6': '.bosdyn.api.SE2TrajectoryCommand.Feedback.FinalGoalStatus', '10': 'finalGoalStatus'},
   ],
-  '4': [SE2TrajectoryCommand_Feedback_Status$json, SE2TrajectoryCommand_Feedback_BodyMovementStatus$json],
+  '4': [SE2TrajectoryCommand_Feedback_Status$json, SE2TrajectoryCommand_Feedback_BodyMovementStatus$json, SE2TrajectoryCommand_Feedback_FinalGoalStatus$json],
 };
 
 @$core.Deprecated('Use sE2TrajectoryCommandDescriptor instead')
@@ -257,10 +258,14 @@ const SE2TrajectoryCommand_Feedback_Status$json = {
   '1': 'Status',
   '2': [
     {'1': 'STATUS_UNKNOWN', '2': 0},
+    {'1': 'STATUS_STOPPED', '2': 1},
+    {'1': 'STATUS_STOPPING', '2': 3},
+    {'1': 'STATUS_IN_PROGRESS', '2': 2},
     {'1': 'STATUS_AT_GOAL', '2': 1},
     {'1': 'STATUS_NEAR_GOAL', '2': 3},
     {'1': 'STATUS_GOING_TO_GOAL', '2': 2},
   ],
+  '3': {'2': true},
 };
 
 @$core.Deprecated('Use sE2TrajectoryCommandDescriptor instead')
@@ -273,19 +278,36 @@ const SE2TrajectoryCommand_Feedback_BodyMovementStatus$json = {
   ],
 };
 
+@$core.Deprecated('Use sE2TrajectoryCommandDescriptor instead')
+const SE2TrajectoryCommand_Feedback_FinalGoalStatus$json = {
+  '1': 'FinalGoalStatus',
+  '2': [
+    {'1': 'FINAL_GOAL_STATUS_UNKNOWN', '2': 0},
+    {'1': 'FINAL_GOAL_STATUS_IN_PROGRESS', '2': 1},
+    {'1': 'FINAL_GOAL_STATUS_ACHIEVABLE', '2': 2},
+    {'1': 'FINAL_GOAL_STATUS_BLOCKED', '2': 3},
+  ],
+};
+
 /// Descriptor for `SE2TrajectoryCommand`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List sE2TrajectoryCommandDescriptor = $convert.base64Decode(
     'ChRTRTJUcmFqZWN0b3J5Q29tbWFuZBqhAQoHUmVxdWVzdBI1CghlbmRfdGltZRgBIAEoCzIaLm'
     'dvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSB2VuZFRpbWUSJAoOc2UyX2ZyYW1lX25hbWUYAyAB'
     'KAlSDHNlMkZyYW1lTmFtZRI5Cgp0cmFqZWN0b3J5GAIgASgLMhkuYm9zZHluLmFwaS5TRTJUcm'
-    'FqZWN0b3J5Ugp0cmFqZWN0b3J5GoYDCghGZWVkYmFjaxJICgZzdGF0dXMYASABKA4yMC5ib3Nk'
+    'FqZWN0b3J5Ugp0cmFqZWN0b3J5GsoFCghGZWVkYmFjaxJICgZzdGF0dXMYASABKA4yMC5ib3Nk'
     'eW4uYXBpLlNFMlRyYWplY3RvcnlDb21tYW5kLkZlZWRiYWNrLlN0YXR1c1IGc3RhdHVzEm4KFG'
     'JvZHlfbW92ZW1lbnRfc3RhdHVzGAIgASgOMjwuYm9zZHluLmFwaS5TRTJUcmFqZWN0b3J5Q29t'
-    'bWFuZC5GZWVkYmFjay5Cb2R5TW92ZW1lbnRTdGF0dXNSEmJvZHlNb3ZlbWVudFN0YXR1cyJgCg'
-    'ZTdGF0dXMSEgoOU1RBVFVTX1VOS05PV04QABISCg5TVEFUVVNfQVRfR09BTBABEhQKEFNUQVRV'
-    'U19ORUFSX0dPQUwQAxIYChRTVEFUVVNfR09JTkdfVE9fR09BTBACIl4KEkJvZHlNb3ZlbWVudF'
-    'N0YXR1cxIXChNCT0RZX1NUQVRVU19VTktOT1dOEAASFgoSQk9EWV9TVEFUVVNfTU9WSU5HEAES'
-    'FwoTQk9EWV9TVEFUVVNfU0VUVExFRBAC');
+    'bWFuZC5GZWVkYmFjay5Cb2R5TW92ZW1lbnRTdGF0dXNSEmJvZHlNb3ZlbWVudFN0YXR1cxJlCh'
+    'FmaW5hbF9nb2FsX3N0YXR1cxgFIAEoDjI5LmJvc2R5bi5hcGkuU0UyVHJhamVjdG9yeUNvbW1h'
+    'bmQuRmVlZGJhY2suRmluYWxHb2FsU3RhdHVzUg9maW5hbEdvYWxTdGF0dXMipQEKBlN0YXR1cx'
+    'ISCg5TVEFUVVNfVU5LTk9XThAAEhIKDlNUQVRVU19TVE9QUEVEEAESEwoPU1RBVFVTX1NUT1BQ'
+    'SU5HEAMSFgoSU1RBVFVTX0lOX1BST0dSRVNTEAISEgoOU1RBVFVTX0FUX0dPQUwQARIUChBTVE'
+    'FUVVNfTkVBUl9HT0FMEAMSGAoUU1RBVFVTX0dPSU5HX1RPX0dPQUwQAhoCEAEiXgoSQm9keU1v'
+    'dmVtZW50U3RhdHVzEhcKE0JPRFlfU1RBVFVTX1VOS05PV04QABIWChJCT0RZX1NUQVRVU19NT1'
+    'ZJTkcQARIXChNCT0RZX1NUQVRVU19TRVRUTEVEEAIilAEKD0ZpbmFsR29hbFN0YXR1cxIdChlG'
+    'SU5BTF9HT0FMX1NUQVRVU19VTktOT1dOEAASIQodRklOQUxfR09BTF9TVEFUVVNfSU5fUFJPR1'
+    'JFU1MQARIgChxGSU5BTF9HT0FMX1NUQVRVU19BQ0hJRVZBQkxFEAISHQoZRklOQUxfR09BTF9T'
+    'VEFUVVNfQkxPQ0tFRBAD');
 
 @$core.Deprecated('Use sE2VelocityCommandDescriptor instead')
 const SE2VelocityCommand$json = {
@@ -663,4 +685,78 @@ final $typed_data.Uint8List constrainedManipulationCommandDescriptor = $convert.
     'aW1hdGlvbkFjdGl2YXRlZCJjCgZTdGF0dXMSEgoOU1RBVFVTX1VOS05PV04QABISCg5TVEFUVV'
     'NfUlVOTklORxABEhcKE1NUQVRVU19BUk1fSVNfU1RVQ0sQAhIYChRTVEFUVVNfR1JBU1BfSVNf'
     'TE9TVBAD');
+
+@$core.Deprecated('Use jointCommandDescriptor instead')
+const JointCommand$json = {
+  '1': 'JointCommand',
+  '3': [JointCommand_Request$json, JointCommand_Feedback$json, JointCommand_UpdateRequest$json],
+};
+
+@$core.Deprecated('Use jointCommandDescriptor instead')
+const JointCommand_Request$json = {
+  '1': 'Request',
+};
+
+@$core.Deprecated('Use jointCommandDescriptor instead')
+const JointCommand_Feedback$json = {
+  '1': 'Feedback',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 14, '6': '.bosdyn.api.JointCommand.Feedback.Status', '10': 'status'},
+    {'1': 'num_messages_received', '3': 2, '4': 1, '5': 4, '10': 'numMessagesReceived'},
+  ],
+  '4': [JointCommand_Feedback_Status$json],
+};
+
+@$core.Deprecated('Use jointCommandDescriptor instead')
+const JointCommand_Feedback_Status$json = {
+  '1': 'Status',
+  '2': [
+    {'1': 'STATUS_UNKNOWN', '2': 0},
+    {'1': 'STATUS_ACTIVE', '2': 1},
+    {'1': 'STATUS_ERROR', '2': 2},
+  ],
+};
+
+@$core.Deprecated('Use jointCommandDescriptor instead')
+const JointCommand_UpdateRequest$json = {
+  '1': 'UpdateRequest',
+  '2': [
+    {'1': 'end_time', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'endTime'},
+    {'1': 'reference_time', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'referenceTime'},
+    {'1': 'extrapolation_duration', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'extrapolationDuration'},
+    {'1': 'position', '3': 2, '4': 3, '5': 2, '10': 'position'},
+    {'1': 'velocity', '3': 3, '4': 3, '5': 2, '10': 'velocity'},
+    {'1': 'load', '3': 4, '4': 3, '5': 2, '10': 'load'},
+    {'1': 'gains', '3': 5, '4': 1, '5': 11, '6': '.bosdyn.api.JointCommand.UpdateRequest.Gains', '10': 'gains'},
+    {'1': 'user_command_key', '3': 6, '4': 1, '5': 13, '10': 'userCommandKey'},
+    {'1': 'velocity_safety_limit', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.FloatValue', '10': 'velocitySafetyLimit'},
+  ],
+  '3': [JointCommand_UpdateRequest_Gains$json],
+};
+
+@$core.Deprecated('Use jointCommandDescriptor instead')
+const JointCommand_UpdateRequest_Gains$json = {
+  '1': 'Gains',
+  '2': [
+    {'1': 'k_q_p', '3': 1, '4': 3, '5': 2, '10': 'kQP'},
+    {'1': 'k_qd_p', '3': 2, '4': 3, '5': 2, '10': 'kQdP'},
+  ],
+};
+
+/// Descriptor for `JointCommand`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jointCommandDescriptor = $convert.base64Decode(
+    'CgxKb2ludENvbW1hbmQaCQoHUmVxdWVzdBrDAQoIRmVlZGJhY2sSQAoGc3RhdHVzGAEgASgOMi'
+    'guYm9zZHluLmFwaS5Kb2ludENvbW1hbmQuRmVlZGJhY2suU3RhdHVzUgZzdGF0dXMSMgoVbnVt'
+    'X21lc3NhZ2VzX3JlY2VpdmVkGAIgASgEUhNudW1NZXNzYWdlc1JlY2VpdmVkIkEKBlN0YXR1cx'
+    'ISCg5TVEFUVVNfVU5LTk9XThAAEhEKDVNUQVRVU19BQ1RJVkUQARIQCgxTVEFUVVNfRVJST1IQ'
+    'AhqZBAoNVXBkYXRlUmVxdWVzdBI1CghlbmRfdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
+    '5UaW1lc3RhbXBSB2VuZFRpbWUSQQoOcmVmZXJlbmNlX3RpbWUYByABKAsyGi5nb29nbGUucHJv'
+    'dG9idWYuVGltZXN0YW1wUg1yZWZlcmVuY2VUaW1lElAKFmV4dHJhcG9sYXRpb25fZHVyYXRpb2'
+    '4YCCABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SFWV4dHJhcG9sYXRpb25EdXJhdGlv'
+    'bhIaCghwb3NpdGlvbhgCIAMoAlIIcG9zaXRpb24SGgoIdmVsb2NpdHkYAyADKAJSCHZlbG9jaX'
+    'R5EhIKBGxvYWQYBCADKAJSBGxvYWQSQgoFZ2FpbnMYBSABKAsyLC5ib3NkeW4uYXBpLkpvaW50'
+    'Q29tbWFuZC5VcGRhdGVSZXF1ZXN0LkdhaW5zUgVnYWlucxIoChB1c2VyX2NvbW1hbmRfa2V5GA'
+    'YgASgNUg51c2VyQ29tbWFuZEtleRJPChV2ZWxvY2l0eV9zYWZldHlfbGltaXQYCSABKAsyGy5n'
+    'b29nbGUucHJvdG9idWYuRmxvYXRWYWx1ZVITdmVsb2NpdHlTYWZldHlMaW1pdBoxCgVHYWlucx'
+    'ISCgVrX3FfcBgBIAMoAlIDa1FQEhQKBmtfcWRfcBgCIAMoAlIEa1FkUA==');
 

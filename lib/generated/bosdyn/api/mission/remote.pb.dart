@@ -13,11 +13,11 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../header.pb.dart' as $68;
-import '../lease.pb.dart' as $13;
-import '../service_customization.pb.dart' as $72;
+import '../header.pb.dart' as $67;
+import '../lease.pb.dart' as $14;
+import '../service_customization.pb.dart' as $71;
 import 'remote.pbenum.dart';
-import 'util.pb.dart' as $89;
+import 'util.pb.dart' as $92;
 
 export 'remote.pbenum.dart';
 
@@ -25,10 +25,10 @@ export 'remote.pbenum.dart';
 /// for a particular mission node.
 class EstablishSessionRequest extends $pb.GeneratedMessage {
   factory EstablishSessionRequest({
-    $68.RequestHeader? header,
-    $core.Iterable<$13.Lease>? leases,
+    $67.RequestHeader? header,
+    $core.Iterable<$14.Lease>? leases,
   @$core.Deprecated('This field is deprecated.')
-    $core.Iterable<$89.VariableDeclaration>? inputs,
+    $core.Iterable<$92.VariableDeclaration>? inputs,
   }) {
     final $result = create();
     if (header != null) {
@@ -48,9 +48,9 @@ class EstablishSessionRequest extends $pb.GeneratedMessage {
   factory EstablishSessionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EstablishSessionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..pc<$13.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
-    ..pc<$89.VariableDeclaration>(3, _omitFieldNames ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: $89.VariableDeclaration.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..pc<$14.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
+    ..pc<$92.VariableDeclaration>(3, _omitFieldNames ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: $92.VariableDeclaration.create)
     ..hasRequiredFields = false
   ;
 
@@ -77,38 +77,38 @@ class EstablishSessionRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// All leases that the remote service may need.
   @$pb.TagNumber(2)
-  $core.List<$13.Lease> get leases => $_getList(1);
+  $core.List<$14.Lease> get leases => $_getList(1);
 
   /// Use this to provide other data (e.g. from the blackboard).
   /// The RemoteGrpc node will provide the name of the node automatically.
   /// DEPRECATED as of 3.3.  Please use 'params' in [TickRequest] instead.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
-  $core.List<$89.VariableDeclaration> get inputs => $_getList(2);
+  $core.List<$92.VariableDeclaration> get inputs => $_getList(2);
 }
 
 /// Provide the id to use for the particular mission node to tick this remote service.
 class EstablishSessionResponse extends $pb.GeneratedMessage {
   factory EstablishSessionResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     EstablishSessionResponse_Status? status,
     $core.String? sessionId,
     $core.Iterable<$core.String>? missingLeaseResources,
-    $core.Iterable<$13.LeaseUseResult>? leaseUseResults,
+    $core.Iterable<$14.LeaseUseResult>? leaseUseResults,
   @$core.Deprecated('This field is deprecated.')
-    $core.Iterable<$89.VariableDeclaration>? missingInputs,
+    $core.Iterable<$92.VariableDeclaration>? missingInputs,
   }) {
     final $result = create();
     if (header != null) {
@@ -137,12 +137,12 @@ class EstablishSessionResponse extends $pb.GeneratedMessage {
   factory EstablishSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EstablishSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<EstablishSessionResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: EstablishSessionResponse_Status.STATUS_UNKNOWN, valueOf: EstablishSessionResponse_Status.valueOf, enumValues: EstablishSessionResponse_Status.values)
     ..aOS(3, _omitFieldNames ? '' : 'sessionId')
     ..pPS(4, _omitFieldNames ? '' : 'missingLeaseResources')
-    ..pc<$13.LeaseUseResult>(5, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $13.LeaseUseResult.create)
-    ..pc<$89.VariableDeclaration>(6, _omitFieldNames ? '' : 'missingInputs', $pb.PbFieldType.PM, subBuilder: $89.VariableDeclaration.create)
+    ..pc<$14.LeaseUseResult>(5, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $14.LeaseUseResult.create)
+    ..pc<$92.VariableDeclaration>(6, _omitFieldNames ? '' : 'missingInputs', $pb.PbFieldType.PM, subBuilder: $92.VariableDeclaration.create)
     ..hasRequiredFields = false
   ;
 
@@ -169,15 +169,15 @@ class EstablishSessionResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Result of this establish session request.
   @$pb.TagNumber(2)
@@ -206,23 +206,23 @@ class EstablishSessionResponse extends $pb.GeneratedMessage {
   /// Details about how any leases were used.
   /// Allowed to be empty, if leases were not actually used.
   @$pb.TagNumber(5)
-  $core.List<$13.LeaseUseResult> get leaseUseResults => $_getList(4);
+  $core.List<$14.LeaseUseResult> get leaseUseResults => $_getList(4);
 
   /// The inputs required by the contacted node that were not mentioned in the request.
   /// DEPRECATED as of 3.3.  Please use 'params_error' instead.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
-  $core.List<$89.VariableDeclaration> get missingInputs => $_getList(5);
+  $core.List<$92.VariableDeclaration> get missingInputs => $_getList(5);
 }
 
 /// Request that the remote tick itself for a particular node in the mission.
 class TickRequest extends $pb.GeneratedMessage {
   factory TickRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? sessionId,
-    $core.Iterable<$13.Lease>? leases,
-    $core.Iterable<$89.KeyValue>? inputs,
-    $72.DictParam? params,
+    $core.Iterable<$14.Lease>? leases,
+    $core.Iterable<$92.KeyValue>? inputs,
+    $71.DictParam? params,
     $core.String? groupName,
   }) {
     final $result = create();
@@ -251,11 +251,11 @@ class TickRequest extends $pb.GeneratedMessage {
   factory TickRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TickRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'sessionId')
-    ..pc<$13.Lease>(3, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
-    ..pc<$89.KeyValue>(4, _omitFieldNames ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: $89.KeyValue.create)
-    ..aOM<$72.DictParam>(5, _omitFieldNames ? '' : 'params', subBuilder: $72.DictParam.create)
+    ..pc<$14.Lease>(3, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
+    ..pc<$92.KeyValue>(4, _omitFieldNames ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: $92.KeyValue.create)
+    ..aOM<$71.DictParam>(5, _omitFieldNames ? '' : 'params', subBuilder: $71.DictParam.create)
     ..aOS(6, _omitFieldNames ? '' : 'groupName')
     ..hasRequiredFields = false
   ;
@@ -283,15 +283,15 @@ class TickRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Session ID as returned by the EstablishSessionResponse.
   /// Used to guarantee coherence between a single client and a servicer.
@@ -306,25 +306,25 @@ class TickRequest extends $pb.GeneratedMessage {
 
   /// All leases that the remote service may need.
   @$pb.TagNumber(3)
-  $core.List<$13.Lease> get leases => $_getList(2);
+  $core.List<$14.Lease> get leases => $_getList(2);
 
   /// Inputs provided to the servicer.
   /// DEPRECATED as of 3.3.  Please use 'params' instead.
   @$pb.TagNumber(4)
-  $core.List<$89.KeyValue> get inputs => $_getList(3);
+  $core.List<$92.KeyValue> get inputs => $_getList(3);
 
   /// Parameters set by the client.  Depending on the structure of the mission,
   /// the value may change during ticking.
   @$pb.TagNumber(5)
-  $72.DictParam get params => $_getN(4);
+  $71.DictParam get params => $_getN(4);
   @$pb.TagNumber(5)
-  set params($72.DictParam v) { setField(5, v); }
+  set params($71.DictParam v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasParams() => $_has(4);
   @$pb.TagNumber(5)
   void clearParams() => clearField(5);
   @$pb.TagNumber(5)
-  $72.DictParam ensureParams() => $_ensure(4);
+  $71.DictParam ensureParams() => $_ensure(4);
 
   /// Callbacks can be used to record data using Data Acquisition.  The mission
   /// can provide a hint to the callback with the current group, so that the
@@ -344,13 +344,13 @@ class TickRequest extends $pb.GeneratedMessage {
 /// Remote services should strive to return quickly, even if only returning RUNNING.
 class TickResponse extends $pb.GeneratedMessage {
   factory TickResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     TickResponse_Status? status,
     $core.Iterable<$core.String>? missingLeaseResources,
-    $core.Iterable<$13.LeaseUseResult>? leaseUseResults,
-    $core.Iterable<$89.VariableDeclaration>? missingInputs,
+    $core.Iterable<$14.LeaseUseResult>? leaseUseResults,
+    $core.Iterable<$92.VariableDeclaration>? missingInputs,
     $core.String? errorMessage,
-    $72.CustomParamError? customParamError,
+    $71.CustomParamError? customParamError,
   }) {
     final $result = create();
     if (header != null) {
@@ -381,13 +381,13 @@ class TickResponse extends $pb.GeneratedMessage {
   factory TickResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TickResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<TickResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: TickResponse_Status.STATUS_UNKNOWN, valueOf: TickResponse_Status.valueOf, enumValues: TickResponse_Status.values)
     ..pPS(4, _omitFieldNames ? '' : 'missingLeaseResources')
-    ..pc<$13.LeaseUseResult>(5, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $13.LeaseUseResult.create)
-    ..pc<$89.VariableDeclaration>(7, _omitFieldNames ? '' : 'missingInputs', $pb.PbFieldType.PM, subBuilder: $89.VariableDeclaration.create)
+    ..pc<$14.LeaseUseResult>(5, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $14.LeaseUseResult.create)
+    ..pc<$92.VariableDeclaration>(7, _omitFieldNames ? '' : 'missingInputs', $pb.PbFieldType.PM, subBuilder: $92.VariableDeclaration.create)
     ..aOS(8, _omitFieldNames ? '' : 'errorMessage')
-    ..aOM<$72.CustomParamError>(9, _omitFieldNames ? '' : 'customParamError', subBuilder: $72.CustomParamError.create)
+    ..aOM<$71.CustomParamError>(9, _omitFieldNames ? '' : 'customParamError', subBuilder: $71.CustomParamError.create)
     ..hasRequiredFields = false
   ;
 
@@ -414,15 +414,15 @@ class TickResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Result of the current tick.
   @$pb.TagNumber(3)
@@ -441,12 +441,12 @@ class TickResponse extends $pb.GeneratedMessage {
   /// Details about how any leases were used.
   /// Allowed to be empty, if leases were not actually used.
   @$pb.TagNumber(5)
-  $core.List<$13.LeaseUseResult> get leaseUseResults => $_getList(3);
+  $core.List<$14.LeaseUseResult> get leaseUseResults => $_getList(3);
 
   /// Filled out when status is STATUS_MISSING_INPUTS, indicating what inputs were not in the
   /// request.
   @$pb.TagNumber(7)
-  $core.List<$89.VariableDeclaration> get missingInputs => $_getList(4);
+  $core.List<$92.VariableDeclaration> get missingInputs => $_getList(4);
 
   /// If you need to report other error details, you can use this field.
   @$pb.TagNumber(8)
@@ -460,22 +460,22 @@ class TickResponse extends $pb.GeneratedMessage {
 
   /// Filled out if status is STATUS_CUSTOM_PARAMS_ERROR.
   @$pb.TagNumber(9)
-  $72.CustomParamError get customParamError => $_getN(6);
+  $71.CustomParamError get customParamError => $_getN(6);
   @$pb.TagNumber(9)
-  set customParamError($72.CustomParamError v) { setField(9, v); }
+  set customParamError($71.CustomParamError v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasCustomParamError() => $_has(6);
   @$pb.TagNumber(9)
   void clearCustomParamError() => clearField(9);
   @$pb.TagNumber(9)
-  $72.CustomParamError ensureCustomParamError() => $_ensure(6);
+  $71.CustomParamError ensureCustomParamError() => $_ensure(6);
 }
 
 /// Used to stop a node that was previously ticked, so that it knows that
 /// the next Tick represents a restart rather than a continuation.
 class StopRequest extends $pb.GeneratedMessage {
   factory StopRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? sessionId,
   }) {
     final $result = create();
@@ -492,7 +492,7 @@ class StopRequest extends $pb.GeneratedMessage {
   factory StopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'sessionId')
     ..hasRequiredFields = false
   ;
@@ -520,15 +520,15 @@ class StopRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Session ID as returned by the EstablishSessionResponse.
   /// Used to guarantee coherence between a single client and a servicer.
@@ -545,7 +545,7 @@ class StopRequest extends $pb.GeneratedMessage {
 /// Results of attempting to stop a remote node.
 class StopResponse extends $pb.GeneratedMessage {
   factory StopResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     StopResponse_Status? status,
   }) {
     final $result = create();
@@ -562,7 +562,7 @@ class StopResponse extends $pb.GeneratedMessage {
   factory StopResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<StopResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: StopResponse_Status.STATUS_UNKNOWN, valueOf: StopResponse_Status.valueOf, enumValues: StopResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -590,15 +590,15 @@ class StopResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Result of the stop request.
   @$pb.TagNumber(2)
@@ -614,7 +614,7 @@ class StopResponse extends $pb.GeneratedMessage {
 /// End the session originally established by an EstablishSessionRequest.
 class TeardownSessionRequest extends $pb.GeneratedMessage {
   factory TeardownSessionRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? sessionId,
   }) {
     final $result = create();
@@ -631,7 +631,7 @@ class TeardownSessionRequest extends $pb.GeneratedMessage {
   factory TeardownSessionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeardownSessionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'sessionId')
     ..hasRequiredFields = false
   ;
@@ -659,15 +659,15 @@ class TeardownSessionRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Session ID as returned by the EstablishSessionResponse.
   /// Used to guarantee coherence between a single client and a servicer.
@@ -684,7 +684,7 @@ class TeardownSessionRequest extends $pb.GeneratedMessage {
 /// Results of ending a session.
 class TeardownSessionResponse extends $pb.GeneratedMessage {
   factory TeardownSessionResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     TeardownSessionResponse_Status? status,
   }) {
     final $result = create();
@@ -701,7 +701,7 @@ class TeardownSessionResponse extends $pb.GeneratedMessage {
   factory TeardownSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TeardownSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<TeardownSessionResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: TeardownSessionResponse_Status.STATUS_UNKNOWN, valueOf: TeardownSessionResponse_Status.valueOf, enumValues: TeardownSessionResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -729,15 +729,15 @@ class TeardownSessionResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The result of a TeardownSessionRequest.
   @$pb.TagNumber(2)
@@ -752,7 +752,7 @@ class TeardownSessionResponse extends $pb.GeneratedMessage {
 
 class GetRemoteMissionServiceInfoRequest extends $pb.GeneratedMessage {
   factory GetRemoteMissionServiceInfoRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -765,7 +765,7 @@ class GetRemoteMissionServiceInfoRequest extends $pb.GeneratedMessage {
   factory GetRemoteMissionServiceInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRemoteMissionServiceInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -792,21 +792,21 @@ class GetRemoteMissionServiceInfoRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class GetRemoteMissionServiceInfoResponse extends $pb.GeneratedMessage {
   factory GetRemoteMissionServiceInfoResponse({
-    $68.ResponseHeader? header,
-    $72.DictParam_Spec? customParams,
+    $67.ResponseHeader? header,
+    $71.DictParam_Spec? customParams,
   }) {
     final $result = create();
     if (header != null) {
@@ -822,8 +822,8 @@ class GetRemoteMissionServiceInfoResponse extends $pb.GeneratedMessage {
   factory GetRemoteMissionServiceInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRemoteMissionServiceInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$72.DictParam_Spec>(2, _omitFieldNames ? '' : 'customParams', subBuilder: $72.DictParam_Spec.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$71.DictParam_Spec>(2, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam_Spec.create)
     ..hasRequiredFields = false
   ;
 
@@ -850,27 +850,27 @@ class GetRemoteMissionServiceInfoResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The parameters the service expects to be called at runtime with.
   @$pb.TagNumber(2)
-  $72.DictParam_Spec get customParams => $_getN(1);
+  $71.DictParam_Spec get customParams => $_getN(1);
   @$pb.TagNumber(2)
-  set customParams($72.DictParam_Spec v) { setField(2, v); }
+  set customParams($71.DictParam_Spec v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCustomParams() => $_has(1);
   @$pb.TagNumber(2)
   void clearCustomParams() => clearField(2);
   @$pb.TagNumber(2)
-  $72.DictParam_Spec ensureCustomParams() => $_ensure(1);
+  $71.DictParam_Spec ensureCustomParams() => $_ensure(1);
 }
 
 

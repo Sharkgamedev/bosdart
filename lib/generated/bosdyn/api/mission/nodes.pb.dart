@@ -14,34 +14,78 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $67;
-import '../../../google/protobuf/duration.pb.dart' as $62;
-import '../../../google/protobuf/struct.pb.dart' as $58;
+import '../../../google/protobuf/any.pb.dart' as $66;
+import '../../../google/protobuf/duration.pb.dart' as $61;
+import '../../../google/protobuf/struct.pb.dart' as $57;
 import '../alerts.pbenum.dart' as $75;
 import '../data_acquisition.pb.dart' as $2;
-import '../data_buffer.pb.dart' as $4;
-import '../docking/docking.pbenum.dart' as $35;
-import '../geometry.pb.dart' as $61;
-import '../graph_nav/graph_nav.pb.dart' as $37;
-import '../graph_nav/graph_nav.pbenum.dart' as $37;
-import '../graph_nav/nav.pb.dart' as $88;
-import '../gripper_camera_param.pb.dart' as $10;
+import '../data_buffer.pb.dart' as $5;
+import '../docking/docking.pbenum.dart' as $34;
+import '../geometry.pb.dart' as $60;
+import '../graph_nav/graph_nav.pb.dart' as $36;
+import '../graph_nav/graph_nav.pbenum.dart' as $36;
+import '../graph_nav/nav.pb.dart' as $90;
+import '../gripper_camera_param.pb.dart' as $11;
 import '../manipulation_api.pb.dart' as $17;
 import '../power.pbenum.dart' as $22;
 import '../robot_command.pb.dart' as $24;
-import '../service_customization.pb.dart' as $72;
-import '../spot_cam/camera.pb.dart' as $83;
-import '../spot_cam/logging.pbenum.dart' as $48;
-import '../spot_cam/ptz.pb.dart' as $49;
+import '../service_customization.pb.dart' as $71;
+import '../spot/choreography_sequence.pb.dart' as $29;
+import '../spot_cam/camera.pb.dart' as $84;
+import '../spot_cam/logging.pbenum.dart' as $47;
+import '../spot_cam/ptz.pb.dart' as $48;
 import 'nodes.pbenum.dart';
-import 'util.pb.dart' as $89;
-import 'util.pbenum.dart' as $89;
+import 'util.pb.dart' as $92;
+import 'util.pbenum.dart' as $92;
 
 export 'nodes.pbenum.dart';
 
 enum Node_Type {
   impl, 
   nodeReference, 
+  condition, 
+  sequence, 
+  selector, 
+  repeat, 
+  retainLease, 
+  retry, 
+  forDuration, 
+  bosdynDockState, 
+  bosdynPowerRequest, 
+  bosdynRobotState, 
+  bosdynRobotCommand, 
+  remoteGrpc, 
+  sleep, 
+  prompt, 
+  setBlackboard, 
+  dateToBlackboard, 
+  defineBlackboard, 
+  formatBlackboard, 
+  constantResult, 
+  bosdynNavigateRoute, 
+  bosdynNavigateTo, 
+  bosdynGraphNavState, 
+  bosdynGraphNavLocalize, 
+  bosdynRecordEvent, 
+  simpleParallel, 
+  spotCamPtz, 
+  spotCamStoreMedia, 
+  spotCamLed, 
+  spotCamResetAutofocus, 
+  storeMetadata, 
+  switch_40, 
+  dataAcquisition, 
+  dataAcquisitionOnInterruption, 
+  dock, 
+  restartWhenPaused, 
+  clearBehaviorFaults, 
+  bosdynGripperCameraParamsState, 
+  setGripperCameraParams, 
+  parallelAnd, 
+  setGraspOverride, 
+  executeChoreography, 
+  missionUploadChoreography, 
+  spotCamFocusState, 
   notSet
 }
 
@@ -50,13 +94,57 @@ enum Node_Type {
 class Node extends $pb.GeneratedMessage {
   factory Node({
     $core.String? name,
-    $89.UserData? userData,
+    $92.UserData? userData,
     $core.String? referenceId,
-    $67.Any? impl,
+  @$core.Deprecated('This field is deprecated.')
+    $66.Any? impl,
     $core.String? nodeReference,
-    $core.Iterable<$89.KeyValue>? parameterValues,
-    $core.Iterable<$89.KeyValue>? overrides,
-    $core.Iterable<$89.VariableDeclaration>? parameters,
+    $core.Iterable<$92.KeyValue>? parameterValues,
+    $core.Iterable<$92.KeyValue>? overrides,
+    $core.Iterable<$92.VariableDeclaration>? parameters,
+    Condition? condition,
+    Sequence? sequence,
+    Selector? selector,
+    Repeat? repeat,
+    RetainLease? retainLease,
+    Retry? retry,
+    ForDuration? forDuration,
+    BosdynDockState? bosdynDockState,
+    BosdynPowerRequest? bosdynPowerRequest,
+    BosdynRobotState? bosdynRobotState,
+    BosdynRobotCommand? bosdynRobotCommand,
+    RemoteGrpc? remoteGrpc,
+    Sleep? sleep,
+    Prompt? prompt,
+    SetBlackboard? setBlackboard,
+    DateToBlackboard? dateToBlackboard,
+    DefineBlackboard? defineBlackboard,
+    FormatBlackboard? formatBlackboard,
+    ConstantResult? constantResult,
+    BosdynNavigateRoute? bosdynNavigateRoute,
+    BosdynNavigateTo? bosdynNavigateTo,
+    BosdynGraphNavState? bosdynGraphNavState,
+    BosdynGraphNavLocalize? bosdynGraphNavLocalize,
+    BosdynRecordEvent? bosdynRecordEvent,
+    SimpleParallel? simpleParallel,
+    SpotCamPtz? spotCamPtz,
+    SpotCamStoreMedia? spotCamStoreMedia,
+    SpotCamLed? spotCamLed,
+    SpotCamResetAutofocus? spotCamResetAutofocus,
+    StoreMetadata? storeMetadata,
+    Switch? switch_40,
+    DataAcquisition? dataAcquisition,
+    DataAcquisitionOnInterruption? dataAcquisitionOnInterruption,
+    Dock? dock,
+    RestartWhenPaused? restartWhenPaused,
+    ClearBehaviorFaults? clearBehaviorFaults,
+    BosdynGripperCameraParamsState? bosdynGripperCameraParamsState,
+    SetGripperCameraParams? setGripperCameraParams,
+    ParallelAnd? parallelAnd,
+    SetGraspOverride? setGraspOverride,
+    ExecuteChoreography? executeChoreography,
+    MissionUploadChoreography? missionUploadChoreography,
+    SpotCamFocusState? spotCamFocusState,
   }) {
     final $result = create();
     if (name != null) {
@@ -69,6 +157,7 @@ class Node extends $pb.GeneratedMessage {
       $result.referenceId = referenceId;
     }
     if (impl != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.impl = impl;
     }
     if (nodeReference != null) {
@@ -83,6 +172,135 @@ class Node extends $pb.GeneratedMessage {
     if (parameters != null) {
       $result.parameters.addAll(parameters);
     }
+    if (condition != null) {
+      $result.condition = condition;
+    }
+    if (sequence != null) {
+      $result.sequence = sequence;
+    }
+    if (selector != null) {
+      $result.selector = selector;
+    }
+    if (repeat != null) {
+      $result.repeat = repeat;
+    }
+    if (retainLease != null) {
+      $result.retainLease = retainLease;
+    }
+    if (retry != null) {
+      $result.retry = retry;
+    }
+    if (forDuration != null) {
+      $result.forDuration = forDuration;
+    }
+    if (bosdynDockState != null) {
+      $result.bosdynDockState = bosdynDockState;
+    }
+    if (bosdynPowerRequest != null) {
+      $result.bosdynPowerRequest = bosdynPowerRequest;
+    }
+    if (bosdynRobotState != null) {
+      $result.bosdynRobotState = bosdynRobotState;
+    }
+    if (bosdynRobotCommand != null) {
+      $result.bosdynRobotCommand = bosdynRobotCommand;
+    }
+    if (remoteGrpc != null) {
+      $result.remoteGrpc = remoteGrpc;
+    }
+    if (sleep != null) {
+      $result.sleep = sleep;
+    }
+    if (prompt != null) {
+      $result.prompt = prompt;
+    }
+    if (setBlackboard != null) {
+      $result.setBlackboard = setBlackboard;
+    }
+    if (dateToBlackboard != null) {
+      $result.dateToBlackboard = dateToBlackboard;
+    }
+    if (defineBlackboard != null) {
+      $result.defineBlackboard = defineBlackboard;
+    }
+    if (formatBlackboard != null) {
+      $result.formatBlackboard = formatBlackboard;
+    }
+    if (constantResult != null) {
+      $result.constantResult = constantResult;
+    }
+    if (bosdynNavigateRoute != null) {
+      $result.bosdynNavigateRoute = bosdynNavigateRoute;
+    }
+    if (bosdynNavigateTo != null) {
+      $result.bosdynNavigateTo = bosdynNavigateTo;
+    }
+    if (bosdynGraphNavState != null) {
+      $result.bosdynGraphNavState = bosdynGraphNavState;
+    }
+    if (bosdynGraphNavLocalize != null) {
+      $result.bosdynGraphNavLocalize = bosdynGraphNavLocalize;
+    }
+    if (bosdynRecordEvent != null) {
+      $result.bosdynRecordEvent = bosdynRecordEvent;
+    }
+    if (simpleParallel != null) {
+      $result.simpleParallel = simpleParallel;
+    }
+    if (spotCamPtz != null) {
+      $result.spotCamPtz = spotCamPtz;
+    }
+    if (spotCamStoreMedia != null) {
+      $result.spotCamStoreMedia = spotCamStoreMedia;
+    }
+    if (spotCamLed != null) {
+      $result.spotCamLed = spotCamLed;
+    }
+    if (spotCamResetAutofocus != null) {
+      $result.spotCamResetAutofocus = spotCamResetAutofocus;
+    }
+    if (storeMetadata != null) {
+      $result.storeMetadata = storeMetadata;
+    }
+    if (switch_40 != null) {
+      $result.switch_40 = switch_40;
+    }
+    if (dataAcquisition != null) {
+      $result.dataAcquisition = dataAcquisition;
+    }
+    if (dataAcquisitionOnInterruption != null) {
+      $result.dataAcquisitionOnInterruption = dataAcquisitionOnInterruption;
+    }
+    if (dock != null) {
+      $result.dock = dock;
+    }
+    if (restartWhenPaused != null) {
+      $result.restartWhenPaused = restartWhenPaused;
+    }
+    if (clearBehaviorFaults != null) {
+      $result.clearBehaviorFaults = clearBehaviorFaults;
+    }
+    if (bosdynGripperCameraParamsState != null) {
+      $result.bosdynGripperCameraParamsState = bosdynGripperCameraParamsState;
+    }
+    if (setGripperCameraParams != null) {
+      $result.setGripperCameraParams = setGripperCameraParams;
+    }
+    if (parallelAnd != null) {
+      $result.parallelAnd = parallelAnd;
+    }
+    if (setGraspOverride != null) {
+      $result.setGraspOverride = setGraspOverride;
+    }
+    if (executeChoreography != null) {
+      $result.executeChoreography = executeChoreography;
+    }
+    if (missionUploadChoreography != null) {
+      $result.missionUploadChoreography = missionUploadChoreography;
+    }
+    if (spotCamFocusState != null) {
+      $result.spotCamFocusState = spotCamFocusState;
+    }
     return $result;
   }
   Node._() : super();
@@ -92,18 +310,104 @@ class Node extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, Node_Type> _Node_TypeByTag = {
     4 : Node_Type.impl,
     5 : Node_Type.nodeReference,
+    9 : Node_Type.condition,
+    10 : Node_Type.sequence,
+    11 : Node_Type.selector,
+    12 : Node_Type.repeat,
+    13 : Node_Type.retainLease,
+    14 : Node_Type.retry,
+    15 : Node_Type.forDuration,
+    16 : Node_Type.bosdynDockState,
+    17 : Node_Type.bosdynPowerRequest,
+    18 : Node_Type.bosdynRobotState,
+    19 : Node_Type.bosdynRobotCommand,
+    20 : Node_Type.remoteGrpc,
+    21 : Node_Type.sleep,
+    22 : Node_Type.prompt,
+    23 : Node_Type.setBlackboard,
+    24 : Node_Type.dateToBlackboard,
+    25 : Node_Type.defineBlackboard,
+    26 : Node_Type.formatBlackboard,
+    27 : Node_Type.constantResult,
+    29 : Node_Type.bosdynNavigateRoute,
+    30 : Node_Type.bosdynNavigateTo,
+    31 : Node_Type.bosdynGraphNavState,
+    32 : Node_Type.bosdynGraphNavLocalize,
+    33 : Node_Type.bosdynRecordEvent,
+    34 : Node_Type.simpleParallel,
+    35 : Node_Type.spotCamPtz,
+    36 : Node_Type.spotCamStoreMedia,
+    37 : Node_Type.spotCamLed,
+    38 : Node_Type.spotCamResetAutofocus,
+    39 : Node_Type.storeMetadata,
+    40 : Node_Type.switch_40,
+    41 : Node_Type.dataAcquisition,
+    42 : Node_Type.dataAcquisitionOnInterruption,
+    43 : Node_Type.dock,
+    49 : Node_Type.restartWhenPaused,
+    50 : Node_Type.clearBehaviorFaults,
+    51 : Node_Type.bosdynGripperCameraParamsState,
+    52 : Node_Type.setGripperCameraParams,
+    54 : Node_Type.parallelAnd,
+    55 : Node_Type.setGraspOverride,
+    56 : Node_Type.executeChoreography,
+    57 : Node_Type.missionUploadChoreography,
+    58 : Node_Type.spotCamFocusState,
     0 : Node_Type.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Node', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..oo(0, [4, 5])
+    ..oo(0, [4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 49, 50, 51, 52, 54, 55, 56, 57, 58])
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$89.UserData>(2, _omitFieldNames ? '' : 'userData', subBuilder: $89.UserData.create)
+    ..aOM<$92.UserData>(2, _omitFieldNames ? '' : 'userData', subBuilder: $92.UserData.create)
     ..aOS(3, _omitFieldNames ? '' : 'referenceId')
-    ..aOM<$67.Any>(4, _omitFieldNames ? '' : 'impl', subBuilder: $67.Any.create)
+    ..aOM<$66.Any>(4, _omitFieldNames ? '' : 'impl', subBuilder: $66.Any.create)
     ..aOS(5, _omitFieldNames ? '' : 'nodeReference')
-    ..pc<$89.KeyValue>(6, _omitFieldNames ? '' : 'parameterValues', $pb.PbFieldType.PM, subBuilder: $89.KeyValue.create)
-    ..pc<$89.KeyValue>(7, _omitFieldNames ? '' : 'overrides', $pb.PbFieldType.PM, subBuilder: $89.KeyValue.create)
-    ..pc<$89.VariableDeclaration>(8, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: $89.VariableDeclaration.create)
+    ..pc<$92.KeyValue>(6, _omitFieldNames ? '' : 'parameterValues', $pb.PbFieldType.PM, subBuilder: $92.KeyValue.create)
+    ..pc<$92.KeyValue>(7, _omitFieldNames ? '' : 'overrides', $pb.PbFieldType.PM, subBuilder: $92.KeyValue.create)
+    ..pc<$92.VariableDeclaration>(8, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: $92.VariableDeclaration.create)
+    ..aOM<Condition>(9, _omitFieldNames ? '' : 'condition', subBuilder: Condition.create)
+    ..aOM<Sequence>(10, _omitFieldNames ? '' : 'sequence', subBuilder: Sequence.create)
+    ..aOM<Selector>(11, _omitFieldNames ? '' : 'selector', subBuilder: Selector.create)
+    ..aOM<Repeat>(12, _omitFieldNames ? '' : 'repeat', subBuilder: Repeat.create)
+    ..aOM<RetainLease>(13, _omitFieldNames ? '' : 'retainLease', subBuilder: RetainLease.create)
+    ..aOM<Retry>(14, _omitFieldNames ? '' : 'retry', subBuilder: Retry.create)
+    ..aOM<ForDuration>(15, _omitFieldNames ? '' : 'forDuration', subBuilder: ForDuration.create)
+    ..aOM<BosdynDockState>(16, _omitFieldNames ? '' : 'bosdynDockState', subBuilder: BosdynDockState.create)
+    ..aOM<BosdynPowerRequest>(17, _omitFieldNames ? '' : 'bosdynPowerRequest', subBuilder: BosdynPowerRequest.create)
+    ..aOM<BosdynRobotState>(18, _omitFieldNames ? '' : 'bosdynRobotState', subBuilder: BosdynRobotState.create)
+    ..aOM<BosdynRobotCommand>(19, _omitFieldNames ? '' : 'bosdynRobotCommand', subBuilder: BosdynRobotCommand.create)
+    ..aOM<RemoteGrpc>(20, _omitFieldNames ? '' : 'remoteGrpc', subBuilder: RemoteGrpc.create)
+    ..aOM<Sleep>(21, _omitFieldNames ? '' : 'sleep', subBuilder: Sleep.create)
+    ..aOM<Prompt>(22, _omitFieldNames ? '' : 'prompt', subBuilder: Prompt.create)
+    ..aOM<SetBlackboard>(23, _omitFieldNames ? '' : 'setBlackboard', subBuilder: SetBlackboard.create)
+    ..aOM<DateToBlackboard>(24, _omitFieldNames ? '' : 'dateToBlackboard', subBuilder: DateToBlackboard.create)
+    ..aOM<DefineBlackboard>(25, _omitFieldNames ? '' : 'defineBlackboard', subBuilder: DefineBlackboard.create)
+    ..aOM<FormatBlackboard>(26, _omitFieldNames ? '' : 'formatBlackboard', subBuilder: FormatBlackboard.create)
+    ..aOM<ConstantResult>(27, _omitFieldNames ? '' : 'constantResult', subBuilder: ConstantResult.create)
+    ..aOM<BosdynNavigateRoute>(29, _omitFieldNames ? '' : 'bosdynNavigateRoute', subBuilder: BosdynNavigateRoute.create)
+    ..aOM<BosdynNavigateTo>(30, _omitFieldNames ? '' : 'bosdynNavigateTo', subBuilder: BosdynNavigateTo.create)
+    ..aOM<BosdynGraphNavState>(31, _omitFieldNames ? '' : 'bosdynGraphNavState', subBuilder: BosdynGraphNavState.create)
+    ..aOM<BosdynGraphNavLocalize>(32, _omitFieldNames ? '' : 'bosdynGraphNavLocalize', subBuilder: BosdynGraphNavLocalize.create)
+    ..aOM<BosdynRecordEvent>(33, _omitFieldNames ? '' : 'bosdynRecordEvent', subBuilder: BosdynRecordEvent.create)
+    ..aOM<SimpleParallel>(34, _omitFieldNames ? '' : 'simpleParallel', subBuilder: SimpleParallel.create)
+    ..aOM<SpotCamPtz>(35, _omitFieldNames ? '' : 'spotCamPtz', subBuilder: SpotCamPtz.create)
+    ..aOM<SpotCamStoreMedia>(36, _omitFieldNames ? '' : 'spotCamStoreMedia', subBuilder: SpotCamStoreMedia.create)
+    ..aOM<SpotCamLed>(37, _omitFieldNames ? '' : 'spotCamLed', subBuilder: SpotCamLed.create)
+    ..aOM<SpotCamResetAutofocus>(38, _omitFieldNames ? '' : 'spotCamResetAutofocus', subBuilder: SpotCamResetAutofocus.create)
+    ..aOM<StoreMetadata>(39, _omitFieldNames ? '' : 'storeMetadata', subBuilder: StoreMetadata.create)
+    ..aOM<Switch>(40, _omitFieldNames ? '' : 'switch', subBuilder: Switch.create)
+    ..aOM<DataAcquisition>(41, _omitFieldNames ? '' : 'dataAcquisition', subBuilder: DataAcquisition.create)
+    ..aOM<DataAcquisitionOnInterruption>(42, _omitFieldNames ? '' : 'dataAcquisitionOnInterruption', subBuilder: DataAcquisitionOnInterruption.create)
+    ..aOM<Dock>(43, _omitFieldNames ? '' : 'dock', subBuilder: Dock.create)
+    ..aOM<RestartWhenPaused>(49, _omitFieldNames ? '' : 'restartWhenPaused', subBuilder: RestartWhenPaused.create)
+    ..aOM<ClearBehaviorFaults>(50, _omitFieldNames ? '' : 'clearBehaviorFaults', subBuilder: ClearBehaviorFaults.create)
+    ..aOM<BosdynGripperCameraParamsState>(51, _omitFieldNames ? '' : 'bosdynGripperCameraParamsState', subBuilder: BosdynGripperCameraParamsState.create)
+    ..aOM<SetGripperCameraParams>(52, _omitFieldNames ? '' : 'setGripperCameraParams', subBuilder: SetGripperCameraParams.create)
+    ..aOM<ParallelAnd>(54, _omitFieldNames ? '' : 'parallelAnd', subBuilder: ParallelAnd.create)
+    ..aOM<SetGraspOverride>(55, _omitFieldNames ? '' : 'setGraspOverride', subBuilder: SetGraspOverride.create)
+    ..aOM<ExecuteChoreography>(56, _omitFieldNames ? '' : 'executeChoreography', subBuilder: ExecuteChoreography.create)
+    ..aOM<MissionUploadChoreography>(57, _omitFieldNames ? '' : 'missionUploadChoreography', subBuilder: MissionUploadChoreography.create)
+    ..aOM<SpotCamFocusState>(58, _omitFieldNames ? '' : 'spotCamFocusState', subBuilder: SpotCamFocusState.create)
     ..hasRequiredFields = false
   ;
 
@@ -143,15 +447,15 @@ class Node extends $pb.GeneratedMessage {
 
   /// Collection of user data associated with this node.
   @$pb.TagNumber(2)
-  $89.UserData get userData => $_getN(1);
+  $92.UserData get userData => $_getN(1);
   @$pb.TagNumber(2)
-  set userData($89.UserData v) { setField(2, v); }
+  set userData($92.UserData v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasUserData() => $_has(1);
   @$pb.TagNumber(2)
   void clearUserData() => clearField(2);
   @$pb.TagNumber(2)
-  $89.UserData ensureUserData() => $_ensure(1);
+  $92.UserData ensureUserData() => $_ensure(1);
 
   /// Reference identifier of this node.
   /// Set iff another node references this one.
@@ -164,17 +468,23 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearReferenceId() => clearField(3);
 
+  /// DEPRECATED as of 4.0.
   /// Implementation of this node. For example, this may be a Sequence.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $67.Any get impl => $_getN(3);
+  $66.Any get impl => $_getN(3);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  set impl($67.Any v) { setField(4, v); }
+  set impl($66.Any v) { setField(4, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.bool hasImpl() => $_has(3);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   void clearImpl() => clearField(4);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $67.Any ensureImpl() => $_ensure(3);
+  $66.Any ensureImpl() => $_ensure(3);
 
   /// Unique identifier of another node. If this is filled out, rather than the "impl", then
   /// the referenced node will be used in place of this one.
@@ -191,19 +501,492 @@ class Node extends $pb.GeneratedMessage {
   /// The "key" in KeyValue is the name of the parameter being defined.
   /// The value can be a constant or another parameter value.
   @$pb.TagNumber(6)
-  $core.List<$89.KeyValue> get parameterValues => $_getList(5);
+  $core.List<$92.KeyValue> get parameterValues => $_getList(5);
 
   /// Overwrites a protobuf field in this node's implementation.
   /// The "key" in KeyValue is the name of the field to override.
   /// The value to write can be sourced from a constant, or a parameter value.
   @$pb.TagNumber(7)
-  $core.List<$89.KeyValue> get overrides => $_getList(6);
+  $core.List<$92.KeyValue> get overrides => $_getList(6);
 
   /// Declares parameters needed at compile time by this node, or children of this node.
   /// This is a way for a node to communicate what parameters its implementation and/or children
   /// require, without unpacking the entire subtree.
   @$pb.TagNumber(8)
-  $core.List<$89.VariableDeclaration> get parameters => $_getList(7);
+  $core.List<$92.VariableDeclaration> get parameters => $_getList(7);
+
+  @$pb.TagNumber(9)
+  Condition get condition => $_getN(8);
+  @$pb.TagNumber(9)
+  set condition(Condition v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasCondition() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCondition() => clearField(9);
+  @$pb.TagNumber(9)
+  Condition ensureCondition() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  Sequence get sequence => $_getN(9);
+  @$pb.TagNumber(10)
+  set sequence(Sequence v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasSequence() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSequence() => clearField(10);
+  @$pb.TagNumber(10)
+  Sequence ensureSequence() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  Selector get selector => $_getN(10);
+  @$pb.TagNumber(11)
+  set selector(Selector v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasSelector() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearSelector() => clearField(11);
+  @$pb.TagNumber(11)
+  Selector ensureSelector() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  Repeat get repeat => $_getN(11);
+  @$pb.TagNumber(12)
+  set repeat(Repeat v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasRepeat() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRepeat() => clearField(12);
+  @$pb.TagNumber(12)
+  Repeat ensureRepeat() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  RetainLease get retainLease => $_getN(12);
+  @$pb.TagNumber(13)
+  set retainLease(RetainLease v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasRetainLease() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearRetainLease() => clearField(13);
+  @$pb.TagNumber(13)
+  RetainLease ensureRetainLease() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  Retry get retry => $_getN(13);
+  @$pb.TagNumber(14)
+  set retry(Retry v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasRetry() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearRetry() => clearField(14);
+  @$pb.TagNumber(14)
+  Retry ensureRetry() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  ForDuration get forDuration => $_getN(14);
+  @$pb.TagNumber(15)
+  set forDuration(ForDuration v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasForDuration() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearForDuration() => clearField(15);
+  @$pb.TagNumber(15)
+  ForDuration ensureForDuration() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  BosdynDockState get bosdynDockState => $_getN(15);
+  @$pb.TagNumber(16)
+  set bosdynDockState(BosdynDockState v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasBosdynDockState() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearBosdynDockState() => clearField(16);
+  @$pb.TagNumber(16)
+  BosdynDockState ensureBosdynDockState() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  BosdynPowerRequest get bosdynPowerRequest => $_getN(16);
+  @$pb.TagNumber(17)
+  set bosdynPowerRequest(BosdynPowerRequest v) { setField(17, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasBosdynPowerRequest() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearBosdynPowerRequest() => clearField(17);
+  @$pb.TagNumber(17)
+  BosdynPowerRequest ensureBosdynPowerRequest() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  BosdynRobotState get bosdynRobotState => $_getN(17);
+  @$pb.TagNumber(18)
+  set bosdynRobotState(BosdynRobotState v) { setField(18, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasBosdynRobotState() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearBosdynRobotState() => clearField(18);
+  @$pb.TagNumber(18)
+  BosdynRobotState ensureBosdynRobotState() => $_ensure(17);
+
+  @$pb.TagNumber(19)
+  BosdynRobotCommand get bosdynRobotCommand => $_getN(18);
+  @$pb.TagNumber(19)
+  set bosdynRobotCommand(BosdynRobotCommand v) { setField(19, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasBosdynRobotCommand() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearBosdynRobotCommand() => clearField(19);
+  @$pb.TagNumber(19)
+  BosdynRobotCommand ensureBosdynRobotCommand() => $_ensure(18);
+
+  @$pb.TagNumber(20)
+  RemoteGrpc get remoteGrpc => $_getN(19);
+  @$pb.TagNumber(20)
+  set remoteGrpc(RemoteGrpc v) { setField(20, v); }
+  @$pb.TagNumber(20)
+  $core.bool hasRemoteGrpc() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearRemoteGrpc() => clearField(20);
+  @$pb.TagNumber(20)
+  RemoteGrpc ensureRemoteGrpc() => $_ensure(19);
+
+  @$pb.TagNumber(21)
+  Sleep get sleep => $_getN(20);
+  @$pb.TagNumber(21)
+  set sleep(Sleep v) { setField(21, v); }
+  @$pb.TagNumber(21)
+  $core.bool hasSleep() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearSleep() => clearField(21);
+  @$pb.TagNumber(21)
+  Sleep ensureSleep() => $_ensure(20);
+
+  @$pb.TagNumber(22)
+  Prompt get prompt => $_getN(21);
+  @$pb.TagNumber(22)
+  set prompt(Prompt v) { setField(22, v); }
+  @$pb.TagNumber(22)
+  $core.bool hasPrompt() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearPrompt() => clearField(22);
+  @$pb.TagNumber(22)
+  Prompt ensurePrompt() => $_ensure(21);
+
+  @$pb.TagNumber(23)
+  SetBlackboard get setBlackboard => $_getN(22);
+  @$pb.TagNumber(23)
+  set setBlackboard(SetBlackboard v) { setField(23, v); }
+  @$pb.TagNumber(23)
+  $core.bool hasSetBlackboard() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearSetBlackboard() => clearField(23);
+  @$pb.TagNumber(23)
+  SetBlackboard ensureSetBlackboard() => $_ensure(22);
+
+  @$pb.TagNumber(24)
+  DateToBlackboard get dateToBlackboard => $_getN(23);
+  @$pb.TagNumber(24)
+  set dateToBlackboard(DateToBlackboard v) { setField(24, v); }
+  @$pb.TagNumber(24)
+  $core.bool hasDateToBlackboard() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearDateToBlackboard() => clearField(24);
+  @$pb.TagNumber(24)
+  DateToBlackboard ensureDateToBlackboard() => $_ensure(23);
+
+  @$pb.TagNumber(25)
+  DefineBlackboard get defineBlackboard => $_getN(24);
+  @$pb.TagNumber(25)
+  set defineBlackboard(DefineBlackboard v) { setField(25, v); }
+  @$pb.TagNumber(25)
+  $core.bool hasDefineBlackboard() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearDefineBlackboard() => clearField(25);
+  @$pb.TagNumber(25)
+  DefineBlackboard ensureDefineBlackboard() => $_ensure(24);
+
+  @$pb.TagNumber(26)
+  FormatBlackboard get formatBlackboard => $_getN(25);
+  @$pb.TagNumber(26)
+  set formatBlackboard(FormatBlackboard v) { setField(26, v); }
+  @$pb.TagNumber(26)
+  $core.bool hasFormatBlackboard() => $_has(25);
+  @$pb.TagNumber(26)
+  void clearFormatBlackboard() => clearField(26);
+  @$pb.TagNumber(26)
+  FormatBlackboard ensureFormatBlackboard() => $_ensure(25);
+
+  @$pb.TagNumber(27)
+  ConstantResult get constantResult => $_getN(26);
+  @$pb.TagNumber(27)
+  set constantResult(ConstantResult v) { setField(27, v); }
+  @$pb.TagNumber(27)
+  $core.bool hasConstantResult() => $_has(26);
+  @$pb.TagNumber(27)
+  void clearConstantResult() => clearField(27);
+  @$pb.TagNumber(27)
+  ConstantResult ensureConstantResult() => $_ensure(26);
+
+  @$pb.TagNumber(29)
+  BosdynNavigateRoute get bosdynNavigateRoute => $_getN(27);
+  @$pb.TagNumber(29)
+  set bosdynNavigateRoute(BosdynNavigateRoute v) { setField(29, v); }
+  @$pb.TagNumber(29)
+  $core.bool hasBosdynNavigateRoute() => $_has(27);
+  @$pb.TagNumber(29)
+  void clearBosdynNavigateRoute() => clearField(29);
+  @$pb.TagNumber(29)
+  BosdynNavigateRoute ensureBosdynNavigateRoute() => $_ensure(27);
+
+  @$pb.TagNumber(30)
+  BosdynNavigateTo get bosdynNavigateTo => $_getN(28);
+  @$pb.TagNumber(30)
+  set bosdynNavigateTo(BosdynNavigateTo v) { setField(30, v); }
+  @$pb.TagNumber(30)
+  $core.bool hasBosdynNavigateTo() => $_has(28);
+  @$pb.TagNumber(30)
+  void clearBosdynNavigateTo() => clearField(30);
+  @$pb.TagNumber(30)
+  BosdynNavigateTo ensureBosdynNavigateTo() => $_ensure(28);
+
+  @$pb.TagNumber(31)
+  BosdynGraphNavState get bosdynGraphNavState => $_getN(29);
+  @$pb.TagNumber(31)
+  set bosdynGraphNavState(BosdynGraphNavState v) { setField(31, v); }
+  @$pb.TagNumber(31)
+  $core.bool hasBosdynGraphNavState() => $_has(29);
+  @$pb.TagNumber(31)
+  void clearBosdynGraphNavState() => clearField(31);
+  @$pb.TagNumber(31)
+  BosdynGraphNavState ensureBosdynGraphNavState() => $_ensure(29);
+
+  @$pb.TagNumber(32)
+  BosdynGraphNavLocalize get bosdynGraphNavLocalize => $_getN(30);
+  @$pb.TagNumber(32)
+  set bosdynGraphNavLocalize(BosdynGraphNavLocalize v) { setField(32, v); }
+  @$pb.TagNumber(32)
+  $core.bool hasBosdynGraphNavLocalize() => $_has(30);
+  @$pb.TagNumber(32)
+  void clearBosdynGraphNavLocalize() => clearField(32);
+  @$pb.TagNumber(32)
+  BosdynGraphNavLocalize ensureBosdynGraphNavLocalize() => $_ensure(30);
+
+  @$pb.TagNumber(33)
+  BosdynRecordEvent get bosdynRecordEvent => $_getN(31);
+  @$pb.TagNumber(33)
+  set bosdynRecordEvent(BosdynRecordEvent v) { setField(33, v); }
+  @$pb.TagNumber(33)
+  $core.bool hasBosdynRecordEvent() => $_has(31);
+  @$pb.TagNumber(33)
+  void clearBosdynRecordEvent() => clearField(33);
+  @$pb.TagNumber(33)
+  BosdynRecordEvent ensureBosdynRecordEvent() => $_ensure(31);
+
+  @$pb.TagNumber(34)
+  SimpleParallel get simpleParallel => $_getN(32);
+  @$pb.TagNumber(34)
+  set simpleParallel(SimpleParallel v) { setField(34, v); }
+  @$pb.TagNumber(34)
+  $core.bool hasSimpleParallel() => $_has(32);
+  @$pb.TagNumber(34)
+  void clearSimpleParallel() => clearField(34);
+  @$pb.TagNumber(34)
+  SimpleParallel ensureSimpleParallel() => $_ensure(32);
+
+  @$pb.TagNumber(35)
+  SpotCamPtz get spotCamPtz => $_getN(33);
+  @$pb.TagNumber(35)
+  set spotCamPtz(SpotCamPtz v) { setField(35, v); }
+  @$pb.TagNumber(35)
+  $core.bool hasSpotCamPtz() => $_has(33);
+  @$pb.TagNumber(35)
+  void clearSpotCamPtz() => clearField(35);
+  @$pb.TagNumber(35)
+  SpotCamPtz ensureSpotCamPtz() => $_ensure(33);
+
+  @$pb.TagNumber(36)
+  SpotCamStoreMedia get spotCamStoreMedia => $_getN(34);
+  @$pb.TagNumber(36)
+  set spotCamStoreMedia(SpotCamStoreMedia v) { setField(36, v); }
+  @$pb.TagNumber(36)
+  $core.bool hasSpotCamStoreMedia() => $_has(34);
+  @$pb.TagNumber(36)
+  void clearSpotCamStoreMedia() => clearField(36);
+  @$pb.TagNumber(36)
+  SpotCamStoreMedia ensureSpotCamStoreMedia() => $_ensure(34);
+
+  @$pb.TagNumber(37)
+  SpotCamLed get spotCamLed => $_getN(35);
+  @$pb.TagNumber(37)
+  set spotCamLed(SpotCamLed v) { setField(37, v); }
+  @$pb.TagNumber(37)
+  $core.bool hasSpotCamLed() => $_has(35);
+  @$pb.TagNumber(37)
+  void clearSpotCamLed() => clearField(37);
+  @$pb.TagNumber(37)
+  SpotCamLed ensureSpotCamLed() => $_ensure(35);
+
+  @$pb.TagNumber(38)
+  SpotCamResetAutofocus get spotCamResetAutofocus => $_getN(36);
+  @$pb.TagNumber(38)
+  set spotCamResetAutofocus(SpotCamResetAutofocus v) { setField(38, v); }
+  @$pb.TagNumber(38)
+  $core.bool hasSpotCamResetAutofocus() => $_has(36);
+  @$pb.TagNumber(38)
+  void clearSpotCamResetAutofocus() => clearField(38);
+  @$pb.TagNumber(38)
+  SpotCamResetAutofocus ensureSpotCamResetAutofocus() => $_ensure(36);
+
+  @$pb.TagNumber(39)
+  StoreMetadata get storeMetadata => $_getN(37);
+  @$pb.TagNumber(39)
+  set storeMetadata(StoreMetadata v) { setField(39, v); }
+  @$pb.TagNumber(39)
+  $core.bool hasStoreMetadata() => $_has(37);
+  @$pb.TagNumber(39)
+  void clearStoreMetadata() => clearField(39);
+  @$pb.TagNumber(39)
+  StoreMetadata ensureStoreMetadata() => $_ensure(37);
+
+  @$pb.TagNumber(40)
+  Switch get switch_40 => $_getN(38);
+  @$pb.TagNumber(40)
+  set switch_40(Switch v) { setField(40, v); }
+  @$pb.TagNumber(40)
+  $core.bool hasSwitch_40() => $_has(38);
+  @$pb.TagNumber(40)
+  void clearSwitch_40() => clearField(40);
+  @$pb.TagNumber(40)
+  Switch ensureSwitch_40() => $_ensure(38);
+
+  @$pb.TagNumber(41)
+  DataAcquisition get dataAcquisition => $_getN(39);
+  @$pb.TagNumber(41)
+  set dataAcquisition(DataAcquisition v) { setField(41, v); }
+  @$pb.TagNumber(41)
+  $core.bool hasDataAcquisition() => $_has(39);
+  @$pb.TagNumber(41)
+  void clearDataAcquisition() => clearField(41);
+  @$pb.TagNumber(41)
+  DataAcquisition ensureDataAcquisition() => $_ensure(39);
+
+  @$pb.TagNumber(42)
+  DataAcquisitionOnInterruption get dataAcquisitionOnInterruption => $_getN(40);
+  @$pb.TagNumber(42)
+  set dataAcquisitionOnInterruption(DataAcquisitionOnInterruption v) { setField(42, v); }
+  @$pb.TagNumber(42)
+  $core.bool hasDataAcquisitionOnInterruption() => $_has(40);
+  @$pb.TagNumber(42)
+  void clearDataAcquisitionOnInterruption() => clearField(42);
+  @$pb.TagNumber(42)
+  DataAcquisitionOnInterruption ensureDataAcquisitionOnInterruption() => $_ensure(40);
+
+  @$pb.TagNumber(43)
+  Dock get dock => $_getN(41);
+  @$pb.TagNumber(43)
+  set dock(Dock v) { setField(43, v); }
+  @$pb.TagNumber(43)
+  $core.bool hasDock() => $_has(41);
+  @$pb.TagNumber(43)
+  void clearDock() => clearField(43);
+  @$pb.TagNumber(43)
+  Dock ensureDock() => $_ensure(41);
+
+  @$pb.TagNumber(49)
+  RestartWhenPaused get restartWhenPaused => $_getN(42);
+  @$pb.TagNumber(49)
+  set restartWhenPaused(RestartWhenPaused v) { setField(49, v); }
+  @$pb.TagNumber(49)
+  $core.bool hasRestartWhenPaused() => $_has(42);
+  @$pb.TagNumber(49)
+  void clearRestartWhenPaused() => clearField(49);
+  @$pb.TagNumber(49)
+  RestartWhenPaused ensureRestartWhenPaused() => $_ensure(42);
+
+  @$pb.TagNumber(50)
+  ClearBehaviorFaults get clearBehaviorFaults => $_getN(43);
+  @$pb.TagNumber(50)
+  set clearBehaviorFaults(ClearBehaviorFaults v) { setField(50, v); }
+  @$pb.TagNumber(50)
+  $core.bool hasClearBehaviorFaults() => $_has(43);
+  @$pb.TagNumber(50)
+  void clearClearBehaviorFaults() => clearField(50);
+  @$pb.TagNumber(50)
+  ClearBehaviorFaults ensureClearBehaviorFaults() => $_ensure(43);
+
+  @$pb.TagNumber(51)
+  BosdynGripperCameraParamsState get bosdynGripperCameraParamsState => $_getN(44);
+  @$pb.TagNumber(51)
+  set bosdynGripperCameraParamsState(BosdynGripperCameraParamsState v) { setField(51, v); }
+  @$pb.TagNumber(51)
+  $core.bool hasBosdynGripperCameraParamsState() => $_has(44);
+  @$pb.TagNumber(51)
+  void clearBosdynGripperCameraParamsState() => clearField(51);
+  @$pb.TagNumber(51)
+  BosdynGripperCameraParamsState ensureBosdynGripperCameraParamsState() => $_ensure(44);
+
+  @$pb.TagNumber(52)
+  SetGripperCameraParams get setGripperCameraParams => $_getN(45);
+  @$pb.TagNumber(52)
+  set setGripperCameraParams(SetGripperCameraParams v) { setField(52, v); }
+  @$pb.TagNumber(52)
+  $core.bool hasSetGripperCameraParams() => $_has(45);
+  @$pb.TagNumber(52)
+  void clearSetGripperCameraParams() => clearField(52);
+  @$pb.TagNumber(52)
+  SetGripperCameraParams ensureSetGripperCameraParams() => $_ensure(45);
+
+  @$pb.TagNumber(54)
+  ParallelAnd get parallelAnd => $_getN(46);
+  @$pb.TagNumber(54)
+  set parallelAnd(ParallelAnd v) { setField(54, v); }
+  @$pb.TagNumber(54)
+  $core.bool hasParallelAnd() => $_has(46);
+  @$pb.TagNumber(54)
+  void clearParallelAnd() => clearField(54);
+  @$pb.TagNumber(54)
+  ParallelAnd ensureParallelAnd() => $_ensure(46);
+
+  @$pb.TagNumber(55)
+  SetGraspOverride get setGraspOverride => $_getN(47);
+  @$pb.TagNumber(55)
+  set setGraspOverride(SetGraspOverride v) { setField(55, v); }
+  @$pb.TagNumber(55)
+  $core.bool hasSetGraspOverride() => $_has(47);
+  @$pb.TagNumber(55)
+  void clearSetGraspOverride() => clearField(55);
+  @$pb.TagNumber(55)
+  SetGraspOverride ensureSetGraspOverride() => $_ensure(47);
+
+  @$pb.TagNumber(56)
+  ExecuteChoreography get executeChoreography => $_getN(48);
+  @$pb.TagNumber(56)
+  set executeChoreography(ExecuteChoreography v) { setField(56, v); }
+  @$pb.TagNumber(56)
+  $core.bool hasExecuteChoreography() => $_has(48);
+  @$pb.TagNumber(56)
+  void clearExecuteChoreography() => clearField(56);
+  @$pb.TagNumber(56)
+  ExecuteChoreography ensureExecuteChoreography() => $_ensure(48);
+
+  @$pb.TagNumber(57)
+  MissionUploadChoreography get missionUploadChoreography => $_getN(49);
+  @$pb.TagNumber(57)
+  set missionUploadChoreography(MissionUploadChoreography v) { setField(57, v); }
+  @$pb.TagNumber(57)
+  $core.bool hasMissionUploadChoreography() => $_has(49);
+  @$pb.TagNumber(57)
+  void clearMissionUploadChoreography() => clearField(57);
+  @$pb.TagNumber(57)
+  MissionUploadChoreography ensureMissionUploadChoreography() => $_ensure(49);
+
+  @$pb.TagNumber(58)
+  SpotCamFocusState get spotCamFocusState => $_getN(50);
+  @$pb.TagNumber(58)
+  set spotCamFocusState(SpotCamFocusState v) { setField(58, v); }
+  @$pb.TagNumber(58)
+  $core.bool hasSpotCamFocusState() => $_has(50);
+  @$pb.TagNumber(58)
+  void clearSpotCamFocusState() => clearField(58);
+  @$pb.TagNumber(58)
+  SpotCamFocusState ensureSpotCamFocusState() => $_ensure(50);
 }
 
 /// Run  all children in order until a child fails.
@@ -346,7 +1129,7 @@ class Selector extends $pb.GeneratedMessage {
 ///  switches children and return to a previously running child, that child will be restarted.
 class Switch extends $pb.GeneratedMessage {
   factory Switch({
-    $89.Value? pivotValue,
+    $92.Value? pivotValue,
     $core.bool? alwaysRestart,
     $core.Map<$core.int, Node>? intChildren,
     Node? defaultChild,
@@ -371,7 +1154,7 @@ class Switch extends $pb.GeneratedMessage {
   factory Switch.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Switch', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$89.Value>(1, _omitFieldNames ? '' : 'pivotValue', subBuilder: $89.Value.create)
+    ..aOM<$92.Value>(1, _omitFieldNames ? '' : 'pivotValue', subBuilder: $92.Value.create)
     ..aOB(2, _omitFieldNames ? '' : 'alwaysRestart')
     ..m<$core.int, Node>(3, _omitFieldNames ? '' : 'intChildren', entryClassName: 'Switch.IntChildrenEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: Node.create, valueDefaultOrMaker: Node.getDefault, packageName: const $pb.PackageName('bosdyn.api.mission'))
     ..aOM<Node>(4, _omitFieldNames ? '' : 'defaultChild', subBuilder: Node.create)
@@ -401,15 +1184,15 @@ class Switch extends $pb.GeneratedMessage {
 
   /// Expresses an integer value that decides which child to run.
   @$pb.TagNumber(1)
-  $89.Value get pivotValue => $_getN(0);
+  $92.Value get pivotValue => $_getN(0);
   @$pb.TagNumber(1)
-  set pivotValue($89.Value v) { setField(1, v); }
+  set pivotValue($92.Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPivotValue() => $_has(0);
   @$pb.TagNumber(1)
   void clearPivotValue() => clearField(1);
   @$pb.TagNumber(1)
-  $89.Value ensurePivotValue() => $_ensure(0);
+  $92.Value ensurePivotValue() => $_ensure(0);
 
   ///  If false, this node will read the pivot_value once when its starts, and execute
   ///  the specified child until it finishes even if the pivot_value changes.
@@ -636,7 +1419,7 @@ class Retry extends $pb.GeneratedMessage {
 /// timeout_child.
 class ForDuration extends $pb.GeneratedMessage {
   factory ForDuration({
-    $62.Duration? duration,
+    $61.Duration? duration,
     Node? child,
     $core.String? timeRemainingName,
     Node? timeoutChild,
@@ -661,7 +1444,7 @@ class ForDuration extends $pb.GeneratedMessage {
   factory ForDuration.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ForDuration', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..aOM<$62.Duration>(1, _omitFieldNames ? '' : 'duration', subBuilder: $62.Duration.create)
+    ..aOM<$61.Duration>(1, _omitFieldNames ? '' : 'duration', subBuilder: $61.Duration.create)
     ..aOM<Node>(2, _omitFieldNames ? '' : 'child', subBuilder: Node.create)
     ..aOS(3, _omitFieldNames ? '' : 'timeRemainingName')
     ..aOM<Node>(4, _omitFieldNames ? '' : 'timeoutChild', subBuilder: Node.create)
@@ -691,15 +1474,15 @@ class ForDuration extends $pb.GeneratedMessage {
 
   /// Maximum duration of mission execution time.
   @$pb.TagNumber(1)
-  $62.Duration get duration => $_getN(0);
+  $61.Duration get duration => $_getN(0);
   @$pb.TagNumber(1)
-  set duration($62.Duration v) { setField(1, v); }
+  set duration($61.Duration v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDuration() => $_has(0);
   @$pb.TagNumber(1)
   void clearDuration() => clearField(1);
   @$pb.TagNumber(1)
-  $62.Duration ensureDuration() => $_ensure(0);
+  $61.Duration ensureDuration() => $_ensure(0);
 
   /// Child to execute for the duration.
   @$pb.TagNumber(2)
@@ -905,8 +1688,8 @@ enum Condition_Operand_Type {
 /// Options for where to retrieve values from.
 class Condition_Operand extends $pb.GeneratedMessage {
   factory Condition_Operand({
-    $89.VariableDeclaration? var_1,
-    $89.ConstantValue? const_2,
+    $92.VariableDeclaration? var_1,
+    $92.ConstantValue? const_2,
   }) {
     final $result = create();
     if (var_1 != null) {
@@ -928,8 +1711,8 @@ class Condition_Operand extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Condition.Operand', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
     ..oo(0, [1, 2])
-    ..aOM<$89.VariableDeclaration>(1, _omitFieldNames ? '' : 'var', subBuilder: $89.VariableDeclaration.create)
-    ..aOM<$89.ConstantValue>(2, _omitFieldNames ? '' : 'const', subBuilder: $89.ConstantValue.create)
+    ..aOM<$92.VariableDeclaration>(1, _omitFieldNames ? '' : 'var', subBuilder: $92.VariableDeclaration.create)
+    ..aOM<$92.ConstantValue>(2, _omitFieldNames ? '' : 'const', subBuilder: $92.ConstantValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -959,27 +1742,27 @@ class Condition_Operand extends $pb.GeneratedMessage {
 
   /// Reference an existing variable.
   @$pb.TagNumber(1)
-  $89.VariableDeclaration get var_1 => $_getN(0);
+  $92.VariableDeclaration get var_1 => $_getN(0);
   @$pb.TagNumber(1)
-  set var_1($89.VariableDeclaration v) { setField(1, v); }
+  set var_1($92.VariableDeclaration v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasVar_1() => $_has(0);
   @$pb.TagNumber(1)
   void clearVar_1() => clearField(1);
   @$pb.TagNumber(1)
-  $89.VariableDeclaration ensureVar_1() => $_ensure(0);
+  $92.VariableDeclaration ensureVar_1() => $_ensure(0);
 
   /// Use a constant value.
   @$pb.TagNumber(2)
-  $89.ConstantValue get const_2 => $_getN(1);
+  $92.ConstantValue get const_2 => $_getN(1);
   @$pb.TagNumber(2)
-  set const_2($89.ConstantValue v) { setField(2, v); }
+  set const_2($92.ConstantValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasConst_2() => $_has(1);
   @$pb.TagNumber(2)
   void clearConst_2() => clearField(2);
   @$pb.TagNumber(2)
-  $89.ConstantValue ensureConst_2() => $_ensure(1);
+  $92.ConstantValue ensureConst_2() => $_ensure(1);
 }
 
 /// Checks a simple comparison statement.
@@ -1456,11 +2239,11 @@ class BosdynNavigateTo extends $pb.GeneratedMessage {
     $core.String? serviceName,
     $core.String? host,
     $core.String? destinationWaypointId,
-    $37.RouteGenParams? routeGenParams,
-    $37.TravelParams? travelParams,
+    $36.RouteGenParams? routeGenParams,
+    $36.TravelParams? travelParams,
     $core.String? navigationFeedbackResponseBlackboardKey,
     $core.String? navigateToResponseBlackboardKey,
-    $37.RouteFollowingParams_RouteBlockedBehavior? routeBlockedBehavior,
+    $36.RouteFollowingParams_RouteBlockedBehavior? routeBlockedBehavior,
   }) {
     final $result = create();
     if (serviceName != null) {
@@ -1497,11 +2280,11 @@ class BosdynNavigateTo extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'serviceName')
     ..aOS(2, _omitFieldNames ? '' : 'host')
     ..aOS(3, _omitFieldNames ? '' : 'destinationWaypointId')
-    ..aOM<$37.RouteGenParams>(4, _omitFieldNames ? '' : 'routeGenParams', subBuilder: $37.RouteGenParams.create)
-    ..aOM<$37.TravelParams>(5, _omitFieldNames ? '' : 'travelParams', subBuilder: $37.TravelParams.create)
+    ..aOM<$36.RouteGenParams>(4, _omitFieldNames ? '' : 'routeGenParams', subBuilder: $36.RouteGenParams.create)
+    ..aOM<$36.TravelParams>(5, _omitFieldNames ? '' : 'travelParams', subBuilder: $36.TravelParams.create)
     ..aOS(6, _omitFieldNames ? '' : 'navigationFeedbackResponseBlackboardKey')
     ..aOS(7, _omitFieldNames ? '' : 'navigateToResponseBlackboardKey')
-    ..e<$37.RouteFollowingParams_RouteBlockedBehavior>(8, _omitFieldNames ? '' : 'routeBlockedBehavior', $pb.PbFieldType.OE, defaultOrMaker: $37.RouteFollowingParams_RouteBlockedBehavior.ROUTE_BLOCKED_UNKNOWN, valueOf: $37.RouteFollowingParams_RouteBlockedBehavior.valueOf, enumValues: $37.RouteFollowingParams_RouteBlockedBehavior.values)
+    ..e<$36.RouteFollowingParams_RouteBlockedBehavior>(8, _omitFieldNames ? '' : 'routeBlockedBehavior', $pb.PbFieldType.OE, defaultOrMaker: $36.RouteFollowingParams_RouteBlockedBehavior.ROUTE_BLOCKED_UNKNOWN, valueOf: $36.RouteFollowingParams_RouteBlockedBehavior.valueOf, enumValues: $36.RouteFollowingParams_RouteBlockedBehavior.values)
     ..hasRequiredFields = false
   ;
 
@@ -1558,27 +2341,27 @@ class BosdynNavigateTo extends $pb.GeneratedMessage {
 
   /// Preferences on how to pick the route.
   @$pb.TagNumber(4)
-  $37.RouteGenParams get routeGenParams => $_getN(3);
+  $36.RouteGenParams get routeGenParams => $_getN(3);
   @$pb.TagNumber(4)
-  set routeGenParams($37.RouteGenParams v) { setField(4, v); }
+  set routeGenParams($36.RouteGenParams v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasRouteGenParams() => $_has(3);
   @$pb.TagNumber(4)
   void clearRouteGenParams() => clearField(4);
   @$pb.TagNumber(4)
-  $37.RouteGenParams ensureRouteGenParams() => $_ensure(3);
+  $36.RouteGenParams ensureRouteGenParams() => $_ensure(3);
 
   /// Parameters that define how to traverse and end the route.
   @$pb.TagNumber(5)
-  $37.TravelParams get travelParams => $_getN(4);
+  $36.TravelParams get travelParams => $_getN(4);
   @$pb.TagNumber(5)
-  set travelParams($37.TravelParams v) { setField(5, v); }
+  set travelParams($36.TravelParams v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTravelParams() => $_has(4);
   @$pb.TagNumber(5)
   void clearTravelParams() => clearField(5);
   @$pb.TagNumber(5)
-  $37.TravelParams ensureTravelParams() => $_ensure(4);
+  $36.TravelParams ensureTravelParams() => $_ensure(4);
 
   /// If provided, this will write the last NavigationFeedbackResponse message
   /// to a blackboard variable with this name.
@@ -1604,9 +2387,9 @@ class BosdynNavigateTo extends $pb.GeneratedMessage {
 
   /// Defines robot behavior when route is blocked. Defaults to reroute when route is blocked.
   @$pb.TagNumber(8)
-  $37.RouteFollowingParams_RouteBlockedBehavior get routeBlockedBehavior => $_getN(7);
+  $36.RouteFollowingParams_RouteBlockedBehavior get routeBlockedBehavior => $_getN(7);
   @$pb.TagNumber(8)
-  set routeBlockedBehavior($37.RouteFollowingParams_RouteBlockedBehavior v) { setField(8, v); }
+  set routeBlockedBehavior($36.RouteFollowingParams_RouteBlockedBehavior v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasRouteBlockedBehavior() => $_has(7);
   @$pb.TagNumber(8)
@@ -1618,9 +2401,9 @@ class BosdynNavigateRoute extends $pb.GeneratedMessage {
   factory BosdynNavigateRoute({
     $core.String? serviceName,
     $core.String? host,
-    $88.Route? route,
-    $37.RouteFollowingParams? routeFollowParams,
-    $37.TravelParams? travelParams,
+    $90.Route? route,
+    $36.RouteFollowingParams? routeFollowParams,
+    $36.TravelParams? travelParams,
     $core.String? navigationFeedbackResponseBlackboardKey,
     $core.String? navigateRouteResponseBlackboardKey,
   }) {
@@ -1655,9 +2438,9 @@ class BosdynNavigateRoute extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BosdynNavigateRoute', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'serviceName')
     ..aOS(2, _omitFieldNames ? '' : 'host')
-    ..aOM<$88.Route>(3, _omitFieldNames ? '' : 'route', subBuilder: $88.Route.create)
-    ..aOM<$37.RouteFollowingParams>(4, _omitFieldNames ? '' : 'routeFollowParams', subBuilder: $37.RouteFollowingParams.create)
-    ..aOM<$37.TravelParams>(5, _omitFieldNames ? '' : 'travelParams', subBuilder: $37.TravelParams.create)
+    ..aOM<$90.Route>(3, _omitFieldNames ? '' : 'route', subBuilder: $90.Route.create)
+    ..aOM<$36.RouteFollowingParams>(4, _omitFieldNames ? '' : 'routeFollowParams', subBuilder: $36.RouteFollowingParams.create)
+    ..aOM<$36.TravelParams>(5, _omitFieldNames ? '' : 'travelParams', subBuilder: $36.TravelParams.create)
     ..aOS(6, _omitFieldNames ? '' : 'navigationFeedbackResponseBlackboardKey')
     ..aOS(7, _omitFieldNames ? '' : 'navigateRouteResponseBlackboardKey')
     ..hasRequiredFields = false
@@ -1706,40 +2489,40 @@ class BosdynNavigateRoute extends $pb.GeneratedMessage {
 
   /// A route for the robot to follow.
   @$pb.TagNumber(3)
-  $88.Route get route => $_getN(2);
+  $90.Route get route => $_getN(2);
   @$pb.TagNumber(3)
-  set route($88.Route v) { setField(3, v); }
+  set route($90.Route v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasRoute() => $_has(2);
   @$pb.TagNumber(3)
   void clearRoute() => clearField(3);
   @$pb.TagNumber(3)
-  $88.Route ensureRoute() => $_ensure(2);
+  $90.Route ensureRoute() => $_ensure(2);
 
   /// What should the robot do if it is not at the expected point in the route, or the route is
   /// blocked.
   @$pb.TagNumber(4)
-  $37.RouteFollowingParams get routeFollowParams => $_getN(3);
+  $36.RouteFollowingParams get routeFollowParams => $_getN(3);
   @$pb.TagNumber(4)
-  set routeFollowParams($37.RouteFollowingParams v) { setField(4, v); }
+  set routeFollowParams($36.RouteFollowingParams v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasRouteFollowParams() => $_has(3);
   @$pb.TagNumber(4)
   void clearRouteFollowParams() => clearField(4);
   @$pb.TagNumber(4)
-  $37.RouteFollowingParams ensureRouteFollowParams() => $_ensure(3);
+  $36.RouteFollowingParams ensureRouteFollowParams() => $_ensure(3);
 
   /// Parameters that define how to traverse and end the route.
   @$pb.TagNumber(5)
-  $37.TravelParams get travelParams => $_getN(4);
+  $36.TravelParams get travelParams => $_getN(4);
   @$pb.TagNumber(5)
-  set travelParams($37.TravelParams v) { setField(5, v); }
+  set travelParams($36.TravelParams v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTravelParams() => $_has(4);
   @$pb.TagNumber(5)
   void clearTravelParams() => clearField(5);
   @$pb.TagNumber(5)
-  $37.TravelParams ensureTravelParams() => $_ensure(4);
+  $36.TravelParams ensureTravelParams() => $_ensure(4);
 
   /// If provided, this will write the last NavigationFeedbackResponse message
   /// to a blackboard variable with this name.
@@ -1888,7 +2671,7 @@ class BosdynGraphNavLocalize extends $pb.GeneratedMessage {
   factory BosdynGraphNavLocalize({
     $core.String? serviceName,
     $core.String? host,
-    $37.SetLocalizationRequest? localizationRequest,
+    $36.SetLocalizationRequest? localizationRequest,
     $core.bool? allowBadQuality,
     $core.String? responseBbKey,
   }) {
@@ -1917,7 +2700,7 @@ class BosdynGraphNavLocalize extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BosdynGraphNavLocalize', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'serviceName')
     ..aOS(2, _omitFieldNames ? '' : 'host')
-    ..aOM<$37.SetLocalizationRequest>(3, _omitFieldNames ? '' : 'localizationRequest', subBuilder: $37.SetLocalizationRequest.create)
+    ..aOM<$36.SetLocalizationRequest>(3, _omitFieldNames ? '' : 'localizationRequest', subBuilder: $36.SetLocalizationRequest.create)
     ..aOB(4, _omitFieldNames ? '' : 'allowBadQuality')
     ..aOS(5, _omitFieldNames ? '' : 'responseBbKey')
     ..hasRequiredFields = false
@@ -1969,15 +2752,15 @@ class BosdynGraphNavLocalize extends $pb.GeneratedMessage {
   /// Otherwise, the options inside the set_localization_request will be used.
   /// Note that ko_tform_body in the request will be ignored (it will be recalculated at runtime).
   @$pb.TagNumber(3)
-  $37.SetLocalizationRequest get localizationRequest => $_getN(2);
+  $36.SetLocalizationRequest get localizationRequest => $_getN(2);
   @$pb.TagNumber(3)
-  set localizationRequest($37.SetLocalizationRequest v) { setField(3, v); }
+  set localizationRequest($36.SetLocalizationRequest v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLocalizationRequest() => $_has(2);
   @$pb.TagNumber(3)
   void clearLocalizationRequest() => clearField(3);
   @$pb.TagNumber(3)
-  $37.SetLocalizationRequest ensureLocalizationRequest() => $_ensure(2);
+  $36.SetLocalizationRequest ensureLocalizationRequest() => $_ensure(2);
 
   /// If true, a poor quality check will not result in the node returning FAILURE.
   /// If false, the localization will be checked for quality by comparing agains the map data, and
@@ -2008,9 +2791,9 @@ class BosdynRecordEvent extends $pb.GeneratedMessage {
   factory BosdynRecordEvent({
     $core.String? serviceName,
     $core.String? host,
-    $4.Event? event,
+    $5.Event? event,
     $core.bool? succeedEarly,
-    $core.Map<$core.String, $89.Value>? additionalParameters,
+    $core.Map<$core.String, $92.Value>? additionalParameters,
   }) {
     final $result = create();
     if (serviceName != null) {
@@ -2037,9 +2820,9 @@ class BosdynRecordEvent extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BosdynRecordEvent', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'serviceName')
     ..aOS(2, _omitFieldNames ? '' : 'host')
-    ..aOM<$4.Event>(3, _omitFieldNames ? '' : 'event', subBuilder: $4.Event.create)
+    ..aOM<$5.Event>(3, _omitFieldNames ? '' : 'event', subBuilder: $5.Event.create)
     ..aOB(4, _omitFieldNames ? '' : 'succeedEarly')
-    ..m<$core.String, $89.Value>(5, _omitFieldNames ? '' : 'additionalParameters', entryClassName: 'BosdynRecordEvent.AdditionalParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $89.Value.create, valueDefaultOrMaker: $89.Value.getDefault, packageName: const $pb.PackageName('bosdyn.api.mission'))
+    ..m<$core.String, $92.Value>(5, _omitFieldNames ? '' : 'additionalParameters', entryClassName: 'BosdynRecordEvent.AdditionalParametersEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $92.Value.create, valueDefaultOrMaker: $92.Value.getDefault, packageName: const $pb.PackageName('bosdyn.api.mission'))
     ..hasRequiredFields = false
   ;
 
@@ -2088,15 +2871,15 @@ class BosdynRecordEvent extends $pb.GeneratedMessage {
   /// and end_time. The start and end time will be populated by the mission, using the node's start
   /// time. The id field shouldn't be set when the start and end times are the same.
   @$pb.TagNumber(3)
-  $4.Event get event => $_getN(2);
+  $5.Event get event => $_getN(2);
   @$pb.TagNumber(3)
-  set event($4.Event v) { setField(3, v); }
+  set event($5.Event v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEvent() => $_has(2);
   @$pb.TagNumber(3)
   void clearEvent() => clearField(3);
   @$pb.TagNumber(3)
-  $4.Event ensureEvent() => $_ensure(2);
+  $5.Event ensureEvent() => $_ensure(2);
 
   /// If set to false, this node will wait for the RecordEvents rpc to complete.  If set to true,
   /// this node will send the RecordEventsRequest, and then return SUCCESS without waiting for
@@ -2114,7 +2897,7 @@ class BosdynRecordEvent extends $pb.GeneratedMessage {
   /// to specify events only known at runtime.  Map key will be parameter label, map value will be
   /// evaluated then packed into parameter value.
   @$pb.TagNumber(5)
-  $core.Map<$core.String, $89.Value> get additionalParameters => $_getMap(4);
+  $core.Map<$core.String, $92.Value> get additionalParameters => $_getMap(4);
 }
 
 /// Call out to another system using the RemoteMission service.
@@ -2124,9 +2907,9 @@ class RemoteGrpc extends $pb.GeneratedMessage {
     $core.String? serviceName,
     $core.double? timeout,
     $core.Iterable<$core.String>? leaseResources,
-    $core.Iterable<$89.KeyValue>? inputs,
+    $core.Iterable<$92.KeyValue>? inputs,
     $core.String? groupNameFormat,
-    $72.DictParam? params,
+    $71.DictParam? params,
   }) {
     final $result = create();
     if (host != null) {
@@ -2161,9 +2944,9 @@ class RemoteGrpc extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'serviceName')
     ..a<$core.double>(4, _omitFieldNames ? '' : 'timeout', $pb.PbFieldType.OF)
     ..pPS(5, _omitFieldNames ? '' : 'leaseResources')
-    ..pc<$89.KeyValue>(6, _omitFieldNames ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: $89.KeyValue.create)
+    ..pc<$92.KeyValue>(6, _omitFieldNames ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: $92.KeyValue.create)
     ..aOS(8, _omitFieldNames ? '' : 'groupNameFormat')
-    ..aOM<$72.DictParam>(9, _omitFieldNames ? '' : 'params', subBuilder: $72.DictParam.create)
+    ..aOM<$71.DictParam>(9, _omitFieldNames ? '' : 'params', subBuilder: $71.DictParam.create)
     ..hasRequiredFields = false
   ;
 
@@ -2231,7 +3014,7 @@ class RemoteGrpc extends $pb.GeneratedMessage {
   /// Variables given can be available at either run-time or compile-time.
   /// The "key" in KeyValue is the name of the variable as used by the remote system.
   @$pb.TagNumber(6)
-  $core.List<$89.KeyValue> get inputs => $_getList(4);
+  $core.List<$92.KeyValue> get inputs => $_getList(4);
 
   /// Define a format string that will be used together with the blackboard to generate
   /// a group_name.  If a value is specified in this field, it will override the group_name value
@@ -2251,15 +3034,15 @@ class RemoteGrpc extends $pb.GeneratedMessage {
 
   /// Should match the advertised spec for the RemoteMissionService in question.
   @$pb.TagNumber(9)
-  $72.DictParam get params => $_getN(6);
+  $71.DictParam get params => $_getN(6);
   @$pb.TagNumber(9)
-  set params($72.DictParam v) { setField(9, v); }
+  set params($71.DictParam v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasParams() => $_has(6);
   @$pb.TagNumber(9)
   void clearParams() => clearField(9);
   @$pb.TagNumber(9)
-  $72.DictParam ensureParams() => $_ensure(6);
+  $71.DictParam ensureParams() => $_ensure(6);
 }
 
 /// When started, begins a sleep timer for X seconds. Returns "success" after the timer elapses,
@@ -2330,6 +3113,174 @@ class Sleep extends $pb.GeneratedMessage {
   void clearRestartAfterStop() => clearField(2);
 }
 
+/// Sends a request to play a choreography sequence with the given name, and then monitors
+/// the state of the dancing robot.
+class ExecuteChoreography extends $pb.GeneratedMessage {
+  factory ExecuteChoreography({
+    $core.String? serviceName,
+    $core.String? host,
+    $core.String? sequenceName,
+  }) {
+    final $result = create();
+    if (serviceName != null) {
+      $result.serviceName = serviceName;
+    }
+    if (host != null) {
+      $result.host = host;
+    }
+    if (sequenceName != null) {
+      $result.sequenceName = sequenceName;
+    }
+    return $result;
+  }
+  ExecuteChoreography._() : super();
+  factory ExecuteChoreography.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ExecuteChoreography.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExecuteChoreography', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'serviceName')
+    ..aOS(2, _omitFieldNames ? '' : 'host')
+    ..aOS(3, _omitFieldNames ? '' : 'sequenceName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ExecuteChoreography clone() => ExecuteChoreography()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ExecuteChoreography copyWith(void Function(ExecuteChoreography) updates) => super.copyWith((message) => updates(message as ExecuteChoreography)) as ExecuteChoreography;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExecuteChoreography create() => ExecuteChoreography._();
+  ExecuteChoreography createEmptyInstance() => create();
+  static $pb.PbList<ExecuteChoreography> createRepeated() => $pb.PbList<ExecuteChoreography>();
+  @$core.pragma('dart2js:noInline')
+  static ExecuteChoreography getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExecuteChoreography>(create);
+  static ExecuteChoreography? _defaultInstance;
+
+  /// Name of the service to use.
+  @$pb.TagNumber(1)
+  $core.String get serviceName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set serviceName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasServiceName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearServiceName() => clearField(1);
+
+  /// Host machine the service is running on.
+  @$pb.TagNumber(2)
+  $core.String get host => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set host($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasHost() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHost() => clearField(2);
+
+  /// The name of the sequence to play.
+  @$pb.TagNumber(3)
+  $core.String get sequenceName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sequenceName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSequenceName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSequenceName() => clearField(3);
+}
+
+/// Uploads the given set of animations and choreography sequences to the robot.
+class MissionUploadChoreography extends $pb.GeneratedMessage {
+  factory MissionUploadChoreography({
+    $core.String? serviceName,
+    $core.String? host,
+    $core.Iterable<$29.ChoreographySequence>? choreographySequences,
+    $core.Iterable<$29.Animation>? animatedMoves,
+  }) {
+    final $result = create();
+    if (serviceName != null) {
+      $result.serviceName = serviceName;
+    }
+    if (host != null) {
+      $result.host = host;
+    }
+    if (choreographySequences != null) {
+      $result.choreographySequences.addAll(choreographySequences);
+    }
+    if (animatedMoves != null) {
+      $result.animatedMoves.addAll(animatedMoves);
+    }
+    return $result;
+  }
+  MissionUploadChoreography._() : super();
+  factory MissionUploadChoreography.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MissionUploadChoreography.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MissionUploadChoreography', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'serviceName')
+    ..aOS(2, _omitFieldNames ? '' : 'host')
+    ..pc<$29.ChoreographySequence>(3, _omitFieldNames ? '' : 'choreographySequences', $pb.PbFieldType.PM, subBuilder: $29.ChoreographySequence.create)
+    ..pc<$29.Animation>(4, _omitFieldNames ? '' : 'animatedMoves', $pb.PbFieldType.PM, subBuilder: $29.Animation.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MissionUploadChoreography clone() => MissionUploadChoreography()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MissionUploadChoreography copyWith(void Function(MissionUploadChoreography) updates) => super.copyWith((message) => updates(message as MissionUploadChoreography)) as MissionUploadChoreography;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MissionUploadChoreography create() => MissionUploadChoreography._();
+  MissionUploadChoreography createEmptyInstance() => create();
+  static $pb.PbList<MissionUploadChoreography> createRepeated() => $pb.PbList<MissionUploadChoreography>();
+  @$core.pragma('dart2js:noInline')
+  static MissionUploadChoreography getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MissionUploadChoreography>(create);
+  static MissionUploadChoreography? _defaultInstance;
+
+  /// Name of the service to use.
+  @$pb.TagNumber(1)
+  $core.String get serviceName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set serviceName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasServiceName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearServiceName() => clearField(1);
+
+  /// Host machine the service is running on.
+  @$pb.TagNumber(2)
+  $core.String get host => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set host($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasHost() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHost() => clearField(2);
+
+  /// Choreography sequences to be loaded (required by the mission).
+  @$pb.TagNumber(3)
+  $core.List<$29.ChoreographySequence> get choreographySequences => $_getList(2);
+
+  /// Any animations we need to load if we want to play the sequences.
+  @$pb.TagNumber(4)
+  $core.List<$29.Animation> get animatedMoves => $_getList(3);
+}
+
 /// Data about the options to choose from.
 class Prompt_Option extends $pb.GeneratedMessage {
   factory Prompt_Option({
@@ -2397,6 +3348,56 @@ class Prompt_Option extends $pb.GeneratedMessage {
   void clearAnswerCode() => clearField(2);
 }
 
+class Prompt_OptionsList extends $pb.GeneratedMessage {
+  factory Prompt_OptionsList({
+    $core.Iterable<Prompt_Option>? options,
+  }) {
+    final $result = create();
+    if (options != null) {
+      $result.options.addAll(options);
+    }
+    return $result;
+  }
+  Prompt_OptionsList._() : super();
+  factory Prompt_OptionsList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Prompt_OptionsList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Prompt.OptionsList', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
+    ..pc<Prompt_Option>(1, _omitFieldNames ? '' : 'options', $pb.PbFieldType.PM, subBuilder: Prompt_Option.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Prompt_OptionsList clone() => Prompt_OptionsList()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Prompt_OptionsList copyWith(void Function(Prompt_OptionsList) updates) => super.copyWith((message) => updates(message as Prompt_OptionsList)) as Prompt_OptionsList;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Prompt_OptionsList create() => Prompt_OptionsList._();
+  Prompt_OptionsList createEmptyInstance() => create();
+  static $pb.PbList<Prompt_OptionsList> createRepeated() => $pb.PbList<Prompt_OptionsList>();
+  @$core.pragma('dart2js:noInline')
+  static Prompt_OptionsList getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Prompt_OptionsList>(create);
+  static Prompt_OptionsList? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Prompt_Option> get options => $_getList(0);
+}
+
+enum Prompt_AnswerSpec {
+  optionsList, 
+  customParams, 
+  notSet
+}
+
 /// Prompt the world at large to answer a question.
 /// This node represents a request for information from ANY listeners that may be out there.
 class Prompt extends $pb.GeneratedMessage {
@@ -2404,11 +3405,14 @@ class Prompt extends $pb.GeneratedMessage {
     $core.bool? alwaysReprompt,
     $core.String? text,
     $core.String? source,
+  @$core.Deprecated('This field is deprecated.')
     $core.Iterable<Prompt_Option>? options,
     Node? child,
     $core.bool? forAutonomousProcessing,
     $75.AlertData_SeverityLevel? severity,
     $core.String? questionNameInBlackboard,
+    Prompt_OptionsList? optionsList,
+    $71.DictParam_Spec? customParams,
   }) {
     final $result = create();
     if (alwaysReprompt != null) {
@@ -2421,6 +3425,7 @@ class Prompt extends $pb.GeneratedMessage {
       $result.source = source;
     }
     if (options != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.options.addAll(options);
     }
     if (child != null) {
@@ -2435,13 +3440,25 @@ class Prompt extends $pb.GeneratedMessage {
     if (questionNameInBlackboard != null) {
       $result.questionNameInBlackboard = questionNameInBlackboard;
     }
+    if (optionsList != null) {
+      $result.optionsList = optionsList;
+    }
+    if (customParams != null) {
+      $result.customParams = customParams;
+    }
     return $result;
   }
   Prompt._() : super();
   factory Prompt.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Prompt.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
+  static const $core.Map<$core.int, Prompt_AnswerSpec> _Prompt_AnswerSpecByTag = {
+    9 : Prompt_AnswerSpec.optionsList,
+    10 : Prompt_AnswerSpec.customParams,
+    0 : Prompt_AnswerSpec.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Prompt', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
+    ..oo(0, [9, 10])
     ..aOB(1, _omitFieldNames ? '' : 'alwaysReprompt')
     ..aOS(2, _omitFieldNames ? '' : 'text')
     ..aOS(3, _omitFieldNames ? '' : 'source')
@@ -2450,6 +3467,8 @@ class Prompt extends $pb.GeneratedMessage {
     ..aOB(6, _omitFieldNames ? '' : 'forAutonomousProcessing')
     ..e<$75.AlertData_SeverityLevel>(7, _omitFieldNames ? '' : 'severity', $pb.PbFieldType.OE, defaultOrMaker: $75.AlertData_SeverityLevel.SEVERITY_LEVEL_UNKNOWN, valueOf: $75.AlertData_SeverityLevel.valueOf, enumValues: $75.AlertData_SeverityLevel.values)
     ..aOS(8, _omitFieldNames ? '' : 'questionNameInBlackboard')
+    ..aOM<Prompt_OptionsList>(9, _omitFieldNames ? '' : 'optionsList', subBuilder: Prompt_OptionsList.create)
+    ..aOM<$71.DictParam_Spec>(10, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam_Spec.create)
     ..hasRequiredFields = false
   ;
 
@@ -2473,6 +3492,9 @@ class Prompt extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static Prompt getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Prompt>(create);
   static Prompt? _defaultInstance;
+
+  Prompt_AnswerSpec whichAnswerSpec() => _Prompt_AnswerSpecByTag[$_whichOneof(0)]!;
+  void clearAnswerSpec() => clearField($_whichOneof(0));
 
   /// Should we always re-prompt when this node is started?
   /// If false, this node will only ever prompt if it is started and its question is unanswered.
@@ -2513,6 +3535,7 @@ class Prompt extends $pb.GeneratedMessage {
   void clearSource() => clearField(3);
 
   /// The set of options that can be chosen for this prompt.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.List<Prompt_Option> get options => $_getList(3);
 
@@ -2568,6 +3591,30 @@ class Prompt extends $pb.GeneratedMessage {
   $core.bool hasQuestionNameInBlackboard() => $_has(7);
   @$pb.TagNumber(8)
   void clearQuestionNameInBlackboard() => clearField(8);
+
+  /// The set of options that can be chosen for this prompt.
+  @$pb.TagNumber(9)
+  Prompt_OptionsList get optionsList => $_getN(8);
+  @$pb.TagNumber(9)
+  set optionsList(Prompt_OptionsList v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasOptionsList() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearOptionsList() => clearField(9);
+  @$pb.TagNumber(9)
+  Prompt_OptionsList ensureOptionsList() => $_ensure(8);
+
+  /// Custom parameter specification for the answer expected for this prompt.
+  @$pb.TagNumber(10)
+  $71.DictParam_Spec get customParams => $_getN(9);
+  @$pb.TagNumber(10)
+  set customParams($71.DictParam_Spec v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasCustomParams() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCustomParams() => clearField(10);
+  @$pb.TagNumber(10)
+  $71.DictParam_Spec ensureCustomParams() => $_ensure(9);
 }
 
 /// Get the state of the gripper camera params from the robot.
@@ -2682,7 +3729,7 @@ class SetGripperCameraParams extends $pb.GeneratedMessage {
     $core.String? serviceName,
     $core.String? host,
     $core.String? paramsInBlackboardKey,
-    $10.GripperCameraParams? newParams,
+    $11.GripperCameraParams? newParams,
   }) {
     final $result = create();
     if (serviceName != null) {
@@ -2713,7 +3760,7 @@ class SetGripperCameraParams extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'serviceName')
     ..aOS(2, _omitFieldNames ? '' : 'host')
     ..aOS(3, _omitFieldNames ? '' : 'paramsInBlackboardKey')
-    ..aOM<$10.GripperCameraParams>(4, _omitFieldNames ? '' : 'newParams', subBuilder: $10.GripperCameraParams.create)
+    ..aOM<$11.GripperCameraParams>(4, _omitFieldNames ? '' : 'newParams', subBuilder: $11.GripperCameraParams.create)
     ..hasRequiredFields = false
   ;
 
@@ -2772,15 +3819,15 @@ class SetGripperCameraParams extends $pb.GeneratedMessage {
   void clearParamsInBlackboardKey() => clearField(3);
 
   @$pb.TagNumber(4)
-  $10.GripperCameraParams get newParams => $_getN(3);
+  $11.GripperCameraParams get newParams => $_getN(3);
   @$pb.TagNumber(4)
-  set newParams($10.GripperCameraParams v) { setField(4, v); }
+  set newParams($11.GripperCameraParams v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasNewParams() => $_has(3);
   @$pb.TagNumber(4)
   void clearNewParams() => clearField(4);
   @$pb.TagNumber(4)
-  $10.GripperCameraParams ensureNewParams() => $_ensure(3);
+  $11.GripperCameraParams ensureNewParams() => $_ensure(3);
 }
 
 /// Set grasp override and carry state override requests
@@ -2871,7 +3918,7 @@ class SpotCamPtz_AdjustParameters extends $pb.GeneratedMessage {
   factory SpotCamPtz_AdjustParameters({
     $core.String? localizationVarname,
     $core.String? waypointId,
-    $61.SE3Pose? waypointTformBody,
+    $60.SE3Pose? waypointTformBody,
   }) {
     final $result = create();
     if (localizationVarname != null) {
@@ -2892,7 +3939,7 @@ class SpotCamPtz_AdjustParameters extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SpotCamPtz.AdjustParameters', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
     ..aOS(4, _omitFieldNames ? '' : 'localizationVarname')
     ..aOS(5, _omitFieldNames ? '' : 'waypointId')
-    ..aOM<$61.SE3Pose>(6, _omitFieldNames ? '' : 'waypointTformBody', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(6, _omitFieldNames ? '' : 'waypointTformBody', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -2939,15 +3986,15 @@ class SpotCamPtz_AdjustParameters extends $pb.GeneratedMessage {
 
   /// Pose of body in waypoint frame at the time this PTZ configuration was originally set up.
   @$pb.TagNumber(6)
-  $61.SE3Pose get waypointTformBody => $_getN(2);
+  $60.SE3Pose get waypointTformBody => $_getN(2);
   @$pb.TagNumber(6)
-  set waypointTformBody($61.SE3Pose v) { setField(6, v); }
+  set waypointTformBody($60.SE3Pose v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasWaypointTformBody() => $_has(2);
   @$pb.TagNumber(6)
   void clearWaypointTformBody() => clearField(6);
   @$pb.TagNumber(6)
-  $61.SE3Pose ensureWaypointTformBody() => $_ensure(2);
+  $60.SE3Pose ensureWaypointTformBody() => $_ensure(2);
 }
 
 /// Point the PTZ to a specified orientation
@@ -2955,7 +4002,7 @@ class SpotCamPtz extends $pb.GeneratedMessage {
   factory SpotCamPtz({
     $core.String? serviceName,
     $core.String? host,
-    $49.PtzPosition? ptzPosition,
+    $48.PtzPosition? ptzPosition,
     SpotCamPtz_AdjustParameters? adjustParameters,
   }) {
     final $result = create();
@@ -2980,7 +4027,7 @@ class SpotCamPtz extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SpotCamPtz', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'serviceName')
     ..aOS(2, _omitFieldNames ? '' : 'host')
-    ..aOM<$49.PtzPosition>(3, _omitFieldNames ? '' : 'ptzPosition', subBuilder: $49.PtzPosition.create)
+    ..aOM<$48.PtzPosition>(3, _omitFieldNames ? '' : 'ptzPosition', subBuilder: $48.PtzPosition.create)
     ..aOM<SpotCamPtz_AdjustParameters>(4, _omitFieldNames ? '' : 'adjustParameters', subBuilder: SpotCamPtz_AdjustParameters.create)
     ..hasRequiredFields = false
   ;
@@ -3029,15 +4076,15 @@ class SpotCamPtz extends $pb.GeneratedMessage {
   /// The rest of the fields are from bosdyn.api.spot_cam.ptz.SetPtzPositionRequest, see that
   /// message for details.
   @$pb.TagNumber(3)
-  $49.PtzPosition get ptzPosition => $_getN(2);
+  $48.PtzPosition get ptzPosition => $_getN(2);
   @$pb.TagNumber(3)
-  set ptzPosition($49.PtzPosition v) { setField(3, v); }
+  set ptzPosition($48.PtzPosition v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasPtzPosition() => $_has(2);
   @$pb.TagNumber(3)
   void clearPtzPosition() => clearField(3);
   @$pb.TagNumber(3)
-  $49.PtzPosition ensurePtzPosition() => $_ensure(2);
+  $48.PtzPosition ensurePtzPosition() => $_ensure(2);
 
   /// Setting adjust_parameters will enable auto-adjusting the PTZ pan and tilt at playback time,
   /// based on where the robot is, relative to the waypoint. Leave empty to disable auto-adjust
@@ -3059,8 +4106,8 @@ class SpotCamStoreMedia extends $pb.GeneratedMessage {
   factory SpotCamStoreMedia({
     $core.String? serviceName,
     $core.String? host,
-    $83.Camera? camera,
-    $48.Logpoint_RecordType? type,
+    $84.Camera? camera,
+    $47.Logpoint_RecordType? type,
     $core.String? tag,
   }) {
     final $result = create();
@@ -3088,8 +4135,8 @@ class SpotCamStoreMedia extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SpotCamStoreMedia', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'serviceName')
     ..aOS(2, _omitFieldNames ? '' : 'host')
-    ..aOM<$83.Camera>(3, _omitFieldNames ? '' : 'camera', subBuilder: $83.Camera.create)
-    ..e<$48.Logpoint_RecordType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $48.Logpoint_RecordType.STILLIMAGE, valueOf: $48.Logpoint_RecordType.valueOf, enumValues: $48.Logpoint_RecordType.values)
+    ..aOM<$84.Camera>(3, _omitFieldNames ? '' : 'camera', subBuilder: $84.Camera.create)
+    ..e<$47.Logpoint_RecordType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $47.Logpoint_RecordType.STILLIMAGE, valueOf: $47.Logpoint_RecordType.valueOf, enumValues: $47.Logpoint_RecordType.values)
     ..aOS(5, _omitFieldNames ? '' : 'tag')
     ..hasRequiredFields = false
   ;
@@ -3138,21 +4185,21 @@ class SpotCamStoreMedia extends $pb.GeneratedMessage {
   /// The rest of the fields are from bosdyn.api.spot_cam.logging.StoreRequest, see that message
   /// for details.
   @$pb.TagNumber(3)
-  $83.Camera get camera => $_getN(2);
+  $84.Camera get camera => $_getN(2);
   @$pb.TagNumber(3)
-  set camera($83.Camera v) { setField(3, v); }
+  set camera($84.Camera v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCamera() => $_has(2);
   @$pb.TagNumber(3)
   void clearCamera() => clearField(3);
   @$pb.TagNumber(3)
-  $83.Camera ensureCamera() => $_ensure(2);
+  $84.Camera ensureCamera() => $_ensure(2);
 
   /// What type of media should be stored from this action.
   @$pb.TagNumber(4)
-  $48.Logpoint_RecordType get type => $_getN(3);
+  $47.Logpoint_RecordType get type => $_getN(3);
   @$pb.TagNumber(4)
-  set type($48.Logpoint_RecordType v) { setField(4, v); }
+  set type($47.Logpoint_RecordType v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)
@@ -3245,6 +4292,90 @@ class SpotCamLed extends $pb.GeneratedMessage {
   $core.Map<$core.int, $core.double> get brightnesses => $_getMap(2);
 }
 
+/// Set the focus on the Spot CAM PTZ
+class SpotCamFocusState extends $pb.GeneratedMessage {
+  factory SpotCamFocusState({
+    $core.String? serviceName,
+    $core.String? host,
+    $48.PtzFocusState? focusState,
+  }) {
+    final $result = create();
+    if (serviceName != null) {
+      $result.serviceName = serviceName;
+    }
+    if (host != null) {
+      $result.host = host;
+    }
+    if (focusState != null) {
+      $result.focusState = focusState;
+    }
+    return $result;
+  }
+  SpotCamFocusState._() : super();
+  factory SpotCamFocusState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SpotCamFocusState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SpotCamFocusState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'serviceName')
+    ..aOS(2, _omitFieldNames ? '' : 'host')
+    ..aOM<$48.PtzFocusState>(3, _omitFieldNames ? '' : 'focusState', subBuilder: $48.PtzFocusState.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SpotCamFocusState clone() => SpotCamFocusState()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SpotCamFocusState copyWith(void Function(SpotCamFocusState) updates) => super.copyWith((message) => updates(message as SpotCamFocusState)) as SpotCamFocusState;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpotCamFocusState create() => SpotCamFocusState._();
+  SpotCamFocusState createEmptyInstance() => create();
+  static $pb.PbList<SpotCamFocusState> createRepeated() => $pb.PbList<SpotCamFocusState>();
+  @$core.pragma('dart2js:noInline')
+  static SpotCamFocusState getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SpotCamFocusState>(create);
+  static SpotCamFocusState? _defaultInstance;
+
+  /// Name of the service to use.
+  @$pb.TagNumber(1)
+  $core.String get serviceName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set serviceName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasServiceName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearServiceName() => clearField(1);
+
+  /// Host machine of the directory server that the Spot CAM registered with.
+  @$pb.TagNumber(2)
+  $core.String get host => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set host($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasHost() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHost() => clearField(2);
+
+  /// Focus State to set the Spot CAM PTZ to, from SetPtzFocusStateRequest
+  @$pb.TagNumber(3)
+  $48.PtzFocusState get focusState => $_getN(2);
+  @$pb.TagNumber(3)
+  set focusState($48.PtzFocusState v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFocusState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFocusState() => clearField(3);
+  @$pb.TagNumber(3)
+  $48.PtzFocusState ensureFocusState() => $_ensure(2);
+}
+
 /// Reset the autofocus on the Spot CAM PTZ
 class SpotCamResetAutofocus extends $pb.GeneratedMessage {
   factory SpotCamResetAutofocus({
@@ -3323,7 +4454,7 @@ class Dock extends $pb.GeneratedMessage {
     $core.String? commandStatusName,
   @$core.Deprecated('This field is deprecated.')
     $core.String? feedbackStatusName,
-    $35.PrepPoseBehavior? prepPoseBehavior,
+    $34.PrepPoseBehavior? prepPoseBehavior,
     $core.String? dockingCommandFeedbackResponseBlackboardKey,
     $core.String? dockingCommandResponseBlackboardKey,
     $core.bool? requireFiducial,
@@ -3375,7 +4506,7 @@ class Dock extends $pb.GeneratedMessage {
     ..aOM<Node>(4, _omitFieldNames ? '' : 'child', subBuilder: Node.create)
     ..aOS(5, _omitFieldNames ? '' : 'commandStatusName')
     ..aOS(6, _omitFieldNames ? '' : 'feedbackStatusName')
-    ..e<$35.PrepPoseBehavior>(7, _omitFieldNames ? '' : 'prepPoseBehavior', $pb.PbFieldType.OE, defaultOrMaker: $35.PrepPoseBehavior.PREP_POSE_UNKNOWN, valueOf: $35.PrepPoseBehavior.valueOf, enumValues: $35.PrepPoseBehavior.values)
+    ..e<$34.PrepPoseBehavior>(7, _omitFieldNames ? '' : 'prepPoseBehavior', $pb.PbFieldType.OE, defaultOrMaker: $34.PrepPoseBehavior.PREP_POSE_UNKNOWN, valueOf: $34.PrepPoseBehavior.valueOf, enumValues: $34.PrepPoseBehavior.values)
     ..aOS(8, _omitFieldNames ? '' : 'dockingCommandFeedbackResponseBlackboardKey')
     ..aOS(9, _omitFieldNames ? '' : 'dockingCommandResponseBlackboardKey')
     ..aOB(10, _omitFieldNames ? '' : 'requireFiducial')
@@ -3498,9 +4629,9 @@ class Dock extends $pb.GeneratedMessage {
 
   /// Defines how we use the "pre-docking" behavior.
   @$pb.TagNumber(7)
-  $35.PrepPoseBehavior get prepPoseBehavior => $_getN(6);
+  $34.PrepPoseBehavior get prepPoseBehavior => $_getN(6);
   @$pb.TagNumber(7)
-  set prepPoseBehavior($35.PrepPoseBehavior v) { setField(7, v); }
+  set prepPoseBehavior($34.PrepPoseBehavior v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasPrepPoseBehavior() => $_has(6);
   @$pb.TagNumber(7)
@@ -3553,7 +4684,7 @@ class StoreMetadata extends $pb.GeneratedMessage {
     $core.String? acquireDataRequestName,
     $core.String? metadataName,
     $core.String? metadataChannel,
-    $58.Struct? metadataJson,
+    $57.Struct? metadataJson,
   }) {
     final $result = create();
     if (serviceName != null) {
@@ -3592,7 +4723,7 @@ class StoreMetadata extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'acquireDataRequestName')
     ..aOS(5, _omitFieldNames ? '' : 'metadataName')
     ..aOS(6, _omitFieldNames ? '' : 'metadataChannel')
-    ..aOM<$58.Struct>(7, _omitFieldNames ? '' : 'metadataJson', subBuilder: $58.Struct.create)
+    ..aOM<$57.Struct>(7, _omitFieldNames ? '' : 'metadataJson', subBuilder: $57.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -3674,15 +4805,15 @@ class StoreMetadata extends $pb.GeneratedMessage {
 
   /// JSON representation of metadata
   @$pb.TagNumber(7)
-  $58.Struct get metadataJson => $_getN(5);
+  $57.Struct get metadataJson => $_getN(5);
   @$pb.TagNumber(7)
-  set metadataJson($58.Struct v) { setField(7, v); }
+  set metadataJson($57.Struct v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasMetadataJson() => $_has(5);
   @$pb.TagNumber(7)
   void clearMetadataJson() => clearField(7);
   @$pb.TagNumber(7)
-  $58.Struct ensureMetadataJson() => $_ensure(5);
+  $57.Struct ensureMetadataJson() => $_ensure(5);
 }
 
 /// Trigger the acquisition and storage of data.
@@ -3697,6 +4828,7 @@ class DataAcquisition extends $pb.GeneratedMessage {
     $core.String? actionNameFormat,
     $core.bool? disableCancelOnPauseOrStop,
     $core.String? metadataNameInBlackboard,
+    $core.bool? formatMetadata,
   }) {
     final $result = create();
     if (serviceName != null) {
@@ -3726,6 +4858,9 @@ class DataAcquisition extends $pb.GeneratedMessage {
     if (metadataNameInBlackboard != null) {
       $result.metadataNameInBlackboard = metadataNameInBlackboard;
     }
+    if (formatMetadata != null) {
+      $result.formatMetadata = formatMetadata;
+    }
     return $result;
   }
   DataAcquisition._() : super();
@@ -3742,6 +4877,7 @@ class DataAcquisition extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'actionNameFormat')
     ..aOB(8, _omitFieldNames ? '' : 'disableCancelOnPauseOrStop')
     ..aOS(9, _omitFieldNames ? '' : 'metadataNameInBlackboard')
+    ..aOB(10, _omitFieldNames ? '' : 'formatMetadata')
     ..hasRequiredFields = false
   ;
 
@@ -3875,6 +5011,18 @@ class DataAcquisition extends $pb.GeneratedMessage {
   $core.bool hasMetadataNameInBlackboard() => $_has(8);
   @$pb.TagNumber(9)
   void clearMetadataNameInBlackboard() => clearField(9);
+
+  /// If true, metadata string values may contain formatted blackboard variables.
+  /// Please see the documentation in FormatBlackboard for more information about supported string
+  /// formats.
+  @$pb.TagNumber(10)
+  $core.bool get formatMetadata => $_getBF(9);
+  @$pb.TagNumber(10)
+  set formatMetadata($core.bool v) { $_setBool(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasFormatMetadata() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearFormatMetadata() => clearField(10);
 }
 
 /// Send RetainLease for every Lease the mission service is given via PlayMissionRequest.
@@ -3950,7 +5098,7 @@ class RetainLease extends $pb.GeneratedMessage {
 /// variables in the parent scope.
 class DefineBlackboard extends $pb.GeneratedMessage {
   factory DefineBlackboard({
-    $core.Iterable<$89.KeyValue>? blackboardVariables,
+    $core.Iterable<$92.KeyValue>? blackboardVariables,
     Node? child,
   }) {
     final $result = create();
@@ -3967,7 +5115,7 @@ class DefineBlackboard extends $pb.GeneratedMessage {
   factory DefineBlackboard.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DefineBlackboard', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..pc<$89.KeyValue>(1, _omitFieldNames ? '' : 'blackboardVariables', $pb.PbFieldType.PM, subBuilder: $89.KeyValue.create)
+    ..pc<$92.KeyValue>(1, _omitFieldNames ? '' : 'blackboardVariables', $pb.PbFieldType.PM, subBuilder: $92.KeyValue.create)
     ..aOM<Node>(2, _omitFieldNames ? '' : 'child', subBuilder: Node.create)
     ..hasRequiredFields = false
   ;
@@ -3996,7 +5144,7 @@ class DefineBlackboard extends $pb.GeneratedMessage {
   /// The list of variables that should be defined for this subtree,
   /// with initial values.
   @$pb.TagNumber(1)
-  $core.List<$89.KeyValue> get blackboardVariables => $_getList(0);
+  $core.List<$92.KeyValue> get blackboardVariables => $_getList(0);
 
   /// The blackboard variables will only persist in the subtree defined by this
   /// child node. The child's tick() will be called on the child until it
@@ -4016,7 +5164,7 @@ class DefineBlackboard extends $pb.GeneratedMessage {
 /// Sets existing blackboard variables within this scope to specific values, returning SUCCESS.
 class SetBlackboard extends $pb.GeneratedMessage {
   factory SetBlackboard({
-    $core.Iterable<$89.KeyValue>? blackboardVariables,
+    $core.Iterable<$92.KeyValue>? blackboardVariables,
   }) {
     final $result = create();
     if (blackboardVariables != null) {
@@ -4029,7 +5177,7 @@ class SetBlackboard extends $pb.GeneratedMessage {
   factory SetBlackboard.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetBlackboard', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..pc<$89.KeyValue>(1, _omitFieldNames ? '' : 'blackboardVariables', $pb.PbFieldType.PM, subBuilder: $89.KeyValue.create)
+    ..pc<$92.KeyValue>(1, _omitFieldNames ? '' : 'blackboardVariables', $pb.PbFieldType.PM, subBuilder: $92.KeyValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -4061,7 +5209,7 @@ class SetBlackboard extends $pb.GeneratedMessage {
   /// the blackboard. If the value is another blackboard variable, that blackboard
   /// variable's value will be copied into the variable specified by the key.
   @$pb.TagNumber(1)
-  $core.List<$89.KeyValue> get blackboardVariables => $_getList(0);
+  $core.List<$92.KeyValue> get blackboardVariables => $_getList(0);
 }
 
 /// Sets a blackboard variable to a formatted string, reading from other blackboard vars.
@@ -4217,7 +5365,7 @@ class DateToBlackboard extends $pb.GeneratedMessage {
 /// Just returns a constant when calling tick().
 class ConstantResult extends $pb.GeneratedMessage {
   factory ConstantResult({
-    $89.Result? result,
+    $92.Result? result,
   }) {
     final $result = create();
     if (result != null) {
@@ -4230,7 +5378,7 @@ class ConstantResult extends $pb.GeneratedMessage {
   factory ConstantResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConstantResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
-    ..e<$89.Result>(1, _omitFieldNames ? '' : 'result', $pb.PbFieldType.OE, defaultOrMaker: $89.Result.RESULT_UNKNOWN, valueOf: $89.Result.valueOf, enumValues: $89.Result.values)
+    ..e<$92.Result>(1, _omitFieldNames ? '' : 'result', $pb.PbFieldType.OE, defaultOrMaker: $92.Result.RESULT_UNKNOWN, valueOf: $92.Result.valueOf, enumValues: $92.Result.values)
     ..hasRequiredFields = false
   ;
 
@@ -4257,9 +5405,9 @@ class ConstantResult extends $pb.GeneratedMessage {
 
   /// This result is always returned when calling tick().
   @$pb.TagNumber(1)
-  $89.Result get result => $_getN(0);
+  $92.Result get result => $_getN(0);
   @$pb.TagNumber(1)
-  set result($89.Result v) { setField(1, v); }
+  set result($92.Result v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasResult() => $_has(0);
   @$pb.TagNumber(1)
@@ -4435,7 +5583,8 @@ class DataAcquisitionOnInterruption extends $pb.GeneratedMessage {
 
   /// Data acquisition request that will be sent if the mission is interrupted.
   /// This is not an actual node. It will only be used for the data acquisition request details.
-  /// The completion_behavior and request_name_in_blackboard fields will not be used.
+  /// The completion_behavior, request_name_in_blackboard, metadata_name_in_blackboard, and
+  /// format_metadata fields will not be used.
   @$pb.TagNumber(2)
   DataAcquisition get requestWhenInterrupted => $_getN(1);
   @$pb.TagNumber(2)

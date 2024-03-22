@@ -37,6 +37,10 @@ class DataAcquisitionPluginServiceClient extends $grpc.Client {
       '/bosdyn.api.DataAcquisitionPluginService/CancelAcquisition',
       ($2.CancelAcquisitionRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.CancelAcquisitionResponse.fromBuffer(value));
+  static final _$getLiveData = $grpc.ClientMethod<$2.LiveDataRequest, $2.LiveDataResponse>(
+      '/bosdyn.api.DataAcquisitionPluginService/GetLiveData',
+      ($2.LiveDataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.LiveDataResponse.fromBuffer(value));
 
   DataAcquisitionPluginServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -58,6 +62,10 @@ class DataAcquisitionPluginServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$2.CancelAcquisitionResponse> cancelAcquisition($2.CancelAcquisitionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$cancelAcquisition, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.LiveDataResponse> getLiveData($2.LiveDataRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getLiveData, request, options: options);
   }
 }
 
@@ -94,6 +102,13 @@ abstract class DataAcquisitionPluginServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $2.CancelAcquisitionRequest.fromBuffer(value),
         ($2.CancelAcquisitionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.LiveDataRequest, $2.LiveDataResponse>(
+        'GetLiveData',
+        getLiveData_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $2.LiveDataRequest.fromBuffer(value),
+        ($2.LiveDataResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$2.AcquirePluginDataResponse> acquirePluginData_Pre($grpc.ServiceCall call, $async.Future<$2.AcquirePluginDataRequest> request) async {
@@ -112,8 +127,13 @@ abstract class DataAcquisitionPluginServiceBase extends $grpc.Service {
     return cancelAcquisition(call, await request);
   }
 
+  $async.Future<$2.LiveDataResponse> getLiveData_Pre($grpc.ServiceCall call, $async.Future<$2.LiveDataRequest> request) async {
+    return getLiveData(call, await request);
+  }
+
   $async.Future<$2.AcquirePluginDataResponse> acquirePluginData($grpc.ServiceCall call, $2.AcquirePluginDataRequest request);
   $async.Future<$2.GetStatusResponse> getStatus($grpc.ServiceCall call, $2.GetStatusRequest request);
   $async.Future<$2.GetServiceInfoResponse> getServiceInfo($grpc.ServiceCall call, $2.GetServiceInfoRequest request);
   $async.Future<$2.CancelAcquisitionResponse> cancelAcquisition($grpc.ServiceCall call, $2.CancelAcquisitionRequest request);
+  $async.Future<$2.LiveDataResponse> getLiveData($grpc.ServiceCall call, $2.LiveDataRequest request);
 }

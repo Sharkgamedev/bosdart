@@ -13,11 +13,11 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/duration.pb.dart' as $62;
-import '../../google/protobuf/timestamp.pb.dart' as $60;
-import 'header.pb.dart' as $68;
-import 'lease.pb.dart' as $13;
-import 'license.pbenum.dart' as $14;
+import '../../google/protobuf/duration.pb.dart' as $61;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
+import 'header.pb.dart' as $67;
+import 'lease.pb.dart' as $14;
+import 'license.pbenum.dart' as $15;
 import 'power.pbenum.dart';
 import 'robot_state.pb.dart' as $26;
 
@@ -26,8 +26,8 @@ export 'power.pbenum.dart';
 /// The PowerCommand request which specifies a change in the robot's motor power.
 class PowerCommandRequest extends $pb.GeneratedMessage {
   factory PowerCommandRequest({
-    $68.RequestHeader? header,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $14.Lease? lease,
     PowerCommandRequest_Request? request,
   }) {
     final $result = create();
@@ -47,8 +47,8 @@ class PowerCommandRequest extends $pb.GeneratedMessage {
   factory PowerCommandRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PowerCommandRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$13.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$14.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..e<PowerCommandRequest_Request>(3, _omitFieldNames ? '' : 'request', $pb.PbFieldType.OE, defaultOrMaker: PowerCommandRequest_Request.REQUEST_UNKNOWN, valueOf: PowerCommandRequest_Request.valueOf, enumValues: PowerCommandRequest_Request.values)
     ..hasRequiredFields = false
   ;
@@ -76,27 +76,27 @@ class PowerCommandRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The Lease to show ownership of the robot.
   @$pb.TagNumber(2)
-  $13.Lease get lease => $_getN(1);
+  $14.Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
-  set lease($13.Lease v) { setField(2, v); }
+  set lease($14.Lease v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLease() => $_has(1);
   @$pb.TagNumber(2)
   void clearLease() => clearField(2);
   @$pb.TagNumber(2)
-  $13.Lease ensureLease() => $_ensure(1);
+  $14.Lease ensureLease() => $_ensure(1);
 
   @$pb.TagNumber(3)
   PowerCommandRequest_Request get request => $_getN(2);
@@ -112,11 +112,11 @@ class PowerCommandRequest extends $pb.GeneratedMessage {
 /// get feedback on the progress of a power command from the power service.
 class PowerCommandResponse extends $pb.GeneratedMessage {
   factory PowerCommandResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
     PowerCommandStatus? status,
     $core.int? powerCommandId,
-    $14.LicenseInfo_Status? licenseStatus,
+    $15.LicenseInfo_Status? licenseStatus,
     $core.Iterable<$26.SystemFault>? blockingFaults,
   }) {
     final $result = create();
@@ -145,11 +145,11 @@ class PowerCommandResponse extends $pb.GeneratedMessage {
   factory PowerCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PowerCommandResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..e<PowerCommandStatus>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: PowerCommandStatus.STATUS_UNKNOWN, valueOf: PowerCommandStatus.valueOf, enumValues: PowerCommandStatus.values)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'powerCommandId', $pb.PbFieldType.OU3)
-    ..e<$14.LicenseInfo_Status>(5, _omitFieldNames ? '' : 'licenseStatus', $pb.PbFieldType.OE, defaultOrMaker: $14.LicenseInfo_Status.STATUS_UNKNOWN, valueOf: $14.LicenseInfo_Status.valueOf, enumValues: $14.LicenseInfo_Status.values)
+    ..e<$15.LicenseInfo_Status>(5, _omitFieldNames ? '' : 'licenseStatus', $pb.PbFieldType.OE, defaultOrMaker: $15.LicenseInfo_Status.STATUS_UNKNOWN, valueOf: $15.LicenseInfo_Status.valueOf, enumValues: $15.LicenseInfo_Status.values)
     ..pc<$26.SystemFault>(6, _omitFieldNames ? '' : 'blockingFaults', $pb.PbFieldType.PM, subBuilder: $26.SystemFault.create)
     ..hasRequiredFields = false
   ;
@@ -177,27 +177,27 @@ class PowerCommandResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Details about how the lease was used.
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
   /// Current feedback of specified command.
   @$pb.TagNumber(3)
@@ -221,9 +221,9 @@ class PowerCommandResponse extends $pb.GeneratedMessage {
 
   /// License check status
   @$pb.TagNumber(5)
-  $14.LicenseInfo_Status get licenseStatus => $_getN(4);
+  $15.LicenseInfo_Status get licenseStatus => $_getN(4);
   @$pb.TagNumber(5)
-  set licenseStatus($14.LicenseInfo_Status v) { setField(5, v); }
+  set licenseStatus($15.LicenseInfo_Status v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasLicenseStatus() => $_has(4);
   @$pb.TagNumber(5)
@@ -238,7 +238,7 @@ class PowerCommandResponse extends $pb.GeneratedMessage {
 /// power command id number.
 class PowerCommandFeedbackRequest extends $pb.GeneratedMessage {
   factory PowerCommandFeedbackRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.int? powerCommandId,
   }) {
     final $result = create();
@@ -255,7 +255,7 @@ class PowerCommandFeedbackRequest extends $pb.GeneratedMessage {
   factory PowerCommandFeedbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PowerCommandFeedbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'powerCommandId', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
@@ -283,15 +283,15 @@ class PowerCommandFeedbackRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Unique identifier for the command of which feedback is desired.
   @$pb.TagNumber(2)
@@ -307,7 +307,7 @@ class PowerCommandFeedbackRequest extends $pb.GeneratedMessage {
 /// The PowerCommandFeedback response message, which contains the progress of the power command.
 class PowerCommandFeedbackResponse extends $pb.GeneratedMessage {
   factory PowerCommandFeedbackResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     PowerCommandStatus? status,
     $core.Iterable<$26.SystemFault>? blockingFaults,
   }) {
@@ -328,7 +328,7 @@ class PowerCommandFeedbackResponse extends $pb.GeneratedMessage {
   factory PowerCommandFeedbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PowerCommandFeedbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<PowerCommandStatus>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: PowerCommandStatus.STATUS_UNKNOWN, valueOf: PowerCommandStatus.valueOf, enumValues: PowerCommandStatus.values)
     ..pc<$26.SystemFault>(3, _omitFieldNames ? '' : 'blockingFaults', $pb.PbFieldType.PM, subBuilder: $26.SystemFault.create)
     ..hasRequiredFields = false
@@ -357,15 +357,15 @@ class PowerCommandFeedbackResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Current status of specified command.
   @$pb.TagNumber(2)
@@ -384,10 +384,10 @@ class PowerCommandFeedbackResponse extends $pb.GeneratedMessage {
 
 class FanPowerCommandRequest extends $pb.GeneratedMessage {
   factory FanPowerCommandRequest({
-    $68.RequestHeader? header,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $14.Lease? lease,
     $core.int? percentPower,
-    $62.Duration? duration,
+    $61.Duration? duration,
   }) {
     final $result = create();
     if (header != null) {
@@ -409,10 +409,10 @@ class FanPowerCommandRequest extends $pb.GeneratedMessage {
   factory FanPowerCommandRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FanPowerCommandRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$13.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$14.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'percentPower', $pb.PbFieldType.O3)
-    ..aOM<$62.Duration>(4, _omitFieldNames ? '' : 'duration', subBuilder: $62.Duration.create)
+    ..aOM<$61.Duration>(4, _omitFieldNames ? '' : 'duration', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -439,27 +439,27 @@ class FanPowerCommandRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The Lease to show ownership of the robot.
   @$pb.TagNumber(2)
-  $13.Lease get lease => $_getN(1);
+  $14.Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
-  set lease($13.Lease v) { setField(2, v); }
+  set lease($14.Lease v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLease() => $_has(1);
   @$pb.TagNumber(2)
   void clearLease() => clearField(2);
   @$pb.TagNumber(2)
-  $13.Lease ensureLease() => $_ensure(1);
+  $14.Lease ensureLease() => $_ensure(1);
 
   /// What percent power does the user want the fans to run at?
   /// Range is 0 to 100, with 0 being off and 100 being full power
@@ -475,23 +475,23 @@ class FanPowerCommandRequest extends $pb.GeneratedMessage {
   /// How long the user wants control of the fans
   /// May not be duration the command is actually in effect for if temperature gets too high
   @$pb.TagNumber(4)
-  $62.Duration get duration => $_getN(3);
+  $61.Duration get duration => $_getN(3);
   @$pb.TagNumber(4)
-  set duration($62.Duration v) { setField(4, v); }
+  set duration($61.Duration v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasDuration() => $_has(3);
   @$pb.TagNumber(4)
   void clearDuration() => clearField(4);
   @$pb.TagNumber(4)
-  $62.Duration ensureDuration() => $_ensure(3);
+  $61.Duration ensureDuration() => $_ensure(3);
 }
 
 class FanPowerCommandResponse extends $pb.GeneratedMessage {
   factory FanPowerCommandResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
     FanPowerCommandResponse_Status? status,
-    $60.Timestamp? desiredEndTime,
+    $59.Timestamp? desiredEndTime,
     $core.int? commandId,
   }) {
     final $result = create();
@@ -517,10 +517,10 @@ class FanPowerCommandResponse extends $pb.GeneratedMessage {
   factory FanPowerCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FanPowerCommandResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..e<FanPowerCommandResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FanPowerCommandResponse_Status.STATUS_UNKNOWN, valueOf: FanPowerCommandResponse_Status.valueOf, enumValues: FanPowerCommandResponse_Status.values)
-    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'desiredEndTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'desiredEndTime', subBuilder: $59.Timestamp.create)
     ..a<$core.int>(5, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
@@ -548,27 +548,27 @@ class FanPowerCommandResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Details about how the lease was used.
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
   /// Current feedback of specified command.
   @$pb.TagNumber(3)
@@ -582,15 +582,15 @@ class FanPowerCommandResponse extends $pb.GeneratedMessage {
 
   /// Based on received duration, the time when this command will stop being in effect
   @$pb.TagNumber(4)
-  $60.Timestamp get desiredEndTime => $_getN(3);
+  $59.Timestamp get desiredEndTime => $_getN(3);
   @$pb.TagNumber(4)
-  set desiredEndTime($60.Timestamp v) { setField(4, v); }
+  set desiredEndTime($59.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasDesiredEndTime() => $_has(3);
   @$pb.TagNumber(4)
   void clearDesiredEndTime() => clearField(4);
   @$pb.TagNumber(4)
-  $60.Timestamp ensureDesiredEndTime() => $_ensure(3);
+  $59.Timestamp ensureDesiredEndTime() => $_ensure(3);
 
   /// Unique identifier for the command, If empty, was not accepted.
   @$pb.TagNumber(5)
@@ -607,7 +607,7 @@ class FanPowerCommandResponse extends $pb.GeneratedMessage {
 /// power command id number.
 class FanPowerCommandFeedbackRequest extends $pb.GeneratedMessage {
   factory FanPowerCommandFeedbackRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.int? commandId,
   }) {
     final $result = create();
@@ -624,7 +624,7 @@ class FanPowerCommandFeedbackRequest extends $pb.GeneratedMessage {
   factory FanPowerCommandFeedbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FanPowerCommandFeedbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
@@ -652,15 +652,15 @@ class FanPowerCommandFeedbackRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Unique identifier for the command of which feedback is desired.
   @$pb.TagNumber(2)
@@ -676,10 +676,10 @@ class FanPowerCommandFeedbackRequest extends $pb.GeneratedMessage {
 /// The PowerCommandFeedback response message, which contains the progress of the power command.
 class FanPowerCommandFeedbackResponse extends $pb.GeneratedMessage {
   factory FanPowerCommandFeedbackResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     FanPowerCommandFeedbackResponse_Status? status,
-    $60.Timestamp? desiredEndTime,
-    $60.Timestamp? earlyStopTime,
+    $59.Timestamp? desiredEndTime,
+    $59.Timestamp? earlyStopTime,
   }) {
     final $result = create();
     if (header != null) {
@@ -701,10 +701,10 @@ class FanPowerCommandFeedbackResponse extends $pb.GeneratedMessage {
   factory FanPowerCommandFeedbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FanPowerCommandFeedbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<FanPowerCommandFeedbackResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FanPowerCommandFeedbackResponse_Status.STATUS_UNKNOWN, valueOf: FanPowerCommandFeedbackResponse_Status.valueOf, enumValues: FanPowerCommandFeedbackResponse_Status.values)
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'desiredEndTime', subBuilder: $60.Timestamp.create)
-    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'earlyStopTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'desiredEndTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'earlyStopTime', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -731,15 +731,15 @@ class FanPowerCommandFeedbackResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Current status of specified command.
   @$pb.TagNumber(2)
@@ -755,28 +755,197 @@ class FanPowerCommandFeedbackResponse extends $pb.GeneratedMessage {
   /// stopped/overriden prematurely, early_stop_time will reflect the actual time the command
   /// stopped being in effect
   @$pb.TagNumber(3)
-  $60.Timestamp get desiredEndTime => $_getN(2);
+  $59.Timestamp get desiredEndTime => $_getN(2);
   @$pb.TagNumber(3)
-  set desiredEndTime($60.Timestamp v) { setField(3, v); }
+  set desiredEndTime($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDesiredEndTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearDesiredEndTime() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureDesiredEndTime() => $_ensure(2);
+  $59.Timestamp ensureDesiredEndTime() => $_ensure(2);
 
   /// If the command was stopped or overridden before its desired end time, the time at which it
   /// was stopped. If command succeeded, this time is empty.
   @$pb.TagNumber(4)
-  $60.Timestamp get earlyStopTime => $_getN(3);
+  $59.Timestamp get earlyStopTime => $_getN(3);
   @$pb.TagNumber(4)
-  set earlyStopTime($60.Timestamp v) { setField(4, v); }
+  set earlyStopTime($59.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasEarlyStopTime() => $_has(3);
   @$pb.TagNumber(4)
   void clearEarlyStopTime() => clearField(4);
   @$pb.TagNumber(4)
-  $60.Timestamp ensureEarlyStopTime() => $_ensure(3);
+  $59.Timestamp ensureEarlyStopTime() => $_ensure(3);
+}
+
+class ResetSafetyStopRequest extends $pb.GeneratedMessage {
+  factory ResetSafetyStopRequest({
+    $67.RequestHeader? header,
+    $14.Lease? lease,
+    ResetSafetyStopRequest_SafetyStopType? safetyStopType,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (lease != null) {
+      $result.lease = lease;
+    }
+    if (safetyStopType != null) {
+      $result.safetyStopType = safetyStopType;
+    }
+    return $result;
+  }
+  ResetSafetyStopRequest._() : super();
+  factory ResetSafetyStopRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResetSafetyStopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResetSafetyStopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$14.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
+    ..e<ResetSafetyStopRequest_SafetyStopType>(3, _omitFieldNames ? '' : 'safetyStopType', $pb.PbFieldType.OE, defaultOrMaker: ResetSafetyStopRequest_SafetyStopType.SAFETY_STOP_UNKNOWN, valueOf: ResetSafetyStopRequest_SafetyStopType.valueOf, enumValues: ResetSafetyStopRequest_SafetyStopType.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ResetSafetyStopRequest clone() => ResetSafetyStopRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ResetSafetyStopRequest copyWith(void Function(ResetSafetyStopRequest) updates) => super.copyWith((message) => updates(message as ResetSafetyStopRequest)) as ResetSafetyStopRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResetSafetyStopRequest create() => ResetSafetyStopRequest._();
+  ResetSafetyStopRequest createEmptyInstance() => create();
+  static $pb.PbList<ResetSafetyStopRequest> createRepeated() => $pb.PbList<ResetSafetyStopRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ResetSafetyStopRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResetSafetyStopRequest>(create);
+  static ResetSafetyStopRequest? _defaultInstance;
+
+  /// Common request header.
+  @$pb.TagNumber(1)
+  $67.RequestHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.RequestHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.RequestHeader ensureHeader() => $_ensure(0);
+
+  /// The Lease to show ownership of the robot.
+  @$pb.TagNumber(2)
+  $14.Lease get lease => $_getN(1);
+  @$pb.TagNumber(2)
+  set lease($14.Lease v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLease() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLease() => clearField(2);
+  @$pb.TagNumber(2)
+  $14.Lease ensureLease() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  ResetSafetyStopRequest_SafetyStopType get safetyStopType => $_getN(2);
+  @$pb.TagNumber(3)
+  set safetyStopType(ResetSafetyStopRequest_SafetyStopType v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSafetyStopType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSafetyStopType() => clearField(3);
+}
+
+class ResetSafetyStopResponse extends $pb.GeneratedMessage {
+  factory ResetSafetyStopResponse({
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
+    ResetSafetyStopResponse_Status? status,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (leaseUseResult != null) {
+      $result.leaseUseResult = leaseUseResult;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
+  ResetSafetyStopResponse._() : super();
+  factory ResetSafetyStopResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ResetSafetyStopResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ResetSafetyStopResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
+    ..e<ResetSafetyStopResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ResetSafetyStopResponse_Status.STATUS_UNKNOWN, valueOf: ResetSafetyStopResponse_Status.valueOf, enumValues: ResetSafetyStopResponse_Status.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ResetSafetyStopResponse clone() => ResetSafetyStopResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ResetSafetyStopResponse copyWith(void Function(ResetSafetyStopResponse) updates) => super.copyWith((message) => updates(message as ResetSafetyStopResponse)) as ResetSafetyStopResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResetSafetyStopResponse create() => ResetSafetyStopResponse._();
+  ResetSafetyStopResponse createEmptyInstance() => create();
+  static $pb.PbList<ResetSafetyStopResponse> createRepeated() => $pb.PbList<ResetSafetyStopResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ResetSafetyStopResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ResetSafetyStopResponse>(create);
+  static ResetSafetyStopResponse? _defaultInstance;
+
+  /// Common response header.
+  @$pb.TagNumber(1)
+  $67.ResponseHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.ResponseHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
+
+  /// Details about how the lease was used.
+  @$pb.TagNumber(2)
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
+  @$pb.TagNumber(2)
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLeaseUseResult() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLeaseUseResult() => clearField(2);
+  @$pb.TagNumber(2)
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+
+  /// Current feedback of specified command.
+  @$pb.TagNumber(3)
+  ResetSafetyStopResponse_Status get status => $_getN(2);
+  @$pb.TagNumber(3)
+  set status(ResetSafetyStopResponse_Status v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => clearField(3);
 }
 
 

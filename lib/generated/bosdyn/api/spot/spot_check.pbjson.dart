@@ -100,29 +100,11 @@ const SpotCheckFeedbackResponse$json = {
     {'1': 'load_cell_results', '3': 4, '4': 3, '5': 11, '6': '.bosdyn.api.spot.SpotCheckFeedbackResponse.LoadCellResultsEntry', '10': 'loadCellResults'},
     {'1': 'kinematic_cal_results', '3': 5, '4': 3, '5': 11, '6': '.bosdyn.api.spot.SpotCheckFeedbackResponse.KinematicCalResultsEntry', '10': 'kinematicCalResults'},
     {'1': 'payload_result', '3': 8, '4': 1, '5': 11, '6': '.bosdyn.api.spot.PayloadCheckResult', '10': 'payloadResult'},
-    {
-      '1': 'foot_height_results',
-      '3': 10,
-      '4': 3,
-      '5': 11,
-      '6': '.bosdyn.api.spot.SpotCheckFeedbackResponse.FootHeightResultsEntry',
-      '8': {'3': true},
-      '10': 'footHeightResults',
-    },
-    {
-      '1': 'leg_pair_results',
-      '3': 11,
-      '4': 3,
-      '5': 11,
-      '6': '.bosdyn.api.spot.SpotCheckFeedbackResponse.LegPairResultsEntry',
-      '8': {'3': true},
-      '10': 'legPairResults',
-    },
     {'1': 'hip_range_of_motion_results', '3': 13, '4': 3, '5': 11, '6': '.bosdyn.api.spot.SpotCheckFeedbackResponse.HipRangeOfMotionResultsEntry', '10': 'hipRangeOfMotionResults'},
     {'1': 'progress', '3': 7, '4': 1, '5': 2, '10': 'progress'},
     {'1': 'last_cal_timestamp', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastCalTimestamp'},
   ],
-  '3': [SpotCheckFeedbackResponse_CameraResultsEntry$json, SpotCheckFeedbackResponse_LoadCellResultsEntry$json, SpotCheckFeedbackResponse_KinematicCalResultsEntry$json, SpotCheckFeedbackResponse_FootHeightResultsEntry$json, SpotCheckFeedbackResponse_LegPairResultsEntry$json, SpotCheckFeedbackResponse_HipRangeOfMotionResultsEntry$json],
+  '3': [SpotCheckFeedbackResponse_CameraResultsEntry$json, SpotCheckFeedbackResponse_LoadCellResultsEntry$json, SpotCheckFeedbackResponse_KinematicCalResultsEntry$json, SpotCheckFeedbackResponse_HipRangeOfMotionResultsEntry$json],
   '4': [SpotCheckFeedbackResponse_State$json, SpotCheckFeedbackResponse_Error$json],
 };
 
@@ -152,26 +134,6 @@ const SpotCheckFeedbackResponse_KinematicCalResultsEntry$json = {
   '2': [
     {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
     {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.spot.JointKinematicCheckResult', '10': 'value'},
-  ],
-  '7': {'7': true},
-};
-
-@$core.Deprecated('Use spotCheckFeedbackResponseDescriptor instead')
-const SpotCheckFeedbackResponse_FootHeightResultsEntry$json = {
-  '1': 'FootHeightResultsEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.spot.FootHeightCheckResult', '10': 'value'},
-  ],
-  '7': {'7': true},
-};
-
-@$core.Deprecated('Use spotCheckFeedbackResponseDescriptor instead')
-const SpotCheckFeedbackResponse_LegPairResultsEntry$json = {
-  '1': 'LegPairResultsEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.spot.LegPairCheckResult', '10': 'value'},
   ],
   '7': {'7': true},
 };
@@ -246,43 +208,35 @@ final $typed_data.Uint8List spotCheckFeedbackResponseDescriptor = $convert.base6
     'RyeVIPbG9hZENlbGxSZXN1bHRzEncKFWtpbmVtYXRpY19jYWxfcmVzdWx0cxgFIAMoCzJDLmJv'
     'c2R5bi5hcGkuc3BvdC5TcG90Q2hlY2tGZWVkYmFja1Jlc3BvbnNlLktpbmVtYXRpY0NhbFJlc3'
     'VsdHNFbnRyeVITa2luZW1hdGljQ2FsUmVzdWx0cxJKCg5wYXlsb2FkX3Jlc3VsdBgIIAEoCzIj'
-    'LmJvc2R5bi5hcGkuc3BvdC5QYXlsb2FkQ2hlY2tSZXN1bHRSDXBheWxvYWRSZXN1bHQSdQoTZm'
-    '9vdF9oZWlnaHRfcmVzdWx0cxgKIAMoCzJBLmJvc2R5bi5hcGkuc3BvdC5TcG90Q2hlY2tGZWVk'
-    'YmFja1Jlc3BvbnNlLkZvb3RIZWlnaHRSZXN1bHRzRW50cnlCAhgBUhFmb290SGVpZ2h0UmVzdW'
-    'x0cxJsChBsZWdfcGFpcl9yZXN1bHRzGAsgAygLMj4uYm9zZHluLmFwaS5zcG90LlNwb3RDaGVj'
-    'a0ZlZWRiYWNrUmVzcG9uc2UuTGVnUGFpclJlc3VsdHNFbnRyeUICGAFSDmxlZ1BhaXJSZXN1bH'
-    'RzEoUBChtoaXBfcmFuZ2Vfb2ZfbW90aW9uX3Jlc3VsdHMYDSADKAsyRy5ib3NkeW4uYXBpLnNw'
-    'b3QuU3BvdENoZWNrRmVlZGJhY2tSZXNwb25zZS5IaXBSYW5nZU9mTW90aW9uUmVzdWx0c0VudH'
-    'J5UhdoaXBSYW5nZU9mTW90aW9uUmVzdWx0cxIaCghwcm9ncmVzcxgHIAEoAlIIcHJvZ3Jlc3MS'
-    'SAoSbGFzdF9jYWxfdGltZXN0YW1wGAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcF'
-    'IQbGFzdENhbFRpbWVzdGFtcBpsChJDYW1lcmFSZXN1bHRzRW50cnkSEAoDa2V5GAEgASgJUgNr'
-    'ZXkSQAoFdmFsdWUYAiABKAsyKi5ib3NkeW4uYXBpLnNwb3QuRGVwdGhQbGFuZVNwb3RDaGVja1'
-    'Jlc3VsdFIFdmFsdWU6AjgBGmwKFExvYWRDZWxsUmVzdWx0c0VudHJ5EhAKA2tleRgBIAEoCVID'
-    'a2V5Ej4KBXZhbHVlGAIgASgLMiguYm9zZHluLmFwaS5zcG90LkxvYWRDZWxsU3BvdENoZWNrUm'
-    'VzdWx0UgV2YWx1ZToCOAEacgoYS2luZW1hdGljQ2FsUmVzdWx0c0VudHJ5EhAKA2tleRgBIAEo'
-    'CVIDa2V5EkAKBXZhbHVlGAIgASgLMiouYm9zZHluLmFwaS5zcG90LkpvaW50S2luZW1hdGljQ2'
-    'hlY2tSZXN1bHRSBXZhbHVlOgI4ARpsChZGb290SGVpZ2h0UmVzdWx0c0VudHJ5EhAKA2tleRgB'
-    'IAEoCVIDa2V5EjwKBXZhbHVlGAIgASgLMiYuYm9zZHluLmFwaS5zcG90LkZvb3RIZWlnaHRDaG'
-    'Vja1Jlc3VsdFIFdmFsdWU6AjgBGmYKE0xlZ1BhaXJSZXN1bHRzRW50cnkSEAoDa2V5GAEgASgJ'
-    'UgNrZXkSOQoFdmFsdWUYAiABKAsyIy5ib3NkeW4uYXBpLnNwb3QuTGVnUGFpckNoZWNrUmVzdW'
-    'x0UgV2YWx1ZToCOAEacwocSGlwUmFuZ2VPZk1vdGlvblJlc3VsdHNFbnRyeRIQCgNrZXkYASAB'
-    'KAlSA2tleRI9CgV2YWx1ZRgCIAEoCzInLmJvc2R5bi5hcGkuc3BvdC5IaXBSYW5nZU9mTW90aW'
-    '9uUmVzdWx0UgV2YWx1ZToCOAEi9gIKBVN0YXRlEhEKDVNUQVRFX1VOS05PV04QABIWChJTVEFU'
-    'RV9VU0VSX0FCT1JURUQQARISCg5TVEFURV9TVEFSVElORxACEhYKElNUQVRFX0xPQURDRUxMX0'
-    'NBTBADEhUKEVNUQVRFX0VORFNUT1BfQ0FMEAQSFgoSU1RBVEVfQ0FNRVJBX0NIRUNLEAUSFQoR'
-    'U1RBVEVfQk9EWV9QT1NJTkcQBhISCg5TVEFURV9GSU5JU0hFRBAHEhcKE1NUQVRFX1JFVkVSVE'
-    'lOR19DQUwQCBIPCgtTVEFURV9FUlJPUhAJEh0KGVNUQVRFX1dBSVRJTkdfRk9SX0NPTU1BTkQQ'
-    'ChIjCh9TVEFURV9ISVBfUkFOR0VfT0ZfTU9USU9OX0NIRUNLEAsSFQoRU1RBVEVfR1JJUFBFUl'
-    '9DQUwQDBIcChhTVEFURV9TSVRfRE9XTl9BRlRFUl9SVU4QDRIZChVTVEFURV9BUk1fSk9JTlRf'
-    'Q0hFQ0sQDiLKAwoFRXJyb3ISEQoNRVJST1JfVU5LTk9XThAAEg4KCkVSUk9SX05PTkUQARIhCh'
-    '1FUlJPUl9VTkVYUEVDVEVEX1BPV0VSX0NIQU5HRRACEhgKFEVSUk9SX0lOSVRfSU1VX0NIRUNL'
-    'EAMSGgoWRVJST1JfSU5JVF9OT1RfU0lUVElORxAEEhoKFkVSUk9SX0xPQURDRUxMX1RJTUVPVV'
-    'QQBRIaChZFUlJPUl9QT1dFUl9PTl9GQUlMVVJFEAYSGQoVRVJST1JfRU5EU1RPUF9USU1FT1VU'
-    'EAcSFgoSRVJST1JfRkFJTEVEX1NUQU5EEAgSGAoURVJST1JfQ0FNRVJBX1RJTUVPVVQQCRIWCh'
-    'JFUlJPUl9HUk9VTkRfQ0hFQ0sQChIbChdFUlJPUl9QT1dFUl9PRkZfRkFJTFVSRRALEhgKFEVS'
-    'Uk9SX1JFVkVSVF9GQUlMVVJFEAwSFgoSRVJST1JfRkdLQ19GQUlMVVJFEA0SHQoZRVJST1JfR1'
-    'JJUFBFUl9DQUxfVElNRU9VVBAOEh0KGUVSUk9SX0FSTV9DSEVDS19DT0xMSVNJT04QDxIbChdF'
-    'UlJPUl9BUk1fQ0hFQ0tfVElNRU9VVBAQ');
+    'LmJvc2R5bi5hcGkuc3BvdC5QYXlsb2FkQ2hlY2tSZXN1bHRSDXBheWxvYWRSZXN1bHQShQEKG2'
+    'hpcF9yYW5nZV9vZl9tb3Rpb25fcmVzdWx0cxgNIAMoCzJHLmJvc2R5bi5hcGkuc3BvdC5TcG90'
+    'Q2hlY2tGZWVkYmFja1Jlc3BvbnNlLkhpcFJhbmdlT2ZNb3Rpb25SZXN1bHRzRW50cnlSF2hpcF'
+    'JhbmdlT2ZNb3Rpb25SZXN1bHRzEhoKCHByb2dyZXNzGAcgASgCUghwcm9ncmVzcxJIChJsYXN0'
+    'X2NhbF90aW1lc3RhbXAYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhBsYXN0Q2'
+    'FsVGltZXN0YW1wGmwKEkNhbWVyYVJlc3VsdHNFbnRyeRIQCgNrZXkYASABKAlSA2tleRJACgV2'
+    'YWx1ZRgCIAEoCzIqLmJvc2R5bi5hcGkuc3BvdC5EZXB0aFBsYW5lU3BvdENoZWNrUmVzdWx0Ug'
+    'V2YWx1ZToCOAEabAoUTG9hZENlbGxSZXN1bHRzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSPgoF'
+    'dmFsdWUYAiABKAsyKC5ib3NkeW4uYXBpLnNwb3QuTG9hZENlbGxTcG90Q2hlY2tSZXN1bHRSBX'
+    'ZhbHVlOgI4ARpyChhLaW5lbWF0aWNDYWxSZXN1bHRzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkS'
+    'QAoFdmFsdWUYAiABKAsyKi5ib3NkeW4uYXBpLnNwb3QuSm9pbnRLaW5lbWF0aWNDaGVja1Jlc3'
+    'VsdFIFdmFsdWU6AjgBGnMKHEhpcFJhbmdlT2ZNb3Rpb25SZXN1bHRzRW50cnkSEAoDa2V5GAEg'
+    'ASgJUgNrZXkSPQoFdmFsdWUYAiABKAsyJy5ib3NkeW4uYXBpLnNwb3QuSGlwUmFuZ2VPZk1vdG'
+    'lvblJlc3VsdFIFdmFsdWU6AjgBIvYCCgVTdGF0ZRIRCg1TVEFURV9VTktOT1dOEAASFgoSU1RB'
+    'VEVfVVNFUl9BQk9SVEVEEAESEgoOU1RBVEVfU1RBUlRJTkcQAhIWChJTVEFURV9MT0FEQ0VMTF'
+    '9DQUwQAxIVChFTVEFURV9FTkRTVE9QX0NBTBAEEhYKElNUQVRFX0NBTUVSQV9DSEVDSxAFEhUK'
+    'EVNUQVRFX0JPRFlfUE9TSU5HEAYSEgoOU1RBVEVfRklOSVNIRUQQBxIXChNTVEFURV9SRVZFUl'
+    'RJTkdfQ0FMEAgSDwoLU1RBVEVfRVJST1IQCRIdChlTVEFURV9XQUlUSU5HX0ZPUl9DT01NQU5E'
+    'EAoSIwofU1RBVEVfSElQX1JBTkdFX09GX01PVElPTl9DSEVDSxALEhUKEVNUQVRFX0dSSVBQRV'
+    'JfQ0FMEAwSHAoYU1RBVEVfU0lUX0RPV05fQUZURVJfUlVOEA0SGQoVU1RBVEVfQVJNX0pPSU5U'
+    'X0NIRUNLEA4iygMKBUVycm9yEhEKDUVSUk9SX1VOS05PV04QABIOCgpFUlJPUl9OT05FEAESIQ'
+    'odRVJST1JfVU5FWFBFQ1RFRF9QT1dFUl9DSEFOR0UQAhIYChRFUlJPUl9JTklUX0lNVV9DSEVD'
+    'SxADEhoKFkVSUk9SX0lOSVRfTk9UX1NJVFRJTkcQBBIaChZFUlJPUl9MT0FEQ0VMTF9USU1FT1'
+    'VUEAUSGgoWRVJST1JfUE9XRVJfT05fRkFJTFVSRRAGEhkKFUVSUk9SX0VORFNUT1BfVElNRU9V'
+    'VBAHEhYKEkVSUk9SX0ZBSUxFRF9TVEFORBAIEhgKFEVSUk9SX0NBTUVSQV9USU1FT1VUEAkSFg'
+    'oSRVJST1JfR1JPVU5EX0NIRUNLEAoSGwoXRVJST1JfUE9XRVJfT0ZGX0ZBSUxVUkUQCxIYChRF'
+    'UlJPUl9SRVZFUlRfRkFJTFVSRRAMEhYKEkVSUk9SX0ZHS0NfRkFJTFVSRRANEh0KGUVSUk9SX0'
+    'dSSVBQRVJfQ0FMX1RJTUVPVVQQDhIdChlFUlJPUl9BUk1fQ0hFQ0tfQ09MTElTSU9OEA8SGwoX'
+    'RVJST1JfQVJNX0NIRUNLX1RJTUVPVVQQEA==');
 
 @$core.Deprecated('Use depthPlaneSpotCheckResultDescriptor instead')
 const DepthPlaneSpotCheckResult$json = {
@@ -600,4 +554,112 @@ final $typed_data.Uint8List cameraCalibrationFeedbackResponseDescriptor = $conve
     '5FVkVSX1JVThAKEh4KGlNUQVRVU19DQU1FUkFfTk9UX0RFVEVDVEVEEA8SIQodU1RBVFVTX0lO'
     'VFJJTlNJQ19XUklURV9GQUlMRUQQEBIhCh1TVEFUVVNfRVhUUklOU0lDX1dSSVRFX0ZBSUxFRB'
     'AREioKJlNUQVRVU19DQUxJQlJBVElPTl9WRVJJRklDQVRJT05fRkFJTEVEEBI=');
+
+@$core.Deprecated('Use gripperCameraCalibrationCommandRequestDescriptor instead')
+const GripperCameraCalibrationCommandRequest$json = {
+  '1': 'GripperCameraCalibrationCommandRequest',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
+    {'1': 'lease', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.Lease', '10': 'lease'},
+    {'1': 'command', '3': 3, '4': 1, '5': 14, '6': '.bosdyn.api.spot.GripperCameraCalibrationCommandRequest.Command', '10': 'command'},
+  ],
+  '4': [GripperCameraCalibrationCommandRequest_Command$json],
+};
+
+@$core.Deprecated('Use gripperCameraCalibrationCommandRequestDescriptor instead')
+const GripperCameraCalibrationCommandRequest_Command$json = {
+  '1': 'Command',
+  '2': [
+    {'1': 'COMMAND_UNKNOWN', '2': 0},
+    {'1': 'COMMAND_START', '2': 1},
+    {'1': 'COMMAND_CANCEL', '2': 2},
+  ],
+};
+
+/// Descriptor for `GripperCameraCalibrationCommandRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List gripperCameraCalibrationCommandRequestDescriptor = $convert.base64Decode(
+    'CiZHcmlwcGVyQ2FtZXJhQ2FsaWJyYXRpb25Db21tYW5kUmVxdWVzdBIxCgZoZWFkZXIYASABKA'
+    'syGS5ib3NkeW4uYXBpLlJlcXVlc3RIZWFkZXJSBmhlYWRlchInCgVsZWFzZRgCIAEoCzIRLmJv'
+    'c2R5bi5hcGkuTGVhc2VSBWxlYXNlElkKB2NvbW1hbmQYAyABKA4yPy5ib3NkeW4uYXBpLnNwb3'
+    'QuR3JpcHBlckNhbWVyYUNhbGlicmF0aW9uQ29tbWFuZFJlcXVlc3QuQ29tbWFuZFIHY29tbWFu'
+    'ZCJFCgdDb21tYW5kEhMKD0NPTU1BTkRfVU5LTk9XThAAEhEKDUNPTU1BTkRfU1RBUlQQARISCg'
+    '5DT01NQU5EX0NBTkNFTBAC');
+
+@$core.Deprecated('Use gripperCameraCalibrationCommandResponseDescriptor instead')
+const GripperCameraCalibrationCommandResponse$json = {
+  '1': 'GripperCameraCalibrationCommandResponse',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
+    {'1': 'lease_use_result', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.LeaseUseResult', '10': 'leaseUseResult'},
+  ],
+};
+
+/// Descriptor for `GripperCameraCalibrationCommandResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List gripperCameraCalibrationCommandResponseDescriptor = $convert.base64Decode(
+    'CidHcmlwcGVyQ2FtZXJhQ2FsaWJyYXRpb25Db21tYW5kUmVzcG9uc2USMgoGaGVhZGVyGAEgAS'
+    'gLMhouYm9zZHluLmFwaS5SZXNwb25zZUhlYWRlclIGaGVhZGVyEkQKEGxlYXNlX3VzZV9yZXN1'
+    'bHQYAiABKAsyGi5ib3NkeW4uYXBpLkxlYXNlVXNlUmVzdWx0Ug5sZWFzZVVzZVJlc3VsdA==');
+
+@$core.Deprecated('Use gripperCameraCalibrationFeedbackRequestDescriptor instead')
+const GripperCameraCalibrationFeedbackRequest$json = {
+  '1': 'GripperCameraCalibrationFeedbackRequest',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
+  ],
+};
+
+/// Descriptor for `GripperCameraCalibrationFeedbackRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List gripperCameraCalibrationFeedbackRequestDescriptor = $convert.base64Decode(
+    'CidHcmlwcGVyQ2FtZXJhQ2FsaWJyYXRpb25GZWVkYmFja1JlcXVlc3QSMQoGaGVhZGVyGAEgAS'
+    'gLMhkuYm9zZHluLmFwaS5SZXF1ZXN0SGVhZGVyUgZoZWFkZXI=');
+
+@$core.Deprecated('Use gripperCameraCalibrationFeedbackResponseDescriptor instead')
+const GripperCameraCalibrationFeedbackResponse$json = {
+  '1': 'GripperCameraCalibrationFeedbackResponse',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
+    {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.bosdyn.api.spot.GripperCameraCalibrationFeedbackResponse.Status', '10': 'status'},
+    {'1': 'progress', '3': 3, '4': 1, '5': 2, '10': 'progress'},
+    {'1': 'lease_use_result', '3': 4, '4': 1, '5': 11, '6': '.bosdyn.api.LeaseUseResult', '10': 'leaseUseResult'},
+  ],
+  '4': [GripperCameraCalibrationFeedbackResponse_Status$json],
+};
+
+@$core.Deprecated('Use gripperCameraCalibrationFeedbackResponseDescriptor instead')
+const GripperCameraCalibrationFeedbackResponse_Status$json = {
+  '1': 'Status',
+  '2': [
+    {'1': 'STATUS_UNKNOWN', '2': 0},
+    {'1': 'STATUS_PROCESSING', '2': 1},
+    {'1': 'STATUS_SUCCESS', '2': 2},
+    {'1': 'STATUS_NEVER_RUN', '2': 3},
+    {'1': 'STATUS_USER_CANCELED', '2': 4},
+    {'1': 'STATUS_POWER_ERROR', '2': 5},
+    {'1': 'STATUS_LEASE_ERROR', '2': 6},
+    {'1': 'STATUS_CALIBRATION_ERROR', '2': 8},
+    {'1': 'STATUS_INITIALIZATION_ERROR', '2': 9},
+    {'1': 'STATUS_INTERNAL_ERROR', '2': 10},
+    {'1': 'STATUS_TARGET_NOT_CENTERED', '2': 11},
+    {'1': 'STATUS_TARGET_NOT_IN_VIEW', '2': 12},
+    {'1': 'STATUS_TARGET_NOT_GRAVITY_ALIGNED', '2': 13},
+    {'1': 'STATUS_TARGET_UPSIDE_DOWN', '2': 14},
+    {'1': 'STATUS_STUCK', '2': 15},
+  ],
+};
+
+/// Descriptor for `GripperCameraCalibrationFeedbackResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List gripperCameraCalibrationFeedbackResponseDescriptor = $convert.base64Decode(
+    'CihHcmlwcGVyQ2FtZXJhQ2FsaWJyYXRpb25GZWVkYmFja1Jlc3BvbnNlEjIKBmhlYWRlchgBIA'
+    'EoCzIaLmJvc2R5bi5hcGkuUmVzcG9uc2VIZWFkZXJSBmhlYWRlchJYCgZzdGF0dXMYAiABKA4y'
+    'QC5ib3NkeW4uYXBpLnNwb3QuR3JpcHBlckNhbWVyYUNhbGlicmF0aW9uRmVlZGJhY2tSZXNwb2'
+    '5zZS5TdGF0dXNSBnN0YXR1cxIaCghwcm9ncmVzcxgDIAEoAlIIcHJvZ3Jlc3MSRAoQbGVhc2Vf'
+    'dXNlX3Jlc3VsdBgEIAEoCzIaLmJvc2R5bi5hcGkuTGVhc2VVc2VSZXN1bHRSDmxlYXNlVXNlUm'
+    'VzdWx0IpgDCgZTdGF0dXMSEgoOU1RBVFVTX1VOS05PV04QABIVChFTVEFUVVNfUFJPQ0VTU0lO'
+    'RxABEhIKDlNUQVRVU19TVUNDRVNTEAISFAoQU1RBVFVTX05FVkVSX1JVThADEhgKFFNUQVRVU1'
+    '9VU0VSX0NBTkNFTEVEEAQSFgoSU1RBVFVTX1BPV0VSX0VSUk9SEAUSFgoSU1RBVFVTX0xFQVNF'
+    'X0VSUk9SEAYSHAoYU1RBVFVTX0NBTElCUkFUSU9OX0VSUk9SEAgSHwobU1RBVFVTX0lOSVRJQU'
+    'xJWkFUSU9OX0VSUk9SEAkSGQoVU1RBVFVTX0lOVEVSTkFMX0VSUk9SEAoSHgoaU1RBVFVTX1RB'
+    'UkdFVF9OT1RfQ0VOVEVSRUQQCxIdChlTVEFUVVNfVEFSR0VUX05PVF9JTl9WSUVXEAwSJQohU1'
+    'RBVFVTX1RBUkdFVF9OT1RfR1JBVklUWV9BTElHTkVEEA0SHQoZU1RBVFVTX1RBUkdFVF9VUFNJ'
+    'REVfRE9XThAOEhAKDFNUQVRVU19TVFVDSxAP');
 

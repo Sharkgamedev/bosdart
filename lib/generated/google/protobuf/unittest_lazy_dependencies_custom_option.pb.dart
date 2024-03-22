@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest_lazy_dependencies_enum.pbenum.dart' as $101;
+import 'unittest_lazy_dependencies_enum.pbenum.dart' as $104;
 
 class LazyMessage extends $pb.GeneratedMessage {
   factory LazyMessage({
@@ -66,7 +66,7 @@ class LazyMessage extends $pb.GeneratedMessage {
 }
 
 class Unittest_lazy_dependencies_custom_option {
-  static final lazyEnumOption = $pb.Extension<$101.LazyEnum>(_omitMessageNames ? '' : 'google.protobuf.MessageOptions', _omitFieldNames ? '' : 'lazyEnumOption', 138596335, $pb.PbFieldType.OE, defaultOrMaker: $101.LazyEnum.LAZY_ENUM_1, valueOf: $101.LazyEnum.valueOf, enumValues: $101.LazyEnum.values);
+  static final lazyEnumOption = $pb.Extension<$104.LazyEnum>(_omitMessageNames ? '' : 'google.protobuf.MessageOptions', _omitFieldNames ? '' : 'lazyEnumOption', 138596335, $pb.PbFieldType.OE, defaultOrMaker: $104.LazyEnum.LAZY_ENUM_1, valueOf: $104.LazyEnum.valueOf, enumValues: $104.LazyEnum.values);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(lazyEnumOption);
   }

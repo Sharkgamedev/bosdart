@@ -21,14 +21,9 @@ const GetAuthTokenRequest$json = {
     {'1': 'username', '3': 2, '4': 1, '5': 9, '10': 'username'},
     {'1': 'password', '3': 3, '4': 1, '5': 9, '10': 'password'},
     {'1': 'token', '3': 4, '4': 1, '5': 9, '10': 'token'},
-    {
-      '1': 'application_token',
-      '3': 5,
-      '4': 1,
-      '5': 9,
-      '8': {'3': true},
-      '10': 'applicationToken',
-    },
+  ],
+  '9': [
+    {'1': 5, '2': 6},
   ],
 };
 
@@ -36,8 +31,7 @@ const GetAuthTokenRequest$json = {
 final $typed_data.Uint8List getAuthTokenRequestDescriptor = $convert.base64Decode(
     'ChNHZXRBdXRoVG9rZW5SZXF1ZXN0EjEKBmhlYWRlchgBIAEoCzIZLmJvc2R5bi5hcGkuUmVxdW'
     'VzdEhlYWRlclIGaGVhZGVyEhoKCHVzZXJuYW1lGAIgASgJUgh1c2VybmFtZRIaCghwYXNzd29y'
-    'ZBgDIAEoCVIIcGFzc3dvcmQSFAoFdG9rZW4YBCABKAlSBXRva2VuEi8KEWFwcGxpY2F0aW9uX3'
-    'Rva2VuGAUgASgJQgIYAVIQYXBwbGljYXRpb25Ub2tlbg==');
+    'ZBgDIAEoCVIIcGFzc3dvcmQSFAoFdG9rZW4YBCABKAlSBXRva2VuSgQIBRAG');
 
 @$core.Deprecated('Use getAuthTokenResponseDescriptor instead')
 const GetAuthTokenResponse$json = {
@@ -59,8 +53,10 @@ const GetAuthTokenResponse_Status$json = {
     {'1': 'STATUS_INVALID_LOGIN', '2': 2},
     {'1': 'STATUS_INVALID_TOKEN', '2': 3},
     {'1': 'STATUS_TEMPORARILY_LOCKED_OUT', '2': 4},
-    {'1': 'STATUS_INVALID_APPLICATION_TOKEN', '2': 5},
-    {'1': 'STATUS_EXPIRED_APPLICATION_TOKEN', '2': 6},
+  ],
+  '4': [
+    {'1': 5, '2': 5},
+    {'1': 6, '2': 6},
   ],
 };
 
@@ -68,9 +64,8 @@ const GetAuthTokenResponse_Status$json = {
 final $typed_data.Uint8List getAuthTokenResponseDescriptor = $convert.base64Decode(
     'ChRHZXRBdXRoVG9rZW5SZXNwb25zZRIyCgZoZWFkZXIYASABKAsyGi5ib3NkeW4uYXBpLlJlc3'
     'BvbnNlSGVhZGVyUgZoZWFkZXISPwoGc3RhdHVzGAIgASgOMicuYm9zZHluLmFwaS5HZXRBdXRo'
-    'VG9rZW5SZXNwb25zZS5TdGF0dXNSBnN0YXR1cxIUCgV0b2tlbhgDIAEoCVIFdG9rZW4izgEKBl'
+    'VG9rZW5SZXNwb25zZS5TdGF0dXNSBnN0YXR1cxIUCgV0b2tlbhgDIAEoCVIFdG9rZW4ijgEKBl'
     'N0YXR1cxISCg5TVEFUVVNfVU5LTk9XThAAEg0KCVNUQVRVU19PSxABEhgKFFNUQVRVU19JTlZB'
     'TElEX0xPR0lOEAISGAoUU1RBVFVTX0lOVkFMSURfVE9LRU4QAxIhCh1TVEFUVVNfVEVNUE9SQV'
-    'JJTFlfTE9DS0VEX09VVBAEEiQKIFNUQVRVU19JTlZBTElEX0FQUExJQ0FUSU9OX1RPS0VOEAUS'
-    'JAogU1RBVFVTX0VYUElSRURfQVBQTElDQVRJT05fVE9LRU4QBg==');
+    'JJTFlfTE9DS0VEX09VVBAEIgQIBRAFIgQIBhAG');
 

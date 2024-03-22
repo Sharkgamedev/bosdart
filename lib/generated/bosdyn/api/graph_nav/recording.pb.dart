@@ -13,13 +13,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $60;
-import '../header.pb.dart' as $68;
-import '../lease.pb.dart' as $13;
-import '../license.pbenum.dart' as $14;
+import '../../../google/protobuf/timestamp.pb.dart' as $59;
+import '../header.pb.dart' as $67;
+import '../lease.pb.dart' as $14;
+import '../license.pbenum.dart' as $15;
 import '../robot_state.pb.dart' as $26;
 import '../world_object.pb.dart' as $28;
-import 'map.pb.dart' as $87;
+import 'map.pb.dart' as $89;
 import 'recording.pbenum.dart';
 
 export 'recording.pbenum.dart';
@@ -30,8 +30,8 @@ export 'recording.pbenum.dart';
 class RecordingEnvironment extends $pb.GeneratedMessage {
   factory RecordingEnvironment({
     $core.String? namePrefix,
-    $87.Waypoint_Annotations? waypointEnvironment,
-    $87.Edge_Annotations? edgeEnvironment,
+    $89.Waypoint_Annotations? waypointEnvironment,
+    $89.Edge_Annotations? edgeEnvironment,
   }) {
     final $result = create();
     if (namePrefix != null) {
@@ -51,8 +51,8 @@ class RecordingEnvironment extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordingEnvironment', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'namePrefix')
-    ..aOM<$87.Waypoint_Annotations>(2, _omitFieldNames ? '' : 'waypointEnvironment', subBuilder: $87.Waypoint_Annotations.create)
-    ..aOM<$87.Edge_Annotations>(3, _omitFieldNames ? '' : 'edgeEnvironment', subBuilder: $87.Edge_Annotations.create)
+    ..aOM<$89.Waypoint_Annotations>(2, _omitFieldNames ? '' : 'waypointEnvironment', subBuilder: $89.Waypoint_Annotations.create)
+    ..aOM<$89.Edge_Annotations>(3, _omitFieldNames ? '' : 'edgeEnvironment', subBuilder: $89.Edge_Annotations.create)
     ..hasRequiredFields = false
   ;
 
@@ -90,37 +90,37 @@ class RecordingEnvironment extends $pb.GeneratedMessage {
   /// Persistent waypoint annotation that will be merged in
   /// to all waypoints in this recording.
   @$pb.TagNumber(2)
-  $87.Waypoint_Annotations get waypointEnvironment => $_getN(1);
+  $89.Waypoint_Annotations get waypointEnvironment => $_getN(1);
   @$pb.TagNumber(2)
-  set waypointEnvironment($87.Waypoint_Annotations v) { setField(2, v); }
+  set waypointEnvironment($89.Waypoint_Annotations v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasWaypointEnvironment() => $_has(1);
   @$pb.TagNumber(2)
   void clearWaypointEnvironment() => clearField(2);
   @$pb.TagNumber(2)
-  $87.Waypoint_Annotations ensureWaypointEnvironment() => $_ensure(1);
+  $89.Waypoint_Annotations ensureWaypointEnvironment() => $_ensure(1);
 
   /// Persistent edge annotation that will be merged in to all
-  /// waypoints in this recording.
+  /// edges in this recording.
   @$pb.TagNumber(3)
-  $87.Edge_Annotations get edgeEnvironment => $_getN(2);
+  $89.Edge_Annotations get edgeEnvironment => $_getN(2);
   @$pb.TagNumber(3)
-  set edgeEnvironment($87.Edge_Annotations v) { setField(3, v); }
+  set edgeEnvironment($89.Edge_Annotations v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEdgeEnvironment() => $_has(2);
   @$pb.TagNumber(3)
   void clearEdgeEnvironment() => clearField(3);
   @$pb.TagNumber(3)
-  $87.Edge_Annotations ensureEdgeEnvironment() => $_ensure(2);
+  $89.Edge_Annotations ensureEdgeEnvironment() => $_ensure(2);
 }
 
 /// The SetRecordingEnvironment request message sets a persistent recording environment
 /// until changed with another SetRecordingEnvironment rpc.
 class SetRecordingEnvironmentRequest extends $pb.GeneratedMessage {
   factory SetRecordingEnvironmentRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     RecordingEnvironment? environment,
-    $13.Lease? lease,
+    $14.Lease? lease,
   }) {
     final $result = create();
     if (header != null) {
@@ -139,9 +139,9 @@ class SetRecordingEnvironmentRequest extends $pb.GeneratedMessage {
   factory SetRecordingEnvironmentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetRecordingEnvironmentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<RecordingEnvironment>(2, _omitFieldNames ? '' : 'environment', subBuilder: RecordingEnvironment.create)
-    ..aOM<$13.Lease>(3, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$14.Lease>(3, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..hasRequiredFields = false
   ;
 
@@ -168,15 +168,15 @@ class SetRecordingEnvironmentRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Persistent environment to use while recording. This allows the
   /// user to specify annotations and naming prefixes for new waypoints
@@ -195,22 +195,22 @@ class SetRecordingEnvironmentRequest extends $pb.GeneratedMessage {
   /// The recording service is protected by a lease. The client must have a
   /// lease to the recording service to modify its internal state.
   @$pb.TagNumber(3)
-  $13.Lease get lease => $_getN(2);
+  $14.Lease get lease => $_getN(2);
   @$pb.TagNumber(3)
-  set lease($13.Lease v) { setField(3, v); }
+  set lease($14.Lease v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLease() => $_has(2);
   @$pb.TagNumber(3)
   void clearLease() => clearField(3);
   @$pb.TagNumber(3)
-  $13.Lease ensureLease() => $_ensure(2);
+  $14.Lease ensureLease() => $_ensure(2);
 }
 
 /// The SetRecordingEnvironment response message includes the result and status of the request.
 class SetRecordingEnvironmentResponse extends $pb.GeneratedMessage {
   factory SetRecordingEnvironmentResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
   }) {
     final $result = create();
     if (header != null) {
@@ -226,8 +226,8 @@ class SetRecordingEnvironmentResponse extends $pb.GeneratedMessage {
   factory SetRecordingEnvironmentResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetRecordingEnvironmentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..hasRequiredFields = false
   ;
 
@@ -254,38 +254,38 @@ class SetRecordingEnvironmentResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The results/status of the lease provided.
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 }
 
 /// The StartRecording request tells the recording service to begin creating waypoints with the
 /// specified recording_environment.
 class StartRecordingRequest extends $pb.GeneratedMessage {
   factory StartRecordingRequest({
-    $68.RequestHeader? header,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $14.Lease? lease,
     RecordingEnvironment? recordingEnvironment,
     $core.Iterable<$core.int>? requireFiducials,
-    $60.Timestamp? sessionStartTime,
+    $59.Timestamp? sessionStartTime,
   }) {
     final $result = create();
     if (header != null) {
@@ -310,11 +310,11 @@ class StartRecordingRequest extends $pb.GeneratedMessage {
   factory StartRecordingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartRecordingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$13.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$14.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..aOM<RecordingEnvironment>(3, _omitFieldNames ? '' : 'recordingEnvironment', subBuilder: RecordingEnvironment.create)
     ..p<$core.int>(4, _omitFieldNames ? '' : 'requireFiducials', $pb.PbFieldType.K3)
-    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'sessionStartTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'sessionStartTime', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -341,28 +341,28 @@ class StartRecordingRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The recording service is protected by a lease. The client must have a
   /// lease to the recording service to modify its internal state.
   @$pb.TagNumber(2)
-  $13.Lease get lease => $_getN(1);
+  $14.Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
-  set lease($13.Lease v) { setField(2, v); }
+  set lease($14.Lease v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLease() => $_has(1);
   @$pb.TagNumber(2)
   void clearLease() => clearField(2);
   @$pb.TagNumber(2)
-  $13.Lease ensureLease() => $_ensure(1);
+  $14.Lease ensureLease() => $_ensure(1);
 
   /// This will be merged into a copy of the existing persistent recording
   /// environment and used as the environment for the created waypoint
@@ -390,31 +390,31 @@ class StartRecordingRequest extends $pb.GeneratedMessage {
   /// after "StartRecording" is called. This is to allow association between waypoint
   /// snapshots based on recording session time.
   @$pb.TagNumber(5)
-  $60.Timestamp get sessionStartTime => $_getN(4);
+  $59.Timestamp get sessionStartTime => $_getN(4);
   @$pb.TagNumber(5)
-  set sessionStartTime($60.Timestamp v) { setField(5, v); }
+  set sessionStartTime($59.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasSessionStartTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearSessionStartTime() => clearField(5);
   @$pb.TagNumber(5)
-  $60.Timestamp ensureSessionStartTime() => $_ensure(4);
+  $59.Timestamp ensureSessionStartTime() => $_ensure(4);
 }
 
 /// The StartRecording response messge returns the first created waypoint, which is made at the
 /// location the robot was standing when the request was made, in addition to any status information.
 class StartRecordingResponse extends $pb.GeneratedMessage {
   factory StartRecordingResponse({
-    $68.ResponseHeader? header,
-    $87.Waypoint? createdWaypoint,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $89.Waypoint? createdWaypoint,
+    $14.LeaseUseResult? leaseUseResult,
     StartRecordingResponse_Status? status,
     $core.Iterable<$core.int>? missingFiducials,
-    $14.LicenseInfo_Status? licenseStatus,
+    $15.LicenseInfo_Status? licenseStatus,
     $core.Iterable<$core.int>? badPoseFiducials,
     $26.RobotImpairedState? impairedState,
-    $60.Timestamp? sessionStartTime,
-    $87.MapStats? mapStats,
+    $59.Timestamp? sessionStartTime,
+    $89.MapStats? mapStats,
   }) {
     final $result = create();
     if (header != null) {
@@ -454,16 +454,16 @@ class StartRecordingResponse extends $pb.GeneratedMessage {
   factory StartRecordingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartRecordingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$87.Waypoint>(2, _omitFieldNames ? '' : 'createdWaypoint', subBuilder: $87.Waypoint.create)
-    ..aOM<$13.LeaseUseResult>(3, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$89.Waypoint>(2, _omitFieldNames ? '' : 'createdWaypoint', subBuilder: $89.Waypoint.create)
+    ..aOM<$14.LeaseUseResult>(3, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..e<StartRecordingResponse_Status>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: StartRecordingResponse_Status.STATUS_UNKNOWN, valueOf: StartRecordingResponse_Status.valueOf, enumValues: StartRecordingResponse_Status.values)
     ..p<$core.int>(5, _omitFieldNames ? '' : 'missingFiducials', $pb.PbFieldType.K3)
-    ..e<$14.LicenseInfo_Status>(6, _omitFieldNames ? '' : 'licenseStatus', $pb.PbFieldType.OE, defaultOrMaker: $14.LicenseInfo_Status.STATUS_UNKNOWN, valueOf: $14.LicenseInfo_Status.valueOf, enumValues: $14.LicenseInfo_Status.values)
+    ..e<$15.LicenseInfo_Status>(6, _omitFieldNames ? '' : 'licenseStatus', $pb.PbFieldType.OE, defaultOrMaker: $15.LicenseInfo_Status.STATUS_UNKNOWN, valueOf: $15.LicenseInfo_Status.valueOf, enumValues: $15.LicenseInfo_Status.values)
     ..p<$core.int>(7, _omitFieldNames ? '' : 'badPoseFiducials', $pb.PbFieldType.K3)
     ..aOM<$26.RobotImpairedState>(8, _omitFieldNames ? '' : 'impairedState', subBuilder: $26.RobotImpairedState.create)
-    ..aOM<$60.Timestamp>(9, _omitFieldNames ? '' : 'sessionStartTime', subBuilder: $60.Timestamp.create)
-    ..aOM<$87.MapStats>(10, _omitFieldNames ? '' : 'mapStats', subBuilder: $87.MapStats.create)
+    ..aOM<$59.Timestamp>(9, _omitFieldNames ? '' : 'sessionStartTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$89.MapStats>(10, _omitFieldNames ? '' : 'mapStats', subBuilder: $89.MapStats.create)
     ..hasRequiredFields = false
   ;
 
@@ -490,39 +490,39 @@ class StartRecordingResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The waypoint that was just created.
   @$pb.TagNumber(2)
-  $87.Waypoint get createdWaypoint => $_getN(1);
+  $89.Waypoint get createdWaypoint => $_getN(1);
   @$pb.TagNumber(2)
-  set createdWaypoint($87.Waypoint v) { setField(2, v); }
+  set createdWaypoint($89.Waypoint v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreatedWaypoint() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreatedWaypoint() => clearField(2);
   @$pb.TagNumber(2)
-  $87.Waypoint ensureCreatedWaypoint() => $_ensure(1);
+  $89.Waypoint ensureCreatedWaypoint() => $_ensure(1);
 
   /// The results/status of the lease provided.
   @$pb.TagNumber(3)
-  $13.LeaseUseResult get leaseUseResult => $_getN(2);
+  $14.LeaseUseResult get leaseUseResult => $_getN(2);
   @$pb.TagNumber(3)
-  set leaseUseResult($13.LeaseUseResult v) { setField(3, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLeaseUseResult() => $_has(2);
   @$pb.TagNumber(3)
   void clearLeaseUseResult() => clearField(3);
   @$pb.TagNumber(3)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(2);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(2);
 
   /// Return status for the request.
   @$pb.TagNumber(4)
@@ -544,9 +544,9 @@ class StartRecordingResponse extends $pb.GeneratedMessage {
   /// is requested again after the graph gets too large, it will fail, and license
   /// status will be filled out.
   @$pb.TagNumber(6)
-  $14.LicenseInfo_Status get licenseStatus => $_getN(5);
+  $15.LicenseInfo_Status get licenseStatus => $_getN(5);
   @$pb.TagNumber(6)
-  set licenseStatus($14.LicenseInfo_Status v) { setField(6, v); }
+  set licenseStatus($15.LicenseInfo_Status v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasLicenseStatus() => $_has(5);
   @$pb.TagNumber(6)
@@ -573,35 +573,35 @@ class StartRecordingResponse extends $pb.GeneratedMessage {
   /// Request's session start time is provided, this should be the same as the request's session
   /// start time.
   @$pb.TagNumber(9)
-  $60.Timestamp get sessionStartTime => $_getN(8);
+  $59.Timestamp get sessionStartTime => $_getN(8);
   @$pb.TagNumber(9)
-  set sessionStartTime($60.Timestamp v) { setField(9, v); }
+  set sessionStartTime($59.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasSessionStartTime() => $_has(8);
   @$pb.TagNumber(9)
   void clearSessionStartTime() => clearField(9);
   @$pb.TagNumber(9)
-  $60.Timestamp ensureSessionStartTime() => $_ensure(8);
+  $59.Timestamp ensureSessionStartTime() => $_ensure(8);
 
   /// General statistics of the map loaded in GraphNav.
   @$pb.TagNumber(10)
-  $87.MapStats get mapStats => $_getN(9);
+  $89.MapStats get mapStats => $_getN(9);
   @$pb.TagNumber(10)
-  set mapStats($87.MapStats v) { setField(10, v); }
+  set mapStats($89.MapStats v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasMapStats() => $_has(9);
   @$pb.TagNumber(10)
   void clearMapStats() => clearField(10);
   @$pb.TagNumber(10)
-  $87.MapStats ensureMapStats() => $_ensure(9);
+  $89.MapStats ensureMapStats() => $_ensure(9);
 }
 
 /// The StopRecording request message tells the robot to no longer continue adding waypoints and
 /// edges to the graph.
 class StopRecordingRequest extends $pb.GeneratedMessage {
   factory StopRecordingRequest({
-    $68.RequestHeader? header,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $14.Lease? lease,
   }) {
     final $result = create();
     if (header != null) {
@@ -617,8 +617,8 @@ class StopRecordingRequest extends $pb.GeneratedMessage {
   factory StopRecordingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopRecordingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$13.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$14.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..hasRequiredFields = false
   ;
 
@@ -645,40 +645,40 @@ class StopRecordingRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The recording service is protected by a lease. The client must have a
   /// lease to the recording service to modify its internal state.
   @$pb.TagNumber(2)
-  $13.Lease get lease => $_getN(1);
+  $14.Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
-  set lease($13.Lease v) { setField(2, v); }
+  set lease($14.Lease v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLease() => $_has(1);
   @$pb.TagNumber(2)
   void clearLease() => clearField(2);
   @$pb.TagNumber(2)
-  $13.Lease ensureLease() => $_ensure(1);
+  $14.Lease ensureLease() => $_ensure(1);
 }
 
 /// The StopRecording response message contains the status of this request and any useful error
 /// information if the request fails.
 class StopRecordingResponse extends $pb.GeneratedMessage {
   factory StopRecordingResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     StopRecordingResponse_Status? status,
     $core.String? errorWaypointLocalizedId,
-    $13.LeaseUseResult? leaseUseResult,
-    $60.Timestamp? sessionStartTime,
-    $87.MapStats? mapStats,
+    $14.LeaseUseResult? leaseUseResult,
+    $59.Timestamp? sessionStartTime,
+    $89.MapStats? mapStats,
   }) {
     final $result = create();
     if (header != null) {
@@ -706,12 +706,12 @@ class StopRecordingResponse extends $pb.GeneratedMessage {
   factory StopRecordingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopRecordingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<StopRecordingResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: StopRecordingResponse_Status.STATUS_UNKNOWN, valueOf: StopRecordingResponse_Status.valueOf, enumValues: StopRecordingResponse_Status.values)
     ..aOS(3, _omitFieldNames ? '' : 'errorWaypointLocalizedId')
-    ..aOM<$13.LeaseUseResult>(4, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
-    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'sessionStartTime', subBuilder: $60.Timestamp.create)
-    ..aOM<$87.MapStats>(6, _omitFieldNames ? '' : 'mapStats', subBuilder: $87.MapStats.create)
+    ..aOM<$14.LeaseUseResult>(4, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
+    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'sessionStartTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$89.MapStats>(6, _omitFieldNames ? '' : 'mapStats', subBuilder: $89.MapStats.create)
     ..hasRequiredFields = false
   ;
 
@@ -738,15 +738,15 @@ class StopRecordingResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The return status for the request.
   @$pb.TagNumber(2)
@@ -770,51 +770,51 @@ class StopRecordingResponse extends $pb.GeneratedMessage {
 
   /// The results/status of the lease provided.
   @$pb.TagNumber(4)
-  $13.LeaseUseResult get leaseUseResult => $_getN(3);
+  $14.LeaseUseResult get leaseUseResult => $_getN(3);
   @$pb.TagNumber(4)
-  set leaseUseResult($13.LeaseUseResult v) { setField(4, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLeaseUseResult() => $_has(3);
   @$pb.TagNumber(4)
   void clearLeaseUseResult() => clearField(4);
   @$pb.TagNumber(4)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(3);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(3);
 
   /// This is the robot local timestamp that graph_nav began recording on. If the
   /// StartRecordingRequest's session start time is provided, this should be the same as the
   /// request's session start time.
   @$pb.TagNumber(5)
-  $60.Timestamp get sessionStartTime => $_getN(4);
+  $59.Timestamp get sessionStartTime => $_getN(4);
   @$pb.TagNumber(5)
-  set sessionStartTime($60.Timestamp v) { setField(5, v); }
+  set sessionStartTime($59.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasSessionStartTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearSessionStartTime() => clearField(5);
   @$pb.TagNumber(5)
-  $60.Timestamp ensureSessionStartTime() => $_ensure(4);
+  $59.Timestamp ensureSessionStartTime() => $_ensure(4);
 
   /// General statistics of the map loaded in GraphNav.
   @$pb.TagNumber(6)
-  $87.MapStats get mapStats => $_getN(5);
+  $89.MapStats get mapStats => $_getN(5);
   @$pb.TagNumber(6)
-  set mapStats($87.MapStats v) { setField(6, v); }
+  set mapStats($89.MapStats v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasMapStats() => $_has(5);
   @$pb.TagNumber(6)
   void clearMapStats() => clearField(6);
   @$pb.TagNumber(6)
-  $87.MapStats ensureMapStats() => $_ensure(5);
+  $89.MapStats ensureMapStats() => $_ensure(5);
 }
 
 /// The CreateWaypoint request message specifies a name and environment the robot should
 /// use to generate a waypoint in the graph at it's current location.
 class CreateWaypointRequest extends $pb.GeneratedMessage {
   factory CreateWaypointRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? waypointName,
     RecordingEnvironment? recordingEnvironment,
-    $13.Lease? lease,
+    $14.Lease? lease,
     $core.Iterable<$core.int>? requireFiducials,
     $core.Iterable<$28.WorldObject>? worldObjects,
   }) {
@@ -844,10 +844,10 @@ class CreateWaypointRequest extends $pb.GeneratedMessage {
   factory CreateWaypointRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateWaypointRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'waypointName')
     ..aOM<RecordingEnvironment>(3, _omitFieldNames ? '' : 'recordingEnvironment', subBuilder: RecordingEnvironment.create)
-    ..aOM<$13.Lease>(4, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$14.Lease>(4, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..p<$core.int>(5, _omitFieldNames ? '' : 'requireFiducials', $pb.PbFieldType.K3)
     ..pc<$28.WorldObject>(6, _omitFieldNames ? '' : 'worldObjects', $pb.PbFieldType.PM, subBuilder: $28.WorldObject.create)
     ..hasRequiredFields = false
@@ -876,15 +876,15 @@ class CreateWaypointRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Name of the waypoint to create. Overrides any naming prefix.
   @$pb.TagNumber(2)
@@ -914,15 +914,15 @@ class CreateWaypointRequest extends $pb.GeneratedMessage {
   /// The recording service is protected by a lease. The client must have a
   /// lease to the recording service to modify its internal state.
   @$pb.TagNumber(4)
-  $13.Lease get lease => $_getN(3);
+  $14.Lease get lease => $_getN(3);
   @$pb.TagNumber(4)
-  set lease($13.Lease v) { setField(4, v); }
+  set lease($14.Lease v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLease() => $_has(3);
   @$pb.TagNumber(4)
   void clearLease() => clearField(4);
   @$pb.TagNumber(4)
-  $13.Lease ensureLease() => $_ensure(3);
+  $14.Lease ensureLease() => $_ensure(3);
 
   /// If filled out, asks that the record service verify that the given fiducial IDs
   /// are presently visible before creating a waypoint. This is useful for verifying
@@ -939,15 +939,15 @@ class CreateWaypointRequest extends $pb.GeneratedMessage {
 /// edge connecting this waypoint to the graph when the request succeeds.
 class CreateWaypointResponse extends $pb.GeneratedMessage {
   factory CreateWaypointResponse({
-    $68.ResponseHeader? header,
-    $87.Waypoint? createdWaypoint,
-    $87.Edge? createdEdge,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $89.Waypoint? createdWaypoint,
+    $89.Edge? createdEdge,
+    $14.LeaseUseResult? leaseUseResult,
     CreateWaypointResponse_Status? status,
     $core.Iterable<$core.int>? missingFiducials,
-    $14.LicenseInfo_Status? licenseStatus,
+    $15.LicenseInfo_Status? licenseStatus,
     $core.Iterable<$core.int>? badPoseFiducials,
-    $87.MapStats? mapStats,
+    $89.MapStats? mapStats,
   }) {
     final $result = create();
     if (header != null) {
@@ -984,15 +984,15 @@ class CreateWaypointResponse extends $pb.GeneratedMessage {
   factory CreateWaypointResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateWaypointResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$87.Waypoint>(2, _omitFieldNames ? '' : 'createdWaypoint', subBuilder: $87.Waypoint.create)
-    ..aOM<$87.Edge>(3, _omitFieldNames ? '' : 'createdEdge', subBuilder: $87.Edge.create)
-    ..aOM<$13.LeaseUseResult>(4, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$89.Waypoint>(2, _omitFieldNames ? '' : 'createdWaypoint', subBuilder: $89.Waypoint.create)
+    ..aOM<$89.Edge>(3, _omitFieldNames ? '' : 'createdEdge', subBuilder: $89.Edge.create)
+    ..aOM<$14.LeaseUseResult>(4, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..e<CreateWaypointResponse_Status>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: CreateWaypointResponse_Status.STATUS_UNKNOWN, valueOf: CreateWaypointResponse_Status.valueOf, enumValues: CreateWaypointResponse_Status.values)
     ..p<$core.int>(6, _omitFieldNames ? '' : 'missingFiducials', $pb.PbFieldType.K3)
-    ..e<$14.LicenseInfo_Status>(7, _omitFieldNames ? '' : 'licenseStatus', $pb.PbFieldType.OE, defaultOrMaker: $14.LicenseInfo_Status.STATUS_UNKNOWN, valueOf: $14.LicenseInfo_Status.valueOf, enumValues: $14.LicenseInfo_Status.values)
+    ..e<$15.LicenseInfo_Status>(7, _omitFieldNames ? '' : 'licenseStatus', $pb.PbFieldType.OE, defaultOrMaker: $15.LicenseInfo_Status.STATUS_UNKNOWN, valueOf: $15.LicenseInfo_Status.valueOf, enumValues: $15.LicenseInfo_Status.values)
     ..p<$core.int>(8, _omitFieldNames ? '' : 'badPoseFiducials', $pb.PbFieldType.K3)
-    ..aOM<$87.MapStats>(9, _omitFieldNames ? '' : 'mapStats', subBuilder: $87.MapStats.create)
+    ..aOM<$89.MapStats>(9, _omitFieldNames ? '' : 'mapStats', subBuilder: $89.MapStats.create)
     ..hasRequiredFields = false
   ;
 
@@ -1019,51 +1019,51 @@ class CreateWaypointResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The waypoint that was just created.
   @$pb.TagNumber(2)
-  $87.Waypoint get createdWaypoint => $_getN(1);
+  $89.Waypoint get createdWaypoint => $_getN(1);
   @$pb.TagNumber(2)
-  set createdWaypoint($87.Waypoint v) { setField(2, v); }
+  set createdWaypoint($89.Waypoint v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreatedWaypoint() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreatedWaypoint() => clearField(2);
   @$pb.TagNumber(2)
-  $87.Waypoint ensureCreatedWaypoint() => $_ensure(1);
+  $89.Waypoint ensureCreatedWaypoint() => $_ensure(1);
 
   /// The edge connecting the waypoint just created with the last created waypoint in the map.
   @$pb.TagNumber(3)
-  $87.Edge get createdEdge => $_getN(2);
+  $89.Edge get createdEdge => $_getN(2);
   @$pb.TagNumber(3)
-  set createdEdge($87.Edge v) { setField(3, v); }
+  set createdEdge($89.Edge v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCreatedEdge() => $_has(2);
   @$pb.TagNumber(3)
   void clearCreatedEdge() => clearField(3);
   @$pb.TagNumber(3)
-  $87.Edge ensureCreatedEdge() => $_ensure(2);
+  $89.Edge ensureCreatedEdge() => $_ensure(2);
 
   /// The results/status of the lease provided.
   @$pb.TagNumber(4)
-  $13.LeaseUseResult get leaseUseResult => $_getN(3);
+  $14.LeaseUseResult get leaseUseResult => $_getN(3);
   @$pb.TagNumber(4)
-  set leaseUseResult($13.LeaseUseResult v) { setField(4, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLeaseUseResult() => $_has(3);
   @$pb.TagNumber(4)
   void clearLeaseUseResult() => clearField(4);
   @$pb.TagNumber(4)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(3);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(3);
 
   /// Return status for the request.
   @$pb.TagNumber(5)
@@ -1085,9 +1085,9 @@ class CreateWaypointResponse extends $pb.GeneratedMessage {
   /// is requested after the graph gets too large, it will fail, and license
   /// status will be filled out.
   @$pb.TagNumber(7)
-  $14.LicenseInfo_Status get licenseStatus => $_getN(6);
+  $15.LicenseInfo_Status get licenseStatus => $_getN(6);
   @$pb.TagNumber(7)
-  set licenseStatus($14.LicenseInfo_Status v) { setField(7, v); }
+  set licenseStatus($15.LicenseInfo_Status v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasLicenseStatus() => $_has(6);
   @$pb.TagNumber(7)
@@ -1100,15 +1100,15 @@ class CreateWaypointResponse extends $pb.GeneratedMessage {
 
   /// General statistics of the map loaded in GraphNav.
   @$pb.TagNumber(9)
-  $87.MapStats get mapStats => $_getN(8);
+  $89.MapStats get mapStats => $_getN(8);
   @$pb.TagNumber(9)
-  set mapStats($87.MapStats v) { setField(9, v); }
+  set mapStats($89.MapStats v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasMapStats() => $_has(8);
   @$pb.TagNumber(9)
   void clearMapStats() => clearField(9);
   @$pb.TagNumber(9)
-  $87.MapStats ensureMapStats() => $_ensure(8);
+  $89.MapStats ensureMapStats() => $_ensure(8);
 }
 
 /// The CreateEdge request message specifies an edge to create between two existing waypoints.
@@ -1116,9 +1116,9 @@ class CreateWaypointResponse extends $pb.GeneratedMessage {
 /// additional edges.
 class CreateEdgeRequest extends $pb.GeneratedMessage {
   factory CreateEdgeRequest({
-    $68.RequestHeader? header,
-    $87.Edge? edge,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $89.Edge? edge,
+    $14.Lease? lease,
   }) {
     final $result = create();
     if (header != null) {
@@ -1137,9 +1137,9 @@ class CreateEdgeRequest extends $pb.GeneratedMessage {
   factory CreateEdgeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateEdgeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$87.Edge>(2, _omitFieldNames ? '' : 'edge', subBuilder: $87.Edge.create)
-    ..aOM<$13.Lease>(3, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$89.Edge>(2, _omitFieldNames ? '' : 'edge', subBuilder: $89.Edge.create)
+    ..aOM<$14.Lease>(3, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..hasRequiredFields = false
   ;
 
@@ -1166,52 +1166,52 @@ class CreateEdgeRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Create an edge between two existing waypoints in the map with
   /// the given parameters.
   @$pb.TagNumber(2)
-  $87.Edge get edge => $_getN(1);
+  $89.Edge get edge => $_getN(1);
   @$pb.TagNumber(2)
-  set edge($87.Edge v) { setField(2, v); }
+  set edge($89.Edge v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEdge() => $_has(1);
   @$pb.TagNumber(2)
   void clearEdge() => clearField(2);
   @$pb.TagNumber(2)
-  $87.Edge ensureEdge() => $_ensure(1);
+  $89.Edge ensureEdge() => $_ensure(1);
 
   /// The recording service is protected by a lease. The client must have a
   /// lease to the recording service to modify its internal state.
   @$pb.TagNumber(3)
-  $13.Lease get lease => $_getN(2);
+  $14.Lease get lease => $_getN(2);
   @$pb.TagNumber(3)
-  set lease($13.Lease v) { setField(3, v); }
+  set lease($14.Lease v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLease() => $_has(2);
   @$pb.TagNumber(3)
   void clearLease() => clearField(3);
   @$pb.TagNumber(3)
-  $13.Lease ensureLease() => $_ensure(2);
+  $14.Lease ensureLease() => $_ensure(2);
 }
 
 /// The CreateEdge response message contains the status of this request and any useful error
 /// information if the request fails.
 class CreateEdgeResponse extends $pb.GeneratedMessage {
   factory CreateEdgeResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     CreateEdgeResponse_Status? status,
-    $87.Edge? errorExistingEdge,
-    $13.LeaseUseResult? leaseUseResult,
-    $87.MapStats? mapStats,
+    $89.Edge? errorExistingEdge,
+    $14.LeaseUseResult? leaseUseResult,
+    $89.MapStats? mapStats,
   }) {
     final $result = create();
     if (header != null) {
@@ -1236,11 +1236,11 @@ class CreateEdgeResponse extends $pb.GeneratedMessage {
   factory CreateEdgeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateEdgeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<CreateEdgeResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: CreateEdgeResponse_Status.STATUS_UNKNOWN, valueOf: CreateEdgeResponse_Status.valueOf, enumValues: CreateEdgeResponse_Status.values)
-    ..aOM<$87.Edge>(3, _omitFieldNames ? '' : 'errorExistingEdge', subBuilder: $87.Edge.create)
-    ..aOM<$13.LeaseUseResult>(4, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
-    ..aOM<$87.MapStats>(5, _omitFieldNames ? '' : 'mapStats', subBuilder: $87.MapStats.create)
+    ..aOM<$89.Edge>(3, _omitFieldNames ? '' : 'errorExistingEdge', subBuilder: $89.Edge.create)
+    ..aOM<$14.LeaseUseResult>(4, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
+    ..aOM<$89.MapStats>(5, _omitFieldNames ? '' : 'mapStats', subBuilder: $89.MapStats.create)
     ..hasRequiredFields = false
   ;
 
@@ -1267,15 +1267,15 @@ class CreateEdgeResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
@@ -1289,45 +1289,45 @@ class CreateEdgeResponse extends $pb.GeneratedMessage {
 
   /// If set, the existing edge that caused the STATUS_EXISTS error.
   @$pb.TagNumber(3)
-  $87.Edge get errorExistingEdge => $_getN(2);
+  $89.Edge get errorExistingEdge => $_getN(2);
   @$pb.TagNumber(3)
-  set errorExistingEdge($87.Edge v) { setField(3, v); }
+  set errorExistingEdge($89.Edge v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasErrorExistingEdge() => $_has(2);
   @$pb.TagNumber(3)
   void clearErrorExistingEdge() => clearField(3);
   @$pb.TagNumber(3)
-  $87.Edge ensureErrorExistingEdge() => $_ensure(2);
+  $89.Edge ensureErrorExistingEdge() => $_ensure(2);
 
   /// The results/status of the lease provided.
   @$pb.TagNumber(4)
-  $13.LeaseUseResult get leaseUseResult => $_getN(3);
+  $14.LeaseUseResult get leaseUseResult => $_getN(3);
   @$pb.TagNumber(4)
-  set leaseUseResult($13.LeaseUseResult v) { setField(4, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLeaseUseResult() => $_has(3);
   @$pb.TagNumber(4)
   void clearLeaseUseResult() => clearField(4);
   @$pb.TagNumber(4)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(3);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(3);
 
   /// General statistics of the map loaded in GraphNav.
   @$pb.TagNumber(5)
-  $87.MapStats get mapStats => $_getN(4);
+  $89.MapStats get mapStats => $_getN(4);
   @$pb.TagNumber(5)
-  set mapStats($87.MapStats v) { setField(5, v); }
+  set mapStats($89.MapStats v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMapStats() => $_has(4);
   @$pb.TagNumber(5)
   void clearMapStats() => clearField(5);
   @$pb.TagNumber(5)
-  $87.MapStats ensureMapStats() => $_ensure(4);
+  $89.MapStats ensureMapStats() => $_ensure(4);
 }
 
 /// The GetRecordStatus request message asks for the current state of the recording service.
 class GetRecordStatusRequest extends $pb.GeneratedMessage {
   factory GetRecordStatusRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1340,7 +1340,7 @@ class GetRecordStatusRequest extends $pb.GeneratedMessage {
   factory GetRecordStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRecordStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1367,29 +1367,29 @@ class GetRecordStatusRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The GetRecordStatus response message returns whether the service is currently recording and what
 /// the persistent recording environment is at the time the request was recieved.
 class GetRecordStatusResponse extends $pb.GeneratedMessage {
   factory GetRecordStatusResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.bool? isRecording,
     RecordingEnvironment? recordingEnvironment,
     GetRecordStatusResponse_MapState? mapState,
     GetRecordStatusResponse_Status? status,
     $26.RobotImpairedState? impairedState,
-    $60.Timestamp? sessionStartTime,
-    $87.MapStats? mapStats,
+    $59.Timestamp? sessionStartTime,
+    $89.MapStats? mapStats,
   }) {
     final $result = create();
     if (header != null) {
@@ -1423,14 +1423,14 @@ class GetRecordStatusResponse extends $pb.GeneratedMessage {
   factory GetRecordStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetRecordStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOB(2, _omitFieldNames ? '' : 'isRecording')
     ..aOM<RecordingEnvironment>(3, _omitFieldNames ? '' : 'recordingEnvironment', subBuilder: RecordingEnvironment.create)
     ..e<GetRecordStatusResponse_MapState>(4, _omitFieldNames ? '' : 'mapState', $pb.PbFieldType.OE, defaultOrMaker: GetRecordStatusResponse_MapState.MAP_STATE_UNKNOWN, valueOf: GetRecordStatusResponse_MapState.valueOf, enumValues: GetRecordStatusResponse_MapState.values)
     ..e<GetRecordStatusResponse_Status>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: GetRecordStatusResponse_Status.STATUS_UNKNOWN, valueOf: GetRecordStatusResponse_Status.valueOf, enumValues: GetRecordStatusResponse_Status.values)
     ..aOM<$26.RobotImpairedState>(6, _omitFieldNames ? '' : 'impairedState', subBuilder: $26.RobotImpairedState.create)
-    ..aOM<$60.Timestamp>(7, _omitFieldNames ? '' : 'sessionStartTime', subBuilder: $60.Timestamp.create)
-    ..aOM<$87.MapStats>(8, _omitFieldNames ? '' : 'mapStats', subBuilder: $87.MapStats.create)
+    ..aOM<$59.Timestamp>(7, _omitFieldNames ? '' : 'sessionStartTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$89.MapStats>(8, _omitFieldNames ? '' : 'mapStats', subBuilder: $89.MapStats.create)
     ..hasRequiredFields = false
   ;
 
@@ -1457,15 +1457,15 @@ class GetRecordStatusResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// If true, the record service is actively recording
   /// a chain.
@@ -1524,27 +1524,27 @@ class GetRecordStatusResponse extends $pb.GeneratedMessage {
   /// If the Start Recording Request's session start time is provided, this should
   /// be the same as the request's session start time.
   @$pb.TagNumber(7)
-  $60.Timestamp get sessionStartTime => $_getN(6);
+  $59.Timestamp get sessionStartTime => $_getN(6);
   @$pb.TagNumber(7)
-  set sessionStartTime($60.Timestamp v) { setField(7, v); }
+  set sessionStartTime($59.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasSessionStartTime() => $_has(6);
   @$pb.TagNumber(7)
   void clearSessionStartTime() => clearField(7);
   @$pb.TagNumber(7)
-  $60.Timestamp ensureSessionStartTime() => $_ensure(6);
+  $59.Timestamp ensureSessionStartTime() => $_ensure(6);
 
   /// General statistics of the map loaded in GraphNav.
   @$pb.TagNumber(8)
-  $87.MapStats get mapStats => $_getN(7);
+  $89.MapStats get mapStats => $_getN(7);
   @$pb.TagNumber(8)
-  set mapStats($87.MapStats v) { setField(8, v); }
+  set mapStats($89.MapStats v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasMapStats() => $_has(7);
   @$pb.TagNumber(8)
   void clearMapStats() => clearField(8);
   @$pb.TagNumber(8)
-  $87.MapStats ensureMapStats() => $_ensure(7);
+  $89.MapStats ensureMapStats() => $_ensure(7);
 }
 
 

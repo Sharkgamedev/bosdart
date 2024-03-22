@@ -340,5 +340,63 @@ class CameraCalibrationFeedbackResponse_Status extends $pb.ProtobufEnum {
   const CameraCalibrationFeedbackResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+class GripperCameraCalibrationCommandRequest_Command extends $pb.ProtobufEnum {
+  static const GripperCameraCalibrationCommandRequest_Command COMMAND_UNKNOWN = GripperCameraCalibrationCommandRequest_Command._(0, _omitEnumNames ? '' : 'COMMAND_UNKNOWN');
+  static const GripperCameraCalibrationCommandRequest_Command COMMAND_START = GripperCameraCalibrationCommandRequest_Command._(1, _omitEnumNames ? '' : 'COMMAND_START');
+  static const GripperCameraCalibrationCommandRequest_Command COMMAND_CANCEL = GripperCameraCalibrationCommandRequest_Command._(2, _omitEnumNames ? '' : 'COMMAND_CANCEL');
+
+  static const $core.List<GripperCameraCalibrationCommandRequest_Command> values = <GripperCameraCalibrationCommandRequest_Command> [
+    COMMAND_UNKNOWN,
+    COMMAND_START,
+    COMMAND_CANCEL,
+  ];
+
+  static final $core.Map<$core.int, GripperCameraCalibrationCommandRequest_Command> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static GripperCameraCalibrationCommandRequest_Command? valueOf($core.int value) => _byValue[value];
+
+  const GripperCameraCalibrationCommandRequest_Command._($core.int v, $core.String n) : super(v, n);
+}
+
+class GripperCameraCalibrationFeedbackResponse_Status extends $pb.ProtobufEnum {
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_UNKNOWN = GripperCameraCalibrationFeedbackResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_PROCESSING = GripperCameraCalibrationFeedbackResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_PROCESSING');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_SUCCESS = GripperCameraCalibrationFeedbackResponse_Status._(2, _omitEnumNames ? '' : 'STATUS_SUCCESS');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_NEVER_RUN = GripperCameraCalibrationFeedbackResponse_Status._(3, _omitEnumNames ? '' : 'STATUS_NEVER_RUN');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_USER_CANCELED = GripperCameraCalibrationFeedbackResponse_Status._(4, _omitEnumNames ? '' : 'STATUS_USER_CANCELED');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_POWER_ERROR = GripperCameraCalibrationFeedbackResponse_Status._(5, _omitEnumNames ? '' : 'STATUS_POWER_ERROR');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_LEASE_ERROR = GripperCameraCalibrationFeedbackResponse_Status._(6, _omitEnumNames ? '' : 'STATUS_LEASE_ERROR');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_CALIBRATION_ERROR = GripperCameraCalibrationFeedbackResponse_Status._(8, _omitEnumNames ? '' : 'STATUS_CALIBRATION_ERROR');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_INITIALIZATION_ERROR = GripperCameraCalibrationFeedbackResponse_Status._(9, _omitEnumNames ? '' : 'STATUS_INITIALIZATION_ERROR');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_INTERNAL_ERROR = GripperCameraCalibrationFeedbackResponse_Status._(10, _omitEnumNames ? '' : 'STATUS_INTERNAL_ERROR');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_TARGET_NOT_CENTERED = GripperCameraCalibrationFeedbackResponse_Status._(11, _omitEnumNames ? '' : 'STATUS_TARGET_NOT_CENTERED');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_TARGET_NOT_IN_VIEW = GripperCameraCalibrationFeedbackResponse_Status._(12, _omitEnumNames ? '' : 'STATUS_TARGET_NOT_IN_VIEW');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_TARGET_NOT_GRAVITY_ALIGNED = GripperCameraCalibrationFeedbackResponse_Status._(13, _omitEnumNames ? '' : 'STATUS_TARGET_NOT_GRAVITY_ALIGNED');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_TARGET_UPSIDE_DOWN = GripperCameraCalibrationFeedbackResponse_Status._(14, _omitEnumNames ? '' : 'STATUS_TARGET_UPSIDE_DOWN');
+  static const GripperCameraCalibrationFeedbackResponse_Status STATUS_STUCK = GripperCameraCalibrationFeedbackResponse_Status._(15, _omitEnumNames ? '' : 'STATUS_STUCK');
+
+  static const $core.List<GripperCameraCalibrationFeedbackResponse_Status> values = <GripperCameraCalibrationFeedbackResponse_Status> [
+    STATUS_UNKNOWN,
+    STATUS_PROCESSING,
+    STATUS_SUCCESS,
+    STATUS_NEVER_RUN,
+    STATUS_USER_CANCELED,
+    STATUS_POWER_ERROR,
+    STATUS_LEASE_ERROR,
+    STATUS_CALIBRATION_ERROR,
+    STATUS_INITIALIZATION_ERROR,
+    STATUS_INTERNAL_ERROR,
+    STATUS_TARGET_NOT_CENTERED,
+    STATUS_TARGET_NOT_IN_VIEW,
+    STATUS_TARGET_NOT_GRAVITY_ALIGNED,
+    STATUS_TARGET_UPSIDE_DOWN,
+    STATUS_STUCK,
+  ];
+
+  static final $core.Map<$core.int, GripperCameraCalibrationFeedbackResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static GripperCameraCalibrationFeedbackResponse_Status? valueOf($core.int value) => _byValue[value];
+
+  const GripperCameraCalibrationFeedbackResponse_Status._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

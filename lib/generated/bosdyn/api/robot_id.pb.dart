@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $60;
-import 'header.pb.dart' as $68;
-import 'parameter.pb.dart' as $76;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
+import 'header.pb.dart' as $67;
+import 'parameter.pb.dart' as $77;
 
 /// Robot identity information, which should be static while robot is powered-on.
 class RobotId extends $pb.GeneratedMessage {
@@ -235,12 +235,12 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
     SoftwareVersion? version,
     $core.String? name,
     $core.String? type,
-    $60.Timestamp? changesetDate,
+    $59.Timestamp? changesetDate,
     $core.String? changeset,
     $core.String? apiVersion,
     $core.String? buildInformation,
-    $60.Timestamp? installDate,
-    $core.Iterable<$76.Parameter>? parameters,
+    $59.Timestamp? installDate,
+    $core.Iterable<$77.Parameter>? parameters,
   }) {
     final $result = create();
     if (version != null) {
@@ -280,12 +280,12 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
     ..aOM<SoftwareVersion>(1, _omitFieldNames ? '' : 'version', subBuilder: SoftwareVersion.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'type')
-    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'changesetDate', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'changesetDate', subBuilder: $59.Timestamp.create)
     ..aOS(5, _omitFieldNames ? '' : 'changeset')
     ..aOS(6, _omitFieldNames ? '' : 'apiVersion')
     ..aOS(7, _omitFieldNames ? '' : 'buildInformation')
-    ..aOM<$60.Timestamp>(8, _omitFieldNames ? '' : 'installDate', subBuilder: $60.Timestamp.create)
-    ..pc<$76.Parameter>(9, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: $76.Parameter.create)
+    ..aOM<$59.Timestamp>(8, _omitFieldNames ? '' : 'installDate', subBuilder: $59.Timestamp.create)
+    ..pc<$77.Parameter>(9, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: $77.Parameter.create)
     ..hasRequiredFields = false
   ;
 
@@ -344,15 +344,15 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
 
   /// Timestamp of the changeset.
   @$pb.TagNumber(4)
-  $60.Timestamp get changesetDate => $_getN(3);
+  $59.Timestamp get changesetDate => $_getN(3);
   @$pb.TagNumber(4)
-  set changesetDate($60.Timestamp v) { setField(4, v); }
+  set changesetDate($59.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasChangesetDate() => $_has(3);
   @$pb.TagNumber(4)
   void clearChangesetDate() => clearField(4);
   @$pb.TagNumber(4)
-  $60.Timestamp ensureChangesetDate() => $_ensure(3);
+  $59.Timestamp ensureChangesetDate() => $_ensure(3);
 
   /// Changeset hash.
   @$pb.TagNumber(5)
@@ -386,25 +386,25 @@ class RobotSoftwareRelease extends $pb.GeneratedMessage {
 
   /// Date/time when release was installed.
   @$pb.TagNumber(8)
-  $60.Timestamp get installDate => $_getN(7);
+  $59.Timestamp get installDate => $_getN(7);
   @$pb.TagNumber(8)
-  set installDate($60.Timestamp v) { setField(8, v); }
+  set installDate($59.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasInstallDate() => $_has(7);
   @$pb.TagNumber(8)
   void clearInstallDate() => clearField(8);
   @$pb.TagNumber(8)
-  $60.Timestamp ensureInstallDate() => $_ensure(7);
+  $59.Timestamp ensureInstallDate() => $_ensure(7);
 
   /// Other information about the build.
   @$pb.TagNumber(9)
-  $core.List<$76.Parameter> get parameters => $_getList(8);
+  $core.List<$77.Parameter> get parameters => $_getList(8);
 }
 
 /// The RobotId request message sent to a robot to learn it's basic identification information.
 class RobotIdRequest extends $pb.GeneratedMessage {
   factory RobotIdRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -417,7 +417,7 @@ class RobotIdRequest extends $pb.GeneratedMessage {
   factory RobotIdRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotIdRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -443,21 +443,21 @@ class RobotIdRequest extends $pb.GeneratedMessage {
   static RobotIdRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The RobotId response message, including the ID information for a robot.
 class RobotIdResponse extends $pb.GeneratedMessage {
   factory RobotIdResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     RobotId? robotId,
   }) {
     final $result = create();
@@ -474,7 +474,7 @@ class RobotIdResponse extends $pb.GeneratedMessage {
   factory RobotIdResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotIdResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<RobotId>(2, _omitFieldNames ? '' : 'robotId', subBuilder: RobotId.create)
     ..hasRequiredFields = false
   ;
@@ -501,15 +501,15 @@ class RobotIdResponse extends $pb.GeneratedMessage {
   static RobotIdResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   RobotId get robotId => $_getN(1);

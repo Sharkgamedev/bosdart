@@ -13,10 +13,10 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/wrappers.pb.dart' as $59;
-import '../geometry.pb.dart' as $61;
-import '../header.pb.dart' as $68;
-import 'map.pb.dart' as $87;
+import '../../../google/protobuf/wrappers.pb.dart' as $58;
+import '../geometry.pb.dart' as $60;
+import '../header.pb.dart' as $67;
+import 'map.pb.dart' as $89;
 import 'map_processing.pbenum.dart';
 
 export 'map_processing.pbenum.dart';
@@ -25,8 +25,8 @@ export 'map_processing.pbenum.dart';
 /// closest point matching.
 class ProcessTopologyRequest_ICPParams extends $pb.GeneratedMessage {
   factory ProcessTopologyRequest_ICPParams({
-    $59.Int32Value? icpIters,
-    $59.DoubleValue? maxPointMatchDistance,
+    $58.Int32Value? icpIters,
+    $58.DoubleValue? maxPointMatchDistance,
   }) {
     final $result = create();
     if (icpIters != null) {
@@ -42,8 +42,8 @@ class ProcessTopologyRequest_ICPParams extends $pb.GeneratedMessage {
   factory ProcessTopologyRequest_ICPParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessTopologyRequest.ICPParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$59.Int32Value>(1, _omitFieldNames ? '' : 'icpIters', subBuilder: $59.Int32Value.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'maxPointMatchDistance', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.Int32Value>(1, _omitFieldNames ? '' : 'icpIters', subBuilder: $58.Int32Value.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'maxPointMatchDistance', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -70,40 +70,40 @@ class ProcessTopologyRequest_ICPParams extends $pb.GeneratedMessage {
 
   /// The maximum number of iterations to run. Set to zero to skip ICP processing.
   @$pb.TagNumber(1)
-  $59.Int32Value get icpIters => $_getN(0);
+  $58.Int32Value get icpIters => $_getN(0);
   @$pb.TagNumber(1)
-  set icpIters($59.Int32Value v) { setField(1, v); }
+  set icpIters($58.Int32Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasIcpIters() => $_has(0);
   @$pb.TagNumber(1)
   void clearIcpIters() => clearField(1);
   @$pb.TagNumber(1)
-  $59.Int32Value ensureIcpIters() => $_ensure(0);
+  $58.Int32Value ensureIcpIters() => $_ensure(0);
 
   /// The maximum distance between points in the point cloud we are willing to
   /// accept for matches.
   @$pb.TagNumber(2)
-  $59.DoubleValue get maxPointMatchDistance => $_getN(1);
+  $58.DoubleValue get maxPointMatchDistance => $_getN(1);
   @$pb.TagNumber(2)
-  set maxPointMatchDistance($59.DoubleValue v) { setField(2, v); }
+  set maxPointMatchDistance($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasMaxPointMatchDistance() => $_has(1);
   @$pb.TagNumber(2)
   void clearMaxPointMatchDistance() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureMaxPointMatchDistance() => $_ensure(1);
+  $58.DoubleValue ensureMaxPointMatchDistance() => $_ensure(1);
 }
 
 /// Parameters for how to close loops using odometry. This infers which waypoints
 /// should be connected to one another based on the odometry measurements in the map.
 class ProcessTopologyRequest_OdometryLoopClosureParams extends $pb.GeneratedMessage {
   factory ProcessTopologyRequest_OdometryLoopClosureParams({
-    $59.DoubleValue? maxLoopClosurePathLength,
-    $59.DoubleValue? minLoopClosurePathLength,
-    $59.DoubleValue? maxLoopClosureHeightChange,
-    $59.DoubleValue? maxLoopClosureEdgeLength,
-    $59.Int32Value? numExtraLoopClosureIterations,
-    $59.BoolValue? pruneEdges,
+    $58.DoubleValue? maxLoopClosurePathLength,
+    $58.DoubleValue? minLoopClosurePathLength,
+    $58.DoubleValue? maxLoopClosureHeightChange,
+    $58.DoubleValue? maxLoopClosureEdgeLength,
+    $58.Int32Value? numExtraLoopClosureIterations,
+    $58.BoolValue? pruneEdges,
   }) {
     final $result = create();
     if (maxLoopClosurePathLength != null) {
@@ -131,12 +131,12 @@ class ProcessTopologyRequest_OdometryLoopClosureParams extends $pb.GeneratedMess
   factory ProcessTopologyRequest_OdometryLoopClosureParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessTopologyRequest.OdometryLoopClosureParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'maxLoopClosurePathLength', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'minLoopClosurePathLength', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'maxLoopClosureHeightChange', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'maxLoopClosureEdgeLength', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.Int32Value>(5, _omitFieldNames ? '' : 'numExtraLoopClosureIterations', subBuilder: $59.Int32Value.create)
-    ..aOM<$59.BoolValue>(6, _omitFieldNames ? '' : 'pruneEdges', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'maxLoopClosurePathLength', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'minLoopClosurePathLength', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'maxLoopClosureHeightChange', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'maxLoopClosureEdgeLength', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.Int32Value>(5, _omitFieldNames ? '' : 'numExtraLoopClosureIterations', subBuilder: $58.Int32Value.create)
+    ..aOM<$58.BoolValue>(6, _omitFieldNames ? '' : 'pruneEdges', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -165,58 +165,58 @@ class ProcessTopologyRequest_OdometryLoopClosureParams extends $pb.GeneratedMess
   /// waypoint to the other using only the existing edges in the map. Beyond
   /// this distance, we are unwilling to trust odometry.
   @$pb.TagNumber(1)
-  $59.DoubleValue get maxLoopClosurePathLength => $_getN(0);
+  $58.DoubleValue get maxLoopClosurePathLength => $_getN(0);
   @$pb.TagNumber(1)
-  set maxLoopClosurePathLength($59.DoubleValue v) { setField(1, v); }
+  set maxLoopClosurePathLength($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMaxLoopClosurePathLength() => $_has(0);
   @$pb.TagNumber(1)
   void clearMaxLoopClosurePathLength() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureMaxLoopClosurePathLength() => $_ensure(0);
+  $58.DoubleValue ensureMaxLoopClosurePathLength() => $_ensure(0);
 
   /// The minimum distance between waypoints found by walking a path from
   /// one waypoint to the other using only the existing edges in the map.
   /// Set this higher to avoid creating small shortcuts along the existing path.
   /// Note that this is a 2d path length.
   @$pb.TagNumber(2)
-  $59.DoubleValue get minLoopClosurePathLength => $_getN(1);
+  $58.DoubleValue get minLoopClosurePathLength => $_getN(1);
   @$pb.TagNumber(2)
-  set minLoopClosurePathLength($59.DoubleValue v) { setField(2, v); }
+  set minLoopClosurePathLength($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasMinLoopClosurePathLength() => $_has(1);
   @$pb.TagNumber(2)
   void clearMinLoopClosurePathLength() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureMinLoopClosurePathLength() => $_ensure(1);
+  $58.DoubleValue ensureMinLoopClosurePathLength() => $_ensure(1);
 
   /// The maximum apparent height change of the created edge that we are
   /// willing to accept between waypoints. This avoids closing loops up ramps,
   /// stairs, etc. or closing loops where there is significant odometry drift.
   @$pb.TagNumber(3)
-  $59.DoubleValue get maxLoopClosureHeightChange => $_getN(2);
+  $58.DoubleValue get maxLoopClosureHeightChange => $_getN(2);
   @$pb.TagNumber(3)
-  set maxLoopClosureHeightChange($59.DoubleValue v) { setField(3, v); }
+  set maxLoopClosureHeightChange($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMaxLoopClosureHeightChange() => $_has(2);
   @$pb.TagNumber(3)
   void clearMaxLoopClosureHeightChange() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureMaxLoopClosureHeightChange() => $_ensure(2);
+  $58.DoubleValue ensureMaxLoopClosureHeightChange() => $_ensure(2);
 
   /// Once a loop closure candidate is found, the system creates an edge between the
   /// candidate waypoints. Only create the edge if it is shorter than this value.
   /// Note that this is a 3d edge length.
   @$pb.TagNumber(4)
-  $59.DoubleValue get maxLoopClosureEdgeLength => $_getN(3);
+  $58.DoubleValue get maxLoopClosureEdgeLength => $_getN(3);
   @$pb.TagNumber(4)
-  set maxLoopClosureEdgeLength($59.DoubleValue v) { setField(4, v); }
+  set maxLoopClosureEdgeLength($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMaxLoopClosureEdgeLength() => $_has(3);
   @$pb.TagNumber(4)
   void clearMaxLoopClosureEdgeLength() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureMaxLoopClosureEdgeLength() => $_ensure(3);
+  $58.DoubleValue ensureMaxLoopClosureEdgeLength() => $_ensure(3);
 
   /// Use prior loop closures to infer new odometry based loop closures. This is
   /// useful when other sources of loop closures (like fiducials) are being used.
@@ -224,28 +224,28 @@ class ProcessTopologyRequest_OdometryLoopClosureParams extends $pb.GeneratedMess
   /// loop closures using odometry. Alternatively, the user may call the ProcessTopology
   /// RPC multiple times to achieve the same effect.
   @$pb.TagNumber(5)
-  $59.Int32Value get numExtraLoopClosureIterations => $_getN(4);
+  $58.Int32Value get numExtraLoopClosureIterations => $_getN(4);
   @$pb.TagNumber(5)
-  set numExtraLoopClosureIterations($59.Int32Value v) { setField(5, v); }
+  set numExtraLoopClosureIterations($58.Int32Value v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasNumExtraLoopClosureIterations() => $_has(4);
   @$pb.TagNumber(5)
   void clearNumExtraLoopClosureIterations() => clearField(5);
   @$pb.TagNumber(5)
-  $59.Int32Value ensureNumExtraLoopClosureIterations() => $_ensure(4);
+  $58.Int32Value ensureNumExtraLoopClosureIterations() => $_ensure(4);
 
   /// If true, redundant edges will be ignored, and only the "best" in a small area
   /// will be selected (true by default).
   @$pb.TagNumber(6)
-  $59.BoolValue get pruneEdges => $_getN(5);
+  $58.BoolValue get pruneEdges => $_getN(5);
   @$pb.TagNumber(6)
-  set pruneEdges($59.BoolValue v) { setField(6, v); }
+  set pruneEdges($58.BoolValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasPruneEdges() => $_has(5);
   @$pb.TagNumber(6)
   void clearPruneEdges() => clearField(6);
   @$pb.TagNumber(6)
-  $59.BoolValue ensurePruneEdges() => $_ensure(5);
+  $58.BoolValue ensurePruneEdges() => $_ensure(5);
 }
 
 /// Parameters for how to close a loop using fiducials (AprilTags). This infers
@@ -255,11 +255,11 @@ class ProcessTopologyRequest_OdometryLoopClosureParams extends $pb.GeneratedMess
 /// can be merged this way.
 class ProcessTopologyRequest_FiducialLoopClosureParams extends $pb.GeneratedMessage {
   factory ProcessTopologyRequest_FiducialLoopClosureParams({
-    $59.DoubleValue? minLoopClosurePathLength,
-    $59.DoubleValue? maxLoopClosureEdgeLength,
-    $59.DoubleValue? maxFiducialDistance,
-    $59.DoubleValue? maxLoopClosureHeightChange,
-    $59.BoolValue? pruneEdges,
+    $58.DoubleValue? minLoopClosurePathLength,
+    $58.DoubleValue? maxLoopClosureEdgeLength,
+    $58.DoubleValue? maxFiducialDistance,
+    $58.DoubleValue? maxLoopClosureHeightChange,
+    $58.BoolValue? pruneEdges,
   }) {
     final $result = create();
     if (minLoopClosurePathLength != null) {
@@ -284,11 +284,11 @@ class ProcessTopologyRequest_FiducialLoopClosureParams extends $pb.GeneratedMess
   factory ProcessTopologyRequest_FiducialLoopClosureParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessTopologyRequest.FiducialLoopClosureParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'minLoopClosurePathLength', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'maxLoopClosureEdgeLength', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'maxFiducialDistance', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'maxLoopClosureHeightChange', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(5, _omitFieldNames ? '' : 'pruneEdges', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'minLoopClosurePathLength', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'maxLoopClosureEdgeLength', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'maxFiducialDistance', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'maxLoopClosureHeightChange', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.BoolValue>(5, _omitFieldNames ? '' : 'pruneEdges', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -318,69 +318,69 @@ class ProcessTopologyRequest_FiducialLoopClosureParams extends $pb.GeneratedMess
   /// Set this higher to avoid creating small shortcuts along the existing path.
   /// Note that this is a 2d path length.
   @$pb.TagNumber(1)
-  $59.DoubleValue get minLoopClosurePathLength => $_getN(0);
+  $58.DoubleValue get minLoopClosurePathLength => $_getN(0);
   @$pb.TagNumber(1)
-  set minLoopClosurePathLength($59.DoubleValue v) { setField(1, v); }
+  set minLoopClosurePathLength($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMinLoopClosurePathLength() => $_has(0);
   @$pb.TagNumber(1)
   void clearMinLoopClosurePathLength() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureMinLoopClosurePathLength() => $_ensure(0);
+  $58.DoubleValue ensureMinLoopClosurePathLength() => $_ensure(0);
 
   /// Once a loop closure candidate is found, the system creates an edge between the
   /// candidate waypoints. Only create the edge if it is shorter than this value.
   /// Note that this is a 3d edge length.
   @$pb.TagNumber(2)
-  $59.DoubleValue get maxLoopClosureEdgeLength => $_getN(1);
+  $58.DoubleValue get maxLoopClosureEdgeLength => $_getN(1);
   @$pb.TagNumber(2)
-  set maxLoopClosureEdgeLength($59.DoubleValue v) { setField(2, v); }
+  set maxLoopClosureEdgeLength($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasMaxLoopClosureEdgeLength() => $_has(1);
   @$pb.TagNumber(2)
   void clearMaxLoopClosureEdgeLength() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureMaxLoopClosureEdgeLength() => $_ensure(1);
+  $58.DoubleValue ensureMaxLoopClosureEdgeLength() => $_ensure(1);
 
   /// Maximum distance to accept between a waypoint and a fiducial detection to
   /// use that fiducial detection for generating loop closure candidates.
   @$pb.TagNumber(3)
-  $59.DoubleValue get maxFiducialDistance => $_getN(2);
+  $58.DoubleValue get maxFiducialDistance => $_getN(2);
   @$pb.TagNumber(3)
-  set maxFiducialDistance($59.DoubleValue v) { setField(3, v); }
+  set maxFiducialDistance($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMaxFiducialDistance() => $_has(2);
   @$pb.TagNumber(3)
   void clearMaxFiducialDistance() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureMaxFiducialDistance() => $_ensure(2);
+  $58.DoubleValue ensureMaxFiducialDistance() => $_ensure(2);
 
   /// The maximum apparent height change of the created edge that we are
   /// willing to accept between waypoints. This avoids closing loops up ramps,
   /// stairs, etc. or closing loops where there is significant odometry drift.
   @$pb.TagNumber(4)
-  $59.DoubleValue get maxLoopClosureHeightChange => $_getN(3);
+  $58.DoubleValue get maxLoopClosureHeightChange => $_getN(3);
   @$pb.TagNumber(4)
-  set maxLoopClosureHeightChange($59.DoubleValue v) { setField(4, v); }
+  set maxLoopClosureHeightChange($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMaxLoopClosureHeightChange() => $_has(3);
   @$pb.TagNumber(4)
   void clearMaxLoopClosureHeightChange() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureMaxLoopClosureHeightChange() => $_ensure(3);
+  $58.DoubleValue ensureMaxLoopClosureHeightChange() => $_ensure(3);
 
   /// If true, redundant edges will be ignored, and only the "best" in a small area
   /// will be selected (true by default).
   @$pb.TagNumber(5)
-  $59.BoolValue get pruneEdges => $_getN(4);
+  $58.BoolValue get pruneEdges => $_getN(4);
   @$pb.TagNumber(5)
-  set pruneEdges($59.BoolValue v) { setField(5, v); }
+  set pruneEdges($58.BoolValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasPruneEdges() => $_has(4);
   @$pb.TagNumber(5)
   void clearPruneEdges() => clearField(5);
   @$pb.TagNumber(5)
-  $59.BoolValue ensurePruneEdges() => $_ensure(4);
+  $58.BoolValue ensurePruneEdges() => $_ensure(4);
 }
 
 /// Parameters for how to check for collisions when creating loop closures. The system
@@ -388,9 +388,9 @@ class ProcessTopologyRequest_FiducialLoopClosureParams extends $pb.GeneratedMess
 /// the presence of nearby obstacles.
 class ProcessTopologyRequest_CollisionCheckingParams extends $pb.GeneratedMessage {
   factory ProcessTopologyRequest_CollisionCheckingParams({
-    $59.BoolValue? checkEdgesForCollision,
-    $59.DoubleValue? collisionCheckRobotRadius,
-    $59.DoubleValue? collisionCheckHeightVariation,
+    $58.BoolValue? checkEdgesForCollision,
+    $58.DoubleValue? collisionCheckRobotRadius,
+    $58.DoubleValue? collisionCheckHeightVariation,
   }) {
     final $result = create();
     if (checkEdgesForCollision != null) {
@@ -409,9 +409,9 @@ class ProcessTopologyRequest_CollisionCheckingParams extends $pb.GeneratedMessag
   factory ProcessTopologyRequest_CollisionCheckingParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessTopologyRequest.CollisionCheckingParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$59.BoolValue>(1, _omitFieldNames ? '' : 'checkEdgesForCollision', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'collisionCheckRobotRadius', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'collisionCheckHeightVariation', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.BoolValue>(1, _omitFieldNames ? '' : 'checkEdgesForCollision', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'collisionCheckRobotRadius', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'collisionCheckHeightVariation', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -438,53 +438,53 @@ class ProcessTopologyRequest_CollisionCheckingParams extends $pb.GeneratedMessag
 
   /// By default, this is true.
   @$pb.TagNumber(1)
-  $59.BoolValue get checkEdgesForCollision => $_getN(0);
+  $58.BoolValue get checkEdgesForCollision => $_getN(0);
   @$pb.TagNumber(1)
-  set checkEdgesForCollision($59.BoolValue v) { setField(1, v); }
+  set checkEdgesForCollision($58.BoolValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasCheckEdgesForCollision() => $_has(0);
   @$pb.TagNumber(1)
   void clearCheckEdgesForCollision() => clearField(1);
   @$pb.TagNumber(1)
-  $59.BoolValue ensureCheckEdgesForCollision() => $_ensure(0);
+  $58.BoolValue ensureCheckEdgesForCollision() => $_ensure(0);
 
   /// Assume that the robot is a sphere with this radius. Only accept a
   /// loop closure if this spherical robot can travel in a straight line
   /// from one waypoint to the other without hitting obstacles.
   @$pb.TagNumber(2)
-  $59.DoubleValue get collisionCheckRobotRadius => $_getN(1);
+  $58.DoubleValue get collisionCheckRobotRadius => $_getN(1);
   @$pb.TagNumber(2)
-  set collisionCheckRobotRadius($59.DoubleValue v) { setField(2, v); }
+  set collisionCheckRobotRadius($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCollisionCheckRobotRadius() => $_has(1);
   @$pb.TagNumber(2)
   void clearCollisionCheckRobotRadius() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureCollisionCheckRobotRadius() => $_ensure(1);
+  $58.DoubleValue ensureCollisionCheckRobotRadius() => $_ensure(1);
 
   /// Consider significant height variations along the edge (like stairs or ramps)
   /// to be obstacles. The edge will not be created if there is a height change along
   /// it of more than this value according to the nearby sensor data.
   @$pb.TagNumber(3)
-  $59.DoubleValue get collisionCheckHeightVariation => $_getN(2);
+  $58.DoubleValue get collisionCheckHeightVariation => $_getN(2);
   @$pb.TagNumber(3)
-  set collisionCheckHeightVariation($59.DoubleValue v) { setField(3, v); }
+  set collisionCheckHeightVariation($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCollisionCheckHeightVariation() => $_has(2);
   @$pb.TagNumber(3)
   void clearCollisionCheckHeightVariation() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureCollisionCheckHeightVariation() => $_ensure(2);
+  $58.DoubleValue ensureCollisionCheckHeightVariation() => $_ensure(2);
 }
 
 /// Parameters which control topology processing. In general, anything which isn't filled out
 /// will be replaced by reasonable defaults.
 class ProcessTopologyRequest_Params extends $pb.GeneratedMessage {
   factory ProcessTopologyRequest_Params({
-    $59.BoolValue? doOdometryLoopClosure,
+    $58.BoolValue? doOdometryLoopClosure,
     ProcessTopologyRequest_OdometryLoopClosureParams? odometryLoopClosureParams,
     ProcessTopologyRequest_ICPParams? icpParams,
-    $59.BoolValue? doFiducialLoopClosure,
+    $58.BoolValue? doFiducialLoopClosure,
     ProcessTopologyRequest_FiducialLoopClosureParams? fiducialLoopClosureParams,
     ProcessTopologyRequest_CollisionCheckingParams? collisionCheckParams,
     $core.double? timeoutSeconds,
@@ -518,10 +518,10 @@ class ProcessTopologyRequest_Params extends $pb.GeneratedMessage {
   factory ProcessTopologyRequest_Params.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessTopologyRequest.Params', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$59.BoolValue>(1, _omitFieldNames ? '' : 'doOdometryLoopClosure', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(1, _omitFieldNames ? '' : 'doOdometryLoopClosure', subBuilder: $58.BoolValue.create)
     ..aOM<ProcessTopologyRequest_OdometryLoopClosureParams>(2, _omitFieldNames ? '' : 'odometryLoopClosureParams', subBuilder: ProcessTopologyRequest_OdometryLoopClosureParams.create)
     ..aOM<ProcessTopologyRequest_ICPParams>(3, _omitFieldNames ? '' : 'icpParams', subBuilder: ProcessTopologyRequest_ICPParams.create)
-    ..aOM<$59.BoolValue>(4, _omitFieldNames ? '' : 'doFiducialLoopClosure', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(4, _omitFieldNames ? '' : 'doFiducialLoopClosure', subBuilder: $58.BoolValue.create)
     ..aOM<ProcessTopologyRequest_FiducialLoopClosureParams>(5, _omitFieldNames ? '' : 'fiducialLoopClosureParams', subBuilder: ProcessTopologyRequest_FiducialLoopClosureParams.create)
     ..aOM<ProcessTopologyRequest_CollisionCheckingParams>(6, _omitFieldNames ? '' : 'collisionCheckParams', subBuilder: ProcessTopologyRequest_CollisionCheckingParams.create)
     ..a<$core.double>(7, _omitFieldNames ? '' : 'timeoutSeconds', $pb.PbFieldType.OD)
@@ -551,15 +551,15 @@ class ProcessTopologyRequest_Params extends $pb.GeneratedMessage {
 
   /// True by default -- generate loop closure candidates using odometry.
   @$pb.TagNumber(1)
-  $59.BoolValue get doOdometryLoopClosure => $_getN(0);
+  $58.BoolValue get doOdometryLoopClosure => $_getN(0);
   @$pb.TagNumber(1)
-  set doOdometryLoopClosure($59.BoolValue v) { setField(1, v); }
+  set doOdometryLoopClosure($58.BoolValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDoOdometryLoopClosure() => $_has(0);
   @$pb.TagNumber(1)
   void clearDoOdometryLoopClosure() => clearField(1);
   @$pb.TagNumber(1)
-  $59.BoolValue ensureDoOdometryLoopClosure() => $_ensure(0);
+  $58.BoolValue ensureDoOdometryLoopClosure() => $_ensure(0);
 
   /// Parameters for generating loop closure candidates using odometry.
   @$pb.TagNumber(2)
@@ -588,15 +588,15 @@ class ProcessTopologyRequest_Params extends $pb.GeneratedMessage {
 
   /// True by default -- generate loop closure candidates using fiducials.
   @$pb.TagNumber(4)
-  $59.BoolValue get doFiducialLoopClosure => $_getN(3);
+  $58.BoolValue get doFiducialLoopClosure => $_getN(3);
   @$pb.TagNumber(4)
-  set doFiducialLoopClosure($59.BoolValue v) { setField(4, v); }
+  set doFiducialLoopClosure($58.BoolValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasDoFiducialLoopClosure() => $_has(3);
   @$pb.TagNumber(4)
   void clearDoFiducialLoopClosure() => clearField(4);
   @$pb.TagNumber(4)
-  $59.BoolValue ensureDoFiducialLoopClosure() => $_ensure(3);
+  $58.BoolValue ensureDoFiducialLoopClosure() => $_ensure(3);
 
   /// Parameters for generating loop closure candidates using fiducials.
   @$pb.TagNumber(5)
@@ -646,7 +646,7 @@ class ProcessTopologyRequest_Params extends $pb.GeneratedMessage {
 /// sessions so long as they share fiducial observations.
 class ProcessTopologyRequest extends $pb.GeneratedMessage {
   factory ProcessTopologyRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     ProcessTopologyRequest_Params? params,
     $core.bool? modifyMapOnServer,
   }) {
@@ -667,7 +667,7 @@ class ProcessTopologyRequest extends $pb.GeneratedMessage {
   factory ProcessTopologyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessTopologyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<ProcessTopologyRequest_Params>(2, _omitFieldNames ? '' : 'params', subBuilder: ProcessTopologyRequest_Params.create)
     ..aOB(3, _omitFieldNames ? '' : 'modifyMapOnServer')
     ..hasRequiredFields = false
@@ -696,15 +696,15 @@ class ProcessTopologyRequest extends $pb.GeneratedMessage {
 
   /// Standard message header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Parameters. If not filled out, reasonable defaults will be used.
   @$pb.TagNumber(2)
@@ -736,9 +736,9 @@ class ProcessTopologyRequest extends $pb.GeneratedMessage {
 /// waypoints or edges created by this process.
 class ProcessTopologyResponse extends $pb.GeneratedMessage {
   factory ProcessTopologyResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     ProcessTopologyResponse_Status? status,
-    $87.Graph? newSubgraph,
+    $89.Graph? newSubgraph,
     $core.bool? mapOnServerWasModified,
     $core.Iterable<$core.String>? missingSnapshotIds,
     $core.Iterable<$core.String>? missingWaypointIds,
@@ -773,9 +773,9 @@ class ProcessTopologyResponse extends $pb.GeneratedMessage {
   factory ProcessTopologyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessTopologyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<ProcessTopologyResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ProcessTopologyResponse_Status.STATUS_UNKNOWN, valueOf: ProcessTopologyResponse_Status.valueOf, enumValues: ProcessTopologyResponse_Status.values)
-    ..aOM<$87.Graph>(3, _omitFieldNames ? '' : 'newSubgraph', subBuilder: $87.Graph.create)
+    ..aOM<$89.Graph>(3, _omitFieldNames ? '' : 'newSubgraph', subBuilder: $89.Graph.create)
     ..aOB(4, _omitFieldNames ? '' : 'mapOnServerWasModified')
     ..pPS(10, _omitFieldNames ? '' : 'missingSnapshotIds')
     ..pPS(11, _omitFieldNames ? '' : 'missingWaypointIds')
@@ -806,15 +806,15 @@ class ProcessTopologyResponse extends $pb.GeneratedMessage {
 
   /// Standard message header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Result of the processing.
   @$pb.TagNumber(2)
@@ -830,15 +830,15 @@ class ProcessTopologyResponse extends $pb.GeneratedMessage {
   /// annotated with their creation method. Note that several subgraphs may be returned via
   /// streaming as the map is processed.
   @$pb.TagNumber(3)
-  $87.Graph get newSubgraph => $_getN(2);
+  $89.Graph get newSubgraph => $_getN(2);
   @$pb.TagNumber(3)
-  set newSubgraph($87.Graph v) { setField(3, v); }
+  set newSubgraph($89.Graph v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasNewSubgraph() => $_has(2);
   @$pb.TagNumber(3)
   void clearNewSubgraph() => clearField(3);
   @$pb.TagNumber(3)
-  $87.Graph ensureNewSubgraph() => $_ensure(2);
+  $89.Graph ensureNewSubgraph() => $_ensure(2);
 
   /// If modify_map_on_server was set to true in the request, then the map currently on the server
   /// was modified using map processing. If this is set to false, then either an error occurred during
@@ -986,7 +986,7 @@ enum AnchorHintUncertainty_Uncertainty {
 /// Controls how certain the user is of an anchor's pose. If left empty, a reasonable default will be chosen.
 class AnchorHintUncertainty extends $pb.GeneratedMessage {
   factory AnchorHintUncertainty({
-    $61.SE3Covariance? se3Covariance,
+    $60.SE3Covariance? se3Covariance,
     PoseBounds? confidenceBounds,
   }) {
     final $result = create();
@@ -1009,7 +1009,7 @@ class AnchorHintUncertainty extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnchorHintUncertainty', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..oo(0, [1, 2])
-    ..aOM<$61.SE3Covariance>(1, _omitFieldNames ? '' : 'se3Covariance', subBuilder: $61.SE3Covariance.create)
+    ..aOM<$60.SE3Covariance>(1, _omitFieldNames ? '' : 'se3Covariance', subBuilder: $60.SE3Covariance.create)
     ..aOM<PoseBounds>(2, _omitFieldNames ? '' : 'confidenceBounds', subBuilder: PoseBounds.create)
     ..hasRequiredFields = false
   ;
@@ -1040,15 +1040,15 @@ class AnchorHintUncertainty extends $pb.GeneratedMessage {
 
   /// A full 6x6 Gaussian covariance matrix representing uncertainty of an anchoring.
   @$pb.TagNumber(1)
-  $61.SE3Covariance get se3Covariance => $_getN(0);
+  $60.SE3Covariance get se3Covariance => $_getN(0);
   @$pb.TagNumber(1)
-  set se3Covariance($61.SE3Covariance v) { setField(1, v); }
+  set se3Covariance($60.SE3Covariance v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSe3Covariance() => $_has(0);
   @$pb.TagNumber(1)
   void clearSe3Covariance() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE3Covariance ensureSe3Covariance() => $_ensure(0);
+  $60.SE3Covariance ensureSe3Covariance() => $_ensure(0);
 
   /// Represents the 95 percent confidence interval on individual axes. This
   /// will be converted to a SE3Covariance internally by creating a diagonal
@@ -1081,7 +1081,7 @@ class AnchorHintUncertainty extends $pb.GeneratedMessage {
 /// Waypoint        Seed
 class WaypointAnchorHint extends $pb.GeneratedMessage {
   factory WaypointAnchorHint({
-    $87.Anchor? waypointAnchor,
+    $89.Anchor? waypointAnchor,
     AnchorHintUncertainty? seedTformWaypointUncertainty,
     PoseBounds? seedTformWaypointConstraint,
   }) {
@@ -1102,7 +1102,7 @@ class WaypointAnchorHint extends $pb.GeneratedMessage {
   factory WaypointAnchorHint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WaypointAnchorHint', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$87.Anchor>(1, _omitFieldNames ? '' : 'waypointAnchor', subBuilder: $87.Anchor.create)
+    ..aOM<$89.Anchor>(1, _omitFieldNames ? '' : 'waypointAnchor', subBuilder: $89.Anchor.create)
     ..aOM<AnchorHintUncertainty>(2, _omitFieldNames ? '' : 'seedTformWaypointUncertainty', subBuilder: AnchorHintUncertainty.create)
     ..aOM<PoseBounds>(3, _omitFieldNames ? '' : 'seedTformWaypointConstraint', subBuilder: PoseBounds.create)
     ..hasRequiredFields = false
@@ -1132,15 +1132,15 @@ class WaypointAnchorHint extends $pb.GeneratedMessage {
   /// This is to be interpreted as the mean of a Gaussian distribution, representing
   /// the pose of the waypoint in the seed frame.
   @$pb.TagNumber(1)
-  $87.Anchor get waypointAnchor => $_getN(0);
+  $89.Anchor get waypointAnchor => $_getN(0);
   @$pb.TagNumber(1)
-  set waypointAnchor($87.Anchor v) { setField(1, v); }
+  set waypointAnchor($89.Anchor v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasWaypointAnchor() => $_has(0);
   @$pb.TagNumber(1)
   void clearWaypointAnchor() => clearField(1);
   @$pb.TagNumber(1)
-  $87.Anchor ensureWaypointAnchor() => $_ensure(0);
+  $89.Anchor ensureWaypointAnchor() => $_ensure(0);
 
   /// This is the uncertainty of the anchor's pose in the seed frame.
   /// If left empty, a reasonable default uncertainty will be generated.
@@ -1190,7 +1190,7 @@ class WaypointAnchorHint extends $pb.GeneratedMessage {
 ///    Fiducial (on wall)
 class WorldObjectAnchorHint extends $pb.GeneratedMessage {
   factory WorldObjectAnchorHint({
-    $87.AnchoredWorldObject? objectAnchor,
+    $89.AnchoredWorldObject? objectAnchor,
     AnchorHintUncertainty? seedTformObjectUncertainty,
     PoseBounds? seedTformObjectConstraint,
   }) {
@@ -1211,7 +1211,7 @@ class WorldObjectAnchorHint extends $pb.GeneratedMessage {
   factory WorldObjectAnchorHint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WorldObjectAnchorHint', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$87.AnchoredWorldObject>(1, _omitFieldNames ? '' : 'objectAnchor', subBuilder: $87.AnchoredWorldObject.create)
+    ..aOM<$89.AnchoredWorldObject>(1, _omitFieldNames ? '' : 'objectAnchor', subBuilder: $89.AnchoredWorldObject.create)
     ..aOM<AnchorHintUncertainty>(2, _omitFieldNames ? '' : 'seedTformObjectUncertainty', subBuilder: AnchorHintUncertainty.create)
     ..aOM<PoseBounds>(3, _omitFieldNames ? '' : 'seedTformObjectConstraint', subBuilder: PoseBounds.create)
     ..hasRequiredFields = false
@@ -1241,15 +1241,15 @@ class WorldObjectAnchorHint extends $pb.GeneratedMessage {
   /// This is to be interpreted as the mean of a Gaussian distribution, representing
   /// the pose of the object in the seed frame.
   @$pb.TagNumber(1)
-  $87.AnchoredWorldObject get objectAnchor => $_getN(0);
+  $89.AnchoredWorldObject get objectAnchor => $_getN(0);
   @$pb.TagNumber(1)
-  set objectAnchor($87.AnchoredWorldObject v) { setField(1, v); }
+  set objectAnchor($89.AnchoredWorldObject v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasObjectAnchor() => $_has(0);
   @$pb.TagNumber(1)
   void clearObjectAnchor() => clearField(1);
   @$pb.TagNumber(1)
-  $87.AnchoredWorldObject ensureObjectAnchor() => $_ensure(0);
+  $89.AnchoredWorldObject ensureObjectAnchor() => $_ensure(0);
 
   /// This is the uncertainty of the anchor's pose in the seed frame.
   /// If left empty, a reasonable default uncertainty will be generated.
@@ -1339,8 +1339,8 @@ class AnchoringHint extends $pb.GeneratedMessage {
 /// Parameters affecting the underlying optimizer.
 class ProcessAnchoringRequest_Params_OptimizerParams extends $pb.GeneratedMessage {
   factory ProcessAnchoringRequest_Params_OptimizerParams({
-    $59.Int32Value? maxIters,
-    $59.DoubleValue? maxTimeSeconds,
+    $58.Int32Value? maxIters,
+    $58.DoubleValue? maxTimeSeconds,
   }) {
     final $result = create();
     if (maxIters != null) {
@@ -1356,8 +1356,8 @@ class ProcessAnchoringRequest_Params_OptimizerParams extends $pb.GeneratedMessag
   factory ProcessAnchoringRequest_Params_OptimizerParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessAnchoringRequest.Params.OptimizerParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$59.Int32Value>(1, _omitFieldNames ? '' : 'maxIters', subBuilder: $59.Int32Value.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'maxTimeSeconds', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.Int32Value>(1, _omitFieldNames ? '' : 'maxIters', subBuilder: $58.Int32Value.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'maxTimeSeconds', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1384,37 +1384,38 @@ class ProcessAnchoringRequest_Params_OptimizerParams extends $pb.GeneratedMessag
 
   /// Maximum iterations of the optimizer to run.
   @$pb.TagNumber(1)
-  $59.Int32Value get maxIters => $_getN(0);
+  $58.Int32Value get maxIters => $_getN(0);
   @$pb.TagNumber(1)
-  set maxIters($59.Int32Value v) { setField(1, v); }
+  set maxIters($58.Int32Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMaxIters() => $_has(0);
   @$pb.TagNumber(1)
   void clearMaxIters() => clearField(1);
   @$pb.TagNumber(1)
-  $59.Int32Value ensureMaxIters() => $_ensure(0);
+  $58.Int32Value ensureMaxIters() => $_ensure(0);
 
   /// Maximum time the optimizer is allowed to run before giving up.
   @$pb.TagNumber(2)
-  $59.DoubleValue get maxTimeSeconds => $_getN(1);
+  $58.DoubleValue get maxTimeSeconds => $_getN(1);
   @$pb.TagNumber(2)
-  set maxTimeSeconds($59.DoubleValue v) { setField(2, v); }
+  set maxTimeSeconds($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasMaxTimeSeconds() => $_has(1);
   @$pb.TagNumber(2)
   void clearMaxTimeSeconds() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureMaxTimeSeconds() => $_ensure(1);
+  $58.DoubleValue ensureMaxTimeSeconds() => $_ensure(1);
 }
 
 /// Parameters which affect the measurements the optimzier uses to process the anchoring.
 class ProcessAnchoringRequest_Params_MeasurementParams extends $pb.GeneratedMessage {
   factory ProcessAnchoringRequest_Params_MeasurementParams({
-    $59.BoolValue? useKinematicOdometry,
-    $59.BoolValue? useVisualOdometry,
-    $59.BoolValue? useGyroscopeMeasurements,
-    $59.BoolValue? useLoopClosures,
-    $59.BoolValue? useWorldObjects,
+    $58.BoolValue? useKinematicOdometry,
+    $58.BoolValue? useVisualOdometry,
+    $58.BoolValue? useGyroscopeMeasurements,
+    $58.BoolValue? useLoopClosures,
+    $58.BoolValue? useWorldObjects,
+    $58.BoolValue? useGps,
   }) {
     final $result = create();
     if (useKinematicOdometry != null) {
@@ -1432,6 +1433,9 @@ class ProcessAnchoringRequest_Params_MeasurementParams extends $pb.GeneratedMess
     if (useWorldObjects != null) {
       $result.useWorldObjects = useWorldObjects;
     }
+    if (useGps != null) {
+      $result.useGps = useGps;
+    }
     return $result;
   }
   ProcessAnchoringRequest_Params_MeasurementParams._() : super();
@@ -1439,11 +1443,12 @@ class ProcessAnchoringRequest_Params_MeasurementParams extends $pb.GeneratedMess
   factory ProcessAnchoringRequest_Params_MeasurementParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessAnchoringRequest.Params.MeasurementParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$59.BoolValue>(1, _omitFieldNames ? '' : 'useKinematicOdometry', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(2, _omitFieldNames ? '' : 'useVisualOdometry', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(3, _omitFieldNames ? '' : 'useGyroscopeMeasurements', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(4, _omitFieldNames ? '' : 'useLoopClosures', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(5, _omitFieldNames ? '' : 'useWorldObjects', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(1, _omitFieldNames ? '' : 'useKinematicOdometry', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(2, _omitFieldNames ? '' : 'useVisualOdometry', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(3, _omitFieldNames ? '' : 'useGyroscopeMeasurements', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(4, _omitFieldNames ? '' : 'useLoopClosures', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(5, _omitFieldNames ? '' : 'useWorldObjects', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(6, _omitFieldNames ? '' : 'useGps', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1471,67 +1476,80 @@ class ProcessAnchoringRequest_Params_MeasurementParams extends $pb.GeneratedMess
   /// If true, waypoints which share the same kinematic odometry
   /// frame will be constrained to one another using it.
   @$pb.TagNumber(1)
-  $59.BoolValue get useKinematicOdometry => $_getN(0);
+  $58.BoolValue get useKinematicOdometry => $_getN(0);
   @$pb.TagNumber(1)
-  set useKinematicOdometry($59.BoolValue v) { setField(1, v); }
+  set useKinematicOdometry($58.BoolValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUseKinematicOdometry() => $_has(0);
   @$pb.TagNumber(1)
   void clearUseKinematicOdometry() => clearField(1);
   @$pb.TagNumber(1)
-  $59.BoolValue ensureUseKinematicOdometry() => $_ensure(0);
+  $58.BoolValue ensureUseKinematicOdometry() => $_ensure(0);
 
   /// If true, waypoints which share the same visual odometry frame
   /// will be constrained to one another using it.
   @$pb.TagNumber(2)
-  $59.BoolValue get useVisualOdometry => $_getN(1);
+  $58.BoolValue get useVisualOdometry => $_getN(1);
   @$pb.TagNumber(2)
-  set useVisualOdometry($59.BoolValue v) { setField(2, v); }
+  set useVisualOdometry($58.BoolValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasUseVisualOdometry() => $_has(1);
   @$pb.TagNumber(2)
   void clearUseVisualOdometry() => clearField(2);
   @$pb.TagNumber(2)
-  $59.BoolValue ensureUseVisualOdometry() => $_ensure(1);
+  $58.BoolValue ensureUseVisualOdometry() => $_ensure(1);
 
   /// If true, waypoints will be constrained so that the apparent pose of the
   /// robot w.r.t the waypoint at the time of recording is consistent with gravity.
   @$pb.TagNumber(3)
-  $59.BoolValue get useGyroscopeMeasurements => $_getN(2);
+  $58.BoolValue get useGyroscopeMeasurements => $_getN(2);
   @$pb.TagNumber(3)
-  set useGyroscopeMeasurements($59.BoolValue v) { setField(3, v); }
+  set useGyroscopeMeasurements($58.BoolValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUseGyroscopeMeasurements() => $_has(2);
   @$pb.TagNumber(3)
   void clearUseGyroscopeMeasurements() => clearField(3);
   @$pb.TagNumber(3)
-  $59.BoolValue ensureUseGyroscopeMeasurements() => $_ensure(2);
+  $58.BoolValue ensureUseGyroscopeMeasurements() => $_ensure(2);
 
   /// If true, edges which were created by topology processing via loop closures will
   /// be used as constraints.
   @$pb.TagNumber(4)
-  $59.BoolValue get useLoopClosures => $_getN(3);
+  $58.BoolValue get useLoopClosures => $_getN(3);
   @$pb.TagNumber(4)
-  set useLoopClosures($59.BoolValue v) { setField(4, v); }
+  set useLoopClosures($58.BoolValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasUseLoopClosures() => $_has(3);
   @$pb.TagNumber(4)
   void clearUseLoopClosures() => clearField(4);
   @$pb.TagNumber(4)
-  $59.BoolValue ensureUseLoopClosures() => $_ensure(3);
+  $58.BoolValue ensureUseLoopClosures() => $_ensure(3);
 
   /// If true, world object measurements will be used to constrain waypoints to one another
   /// when those waypoints co-observe the same world object.
   @$pb.TagNumber(5)
-  $59.BoolValue get useWorldObjects => $_getN(4);
+  $58.BoolValue get useWorldObjects => $_getN(4);
   @$pb.TagNumber(5)
-  set useWorldObjects($59.BoolValue v) { setField(5, v); }
+  set useWorldObjects($58.BoolValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasUseWorldObjects() => $_has(4);
   @$pb.TagNumber(5)
   void clearUseWorldObjects() => clearField(5);
   @$pb.TagNumber(5)
-  $59.BoolValue ensureUseWorldObjects() => $_ensure(4);
+  $58.BoolValue ensureUseWorldObjects() => $_ensure(4);
+
+  /// If true, GPS measurements stored in waypoint snapshots will be used to
+  /// help constrain the anchoring.
+  @$pb.TagNumber(6)
+  $58.BoolValue get useGps => $_getN(5);
+  @$pb.TagNumber(6)
+  set useGps($58.BoolValue v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasUseGps() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUseGps() => clearField(6);
+  @$pb.TagNumber(6)
+  $58.BoolValue ensureUseGps() => $_ensure(5);
 }
 
 /// Relative weights to use for each of the optimizer's terms. These can be any positive value.
@@ -1545,6 +1563,7 @@ class ProcessAnchoringRequest_Params_Weights extends $pb.GeneratedMessage {
     $core.double? hintWeight,
     $core.double? gyroscopeWeight,
     $core.double? loopClosureWeight,
+    $core.double? gpsWeight,
   }) {
     final $result = create();
     if (kinematicOdometryWeight != null) {
@@ -1565,6 +1584,9 @@ class ProcessAnchoringRequest_Params_Weights extends $pb.GeneratedMessage {
     if (loopClosureWeight != null) {
       $result.loopClosureWeight = loopClosureWeight;
     }
+    if (gpsWeight != null) {
+      $result.gpsWeight = gpsWeight;
+    }
     return $result;
   }
   ProcessAnchoringRequest_Params_Weights._() : super();
@@ -1578,6 +1600,7 @@ class ProcessAnchoringRequest_Params_Weights extends $pb.GeneratedMessage {
     ..a<$core.double>(4, _omitFieldNames ? '' : 'hintWeight', $pb.PbFieldType.OD)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'gyroscopeWeight', $pb.PbFieldType.OD)
     ..a<$core.double>(6, _omitFieldNames ? '' : 'loopClosureWeight', $pb.PbFieldType.OD)
+    ..a<$core.double>(7, _omitFieldNames ? '' : 'gpsWeight', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
 
@@ -1655,6 +1678,15 @@ class ProcessAnchoringRequest_Params_Weights extends $pb.GeneratedMessage {
   $core.bool hasLoopClosureWeight() => $_has(5);
   @$pb.TagNumber(6)
   void clearLoopClosureWeight() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get gpsWeight => $_getN(6);
+  @$pb.TagNumber(7)
+  set gpsWeight($core.double v) { $_setDouble(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasGpsWeight() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGpsWeight() => clearField(7);
 }
 
 /// Parameters for procesing an anchoring.
@@ -1663,8 +1695,8 @@ class ProcessAnchoringRequest_Params extends $pb.GeneratedMessage {
     ProcessAnchoringRequest_Params_OptimizerParams? optimizerParams,
     ProcessAnchoringRequest_Params_MeasurementParams? measurementParams,
     ProcessAnchoringRequest_Params_Weights? weights,
-    $59.BoolValue? optimizeExistingAnchoring,
-    $61.Vec3? gravityEwrtSeed,
+    $58.BoolValue? optimizeExistingAnchoring,
+    $60.Vec3? gravityEwrtSeed,
   }) {
     final $result = create();
     if (optimizerParams != null) {
@@ -1692,8 +1724,8 @@ class ProcessAnchoringRequest_Params extends $pb.GeneratedMessage {
     ..aOM<ProcessAnchoringRequest_Params_OptimizerParams>(1, _omitFieldNames ? '' : 'optimizerParams', subBuilder: ProcessAnchoringRequest_Params_OptimizerParams.create)
     ..aOM<ProcessAnchoringRequest_Params_MeasurementParams>(2, _omitFieldNames ? '' : 'measurementParams', subBuilder: ProcessAnchoringRequest_Params_MeasurementParams.create)
     ..aOM<ProcessAnchoringRequest_Params_Weights>(3, _omitFieldNames ? '' : 'weights', subBuilder: ProcessAnchoringRequest_Params_Weights.create)
-    ..aOM<$59.BoolValue>(4, _omitFieldNames ? '' : 'optimizeExistingAnchoring', subBuilder: $59.BoolValue.create)
-    ..aOM<$61.Vec3>(5, _omitFieldNames ? '' : 'gravityEwrtSeed', subBuilder: $61.Vec3.create)
+    ..aOM<$58.BoolValue>(4, _omitFieldNames ? '' : 'optimizeExistingAnchoring', subBuilder: $58.BoolValue.create)
+    ..aOM<$60.Vec3>(5, _omitFieldNames ? '' : 'gravityEwrtSeed', subBuilder: $60.Vec3.create)
     ..hasRequiredFields = false
   ;
 
@@ -1757,30 +1789,30 @@ class ProcessAnchoringRequest_Params extends $pb.GeneratedMessage {
   /// and this value is false, every waypoint will be given a starting anchoring based on
   /// the oldest waypoint in the map.
   @$pb.TagNumber(4)
-  $59.BoolValue get optimizeExistingAnchoring => $_getN(3);
+  $58.BoolValue get optimizeExistingAnchoring => $_getN(3);
   @$pb.TagNumber(4)
-  set optimizeExistingAnchoring($59.BoolValue v) { setField(4, v); }
+  set optimizeExistingAnchoring($58.BoolValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasOptimizeExistingAnchoring() => $_has(3);
   @$pb.TagNumber(4)
   void clearOptimizeExistingAnchoring() => clearField(4);
   @$pb.TagNumber(4)
-  $59.BoolValue ensureOptimizeExistingAnchoring() => $_ensure(3);
+  $58.BoolValue ensureOptimizeExistingAnchoring() => $_ensure(3);
 
   /// The optimizer will try to keep the orientation of waypoints consistent with gravity.
   /// If provided, this is the gravity direction expressed with respect to the seed. This
   /// will be interpreted as a unit vector. If not filled out, a default of (0, 0, -1) will be
   /// used.
   @$pb.TagNumber(5)
-  $61.Vec3 get gravityEwrtSeed => $_getN(4);
+  $60.Vec3 get gravityEwrtSeed => $_getN(4);
   @$pb.TagNumber(5)
-  set gravityEwrtSeed($61.Vec3 v) { setField(5, v); }
+  set gravityEwrtSeed($60.Vec3 v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasGravityEwrtSeed() => $_has(4);
   @$pb.TagNumber(5)
   void clearGravityEwrtSeed() => clearField(5);
   @$pb.TagNumber(5)
-  $61.Vec3 ensureGravityEwrtSeed() => $_ensure(4);
+  $60.Vec3 ensureGravityEwrtSeed() => $_ensure(4);
 }
 
 /// Causes the server to optimize an existing anchoring, or generate a new anchoring for the map using the given parameters.
@@ -1788,11 +1820,12 @@ class ProcessAnchoringRequest_Params extends $pb.GeneratedMessage {
 /// The new anchoring will be streamed back to the client, or modified on the server if desired.
 class ProcessAnchoringRequest extends $pb.GeneratedMessage {
   factory ProcessAnchoringRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     ProcessAnchoringRequest_Params? params,
     AnchoringHint? initialHint,
     $core.bool? modifyAnchoringOnServer,
     $core.bool? streamIntermediateResults,
+    $core.bool? applyGpsResultToWaypointsOnServer,
   }) {
     final $result = create();
     if (header != null) {
@@ -1810,6 +1843,9 @@ class ProcessAnchoringRequest extends $pb.GeneratedMessage {
     if (streamIntermediateResults != null) {
       $result.streamIntermediateResults = streamIntermediateResults;
     }
+    if (applyGpsResultToWaypointsOnServer != null) {
+      $result.applyGpsResultToWaypointsOnServer = applyGpsResultToWaypointsOnServer;
+    }
     return $result;
   }
   ProcessAnchoringRequest._() : super();
@@ -1817,11 +1853,12 @@ class ProcessAnchoringRequest extends $pb.GeneratedMessage {
   factory ProcessAnchoringRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessAnchoringRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<ProcessAnchoringRequest_Params>(2, _omitFieldNames ? '' : 'params', subBuilder: ProcessAnchoringRequest_Params.create)
     ..aOM<AnchoringHint>(3, _omitFieldNames ? '' : 'initialHint', subBuilder: AnchoringHint.create)
     ..aOB(4, _omitFieldNames ? '' : 'modifyAnchoringOnServer')
     ..aOB(5, _omitFieldNames ? '' : 'streamIntermediateResults')
+    ..aOB(6, _omitFieldNames ? '' : 'applyGpsResultToWaypointsOnServer')
     ..hasRequiredFields = false
   ;
 
@@ -1848,15 +1885,15 @@ class ProcessAnchoringRequest extends $pb.GeneratedMessage {
 
   /// Standard request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ProcessAnchoringRequest_Params get params => $_getN(1);
@@ -1902,16 +1939,116 @@ class ProcessAnchoringRequest extends $pb.GeneratedMessage {
   $core.bool hasStreamIntermediateResults() => $_has(4);
   @$pb.TagNumber(5)
   void clearStreamIntermediateResults() => clearField(5);
+
+  /// If true, the GPSSettings inside waypoint annotations will be modified based on the optimization.
+  /// Every waypoint will have waypoint.gps_settings set, with ecef_tform_waypoint applied form this
+  /// optimization. To get these results, call the DownloadGraph RPC. Alternatively, the ecef_tform_waypoint
+  /// can be found using: response.gps_result.ecef_tform_seed * seed_tform_waypoint[waypoint_id].
+  /// Note that after this operation completes successfully, all waypoints in the graph can be used to navigate
+  /// using GPS, even if they didn't have GPS data in their waypoint snapshots.
+  @$pb.TagNumber(6)
+  $core.bool get applyGpsResultToWaypointsOnServer => $_getBF(5);
+  @$pb.TagNumber(6)
+  set applyGpsResultToWaypointsOnServer($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasApplyGpsResultToWaypointsOnServer() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearApplyGpsResultToWaypointsOnServer() => clearField(6);
+}
+
+class ProcessAnchoringResponse_GPSResult extends $pb.GeneratedMessage {
+  factory ProcessAnchoringResponse_GPSResult({
+    ProcessAnchoringResponse_GPSResult_GPSStatus? status,
+    $60.SE3Pose? ecefTformSeed,
+    $core.int? numMeasurementsUsed,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    if (ecefTformSeed != null) {
+      $result.ecefTformSeed = ecefTformSeed;
+    }
+    if (numMeasurementsUsed != null) {
+      $result.numMeasurementsUsed = numMeasurementsUsed;
+    }
+    return $result;
+  }
+  ProcessAnchoringResponse_GPSResult._() : super();
+  factory ProcessAnchoringResponse_GPSResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ProcessAnchoringResponse_GPSResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessAnchoringResponse.GPSResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
+    ..e<ProcessAnchoringResponse_GPSResult_GPSStatus>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ProcessAnchoringResponse_GPSResult_GPSStatus.GPS_STATUS_UNKNOWN, valueOf: ProcessAnchoringResponse_GPSResult_GPSStatus.valueOf, enumValues: ProcessAnchoringResponse_GPSResult_GPSStatus.values)
+    ..aOM<$60.SE3Pose>(2, _omitFieldNames ? '' : 'ecefTformSeed', subBuilder: $60.SE3Pose.create)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'numMeasurementsUsed', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ProcessAnchoringResponse_GPSResult clone() => ProcessAnchoringResponse_GPSResult()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ProcessAnchoringResponse_GPSResult copyWith(void Function(ProcessAnchoringResponse_GPSResult) updates) => super.copyWith((message) => updates(message as ProcessAnchoringResponse_GPSResult)) as ProcessAnchoringResponse_GPSResult;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ProcessAnchoringResponse_GPSResult create() => ProcessAnchoringResponse_GPSResult._();
+  ProcessAnchoringResponse_GPSResult createEmptyInstance() => create();
+  static $pb.PbList<ProcessAnchoringResponse_GPSResult> createRepeated() => $pb.PbList<ProcessAnchoringResponse_GPSResult>();
+  @$core.pragma('dart2js:noInline')
+  static ProcessAnchoringResponse_GPSResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProcessAnchoringResponse_GPSResult>(create);
+  static ProcessAnchoringResponse_GPSResult? _defaultInstance;
+
+  /// Overall status of the GPS embedding optimization.
+  @$pb.TagNumber(1)
+  ProcessAnchoringResponse_GPSResult_GPSStatus get status => $_getN(0);
+  @$pb.TagNumber(1)
+  set status(ProcessAnchoringResponse_GPSResult_GPSStatus v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => clearField(1);
+
+  /// Pose of the "seed" frame of this optimization in the Earth-Centered-Earth-Fixed (ECEF) frame.
+  /// This can be used to estimate the pose of every waypoint in the ECEF frame via:
+  /// ecef_tform_waypoint = ecef_tform_seed * anchoring.waypoints[waypoint_id].seed_tform_waypoint
+  @$pb.TagNumber(2)
+  $60.SE3Pose get ecefTformSeed => $_getN(1);
+  @$pb.TagNumber(2)
+  set ecefTformSeed($60.SE3Pose v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEcefTformSeed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEcefTformSeed() => clearField(2);
+  @$pb.TagNumber(2)
+  $60.SE3Pose ensureEcefTformSeed() => $_ensure(1);
+
+  /// This is the number of GPS measurements actually used to compute the GPS embedding.
+  @$pb.TagNumber(3)
+  $core.int get numMeasurementsUsed => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set numMeasurementsUsed($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNumMeasurementsUsed() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNumMeasurementsUsed() => clearField(3);
 }
 
 /// Streamed response from the ProcessAnchoringRequest. These will be streamed until optimization is complete.
 /// New anchorings will be streamed as they become available.
 class ProcessAnchoringResponse extends $pb.GeneratedMessage {
   factory ProcessAnchoringResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     ProcessAnchoringResponse_Status? status,
-    $core.Iterable<$87.Anchor>? waypointResults,
-    $core.Iterable<$87.AnchoredWorldObject>? worldObjectResults,
+    $core.Iterable<$89.Anchor>? waypointResults,
+    $core.Iterable<$89.AnchoredWorldObject>? worldObjectResults,
     $core.bool? anchoringOnServerWasModified,
     $core.int? iteration,
     $core.double? cost,
@@ -1921,7 +2058,8 @@ class ProcessAnchoringResponse extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? missingSnapshotIds,
     $core.Iterable<$core.String>? missingWaypointIds,
     $core.Iterable<$core.String>? invalidHints,
-    $core.Iterable<$87.Edge_Id>? inconsistentEdges,
+    $core.Iterable<$89.Edge_Id>? inconsistentEdges,
+    ProcessAnchoringResponse_GPSResult? gpsResult,
   }) {
     final $result = create();
     if (header != null) {
@@ -1966,6 +2104,9 @@ class ProcessAnchoringResponse extends $pb.GeneratedMessage {
     if (inconsistentEdges != null) {
       $result.inconsistentEdges.addAll(inconsistentEdges);
     }
+    if (gpsResult != null) {
+      $result.gpsResult = gpsResult;
+    }
     return $result;
   }
   ProcessAnchoringResponse._() : super();
@@ -1973,10 +2114,10 @@ class ProcessAnchoringResponse extends $pb.GeneratedMessage {
   factory ProcessAnchoringResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProcessAnchoringResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<ProcessAnchoringResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ProcessAnchoringResponse_Status.STATUS_UNKNOWN, valueOf: ProcessAnchoringResponse_Status.valueOf, enumValues: ProcessAnchoringResponse_Status.values)
-    ..pc<$87.Anchor>(3, _omitFieldNames ? '' : 'waypointResults', $pb.PbFieldType.PM, subBuilder: $87.Anchor.create)
-    ..pc<$87.AnchoredWorldObject>(4, _omitFieldNames ? '' : 'worldObjectResults', $pb.PbFieldType.PM, subBuilder: $87.AnchoredWorldObject.create)
+    ..pc<$89.Anchor>(3, _omitFieldNames ? '' : 'waypointResults', $pb.PbFieldType.PM, subBuilder: $89.Anchor.create)
+    ..pc<$89.AnchoredWorldObject>(4, _omitFieldNames ? '' : 'worldObjectResults', $pb.PbFieldType.PM, subBuilder: $89.AnchoredWorldObject.create)
     ..aOB(5, _omitFieldNames ? '' : 'anchoringOnServerWasModified')
     ..a<$core.int>(6, _omitFieldNames ? '' : 'iteration', $pb.PbFieldType.O3)
     ..a<$core.double>(7, _omitFieldNames ? '' : 'cost', $pb.PbFieldType.OD)
@@ -1986,7 +2127,8 @@ class ProcessAnchoringResponse extends $pb.GeneratedMessage {
     ..pPS(11, _omitFieldNames ? '' : 'missingSnapshotIds')
     ..pPS(12, _omitFieldNames ? '' : 'missingWaypointIds')
     ..pPS(13, _omitFieldNames ? '' : 'invalidHints')
-    ..pc<$87.Edge_Id>(14, _omitFieldNames ? '' : 'inconsistentEdges', $pb.PbFieldType.PM, subBuilder: $87.Edge_Id.create)
+    ..pc<$89.Edge_Id>(14, _omitFieldNames ? '' : 'inconsistentEdges', $pb.PbFieldType.PM, subBuilder: $89.Edge_Id.create)
+    ..aOM<ProcessAnchoringResponse_GPSResult>(15, _omitFieldNames ? '' : 'gpsResult', subBuilder: ProcessAnchoringResponse_GPSResult.create)
     ..hasRequiredFields = false
   ;
 
@@ -2012,15 +2154,15 @@ class ProcessAnchoringResponse extends $pb.GeneratedMessage {
   static ProcessAnchoringResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ProcessAnchoringResponse_Status get status => $_getN(1);
@@ -2034,12 +2176,12 @@ class ProcessAnchoringResponse extends $pb.GeneratedMessage {
   /// Contains new anchorings for waypoint(s) processed by the server.
   /// These will be streamed back to the user as they become available.
   @$pb.TagNumber(3)
-  $core.List<$87.Anchor> get waypointResults => $_getList(2);
+  $core.List<$89.Anchor> get waypointResults => $_getList(2);
 
   /// Contains new anchorings for object(s) (e.g april tags) processed by the server.
   /// These will be streamed back to the user as they become available
   @$pb.TagNumber(4)
-  $core.List<$87.AnchoredWorldObject> get worldObjectResults => $_getList(3);
+  $core.List<$89.AnchoredWorldObject> get worldObjectResults => $_getList(3);
 
   /// If modify_anchoring_on_server was set to true in the request, then the anchoring currently on the server
   /// was modified using map processing. If this is set to false, then either an error occurred during
@@ -2114,7 +2256,19 @@ class ProcessAnchoringResponse extends $pb.GeneratedMessage {
   /// loop closures have been made before optimization, when inconsistent anchoring hints were passed in,
   /// or because the optmizer ended up in a local minimum.
   @$pb.TagNumber(14)
-  $core.List<$87.Edge_Id> get inconsistentEdges => $_getList(13);
+  $core.List<$89.Edge_Id> get inconsistentEdges => $_getList(13);
+
+  /// If GPS embedding optimzation was enabled, this is the result of that process.
+  @$pb.TagNumber(15)
+  ProcessAnchoringResponse_GPSResult get gpsResult => $_getN(14);
+  @$pb.TagNumber(15)
+  set gpsResult(ProcessAnchoringResponse_GPSResult v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasGpsResult() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearGpsResult() => clearField(15);
+  @$pb.TagNumber(15)
+  ProcessAnchoringResponse_GPSResult ensureGpsResult() => $_ensure(14);
 }
 
 

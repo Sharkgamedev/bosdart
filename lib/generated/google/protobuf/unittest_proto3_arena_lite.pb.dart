@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest_import.pb.dart' as $97;
-import 'unittest_import_public.pb.dart' as $98;
+import 'unittest_import.pb.dart' as $100;
+import 'unittest_import_public.pb.dart' as $101;
 import 'unittest_proto3_arena_lite.pbenum.dart';
 
 export 'unittest_proto3_arena_lite.pbenum.dart';
@@ -102,12 +102,12 @@ class TestAllTypes extends $pb.GeneratedMessage {
     $core.List<$core.int>? optionalBytes,
     TestAllTypes_NestedMessage? optionalNestedMessage,
     ForeignMessage? optionalForeignMessage,
-    $97.ImportMessage? optionalImportMessage,
+    $100.ImportMessage? optionalImportMessage,
     TestAllTypes_NestedEnum? optionalNestedEnum,
     ForeignEnum? optionalForeignEnum,
     $core.String? optionalStringPiece,
     $core.String? optionalCord,
-    $98.PublicImportMessage? optionalPublicImportMessage,
+    $101.PublicImportMessage? optionalPublicImportMessage,
     TestAllTypes_NestedMessage? optionalLazyMessage,
     $core.Iterable<$core.int>? repeatedInt32,
     $core.Iterable<$fixnum.Int64>? repeatedInt64,
@@ -126,7 +126,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
     $core.Iterable<$core.List<$core.int>>? repeatedBytes,
     $core.Iterable<TestAllTypes_NestedMessage>? repeatedNestedMessage,
     $core.Iterable<ForeignMessage>? repeatedForeignMessage,
-    $core.Iterable<$97.ImportMessage>? repeatedImportMessage,
+    $core.Iterable<$100.ImportMessage>? repeatedImportMessage,
     $core.Iterable<TestAllTypes_NestedEnum>? repeatedNestedEnum,
     $core.Iterable<ForeignEnum>? repeatedForeignEnum,
     $core.Iterable<$core.String>? repeatedStringPiece,
@@ -323,12 +323,12 @@ class TestAllTypes extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(15, _omitFieldNames ? '' : 'optionalBytes', $pb.PbFieldType.OY)
     ..aOM<TestAllTypes_NestedMessage>(18, _omitFieldNames ? '' : 'optionalNestedMessage', subBuilder: TestAllTypes_NestedMessage.create)
     ..aOM<ForeignMessage>(19, _omitFieldNames ? '' : 'optionalForeignMessage', subBuilder: ForeignMessage.create)
-    ..aOM<$97.ImportMessage>(20, _omitFieldNames ? '' : 'optionalImportMessage', subBuilder: $97.ImportMessage.create)
+    ..aOM<$100.ImportMessage>(20, _omitFieldNames ? '' : 'optionalImportMessage', subBuilder: $100.ImportMessage.create)
     ..e<TestAllTypes_NestedEnum>(21, _omitFieldNames ? '' : 'optionalNestedEnum', $pb.PbFieldType.OE, defaultOrMaker: TestAllTypes_NestedEnum.ZERO, valueOf: TestAllTypes_NestedEnum.valueOf, enumValues: TestAllTypes_NestedEnum.values)
     ..e<ForeignEnum>(22, _omitFieldNames ? '' : 'optionalForeignEnum', $pb.PbFieldType.OE, defaultOrMaker: ForeignEnum.FOREIGN_ZERO, valueOf: ForeignEnum.valueOf, enumValues: ForeignEnum.values)
     ..aOS(24, _omitFieldNames ? '' : 'optionalStringPiece')
     ..aOS(25, _omitFieldNames ? '' : 'optionalCord')
-    ..aOM<$98.PublicImportMessage>(26, _omitFieldNames ? '' : 'optionalPublicImportMessage', subBuilder: $98.PublicImportMessage.create)
+    ..aOM<$101.PublicImportMessage>(26, _omitFieldNames ? '' : 'optionalPublicImportMessage', subBuilder: $101.PublicImportMessage.create)
     ..aOM<TestAllTypes_NestedMessage>(27, _omitFieldNames ? '' : 'optionalLazyMessage', subBuilder: TestAllTypes_NestedMessage.create)
     ..p<$core.int>(31, _omitFieldNames ? '' : 'repeatedInt32', $pb.PbFieldType.K3)
     ..p<$fixnum.Int64>(32, _omitFieldNames ? '' : 'repeatedInt64', $pb.PbFieldType.K6)
@@ -347,7 +347,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
     ..p<$core.List<$core.int>>(45, _omitFieldNames ? '' : 'repeatedBytes', $pb.PbFieldType.PY)
     ..pc<TestAllTypes_NestedMessage>(48, _omitFieldNames ? '' : 'repeatedNestedMessage', $pb.PbFieldType.PM, subBuilder: TestAllTypes_NestedMessage.create)
     ..pc<ForeignMessage>(49, _omitFieldNames ? '' : 'repeatedForeignMessage', $pb.PbFieldType.PM, subBuilder: ForeignMessage.create)
-    ..pc<$97.ImportMessage>(50, _omitFieldNames ? '' : 'repeatedImportMessage', $pb.PbFieldType.PM, subBuilder: $97.ImportMessage.create)
+    ..pc<$100.ImportMessage>(50, _omitFieldNames ? '' : 'repeatedImportMessage', $pb.PbFieldType.PM, subBuilder: $100.ImportMessage.create)
     ..pc<TestAllTypes_NestedEnum>(51, _omitFieldNames ? '' : 'repeatedNestedEnum', $pb.PbFieldType.KE, valueOf: TestAllTypes_NestedEnum.valueOf, enumValues: TestAllTypes_NestedEnum.values, defaultEnumValue: TestAllTypes_NestedEnum.ZERO)
     ..pc<ForeignEnum>(52, _omitFieldNames ? '' : 'repeatedForeignEnum', $pb.PbFieldType.KE, valueOf: ForeignEnum.valueOf, enumValues: ForeignEnum.values, defaultEnumValue: ForeignEnum.FOREIGN_ZERO)
     ..pPS(54, _omitFieldNames ? '' : 'repeatedStringPiece')
@@ -543,15 +543,15 @@ class TestAllTypes extends $pb.GeneratedMessage {
   ForeignMessage ensureOptionalForeignMessage() => $_ensure(16);
 
   @$pb.TagNumber(20)
-  $97.ImportMessage get optionalImportMessage => $_getN(17);
+  $100.ImportMessage get optionalImportMessage => $_getN(17);
   @$pb.TagNumber(20)
-  set optionalImportMessage($97.ImportMessage v) { setField(20, v); }
+  set optionalImportMessage($100.ImportMessage v) { setField(20, v); }
   @$pb.TagNumber(20)
   $core.bool hasOptionalImportMessage() => $_has(17);
   @$pb.TagNumber(20)
   void clearOptionalImportMessage() => clearField(20);
   @$pb.TagNumber(20)
-  $97.ImportMessage ensureOptionalImportMessage() => $_ensure(17);
+  $100.ImportMessage ensureOptionalImportMessage() => $_ensure(17);
 
   @$pb.TagNumber(21)
   TestAllTypes_NestedEnum get optionalNestedEnum => $_getN(18);
@@ -591,15 +591,15 @@ class TestAllTypes extends $pb.GeneratedMessage {
 
   /// Defined in unittest_import_public.proto
   @$pb.TagNumber(26)
-  $98.PublicImportMessage get optionalPublicImportMessage => $_getN(22);
+  $101.PublicImportMessage get optionalPublicImportMessage => $_getN(22);
   @$pb.TagNumber(26)
-  set optionalPublicImportMessage($98.PublicImportMessage v) { setField(26, v); }
+  set optionalPublicImportMessage($101.PublicImportMessage v) { setField(26, v); }
   @$pb.TagNumber(26)
   $core.bool hasOptionalPublicImportMessage() => $_has(22);
   @$pb.TagNumber(26)
   void clearOptionalPublicImportMessage() => clearField(26);
   @$pb.TagNumber(26)
-  $98.PublicImportMessage ensureOptionalPublicImportMessage() => $_ensure(22);
+  $101.PublicImportMessage ensureOptionalPublicImportMessage() => $_ensure(22);
 
   @$pb.TagNumber(27)
   TestAllTypes_NestedMessage get optionalLazyMessage => $_getN(23);
@@ -665,7 +665,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
   $core.List<ForeignMessage> get repeatedForeignMessage => $_getList(40);
 
   @$pb.TagNumber(50)
-  $core.List<$97.ImportMessage> get repeatedImportMessage => $_getList(41);
+  $core.List<$100.ImportMessage> get repeatedImportMessage => $_getList(41);
 
   @$pb.TagNumber(51)
   $core.List<TestAllTypes_NestedEnum> get repeatedNestedEnum => $_getList(42);

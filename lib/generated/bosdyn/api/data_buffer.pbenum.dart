@@ -86,8 +86,8 @@ class SignalTick_Encoding extends $pb.ProtobufEnum {
 ///  - Higher level events will increase the visibility on the event timeline, relative to other
 ///    events.
 ///  - In general, higher level events should be more consequential with respect to the robot
-///    operation on a per-occurence basis.
-///  - Lower level events should be less consequential on a per occurence basis.
+///    operation on a per-occurrence basis.
+///  - Lower level events should be less consequential on a per-occurrence basis.
 ///  - Non-critical events may be one of LOW, MEDIUM, or HIGH.  UNSET is logically equivalent to
 ///    LOW level.
 ///  - Critical events may be either mission or system critical.

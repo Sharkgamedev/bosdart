@@ -15,7 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'map_lite_unittest.pbenum.dart';
-import 'unittest_lite.pb.dart' as $96;
+import 'unittest_lite.pb.dart' as $99;
 
 export 'map_lite_unittest.pbenum.dart';
 
@@ -37,7 +37,7 @@ class TestMapLite extends $pb.GeneratedMessage {
     $core.Map<$core.String, $core.String>? mapStringString,
     $core.Map<$core.int, $core.List<$core.int>>? mapInt32Bytes,
     $core.Map<$core.int, MapEnumLite>? mapInt32Enum,
-    $core.Map<$core.int, $96.ForeignMessageLite>? mapInt32ForeignMessage,
+    $core.Map<$core.int, $99.ForeignMessageLite>? mapInt32ForeignMessage,
     $core.Map<$core.int, $core.int>? teboring,
   }) {
     final $result = create();
@@ -118,7 +118,7 @@ class TestMapLite extends $pb.GeneratedMessage {
     ..m<$core.String, $core.String>(14, _omitFieldNames ? '' : 'mapStringString', entryClassName: 'TestMapLite.MapStringStringEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('protobuf_unittest'))
     ..m<$core.int, $core.List<$core.int>>(15, _omitFieldNames ? '' : 'mapInt32Bytes', entryClassName: 'TestMapLite.MapInt32BytesEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OY, packageName: const $pb.PackageName('protobuf_unittest'))
     ..m<$core.int, MapEnumLite>(16, _omitFieldNames ? '' : 'mapInt32Enum', entryClassName: 'TestMapLite.MapInt32EnumEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OE, valueOf: MapEnumLite.valueOf, enumValues: MapEnumLite.values, valueDefaultOrMaker: MapEnumLite.MAP_ENUM_FOO_LITE, defaultEnumValue: MapEnumLite.MAP_ENUM_FOO_LITE, packageName: const $pb.PackageName('protobuf_unittest'))
-    ..m<$core.int, $96.ForeignMessageLite>(17, _omitFieldNames ? '' : 'mapInt32ForeignMessage', entryClassName: 'TestMapLite.MapInt32ForeignMessageEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $96.ForeignMessageLite.create, valueDefaultOrMaker: $96.ForeignMessageLite.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
+    ..m<$core.int, $99.ForeignMessageLite>(17, _omitFieldNames ? '' : 'mapInt32ForeignMessage', entryClassName: 'TestMapLite.MapInt32ForeignMessageEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $99.ForeignMessageLite.create, valueDefaultOrMaker: $99.ForeignMessageLite.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
     ..m<$core.int, $core.int>(18, _omitFieldNames ? '' : 'teboring', entryClassName: 'TestMapLite.TeboringEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.O3, packageName: const $pb.PackageName('protobuf_unittest'))
     ..hasRequiredFields = false
   ;
@@ -193,7 +193,7 @@ class TestMapLite extends $pb.GeneratedMessage {
   $core.Map<$core.int, MapEnumLite> get mapInt32Enum => $_getMap(15);
 
   @$pb.TagNumber(17)
-  $core.Map<$core.int, $96.ForeignMessageLite> get mapInt32ForeignMessage => $_getMap(16);
+  $core.Map<$core.int, $99.ForeignMessageLite> get mapInt32ForeignMessage => $_getMap(16);
 
   @$pb.TagNumber(18)
   $core.Map<$core.int, $core.int> get teboring => $_getMap(17);
@@ -521,7 +521,7 @@ class TestEnumMapPlusExtraLite extends $pb.GeneratedMessage {
 
 class TestMessageMapLite extends $pb.GeneratedMessage {
   factory TestMessageMapLite({
-    $core.Map<$core.int, $96.TestAllTypesLite>? mapInt32Message,
+    $core.Map<$core.int, $99.TestAllTypesLite>? mapInt32Message,
   }) {
     final $result = create();
     if (mapInt32Message != null) {
@@ -534,7 +534,7 @@ class TestMessageMapLite extends $pb.GeneratedMessage {
   factory TestMessageMapLite.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestMessageMapLite', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest'), createEmptyInstance: create)
-    ..m<$core.int, $96.TestAllTypesLite>(1, _omitFieldNames ? '' : 'mapInt32Message', entryClassName: 'TestMessageMapLite.MapInt32MessageEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $96.TestAllTypesLite.create, valueDefaultOrMaker: $96.TestAllTypesLite.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
+    ..m<$core.int, $99.TestAllTypesLite>(1, _omitFieldNames ? '' : 'mapInt32Message', entryClassName: 'TestMessageMapLite.MapInt32MessageEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: $99.TestAllTypesLite.create, valueDefaultOrMaker: $99.TestAllTypesLite.getDefault, packageName: const $pb.PackageName('protobuf_unittest'))
     ..hasRequiredFields = false
   ;
 
@@ -560,7 +560,7 @@ class TestMessageMapLite extends $pb.GeneratedMessage {
   static TestMessageMapLite? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.int, $96.TestAllTypesLite> get mapInt32Message => $_getMap(0);
+  $core.Map<$core.int, $99.TestAllTypesLite> get mapInt32Message => $_getMap(0);
 }
 
 class TestRequiredLite extends $pb.GeneratedMessage {

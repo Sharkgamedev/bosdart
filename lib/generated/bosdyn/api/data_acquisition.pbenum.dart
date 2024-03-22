@@ -140,5 +140,26 @@ class CancelAcquisitionResponse_Status extends $pb.ProtobufEnum {
   const CancelAcquisitionResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+class LiveDataResponse_CapabilityLiveData_Status extends $pb.ProtobufEnum {
+  static const LiveDataResponse_CapabilityLiveData_Status STATUS_UNKNOWN = LiveDataResponse_CapabilityLiveData_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
+  static const LiveDataResponse_CapabilityLiveData_Status STATUS_OK = LiveDataResponse_CapabilityLiveData_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
+  static const LiveDataResponse_CapabilityLiveData_Status STATUS_UNKNOWN_CAPTURE_TYPE = LiveDataResponse_CapabilityLiveData_Status._(2, _omitEnumNames ? '' : 'STATUS_UNKNOWN_CAPTURE_TYPE');
+  static const LiveDataResponse_CapabilityLiveData_Status STATUS_CUSTOM_PARAMS_ERROR = LiveDataResponse_CapabilityLiveData_Status._(3, _omitEnumNames ? '' : 'STATUS_CUSTOM_PARAMS_ERROR');
+  static const LiveDataResponse_CapabilityLiveData_Status STATUS_INTERNAL_ERROR = LiveDataResponse_CapabilityLiveData_Status._(4, _omitEnumNames ? '' : 'STATUS_INTERNAL_ERROR');
+
+  static const $core.List<LiveDataResponse_CapabilityLiveData_Status> values = <LiveDataResponse_CapabilityLiveData_Status> [
+    STATUS_UNKNOWN,
+    STATUS_OK,
+    STATUS_UNKNOWN_CAPTURE_TYPE,
+    STATUS_CUSTOM_PARAMS_ERROR,
+    STATUS_INTERNAL_ERROR,
+  ];
+
+  static final $core.Map<$core.int, LiveDataResponse_CapabilityLiveData_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static LiveDataResponse_CapabilityLiveData_Status? valueOf($core.int value) => _byValue[value];
+
+  const LiveDataResponse_CapabilityLiveData_Status._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

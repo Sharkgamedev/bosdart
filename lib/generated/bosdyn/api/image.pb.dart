@@ -13,12 +13,12 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/duration.pb.dart' as $62;
-import '../../google/protobuf/timestamp.pb.dart' as $60;
-import 'geometry.pb.dart' as $61;
-import 'header.pb.dart' as $68;
+import '../../google/protobuf/duration.pb.dart' as $61;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
+import 'geometry.pb.dart' as $60;
+import 'header.pb.dart' as $67;
 import 'image.pbenum.dart';
-import 'service_customization.pb.dart' as $72;
+import 'service_customization.pb.dart' as $71;
 
 export 'image.pbenum.dart';
 
@@ -138,9 +138,9 @@ class Image extends $pb.GeneratedMessage {
 /// Sensor parameters associated with an image capture.
 class CaptureParameters extends $pb.GeneratedMessage {
   factory CaptureParameters({
-    $62.Duration? exposureDuration,
+    $61.Duration? exposureDuration,
     $core.double? gain,
-    $72.DictParam? customParams,
+    $71.DictParam? customParams,
   }) {
     final $result = create();
     if (exposureDuration != null) {
@@ -159,9 +159,9 @@ class CaptureParameters extends $pb.GeneratedMessage {
   factory CaptureParameters.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CaptureParameters', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$62.Duration>(1, _omitFieldNames ? '' : 'exposureDuration', subBuilder: $62.Duration.create)
+    ..aOM<$61.Duration>(1, _omitFieldNames ? '' : 'exposureDuration', subBuilder: $61.Duration.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'gain', $pb.PbFieldType.OD)
-    ..aOM<$72.DictParam>(3, _omitFieldNames ? '' : 'customParams', subBuilder: $72.DictParam.create)
+    ..aOM<$71.DictParam>(3, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam.create)
     ..hasRequiredFields = false
   ;
 
@@ -188,15 +188,15 @@ class CaptureParameters extends $pb.GeneratedMessage {
 
   /// The duration of exposure in microseconds.
   @$pb.TagNumber(1)
-  $62.Duration get exposureDuration => $_getN(0);
+  $61.Duration get exposureDuration => $_getN(0);
   @$pb.TagNumber(1)
-  set exposureDuration($62.Duration v) { setField(1, v); }
+  set exposureDuration($61.Duration v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasExposureDuration() => $_has(0);
   @$pb.TagNumber(1)
   void clearExposureDuration() => clearField(1);
   @$pb.TagNumber(1)
-  $62.Duration ensureExposureDuration() => $_ensure(0);
+  $61.Duration ensureExposureDuration() => $_ensure(0);
 
   /// Sensor gain in dB.
   @$pb.TagNumber(2)
@@ -210,15 +210,15 @@ class CaptureParameters extends $pb.GeneratedMessage {
 
   /// Any other custom parameters used in the image capture.
   @$pb.TagNumber(3)
-  $72.DictParam get customParams => $_getN(2);
+  $71.DictParam get customParams => $_getN(2);
   @$pb.TagNumber(3)
-  set customParams($72.DictParam v) { setField(3, v); }
+  set customParams($71.DictParam v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCustomParams() => $_has(2);
   @$pb.TagNumber(3)
   void clearCustomParams() => clearField(3);
   @$pb.TagNumber(3)
-  $72.DictParam ensureCustomParams() => $_ensure(2);
+  $71.DictParam ensureCustomParams() => $_ensure(2);
 }
 
 /// Rectangular color/greyscale images.
@@ -227,8 +227,8 @@ class ImageCapture extends $pb.GeneratedMessage {
     Image? image,
     CaptureParameters? captureParams,
     $core.String? frameNameImageSensor,
-    $60.Timestamp? acquisitionTime,
-    $61.FrameTreeSnapshot? transformsSnapshot,
+    $59.Timestamp? acquisitionTime,
+    $60.FrameTreeSnapshot? transformsSnapshot,
   }) {
     final $result = create();
     if (image != null) {
@@ -256,8 +256,8 @@ class ImageCapture extends $pb.GeneratedMessage {
     ..aOM<Image>(3, _omitFieldNames ? '' : 'image', subBuilder: Image.create)
     ..aOM<CaptureParameters>(4, _omitFieldNames ? '' : 'captureParams', subBuilder: CaptureParameters.create)
     ..aOS(5, _omitFieldNames ? '' : 'frameNameImageSensor')
-    ..aOM<$60.Timestamp>(30, _omitFieldNames ? '' : 'acquisitionTime', subBuilder: $60.Timestamp.create)
-    ..aOM<$61.FrameTreeSnapshot>(31, _omitFieldNames ? '' : 'transformsSnapshot', subBuilder: $61.FrameTreeSnapshot.create)
+    ..aOM<$59.Timestamp>(30, _omitFieldNames ? '' : 'acquisitionTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.FrameTreeSnapshot>(31, _omitFieldNames ? '' : 'transformsSnapshot', subBuilder: $60.FrameTreeSnapshot.create)
     ..hasRequiredFields = false
   ;
 
@@ -318,37 +318,37 @@ class ImageCapture extends $pb.GeneratedMessage {
 
   /// The time at which the image data was acquired in the robot's time basis.
   @$pb.TagNumber(30)
-  $60.Timestamp get acquisitionTime => $_getN(3);
+  $59.Timestamp get acquisitionTime => $_getN(3);
   @$pb.TagNumber(30)
-  set acquisitionTime($60.Timestamp v) { setField(30, v); }
+  set acquisitionTime($59.Timestamp v) { setField(30, v); }
   @$pb.TagNumber(30)
   $core.bool hasAcquisitionTime() => $_has(3);
   @$pb.TagNumber(30)
   void clearAcquisitionTime() => clearField(30);
   @$pb.TagNumber(30)
-  $60.Timestamp ensureAcquisitionTime() => $_ensure(3);
+  $59.Timestamp ensureAcquisitionTime() => $_ensure(3);
 
   /// A tree-based collection of transformations, which will include the transformations to each image's
   /// sensor in addition to transformations to the common frames ("vision", "body", "odom").
   /// All transforms within the snapshot are at the acquistion time of the image.
   @$pb.TagNumber(31)
-  $61.FrameTreeSnapshot get transformsSnapshot => $_getN(4);
+  $60.FrameTreeSnapshot get transformsSnapshot => $_getN(4);
   @$pb.TagNumber(31)
-  set transformsSnapshot($61.FrameTreeSnapshot v) { setField(31, v); }
+  set transformsSnapshot($60.FrameTreeSnapshot v) { setField(31, v); }
   @$pb.TagNumber(31)
   $core.bool hasTransformsSnapshot() => $_has(4);
   @$pb.TagNumber(31)
   void clearTransformsSnapshot() => clearField(31);
   @$pb.TagNumber(31)
-  $61.FrameTreeSnapshot ensureTransformsSnapshot() => $_ensure(4);
+  $60.FrameTreeSnapshot ensureTransformsSnapshot() => $_ensure(4);
 }
 
 /// Intrinsic parameters are in pixel space.
 class ImageSource_PinholeModel_CameraIntrinsics extends $pb.GeneratedMessage {
   factory ImageSource_PinholeModel_CameraIntrinsics({
-    $61.Vec2? focalLength,
-    $61.Vec2? principalPoint,
-    $61.Vec2? skew,
+    $60.Vec2? focalLength,
+    $60.Vec2? principalPoint,
+    $60.Vec2? skew,
   }) {
     final $result = create();
     if (focalLength != null) {
@@ -367,9 +367,9 @@ class ImageSource_PinholeModel_CameraIntrinsics extends $pb.GeneratedMessage {
   factory ImageSource_PinholeModel_CameraIntrinsics.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImageSource.PinholeModel.CameraIntrinsics', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Vec2>(1, _omitFieldNames ? '' : 'focalLength', subBuilder: $61.Vec2.create)
-    ..aOM<$61.Vec2>(2, _omitFieldNames ? '' : 'principalPoint', subBuilder: $61.Vec2.create)
-    ..aOM<$61.Vec2>(3, _omitFieldNames ? '' : 'skew', subBuilder: $61.Vec2.create)
+    ..aOM<$60.Vec2>(1, _omitFieldNames ? '' : 'focalLength', subBuilder: $60.Vec2.create)
+    ..aOM<$60.Vec2>(2, _omitFieldNames ? '' : 'principalPoint', subBuilder: $60.Vec2.create)
+    ..aOM<$60.Vec2>(3, _omitFieldNames ? '' : 'skew', subBuilder: $60.Vec2.create)
     ..hasRequiredFields = false
   ;
 
@@ -396,39 +396,39 @@ class ImageSource_PinholeModel_CameraIntrinsics extends $pb.GeneratedMessage {
 
   /// The focal length of the camera.
   @$pb.TagNumber(1)
-  $61.Vec2 get focalLength => $_getN(0);
+  $60.Vec2 get focalLength => $_getN(0);
   @$pb.TagNumber(1)
-  set focalLength($61.Vec2 v) { setField(1, v); }
+  set focalLength($60.Vec2 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFocalLength() => $_has(0);
   @$pb.TagNumber(1)
   void clearFocalLength() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec2 ensureFocalLength() => $_ensure(0);
+  $60.Vec2 ensureFocalLength() => $_ensure(0);
 
   /// The optical center in sensor coordinates.
   @$pb.TagNumber(2)
-  $61.Vec2 get principalPoint => $_getN(1);
+  $60.Vec2 get principalPoint => $_getN(1);
   @$pb.TagNumber(2)
-  set principalPoint($61.Vec2 v) { setField(2, v); }
+  set principalPoint($60.Vec2 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPrincipalPoint() => $_has(1);
   @$pb.TagNumber(2)
   void clearPrincipalPoint() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec2 ensurePrincipalPoint() => $_ensure(1);
+  $60.Vec2 ensurePrincipalPoint() => $_ensure(1);
 
   /// The skew for the intrinsic matrix.
   @$pb.TagNumber(3)
-  $61.Vec2 get skew => $_getN(2);
+  $60.Vec2 get skew => $_getN(2);
   @$pb.TagNumber(3)
-  set skew($61.Vec2 v) { setField(3, v); }
+  set skew($60.Vec2 v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasSkew() => $_has(2);
   @$pb.TagNumber(3)
   void clearSkew() => clearField(3);
   @$pb.TagNumber(3)
-  $61.Vec2 ensureSkew() => $_ensure(2);
+  $60.Vec2 ensureSkew() => $_ensure(2);
 }
 
 /// The camera can be modeled as a pinhole camera described with a matrix.
@@ -505,7 +505,7 @@ class ImageSource extends $pb.GeneratedMessage {
     ImageSource_ImageType? imageType,
     $core.Iterable<Image_PixelFormat>? pixelFormats,
     $core.Iterable<Image_Format>? imageFormats,
-    $72.DictParam_Spec? customParams,
+    $71.DictParam_Spec? customParams,
   }) {
     final $result = create();
     if (name != null) {
@@ -555,7 +555,7 @@ class ImageSource extends $pb.GeneratedMessage {
     ..e<ImageSource_ImageType>(9, _omitFieldNames ? '' : 'imageType', $pb.PbFieldType.OE, defaultOrMaker: ImageSource_ImageType.IMAGE_TYPE_UNKNOWN, valueOf: ImageSource_ImageType.valueOf, enumValues: ImageSource_ImageType.values)
     ..pc<Image_PixelFormat>(10, _omitFieldNames ? '' : 'pixelFormats', $pb.PbFieldType.KE, valueOf: Image_PixelFormat.valueOf, enumValues: Image_PixelFormat.values, defaultEnumValue: Image_PixelFormat.PIXEL_FORMAT_UNKNOWN)
     ..pc<Image_Format>(11, _omitFieldNames ? '' : 'imageFormats', $pb.PbFieldType.KE, valueOf: Image_Format.valueOf, enumValues: Image_Format.values, defaultEnumValue: Image_Format.FORMAT_UNKNOWN)
-    ..aOM<$72.DictParam_Spec>(12, _omitFieldNames ? '' : 'customParams', subBuilder: $72.DictParam_Spec.create)
+    ..aOM<$71.DictParam_Spec>(12, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam_Spec.create)
     ..hasRequiredFields = false
   ;
 
@@ -656,21 +656,21 @@ class ImageSource extends $pb.GeneratedMessage {
 
   /// ImageRequest parameters unique to this source that do not match any of the above fields.
   @$pb.TagNumber(12)
-  $72.DictParam_Spec get customParams => $_getN(8);
+  $71.DictParam_Spec get customParams => $_getN(8);
   @$pb.TagNumber(12)
-  set customParams($72.DictParam_Spec v) { setField(12, v); }
+  set customParams($71.DictParam_Spec v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasCustomParams() => $_has(8);
   @$pb.TagNumber(12)
   void clearCustomParams() => clearField(12);
   @$pb.TagNumber(12)
-  $72.DictParam_Spec ensureCustomParams() => $_ensure(8);
+  $71.DictParam_Spec ensureCustomParams() => $_ensure(8);
 }
 
 /// The ListImageSources request message for the robot image service.
 class ListImageSourcesRequest extends $pb.GeneratedMessage {
   factory ListImageSourcesRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -683,7 +683,7 @@ class ListImageSourcesRequest extends $pb.GeneratedMessage {
   factory ListImageSourcesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListImageSourcesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -710,21 +710,21 @@ class ListImageSourcesRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The ListImageSources response message which contains all known image sources for the robot.
 class ListImageSourcesResponse extends $pb.GeneratedMessage {
   factory ListImageSourcesResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<ImageSource>? imageSources,
   }) {
     final $result = create();
@@ -741,7 +741,7 @@ class ListImageSourcesResponse extends $pb.GeneratedMessage {
   factory ListImageSourcesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListImageSourcesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<ImageSource>(2, _omitFieldNames ? '' : 'imageSources', $pb.PbFieldType.PM, subBuilder: ImageSource.create)
     ..hasRequiredFields = false
   ;
@@ -769,15 +769,15 @@ class ListImageSourcesResponse extends $pb.GeneratedMessage {
 
   /// Common response Header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The set of ImageSources available from this service.
   /// May be empty if the service serves no cameras (e.g., if no cameras were found on startup).
@@ -793,7 +793,7 @@ class ImageRequest extends $pb.GeneratedMessage {
     Image_Format? imageFormat,
     $core.double? resizeRatio,
     Image_PixelFormat? pixelFormat,
-    $72.DictParam? customParams,
+    $71.DictParam? customParams,
   }) {
     final $result = create();
     if (imageSourceName != null) {
@@ -826,7 +826,7 @@ class ImageRequest extends $pb.GeneratedMessage {
     ..e<Image_Format>(3, _omitFieldNames ? '' : 'imageFormat', $pb.PbFieldType.OE, defaultOrMaker: Image_Format.FORMAT_UNKNOWN, valueOf: Image_Format.valueOf, enumValues: Image_Format.values)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'resizeRatio', $pb.PbFieldType.OD)
     ..e<Image_PixelFormat>(5, _omitFieldNames ? '' : 'pixelFormat', $pb.PbFieldType.OE, defaultOrMaker: Image_PixelFormat.PIXEL_FORMAT_UNKNOWN, valueOf: Image_PixelFormat.valueOf, enumValues: Image_PixelFormat.values)
-    ..aOM<$72.DictParam>(6, _omitFieldNames ? '' : 'customParams', subBuilder: $72.DictParam.create)
+    ..aOM<$71.DictParam>(6, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam.create)
     ..hasRequiredFields = false
   ;
 
@@ -887,6 +887,7 @@ class ImageRequest extends $pb.GeneratedMessage {
   /// If the original image is 1920x1080, a resize_ratio of (2/3) will return an image with size 1280x720
   /// The range is clipped to [0.01, 1] while maintaining the original aspect ratio.
   /// For backwards compatibliity, a value of 0 means no resizing.
+  /// Note: this field is not supported by the robot body cameras image service (`image`).
   @$pb.TagNumber(4)
   $core.double get resizeRatio => $_getN(3);
   @$pb.TagNumber(4)
@@ -910,21 +911,21 @@ class ImageRequest extends $pb.GeneratedMessage {
   /// Parameters unique to the servicer that do not match any of the above fields.
   /// Whether or not these are valid may depend on the values of the above fields.
   @$pb.TagNumber(6)
-  $72.DictParam get customParams => $_getN(5);
+  $71.DictParam get customParams => $_getN(5);
   @$pb.TagNumber(6)
-  set customParams($72.DictParam v) { setField(6, v); }
+  set customParams($71.DictParam v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCustomParams() => $_has(5);
   @$pb.TagNumber(6)
   void clearCustomParams() => clearField(6);
   @$pb.TagNumber(6)
-  $72.DictParam ensureCustomParams() => $_ensure(5);
+  $71.DictParam ensureCustomParams() => $_ensure(5);
 }
 
 /// The GetImage request message which can send multiple different image source requests at once.
 class GetImageRequest extends $pb.GeneratedMessage {
   factory GetImageRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<ImageRequest>? imageRequests,
   }) {
     final $result = create();
@@ -941,7 +942,7 @@ class GetImageRequest extends $pb.GeneratedMessage {
   factory GetImageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pc<ImageRequest>(2, _omitFieldNames ? '' : 'imageRequests', $pb.PbFieldType.PM, subBuilder: ImageRequest.create)
     ..hasRequiredFields = false
   ;
@@ -969,15 +970,15 @@ class GetImageRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The different image requests for this rpc call.
   @$pb.TagNumber(2)
@@ -990,7 +991,7 @@ class ImageResponse extends $pb.GeneratedMessage {
     ImageCapture? shot,
     ImageSource? source,
     ImageResponse_Status? status,
-    $72.CustomParamError? customParamError,
+    $71.CustomParamError? customParamError,
   }) {
     final $result = create();
     if (shot != null) {
@@ -1015,7 +1016,7 @@ class ImageResponse extends $pb.GeneratedMessage {
     ..aOM<ImageCapture>(1, _omitFieldNames ? '' : 'shot', subBuilder: ImageCapture.create)
     ..aOM<ImageSource>(2, _omitFieldNames ? '' : 'source', subBuilder: ImageSource.create)
     ..e<ImageResponse_Status>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ImageResponse_Status.STATUS_UNKNOWN, valueOf: ImageResponse_Status.valueOf, enumValues: ImageResponse_Status.values)
-    ..aOM<$72.CustomParamError>(6, _omitFieldNames ? '' : 'customParamError', subBuilder: $72.CustomParamError.create)
+    ..aOM<$71.CustomParamError>(6, _omitFieldNames ? '' : 'customParamError', subBuilder: $71.CustomParamError.create)
     ..hasRequiredFields = false
   ;
 
@@ -1077,15 +1078,15 @@ class ImageResponse extends $pb.GeneratedMessage {
 
   /// Filled out if status is STATUS_CUSTOM_PARAMS_ERROR.
   @$pb.TagNumber(6)
-  $72.CustomParamError get customParamError => $_getN(3);
+  $71.CustomParamError get customParamError => $_getN(3);
   @$pb.TagNumber(6)
-  set customParamError($72.CustomParamError v) { setField(6, v); }
+  set customParamError($71.CustomParamError v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCustomParamError() => $_has(3);
   @$pb.TagNumber(6)
   void clearCustomParamError() => clearField(6);
   @$pb.TagNumber(6)
-  $72.CustomParamError ensureCustomParamError() => $_ensure(3);
+  $71.CustomParamError ensureCustomParamError() => $_ensure(3);
 }
 
 /// This message is a subset of the ImageResponse message with only the information needed
@@ -1180,7 +1181,7 @@ class ImageCaptureAndSource extends $pb.GeneratedMessage {
 /// The GetImage response message which includes image data for all requested sources.
 class GetImageResponse extends $pb.GeneratedMessage {
   factory GetImageResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<ImageResponse>? imageResponses,
   }) {
     final $result = create();
@@ -1197,7 +1198,7 @@ class GetImageResponse extends $pb.GeneratedMessage {
   factory GetImageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetImageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<ImageResponse>(2, _omitFieldNames ? '' : 'imageResponses', $pb.PbFieldType.PM, subBuilder: ImageResponse.create)
     ..hasRequiredFields = false
   ;
@@ -1225,15 +1226,15 @@ class GetImageResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The ordering of these image responses is defined by the order of the ImageRequests.
   @$pb.TagNumber(2)

@@ -15,32 +15,32 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'lease.pb.dart' as $13;
+import 'lease.pb.dart' as $14;
 
 export 'lease_service.pb.dart';
 
 @$pb.GrpcServiceName('bosdyn.api.LeaseService')
 class LeaseServiceClient extends $grpc.Client {
-  static final _$acquireLease = $grpc.ClientMethod<$13.AcquireLeaseRequest, $13.AcquireLeaseResponse>(
+  static final _$acquireLease = $grpc.ClientMethod<$14.AcquireLeaseRequest, $14.AcquireLeaseResponse>(
       '/bosdyn.api.LeaseService/AcquireLease',
-      ($13.AcquireLeaseRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.AcquireLeaseResponse.fromBuffer(value));
-  static final _$takeLease = $grpc.ClientMethod<$13.TakeLeaseRequest, $13.TakeLeaseResponse>(
+      ($14.AcquireLeaseRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.AcquireLeaseResponse.fromBuffer(value));
+  static final _$takeLease = $grpc.ClientMethod<$14.TakeLeaseRequest, $14.TakeLeaseResponse>(
       '/bosdyn.api.LeaseService/TakeLease',
-      ($13.TakeLeaseRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.TakeLeaseResponse.fromBuffer(value));
-  static final _$returnLease = $grpc.ClientMethod<$13.ReturnLeaseRequest, $13.ReturnLeaseResponse>(
+      ($14.TakeLeaseRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.TakeLeaseResponse.fromBuffer(value));
+  static final _$returnLease = $grpc.ClientMethod<$14.ReturnLeaseRequest, $14.ReturnLeaseResponse>(
       '/bosdyn.api.LeaseService/ReturnLease',
-      ($13.ReturnLeaseRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.ReturnLeaseResponse.fromBuffer(value));
-  static final _$listLeases = $grpc.ClientMethod<$13.ListLeasesRequest, $13.ListLeasesResponse>(
+      ($14.ReturnLeaseRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.ReturnLeaseResponse.fromBuffer(value));
+  static final _$listLeases = $grpc.ClientMethod<$14.ListLeasesRequest, $14.ListLeasesResponse>(
       '/bosdyn.api.LeaseService/ListLeases',
-      ($13.ListLeasesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.ListLeasesResponse.fromBuffer(value));
-  static final _$retainLease = $grpc.ClientMethod<$13.RetainLeaseRequest, $13.RetainLeaseResponse>(
+      ($14.ListLeasesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.ListLeasesResponse.fromBuffer(value));
+  static final _$retainLease = $grpc.ClientMethod<$14.RetainLeaseRequest, $14.RetainLeaseResponse>(
       '/bosdyn.api.LeaseService/RetainLease',
-      ($13.RetainLeaseRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.RetainLeaseResponse.fromBuffer(value));
+      ($14.RetainLeaseRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.RetainLeaseResponse.fromBuffer(value));
 
   LeaseServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -48,23 +48,23 @@ class LeaseServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$13.AcquireLeaseResponse> acquireLease($13.AcquireLeaseRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.AcquireLeaseResponse> acquireLease($14.AcquireLeaseRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$acquireLease, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.TakeLeaseResponse> takeLease($13.TakeLeaseRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.TakeLeaseResponse> takeLease($14.TakeLeaseRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$takeLease, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.ReturnLeaseResponse> returnLease($13.ReturnLeaseRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.ReturnLeaseResponse> returnLease($14.ReturnLeaseRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$returnLease, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.ListLeasesResponse> listLeases($13.ListLeasesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.ListLeasesResponse> listLeases($14.ListLeasesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listLeases, request, options: options);
   }
 
-  $grpc.ResponseFuture<$13.RetainLeaseResponse> retainLease($13.RetainLeaseRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.RetainLeaseResponse> retainLease($14.RetainLeaseRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$retainLease, request, options: options);
   }
 }
@@ -74,66 +74,66 @@ abstract class LeaseServiceBase extends $grpc.Service {
   $core.String get $name => 'bosdyn.api.LeaseService';
 
   LeaseServiceBase() {
-    $addMethod($grpc.ServiceMethod<$13.AcquireLeaseRequest, $13.AcquireLeaseResponse>(
+    $addMethod($grpc.ServiceMethod<$14.AcquireLeaseRequest, $14.AcquireLeaseResponse>(
         'AcquireLease',
         acquireLease_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.AcquireLeaseRequest.fromBuffer(value),
-        ($13.AcquireLeaseResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.TakeLeaseRequest, $13.TakeLeaseResponse>(
+        ($core.List<$core.int> value) => $14.AcquireLeaseRequest.fromBuffer(value),
+        ($14.AcquireLeaseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.TakeLeaseRequest, $14.TakeLeaseResponse>(
         'TakeLease',
         takeLease_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.TakeLeaseRequest.fromBuffer(value),
-        ($13.TakeLeaseResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.ReturnLeaseRequest, $13.ReturnLeaseResponse>(
+        ($core.List<$core.int> value) => $14.TakeLeaseRequest.fromBuffer(value),
+        ($14.TakeLeaseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.ReturnLeaseRequest, $14.ReturnLeaseResponse>(
         'ReturnLease',
         returnLease_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.ReturnLeaseRequest.fromBuffer(value),
-        ($13.ReturnLeaseResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.ListLeasesRequest, $13.ListLeasesResponse>(
+        ($core.List<$core.int> value) => $14.ReturnLeaseRequest.fromBuffer(value),
+        ($14.ReturnLeaseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.ListLeasesRequest, $14.ListLeasesResponse>(
         'ListLeases',
         listLeases_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.ListLeasesRequest.fromBuffer(value),
-        ($13.ListLeasesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$13.RetainLeaseRequest, $13.RetainLeaseResponse>(
+        ($core.List<$core.int> value) => $14.ListLeasesRequest.fromBuffer(value),
+        ($14.ListLeasesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.RetainLeaseRequest, $14.RetainLeaseResponse>(
         'RetainLease',
         retainLease_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.RetainLeaseRequest.fromBuffer(value),
-        ($13.RetainLeaseResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $14.RetainLeaseRequest.fromBuffer(value),
+        ($14.RetainLeaseResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$13.AcquireLeaseResponse> acquireLease_Pre($grpc.ServiceCall call, $async.Future<$13.AcquireLeaseRequest> request) async {
+  $async.Future<$14.AcquireLeaseResponse> acquireLease_Pre($grpc.ServiceCall call, $async.Future<$14.AcquireLeaseRequest> request) async {
     return acquireLease(call, await request);
   }
 
-  $async.Future<$13.TakeLeaseResponse> takeLease_Pre($grpc.ServiceCall call, $async.Future<$13.TakeLeaseRequest> request) async {
+  $async.Future<$14.TakeLeaseResponse> takeLease_Pre($grpc.ServiceCall call, $async.Future<$14.TakeLeaseRequest> request) async {
     return takeLease(call, await request);
   }
 
-  $async.Future<$13.ReturnLeaseResponse> returnLease_Pre($grpc.ServiceCall call, $async.Future<$13.ReturnLeaseRequest> request) async {
+  $async.Future<$14.ReturnLeaseResponse> returnLease_Pre($grpc.ServiceCall call, $async.Future<$14.ReturnLeaseRequest> request) async {
     return returnLease(call, await request);
   }
 
-  $async.Future<$13.ListLeasesResponse> listLeases_Pre($grpc.ServiceCall call, $async.Future<$13.ListLeasesRequest> request) async {
+  $async.Future<$14.ListLeasesResponse> listLeases_Pre($grpc.ServiceCall call, $async.Future<$14.ListLeasesRequest> request) async {
     return listLeases(call, await request);
   }
 
-  $async.Future<$13.RetainLeaseResponse> retainLease_Pre($grpc.ServiceCall call, $async.Future<$13.RetainLeaseRequest> request) async {
+  $async.Future<$14.RetainLeaseResponse> retainLease_Pre($grpc.ServiceCall call, $async.Future<$14.RetainLeaseRequest> request) async {
     return retainLease(call, await request);
   }
 
-  $async.Future<$13.AcquireLeaseResponse> acquireLease($grpc.ServiceCall call, $13.AcquireLeaseRequest request);
-  $async.Future<$13.TakeLeaseResponse> takeLease($grpc.ServiceCall call, $13.TakeLeaseRequest request);
-  $async.Future<$13.ReturnLeaseResponse> returnLease($grpc.ServiceCall call, $13.ReturnLeaseRequest request);
-  $async.Future<$13.ListLeasesResponse> listLeases($grpc.ServiceCall call, $13.ListLeasesRequest request);
-  $async.Future<$13.RetainLeaseResponse> retainLease($grpc.ServiceCall call, $13.RetainLeaseRequest request);
+  $async.Future<$14.AcquireLeaseResponse> acquireLease($grpc.ServiceCall call, $14.AcquireLeaseRequest request);
+  $async.Future<$14.TakeLeaseResponse> takeLease($grpc.ServiceCall call, $14.TakeLeaseRequest request);
+  $async.Future<$14.ReturnLeaseResponse> returnLease($grpc.ServiceCall call, $14.ReturnLeaseRequest request);
+  $async.Future<$14.ListLeasesResponse> listLeases($grpc.ServiceCall call, $14.ListLeasesRequest request);
+  $async.Future<$14.RetainLeaseResponse> retainLease($grpc.ServiceCall call, $14.RetainLeaseRequest request);
 }

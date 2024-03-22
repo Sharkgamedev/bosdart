@@ -14,12 +14,12 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $62;
-import '../../../google/protobuf/timestamp.pb.dart' as $60;
+import '../../../google/protobuf/duration.pb.dart' as $61;
+import '../../../google/protobuf/timestamp.pb.dart' as $59;
 import '../auto_return/auto_return.pb.dart' as $33;
-import '../data_buffer.pb.dart' as $4;
-import '../header.pb.dart' as $68;
-import '../lease.pb.dart' as $13;
+import '../data_buffer.pb.dart' as $5;
+import '../header.pb.dart' as $67;
+import '../lease.pb.dart' as $14;
 import 'keepalive.pbenum.dart';
 
 export 'keepalive.pbenum.dart';
@@ -28,7 +28,7 @@ class Policy extends $pb.GeneratedMessage {
   factory Policy({
     $core.String? name,
     $core.Iterable<ActionAfter>? actions,
-    $core.Iterable<$13.Lease>? associatedLeases,
+    $core.Iterable<$14.Lease>? associatedLeases,
     $core.String? userId,
   }) {
     final $result = create();
@@ -53,7 +53,7 @@ class Policy extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Policy', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..pc<ActionAfter>(2, _omitFieldNames ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: ActionAfter.create)
-    ..pc<$13.Lease>(3, _omitFieldNames ? '' : 'associatedLeases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
+    ..pc<$14.Lease>(3, _omitFieldNames ? '' : 'associatedLeases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
     ..aOS(4, _omitFieldNames ? '' : 'userId')
     ..hasRequiredFields = false
   ;
@@ -96,7 +96,7 @@ class Policy extends $pb.GeneratedMessage {
   /// If provided, this field ties this policy to lease ownership.
   /// When any one associated lease is no longer an owner, this policy is automatically removed.
   @$pb.TagNumber(3)
-  $core.List<$13.Lease> get associatedLeases => $_getList(2);
+  $core.List<$14.Lease> get associatedLeases => $_getList(2);
 
   /// Optionally provide a unique identifier for this policy.
   /// Uniqueness is not enforced by the service; this is entirely for client use.
@@ -113,7 +113,7 @@ class Policy extends $pb.GeneratedMessage {
 /// Record an event.
 class ActionAfter_RecordEvent extends $pb.GeneratedMessage {
   factory ActionAfter_RecordEvent({
-    $core.Iterable<$4.Event>? events,
+    $core.Iterable<$5.Event>? events,
   }) {
     final $result = create();
     if (events != null) {
@@ -126,7 +126,7 @@ class ActionAfter_RecordEvent extends $pb.GeneratedMessage {
   factory ActionAfter_RecordEvent.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ActionAfter.RecordEvent', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
-    ..pc<$4.Event>(2, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: $4.Event.create)
+    ..pc<$5.Event>(2, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: $5.Event.create)
     ..hasRequiredFields = false
   ;
 
@@ -153,13 +153,13 @@ class ActionAfter_RecordEvent extends $pb.GeneratedMessage {
 
   /// The events to be logged.
   @$pb.TagNumber(2)
-  $core.List<$4.Event> get events => $_getList(0);
+  $core.List<$5.Event> get events => $_getList(0);
 }
 
 /// Robot triggers AutoReturn.
 class ActionAfter_AutoReturn extends $pb.GeneratedMessage {
   factory ActionAfter_AutoReturn({
-    $core.Iterable<$13.Lease>? leases,
+    $core.Iterable<$14.Lease>? leases,
     $33.Params? params,
   }) {
     final $result = create();
@@ -176,7 +176,7 @@ class ActionAfter_AutoReturn extends $pb.GeneratedMessage {
   factory ActionAfter_AutoReturn.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ActionAfter.AutoReturn', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
-    ..pc<$13.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
+    ..pc<$14.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
     ..aOM<$33.Params>(3, _omitFieldNames ? '' : 'params', subBuilder: $33.Params.create)
     ..hasRequiredFields = false
   ;
@@ -209,7 +209,7 @@ class ActionAfter_AutoReturn extends $pb.GeneratedMessage {
   /// the robot with [6, 0, 1] and pass [6, 1] here.
   /// If you have added an associated lease, it should be the [6] lease.
   @$pb.TagNumber(2)
-  $core.List<$13.Lease> get leases => $_getList(0);
+  $core.List<$14.Lease> get leases => $_getList(0);
 
   /// Parameters to AutoReturn. See that message's documentation for details.
   @$pb.TagNumber(3)
@@ -297,7 +297,7 @@ class ActionAfter_ImmediateRobotOff extends $pb.GeneratedMessage {
 /// See the LeaseResource message for details.
 class ActionAfter_LeaseStale extends $pb.GeneratedMessage {
   factory ActionAfter_LeaseStale({
-    $core.Iterable<$13.Lease>? leases,
+    $core.Iterable<$14.Lease>? leases,
   }) {
     final $result = create();
     if (leases != null) {
@@ -310,7 +310,7 @@ class ActionAfter_LeaseStale extends $pb.GeneratedMessage {
   factory ActionAfter_LeaseStale.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ActionAfter.LeaseStale', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
-    ..pc<$13.Lease>(1, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
+    ..pc<$14.Lease>(1, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
     ..hasRequiredFields = false
   ;
 
@@ -336,7 +336,7 @@ class ActionAfter_LeaseStale extends $pb.GeneratedMessage {
   static ActionAfter_LeaseStale? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$13.Lease> get leases => $_getList(0);
+  $core.List<$14.Lease> get leases => $_getList(0);
 }
 
 enum ActionAfter_Action {
@@ -350,7 +350,7 @@ enum ActionAfter_Action {
 
 class ActionAfter extends $pb.GeneratedMessage {
   factory ActionAfter({
-    $62.Duration? after,
+    $61.Duration? after,
     ActionAfter_RecordEvent? recordEvent,
     ActionAfter_AutoReturn? autoReturn,
     ActionAfter_ControlledMotorsOff? controlledMotorsOff,
@@ -392,7 +392,7 @@ class ActionAfter extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ActionAfter', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
     ..oo(0, [2, 3, 4, 5, 6])
-    ..aOM<$62.Duration>(1, _omitFieldNames ? '' : 'after', subBuilder: $62.Duration.create)
+    ..aOM<$61.Duration>(1, _omitFieldNames ? '' : 'after', subBuilder: $61.Duration.create)
     ..aOM<ActionAfter_RecordEvent>(2, _omitFieldNames ? '' : 'recordEvent', subBuilder: ActionAfter_RecordEvent.create)
     ..aOM<ActionAfter_AutoReturn>(3, _omitFieldNames ? '' : 'autoReturn', subBuilder: ActionAfter_AutoReturn.create)
     ..aOM<ActionAfter_ControlledMotorsOff>(4, _omitFieldNames ? '' : 'controlledMotorsOff', subBuilder: ActionAfter_ControlledMotorsOff.create)
@@ -427,15 +427,15 @@ class ActionAfter extends $pb.GeneratedMessage {
 
   /// Take the specified action after not hearing from the associated policy_id in this long.
   @$pb.TagNumber(1)
-  $62.Duration get after => $_getN(0);
+  $61.Duration get after => $_getN(0);
   @$pb.TagNumber(1)
-  set after($62.Duration v) { setField(1, v); }
+  set after($61.Duration v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAfter() => $_has(0);
   @$pb.TagNumber(1)
   void clearAfter() => clearField(1);
   @$pb.TagNumber(1)
-  $62.Duration ensureAfter() => $_ensure(0);
+  $61.Duration ensureAfter() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ActionAfter_RecordEvent get recordEvent => $_getN(1);
@@ -495,7 +495,7 @@ class ActionAfter extends $pb.GeneratedMessage {
 
 class ModifyPolicyRequest extends $pb.GeneratedMessage {
   factory ModifyPolicyRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     Policy? toAdd,
     $core.Iterable<$fixnum.Int64>? policyIdsToRemove,
   }) {
@@ -516,7 +516,7 @@ class ModifyPolicyRequest extends $pb.GeneratedMessage {
   factory ModifyPolicyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ModifyPolicyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<Policy>(2, _omitFieldNames ? '' : 'toAdd', subBuilder: Policy.create)
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'policyIdsToRemove', $pb.PbFieldType.KU6)
     ..hasRequiredFields = false
@@ -544,15 +544,15 @@ class ModifyPolicyRequest extends $pb.GeneratedMessage {
   static ModifyPolicyRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   Policy get toAdd => $_getN(1);
@@ -571,7 +571,7 @@ class ModifyPolicyRequest extends $pb.GeneratedMessage {
 
 class ModifyPolicyResponse extends $pb.GeneratedMessage {
   factory ModifyPolicyResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     ModifyPolicyResponse_Status? status,
     LivePolicy? addedPolicy,
     $core.Iterable<LivePolicy>? removedPolicies,
@@ -596,7 +596,7 @@ class ModifyPolicyResponse extends $pb.GeneratedMessage {
   factory ModifyPolicyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ModifyPolicyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<ModifyPolicyResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ModifyPolicyResponse_Status.STATUS_UNKNOWN, valueOf: ModifyPolicyResponse_Status.valueOf, enumValues: ModifyPolicyResponse_Status.values)
     ..aOM<LivePolicy>(3, _omitFieldNames ? '' : 'addedPolicy', subBuilder: LivePolicy.create)
     ..pc<LivePolicy>(4, _omitFieldNames ? '' : 'removedPolicies', $pb.PbFieldType.PM, subBuilder: LivePolicy.create)
@@ -629,15 +629,15 @@ class ModifyPolicyResponse extends $pb.GeneratedMessage {
   /// CODE_INVALID_REQUEST can also happen if the Policy contains unknown fields. This may happen
   /// if there is a version mismatch between client and server.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ModifyPolicyResponse_Status get status => $_getN(1);
@@ -667,7 +667,7 @@ class ModifyPolicyResponse extends $pb.GeneratedMessage {
 
 class CheckInRequest extends $pb.GeneratedMessage {
   factory CheckInRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $fixnum.Int64? policyId,
   }) {
     final $result = create();
@@ -684,7 +684,7 @@ class CheckInRequest extends $pb.GeneratedMessage {
   factory CheckInRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CheckInRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'policyId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
@@ -711,15 +711,15 @@ class CheckInRequest extends $pb.GeneratedMessage {
   static CheckInRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Specify the policy whose timer should be refreshed.
   @$pb.TagNumber(2)
@@ -734,8 +734,8 @@ class CheckInRequest extends $pb.GeneratedMessage {
 
 class CheckInResponse extends $pb.GeneratedMessage {
   factory CheckInResponse({
-    $68.ResponseHeader? header,
-    $60.Timestamp? lastCheckin,
+    $67.ResponseHeader? header,
+    $59.Timestamp? lastCheckin,
     CheckInResponse_Status? status,
   }) {
     final $result = create();
@@ -755,8 +755,8 @@ class CheckInResponse extends $pb.GeneratedMessage {
   factory CheckInResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CheckInResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'lastCheckin', subBuilder: $60.Timestamp.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'lastCheckin', subBuilder: $59.Timestamp.create)
     ..e<CheckInResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: CheckInResponse_Status.STATUS_UNKNOWN, valueOf: CheckInResponse_Status.valueOf, enumValues: CheckInResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -783,27 +783,27 @@ class CheckInResponse extends $pb.GeneratedMessage {
   static CheckInResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Time the robot recorded the check in. Specified in robot's clock.
   @$pb.TagNumber(2)
-  $60.Timestamp get lastCheckin => $_getN(1);
+  $59.Timestamp get lastCheckin => $_getN(1);
   @$pb.TagNumber(2)
-  set lastCheckin($60.Timestamp v) { setField(2, v); }
+  set lastCheckin($59.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLastCheckin() => $_has(1);
   @$pb.TagNumber(2)
   void clearLastCheckin() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Timestamp ensureLastCheckin() => $_ensure(1);
+  $59.Timestamp ensureLastCheckin() => $_ensure(1);
 
   @$pb.TagNumber(3)
   CheckInResponse_Status get status => $_getN(2);
@@ -817,7 +817,7 @@ class CheckInResponse extends $pb.GeneratedMessage {
 
 class GetStatusRequest extends $pb.GeneratedMessage {
   factory GetStatusRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -830,7 +830,7 @@ class GetStatusRequest extends $pb.GeneratedMessage {
   factory GetStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -856,22 +856,22 @@ class GetStatusRequest extends $pb.GeneratedMessage {
   static GetStatusRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class LivePolicy extends $pb.GeneratedMessage {
   factory LivePolicy({
     $fixnum.Int64? policyId,
     Policy? policy,
-    $60.Timestamp? lastCheckin,
+    $59.Timestamp? lastCheckin,
     $core.String? clientName,
   }) {
     final $result = create();
@@ -896,7 +896,7 @@ class LivePolicy extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LivePolicy', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'policyId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOM<Policy>(2, _omitFieldNames ? '' : 'policy', subBuilder: Policy.create)
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'lastCheckin', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'lastCheckin', subBuilder: $59.Timestamp.create)
     ..aOS(4, _omitFieldNames ? '' : 'clientName')
     ..hasRequiredFields = false
   ;
@@ -944,15 +944,15 @@ class LivePolicy extends $pb.GeneratedMessage {
 
   /// What time the policy was last refreshed with a check-in. Specified in robot's clock.
   @$pb.TagNumber(3)
-  $60.Timestamp get lastCheckin => $_getN(2);
+  $59.Timestamp get lastCheckin => $_getN(2);
   @$pb.TagNumber(3)
-  set lastCheckin($60.Timestamp v) { setField(3, v); }
+  set lastCheckin($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLastCheckin() => $_has(2);
   @$pb.TagNumber(3)
   void clearLastCheckin() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureLastCheckin() => $_ensure(2);
+  $59.Timestamp ensureLastCheckin() => $_ensure(2);
 
   /// client_name from the RequestHeader of the most recent CheckInRequest for this policy.
   @$pb.TagNumber(4)
@@ -967,7 +967,7 @@ class LivePolicy extends $pb.GeneratedMessage {
 
 class GetStatusResponse extends $pb.GeneratedMessage {
   factory GetStatusResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<LivePolicy>? status,
     $core.Iterable<GetStatusResponse_PolicyControlAction>? activeControlActions,
   }) {
@@ -988,7 +988,7 @@ class GetStatusResponse extends $pb.GeneratedMessage {
   factory GetStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.keepalive'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<LivePolicy>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.PM, subBuilder: LivePolicy.create)
     ..pc<GetStatusResponse_PolicyControlAction>(3, _omitFieldNames ? '' : 'activeControlActions', $pb.PbFieldType.KE, valueOf: GetStatusResponse_PolicyControlAction.valueOf, enumValues: GetStatusResponse_PolicyControlAction.values, defaultEnumValue: GetStatusResponse_PolicyControlAction.POLICY_CONTROL_ACTION_UNKNOWN)
     ..hasRequiredFields = false
@@ -1016,15 +1016,15 @@ class GetStatusResponse extends $pb.GeneratedMessage {
   static GetStatusResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Per-policy status.
   @$pb.TagNumber(2)

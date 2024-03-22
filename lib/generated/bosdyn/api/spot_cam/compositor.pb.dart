@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/wrappers.pb.dart' as $59;
-import '../header.pb.dart' as $68;
-import 'camera.pb.dart' as $83;
+import '../../../google/protobuf/wrappers.pb.dart' as $58;
+import '../header.pb.dart' as $67;
+import 'camera.pb.dart' as $84;
 import 'compositor.pbenum.dart';
 
 export 'compositor.pbenum.dart';
@@ -76,7 +76,7 @@ class ScreenDescription extends $pb.GeneratedMessage {
 /// Request the current screen in use.
 class GetScreenRequest extends $pb.GeneratedMessage {
   factory GetScreenRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -89,7 +89,7 @@ class GetScreenRequest extends $pb.GeneratedMessage {
   factory GetScreenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetScreenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -116,21 +116,21 @@ class GetScreenRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Specify which screen is currently being displayed in the video stream.
 class GetScreenResponse extends $pb.GeneratedMessage {
   factory GetScreenResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.String? name,
   }) {
     final $result = create();
@@ -147,7 +147,7 @@ class GetScreenResponse extends $pb.GeneratedMessage {
   factory GetScreenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetScreenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
@@ -175,15 +175,15 @@ class GetScreenResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Identifier of the current screen.
   @$pb.TagNumber(2)
@@ -199,7 +199,7 @@ class GetScreenResponse extends $pb.GeneratedMessage {
 /// Request information about the current cameras in the video stream.
 class GetVisibleCamerasRequest extends $pb.GeneratedMessage {
   factory GetVisibleCamerasRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -212,7 +212,7 @@ class GetVisibleCamerasRequest extends $pb.GeneratedMessage {
   factory GetVisibleCamerasRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetVisibleCamerasRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -239,15 +239,15 @@ class GetVisibleCamerasRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The location of a sub-image within a larger image.
@@ -351,7 +351,7 @@ class GetVisibleCamerasResponse_Stream_Window extends $pb.GeneratedMessage {
 class GetVisibleCamerasResponse_Stream extends $pb.GeneratedMessage {
   factory GetVisibleCamerasResponse_Stream({
     GetVisibleCamerasResponse_Stream_Window? window,
-    $83.Camera? camera,
+    $84.Camera? camera,
   }) {
     final $result = create();
     if (window != null) {
@@ -368,7 +368,7 @@ class GetVisibleCamerasResponse_Stream extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetVisibleCamerasResponse.Stream', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
     ..aOM<GetVisibleCamerasResponse_Stream_Window>(1, _omitFieldNames ? '' : 'window', subBuilder: GetVisibleCamerasResponse_Stream_Window.create)
-    ..aOM<$83.Camera>(2, _omitFieldNames ? '' : 'camera', subBuilder: $83.Camera.create)
+    ..aOM<$84.Camera>(2, _omitFieldNames ? '' : 'camera', subBuilder: $84.Camera.create)
     ..hasRequiredFields = false
   ;
 
@@ -409,22 +409,22 @@ class GetVisibleCamerasResponse_Stream extends $pb.GeneratedMessage {
   /// where c is the name of the camera and w is the name of the
   /// window that's projecting it.
   @$pb.TagNumber(2)
-  $83.Camera get camera => $_getN(1);
+  $84.Camera get camera => $_getN(1);
   @$pb.TagNumber(2)
-  set camera($83.Camera v) { setField(2, v); }
+  set camera($84.Camera v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCamera() => $_has(1);
   @$pb.TagNumber(2)
   void clearCamera() => clearField(2);
   @$pb.TagNumber(2)
-  $83.Camera ensureCamera() => $_ensure(1);
+  $84.Camera ensureCamera() => $_ensure(1);
 }
 
 /// Description of the parameters and locations of each camera in the
 /// current video stream.
 class GetVisibleCamerasResponse extends $pb.GeneratedMessage {
   factory GetVisibleCamerasResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<GetVisibleCamerasResponse_Stream>? streams,
   }) {
     final $result = create();
@@ -441,7 +441,7 @@ class GetVisibleCamerasResponse extends $pb.GeneratedMessage {
   factory GetVisibleCamerasResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetVisibleCamerasResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<GetVisibleCamerasResponse_Stream>(2, _omitFieldNames ? '' : 'streams', $pb.PbFieldType.PM, subBuilder: GetVisibleCamerasResponse_Stream.create)
     ..hasRequiredFields = false
   ;
@@ -469,15 +469,15 @@ class GetVisibleCamerasResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// List of all camera streams visible in the current video stream.
   @$pb.TagNumber(2)
@@ -487,7 +487,7 @@ class GetVisibleCamerasResponse extends $pb.GeneratedMessage {
 /// Request the different screen layouts available.
 class ListScreensRequest extends $pb.GeneratedMessage {
   factory ListScreensRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -500,7 +500,7 @@ class ListScreensRequest extends $pb.GeneratedMessage {
   factory ListScreensRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListScreensRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -527,21 +527,21 @@ class ListScreensRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Response with all screen layouts available.
 class ListScreensResponse extends $pb.GeneratedMessage {
   factory ListScreensResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<ScreenDescription>? screens,
   }) {
     final $result = create();
@@ -558,7 +558,7 @@ class ListScreensResponse extends $pb.GeneratedMessage {
   factory ListScreensResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListScreensResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<ScreenDescription>(2, _omitFieldNames ? '' : 'screens', $pb.PbFieldType.PM, subBuilder: ScreenDescription.create)
     ..hasRequiredFields = false
   ;
@@ -586,15 +586,15 @@ class ListScreensResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// List of all screen layouts that can be selected.
   @$pb.TagNumber(2)
@@ -604,7 +604,7 @@ class ListScreensResponse extends $pb.GeneratedMessage {
 /// Switch the camera layout in the video stream to the one specified.
 class SetScreenRequest extends $pb.GeneratedMessage {
   factory SetScreenRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? name,
   }) {
     final $result = create();
@@ -621,7 +621,7 @@ class SetScreenRequest extends $pb.GeneratedMessage {
   factory SetScreenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetScreenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
@@ -649,15 +649,15 @@ class SetScreenRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Identifier as specified in ListScreensResponse.
   @$pb.TagNumber(2)
@@ -673,7 +673,7 @@ class SetScreenRequest extends $pb.GeneratedMessage {
 /// Result of setting the camera layout.
 class SetScreenResponse extends $pb.GeneratedMessage {
   factory SetScreenResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.String? name,
   }) {
     final $result = create();
@@ -690,7 +690,7 @@ class SetScreenResponse extends $pb.GeneratedMessage {
   factory SetScreenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetScreenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
@@ -718,15 +718,15 @@ class SetScreenResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Identifier of the screen used.
   @$pb.TagNumber(2)
@@ -811,7 +811,7 @@ class IrColorMap extends $pb.GeneratedMessage {
   factory IrColorMap({
     IrColorMap_ColorMap? colormap,
     IrColorMap_ScalingPair? scale,
-    $59.BoolValue? autoScale,
+    $58.BoolValue? autoScale,
   }) {
     final $result = create();
     if (colormap != null) {
@@ -832,7 +832,7 @@ class IrColorMap extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IrColorMap', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
     ..e<IrColorMap_ColorMap>(1, _omitFieldNames ? '' : 'colormap', $pb.PbFieldType.OE, defaultOrMaker: IrColorMap_ColorMap.COLORMAP_UNKNOWN, valueOf: IrColorMap_ColorMap.valueOf, enumValues: IrColorMap_ColorMap.values)
     ..aOM<IrColorMap_ScalingPair>(2, _omitFieldNames ? '' : 'scale', subBuilder: IrColorMap_ScalingPair.create)
-    ..aOM<$59.BoolValue>(3, _omitFieldNames ? '' : 'autoScale', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(3, _omitFieldNames ? '' : 'autoScale', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -880,20 +880,20 @@ class IrColorMap extends $pb.GeneratedMessage {
   /// if auto_scale is true, then the min and max values are derived from the data itself, and the
   /// settings above are ignored
   @$pb.TagNumber(3)
-  $59.BoolValue get autoScale => $_getN(2);
+  $58.BoolValue get autoScale => $_getN(2);
   @$pb.TagNumber(3)
-  set autoScale($59.BoolValue v) { setField(3, v); }
+  set autoScale($58.BoolValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasAutoScale() => $_has(2);
   @$pb.TagNumber(3)
   void clearAutoScale() => clearField(3);
   @$pb.TagNumber(3)
-  $59.BoolValue ensureAutoScale() => $_ensure(2);
+  $58.BoolValue ensureAutoScale() => $_ensure(2);
 }
 
 class SetIrColormapRequest extends $pb.GeneratedMessage {
   factory SetIrColormapRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     IrColorMap? map,
   }) {
     final $result = create();
@@ -910,7 +910,7 @@ class SetIrColormapRequest extends $pb.GeneratedMessage {
   factory SetIrColormapRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetIrColormapRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<IrColorMap>(2, _omitFieldNames ? '' : 'map', subBuilder: IrColorMap.create)
     ..hasRequiredFields = false
   ;
@@ -937,15 +937,15 @@ class SetIrColormapRequest extends $pb.GeneratedMessage {
   static SetIrColormapRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   IrColorMap get map => $_getN(1);
@@ -961,7 +961,7 @@ class SetIrColormapRequest extends $pb.GeneratedMessage {
 
 class SetIrColormapResponse extends $pb.GeneratedMessage {
   factory SetIrColormapResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -974,7 +974,7 @@ class SetIrColormapResponse extends $pb.GeneratedMessage {
   factory SetIrColormapResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetIrColormapResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1000,20 +1000,20 @@ class SetIrColormapResponse extends $pb.GeneratedMessage {
   static SetIrColormapResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 class GetIrColormapRequest extends $pb.GeneratedMessage {
   factory GetIrColormapRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1026,7 +1026,7 @@ class GetIrColormapRequest extends $pb.GeneratedMessage {
   factory GetIrColormapRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetIrColormapRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1052,20 +1052,20 @@ class GetIrColormapRequest extends $pb.GeneratedMessage {
   static GetIrColormapRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class GetIrColormapResponse extends $pb.GeneratedMessage {
   factory GetIrColormapResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     IrColorMap? map,
   }) {
     final $result = create();
@@ -1082,7 +1082,7 @@ class GetIrColormapResponse extends $pb.GeneratedMessage {
   factory GetIrColormapResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetIrColormapResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<IrColorMap>(2, _omitFieldNames ? '' : 'map', subBuilder: IrColorMap.create)
     ..hasRequiredFields = false
   ;
@@ -1109,15 +1109,15 @@ class GetIrColormapResponse extends $pb.GeneratedMessage {
   static GetIrColormapResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   IrColorMap get map => $_getN(1);
@@ -1424,7 +1424,7 @@ class IrMeterOverlay extends $pb.GeneratedMessage {
 
 class SetIrMeterOverlayRequest extends $pb.GeneratedMessage {
   factory SetIrMeterOverlayRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     IrMeterOverlay? overlay,
   }) {
     final $result = create();
@@ -1441,7 +1441,7 @@ class SetIrMeterOverlayRequest extends $pb.GeneratedMessage {
   factory SetIrMeterOverlayRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetIrMeterOverlayRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<IrMeterOverlay>(2, _omitFieldNames ? '' : 'overlay', subBuilder: IrMeterOverlay.create)
     ..hasRequiredFields = false
   ;
@@ -1468,15 +1468,15 @@ class SetIrMeterOverlayRequest extends $pb.GeneratedMessage {
   static SetIrMeterOverlayRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   IrMeterOverlay get overlay => $_getN(1);
@@ -1492,7 +1492,7 @@ class SetIrMeterOverlayRequest extends $pb.GeneratedMessage {
 
 class SetIrMeterOverlayResponse extends $pb.GeneratedMessage {
   factory SetIrMeterOverlayResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1505,7 +1505,7 @@ class SetIrMeterOverlayResponse extends $pb.GeneratedMessage {
   factory SetIrMeterOverlayResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetIrMeterOverlayResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1531,20 +1531,20 @@ class SetIrMeterOverlayResponse extends $pb.GeneratedMessage {
   static SetIrMeterOverlayResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 class GetIrMeterOverlayRequest extends $pb.GeneratedMessage {
   factory GetIrMeterOverlayRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1557,7 +1557,7 @@ class GetIrMeterOverlayRequest extends $pb.GeneratedMessage {
   factory GetIrMeterOverlayRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetIrMeterOverlayRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1583,20 +1583,20 @@ class GetIrMeterOverlayRequest extends $pb.GeneratedMessage {
   static GetIrMeterOverlayRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class GetIrMeterOverlayResponse extends $pb.GeneratedMessage {
   factory GetIrMeterOverlayResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     IrMeterOverlay? overlay,
   }) {
     final $result = create();
@@ -1613,7 +1613,7 @@ class GetIrMeterOverlayResponse extends $pb.GeneratedMessage {
   factory GetIrMeterOverlayResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetIrMeterOverlayResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<IrMeterOverlay>(2, _omitFieldNames ? '' : 'overlay', subBuilder: IrMeterOverlay.create)
     ..hasRequiredFields = false
   ;
@@ -1640,15 +1640,15 @@ class GetIrMeterOverlayResponse extends $pb.GeneratedMessage {
   static GetIrMeterOverlayResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   IrMeterOverlay get overlay => $_getN(1);

@@ -14,10 +14,10 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/wrappers.pb.dart' as $59;
-import 'image_geometry.pb.dart' as $71;
+import '../../google/protobuf/wrappers.pb.dart' as $58;
+import 'image_geometry.pb.dart' as $70;
 import 'service_customization.pbenum.dart';
-import 'units.pb.dart' as $70;
+import 'units.pb.dart' as $69;
 
 export 'service_customization.pbenum.dart';
 
@@ -944,7 +944,7 @@ class OneOfParam extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearKey() => clearField(1);
 
-  /// The values of the chosen spec will is guaraunteed to be at value[key].
+  /// The values of the chosen spec will is guaranteed to be at value[key].
   /// The values of the other specs might at value[that_specs_key], but no guarantees.
   @$pb.TagNumber(3)
   $core.Map<$core.String, DictParam> get values => $_getMap(1);
@@ -953,8 +953,8 @@ class OneOfParam extends $pb.GeneratedMessage {
 class ListParam_Spec extends $pb.GeneratedMessage {
   factory ListParam_Spec({
     CustomParam_Spec? elementSpec,
-    $59.Int64Value? minNumberOfValues,
-    $59.Int64Value? maxNumberOfValues,
+    $58.Int64Value? minNumberOfValues,
+    $58.Int64Value? maxNumberOfValues,
   }) {
     final $result = create();
     if (elementSpec != null) {
@@ -974,8 +974,8 @@ class ListParam_Spec extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListParam.Spec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOM<CustomParam_Spec>(1, _omitFieldNames ? '' : 'elementSpec', subBuilder: CustomParam_Spec.create)
-    ..aOM<$59.Int64Value>(3, _omitFieldNames ? '' : 'minNumberOfValues', subBuilder: $59.Int64Value.create)
-    ..aOM<$59.Int64Value>(4, _omitFieldNames ? '' : 'maxNumberOfValues', subBuilder: $59.Int64Value.create)
+    ..aOM<$58.Int64Value>(3, _omitFieldNames ? '' : 'minNumberOfValues', subBuilder: $58.Int64Value.create)
+    ..aOM<$58.Int64Value>(4, _omitFieldNames ? '' : 'maxNumberOfValues', subBuilder: $58.Int64Value.create)
     ..hasRequiredFields = false
   ;
 
@@ -1020,26 +1020,26 @@ class ListParam_Spec extends $pb.GeneratedMessage {
   ///
   ///  0 <= min_number_of_values <= max_number_of_values
   @$pb.TagNumber(3)
-  $59.Int64Value get minNumberOfValues => $_getN(1);
+  $58.Int64Value get minNumberOfValues => $_getN(1);
   @$pb.TagNumber(3)
-  set minNumberOfValues($59.Int64Value v) { setField(3, v); }
+  set minNumberOfValues($58.Int64Value v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMinNumberOfValues() => $_has(1);
   @$pb.TagNumber(3)
   void clearMinNumberOfValues() => clearField(3);
   @$pb.TagNumber(3)
-  $59.Int64Value ensureMinNumberOfValues() => $_ensure(1);
+  $58.Int64Value ensureMinNumberOfValues() => $_ensure(1);
 
   @$pb.TagNumber(4)
-  $59.Int64Value get maxNumberOfValues => $_getN(2);
+  $58.Int64Value get maxNumberOfValues => $_getN(2);
   @$pb.TagNumber(4)
-  set maxNumberOfValues($59.Int64Value v) { setField(4, v); }
+  set maxNumberOfValues($58.Int64Value v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMaxNumberOfValues() => $_has(2);
   @$pb.TagNumber(4)
   void clearMaxNumberOfValues() => clearField(4);
   @$pb.TagNumber(4)
-  $59.Int64Value ensureMaxNumberOfValues() => $_ensure(2);
+  $58.Int64Value ensureMaxNumberOfValues() => $_ensure(2);
 }
 
 /// A list of elements of given types.
@@ -1089,10 +1089,10 @@ class ListParam extends $pb.GeneratedMessage {
 
 class Int64Param_Spec extends $pb.GeneratedMessage {
   factory Int64Param_Spec({
-    $59.Int64Value? defaultValue,
-    $70.Units? units,
-    $59.Int64Value? minValue,
-    $59.Int64Value? maxValue,
+    $58.Int64Value? defaultValue,
+    $69.Units? units,
+    $58.Int64Value? minValue,
+    $58.Int64Value? maxValue,
   }) {
     final $result = create();
     if (defaultValue != null) {
@@ -1114,10 +1114,10 @@ class Int64Param_Spec extends $pb.GeneratedMessage {
   factory Int64Param_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Int64Param.Spec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$59.Int64Value>(2, _omitFieldNames ? '' : 'defaultValue', subBuilder: $59.Int64Value.create)
-    ..aOM<$70.Units>(3, _omitFieldNames ? '' : 'units', subBuilder: $70.Units.create)
-    ..aOM<$59.Int64Value>(4, _omitFieldNames ? '' : 'minValue', subBuilder: $59.Int64Value.create)
-    ..aOM<$59.Int64Value>(5, _omitFieldNames ? '' : 'maxValue', subBuilder: $59.Int64Value.create)
+    ..aOM<$58.Int64Value>(2, _omitFieldNames ? '' : 'defaultValue', subBuilder: $58.Int64Value.create)
+    ..aOM<$69.Units>(3, _omitFieldNames ? '' : 'units', subBuilder: $69.Units.create)
+    ..aOM<$58.Int64Value>(4, _omitFieldNames ? '' : 'minValue', subBuilder: $58.Int64Value.create)
+    ..aOM<$58.Int64Value>(5, _omitFieldNames ? '' : 'maxValue', subBuilder: $58.Int64Value.create)
     ..hasRequiredFields = false
   ;
 
@@ -1145,54 +1145,52 @@ class Int64Param_Spec extends $pb.GeneratedMessage {
   /// Default value. If unspecified, UIs can pick their own default OR force user to make a
   /// selection.
   @$pb.TagNumber(2)
-  $59.Int64Value get defaultValue => $_getN(0);
+  $58.Int64Value get defaultValue => $_getN(0);
   @$pb.TagNumber(2)
-  set defaultValue($59.Int64Value v) { setField(2, v); }
+  set defaultValue($58.Int64Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDefaultValue() => $_has(0);
   @$pb.TagNumber(2)
   void clearDefaultValue() => clearField(2);
   @$pb.TagNumber(2)
-  $59.Int64Value ensureDefaultValue() => $_ensure(0);
+  $58.Int64Value ensureDefaultValue() => $_ensure(0);
 
   /// Units of value, default_value, min_value, min_value.
   @$pb.TagNumber(3)
-  $70.Units get units => $_getN(1);
+  $69.Units get units => $_getN(1);
   @$pb.TagNumber(3)
-  set units($70.Units v) { setField(3, v); }
+  set units($69.Units v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUnits() => $_has(1);
   @$pb.TagNumber(3)
   void clearUnits() => clearField(3);
   @$pb.TagNumber(3)
-  $70.Units ensureUnits() => $_ensure(1);
+  $69.Units ensureUnits() => $_ensure(1);
 
-  ///  A value sent by the client must be within this minimum and maximum (inclusive).
-  ///  If unset, only limited by system representation.
-  ///  ERROR: It is an error to specify a min_value larger than the max_value.
-  ///
-  ///  ADVICE: If a client sends a value outside these bounds, reject, rather than clamp it.
+  /// A value sent by the client must be within this minimum and maximum (inclusive).
+  /// If unset, only limited by system representation.
+  /// ERROR: It is an error to specify a min_value larger than the max_value.
   @$pb.TagNumber(4)
-  $59.Int64Value get minValue => $_getN(2);
+  $58.Int64Value get minValue => $_getN(2);
   @$pb.TagNumber(4)
-  set minValue($59.Int64Value v) { setField(4, v); }
+  set minValue($58.Int64Value v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMinValue() => $_has(2);
   @$pb.TagNumber(4)
   void clearMinValue() => clearField(4);
   @$pb.TagNumber(4)
-  $59.Int64Value ensureMinValue() => $_ensure(2);
+  $58.Int64Value ensureMinValue() => $_ensure(2);
 
   @$pb.TagNumber(5)
-  $59.Int64Value get maxValue => $_getN(3);
+  $58.Int64Value get maxValue => $_getN(3);
   @$pb.TagNumber(5)
-  set maxValue($59.Int64Value v) { setField(5, v); }
+  set maxValue($58.Int64Value v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMaxValue() => $_has(3);
   @$pb.TagNumber(5)
   void clearMaxValue() => clearField(5);
   @$pb.TagNumber(5)
-  $59.Int64Value ensureMaxValue() => $_ensure(3);
+  $58.Int64Value ensureMaxValue() => $_ensure(3);
 }
 
 /// A 64-bit integer parameter.
@@ -1250,10 +1248,10 @@ class Int64Param extends $pb.GeneratedMessage {
 
 class DoubleParam_Spec extends $pb.GeneratedMessage {
   factory DoubleParam_Spec({
-    $59.DoubleValue? defaultValue,
-    $70.Units? units,
-    $59.DoubleValue? minValue,
-    $59.DoubleValue? maxValue,
+    $58.DoubleValue? defaultValue,
+    $69.Units? units,
+    $58.DoubleValue? minValue,
+    $58.DoubleValue? maxValue,
   }) {
     final $result = create();
     if (defaultValue != null) {
@@ -1275,10 +1273,10 @@ class DoubleParam_Spec extends $pb.GeneratedMessage {
   factory DoubleParam_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DoubleParam.Spec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'defaultValue', subBuilder: $59.DoubleValue.create)
-    ..aOM<$70.Units>(3, _omitFieldNames ? '' : 'units', subBuilder: $70.Units.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'minValue', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'maxValue', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'defaultValue', subBuilder: $58.DoubleValue.create)
+    ..aOM<$69.Units>(3, _omitFieldNames ? '' : 'units', subBuilder: $69.Units.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'minValue', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'maxValue', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1306,53 +1304,51 @@ class DoubleParam_Spec extends $pb.GeneratedMessage {
   /// Default value. If unspecified, UIs can pick their own default OR force user to make a
   /// selection.
   @$pb.TagNumber(2)
-  $59.DoubleValue get defaultValue => $_getN(0);
+  $58.DoubleValue get defaultValue => $_getN(0);
   @$pb.TagNumber(2)
-  set defaultValue($59.DoubleValue v) { setField(2, v); }
+  set defaultValue($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDefaultValue() => $_has(0);
   @$pb.TagNumber(2)
   void clearDefaultValue() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureDefaultValue() => $_ensure(0);
+  $58.DoubleValue ensureDefaultValue() => $_ensure(0);
 
   @$pb.TagNumber(3)
-  $70.Units get units => $_getN(1);
+  $69.Units get units => $_getN(1);
   @$pb.TagNumber(3)
-  set units($70.Units v) { setField(3, v); }
+  set units($69.Units v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUnits() => $_has(1);
   @$pb.TagNumber(3)
   void clearUnits() => clearField(3);
   @$pb.TagNumber(3)
-  $70.Units ensureUnits() => $_ensure(1);
+  $69.Units ensureUnits() => $_ensure(1);
 
-  ///  A value sent by the client must be within this minimum and maximum (inclusive).
-  ///  If unset, only limited by system representation.
-  ///  ERROR: It is an error to specify a min_value larger than the max_value.
-  ///
-  ///  ADVICE: If a client sends a value outside these bounds, reject, rather than clamp, it.
+  /// A value sent by the client must be within this minimum and maximum (inclusive).
+  /// If unset, only limited by system representation.
+  /// ERROR: It is an error to specify a min_value larger than the max_value.
   @$pb.TagNumber(4)
-  $59.DoubleValue get minValue => $_getN(2);
+  $58.DoubleValue get minValue => $_getN(2);
   @$pb.TagNumber(4)
-  set minValue($59.DoubleValue v) { setField(4, v); }
+  set minValue($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMinValue() => $_has(2);
   @$pb.TagNumber(4)
   void clearMinValue() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureMinValue() => $_ensure(2);
+  $58.DoubleValue ensureMinValue() => $_ensure(2);
 
   @$pb.TagNumber(5)
-  $59.DoubleValue get maxValue => $_getN(3);
+  $58.DoubleValue get maxValue => $_getN(3);
   @$pb.TagNumber(5)
-  set maxValue($59.DoubleValue v) { setField(5, v); }
+  set maxValue($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMaxValue() => $_has(3);
   @$pb.TagNumber(5)
   void clearMaxValue() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureMaxValue() => $_ensure(3);
+  $58.DoubleValue ensureMaxValue() => $_ensure(3);
 }
 
 /// A 64-bit floating point parameter.
@@ -1542,7 +1538,7 @@ class StringParam extends $pb.GeneratedMessage {
 
 class BoolParam_Spec extends $pb.GeneratedMessage {
   factory BoolParam_Spec({
-    $59.BoolValue? defaultValue,
+    $58.BoolValue? defaultValue,
   }) {
     final $result = create();
     if (defaultValue != null) {
@@ -1555,7 +1551,7 @@ class BoolParam_Spec extends $pb.GeneratedMessage {
   factory BoolParam_Spec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BoolParam.Spec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$59.BoolValue>(1, _omitFieldNames ? '' : 'defaultValue', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(1, _omitFieldNames ? '' : 'defaultValue', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1583,15 +1579,15 @@ class BoolParam_Spec extends $pb.GeneratedMessage {
   /// Default value. If unset, UIs can pick their own default OR force user to make a
   /// selection.
   @$pb.TagNumber(1)
-  $59.BoolValue get defaultValue => $_getN(0);
+  $58.BoolValue get defaultValue => $_getN(0);
   @$pb.TagNumber(1)
-  set defaultValue($59.BoolValue v) { setField(1, v); }
+  set defaultValue($58.BoolValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDefaultValue() => $_has(0);
   @$pb.TagNumber(1)
   void clearDefaultValue() => clearField(1);
   @$pb.TagNumber(1)
-  $59.BoolValue ensureDefaultValue() => $_ensure(0);
+  $58.BoolValue ensureDefaultValue() => $_ensure(0);
 }
 
 /// A boolean parameter.
@@ -1713,7 +1709,7 @@ class RegionOfInterestParam_ServiceAndSource extends $pb.GeneratedMessage {
 class RegionOfInterestParam_Spec extends $pb.GeneratedMessage {
   factory RegionOfInterestParam_Spec({
     RegionOfInterestParam_ServiceAndSource? serviceAndSource,
-    $71.AreaI? defaultArea,
+    $70.AreaI? defaultArea,
     $core.bool? allowsRectangle,
   }) {
     final $result = create();
@@ -1734,7 +1730,7 @@ class RegionOfInterestParam_Spec extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegionOfInterestParam.Spec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOM<RegionOfInterestParam_ServiceAndSource>(1, _omitFieldNames ? '' : 'serviceAndSource', subBuilder: RegionOfInterestParam_ServiceAndSource.create)
-    ..aOM<$71.AreaI>(2, _omitFieldNames ? '' : 'defaultArea', subBuilder: $71.AreaI.create)
+    ..aOM<$70.AreaI>(2, _omitFieldNames ? '' : 'defaultArea', subBuilder: $70.AreaI.create)
     ..aOB(3, _omitFieldNames ? '' : 'allowsRectangle')
     ..hasRequiredFields = false
   ;
@@ -1780,15 +1776,15 @@ class RegionOfInterestParam_Spec extends $pb.GeneratedMessage {
   /// Default value. If unset, UIs can pick their own default OR force user to make a
   /// selection.
   @$pb.TagNumber(2)
-  $71.AreaI get defaultArea => $_getN(1);
+  $70.AreaI get defaultArea => $_getN(1);
   @$pb.TagNumber(2)
-  set defaultArea($71.AreaI v) { setField(2, v); }
+  set defaultArea($70.AreaI v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDefaultArea() => $_has(1);
   @$pb.TagNumber(2)
   void clearDefaultArea() => clearField(2);
   @$pb.TagNumber(2)
-  $71.AreaI ensureDefaultArea() => $_ensure(1);
+  $70.AreaI ensureDefaultArea() => $_ensure(1);
 
   /// Area may eventually contain many shape primatives.  In that case, services can constrain
   /// which primatives they accept.  These will be opt in, so that adding new primative types
@@ -1806,7 +1802,7 @@ class RegionOfInterestParam_Spec extends $pb.GeneratedMessage {
 /// Region of Interest parameter, region is associated with a specific image.
 class RegionOfInterestParam extends $pb.GeneratedMessage {
   factory RegionOfInterestParam({
-    $71.AreaI? area,
+    $70.AreaI? area,
     RegionOfInterestParam_ServiceAndSource? serviceAndSource,
     $core.int? imageCols,
     $core.int? imageRows,
@@ -1831,7 +1827,7 @@ class RegionOfInterestParam extends $pb.GeneratedMessage {
   factory RegionOfInterestParam.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegionOfInterestParam', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$71.AreaI>(1, _omitFieldNames ? '' : 'area', subBuilder: $71.AreaI.create)
+    ..aOM<$70.AreaI>(1, _omitFieldNames ? '' : 'area', subBuilder: $70.AreaI.create)
     ..aOM<RegionOfInterestParam_ServiceAndSource>(2, _omitFieldNames ? '' : 'serviceAndSource', subBuilder: RegionOfInterestParam_ServiceAndSource.create)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'imageCols', $pb.PbFieldType.O3)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'imageRows', $pb.PbFieldType.O3)
@@ -1860,15 +1856,15 @@ class RegionOfInterestParam extends $pb.GeneratedMessage {
   static RegionOfInterestParam? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $71.AreaI get area => $_getN(0);
+  $70.AreaI get area => $_getN(0);
   @$pb.TagNumber(1)
-  set area($71.AreaI v) { setField(1, v); }
+  set area($70.AreaI v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasArea() => $_has(0);
   @$pb.TagNumber(1)
   void clearArea() => clearField(1);
   @$pb.TagNumber(1)
-  $71.AreaI ensureArea() => $_ensure(0);
+  $70.AreaI ensureArea() => $_ensure(0);
 
   /// The name of the image service and source the UI had the user specify the ROI on.
   @$pb.TagNumber(2)

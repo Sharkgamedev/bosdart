@@ -13,13 +13,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'any.pb.dart' as $67;
+import 'any.pb.dart' as $66;
 
 class TestAny extends $pb.GeneratedMessage {
   factory TestAny({
     $core.int? int32Value,
-    $67.Any? anyValue,
-    $core.Iterable<$67.Any>? repeatedAnyValue,
+    $66.Any? anyValue,
+    $core.Iterable<$66.Any>? repeatedAnyValue,
     $core.String? text,
   }) {
     final $result = create();
@@ -43,8 +43,8 @@ class TestAny extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestAny', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'int32Value', $pb.PbFieldType.O3)
-    ..aOM<$67.Any>(2, _omitFieldNames ? '' : 'anyValue', subBuilder: $67.Any.create)
-    ..pc<$67.Any>(3, _omitFieldNames ? '' : 'repeatedAnyValue', $pb.PbFieldType.PM, subBuilder: $67.Any.create)
+    ..aOM<$66.Any>(2, _omitFieldNames ? '' : 'anyValue', subBuilder: $66.Any.create)
+    ..pc<$66.Any>(3, _omitFieldNames ? '' : 'repeatedAnyValue', $pb.PbFieldType.PM, subBuilder: $66.Any.create)
     ..aOS(4, _omitFieldNames ? '' : 'text')
     ..hasRequiredFields = false
   ;
@@ -80,18 +80,18 @@ class TestAny extends $pb.GeneratedMessage {
   void clearInt32Value() => clearField(1);
 
   @$pb.TagNumber(2)
-  $67.Any get anyValue => $_getN(1);
+  $66.Any get anyValue => $_getN(1);
   @$pb.TagNumber(2)
-  set anyValue($67.Any v) { setField(2, v); }
+  set anyValue($66.Any v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAnyValue() => $_has(1);
   @$pb.TagNumber(2)
   void clearAnyValue() => clearField(2);
   @$pb.TagNumber(2)
-  $67.Any ensureAnyValue() => $_ensure(1);
+  $66.Any ensureAnyValue() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $core.List<$67.Any> get repeatedAnyValue => $_getList(2);
+  $core.List<$66.Any> get repeatedAnyValue => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.String get text => $_getSZ(3);

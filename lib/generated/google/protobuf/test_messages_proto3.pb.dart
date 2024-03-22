@@ -14,14 +14,14 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'any.pb.dart' as $67;
-import 'duration.pb.dart' as $62;
-import 'field_mask.pb.dart' as $84;
-import 'struct.pb.dart' as $58;
-import 'struct.pbenum.dart' as $58;
+import 'any.pb.dart' as $66;
+import 'duration.pb.dart' as $61;
+import 'field_mask.pb.dart' as $86;
+import 'struct.pb.dart' as $57;
+import 'struct.pbenum.dart' as $57;
 import 'test_messages_proto3.pbenum.dart';
-import 'timestamp.pb.dart' as $60;
-import 'wrappers.pb.dart' as $59;
+import 'timestamp.pb.dart' as $59;
+import 'wrappers.pb.dart' as $58;
 
 export 'test_messages_proto3.pbenum.dart';
 
@@ -214,39 +214,39 @@ class TestAllTypesProto3 extends $pb.GeneratedMessage {
     $core.double? oneofFloat,
     $core.double? oneofDouble,
     TestAllTypesProto3_NestedEnum? oneofEnum,
-    $58.NullValue? oneofNullValue,
-    $59.BoolValue? optionalBoolWrapper,
-    $59.Int32Value? optionalInt32Wrapper,
-    $59.Int64Value? optionalInt64Wrapper,
-    $59.UInt32Value? optionalUint32Wrapper,
-    $59.UInt64Value? optionalUint64Wrapper,
-    $59.FloatValue? optionalFloatWrapper,
-    $59.DoubleValue? optionalDoubleWrapper,
-    $59.StringValue? optionalStringWrapper,
-    $59.BytesValue? optionalBytesWrapper,
-    $core.Iterable<$59.BoolValue>? repeatedBoolWrapper,
-    $core.Iterable<$59.Int32Value>? repeatedInt32Wrapper,
-    $core.Iterable<$59.Int64Value>? repeatedInt64Wrapper,
-    $core.Iterable<$59.UInt32Value>? repeatedUint32Wrapper,
-    $core.Iterable<$59.UInt64Value>? repeatedUint64Wrapper,
-    $core.Iterable<$59.FloatValue>? repeatedFloatWrapper,
-    $core.Iterable<$59.DoubleValue>? repeatedDoubleWrapper,
-    $core.Iterable<$59.StringValue>? repeatedStringWrapper,
-    $core.Iterable<$59.BytesValue>? repeatedBytesWrapper,
-    $62.Duration? optionalDuration,
-    $60.Timestamp? optionalTimestamp,
-    $84.FieldMask? optionalFieldMask,
-    $58.Struct? optionalStruct,
-    $67.Any? optionalAny,
-    $58.Value? optionalValue,
-    $58.NullValue? optionalNullValue,
-    $core.Iterable<$62.Duration>? repeatedDuration,
-    $core.Iterable<$60.Timestamp>? repeatedTimestamp,
-    $core.Iterable<$84.FieldMask>? repeatedFieldmask,
-    $core.Iterable<$67.Any>? repeatedAny,
-    $core.Iterable<$58.Value>? repeatedValue,
-    $core.Iterable<$58.ListValue>? repeatedListValue,
-    $core.Iterable<$58.Struct>? repeatedStruct,
+    $57.NullValue? oneofNullValue,
+    $58.BoolValue? optionalBoolWrapper,
+    $58.Int32Value? optionalInt32Wrapper,
+    $58.Int64Value? optionalInt64Wrapper,
+    $58.UInt32Value? optionalUint32Wrapper,
+    $58.UInt64Value? optionalUint64Wrapper,
+    $58.FloatValue? optionalFloatWrapper,
+    $58.DoubleValue? optionalDoubleWrapper,
+    $58.StringValue? optionalStringWrapper,
+    $58.BytesValue? optionalBytesWrapper,
+    $core.Iterable<$58.BoolValue>? repeatedBoolWrapper,
+    $core.Iterable<$58.Int32Value>? repeatedInt32Wrapper,
+    $core.Iterable<$58.Int64Value>? repeatedInt64Wrapper,
+    $core.Iterable<$58.UInt32Value>? repeatedUint32Wrapper,
+    $core.Iterable<$58.UInt64Value>? repeatedUint64Wrapper,
+    $core.Iterable<$58.FloatValue>? repeatedFloatWrapper,
+    $core.Iterable<$58.DoubleValue>? repeatedDoubleWrapper,
+    $core.Iterable<$58.StringValue>? repeatedStringWrapper,
+    $core.Iterable<$58.BytesValue>? repeatedBytesWrapper,
+    $61.Duration? optionalDuration,
+    $59.Timestamp? optionalTimestamp,
+    $86.FieldMask? optionalFieldMask,
+    $57.Struct? optionalStruct,
+    $66.Any? optionalAny,
+    $57.Value? optionalValue,
+    $57.NullValue? optionalNullValue,
+    $core.Iterable<$61.Duration>? repeatedDuration,
+    $core.Iterable<$59.Timestamp>? repeatedTimestamp,
+    $core.Iterable<$86.FieldMask>? repeatedFieldmask,
+    $core.Iterable<$66.Any>? repeatedAny,
+    $core.Iterable<$57.Value>? repeatedValue,
+    $core.Iterable<$57.ListValue>? repeatedListValue,
+    $core.Iterable<$57.Struct>? repeatedStruct,
     $core.int? fieldname1,
     $core.int? fieldName2,
     $core.int? fieldName3,
@@ -841,39 +841,39 @@ class TestAllTypesProto3 extends $pb.GeneratedMessage {
     ..a<$core.double>(117, _omitFieldNames ? '' : 'oneofFloat', $pb.PbFieldType.OF)
     ..a<$core.double>(118, _omitFieldNames ? '' : 'oneofDouble', $pb.PbFieldType.OD)
     ..e<TestAllTypesProto3_NestedEnum>(119, _omitFieldNames ? '' : 'oneofEnum', $pb.PbFieldType.OE, defaultOrMaker: TestAllTypesProto3_NestedEnum.FOO, valueOf: TestAllTypesProto3_NestedEnum.valueOf, enumValues: TestAllTypesProto3_NestedEnum.values)
-    ..e<$58.NullValue>(120, _omitFieldNames ? '' : 'oneofNullValue', $pb.PbFieldType.OE, defaultOrMaker: $58.NullValue.NULL_VALUE, valueOf: $58.NullValue.valueOf, enumValues: $58.NullValue.values)
-    ..aOM<$59.BoolValue>(201, _omitFieldNames ? '' : 'optionalBoolWrapper', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.Int32Value>(202, _omitFieldNames ? '' : 'optionalInt32Wrapper', subBuilder: $59.Int32Value.create)
-    ..aOM<$59.Int64Value>(203, _omitFieldNames ? '' : 'optionalInt64Wrapper', subBuilder: $59.Int64Value.create)
-    ..aOM<$59.UInt32Value>(204, _omitFieldNames ? '' : 'optionalUint32Wrapper', subBuilder: $59.UInt32Value.create)
-    ..aOM<$59.UInt64Value>(205, _omitFieldNames ? '' : 'optionalUint64Wrapper', subBuilder: $59.UInt64Value.create)
-    ..aOM<$59.FloatValue>(206, _omitFieldNames ? '' : 'optionalFloatWrapper', subBuilder: $59.FloatValue.create)
-    ..aOM<$59.DoubleValue>(207, _omitFieldNames ? '' : 'optionalDoubleWrapper', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.StringValue>(208, _omitFieldNames ? '' : 'optionalStringWrapper', subBuilder: $59.StringValue.create)
-    ..aOM<$59.BytesValue>(209, _omitFieldNames ? '' : 'optionalBytesWrapper', subBuilder: $59.BytesValue.create)
-    ..pc<$59.BoolValue>(211, _omitFieldNames ? '' : 'repeatedBoolWrapper', $pb.PbFieldType.PM, subBuilder: $59.BoolValue.create)
-    ..pc<$59.Int32Value>(212, _omitFieldNames ? '' : 'repeatedInt32Wrapper', $pb.PbFieldType.PM, subBuilder: $59.Int32Value.create)
-    ..pc<$59.Int64Value>(213, _omitFieldNames ? '' : 'repeatedInt64Wrapper', $pb.PbFieldType.PM, subBuilder: $59.Int64Value.create)
-    ..pc<$59.UInt32Value>(214, _omitFieldNames ? '' : 'repeatedUint32Wrapper', $pb.PbFieldType.PM, subBuilder: $59.UInt32Value.create)
-    ..pc<$59.UInt64Value>(215, _omitFieldNames ? '' : 'repeatedUint64Wrapper', $pb.PbFieldType.PM, subBuilder: $59.UInt64Value.create)
-    ..pc<$59.FloatValue>(216, _omitFieldNames ? '' : 'repeatedFloatWrapper', $pb.PbFieldType.PM, subBuilder: $59.FloatValue.create)
-    ..pc<$59.DoubleValue>(217, _omitFieldNames ? '' : 'repeatedDoubleWrapper', $pb.PbFieldType.PM, subBuilder: $59.DoubleValue.create)
-    ..pc<$59.StringValue>(218, _omitFieldNames ? '' : 'repeatedStringWrapper', $pb.PbFieldType.PM, subBuilder: $59.StringValue.create)
-    ..pc<$59.BytesValue>(219, _omitFieldNames ? '' : 'repeatedBytesWrapper', $pb.PbFieldType.PM, subBuilder: $59.BytesValue.create)
-    ..aOM<$62.Duration>(301, _omitFieldNames ? '' : 'optionalDuration', subBuilder: $62.Duration.create)
-    ..aOM<$60.Timestamp>(302, _omitFieldNames ? '' : 'optionalTimestamp', subBuilder: $60.Timestamp.create)
-    ..aOM<$84.FieldMask>(303, _omitFieldNames ? '' : 'optionalFieldMask', subBuilder: $84.FieldMask.create)
-    ..aOM<$58.Struct>(304, _omitFieldNames ? '' : 'optionalStruct', subBuilder: $58.Struct.create)
-    ..aOM<$67.Any>(305, _omitFieldNames ? '' : 'optionalAny', subBuilder: $67.Any.create)
-    ..aOM<$58.Value>(306, _omitFieldNames ? '' : 'optionalValue', subBuilder: $58.Value.create)
-    ..e<$58.NullValue>(307, _omitFieldNames ? '' : 'optionalNullValue', $pb.PbFieldType.OE, defaultOrMaker: $58.NullValue.NULL_VALUE, valueOf: $58.NullValue.valueOf, enumValues: $58.NullValue.values)
-    ..pc<$62.Duration>(311, _omitFieldNames ? '' : 'repeatedDuration', $pb.PbFieldType.PM, subBuilder: $62.Duration.create)
-    ..pc<$60.Timestamp>(312, _omitFieldNames ? '' : 'repeatedTimestamp', $pb.PbFieldType.PM, subBuilder: $60.Timestamp.create)
-    ..pc<$84.FieldMask>(313, _omitFieldNames ? '' : 'repeatedFieldmask', $pb.PbFieldType.PM, subBuilder: $84.FieldMask.create)
-    ..pc<$67.Any>(315, _omitFieldNames ? '' : 'repeatedAny', $pb.PbFieldType.PM, subBuilder: $67.Any.create)
-    ..pc<$58.Value>(316, _omitFieldNames ? '' : 'repeatedValue', $pb.PbFieldType.PM, subBuilder: $58.Value.create)
-    ..pc<$58.ListValue>(317, _omitFieldNames ? '' : 'repeatedListValue', $pb.PbFieldType.PM, subBuilder: $58.ListValue.create)
-    ..pc<$58.Struct>(324, _omitFieldNames ? '' : 'repeatedStruct', $pb.PbFieldType.PM, subBuilder: $58.Struct.create)
+    ..e<$57.NullValue>(120, _omitFieldNames ? '' : 'oneofNullValue', $pb.PbFieldType.OE, defaultOrMaker: $57.NullValue.NULL_VALUE, valueOf: $57.NullValue.valueOf, enumValues: $57.NullValue.values)
+    ..aOM<$58.BoolValue>(201, _omitFieldNames ? '' : 'optionalBoolWrapper', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.Int32Value>(202, _omitFieldNames ? '' : 'optionalInt32Wrapper', subBuilder: $58.Int32Value.create)
+    ..aOM<$58.Int64Value>(203, _omitFieldNames ? '' : 'optionalInt64Wrapper', subBuilder: $58.Int64Value.create)
+    ..aOM<$58.UInt32Value>(204, _omitFieldNames ? '' : 'optionalUint32Wrapper', subBuilder: $58.UInt32Value.create)
+    ..aOM<$58.UInt64Value>(205, _omitFieldNames ? '' : 'optionalUint64Wrapper', subBuilder: $58.UInt64Value.create)
+    ..aOM<$58.FloatValue>(206, _omitFieldNames ? '' : 'optionalFloatWrapper', subBuilder: $58.FloatValue.create)
+    ..aOM<$58.DoubleValue>(207, _omitFieldNames ? '' : 'optionalDoubleWrapper', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.StringValue>(208, _omitFieldNames ? '' : 'optionalStringWrapper', subBuilder: $58.StringValue.create)
+    ..aOM<$58.BytesValue>(209, _omitFieldNames ? '' : 'optionalBytesWrapper', subBuilder: $58.BytesValue.create)
+    ..pc<$58.BoolValue>(211, _omitFieldNames ? '' : 'repeatedBoolWrapper', $pb.PbFieldType.PM, subBuilder: $58.BoolValue.create)
+    ..pc<$58.Int32Value>(212, _omitFieldNames ? '' : 'repeatedInt32Wrapper', $pb.PbFieldType.PM, subBuilder: $58.Int32Value.create)
+    ..pc<$58.Int64Value>(213, _omitFieldNames ? '' : 'repeatedInt64Wrapper', $pb.PbFieldType.PM, subBuilder: $58.Int64Value.create)
+    ..pc<$58.UInt32Value>(214, _omitFieldNames ? '' : 'repeatedUint32Wrapper', $pb.PbFieldType.PM, subBuilder: $58.UInt32Value.create)
+    ..pc<$58.UInt64Value>(215, _omitFieldNames ? '' : 'repeatedUint64Wrapper', $pb.PbFieldType.PM, subBuilder: $58.UInt64Value.create)
+    ..pc<$58.FloatValue>(216, _omitFieldNames ? '' : 'repeatedFloatWrapper', $pb.PbFieldType.PM, subBuilder: $58.FloatValue.create)
+    ..pc<$58.DoubleValue>(217, _omitFieldNames ? '' : 'repeatedDoubleWrapper', $pb.PbFieldType.PM, subBuilder: $58.DoubleValue.create)
+    ..pc<$58.StringValue>(218, _omitFieldNames ? '' : 'repeatedStringWrapper', $pb.PbFieldType.PM, subBuilder: $58.StringValue.create)
+    ..pc<$58.BytesValue>(219, _omitFieldNames ? '' : 'repeatedBytesWrapper', $pb.PbFieldType.PM, subBuilder: $58.BytesValue.create)
+    ..aOM<$61.Duration>(301, _omitFieldNames ? '' : 'optionalDuration', subBuilder: $61.Duration.create)
+    ..aOM<$59.Timestamp>(302, _omitFieldNames ? '' : 'optionalTimestamp', subBuilder: $59.Timestamp.create)
+    ..aOM<$86.FieldMask>(303, _omitFieldNames ? '' : 'optionalFieldMask', subBuilder: $86.FieldMask.create)
+    ..aOM<$57.Struct>(304, _omitFieldNames ? '' : 'optionalStruct', subBuilder: $57.Struct.create)
+    ..aOM<$66.Any>(305, _omitFieldNames ? '' : 'optionalAny', subBuilder: $66.Any.create)
+    ..aOM<$57.Value>(306, _omitFieldNames ? '' : 'optionalValue', subBuilder: $57.Value.create)
+    ..e<$57.NullValue>(307, _omitFieldNames ? '' : 'optionalNullValue', $pb.PbFieldType.OE, defaultOrMaker: $57.NullValue.NULL_VALUE, valueOf: $57.NullValue.valueOf, enumValues: $57.NullValue.values)
+    ..pc<$61.Duration>(311, _omitFieldNames ? '' : 'repeatedDuration', $pb.PbFieldType.PM, subBuilder: $61.Duration.create)
+    ..pc<$59.Timestamp>(312, _omitFieldNames ? '' : 'repeatedTimestamp', $pb.PbFieldType.PM, subBuilder: $59.Timestamp.create)
+    ..pc<$86.FieldMask>(313, _omitFieldNames ? '' : 'repeatedFieldmask', $pb.PbFieldType.PM, subBuilder: $86.FieldMask.create)
+    ..pc<$66.Any>(315, _omitFieldNames ? '' : 'repeatedAny', $pb.PbFieldType.PM, subBuilder: $66.Any.create)
+    ..pc<$57.Value>(316, _omitFieldNames ? '' : 'repeatedValue', $pb.PbFieldType.PM, subBuilder: $57.Value.create)
+    ..pc<$57.ListValue>(317, _omitFieldNames ? '' : 'repeatedListValue', $pb.PbFieldType.PM, subBuilder: $57.ListValue.create)
+    ..pc<$57.Struct>(324, _omitFieldNames ? '' : 'repeatedStruct', $pb.PbFieldType.PM, subBuilder: $57.Struct.create)
     ..a<$core.int>(401, _omitFieldNames ? '' : 'fieldname1', $pb.PbFieldType.O3)
     ..a<$core.int>(402, _omitFieldNames ? '' : 'fieldName2', $pb.PbFieldType.O3)
     ..a<$core.int>(403, _omitFieldNames ? '' : 'FieldName3', $pb.PbFieldType.O3)
@@ -1425,9 +1425,9 @@ class TestAllTypesProto3 extends $pb.GeneratedMessage {
   void clearOneofEnum() => clearField(119);
 
   @$pb.TagNumber(120)
-  $58.NullValue get oneofNullValue => $_getN(100);
+  $57.NullValue get oneofNullValue => $_getN(100);
   @$pb.TagNumber(120)
-  set oneofNullValue($58.NullValue v) { setField(120, v); }
+  set oneofNullValue($57.NullValue v) { setField(120, v); }
   @$pb.TagNumber(120)
   $core.bool hasOneofNullValue() => $_has(100);
   @$pb.TagNumber(120)
@@ -1435,226 +1435,226 @@ class TestAllTypesProto3 extends $pb.GeneratedMessage {
 
   /// Well-known types
   @$pb.TagNumber(201)
-  $59.BoolValue get optionalBoolWrapper => $_getN(101);
+  $58.BoolValue get optionalBoolWrapper => $_getN(101);
   @$pb.TagNumber(201)
-  set optionalBoolWrapper($59.BoolValue v) { setField(201, v); }
+  set optionalBoolWrapper($58.BoolValue v) { setField(201, v); }
   @$pb.TagNumber(201)
   $core.bool hasOptionalBoolWrapper() => $_has(101);
   @$pb.TagNumber(201)
   void clearOptionalBoolWrapper() => clearField(201);
   @$pb.TagNumber(201)
-  $59.BoolValue ensureOptionalBoolWrapper() => $_ensure(101);
+  $58.BoolValue ensureOptionalBoolWrapper() => $_ensure(101);
 
   @$pb.TagNumber(202)
-  $59.Int32Value get optionalInt32Wrapper => $_getN(102);
+  $58.Int32Value get optionalInt32Wrapper => $_getN(102);
   @$pb.TagNumber(202)
-  set optionalInt32Wrapper($59.Int32Value v) { setField(202, v); }
+  set optionalInt32Wrapper($58.Int32Value v) { setField(202, v); }
   @$pb.TagNumber(202)
   $core.bool hasOptionalInt32Wrapper() => $_has(102);
   @$pb.TagNumber(202)
   void clearOptionalInt32Wrapper() => clearField(202);
   @$pb.TagNumber(202)
-  $59.Int32Value ensureOptionalInt32Wrapper() => $_ensure(102);
+  $58.Int32Value ensureOptionalInt32Wrapper() => $_ensure(102);
 
   @$pb.TagNumber(203)
-  $59.Int64Value get optionalInt64Wrapper => $_getN(103);
+  $58.Int64Value get optionalInt64Wrapper => $_getN(103);
   @$pb.TagNumber(203)
-  set optionalInt64Wrapper($59.Int64Value v) { setField(203, v); }
+  set optionalInt64Wrapper($58.Int64Value v) { setField(203, v); }
   @$pb.TagNumber(203)
   $core.bool hasOptionalInt64Wrapper() => $_has(103);
   @$pb.TagNumber(203)
   void clearOptionalInt64Wrapper() => clearField(203);
   @$pb.TagNumber(203)
-  $59.Int64Value ensureOptionalInt64Wrapper() => $_ensure(103);
+  $58.Int64Value ensureOptionalInt64Wrapper() => $_ensure(103);
 
   @$pb.TagNumber(204)
-  $59.UInt32Value get optionalUint32Wrapper => $_getN(104);
+  $58.UInt32Value get optionalUint32Wrapper => $_getN(104);
   @$pb.TagNumber(204)
-  set optionalUint32Wrapper($59.UInt32Value v) { setField(204, v); }
+  set optionalUint32Wrapper($58.UInt32Value v) { setField(204, v); }
   @$pb.TagNumber(204)
   $core.bool hasOptionalUint32Wrapper() => $_has(104);
   @$pb.TagNumber(204)
   void clearOptionalUint32Wrapper() => clearField(204);
   @$pb.TagNumber(204)
-  $59.UInt32Value ensureOptionalUint32Wrapper() => $_ensure(104);
+  $58.UInt32Value ensureOptionalUint32Wrapper() => $_ensure(104);
 
   @$pb.TagNumber(205)
-  $59.UInt64Value get optionalUint64Wrapper => $_getN(105);
+  $58.UInt64Value get optionalUint64Wrapper => $_getN(105);
   @$pb.TagNumber(205)
-  set optionalUint64Wrapper($59.UInt64Value v) { setField(205, v); }
+  set optionalUint64Wrapper($58.UInt64Value v) { setField(205, v); }
   @$pb.TagNumber(205)
   $core.bool hasOptionalUint64Wrapper() => $_has(105);
   @$pb.TagNumber(205)
   void clearOptionalUint64Wrapper() => clearField(205);
   @$pb.TagNumber(205)
-  $59.UInt64Value ensureOptionalUint64Wrapper() => $_ensure(105);
+  $58.UInt64Value ensureOptionalUint64Wrapper() => $_ensure(105);
 
   @$pb.TagNumber(206)
-  $59.FloatValue get optionalFloatWrapper => $_getN(106);
+  $58.FloatValue get optionalFloatWrapper => $_getN(106);
   @$pb.TagNumber(206)
-  set optionalFloatWrapper($59.FloatValue v) { setField(206, v); }
+  set optionalFloatWrapper($58.FloatValue v) { setField(206, v); }
   @$pb.TagNumber(206)
   $core.bool hasOptionalFloatWrapper() => $_has(106);
   @$pb.TagNumber(206)
   void clearOptionalFloatWrapper() => clearField(206);
   @$pb.TagNumber(206)
-  $59.FloatValue ensureOptionalFloatWrapper() => $_ensure(106);
+  $58.FloatValue ensureOptionalFloatWrapper() => $_ensure(106);
 
   @$pb.TagNumber(207)
-  $59.DoubleValue get optionalDoubleWrapper => $_getN(107);
+  $58.DoubleValue get optionalDoubleWrapper => $_getN(107);
   @$pb.TagNumber(207)
-  set optionalDoubleWrapper($59.DoubleValue v) { setField(207, v); }
+  set optionalDoubleWrapper($58.DoubleValue v) { setField(207, v); }
   @$pb.TagNumber(207)
   $core.bool hasOptionalDoubleWrapper() => $_has(107);
   @$pb.TagNumber(207)
   void clearOptionalDoubleWrapper() => clearField(207);
   @$pb.TagNumber(207)
-  $59.DoubleValue ensureOptionalDoubleWrapper() => $_ensure(107);
+  $58.DoubleValue ensureOptionalDoubleWrapper() => $_ensure(107);
 
   @$pb.TagNumber(208)
-  $59.StringValue get optionalStringWrapper => $_getN(108);
+  $58.StringValue get optionalStringWrapper => $_getN(108);
   @$pb.TagNumber(208)
-  set optionalStringWrapper($59.StringValue v) { setField(208, v); }
+  set optionalStringWrapper($58.StringValue v) { setField(208, v); }
   @$pb.TagNumber(208)
   $core.bool hasOptionalStringWrapper() => $_has(108);
   @$pb.TagNumber(208)
   void clearOptionalStringWrapper() => clearField(208);
   @$pb.TagNumber(208)
-  $59.StringValue ensureOptionalStringWrapper() => $_ensure(108);
+  $58.StringValue ensureOptionalStringWrapper() => $_ensure(108);
 
   @$pb.TagNumber(209)
-  $59.BytesValue get optionalBytesWrapper => $_getN(109);
+  $58.BytesValue get optionalBytesWrapper => $_getN(109);
   @$pb.TagNumber(209)
-  set optionalBytesWrapper($59.BytesValue v) { setField(209, v); }
+  set optionalBytesWrapper($58.BytesValue v) { setField(209, v); }
   @$pb.TagNumber(209)
   $core.bool hasOptionalBytesWrapper() => $_has(109);
   @$pb.TagNumber(209)
   void clearOptionalBytesWrapper() => clearField(209);
   @$pb.TagNumber(209)
-  $59.BytesValue ensureOptionalBytesWrapper() => $_ensure(109);
+  $58.BytesValue ensureOptionalBytesWrapper() => $_ensure(109);
 
   @$pb.TagNumber(211)
-  $core.List<$59.BoolValue> get repeatedBoolWrapper => $_getList(110);
+  $core.List<$58.BoolValue> get repeatedBoolWrapper => $_getList(110);
 
   @$pb.TagNumber(212)
-  $core.List<$59.Int32Value> get repeatedInt32Wrapper => $_getList(111);
+  $core.List<$58.Int32Value> get repeatedInt32Wrapper => $_getList(111);
 
   @$pb.TagNumber(213)
-  $core.List<$59.Int64Value> get repeatedInt64Wrapper => $_getList(112);
+  $core.List<$58.Int64Value> get repeatedInt64Wrapper => $_getList(112);
 
   @$pb.TagNumber(214)
-  $core.List<$59.UInt32Value> get repeatedUint32Wrapper => $_getList(113);
+  $core.List<$58.UInt32Value> get repeatedUint32Wrapper => $_getList(113);
 
   @$pb.TagNumber(215)
-  $core.List<$59.UInt64Value> get repeatedUint64Wrapper => $_getList(114);
+  $core.List<$58.UInt64Value> get repeatedUint64Wrapper => $_getList(114);
 
   @$pb.TagNumber(216)
-  $core.List<$59.FloatValue> get repeatedFloatWrapper => $_getList(115);
+  $core.List<$58.FloatValue> get repeatedFloatWrapper => $_getList(115);
 
   @$pb.TagNumber(217)
-  $core.List<$59.DoubleValue> get repeatedDoubleWrapper => $_getList(116);
+  $core.List<$58.DoubleValue> get repeatedDoubleWrapper => $_getList(116);
 
   @$pb.TagNumber(218)
-  $core.List<$59.StringValue> get repeatedStringWrapper => $_getList(117);
+  $core.List<$58.StringValue> get repeatedStringWrapper => $_getList(117);
 
   @$pb.TagNumber(219)
-  $core.List<$59.BytesValue> get repeatedBytesWrapper => $_getList(118);
+  $core.List<$58.BytesValue> get repeatedBytesWrapper => $_getList(118);
 
   @$pb.TagNumber(301)
-  $62.Duration get optionalDuration => $_getN(119);
+  $61.Duration get optionalDuration => $_getN(119);
   @$pb.TagNumber(301)
-  set optionalDuration($62.Duration v) { setField(301, v); }
+  set optionalDuration($61.Duration v) { setField(301, v); }
   @$pb.TagNumber(301)
   $core.bool hasOptionalDuration() => $_has(119);
   @$pb.TagNumber(301)
   void clearOptionalDuration() => clearField(301);
   @$pb.TagNumber(301)
-  $62.Duration ensureOptionalDuration() => $_ensure(119);
+  $61.Duration ensureOptionalDuration() => $_ensure(119);
 
   @$pb.TagNumber(302)
-  $60.Timestamp get optionalTimestamp => $_getN(120);
+  $59.Timestamp get optionalTimestamp => $_getN(120);
   @$pb.TagNumber(302)
-  set optionalTimestamp($60.Timestamp v) { setField(302, v); }
+  set optionalTimestamp($59.Timestamp v) { setField(302, v); }
   @$pb.TagNumber(302)
   $core.bool hasOptionalTimestamp() => $_has(120);
   @$pb.TagNumber(302)
   void clearOptionalTimestamp() => clearField(302);
   @$pb.TagNumber(302)
-  $60.Timestamp ensureOptionalTimestamp() => $_ensure(120);
+  $59.Timestamp ensureOptionalTimestamp() => $_ensure(120);
 
   @$pb.TagNumber(303)
-  $84.FieldMask get optionalFieldMask => $_getN(121);
+  $86.FieldMask get optionalFieldMask => $_getN(121);
   @$pb.TagNumber(303)
-  set optionalFieldMask($84.FieldMask v) { setField(303, v); }
+  set optionalFieldMask($86.FieldMask v) { setField(303, v); }
   @$pb.TagNumber(303)
   $core.bool hasOptionalFieldMask() => $_has(121);
   @$pb.TagNumber(303)
   void clearOptionalFieldMask() => clearField(303);
   @$pb.TagNumber(303)
-  $84.FieldMask ensureOptionalFieldMask() => $_ensure(121);
+  $86.FieldMask ensureOptionalFieldMask() => $_ensure(121);
 
   @$pb.TagNumber(304)
-  $58.Struct get optionalStruct => $_getN(122);
+  $57.Struct get optionalStruct => $_getN(122);
   @$pb.TagNumber(304)
-  set optionalStruct($58.Struct v) { setField(304, v); }
+  set optionalStruct($57.Struct v) { setField(304, v); }
   @$pb.TagNumber(304)
   $core.bool hasOptionalStruct() => $_has(122);
   @$pb.TagNumber(304)
   void clearOptionalStruct() => clearField(304);
   @$pb.TagNumber(304)
-  $58.Struct ensureOptionalStruct() => $_ensure(122);
+  $57.Struct ensureOptionalStruct() => $_ensure(122);
 
   @$pb.TagNumber(305)
-  $67.Any get optionalAny => $_getN(123);
+  $66.Any get optionalAny => $_getN(123);
   @$pb.TagNumber(305)
-  set optionalAny($67.Any v) { setField(305, v); }
+  set optionalAny($66.Any v) { setField(305, v); }
   @$pb.TagNumber(305)
   $core.bool hasOptionalAny() => $_has(123);
   @$pb.TagNumber(305)
   void clearOptionalAny() => clearField(305);
   @$pb.TagNumber(305)
-  $67.Any ensureOptionalAny() => $_ensure(123);
+  $66.Any ensureOptionalAny() => $_ensure(123);
 
   @$pb.TagNumber(306)
-  $58.Value get optionalValue => $_getN(124);
+  $57.Value get optionalValue => $_getN(124);
   @$pb.TagNumber(306)
-  set optionalValue($58.Value v) { setField(306, v); }
+  set optionalValue($57.Value v) { setField(306, v); }
   @$pb.TagNumber(306)
   $core.bool hasOptionalValue() => $_has(124);
   @$pb.TagNumber(306)
   void clearOptionalValue() => clearField(306);
   @$pb.TagNumber(306)
-  $58.Value ensureOptionalValue() => $_ensure(124);
+  $57.Value ensureOptionalValue() => $_ensure(124);
 
   @$pb.TagNumber(307)
-  $58.NullValue get optionalNullValue => $_getN(125);
+  $57.NullValue get optionalNullValue => $_getN(125);
   @$pb.TagNumber(307)
-  set optionalNullValue($58.NullValue v) { setField(307, v); }
+  set optionalNullValue($57.NullValue v) { setField(307, v); }
   @$pb.TagNumber(307)
   $core.bool hasOptionalNullValue() => $_has(125);
   @$pb.TagNumber(307)
   void clearOptionalNullValue() => clearField(307);
 
   @$pb.TagNumber(311)
-  $core.List<$62.Duration> get repeatedDuration => $_getList(126);
+  $core.List<$61.Duration> get repeatedDuration => $_getList(126);
 
   @$pb.TagNumber(312)
-  $core.List<$60.Timestamp> get repeatedTimestamp => $_getList(127);
+  $core.List<$59.Timestamp> get repeatedTimestamp => $_getList(127);
 
   @$pb.TagNumber(313)
-  $core.List<$84.FieldMask> get repeatedFieldmask => $_getList(128);
+  $core.List<$86.FieldMask> get repeatedFieldmask => $_getList(128);
 
   @$pb.TagNumber(315)
-  $core.List<$67.Any> get repeatedAny => $_getList(129);
+  $core.List<$66.Any> get repeatedAny => $_getList(129);
 
   @$pb.TagNumber(316)
-  $core.List<$58.Value> get repeatedValue => $_getList(130);
+  $core.List<$57.Value> get repeatedValue => $_getList(130);
 
   @$pb.TagNumber(317)
-  $core.List<$58.ListValue> get repeatedListValue => $_getList(131);
+  $core.List<$57.ListValue> get repeatedListValue => $_getList(131);
 
   @$pb.TagNumber(324)
-  $core.List<$58.Struct> get repeatedStruct => $_getList(132);
+  $core.List<$57.Struct> get repeatedStruct => $_getList(132);
 
   /// Test field-name-to-JSON-name convention.
   /// (protobuf says names can be any valid C/C++ identifier.)

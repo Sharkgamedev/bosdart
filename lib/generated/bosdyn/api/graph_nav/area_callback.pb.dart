@@ -13,13 +13,14 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $60;
-import '../header.pb.dart' as $68;
-import '../lease.pb.dart' as $13;
-import '../service_customization.pb.dart' as $72;
+import '../../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../../google/protobuf/wrappers.pb.dart' as $58;
+import '../header.pb.dart' as $67;
+import '../lease.pb.dart' as $14;
+import '../service_customization.pb.dart' as $71;
 import 'area_callback.pbenum.dart';
-import 'area_callback_data.pb.dart' as $86;
-import 'nav.pb.dart' as $88;
+import 'area_callback_data.pb.dart' as $88;
+import 'nav.pb.dart' as $90;
 
 export 'area_callback.pbenum.dart';
 
@@ -174,7 +175,7 @@ class AreaCallbackError extends $pb.GeneratedMessage {
 /// Message for requesting information about a area callback implementation.
 class AreaCallbackInformationRequest extends $pb.GeneratedMessage {
   factory AreaCallbackInformationRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -187,7 +188,7 @@ class AreaCallbackInformationRequest extends $pb.GeneratedMessage {
   factory AreaCallbackInformationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AreaCallbackInformationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -214,22 +215,148 @@ class AreaCallbackInformationRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
+}
+
+/// Information about how the robot should behave when stopping at a location.
+class StopConfiguration extends $pb.GeneratedMessage {
+  factory StopConfiguration({
+    $58.DoubleValue? maxDistance,
+    $58.DoubleValue? maxYaw,
+    StopConfiguration_FaceDirection? faceDirection,
+    $58.DoubleValue? faceYawOffset,
+    $core.bool? faceStairsIfPresent,
+  }) {
+    final $result = create();
+    if (maxDistance != null) {
+      $result.maxDistance = maxDistance;
+    }
+    if (maxYaw != null) {
+      $result.maxYaw = maxYaw;
+    }
+    if (faceDirection != null) {
+      $result.faceDirection = faceDirection;
+    }
+    if (faceYawOffset != null) {
+      $result.faceYawOffset = faceYawOffset;
+    }
+    if (faceStairsIfPresent != null) {
+      $result.faceStairsIfPresent = faceStairsIfPresent;
+    }
+    return $result;
+  }
+  StopConfiguration._() : super();
+  factory StopConfiguration.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StopConfiguration.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopConfiguration', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'maxDistance', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'maxYaw', subBuilder: $58.DoubleValue.create)
+    ..e<StopConfiguration_FaceDirection>(3, _omitFieldNames ? '' : 'faceDirection', $pb.PbFieldType.OE, defaultOrMaker: StopConfiguration_FaceDirection.FACE_DIRECTION_UNKNOWN, valueOf: StopConfiguration_FaceDirection.valueOf, enumValues: StopConfiguration_FaceDirection.values)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'faceYawOffset', subBuilder: $58.DoubleValue.create)
+    ..aOB(5, _omitFieldNames ? '' : 'faceStairsIfPresent')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StopConfiguration clone() => StopConfiguration()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StopConfiguration copyWith(void Function(StopConfiguration) updates) => super.copyWith((message) => updates(message as StopConfiguration)) as StopConfiguration;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StopConfiguration create() => StopConfiguration._();
+  StopConfiguration createEmptyInstance() => create();
+  static $pb.PbList<StopConfiguration> createRepeated() => $pb.PbList<StopConfiguration>();
+  @$core.pragma('dart2js:noInline')
+  static StopConfiguration getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopConfiguration>(create);
+  static StopConfiguration? _defaultInstance;
+
+  /// How close the robot needs to be to the desired pose (meters).
+  @$pb.TagNumber(1)
+  $58.DoubleValue get maxDistance => $_getN(0);
+  @$pb.TagNumber(1)
+  set maxDistance($58.DoubleValue v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMaxDistance() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMaxDistance() => clearField(1);
+  @$pb.TagNumber(1)
+  $58.DoubleValue ensureMaxDistance() => $_ensure(0);
+
+  /// How close the robot needs to be to the desired pose (radians).
+  @$pb.TagNumber(2)
+  $58.DoubleValue get maxYaw => $_getN(1);
+  @$pb.TagNumber(2)
+  set maxYaw($58.DoubleValue v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasMaxYaw() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMaxYaw() => clearField(2);
+  @$pb.TagNumber(2)
+  $58.DoubleValue ensureMaxYaw() => $_ensure(1);
+
+  /// Which direction the robot should face when lining up at a waypoint.
+  @$pb.TagNumber(3)
+  StopConfiguration_FaceDirection get faceDirection => $_getN(2);
+  @$pb.TagNumber(3)
+  set faceDirection(StopConfiguration_FaceDirection v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFaceDirection() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFaceDirection() => clearField(3);
+
+  /// Offset applied to the above facing direction (radians).
+  @$pb.TagNumber(4)
+  $58.DoubleValue get faceYawOffset => $_getN(3);
+  @$pb.TagNumber(4)
+  set faceYawOffset($58.DoubleValue v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFaceYawOffset() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFaceYawOffset() => clearField(4);
+  @$pb.TagNumber(4)
+  $58.DoubleValue ensureFaceYawOffset() => $_ensure(3);
+
+  /// If true, always align to stairs at the start of the callback.
+  /// Overrides face_direction  if stairs are found.
+  @$pb.TagNumber(5)
+  $core.bool get faceStairsIfPresent => $_getBF(4);
+  @$pb.TagNumber(5)
+  set faceStairsIfPresent($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasFaceStairsIfPresent() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFaceStairsIfPresent() => clearField(5);
 }
 
 /// Specific information about how a AreaCallback implementation should be called.
+/// All fields are optional, and need only be filled out if the desired behavior is different
+/// from the default.
 class AreaCallbackInformation extends $pb.GeneratedMessage {
   factory AreaCallbackInformation({
     $core.Iterable<$core.String>? requiredLeaseResources,
-    $72.DictParam_Spec? customParams,
+    $71.DictParam_Spec? customParams,
+    AreaCallbackInformation_Blockage? blockage,
+    AreaCallbackInformation_Impairment? impairmentCheck,
+    AreaCallbackInformation_EntityWaiting? entityWaiting,
+    StopConfiguration? defaultStop,
+    $88.AreaCallbackMapConfig? mapConfig,
   }) {
     final $result = create();
     if (requiredLeaseResources != null) {
@@ -237,6 +364,21 @@ class AreaCallbackInformation extends $pb.GeneratedMessage {
     }
     if (customParams != null) {
       $result.customParams = customParams;
+    }
+    if (blockage != null) {
+      $result.blockage = blockage;
+    }
+    if (impairmentCheck != null) {
+      $result.impairmentCheck = impairmentCheck;
+    }
+    if (entityWaiting != null) {
+      $result.entityWaiting = entityWaiting;
+    }
+    if (defaultStop != null) {
+      $result.defaultStop = defaultStop;
+    }
+    if (mapConfig != null) {
+      $result.mapConfig = mapConfig;
     }
     return $result;
   }
@@ -246,7 +388,12 @@ class AreaCallbackInformation extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AreaCallbackInformation', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'requiredLeaseResources')
-    ..aOM<$72.DictParam_Spec>(4, _omitFieldNames ? '' : 'customParams', subBuilder: $72.DictParam_Spec.create)
+    ..aOM<$71.DictParam_Spec>(4, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam_Spec.create)
+    ..e<AreaCallbackInformation_Blockage>(5, _omitFieldNames ? '' : 'blockage', $pb.PbFieldType.OE, defaultOrMaker: AreaCallbackInformation_Blockage.BLOCKAGE_UNKNOWN, valueOf: AreaCallbackInformation_Blockage.valueOf, enumValues: AreaCallbackInformation_Blockage.values)
+    ..e<AreaCallbackInformation_Impairment>(6, _omitFieldNames ? '' : 'impairmentCheck', $pb.PbFieldType.OE, defaultOrMaker: AreaCallbackInformation_Impairment.IMPAIRMENT_UNKNOWN, valueOf: AreaCallbackInformation_Impairment.valueOf, enumValues: AreaCallbackInformation_Impairment.values)
+    ..e<AreaCallbackInformation_EntityWaiting>(7, _omitFieldNames ? '' : 'entityWaiting', $pb.PbFieldType.OE, defaultOrMaker: AreaCallbackInformation_EntityWaiting.ENTITY_WAITING_UNKNOWN, valueOf: AreaCallbackInformation_EntityWaiting.valueOf, enumValues: AreaCallbackInformation_EntityWaiting.values)
+    ..aOM<StopConfiguration>(8, _omitFieldNames ? '' : 'defaultStop', subBuilder: StopConfiguration.create)
+    ..aOM<$88.AreaCallbackMapConfig>(9, _omitFieldNames ? '' : 'mapConfig', subBuilder: $88.AreaCallbackMapConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -277,21 +424,72 @@ class AreaCallbackInformation extends $pb.GeneratedMessage {
 
   /// Parameters this area callback supports that do not match any of the other fields.
   @$pb.TagNumber(4)
-  $72.DictParam_Spec get customParams => $_getN(1);
+  $71.DictParam_Spec get customParams => $_getN(1);
   @$pb.TagNumber(4)
-  set customParams($72.DictParam_Spec v) { setField(4, v); }
+  set customParams($71.DictParam_Spec v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasCustomParams() => $_has(1);
   @$pb.TagNumber(4)
   void clearCustomParams() => clearField(4);
   @$pb.TagNumber(4)
-  $72.DictParam_Spec ensureCustomParams() => $_ensure(1);
+  $71.DictParam_Spec ensureCustomParams() => $_ensure(1);
+
+  @$pb.TagNumber(5)
+  AreaCallbackInformation_Blockage get blockage => $_getN(2);
+  @$pb.TagNumber(5)
+  set blockage(AreaCallbackInformation_Blockage v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasBlockage() => $_has(2);
+  @$pb.TagNumber(5)
+  void clearBlockage() => clearField(5);
+
+  @$pb.TagNumber(6)
+  AreaCallbackInformation_Impairment get impairmentCheck => $_getN(3);
+  @$pb.TagNumber(6)
+  set impairmentCheck(AreaCallbackInformation_Impairment v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasImpairmentCheck() => $_has(3);
+  @$pb.TagNumber(6)
+  void clearImpairmentCheck() => clearField(6);
+
+  @$pb.TagNumber(7)
+  AreaCallbackInformation_EntityWaiting get entityWaiting => $_getN(4);
+  @$pb.TagNumber(7)
+  set entityWaiting(AreaCallbackInformation_EntityWaiting v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasEntityWaiting() => $_has(4);
+  @$pb.TagNumber(7)
+  void clearEntityWaiting() => clearField(7);
+
+  /// How the robot should stop at waypoints by default.
+  @$pb.TagNumber(8)
+  StopConfiguration get defaultStop => $_getN(5);
+  @$pb.TagNumber(8)
+  set defaultStop(StopConfiguration v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasDefaultStop() => $_has(5);
+  @$pb.TagNumber(8)
+  void clearDefaultStop() => clearField(8);
+  @$pb.TagNumber(8)
+  StopConfiguration ensureDefaultStop() => $_ensure(5);
+
+  /// Configuration to store in the map about how to treat the region edges.
+  @$pb.TagNumber(9)
+  $88.AreaCallbackMapConfig get mapConfig => $_getN(6);
+  @$pb.TagNumber(9)
+  set mapConfig($88.AreaCallbackMapConfig v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasMapConfig() => $_has(6);
+  @$pb.TagNumber(9)
+  void clearMapConfig() => clearField(9);
+  @$pb.TagNumber(9)
+  $88.AreaCallbackMapConfig ensureMapConfig() => $_ensure(6);
 }
 
 /// Message for providing information about a area callback implementation.
 class AreaCallbackInformationResponse extends $pb.GeneratedMessage {
   factory AreaCallbackInformationResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     AreaCallbackInformation? info,
   }) {
     final $result = create();
@@ -308,7 +506,7 @@ class AreaCallbackInformationResponse extends $pb.GeneratedMessage {
   factory AreaCallbackInformationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AreaCallbackInformationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<AreaCallbackInformation>(2, _omitFieldNames ? '' : 'info', subBuilder: AreaCallbackInformation.create)
     ..hasRequiredFields = false
   ;
@@ -336,15 +534,15 @@ class AreaCallbackInformationResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Information about how the AreaCallback should be called.
   @$pb.TagNumber(2)
@@ -364,7 +562,7 @@ class RegionInformation extends $pb.GeneratedMessage {
   factory RegionInformation({
     $core.String? regionId,
     $core.String? description,
-    $88.Route? route,
+    $90.Route? route,
   }) {
     final $result = create();
     if (regionId != null) {
@@ -385,7 +583,7 @@ class RegionInformation extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegionInformation', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'regionId')
     ..aOS(2, _omitFieldNames ? '' : 'description')
-    ..aOM<$88.Route>(3, _omitFieldNames ? '' : 'route', subBuilder: $88.Route.create)
+    ..aOM<$90.Route>(3, _omitFieldNames ? '' : 'route', subBuilder: $90.Route.create)
     ..hasRequiredFields = false
   ;
 
@@ -432,24 +630,24 @@ class RegionInformation extends $pb.GeneratedMessage {
 
   /// The planned route through the region.
   @$pb.TagNumber(3)
-  $88.Route get route => $_getN(2);
+  $90.Route get route => $_getN(2);
   @$pb.TagNumber(3)
-  set route($88.Route v) { setField(3, v); }
+  set route($90.Route v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasRoute() => $_has(2);
   @$pb.TagNumber(3)
   void clearRoute() => clearField(3);
   @$pb.TagNumber(3)
-  $88.Route ensureRoute() => $_ensure(2);
+  $90.Route ensureRoute() => $_ensure(2);
 }
 
 class BeginCallbackRequest extends $pb.GeneratedMessage {
   factory BeginCallbackRequest({
-    $68.RequestHeader? header,
-    $60.Timestamp? endTime,
+    $67.RequestHeader? header,
+    $59.Timestamp? endTime,
     RegionInformation? regionInfo,
-    $86.AreaCallbackData? recordedData,
-    $72.DictParam? customParams,
+    $88.AreaCallbackData? recordedData,
+    $71.DictParam? customParams,
   }) {
     final $result = create();
     if (header != null) {
@@ -474,11 +672,11 @@ class BeginCallbackRequest extends $pb.GeneratedMessage {
   factory BeginCallbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BeginCallbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
     ..aOM<RegionInformation>(4, _omitFieldNames ? '' : 'regionInfo', subBuilder: RegionInformation.create)
-    ..aOM<$86.AreaCallbackData>(5, _omitFieldNames ? '' : 'recordedData', subBuilder: $86.AreaCallbackData.create)
-    ..aOM<$72.DictParam>(6, _omitFieldNames ? '' : 'customParams', subBuilder: $72.DictParam.create)
+    ..aOM<$88.AreaCallbackData>(5, _omitFieldNames ? '' : 'recordedData', subBuilder: $88.AreaCallbackData.create)
+    ..aOM<$71.DictParam>(6, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam.create)
     ..hasRequiredFields = false
   ;
 
@@ -505,28 +703,28 @@ class BeginCallbackRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The timestamp (in robot time) by which a command must finish executing.
   /// If unset, a AreaCallback implementation may pick a reasonable value.
   @$pb.TagNumber(3)
-  $60.Timestamp get endTime => $_getN(1);
+  $59.Timestamp get endTime => $_getN(1);
   @$pb.TagNumber(3)
-  set endTime($60.Timestamp v) { setField(3, v); }
+  set endTime($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEndTime() => $_has(1);
   @$pb.TagNumber(3)
   void clearEndTime() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureEndTime() => $_ensure(1);
+  $59.Timestamp ensureEndTime() => $_ensure(1);
 
   /// Description of the region we are going to cross.
   @$pb.TagNumber(4)
@@ -542,35 +740,35 @@ class BeginCallbackRequest extends $pb.GeneratedMessage {
 
   /// Configuration data associated with this area callback region
   @$pb.TagNumber(5)
-  $86.AreaCallbackData get recordedData => $_getN(3);
+  $88.AreaCallbackData get recordedData => $_getN(3);
   @$pb.TagNumber(5)
-  set recordedData($86.AreaCallbackData v) { setField(5, v); }
+  set recordedData($88.AreaCallbackData v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasRecordedData() => $_has(3);
   @$pb.TagNumber(5)
   void clearRecordedData() => clearField(5);
   @$pb.TagNumber(5)
-  $86.AreaCallbackData ensureRecordedData() => $_ensure(3);
+  $88.AreaCallbackData ensureRecordedData() => $_ensure(3);
 
   /// Any other custom parameters to the callback.
   @$pb.TagNumber(6)
-  $72.DictParam get customParams => $_getN(4);
+  $71.DictParam get customParams => $_getN(4);
   @$pb.TagNumber(6)
-  set customParams($72.DictParam v) { setField(6, v); }
+  set customParams($71.DictParam v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCustomParams() => $_has(4);
   @$pb.TagNumber(6)
   void clearCustomParams() => clearField(6);
   @$pb.TagNumber(6)
-  $72.DictParam ensureCustomParams() => $_ensure(4);
+  $71.DictParam ensureCustomParams() => $_ensure(4);
 }
 
 class BeginCallbackResponse extends $pb.GeneratedMessage {
   factory BeginCallbackResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     BeginCallbackResponse_Status? status,
     $core.int? commandId,
-    $72.CustomParamError? customParamError,
+    $71.CustomParamError? customParamError,
   }) {
     final $result = create();
     if (header != null) {
@@ -592,10 +790,10 @@ class BeginCallbackResponse extends $pb.GeneratedMessage {
   factory BeginCallbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BeginCallbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<BeginCallbackResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: BeginCallbackResponse_Status.STATUS_UNKNOWN, valueOf: BeginCallbackResponse_Status.valueOf, enumValues: BeginCallbackResponse_Status.values)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
-    ..aOM<$72.CustomParamError>(4, _omitFieldNames ? '' : 'customParamError', subBuilder: $72.CustomParamError.create)
+    ..aOM<$71.CustomParamError>(4, _omitFieldNames ? '' : 'customParamError', subBuilder: $71.CustomParamError.create)
     ..hasRequiredFields = false
   ;
 
@@ -622,15 +820,15 @@ class BeginCallbackResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
@@ -642,8 +840,8 @@ class BeginCallbackResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearStatus() => clearField(2);
 
-  /// Unique identifier for the AreaCallback, used to update the callback in subsequent calls. If empty,
-  /// the request was not accepted.
+  /// Unique identifier for the AreaCallback, used to update the callback in subsequent calls. If
+  /// empty, the request was not accepted.
   @$pb.TagNumber(3)
   $core.int get commandId => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -655,21 +853,21 @@ class BeginCallbackResponse extends $pb.GeneratedMessage {
 
   /// Filled out if status is STATUS_CUSTOM_PARAMS_ERROR.
   @$pb.TagNumber(4)
-  $72.CustomParamError get customParamError => $_getN(3);
+  $71.CustomParamError get customParamError => $_getN(3);
   @$pb.TagNumber(4)
-  set customParamError($72.CustomParamError v) { setField(4, v); }
+  set customParamError($71.CustomParamError v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasCustomParamError() => $_has(3);
   @$pb.TagNumber(4)
   void clearCustomParamError() => clearField(4);
   @$pb.TagNumber(4)
-  $72.CustomParamError ensureCustomParamError() => $_ensure(3);
+  $71.CustomParamError ensureCustomParamError() => $_ensure(3);
 }
 
 class BeginControlRequest extends $pb.GeneratedMessage {
   factory BeginControlRequest({
-    $68.RequestHeader? header,
-    $core.Iterable<$13.Lease>? leases,
+    $67.RequestHeader? header,
+    $core.Iterable<$14.Lease>? leases,
     $core.int? commandId,
   }) {
     final $result = create();
@@ -689,8 +887,8 @@ class BeginControlRequest extends $pb.GeneratedMessage {
   factory BeginControlRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BeginControlRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..pc<$13.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..pc<$14.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
@@ -718,20 +916,20 @@ class BeginControlRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Leases that a AreaCallback uses once it takes control of the robot. This list should match
   /// AreaCallbackInformation required_lease_resources.
   @$pb.TagNumber(2)
-  $core.List<$13.Lease> get leases => $_getList(1);
+  $core.List<$14.Lease> get leases => $_getList(1);
 
   /// The command id associated with a single execution of a navigation callback.
   @$pb.TagNumber(3)
@@ -746,8 +944,8 @@ class BeginControlRequest extends $pb.GeneratedMessage {
 
 class BeginControlResponse extends $pb.GeneratedMessage {
   factory BeginControlResponse({
-    $68.ResponseHeader? header,
-    $core.Iterable<$13.LeaseUseResult>? leaseUseResults,
+    $67.ResponseHeader? header,
+    $core.Iterable<$14.LeaseUseResult>? leaseUseResults,
     BeginControlResponse_Status? status,
   }) {
     final $result = create();
@@ -767,8 +965,8 @@ class BeginControlResponse extends $pb.GeneratedMessage {
   factory BeginControlResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BeginControlResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..pc<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..pc<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $14.LeaseUseResult.create)
     ..e<BeginControlResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: BeginControlResponse_Status.STATUS_UNKNOWN, valueOf: BeginControlResponse_Status.valueOf, enumValues: BeginControlResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -796,19 +994,19 @@ class BeginControlResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Details about how the lease was used.
   @$pb.TagNumber(2)
-  $core.List<$13.LeaseUseResult> get leaseUseResults => $_getList(1);
+  $core.List<$14.LeaseUseResult> get leaseUseResults => $_getList(1);
 
   /// Return status for the request.
   @$pb.TagNumber(3)
@@ -823,9 +1021,9 @@ class BeginControlResponse extends $pb.GeneratedMessage {
 
 class UpdateCallbackRequest extends $pb.GeneratedMessage {
   factory UpdateCallbackRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.int? commandId,
-    $60.Timestamp? endTime,
+    $59.Timestamp? endTime,
     UpdateCallbackRequest_Stage? stage,
   }) {
     final $result = create();
@@ -848,9 +1046,9 @@ class UpdateCallbackRequest extends $pb.GeneratedMessage {
   factory UpdateCallbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateCallbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
     ..e<UpdateCallbackRequest_Stage>(4, _omitFieldNames ? '' : 'stage', $pb.PbFieldType.OE, defaultOrMaker: UpdateCallbackRequest_Stage.STAGE_UNKNOWN, valueOf: UpdateCallbackRequest_Stage.valueOf, enumValues: UpdateCallbackRequest_Stage.values)
     ..hasRequiredFields = false
   ;
@@ -876,17 +1074,17 @@ class UpdateCallbackRequest extends $pb.GeneratedMessage {
   static UpdateCallbackRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateCallbackRequest>(create);
   static UpdateCallbackRequest? _defaultInstance;
 
-  /// Common response header.
+  /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The command id associated with a single execution of a navigation callback.
   @$pb.TagNumber(2)
@@ -900,15 +1098,15 @@ class UpdateCallbackRequest extends $pb.GeneratedMessage {
 
   /// If set, update the end time (in robot time) by which a command must finish executing.
   @$pb.TagNumber(3)
-  $60.Timestamp get endTime => $_getN(2);
+  $59.Timestamp get endTime => $_getN(2);
   @$pb.TagNumber(3)
-  set endTime($60.Timestamp v) { setField(3, v); }
+  set endTime($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEndTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearEndTime() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureEndTime() => $_ensure(2);
+  $59.Timestamp ensureEndTime() => $_ensure(2);
 
   @$pb.TagNumber(4)
   UpdateCallbackRequest_Stage get stage => $_getN(3);
@@ -975,6 +1173,7 @@ class UpdateCallbackResponse_NavPolicy extends $pb.GeneratedMessage {
   factory UpdateCallbackResponse_NavPolicy({
     UpdateCallbackResponse_NavPolicy_Option? atStart,
     UpdateCallbackResponse_NavPolicy_Option? atEnd,
+    StopConfiguration? endConfig,
   }) {
     final $result = create();
     if (atStart != null) {
@@ -982,6 +1181,9 @@ class UpdateCallbackResponse_NavPolicy extends $pb.GeneratedMessage {
     }
     if (atEnd != null) {
       $result.atEnd = atEnd;
+    }
+    if (endConfig != null) {
+      $result.endConfig = endConfig;
     }
     return $result;
   }
@@ -992,6 +1194,7 @@ class UpdateCallbackResponse_NavPolicy extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateCallbackResponse.NavPolicy', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..e<UpdateCallbackResponse_NavPolicy_Option>(1, _omitFieldNames ? '' : 'atStart', $pb.PbFieldType.OE, defaultOrMaker: UpdateCallbackResponse_NavPolicy_Option.OPTION_UNKNOWN, valueOf: UpdateCallbackResponse_NavPolicy_Option.valueOf, enumValues: UpdateCallbackResponse_NavPolicy_Option.values)
     ..e<UpdateCallbackResponse_NavPolicy_Option>(2, _omitFieldNames ? '' : 'atEnd', $pb.PbFieldType.OE, defaultOrMaker: UpdateCallbackResponse_NavPolicy_Option.OPTION_UNKNOWN, valueOf: UpdateCallbackResponse_NavPolicy_Option.valueOf, enumValues: UpdateCallbackResponse_NavPolicy_Option.values)
+    ..aOM<StopConfiguration>(4, _omitFieldNames ? '' : 'endConfig', subBuilder: StopConfiguration.create)
     ..hasRequiredFields = false
   ;
 
@@ -1035,12 +1238,25 @@ class UpdateCallbackResponse_NavPolicy extends $pb.GeneratedMessage {
   $core.bool hasAtEnd() => $_has(1);
   @$pb.TagNumber(2)
   void clearAtEnd() => clearField(2);
+
+  /// Override the default settings for how the robot should behave at the end.
+  /// Does not apply for OPTION_CONTINUE.
+  @$pb.TagNumber(4)
+  StopConfiguration get endConfig => $_getN(2);
+  @$pb.TagNumber(4)
+  set endConfig(StopConfiguration v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEndConfig() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearEndConfig() => clearField(4);
+  @$pb.TagNumber(4)
+  StopConfiguration ensureEndConfig() => $_ensure(2);
 }
 
 class UpdateCallbackResponse_Error extends $pb.GeneratedMessage {
   factory UpdateCallbackResponse_Error({
     UpdateCallbackResponse_Error_ErrorType? error,
-    $core.Iterable<$13.LeaseUseResult>? leaseUseResults,
+    $core.Iterable<$14.LeaseUseResult>? leaseUseResults,
   }) {
     final $result = create();
     if (error != null) {
@@ -1057,7 +1273,7 @@ class UpdateCallbackResponse_Error extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateCallbackResponse.Error', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..e<UpdateCallbackResponse_Error_ErrorType>(1, _omitFieldNames ? '' : 'error', $pb.PbFieldType.OE, defaultOrMaker: UpdateCallbackResponse_Error_ErrorType.ERROR_UNKNOWN, valueOf: UpdateCallbackResponse_Error_ErrorType.valueOf, enumValues: UpdateCallbackResponse_Error_ErrorType.values)
-    ..pc<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $13.LeaseUseResult.create)
+    ..pc<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $14.LeaseUseResult.create)
     ..hasRequiredFields = false
   ;
 
@@ -1093,7 +1309,7 @@ class UpdateCallbackResponse_Error extends $pb.GeneratedMessage {
 
   /// Details about how the lease was used. Only set when error == ERROR_LEASE.
   @$pb.TagNumber(2)
-  $core.List<$13.LeaseUseResult> get leaseUseResults => $_getList(1);
+  $core.List<$14.LeaseUseResult> get leaseUseResults => $_getList(1);
 }
 
 class UpdateCallbackResponse_Complete extends $pb.GeneratedMessage {
@@ -1137,7 +1353,7 @@ enum UpdateCallbackResponse_Response {
 
 class UpdateCallbackResponse extends $pb.GeneratedMessage {
   factory UpdateCallbackResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     UpdateCallbackResponse_Status? status,
     UpdateCallbackResponse_NavPolicy? policy,
     UpdateCallbackResponse_Error? error,
@@ -1177,7 +1393,7 @@ class UpdateCallbackResponse extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateCallbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..oo(0, [3, 4, 5])
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<UpdateCallbackResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UpdateCallbackResponse_Status.STATUS_UNKNOWN, valueOf: UpdateCallbackResponse_Status.valueOf, enumValues: UpdateCallbackResponse_Status.values)
     ..aOM<UpdateCallbackResponse_NavPolicy>(3, _omitFieldNames ? '' : 'policy', subBuilder: UpdateCallbackResponse_NavPolicy.create)
     ..aOM<UpdateCallbackResponse_Error>(4, _omitFieldNames ? '' : 'error', subBuilder: UpdateCallbackResponse_Error.create)
@@ -1212,15 +1428,15 @@ class UpdateCallbackResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
@@ -1247,7 +1463,8 @@ class UpdateCallbackResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   UpdateCallbackResponse_NavPolicy ensurePolicy() => $_ensure(2);
 
-  /// An error has occurred. Graph Nav will stop calling UpdateCallback and will call EndCallback.
+  /// An error has occurred. Graph Nav will stop calling UpdateCallback and will call
+  /// EndCallback.
   @$pb.TagNumber(4)
   UpdateCallbackResponse_Error get error => $_getN(3);
   @$pb.TagNumber(4)
@@ -1288,7 +1505,7 @@ class UpdateCallbackResponse extends $pb.GeneratedMessage {
 
 class EndCallbackRequest extends $pb.GeneratedMessage {
   factory EndCallbackRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.int? commandId,
   }) {
     final $result = create();
@@ -1305,7 +1522,7 @@ class EndCallbackRequest extends $pb.GeneratedMessage {
   factory EndCallbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EndCallbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
@@ -1331,17 +1548,17 @@ class EndCallbackRequest extends $pb.GeneratedMessage {
   static EndCallbackRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EndCallbackRequest>(create);
   static EndCallbackRequest? _defaultInstance;
 
-  /// Common response header.
+  /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The command id associated with a single execution of a navigation callback.
   @$pb.TagNumber(2)
@@ -1356,7 +1573,7 @@ class EndCallbackRequest extends $pb.GeneratedMessage {
 
 class EndCallbackResponse extends $pb.GeneratedMessage {
   factory EndCallbackResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     EndCallbackResponse_Status? status,
   }) {
     final $result = create();
@@ -1373,7 +1590,7 @@ class EndCallbackResponse extends $pb.GeneratedMessage {
   factory EndCallbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EndCallbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<EndCallbackResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: EndCallbackResponse_Status.STATUS_UNKNOWN, valueOf: EndCallbackResponse_Status.valueOf, enumValues: EndCallbackResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -1401,21 +1618,190 @@ class EndCallbackResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
   EndCallbackResponse_Status get status => $_getN(1);
   @$pb.TagNumber(2)
   set status(EndCallbackResponse_Status v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => clearField(2);
+}
+
+class RouteChangeRequest extends $pb.GeneratedMessage {
+  factory RouteChangeRequest({
+    $67.RequestHeader? header,
+    $core.int? commandId,
+    $90.Route? route,
+    $90.Route? unfinishedRoute,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (commandId != null) {
+      $result.commandId = commandId;
+    }
+    if (route != null) {
+      $result.route = route;
+    }
+    if (unfinishedRoute != null) {
+      $result.unfinishedRoute = unfinishedRoute;
+    }
+    return $result;
+  }
+  RouteChangeRequest._() : super();
+  factory RouteChangeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RouteChangeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RouteChangeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
+    ..aOM<$90.Route>(3, _omitFieldNames ? '' : 'route', subBuilder: $90.Route.create)
+    ..aOM<$90.Route>(4, _omitFieldNames ? '' : 'unfinishedRoute', subBuilder: $90.Route.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RouteChangeRequest clone() => RouteChangeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RouteChangeRequest copyWith(void Function(RouteChangeRequest) updates) => super.copyWith((message) => updates(message as RouteChangeRequest)) as RouteChangeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RouteChangeRequest create() => RouteChangeRequest._();
+  RouteChangeRequest createEmptyInstance() => create();
+  static $pb.PbList<RouteChangeRequest> createRepeated() => $pb.PbList<RouteChangeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RouteChangeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RouteChangeRequest>(create);
+  static RouteChangeRequest? _defaultInstance;
+
+  /// Common request header.
+  @$pb.TagNumber(1)
+  $67.RequestHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.RequestHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.RequestHeader ensureHeader() => $_ensure(0);
+
+  /// The command id for which the route is changing.
+  @$pb.TagNumber(2)
+  $core.int get commandId => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set commandId($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCommandId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCommandId() => clearField(2);
+
+  /// The new planned route through the region.
+  @$pb.TagNumber(3)
+  $90.Route get route => $_getN(2);
+  @$pb.TagNumber(3)
+  set route($90.Route v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRoute() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRoute() => clearField(3);
+  @$pb.TagNumber(3)
+  $90.Route ensureRoute() => $_ensure(2);
+
+  /// The remaining old route that was not completed.
+  @$pb.TagNumber(4)
+  $90.Route get unfinishedRoute => $_getN(3);
+  @$pb.TagNumber(4)
+  set unfinishedRoute($90.Route v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasUnfinishedRoute() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUnfinishedRoute() => clearField(4);
+  @$pb.TagNumber(4)
+  $90.Route ensureUnfinishedRoute() => $_ensure(3);
+}
+
+class RouteChangeResponse extends $pb.GeneratedMessage {
+  factory RouteChangeResponse({
+    $67.ResponseHeader? header,
+    RouteChangeResponse_Status? status,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
+  RouteChangeResponse._() : super();
+  factory RouteChangeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RouteChangeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RouteChangeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..e<RouteChangeResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: RouteChangeResponse_Status.STATUS_UNKNOWN, valueOf: RouteChangeResponse_Status.valueOf, enumValues: RouteChangeResponse_Status.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RouteChangeResponse clone() => RouteChangeResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RouteChangeResponse copyWith(void Function(RouteChangeResponse) updates) => super.copyWith((message) => updates(message as RouteChangeResponse)) as RouteChangeResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RouteChangeResponse create() => RouteChangeResponse._();
+  RouteChangeResponse createEmptyInstance() => create();
+  static $pb.PbList<RouteChangeResponse> createRepeated() => $pb.PbList<RouteChangeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RouteChangeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RouteChangeResponse>(create);
+  static RouteChangeResponse? _defaultInstance;
+
+  /// Common response header.
+  @$pb.TagNumber(1)
+  $67.ResponseHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.ResponseHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  RouteChangeResponse_Status get status => $_getN(1);
+  @$pb.TagNumber(2)
+  set status(RouteChangeResponse_Status v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasStatus() => $_has(1);
   @$pb.TagNumber(2)

@@ -15,16 +15,16 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest_custom_options.pb.dart' as $55;
+import 'unittest_custom_options.pb.dart' as $54;
 
 export 'unittest_custom_options.pb.dart';
 
 @$pb.GrpcServiceName('protobuf_unittest.TestServiceWithCustomOptions')
 class TestServiceWithCustomOptionsClient extends $grpc.Client {
-  static final _$foo = $grpc.ClientMethod<$55.CustomOptionFooRequest, $55.CustomOptionFooResponse>(
+  static final _$foo = $grpc.ClientMethod<$54.CustomOptionFooRequest, $54.CustomOptionFooResponse>(
       '/protobuf_unittest.TestServiceWithCustomOptions/Foo',
-      ($55.CustomOptionFooRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $55.CustomOptionFooResponse.fromBuffer(value));
+      ($54.CustomOptionFooRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $54.CustomOptionFooResponse.fromBuffer(value));
 
   TestServiceWithCustomOptionsClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -32,7 +32,7 @@ class TestServiceWithCustomOptionsClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$55.CustomOptionFooResponse> foo($55.CustomOptionFooRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$54.CustomOptionFooResponse> foo($54.CustomOptionFooRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$foo, request, options: options);
   }
 }
@@ -42,27 +42,27 @@ abstract class TestServiceWithCustomOptionsServiceBase extends $grpc.Service {
   $core.String get $name => 'protobuf_unittest.TestServiceWithCustomOptions';
 
   TestServiceWithCustomOptionsServiceBase() {
-    $addMethod($grpc.ServiceMethod<$55.CustomOptionFooRequest, $55.CustomOptionFooResponse>(
+    $addMethod($grpc.ServiceMethod<$54.CustomOptionFooRequest, $54.CustomOptionFooResponse>(
         'Foo',
         foo_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $55.CustomOptionFooRequest.fromBuffer(value),
-        ($55.CustomOptionFooResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $54.CustomOptionFooRequest.fromBuffer(value),
+        ($54.CustomOptionFooResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$55.CustomOptionFooResponse> foo_Pre($grpc.ServiceCall call, $async.Future<$55.CustomOptionFooRequest> request) async {
+  $async.Future<$54.CustomOptionFooResponse> foo_Pre($grpc.ServiceCall call, $async.Future<$54.CustomOptionFooRequest> request) async {
     return foo(call, await request);
   }
 
-  $async.Future<$55.CustomOptionFooResponse> foo($grpc.ServiceCall call, $55.CustomOptionFooRequest request);
+  $async.Future<$54.CustomOptionFooResponse> foo($grpc.ServiceCall call, $54.CustomOptionFooRequest request);
 }
 @$pb.GrpcServiceName('protobuf_unittest.AggregateService')
 class AggregateServiceClient extends $grpc.Client {
-  static final _$method = $grpc.ClientMethod<$55.AggregateMessage, $55.AggregateMessage>(
+  static final _$method = $grpc.ClientMethod<$54.AggregateMessage, $54.AggregateMessage>(
       '/protobuf_unittest.AggregateService/Method',
-      ($55.AggregateMessage value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $55.AggregateMessage.fromBuffer(value));
+      ($54.AggregateMessage value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $54.AggregateMessage.fromBuffer(value));
 
   AggregateServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -70,7 +70,7 @@ class AggregateServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$55.AggregateMessage> method($55.AggregateMessage request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$54.AggregateMessage> method($54.AggregateMessage request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$method, request, options: options);
   }
 }
@@ -80,18 +80,18 @@ abstract class AggregateServiceBase extends $grpc.Service {
   $core.String get $name => 'protobuf_unittest.AggregateService';
 
   AggregateServiceBase() {
-    $addMethod($grpc.ServiceMethod<$55.AggregateMessage, $55.AggregateMessage>(
+    $addMethod($grpc.ServiceMethod<$54.AggregateMessage, $54.AggregateMessage>(
         'Method',
         method_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $55.AggregateMessage.fromBuffer(value),
-        ($55.AggregateMessage value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $54.AggregateMessage.fromBuffer(value),
+        ($54.AggregateMessage value) => value.writeToBuffer()));
   }
 
-  $async.Future<$55.AggregateMessage> method_Pre($grpc.ServiceCall call, $async.Future<$55.AggregateMessage> request) async {
+  $async.Future<$54.AggregateMessage> method_Pre($grpc.ServiceCall call, $async.Future<$54.AggregateMessage> request) async {
     return method(call, await request);
   }
 
-  $async.Future<$55.AggregateMessage> method($grpc.ServiceCall call, $55.AggregateMessage request);
+  $async.Future<$54.AggregateMessage> method($grpc.ServiceCall call, $54.AggregateMessage request);
 }

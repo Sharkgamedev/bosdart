@@ -13,16 +13,16 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/wrappers.pb.dart' as $59;
-import '../header.pb.dart' as $68;
+import '../../../google/protobuf/wrappers.pb.dart' as $58;
+import '../header.pb.dart' as $67;
 
 /// Power on or off of components of the SpotCam.
 class PowerStatus extends $pb.GeneratedMessage {
   factory PowerStatus({
-    $59.BoolValue? ptz,
-    $59.BoolValue? aux1,
-    $59.BoolValue? aux2,
-    $59.BoolValue? externalMic,
+    $58.BoolValue? ptz,
+    $58.BoolValue? aux1,
+    $58.BoolValue? aux2,
+    $58.BoolValue? externalMic,
   }) {
     final $result = create();
     if (ptz != null) {
@@ -44,10 +44,10 @@ class PowerStatus extends $pb.GeneratedMessage {
   factory PowerStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PowerStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$59.BoolValue>(2, _omitFieldNames ? '' : 'ptz', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(3, _omitFieldNames ? '' : 'aux1', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(4, _omitFieldNames ? '' : 'aux2', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(5, _omitFieldNames ? '' : 'externalMic', subBuilder: $59.BoolValue.create)
+    ..aOM<$58.BoolValue>(2, _omitFieldNames ? '' : 'ptz', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(3, _omitFieldNames ? '' : 'aux1', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(4, _omitFieldNames ? '' : 'aux2', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(5, _omitFieldNames ? '' : 'externalMic', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -74,54 +74,54 @@ class PowerStatus extends $pb.GeneratedMessage {
 
   /// these switches are 'true' for power-on, 'false' for power-off
   @$pb.TagNumber(2)
-  $59.BoolValue get ptz => $_getN(0);
+  $58.BoolValue get ptz => $_getN(0);
   @$pb.TagNumber(2)
-  set ptz($59.BoolValue v) { setField(2, v); }
+  set ptz($58.BoolValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPtz() => $_has(0);
   @$pb.TagNumber(2)
   void clearPtz() => clearField(2);
   @$pb.TagNumber(2)
-  $59.BoolValue ensurePtz() => $_ensure(0);
+  $58.BoolValue ensurePtz() => $_ensure(0);
 
   @$pb.TagNumber(3)
-  $59.BoolValue get aux1 => $_getN(1);
+  $58.BoolValue get aux1 => $_getN(1);
   @$pb.TagNumber(3)
-  set aux1($59.BoolValue v) { setField(3, v); }
+  set aux1($58.BoolValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasAux1() => $_has(1);
   @$pb.TagNumber(3)
   void clearAux1() => clearField(3);
   @$pb.TagNumber(3)
-  $59.BoolValue ensureAux1() => $_ensure(1);
+  $58.BoolValue ensureAux1() => $_ensure(1);
 
   @$pb.TagNumber(4)
-  $59.BoolValue get aux2 => $_getN(2);
+  $58.BoolValue get aux2 => $_getN(2);
   @$pb.TagNumber(4)
-  set aux2($59.BoolValue v) { setField(4, v); }
+  set aux2($58.BoolValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasAux2() => $_has(2);
   @$pb.TagNumber(4)
   void clearAux2() => clearField(4);
   @$pb.TagNumber(4)
-  $59.BoolValue ensureAux2() => $_ensure(2);
+  $58.BoolValue ensureAux2() => $_ensure(2);
 
   @$pb.TagNumber(5)
-  $59.BoolValue get externalMic => $_getN(3);
+  $58.BoolValue get externalMic => $_getN(3);
   @$pb.TagNumber(5)
-  set externalMic($59.BoolValue v) { setField(5, v); }
+  set externalMic($58.BoolValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasExternalMic() => $_has(3);
   @$pb.TagNumber(5)
   void clearExternalMic() => clearField(5);
   @$pb.TagNumber(5)
-  $59.BoolValue ensureExternalMic() => $_ensure(3);
+  $58.BoolValue ensureExternalMic() => $_ensure(3);
 }
 
 /// Request component power status.
 class GetPowerStatusRequest extends $pb.GeneratedMessage {
   factory GetPowerStatusRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -134,7 +134,7 @@ class GetPowerStatusRequest extends $pb.GeneratedMessage {
   factory GetPowerStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPowerStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -161,21 +161,21 @@ class GetPowerStatusRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Provides the power status of all components.
 class GetPowerStatusResponse extends $pb.GeneratedMessage {
   factory GetPowerStatusResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     PowerStatus? status,
   }) {
     final $result = create();
@@ -192,7 +192,7 @@ class GetPowerStatusResponse extends $pb.GeneratedMessage {
   factory GetPowerStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPowerStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<PowerStatus>(2, _omitFieldNames ? '' : 'status', subBuilder: PowerStatus.create)
     ..hasRequiredFields = false
   ;
@@ -220,15 +220,15 @@ class GetPowerStatusResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// status indicates the power status of the controllable devices
   /// 'true' for power-on, 'false' for power-off
@@ -247,7 +247,7 @@ class GetPowerStatusResponse extends $pb.GeneratedMessage {
 /// Turn components on or off.
 class SetPowerStatusRequest extends $pb.GeneratedMessage {
   factory SetPowerStatusRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     PowerStatus? status,
   }) {
     final $result = create();
@@ -264,7 +264,7 @@ class SetPowerStatusRequest extends $pb.GeneratedMessage {
   factory SetPowerStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPowerStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<PowerStatus>(2, _omitFieldNames ? '' : 'status', subBuilder: PowerStatus.create)
     ..hasRequiredFields = false
   ;
@@ -292,15 +292,15 @@ class SetPowerStatusRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// status indicates the requested power status of the controllable devices
   /// 'true' for power-on, 'false' for power-off
@@ -319,7 +319,7 @@ class SetPowerStatusRequest extends $pb.GeneratedMessage {
 /// Result of turning components on or off.
 class SetPowerStatusResponse extends $pb.GeneratedMessage {
   factory SetPowerStatusResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     PowerStatus? status,
   }) {
     final $result = create();
@@ -336,7 +336,7 @@ class SetPowerStatusResponse extends $pb.GeneratedMessage {
   factory SetPowerStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPowerStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<PowerStatus>(2, _omitFieldNames ? '' : 'status', subBuilder: PowerStatus.create)
     ..hasRequiredFields = false
   ;
@@ -364,15 +364,15 @@ class SetPowerStatusResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// status indicates the requested changes upon success
   /// 'true' for power-on, 'false' for power-off
@@ -391,7 +391,7 @@ class SetPowerStatusResponse extends $pb.GeneratedMessage {
 /// Turn components off and then back on without needing two separate requests.
 class CyclePowerRequest extends $pb.GeneratedMessage {
   factory CyclePowerRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     PowerStatus? status,
   }) {
     final $result = create();
@@ -408,7 +408,7 @@ class CyclePowerRequest extends $pb.GeneratedMessage {
   factory CyclePowerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CyclePowerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<PowerStatus>(2, _omitFieldNames ? '' : 'status', subBuilder: PowerStatus.create)
     ..hasRequiredFields = false
   ;
@@ -436,15 +436,15 @@ class CyclePowerRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// status indicates the devices for which cycle-power is requested
   /// 'true' for cycle-power, else no effect
@@ -464,7 +464,7 @@ class CyclePowerRequest extends $pb.GeneratedMessage {
 /// Result of power cycling components.
 class CyclePowerResponse extends $pb.GeneratedMessage {
   factory CyclePowerResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     PowerStatus? status,
   }) {
     final $result = create();
@@ -481,7 +481,7 @@ class CyclePowerResponse extends $pb.GeneratedMessage {
   factory CyclePowerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CyclePowerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<PowerStatus>(2, _omitFieldNames ? '' : 'status', subBuilder: PowerStatus.create)
     ..hasRequiredFields = false
   ;
@@ -509,15 +509,15 @@ class CyclePowerResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// status indicates the power status of the controllable devices after a successful power cycle
   /// 'true' for power-on, 'false' for power-off

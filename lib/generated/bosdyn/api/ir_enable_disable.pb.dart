@@ -13,14 +13,14 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'header.pb.dart' as $68;
+import 'header.pb.dart' as $67;
 import 'ir_enable_disable.pbenum.dart';
 
 export 'ir_enable_disable.pbenum.dart';
 
 class IREnableDisableRequest extends $pb.GeneratedMessage {
   factory IREnableDisableRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     IREnableDisableRequest_Request? request,
   }) {
     final $result = create();
@@ -37,7 +37,7 @@ class IREnableDisableRequest extends $pb.GeneratedMessage {
   factory IREnableDisableRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IREnableDisableRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..e<IREnableDisableRequest_Request>(2, _omitFieldNames ? '' : 'request', $pb.PbFieldType.OE, defaultOrMaker: IREnableDisableRequest_Request.REQUEST_UNKNOWN, valueOf: IREnableDisableRequest_Request.valueOf, enumValues: IREnableDisableRequest_Request.values)
     ..hasRequiredFields = false
   ;
@@ -64,15 +64,15 @@ class IREnableDisableRequest extends $pb.GeneratedMessage {
   static IREnableDisableRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   IREnableDisableRequest_Request get request => $_getN(1);
@@ -86,7 +86,7 @@ class IREnableDisableRequest extends $pb.GeneratedMessage {
 
 class IREnableDisableResponse extends $pb.GeneratedMessage {
   factory IREnableDisableResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -99,7 +99,7 @@ class IREnableDisableResponse extends $pb.GeneratedMessage {
   factory IREnableDisableResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IREnableDisableResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -125,15 +125,15 @@ class IREnableDisableResponse extends $pb.GeneratedMessage {
   static IREnableDisableResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 

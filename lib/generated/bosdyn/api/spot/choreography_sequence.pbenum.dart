@@ -32,6 +32,23 @@ class SequenceInfo_SavedState extends $pb.ProtobufEnum {
   const SequenceInfo_SavedState._($core.int v, $core.String n) : super(v, n);
 }
 
+class GetChoreographySequenceResponse_Status extends $pb.ProtobufEnum {
+  static const GetChoreographySequenceResponse_Status STATUS_UNKNOWN = GetChoreographySequenceResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
+  static const GetChoreographySequenceResponse_Status STATUS_OK = GetChoreographySequenceResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
+  static const GetChoreographySequenceResponse_Status STATUS_UNKNOWN_SEQUENCE = GetChoreographySequenceResponse_Status._(2, _omitEnumNames ? '' : 'STATUS_UNKNOWN_SEQUENCE');
+
+  static const $core.List<GetChoreographySequenceResponse_Status> values = <GetChoreographySequenceResponse_Status> [
+    STATUS_UNKNOWN,
+    STATUS_OK,
+    STATUS_UNKNOWN_SEQUENCE,
+  ];
+
+  static final $core.Map<$core.int, GetChoreographySequenceResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static GetChoreographySequenceResponse_Status? valueOf($core.int value) => _byValue[value];
+
+  const GetChoreographySequenceResponse_Status._($core.int v, $core.String n) : super(v, n);
+}
+
 class DeleteSequenceResponse_Status extends $pb.ProtobufEnum {
   static const DeleteSequenceResponse_Status STATUS_UNKNOWN = DeleteSequenceResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const DeleteSequenceResponse_Status STATUS_OK = DeleteSequenceResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -137,6 +154,7 @@ class ExecuteChoreographyResponse_Status extends $pb.ProtobufEnum {
   static const ExecuteChoreographyResponse_Status STATUS_INVALID_UPLOADED_CHOREOGRAPHY = ExecuteChoreographyResponse_Status._(2, _omitEnumNames ? '' : 'STATUS_INVALID_UPLOADED_CHOREOGRAPHY');
   static const ExecuteChoreographyResponse_Status STATUS_ROBOT_COMMAND_ISSUES = ExecuteChoreographyResponse_Status._(3, _omitEnumNames ? '' : 'STATUS_ROBOT_COMMAND_ISSUES');
   static const ExecuteChoreographyResponse_Status STATUS_LEASE_ERROR = ExecuteChoreographyResponse_Status._(4, _omitEnumNames ? '' : 'STATUS_LEASE_ERROR');
+  static const ExecuteChoreographyResponse_Status STATUS_UNKNOWN_SEQUENCE = ExecuteChoreographyResponse_Status._(5, _omitEnumNames ? '' : 'STATUS_UNKNOWN_SEQUENCE');
 
   static const $core.List<ExecuteChoreographyResponse_Status> values = <ExecuteChoreographyResponse_Status> [
     STATUS_UNKNOWN,
@@ -144,6 +162,7 @@ class ExecuteChoreographyResponse_Status extends $pb.ProtobufEnum {
     STATUS_INVALID_UPLOADED_CHOREOGRAPHY,
     STATUS_ROBOT_COMMAND_ISSUES,
     STATUS_LEASE_ERROR,
+    STATUS_UNKNOWN_SEQUENCE,
   ];
 
   static final $core.Map<$core.int, ExecuteChoreographyResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
@@ -339,6 +358,27 @@ class ChoreographyStatusResponse_Status extends $pb.ProtobufEnum {
   static ChoreographyStatusResponse_Status? valueOf($core.int value) => _byValue[value];
 
   const ChoreographyStatusResponse_Status._($core.int v, $core.String n) : super(v, n);
+}
+
+class ChoreographyTimeAdjustResponse_Status extends $pb.ProtobufEnum {
+  static const ChoreographyTimeAdjustResponse_Status STATUS_UNKNOWN = ChoreographyTimeAdjustResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
+  static const ChoreographyTimeAdjustResponse_Status STATUS_OK = ChoreographyTimeAdjustResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
+  static const ChoreographyTimeAdjustResponse_Status STATUS_BEFORE_CURRENT_TIME = ChoreographyTimeAdjustResponse_Status._(2, _omitEnumNames ? '' : 'STATUS_BEFORE_CURRENT_TIME');
+  static const ChoreographyTimeAdjustResponse_Status STATUS_EXCEEDS_VALIDITY_TIME = ChoreographyTimeAdjustResponse_Status._(3, _omitEnumNames ? '' : 'STATUS_EXCEEDS_VALIDITY_TIME');
+  static const ChoreographyTimeAdjustResponse_Status STATUS_OVERRIDE_TIME_UNSET = ChoreographyTimeAdjustResponse_Status._(4, _omitEnumNames ? '' : 'STATUS_OVERRIDE_TIME_UNSET');
+
+  static const $core.List<ChoreographyTimeAdjustResponse_Status> values = <ChoreographyTimeAdjustResponse_Status> [
+    STATUS_UNKNOWN,
+    STATUS_OK,
+    STATUS_BEFORE_CURRENT_TIME,
+    STATUS_EXCEEDS_VALIDITY_TIME,
+    STATUS_OVERRIDE_TIME_UNSET,
+  ];
+
+  static final $core.Map<$core.int, ChoreographyTimeAdjustResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ChoreographyTimeAdjustResponse_Status? valueOf($core.int value) => _byValue[value];
+
+  const ChoreographyTimeAdjustResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
 

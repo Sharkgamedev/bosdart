@@ -23,6 +23,7 @@ const NetworkComputeStatus$json = {
     {'1': 'NETWORK_COMPUTE_STATUS_EXTERNAL_SERVER_ERROR', '2': 3},
     {'1': 'NETWORK_COMPUTE_STATUS_ROTATION_ERROR', '2': 4},
     {'1': 'NETWORK_COMPUTE_STATUS_CUSTOM_PARAMS_ERROR', '2': 5},
+    {'1': 'NETWORK_COMPUTE_STATUS_ANALYSIS_FAILED', '2': 6},
   ],
 };
 
@@ -33,7 +34,8 @@ final $typed_data.Uint8List networkComputeStatusDescriptor = $convert.base64Deco
     'VEVfU1RBVFVTX0VYVEVSTkFMX1NFUlZJQ0VfTk9UX0ZPVU5EEAISMAosTkVUV09SS19DT01QVV'
     'RFX1NUQVRVU19FWFRFUk5BTF9TRVJWRVJfRVJST1IQAxIpCiVORVRXT1JLX0NPTVBVVEVfU1RB'
     'VFVTX1JPVEFUSU9OX0VSUk9SEAQSLgoqTkVUV09SS19DT01QVVRFX1NUQVRVU19DVVNUT01fUE'
-    'FSQU1TX0VSUk9SEAU=');
+    'FSQU1TX0VSUk9SEAUSKgomTkVUV09SS19DT01QVVRFX1NUQVRVU19BTkFMWVNJU19GQUlMRUQQ'
+    'Bg==');
 
 @$core.Deprecated('Use listAvailableModelsStatusDescriptor instead')
 const ListAvailableModelsStatus$json = {
@@ -374,7 +376,15 @@ const NetworkComputeResponse$json = {
   '1': 'NetworkComputeResponse',
   '2': [
     {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
-    {'1': 'object_in_image', '3': 2, '4': 3, '5': 11, '6': '.bosdyn.api.WorldObject', '10': 'objectInImage'},
+    {
+      '1': 'object_in_image',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.bosdyn.api.WorldObject',
+      '8': {'3': true},
+      '10': 'objectInImage',
+    },
     {
       '1': 'image_response',
       '3': 3,
@@ -442,23 +452,23 @@ const NetworkComputeResponse_RoiOutputDataEntry$json = {
 /// Descriptor for `NetworkComputeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List networkComputeResponseDescriptor = $convert.base64Decode(
     'ChZOZXR3b3JrQ29tcHV0ZVJlc3BvbnNlEjIKBmhlYWRlchgBIAEoCzIaLmJvc2R5bi5hcGkuUm'
-    'VzcG9uc2VIZWFkZXJSBmhlYWRlchI/Cg9vYmplY3RfaW5faW1hZ2UYAiADKAsyFy5ib3NkeW4u'
-    'YXBpLldvcmxkT2JqZWN0Ug1vYmplY3RJbkltYWdlEkQKDmltYWdlX3Jlc3BvbnNlGAMgASgLMh'
-    'kuYm9zZHluLmFwaS5JbWFnZVJlc3BvbnNlQgIYAVINaW1hZ2VSZXNwb25zZRJKCg9pbWFnZV9y'
-    'ZXNwb25zZXMYDSADKAsyIS5ib3NkeW4uYXBpLkltYWdlQ2FwdHVyZUFuZFNvdXJjZVIOaW1hZ2'
-    'VSZXNwb25zZXMSNAoUaW1hZ2Vfcm90YXRpb25fYW5nbGUYBiABKAFCAhgBUhJpbWFnZVJvdGF0'
-    'aW9uQW5nbGUSMwoKb3RoZXJfZGF0YRgEIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlSCW90aG'
-    'VyRGF0YRI4CgZzdGF0dXMYBSABKA4yIC5ib3NkeW4uYXBpLk5ldHdvcmtDb21wdXRlU3RhdHVz'
-    'UgZzdGF0dXMSSgoSY3VzdG9tX3BhcmFtX2Vycm9yGAsgASgLMhwuYm9zZHluLmFwaS5DdXN0b2'
-    '1QYXJhbUVycm9yUhBjdXN0b21QYXJhbUVycm9yEjgKCmFsZXJ0X2RhdGEYByABKAsyFS5ib3Nk'
-    'eW4uYXBpLkFsZXJ0RGF0YUICGAFSCWFsZXJ0RGF0YRJZCg1vdXRwdXRfaW1hZ2VzGAggAygLMj'
-    'QuYm9zZHluLmFwaS5OZXR3b3JrQ29tcHV0ZVJlc3BvbnNlLk91dHB1dEltYWdlc0VudHJ5Ugxv'
-    'dXRwdXRJbWFnZXMSYQoPcm9pX291dHB1dF9kYXRhGAogAygLMjUuYm9zZHluLmFwaS5OZXR3b3'
-    'JrQ29tcHV0ZVJlc3BvbnNlLlJvaU91dHB1dERhdGFFbnRyeUICGAFSDXJvaU91dHB1dERhdGEa'
-    'WAoRT3V0cHV0SW1hZ2VzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSLQoFdmFsdWUYAiABKAsyFy'
-    '5ib3NkeW4uYXBpLk91dHB1dEltYWdlUgV2YWx1ZToCOAEaWAoSUm9pT3V0cHV0RGF0YUVudHJ5'
-    'EhAKA2tleRgBIAEoCVIDa2V5EiwKBXZhbHVlGAIgASgLMhYuYm9zZHluLmFwaS5PdXRwdXREYX'
-    'RhUgV2YWx1ZToCOAE=');
+    'VzcG9uc2VIZWFkZXJSBmhlYWRlchJDCg9vYmplY3RfaW5faW1hZ2UYAiADKAsyFy5ib3NkeW4u'
+    'YXBpLldvcmxkT2JqZWN0QgIYAVINb2JqZWN0SW5JbWFnZRJECg5pbWFnZV9yZXNwb25zZRgDIA'
+    'EoCzIZLmJvc2R5bi5hcGkuSW1hZ2VSZXNwb25zZUICGAFSDWltYWdlUmVzcG9uc2USSgoPaW1h'
+    'Z2VfcmVzcG9uc2VzGA0gAygLMiEuYm9zZHluLmFwaS5JbWFnZUNhcHR1cmVBbmRTb3VyY2VSDm'
+    'ltYWdlUmVzcG9uc2VzEjQKFGltYWdlX3JvdGF0aW9uX2FuZ2xlGAYgASgBQgIYAVISaW1hZ2VS'
+    'b3RhdGlvbkFuZ2xlEjMKCm90aGVyX2RhdGEYBCABKAsyFC5nb29nbGUucHJvdG9idWYuQW55Ug'
+    'lvdGhlckRhdGESOAoGc3RhdHVzGAUgASgOMiAuYm9zZHluLmFwaS5OZXR3b3JrQ29tcHV0ZVN0'
+    'YXR1c1IGc3RhdHVzEkoKEmN1c3RvbV9wYXJhbV9lcnJvchgLIAEoCzIcLmJvc2R5bi5hcGkuQ3'
+    'VzdG9tUGFyYW1FcnJvclIQY3VzdG9tUGFyYW1FcnJvchI4CgphbGVydF9kYXRhGAcgASgLMhUu'
+    'Ym9zZHluLmFwaS5BbGVydERhdGFCAhgBUglhbGVydERhdGESWQoNb3V0cHV0X2ltYWdlcxgIIA'
+    'MoCzI0LmJvc2R5bi5hcGkuTmV0d29ya0NvbXB1dGVSZXNwb25zZS5PdXRwdXRJbWFnZXNFbnRy'
+    'eVIMb3V0cHV0SW1hZ2VzEmEKD3JvaV9vdXRwdXRfZGF0YRgKIAMoCzI1LmJvc2R5bi5hcGkuTm'
+    'V0d29ya0NvbXB1dGVSZXNwb25zZS5Sb2lPdXRwdXREYXRhRW50cnlCAhgBUg1yb2lPdXRwdXRE'
+    'YXRhGlgKEU91dHB1dEltYWdlc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5Ei0KBXZhbHVlGAIgAS'
+    'gLMhcuYm9zZHluLmFwaS5PdXRwdXRJbWFnZVIFdmFsdWU6AjgBGlgKElJvaU91dHB1dERhdGFF'
+    'bnRyeRIQCgNrZXkYASABKAlSA2tleRIsCgV2YWx1ZRgCIAEoCzIWLmJvc2R5bi5hcGkuT3V0cH'
+    'V0RGF0YVIFdmFsdWU6AjgB');
 
 @$core.Deprecated('Use workerComputeRequestDescriptor instead')
 const WorkerComputeRequest$json = {

@@ -37,6 +37,10 @@ class PowerServiceClient extends $grpc.Client {
       '/bosdyn.api.PowerService/FanPowerCommandFeedback',
       ($22.FanPowerCommandFeedbackRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $22.FanPowerCommandFeedbackResponse.fromBuffer(value));
+  static final _$resetSafetyStop = $grpc.ClientMethod<$22.ResetSafetyStopRequest, $22.ResetSafetyStopResponse>(
+      '/bosdyn.api.PowerService/ResetSafetyStop',
+      ($22.ResetSafetyStopRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $22.ResetSafetyStopResponse.fromBuffer(value));
 
   PowerServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -58,6 +62,10 @@ class PowerServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$22.FanPowerCommandFeedbackResponse> fanPowerCommandFeedback($22.FanPowerCommandFeedbackRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$fanPowerCommandFeedback, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$22.ResetSafetyStopResponse> resetSafetyStop($22.ResetSafetyStopRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$resetSafetyStop, request, options: options);
   }
 }
 
@@ -94,6 +102,13 @@ abstract class PowerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $22.FanPowerCommandFeedbackRequest.fromBuffer(value),
         ($22.FanPowerCommandFeedbackResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$22.ResetSafetyStopRequest, $22.ResetSafetyStopResponse>(
+        'ResetSafetyStop',
+        resetSafetyStop_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $22.ResetSafetyStopRequest.fromBuffer(value),
+        ($22.ResetSafetyStopResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$22.PowerCommandResponse> powerCommand_Pre($grpc.ServiceCall call, $async.Future<$22.PowerCommandRequest> request) async {
@@ -112,8 +127,13 @@ abstract class PowerServiceBase extends $grpc.Service {
     return fanPowerCommandFeedback(call, await request);
   }
 
+  $async.Future<$22.ResetSafetyStopResponse> resetSafetyStop_Pre($grpc.ServiceCall call, $async.Future<$22.ResetSafetyStopRequest> request) async {
+    return resetSafetyStop(call, await request);
+  }
+
   $async.Future<$22.PowerCommandResponse> powerCommand($grpc.ServiceCall call, $22.PowerCommandRequest request);
   $async.Future<$22.PowerCommandFeedbackResponse> powerCommandFeedback($grpc.ServiceCall call, $22.PowerCommandFeedbackRequest request);
   $async.Future<$22.FanPowerCommandResponse> fanPowerCommand($grpc.ServiceCall call, $22.FanPowerCommandRequest request);
   $async.Future<$22.FanPowerCommandFeedbackResponse> fanPowerCommandFeedback($grpc.ServiceCall call, $22.FanPowerCommandFeedbackRequest request);
+  $async.Future<$22.ResetSafetyStopResponse> resetSafetyStop($grpc.ServiceCall call, $22.ResetSafetyStopRequest request);
 }

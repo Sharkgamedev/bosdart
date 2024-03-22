@@ -22,6 +22,7 @@ const DataAcquisitionCapability$json = {
     {'1': 'channel_name', '3': 3, '4': 1, '5': 9, '10': 'channelName'},
     {'1': 'service_name', '3': 4, '4': 1, '5': 9, '10': 'serviceName'},
     {'1': 'custom_params', '3': 5, '4': 1, '5': 11, '6': '.bosdyn.api.DictParam.Spec', '10': 'customParams'},
+    {'1': 'has_live_data', '3': 6, '4': 1, '5': 8, '10': 'hasLiveData'},
   ],
 };
 
@@ -30,7 +31,8 @@ final $typed_data.Uint8List dataAcquisitionCapabilityDescriptor = $convert.base6
     'ChlEYXRhQWNxdWlzaXRpb25DYXBhYmlsaXR5EhIKBG5hbWUYASABKAlSBG5hbWUSIAoLZGVzY3'
     'JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uEiEKDGNoYW5uZWxfbmFtZRgDIAEoCVILY2hhbm5l'
     'bE5hbWUSIQoMc2VydmljZV9uYW1lGAQgASgJUgtzZXJ2aWNlTmFtZRI/Cg1jdXN0b21fcGFyYW'
-    '1zGAUgASgLMhouYm9zZHluLmFwaS5EaWN0UGFyYW0uU3BlY1IMY3VzdG9tUGFyYW1z');
+    '1zGAUgASgLMhouYm9zZHluLmFwaS5EaWN0UGFyYW0uU3BlY1IMY3VzdG9tUGFyYW1zEiIKDWhh'
+    'c19saXZlX2RhdGEYBiABKAhSC2hhc0xpdmVEYXRh');
 
 @$core.Deprecated('Use imageAcquisitionCapabilityDescriptor instead')
 const ImageAcquisitionCapability$json = {
@@ -601,4 +603,85 @@ final $typed_data.Uint8List cancelAcquisitionResponseDescriptor = $convert.base6
     'bmNlbEFjcXVpc2l0aW9uUmVzcG9uc2UuU3RhdHVzUgZzdGF0dXMibgoGU3RhdHVzEhIKDlNUQV'
     'RVU19VTktOT1dOEAASDQoJU1RBVFVTX09LEAESGwoXU1RBVFVTX0ZBSUxFRF9UT19DQU5DRUwQ'
     'AhIkCiBTVEFUVVNfUkVRVUVTVF9JRF9ET0VTX05PVF9FWElTVBAD');
+
+@$core.Deprecated('Use liveDataRequestDescriptor instead')
+const LiveDataRequest$json = {
+  '1': 'LiveDataRequest',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
+    {'1': 'data_captures', '3': 3, '4': 3, '5': 11, '6': '.bosdyn.api.DataCapture', '10': 'dataCaptures'},
+  ],
+  '9': [
+    {'1': 2, '2': 3},
+  ],
+};
+
+/// Descriptor for `LiveDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveDataRequestDescriptor = $convert.base64Decode(
+    'Cg9MaXZlRGF0YVJlcXVlc3QSMQoGaGVhZGVyGAEgASgLMhkuYm9zZHluLmFwaS5SZXF1ZXN0SG'
+    'VhZGVyUgZoZWFkZXISPAoNZGF0YV9jYXB0dXJlcxgDIAMoCzIXLmJvc2R5bi5hcGkuRGF0YUNh'
+    'cHR1cmVSDGRhdGFDYXB0dXJlc0oECAIQAw==');
+
+@$core.Deprecated('Use liveDataResponseDescriptor instead')
+const LiveDataResponse$json = {
+  '1': 'LiveDataResponse',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
+    {'1': 'live_data', '3': 3, '4': 3, '5': 11, '6': '.bosdyn.api.LiveDataResponse.CapabilityLiveData', '10': 'liveData'},
+  ],
+  '3': [LiveDataResponse_CapabilityLiveData$json],
+  '9': [
+    {'1': 2, '2': 3},
+  ],
+};
+
+@$core.Deprecated('Use liveDataResponseDescriptor instead')
+const LiveDataResponse_CapabilityLiveData$json = {
+  '1': 'CapabilityLiveData',
+  '2': [
+    {'1': 'signals', '3': 1, '4': 3, '5': 11, '6': '.bosdyn.api.LiveDataResponse.CapabilityLiveData.SignalsEntry', '10': 'signals'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'status', '3': 3, '4': 1, '5': 14, '6': '.bosdyn.api.LiveDataResponse.CapabilityLiveData.Status', '10': 'status'},
+    {'1': 'custom_param_error', '3': 4, '4': 1, '5': 11, '6': '.bosdyn.api.CustomParamError', '10': 'customParamError'},
+  ],
+  '3': [LiveDataResponse_CapabilityLiveData_SignalsEntry$json],
+  '4': [LiveDataResponse_CapabilityLiveData_Status$json],
+};
+
+@$core.Deprecated('Use liveDataResponseDescriptor instead')
+const LiveDataResponse_CapabilityLiveData_SignalsEntry$json = {
+  '1': 'SignalsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.Signal', '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+@$core.Deprecated('Use liveDataResponseDescriptor instead')
+const LiveDataResponse_CapabilityLiveData_Status$json = {
+  '1': 'Status',
+  '2': [
+    {'1': 'STATUS_UNKNOWN', '2': 0},
+    {'1': 'STATUS_OK', '2': 1},
+    {'1': 'STATUS_UNKNOWN_CAPTURE_TYPE', '2': 2},
+    {'1': 'STATUS_CUSTOM_PARAMS_ERROR', '2': 3},
+    {'1': 'STATUS_INTERNAL_ERROR', '2': 4},
+  ],
+};
+
+/// Descriptor for `LiveDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveDataResponseDescriptor = $convert.base64Decode(
+    'ChBMaXZlRGF0YVJlc3BvbnNlEjIKBmhlYWRlchgBIAEoCzIaLmJvc2R5bi5hcGkuUmVzcG9uc2'
+    'VIZWFkZXJSBmhlYWRlchJMCglsaXZlX2RhdGEYAyADKAsyLy5ib3NkeW4uYXBpLkxpdmVEYXRh'
+    'UmVzcG9uc2UuQ2FwYWJpbGl0eUxpdmVEYXRhUghsaXZlRGF0YRr2AwoSQ2FwYWJpbGl0eUxpdm'
+    'VEYXRhElYKB3NpZ25hbHMYASADKAsyPC5ib3NkeW4uYXBpLkxpdmVEYXRhUmVzcG9uc2UuQ2Fw'
+    'YWJpbGl0eUxpdmVEYXRhLlNpZ25hbHNFbnRyeVIHc2lnbmFscxISCgRuYW1lGAIgASgJUgRuYW'
+    '1lEk4KBnN0YXR1cxgDIAEoDjI2LmJvc2R5bi5hcGkuTGl2ZURhdGFSZXNwb25zZS5DYXBhYmls'
+    'aXR5TGl2ZURhdGEuU3RhdHVzUgZzdGF0dXMSSgoSY3VzdG9tX3BhcmFtX2Vycm9yGAQgASgLMh'
+    'wuYm9zZHluLmFwaS5DdXN0b21QYXJhbUVycm9yUhBjdXN0b21QYXJhbUVycm9yGk4KDFNpZ25h'
+    'bHNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIoCgV2YWx1ZRgCIAEoCzISLmJvc2R5bi5hcGkuU2'
+    'lnbmFsUgV2YWx1ZToCOAEihwEKBlN0YXR1cxISCg5TVEFUVVNfVU5LTk9XThAAEg0KCVNUQVRV'
+    'U19PSxABEh8KG1NUQVRVU19VTktOT1dOX0NBUFRVUkVfVFlQRRACEh4KGlNUQVRVU19DVVNUT0'
+    '1fUEFSQU1TX0VSUk9SEAMSGQoVU1RBVFVTX0lOVEVSTkFMX0VSUk9SEARKBAgCEAM=');
 

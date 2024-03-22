@@ -97,3 +97,37 @@ abstract class RobotCommandServiceBase extends $grpc.Service {
   $async.Future<$24.RobotCommandFeedbackResponse> robotCommandFeedback($grpc.ServiceCall call, $24.RobotCommandFeedbackRequest request);
   $async.Future<$24.ClearBehaviorFaultResponse> clearBehaviorFault($grpc.ServiceCall call, $24.ClearBehaviorFaultRequest request);
 }
+@$pb.GrpcServiceName('bosdyn.api.RobotCommandStreamingService')
+class RobotCommandStreamingServiceClient extends $grpc.Client {
+  static final _$jointControlStream = $grpc.ClientMethod<$24.JointControlStreamRequest, $24.JointControlStreamResponse>(
+      '/bosdyn.api.RobotCommandStreamingService/JointControlStream',
+      ($24.JointControlStreamRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $24.JointControlStreamResponse.fromBuffer(value));
+
+  RobotCommandStreamingServiceClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
+      : super(channel, options: options,
+        interceptors: interceptors);
+
+  $grpc.ResponseFuture<$24.JointControlStreamResponse> jointControlStream($async.Stream<$24.JointControlStreamRequest> request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$jointControlStream, request, options: options).single;
+  }
+}
+
+@$pb.GrpcServiceName('bosdyn.api.RobotCommandStreamingService')
+abstract class RobotCommandStreamingServiceBase extends $grpc.Service {
+  $core.String get $name => 'bosdyn.api.RobotCommandStreamingService';
+
+  RobotCommandStreamingServiceBase() {
+    $addMethod($grpc.ServiceMethod<$24.JointControlStreamRequest, $24.JointControlStreamResponse>(
+        'JointControlStream',
+        jointControlStream,
+        true,
+        false,
+        ($core.List<$core.int> value) => $24.JointControlStreamRequest.fromBuffer(value),
+        ($24.JointControlStreamResponse value) => value.writeToBuffer()));
+  }
+
+  $async.Future<$24.JointControlStreamResponse> jointControlStream($grpc.ServiceCall call, $async.Stream<$24.JointControlStreamRequest> request);
+}

@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $60;
-import 'geometry.pb.dart' as $61;
-import 'header.pb.dart' as $68;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
+import 'geometry.pb.dart' as $60;
+import 'header.pb.dart' as $67;
 import 'local_grid.pbenum.dart';
 
 export 'local_grid.pbenum.dart';
@@ -223,8 +223,8 @@ class LocalGrid extends $pb.GeneratedMessage {
     $core.double? cellValueScale,
     $core.double? cellValueOffset,
     $core.String? frameNameLocalGridData,
-    $60.Timestamp? acquisitionTime,
-    $61.FrameTreeSnapshot? transformsSnapshot,
+    $59.Timestamp? acquisitionTime,
+    $60.FrameTreeSnapshot? transformsSnapshot,
   }) {
     final $result = create();
     if (localGridTypeName != null) {
@@ -276,8 +276,8 @@ class LocalGrid extends $pb.GeneratedMessage {
     ..a<$core.double>(8, _omitFieldNames ? '' : 'cellValueScale', $pb.PbFieldType.OD)
     ..a<$core.double>(9, _omitFieldNames ? '' : 'cellValueOffset', $pb.PbFieldType.OD)
     ..aOS(11, _omitFieldNames ? '' : 'frameNameLocalGridData')
-    ..aOM<$60.Timestamp>(30, _omitFieldNames ? '' : 'acquisitionTime', subBuilder: $60.Timestamp.create)
-    ..aOM<$61.FrameTreeSnapshot>(31, _omitFieldNames ? '' : 'transformsSnapshot', subBuilder: $61.FrameTreeSnapshot.create)
+    ..aOM<$59.Timestamp>(30, _omitFieldNames ? '' : 'acquisitionTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.FrameTreeSnapshot>(31, _omitFieldNames ? '' : 'transformsSnapshot', subBuilder: $60.FrameTreeSnapshot.create)
     ..hasRequiredFields = false
   ;
 
@@ -400,29 +400,29 @@ class LocalGrid extends $pb.GeneratedMessage {
 
   /// The time at which the local grid data was computed and last valid at.
   @$pb.TagNumber(30)
-  $60.Timestamp get acquisitionTime => $_getN(9);
+  $59.Timestamp get acquisitionTime => $_getN(9);
   @$pb.TagNumber(30)
-  set acquisitionTime($60.Timestamp v) { setField(30, v); }
+  set acquisitionTime($59.Timestamp v) { setField(30, v); }
   @$pb.TagNumber(30)
   $core.bool hasAcquisitionTime() => $_has(9);
   @$pb.TagNumber(30)
   void clearAcquisitionTime() => clearField(30);
   @$pb.TagNumber(30)
-  $60.Timestamp ensureAcquisitionTime() => $_ensure(9);
+  $59.Timestamp ensureAcquisitionTime() => $_ensure(9);
 
   /// A tree-based collection of transformations, which will include the transformations to each of
   /// the returned local grids in addition to transformations to the common frames ("vision", "body", "odom").
   /// All transforms within the snapshot are at the acquistion time of the local grid.
   @$pb.TagNumber(31)
-  $61.FrameTreeSnapshot get transformsSnapshot => $_getN(10);
+  $60.FrameTreeSnapshot get transformsSnapshot => $_getN(10);
   @$pb.TagNumber(31)
-  set transformsSnapshot($61.FrameTreeSnapshot v) { setField(31, v); }
+  set transformsSnapshot($60.FrameTreeSnapshot v) { setField(31, v); }
   @$pb.TagNumber(31)
   $core.bool hasTransformsSnapshot() => $_has(10);
   @$pb.TagNumber(31)
   void clearTransformsSnapshot() => clearField(31);
   @$pb.TagNumber(31)
-  $61.FrameTreeSnapshot ensureTransformsSnapshot() => $_ensure(10);
+  $60.FrameTreeSnapshot ensureTransformsSnapshot() => $_ensure(10);
 }
 
 /// The local grid response message will contain either the local grid or an error status.
@@ -512,7 +512,7 @@ class LocalGridResponse extends $pb.GeneratedMessage {
 /// The GetLocalGridTypes request message asks to the local grid types.
 class GetLocalGridTypesRequest extends $pb.GeneratedMessage {
   factory GetLocalGridTypesRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -525,7 +525,7 @@ class GetLocalGridTypesRequest extends $pb.GeneratedMessage {
   factory GetLocalGridTypesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocalGridTypesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -552,21 +552,21 @@ class GetLocalGridTypesRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The GetLocalGridTypes response message returns to get all known string names for local grid types.
 class GetLocalGridTypesResponse extends $pb.GeneratedMessage {
   factory GetLocalGridTypesResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<LocalGridType>? localGridType,
   }) {
     final $result = create();
@@ -583,7 +583,7 @@ class GetLocalGridTypesResponse extends $pb.GeneratedMessage {
   factory GetLocalGridTypesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocalGridTypesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<LocalGridType>(2, _omitFieldNames ? '' : 'localGridType', $pb.PbFieldType.PM, subBuilder: LocalGridType.create)
     ..hasRequiredFields = false
   ;
@@ -611,15 +611,15 @@ class GetLocalGridTypesResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The list of available local grid types.
   @$pb.TagNumber(2)
@@ -629,7 +629,7 @@ class GetLocalGridTypesResponse extends $pb.GeneratedMessage {
 /// The GetLocalGrid request message can request for multiple different types of local grids at one time.
 class GetLocalGridsRequest extends $pb.GeneratedMessage {
   factory GetLocalGridsRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<LocalGridRequest>? localGridRequests,
   }) {
     final $result = create();
@@ -646,7 +646,7 @@ class GetLocalGridsRequest extends $pb.GeneratedMessage {
   factory GetLocalGridsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocalGridsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pc<LocalGridRequest>(2, _omitFieldNames ? '' : 'localGridRequests', $pb.PbFieldType.PM, subBuilder: LocalGridRequest.create)
     ..hasRequiredFields = false
   ;
@@ -674,15 +674,15 @@ class GetLocalGridsRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Specifications of the requested local grids.
   @$pb.TagNumber(2)
@@ -693,7 +693,7 @@ class GetLocalGridsRequest extends $pb.GeneratedMessage {
 /// a numerical count representing the amount of status errors that occurred when getting this data.
 class GetLocalGridsResponse extends $pb.GeneratedMessage {
   factory GetLocalGridsResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<LocalGridResponse>? localGridResponses,
     $core.int? numLocalGridErrors,
   }) {
@@ -714,7 +714,7 @@ class GetLocalGridsResponse extends $pb.GeneratedMessage {
   factory GetLocalGridsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocalGridsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<LocalGridResponse>(2, _omitFieldNames ? '' : 'localGridResponses', $pb.PbFieldType.PM, subBuilder: LocalGridResponse.create)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'numLocalGridErrors', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
@@ -743,15 +743,15 @@ class GetLocalGridsResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Response of local grid or error status for each requested local grid.
   @$pb.TagNumber(2)

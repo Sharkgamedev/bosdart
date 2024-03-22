@@ -15,20 +15,20 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'license.pb.dart' as $14;
+import 'license.pb.dart' as $15;
 
 export 'license_service.pb.dart';
 
 @$pb.GrpcServiceName('bosdyn.api.LicenseService')
 class LicenseServiceClient extends $grpc.Client {
-  static final _$getLicenseInfo = $grpc.ClientMethod<$14.GetLicenseInfoRequest, $14.GetLicenseInfoResponse>(
+  static final _$getLicenseInfo = $grpc.ClientMethod<$15.GetLicenseInfoRequest, $15.GetLicenseInfoResponse>(
       '/bosdyn.api.LicenseService/GetLicenseInfo',
-      ($14.GetLicenseInfoRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $14.GetLicenseInfoResponse.fromBuffer(value));
-  static final _$getFeatureEnabled = $grpc.ClientMethod<$14.GetFeatureEnabledRequest, $14.GetFeatureEnabledResponse>(
+      ($15.GetLicenseInfoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.GetLicenseInfoResponse.fromBuffer(value));
+  static final _$getFeatureEnabled = $grpc.ClientMethod<$15.GetFeatureEnabledRequest, $15.GetFeatureEnabledResponse>(
       '/bosdyn.api.LicenseService/GetFeatureEnabled',
-      ($14.GetFeatureEnabledRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $14.GetFeatureEnabledResponse.fromBuffer(value));
+      ($15.GetFeatureEnabledRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $15.GetFeatureEnabledResponse.fromBuffer(value));
 
   LicenseServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -36,11 +36,11 @@ class LicenseServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$14.GetLicenseInfoResponse> getLicenseInfo($14.GetLicenseInfoRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.GetLicenseInfoResponse> getLicenseInfo($15.GetLicenseInfoRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getLicenseInfo, request, options: options);
   }
 
-  $grpc.ResponseFuture<$14.GetFeatureEnabledResponse> getFeatureEnabled($14.GetFeatureEnabledRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$15.GetFeatureEnabledResponse> getFeatureEnabled($15.GetFeatureEnabledRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getFeatureEnabled, request, options: options);
   }
 }
@@ -50,30 +50,30 @@ abstract class LicenseServiceBase extends $grpc.Service {
   $core.String get $name => 'bosdyn.api.LicenseService';
 
   LicenseServiceBase() {
-    $addMethod($grpc.ServiceMethod<$14.GetLicenseInfoRequest, $14.GetLicenseInfoResponse>(
+    $addMethod($grpc.ServiceMethod<$15.GetLicenseInfoRequest, $15.GetLicenseInfoResponse>(
         'GetLicenseInfo',
         getLicenseInfo_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $14.GetLicenseInfoRequest.fromBuffer(value),
-        ($14.GetLicenseInfoResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$14.GetFeatureEnabledRequest, $14.GetFeatureEnabledResponse>(
+        ($core.List<$core.int> value) => $15.GetLicenseInfoRequest.fromBuffer(value),
+        ($15.GetLicenseInfoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$15.GetFeatureEnabledRequest, $15.GetFeatureEnabledResponse>(
         'GetFeatureEnabled',
         getFeatureEnabled_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $14.GetFeatureEnabledRequest.fromBuffer(value),
-        ($14.GetFeatureEnabledResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $15.GetFeatureEnabledRequest.fromBuffer(value),
+        ($15.GetFeatureEnabledResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$14.GetLicenseInfoResponse> getLicenseInfo_Pre($grpc.ServiceCall call, $async.Future<$14.GetLicenseInfoRequest> request) async {
+  $async.Future<$15.GetLicenseInfoResponse> getLicenseInfo_Pre($grpc.ServiceCall call, $async.Future<$15.GetLicenseInfoRequest> request) async {
     return getLicenseInfo(call, await request);
   }
 
-  $async.Future<$14.GetFeatureEnabledResponse> getFeatureEnabled_Pre($grpc.ServiceCall call, $async.Future<$14.GetFeatureEnabledRequest> request) async {
+  $async.Future<$15.GetFeatureEnabledResponse> getFeatureEnabled_Pre($grpc.ServiceCall call, $async.Future<$15.GetFeatureEnabledRequest> request) async {
     return getFeatureEnabled(call, await request);
   }
 
-  $async.Future<$14.GetLicenseInfoResponse> getLicenseInfo($grpc.ServiceCall call, $14.GetLicenseInfoRequest request);
-  $async.Future<$14.GetFeatureEnabledResponse> getFeatureEnabled($grpc.ServiceCall call, $14.GetFeatureEnabledRequest request);
+  $async.Future<$15.GetLicenseInfoResponse> getLicenseInfo($grpc.ServiceCall call, $15.GetLicenseInfoRequest request);
+  $async.Future<$15.GetFeatureEnabledResponse> getFeatureEnabled($grpc.ServiceCall call, $15.GetFeatureEnabledRequest request);
 }

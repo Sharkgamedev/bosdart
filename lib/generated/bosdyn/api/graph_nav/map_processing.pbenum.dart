@@ -69,5 +69,23 @@ class ProcessAnchoringResponse_Status extends $pb.ProtobufEnum {
   const ProcessAnchoringResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Status of the GPS embedding optimization.
+class ProcessAnchoringResponse_GPSResult_GPSStatus extends $pb.ProtobufEnum {
+  static const ProcessAnchoringResponse_GPSResult_GPSStatus GPS_STATUS_UNKNOWN = ProcessAnchoringResponse_GPSResult_GPSStatus._(0, _omitEnumNames ? '' : 'GPS_STATUS_UNKNOWN');
+  static const ProcessAnchoringResponse_GPSResult_GPSStatus GPS_STATUS_OK = ProcessAnchoringResponse_GPSResult_GPSStatus._(1, _omitEnumNames ? '' : 'GPS_STATUS_OK');
+  static const ProcessAnchoringResponse_GPSResult_GPSStatus GPS_STATUS_NOT_ENOUGH_MEASUREMENTS = ProcessAnchoringResponse_GPSResult_GPSStatus._(2, _omitEnumNames ? '' : 'GPS_STATUS_NOT_ENOUGH_MEASUREMENTS');
+
+  static const $core.List<ProcessAnchoringResponse_GPSResult_GPSStatus> values = <ProcessAnchoringResponse_GPSResult_GPSStatus> [
+    GPS_STATUS_UNKNOWN,
+    GPS_STATUS_OK,
+    GPS_STATUS_NOT_ENOUGH_MEASUREMENTS,
+  ];
+
+  static final $core.Map<$core.int, ProcessAnchoringResponse_GPSResult_GPSStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ProcessAnchoringResponse_GPSResult_GPSStatus? valueOf($core.int value) => _byValue[value];
+
+  const ProcessAnchoringResponse_GPSResult_GPSStatus._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

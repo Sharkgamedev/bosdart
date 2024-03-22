@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $60;
-import '../header.pb.dart' as $68;
-import '../lease.pb.dart' as $13;
+import '../../../google/protobuf/timestamp.pb.dart' as $59;
+import '../header.pb.dart' as $67;
+import '../lease.pb.dart' as $14;
 import 'spot_check.pbenum.dart';
 
 export 'spot_check.pbenum.dart';
@@ -23,8 +23,8 @@ export 'spot_check.pbenum.dart';
 /// Request for the SpotCheckCommand service.
 class SpotCheckCommandRequest extends $pb.GeneratedMessage {
   factory SpotCheckCommandRequest({
-    $68.RequestHeader? header,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $14.Lease? lease,
     SpotCheckCommandRequest_Command? command,
   }) {
     final $result = create();
@@ -44,8 +44,8 @@ class SpotCheckCommandRequest extends $pb.GeneratedMessage {
   factory SpotCheckCommandRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SpotCheckCommandRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$13.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$14.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..e<SpotCheckCommandRequest_Command>(3, _omitFieldNames ? '' : 'command', $pb.PbFieldType.OE, defaultOrMaker: SpotCheckCommandRequest_Command.COMMAND_UNKNOWN, valueOf: SpotCheckCommandRequest_Command.valueOf, enumValues: SpotCheckCommandRequest_Command.values)
     ..hasRequiredFields = false
   ;
@@ -73,29 +73,29 @@ class SpotCheckCommandRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The Lease to show ownership of the robot. Lease required to issue any SpotCheck command.
   @$pb.TagNumber(2)
-  $13.Lease get lease => $_getN(1);
+  $14.Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
-  set lease($13.Lease v) { setField(2, v); }
+  set lease($14.Lease v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLease() => $_has(1);
   @$pb.TagNumber(2)
   void clearLease() => clearField(2);
   @$pb.TagNumber(2)
-  $13.Lease ensureLease() => $_ensure(1);
+  $14.Lease ensureLease() => $_ensure(1);
 
-  /// The describing what the spot check service should do.
+  /// The command describing what the spot check service should do.
   @$pb.TagNumber(3)
   SpotCheckCommandRequest_Command get command => $_getN(2);
   @$pb.TagNumber(3)
@@ -109,8 +109,8 @@ class SpotCheckCommandRequest extends $pb.GeneratedMessage {
 /// Response for the SpotCheckCommand service.
 class SpotCheckCommandResponse extends $pb.GeneratedMessage {
   factory SpotCheckCommandResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
     SpotCheckCommandResponse_Status? status,
     $core.String? message,
   }) {
@@ -134,8 +134,8 @@ class SpotCheckCommandResponse extends $pb.GeneratedMessage {
   factory SpotCheckCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SpotCheckCommandResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..e<SpotCheckCommandResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: SpotCheckCommandResponse_Status.STATUS_UNKNOWN, valueOf: SpotCheckCommandResponse_Status.valueOf, enumValues: SpotCheckCommandResponse_Status.values)
     ..aOS(4, _omitFieldNames ? '' : 'message')
     ..hasRequiredFields = false
@@ -164,27 +164,27 @@ class SpotCheckCommandResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Details about how the lease was used.
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
   /// Command status
   @$pb.TagNumber(3)
@@ -210,7 +210,7 @@ class SpotCheckCommandResponse extends $pb.GeneratedMessage {
 /// Request for the SpotCheckFeedback service.
 class SpotCheckFeedbackRequest extends $pb.GeneratedMessage {
   factory SpotCheckFeedbackRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -223,7 +223,7 @@ class SpotCheckFeedbackRequest extends $pb.GeneratedMessage {
   factory SpotCheckFeedbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SpotCheckFeedbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -250,21 +250,21 @@ class SpotCheckFeedbackRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Response for the SpotCheckFeedback service.
 class SpotCheckFeedbackResponse extends $pb.GeneratedMessage {
   factory SpotCheckFeedbackResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     SpotCheckFeedbackResponse_State? state,
     $core.Map<$core.String, DepthPlaneSpotCheckResult>? cameraResults,
     $core.Map<$core.String, LoadCellSpotCheckResult>? loadCellResults,
@@ -272,11 +272,7 @@ class SpotCheckFeedbackResponse extends $pb.GeneratedMessage {
     SpotCheckFeedbackResponse_Error? error,
     $core.double? progress,
     PayloadCheckResult? payloadResult,
-    $60.Timestamp? lastCalTimestamp,
-  @$core.Deprecated('This field is deprecated.')
-    $core.Map<$core.String, FootHeightCheckResult>? footHeightResults,
-  @$core.Deprecated('This field is deprecated.')
-    $core.Map<$core.String, LegPairCheckResult>? legPairResults,
+    $59.Timestamp? lastCalTimestamp,
     SpotCheckCommandRequest_Command? lastCommand,
     $core.Map<$core.String, HipRangeOfMotionResult>? hipRangeOfMotionResults,
   }) {
@@ -308,14 +304,6 @@ class SpotCheckFeedbackResponse extends $pb.GeneratedMessage {
     if (lastCalTimestamp != null) {
       $result.lastCalTimestamp = lastCalTimestamp;
     }
-    if (footHeightResults != null) {
-      // ignore: deprecated_member_use_from_same_package
-      $result.footHeightResults.addAll(footHeightResults);
-    }
-    if (legPairResults != null) {
-      // ignore: deprecated_member_use_from_same_package
-      $result.legPairResults.addAll(legPairResults);
-    }
     if (lastCommand != null) {
       $result.lastCommand = lastCommand;
     }
@@ -329,7 +317,7 @@ class SpotCheckFeedbackResponse extends $pb.GeneratedMessage {
   factory SpotCheckFeedbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SpotCheckFeedbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<SpotCheckFeedbackResponse_State>(2, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: SpotCheckFeedbackResponse_State.STATE_UNKNOWN, valueOf: SpotCheckFeedbackResponse_State.valueOf, enumValues: SpotCheckFeedbackResponse_State.values)
     ..m<$core.String, DepthPlaneSpotCheckResult>(3, _omitFieldNames ? '' : 'cameraResults', entryClassName: 'SpotCheckFeedbackResponse.CameraResultsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: DepthPlaneSpotCheckResult.create, valueDefaultOrMaker: DepthPlaneSpotCheckResult.getDefault, packageName: const $pb.PackageName('bosdyn.api.spot'))
     ..m<$core.String, LoadCellSpotCheckResult>(4, _omitFieldNames ? '' : 'loadCellResults', entryClassName: 'SpotCheckFeedbackResponse.LoadCellResultsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: LoadCellSpotCheckResult.create, valueDefaultOrMaker: LoadCellSpotCheckResult.getDefault, packageName: const $pb.PackageName('bosdyn.api.spot'))
@@ -337,9 +325,7 @@ class SpotCheckFeedbackResponse extends $pb.GeneratedMessage {
     ..e<SpotCheckFeedbackResponse_Error>(6, _omitFieldNames ? '' : 'error', $pb.PbFieldType.OE, defaultOrMaker: SpotCheckFeedbackResponse_Error.ERROR_UNKNOWN, valueOf: SpotCheckFeedbackResponse_Error.valueOf, enumValues: SpotCheckFeedbackResponse_Error.values)
     ..a<$core.double>(7, _omitFieldNames ? '' : 'progress', $pb.PbFieldType.OF)
     ..aOM<PayloadCheckResult>(8, _omitFieldNames ? '' : 'payloadResult', subBuilder: PayloadCheckResult.create)
-    ..aOM<$60.Timestamp>(9, _omitFieldNames ? '' : 'lastCalTimestamp', subBuilder: $60.Timestamp.create)
-    ..m<$core.String, FootHeightCheckResult>(10, _omitFieldNames ? '' : 'footHeightResults', entryClassName: 'SpotCheckFeedbackResponse.FootHeightResultsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: FootHeightCheckResult.create, valueDefaultOrMaker: FootHeightCheckResult.getDefault, packageName: const $pb.PackageName('bosdyn.api.spot'))
-    ..m<$core.String, LegPairCheckResult>(11, _omitFieldNames ? '' : 'legPairResults', entryClassName: 'SpotCheckFeedbackResponse.LegPairResultsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: LegPairCheckResult.create, valueDefaultOrMaker: LegPairCheckResult.getDefault, packageName: const $pb.PackageName('bosdyn.api.spot'))
+    ..aOM<$59.Timestamp>(9, _omitFieldNames ? '' : 'lastCalTimestamp', subBuilder: $59.Timestamp.create)
     ..e<SpotCheckCommandRequest_Command>(12, _omitFieldNames ? '' : 'lastCommand', $pb.PbFieldType.OE, defaultOrMaker: SpotCheckCommandRequest_Command.COMMAND_UNKNOWN, valueOf: SpotCheckCommandRequest_Command.valueOf, enumValues: SpotCheckCommandRequest_Command.values)
     ..m<$core.String, HipRangeOfMotionResult>(13, _omitFieldNames ? '' : 'hipRangeOfMotionResults', entryClassName: 'SpotCheckFeedbackResponse.HipRangeOfMotionResultsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: HipRangeOfMotionResult.create, valueDefaultOrMaker: HipRangeOfMotionResult.getDefault, packageName: const $pb.PackageName('bosdyn.api.spot'))
     ..hasRequiredFields = false
@@ -368,15 +354,15 @@ class SpotCheckFeedbackResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The state of the spot check routine.
   @$pb.TagNumber(2)
@@ -437,45 +423,31 @@ class SpotCheckFeedbackResponse extends $pb.GeneratedMessage {
 
   /// Timestamp for the most up-to-date calibration
   @$pb.TagNumber(9)
-  $60.Timestamp get lastCalTimestamp => $_getN(8);
+  $59.Timestamp get lastCalTimestamp => $_getN(8);
   @$pb.TagNumber(9)
-  set lastCalTimestamp($60.Timestamp v) { setField(9, v); }
+  set lastCalTimestamp($59.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasLastCalTimestamp() => $_has(8);
   @$pb.TagNumber(9)
   void clearLastCalTimestamp() => clearField(9);
   @$pb.TagNumber(9)
-  $60.Timestamp ensureLastCalTimestamp() => $_ensure(8);
-
-  /// Results of foot height validation.
-  /// The key string is the name of the leg (e.g. fl, fr, hl, ...)
-  /// DEPRECATED as of 2.3.  Will be removed in 4.0.  Field is no longer being populated.
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(10)
-  $core.Map<$core.String, FootHeightCheckResult> get footHeightResults => $_getMap(9);
-
-  /// Results of leg pair validation.
-  /// The key string is the name of the leg pair (e.g. fl-fr, fl-hl, ...)
-  /// DEPRECATED as of 2.3.  Will be removed in 4.0. Field is no longer being populated.
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(11)
-  $core.Map<$core.String, LegPairCheckResult> get legPairResults => $_getMap(10);
+  $59.Timestamp ensureLastCalTimestamp() => $_ensure(8);
 
   /// The last command executed by Spotcheck. When SpotCheck is in state WAITING_FOR_COMMAND,
   /// the last command has completed.
   @$pb.TagNumber(12)
-  SpotCheckCommandRequest_Command get lastCommand => $_getN(11);
+  SpotCheckCommandRequest_Command get lastCommand => $_getN(9);
   @$pb.TagNumber(12)
   set lastCommand(SpotCheckCommandRequest_Command v) { setField(12, v); }
   @$pb.TagNumber(12)
-  $core.bool hasLastCommand() => $_has(11);
+  $core.bool hasLastCommand() => $_has(9);
   @$pb.TagNumber(12)
   void clearLastCommand() => clearField(12);
 
   /// Results of the hip range of motion check
   /// The key string is the name of the leg (e.g. fl, fr, hl, ...)
   @$pb.TagNumber(13)
-  $core.Map<$core.String, HipRangeOfMotionResult> get hipRangeOfMotionResults => $_getMap(12);
+  $core.Map<$core.String, HipRangeOfMotionResult> get hipRangeOfMotionResults => $_getMap(10);
 }
 
 /// Results from camera check.
@@ -1000,8 +972,8 @@ class HipRangeOfMotionResult extends $pb.GeneratedMessage {
 /// Request for the CameraCalibrationCommand service.
 class CameraCalibrationCommandRequest extends $pb.GeneratedMessage {
   factory CameraCalibrationCommandRequest({
-    $68.RequestHeader? header,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $14.Lease? lease,
     CameraCalibrationCommandRequest_Command? command,
   }) {
     final $result = create();
@@ -1021,8 +993,8 @@ class CameraCalibrationCommandRequest extends $pb.GeneratedMessage {
   factory CameraCalibrationCommandRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CameraCalibrationCommandRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$13.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$14.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..e<CameraCalibrationCommandRequest_Command>(3, _omitFieldNames ? '' : 'command', $pb.PbFieldType.OE, defaultOrMaker: CameraCalibrationCommandRequest_Command.COMMAND_UNKNOWN, valueOf: CameraCalibrationCommandRequest_Command.valueOf, enumValues: CameraCalibrationCommandRequest_Command.values)
     ..hasRequiredFields = false
   ;
@@ -1050,27 +1022,27 @@ class CameraCalibrationCommandRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The Lease to show ownership of the robot. Lease is required for all cal commands.
   @$pb.TagNumber(2)
-  $13.Lease get lease => $_getN(1);
+  $14.Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
-  set lease($13.Lease v) { setField(2, v); }
+  set lease($14.Lease v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLease() => $_has(1);
   @$pb.TagNumber(2)
   void clearLease() => clearField(2);
   @$pb.TagNumber(2)
-  $13.Lease ensureLease() => $_ensure(1);
+  $14.Lease ensureLease() => $_ensure(1);
 
   /// Command to start/stop the calibration.
   @$pb.TagNumber(3)
@@ -1086,8 +1058,8 @@ class CameraCalibrationCommandRequest extends $pb.GeneratedMessage {
 /// Response for the CameraCalibrationCommand service.
 class CameraCalibrationCommandResponse extends $pb.GeneratedMessage {
   factory CameraCalibrationCommandResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
   }) {
     final $result = create();
     if (header != null) {
@@ -1103,8 +1075,8 @@ class CameraCalibrationCommandResponse extends $pb.GeneratedMessage {
   factory CameraCalibrationCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CameraCalibrationCommandResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..hasRequiredFields = false
   ;
 
@@ -1131,33 +1103,33 @@ class CameraCalibrationCommandResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Details about how the lease was used.
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 }
 
 /// Request for the CameraCalibrationFeedback service.
 class CameraCalibrationFeedbackRequest extends $pb.GeneratedMessage {
   factory CameraCalibrationFeedbackRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1170,7 +1142,7 @@ class CameraCalibrationFeedbackRequest extends $pb.GeneratedMessage {
   factory CameraCalibrationFeedbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CameraCalibrationFeedbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1197,21 +1169,21 @@ class CameraCalibrationFeedbackRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Response for the CameraCalibrationFeedback service.
 class CameraCalibrationFeedbackResponse extends $pb.GeneratedMessage {
   factory CameraCalibrationFeedbackResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     CameraCalibrationFeedbackResponse_Status? status,
     $core.double? progress,
   }) {
@@ -1232,7 +1204,7 @@ class CameraCalibrationFeedbackResponse extends $pb.GeneratedMessage {
   factory CameraCalibrationFeedbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CameraCalibrationFeedbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<CameraCalibrationFeedbackResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: CameraCalibrationFeedbackResponse_Status.STATUS_UNKNOWN, valueOf: CameraCalibrationFeedbackResponse_Status.valueOf, enumValues: CameraCalibrationFeedbackResponse_Status.values)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'progress', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
@@ -1261,15 +1233,15 @@ class CameraCalibrationFeedbackResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Status of camera calibration procedure.
   @$pb.TagNumber(2)
@@ -1291,6 +1263,320 @@ class CameraCalibrationFeedbackResponse extends $pb.GeneratedMessage {
   $core.bool hasProgress() => $_has(2);
   @$pb.TagNumber(3)
   void clearProgress() => clearField(3);
+}
+
+/// Request for the GripperCameraCalibrationCommand service.
+class GripperCameraCalibrationCommandRequest extends $pb.GeneratedMessage {
+  factory GripperCameraCalibrationCommandRequest({
+    $67.RequestHeader? header,
+    $14.Lease? lease,
+    GripperCameraCalibrationCommandRequest_Command? command,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (lease != null) {
+      $result.lease = lease;
+    }
+    if (command != null) {
+      $result.command = command;
+    }
+    return $result;
+  }
+  GripperCameraCalibrationCommandRequest._() : super();
+  factory GripperCameraCalibrationCommandRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GripperCameraCalibrationCommandRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GripperCameraCalibrationCommandRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$14.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
+    ..e<GripperCameraCalibrationCommandRequest_Command>(3, _omitFieldNames ? '' : 'command', $pb.PbFieldType.OE, defaultOrMaker: GripperCameraCalibrationCommandRequest_Command.COMMAND_UNKNOWN, valueOf: GripperCameraCalibrationCommandRequest_Command.valueOf, enumValues: GripperCameraCalibrationCommandRequest_Command.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GripperCameraCalibrationCommandRequest clone() => GripperCameraCalibrationCommandRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GripperCameraCalibrationCommandRequest copyWith(void Function(GripperCameraCalibrationCommandRequest) updates) => super.copyWith((message) => updates(message as GripperCameraCalibrationCommandRequest)) as GripperCameraCalibrationCommandRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GripperCameraCalibrationCommandRequest create() => GripperCameraCalibrationCommandRequest._();
+  GripperCameraCalibrationCommandRequest createEmptyInstance() => create();
+  static $pb.PbList<GripperCameraCalibrationCommandRequest> createRepeated() => $pb.PbList<GripperCameraCalibrationCommandRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GripperCameraCalibrationCommandRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GripperCameraCalibrationCommandRequest>(create);
+  static GripperCameraCalibrationCommandRequest? _defaultInstance;
+
+  /// Common request header.
+  @$pb.TagNumber(1)
+  $67.RequestHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.RequestHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.RequestHeader ensureHeader() => $_ensure(0);
+
+  /// The Lease to show ownership of the robot. Lease required to issue any
+  /// GripperCameraCalibration command.
+  @$pb.TagNumber(2)
+  $14.Lease get lease => $_getN(1);
+  @$pb.TagNumber(2)
+  set lease($14.Lease v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLease() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLease() => clearField(2);
+  @$pb.TagNumber(2)
+  $14.Lease ensureLease() => $_ensure(1);
+
+  /// The command describing what the GripperCameraCalibration service should do.
+  @$pb.TagNumber(3)
+  GripperCameraCalibrationCommandRequest_Command get command => $_getN(2);
+  @$pb.TagNumber(3)
+  set command(GripperCameraCalibrationCommandRequest_Command v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCommand() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCommand() => clearField(3);
+}
+
+/// Response for the GripperCameraCalibrationCommand service.
+class GripperCameraCalibrationCommandResponse extends $pb.GeneratedMessage {
+  factory GripperCameraCalibrationCommandResponse({
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (leaseUseResult != null) {
+      $result.leaseUseResult = leaseUseResult;
+    }
+    return $result;
+  }
+  GripperCameraCalibrationCommandResponse._() : super();
+  factory GripperCameraCalibrationCommandResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GripperCameraCalibrationCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GripperCameraCalibrationCommandResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GripperCameraCalibrationCommandResponse clone() => GripperCameraCalibrationCommandResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GripperCameraCalibrationCommandResponse copyWith(void Function(GripperCameraCalibrationCommandResponse) updates) => super.copyWith((message) => updates(message as GripperCameraCalibrationCommandResponse)) as GripperCameraCalibrationCommandResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GripperCameraCalibrationCommandResponse create() => GripperCameraCalibrationCommandResponse._();
+  GripperCameraCalibrationCommandResponse createEmptyInstance() => create();
+  static $pb.PbList<GripperCameraCalibrationCommandResponse> createRepeated() => $pb.PbList<GripperCameraCalibrationCommandResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GripperCameraCalibrationCommandResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GripperCameraCalibrationCommandResponse>(create);
+  static GripperCameraCalibrationCommandResponse? _defaultInstance;
+
+  /// Common response header.
+  @$pb.TagNumber(1)
+  $67.ResponseHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.ResponseHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
+
+  /// Details about how the lease was used.
+  @$pb.TagNumber(2)
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
+  @$pb.TagNumber(2)
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLeaseUseResult() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLeaseUseResult() => clearField(2);
+  @$pb.TagNumber(2)
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+}
+
+/// Request for the GripperCameraCalibrationFeedback service.
+class GripperCameraCalibrationFeedbackRequest extends $pb.GeneratedMessage {
+  factory GripperCameraCalibrationFeedbackRequest({
+    $67.RequestHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
+  GripperCameraCalibrationFeedbackRequest._() : super();
+  factory GripperCameraCalibrationFeedbackRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GripperCameraCalibrationFeedbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GripperCameraCalibrationFeedbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GripperCameraCalibrationFeedbackRequest clone() => GripperCameraCalibrationFeedbackRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GripperCameraCalibrationFeedbackRequest copyWith(void Function(GripperCameraCalibrationFeedbackRequest) updates) => super.copyWith((message) => updates(message as GripperCameraCalibrationFeedbackRequest)) as GripperCameraCalibrationFeedbackRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GripperCameraCalibrationFeedbackRequest create() => GripperCameraCalibrationFeedbackRequest._();
+  GripperCameraCalibrationFeedbackRequest createEmptyInstance() => create();
+  static $pb.PbList<GripperCameraCalibrationFeedbackRequest> createRepeated() => $pb.PbList<GripperCameraCalibrationFeedbackRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GripperCameraCalibrationFeedbackRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GripperCameraCalibrationFeedbackRequest>(create);
+  static GripperCameraCalibrationFeedbackRequest? _defaultInstance;
+
+  /// Common request header.
+  @$pb.TagNumber(1)
+  $67.RequestHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.RequestHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.RequestHeader ensureHeader() => $_ensure(0);
+}
+
+/// Response for the GripperCameraCalibrationFeedback service.
+class GripperCameraCalibrationFeedbackResponse extends $pb.GeneratedMessage {
+  factory GripperCameraCalibrationFeedbackResponse({
+    $67.ResponseHeader? header,
+    GripperCameraCalibrationFeedbackResponse_Status? status,
+    $core.double? progress,
+    $14.LeaseUseResult? leaseUseResult,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (progress != null) {
+      $result.progress = progress;
+    }
+    if (leaseUseResult != null) {
+      $result.leaseUseResult = leaseUseResult;
+    }
+    return $result;
+  }
+  GripperCameraCalibrationFeedbackResponse._() : super();
+  factory GripperCameraCalibrationFeedbackResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GripperCameraCalibrationFeedbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GripperCameraCalibrationFeedbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..e<GripperCameraCalibrationFeedbackResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: GripperCameraCalibrationFeedbackResponse_Status.STATUS_UNKNOWN, valueOf: GripperCameraCalibrationFeedbackResponse_Status.valueOf, enumValues: GripperCameraCalibrationFeedbackResponse_Status.values)
+    ..a<$core.double>(3, _omitFieldNames ? '' : 'progress', $pb.PbFieldType.OF)
+    ..aOM<$14.LeaseUseResult>(4, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GripperCameraCalibrationFeedbackResponse clone() => GripperCameraCalibrationFeedbackResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GripperCameraCalibrationFeedbackResponse copyWith(void Function(GripperCameraCalibrationFeedbackResponse) updates) => super.copyWith((message) => updates(message as GripperCameraCalibrationFeedbackResponse)) as GripperCameraCalibrationFeedbackResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GripperCameraCalibrationFeedbackResponse create() => GripperCameraCalibrationFeedbackResponse._();
+  GripperCameraCalibrationFeedbackResponse createEmptyInstance() => create();
+  static $pb.PbList<GripperCameraCalibrationFeedbackResponse> createRepeated() => $pb.PbList<GripperCameraCalibrationFeedbackResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GripperCameraCalibrationFeedbackResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GripperCameraCalibrationFeedbackResponse>(create);
+  static GripperCameraCalibrationFeedbackResponse? _defaultInstance;
+
+  /// Common response header.
+  @$pb.TagNumber(1)
+  $67.ResponseHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.ResponseHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
+
+  /// Status of camera calibration procedure.
+  @$pb.TagNumber(2)
+  GripperCameraCalibrationFeedbackResponse_Status get status => $_getN(1);
+  @$pb.TagNumber(2)
+  set status(GripperCameraCalibrationFeedbackResponse_Status v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => clearField(2);
+
+  /// The approximate progress of the calibration routine, range [0-1].
+  /// Status takes precedence over progress value.
+  @$pb.TagNumber(3)
+  $core.double get progress => $_getN(2);
+  @$pb.TagNumber(3)
+  set progress($core.double v) { $_setFloat(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasProgress() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProgress() => clearField(3);
+
+  /// Details about how the lease was used.
+  @$pb.TagNumber(4)
+  $14.LeaseUseResult get leaseUseResult => $_getN(3);
+  @$pb.TagNumber(4)
+  set leaseUseResult($14.LeaseUseResult v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLeaseUseResult() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLeaseUseResult() => clearField(4);
+  @$pb.TagNumber(4)
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(3);
 }
 
 

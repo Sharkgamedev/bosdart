@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/duration.pb.dart' as $62;
+import '../../google/protobuf/duration.pb.dart' as $61;
 import 'network_stats.pbenum.dart';
 
 export 'network_stats.pbenum.dart';
@@ -22,7 +22,7 @@ export 'network_stats.pbenum.dart';
 class Association extends $pb.GeneratedMessage {
   factory Association({
     $core.String? macAddress,
-    $62.Duration? connectedTime,
+    $61.Duration? connectedTime,
     $core.int? rxSignalDbm,
     $core.int? rxSignalAvgDbm,
     $core.int? rxBeaconSignalAvgDbm,
@@ -95,7 +95,7 @@ class Association extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Association', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'macAddress')
-    ..aOM<$62.Duration>(2, _omitFieldNames ? '' : 'connectedTime', subBuilder: $62.Duration.create)
+    ..aOM<$61.Duration>(2, _omitFieldNames ? '' : 'connectedTime', subBuilder: $61.Duration.create)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'rxSignalDbm', $pb.PbFieldType.O3)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'rxSignalAvgDbm', $pb.PbFieldType.O3)
     ..a<$core.int>(5, _omitFieldNames ? '' : 'rxBeaconSignalAvgDbm', $pb.PbFieldType.O3)
@@ -146,15 +146,15 @@ class Association extends $pb.GeneratedMessage {
 
   /// Time duration since the station last connected.
   @$pb.TagNumber(2)
-  $62.Duration get connectedTime => $_getN(1);
+  $61.Duration get connectedTime => $_getN(1);
   @$pb.TagNumber(2)
-  set connectedTime($62.Duration v) { setField(2, v); }
+  set connectedTime($61.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasConnectedTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearConnectedTime() => clearField(2);
   @$pb.TagNumber(2)
-  $62.Duration ensureConnectedTime() => $_ensure(1);
+  $61.Duration ensureConnectedTime() => $_ensure(1);
 
   /// Signal strength of last received packet
   @$pb.TagNumber(3)

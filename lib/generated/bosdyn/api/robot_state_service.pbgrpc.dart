@@ -117,3 +117,41 @@ abstract class RobotStateServiceBase extends $grpc.Service {
   $async.Future<$26.RobotHardwareConfigurationResponse> getRobotHardwareConfiguration($grpc.ServiceCall call, $26.RobotHardwareConfigurationRequest request);
   $async.Future<$26.RobotLinkModelResponse> getRobotLinkModel($grpc.ServiceCall call, $26.RobotLinkModelRequest request);
 }
+@$pb.GrpcServiceName('bosdyn.api.RobotStateStreamingService')
+class RobotStateStreamingServiceClient extends $grpc.Client {
+  static final _$getRobotStateStream = $grpc.ClientMethod<$26.RobotStateStreamRequest, $26.RobotStateStreamResponse>(
+      '/bosdyn.api.RobotStateStreamingService/GetRobotStateStream',
+      ($26.RobotStateStreamRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $26.RobotStateStreamResponse.fromBuffer(value));
+
+  RobotStateStreamingServiceClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
+      : super(channel, options: options,
+        interceptors: interceptors);
+
+  $grpc.ResponseStream<$26.RobotStateStreamResponse> getRobotStateStream($26.RobotStateStreamRequest request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$getRobotStateStream, $async.Stream.fromIterable([request]), options: options);
+  }
+}
+
+@$pb.GrpcServiceName('bosdyn.api.RobotStateStreamingService')
+abstract class RobotStateStreamingServiceBase extends $grpc.Service {
+  $core.String get $name => 'bosdyn.api.RobotStateStreamingService';
+
+  RobotStateStreamingServiceBase() {
+    $addMethod($grpc.ServiceMethod<$26.RobotStateStreamRequest, $26.RobotStateStreamResponse>(
+        'GetRobotStateStream',
+        getRobotStateStream_Pre,
+        false,
+        true,
+        ($core.List<$core.int> value) => $26.RobotStateStreamRequest.fromBuffer(value),
+        ($26.RobotStateStreamResponse value) => value.writeToBuffer()));
+  }
+
+  $async.Stream<$26.RobotStateStreamResponse> getRobotStateStream_Pre($grpc.ServiceCall call, $async.Future<$26.RobotStateStreamRequest> request) async* {
+    yield* getRobotStateStream(call, await request);
+  }
+
+  $async.Stream<$26.RobotStateStreamResponse> getRobotStateStream($grpc.ServiceCall call, $26.RobotStateStreamRequest request);
+}

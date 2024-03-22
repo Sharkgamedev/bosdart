@@ -13,12 +13,12 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/wrappers.pb.dart' as $59;
-import 'arm_command.pb.dart' as $65;
+import '../../google/protobuf/wrappers.pb.dart' as $58;
+import 'arm_command.pb.dart' as $64;
 import 'arm_surface_contact.pbenum.dart';
-import 'geometry.pb.dart' as $61;
-import 'gripper_command.pb.dart' as $66;
-import 'trajectory.pb.dart' as $63;
+import 'geometry.pb.dart' as $60;
+import 'gripper_command.pb.dart' as $65;
+import 'trajectory.pb.dart' as $62;
 
 export 'arm_surface_contact.pbenum.dart';
 
@@ -30,27 +30,27 @@ enum ArmSurfaceContact_Request_JointConfiguration {
 
 class ArmSurfaceContact_Request extends $pb.GeneratedMessage {
   factory ArmSurfaceContact_Request({
-    $63.SE3Trajectory? poseTrajectoryInTask,
-    $59.DoubleValue? maximumAcceleration,
-    $59.DoubleValue? maxLinearVelocity,
-    $59.DoubleValue? maxAngularVelocity,
-    $61.SE3Pose? wristTformTool,
+    $62.SE3Trajectory? poseTrajectoryInTask,
+    $58.DoubleValue? maximumAcceleration,
+    $58.DoubleValue? maxLinearVelocity,
+    $58.DoubleValue? maxAngularVelocity,
+    $60.SE3Pose? wristTformTool,
     ArmSurfaceContact_Request_AxisMode? xAxis,
     ArmSurfaceContact_Request_AxisMode? yAxis,
     ArmSurfaceContact_Request_AxisMode? zAxis,
-    $61.Vec3? pressForcePercentage,
+    $60.Vec3? pressForcePercentage,
     $core.bool? forceRemainNearCurrentJointConfiguration,
-    $65.ArmJointPosition? preferredJointConfiguration,
+    $64.ArmJointPosition? preferredJointConfiguration,
     ArmSurfaceContact_Request_AdmittanceSetting? xyToZCrossTermAdmittance,
-    $59.DoubleValue? maxPosTrackingError,
-    $59.DoubleValue? maxRotTrackingError,
-    $61.Vec3? biasForceEwrtBody,
+    $58.DoubleValue? maxPosTrackingError,
+    $58.DoubleValue? maxRotTrackingError,
+    $60.Vec3? biasForceEwrtBody,
     ArmSurfaceContact_Request_AdmittanceSetting? xyAdmittance,
     ArmSurfaceContact_Request_AdmittanceSetting? zAdmittance,
-    $66.ClawGripperCommand_Request? gripperCommand,
+    $65.ClawGripperCommand_Request? gripperCommand,
     $core.bool? isRobotFollowingHand,
     $core.String? rootFrameName,
-    $61.SE3Pose? rootTformTask,
+    $60.SE3Pose? rootTformTask,
   }) {
     final $result = create();
     if (poseTrajectoryInTask != null) {
@@ -129,27 +129,27 @@ class ArmSurfaceContact_Request extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ArmSurfaceContact.Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..oo(0, [15, 16])
-    ..aOM<$63.SE3Trajectory>(2, _omitFieldNames ? '' : 'poseTrajectoryInTask', subBuilder: $63.SE3Trajectory.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'maximumAcceleration', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'maxLinearVelocity', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'maxAngularVelocity', subBuilder: $59.DoubleValue.create)
-    ..aOM<$61.SE3Pose>(6, _omitFieldNames ? '' : 'wristTformTool', subBuilder: $61.SE3Pose.create)
+    ..aOM<$62.SE3Trajectory>(2, _omitFieldNames ? '' : 'poseTrajectoryInTask', subBuilder: $62.SE3Trajectory.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'maximumAcceleration', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'maxLinearVelocity', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'maxAngularVelocity', subBuilder: $58.DoubleValue.create)
+    ..aOM<$60.SE3Pose>(6, _omitFieldNames ? '' : 'wristTformTool', subBuilder: $60.SE3Pose.create)
     ..e<ArmSurfaceContact_Request_AxisMode>(8, _omitFieldNames ? '' : 'xAxis', $pb.PbFieldType.OE, defaultOrMaker: ArmSurfaceContact_Request_AxisMode.AXIS_MODE_POSITION, valueOf: ArmSurfaceContact_Request_AxisMode.valueOf, enumValues: ArmSurfaceContact_Request_AxisMode.values)
     ..e<ArmSurfaceContact_Request_AxisMode>(9, _omitFieldNames ? '' : 'yAxis', $pb.PbFieldType.OE, defaultOrMaker: ArmSurfaceContact_Request_AxisMode.AXIS_MODE_POSITION, valueOf: ArmSurfaceContact_Request_AxisMode.valueOf, enumValues: ArmSurfaceContact_Request_AxisMode.values)
     ..e<ArmSurfaceContact_Request_AxisMode>(10, _omitFieldNames ? '' : 'zAxis', $pb.PbFieldType.OE, defaultOrMaker: ArmSurfaceContact_Request_AxisMode.AXIS_MODE_POSITION, valueOf: ArmSurfaceContact_Request_AxisMode.valueOf, enumValues: ArmSurfaceContact_Request_AxisMode.values)
-    ..aOM<$61.Vec3>(12, _omitFieldNames ? '' : 'pressForcePercentage', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(12, _omitFieldNames ? '' : 'pressForcePercentage', subBuilder: $60.Vec3.create)
     ..aOB(15, _omitFieldNames ? '' : 'forceRemainNearCurrentJointConfiguration')
-    ..aOM<$65.ArmJointPosition>(16, _omitFieldNames ? '' : 'preferredJointConfiguration', subBuilder: $65.ArmJointPosition.create)
+    ..aOM<$64.ArmJointPosition>(16, _omitFieldNames ? '' : 'preferredJointConfiguration', subBuilder: $64.ArmJointPosition.create)
     ..e<ArmSurfaceContact_Request_AdmittanceSetting>(17, _omitFieldNames ? '' : 'xyToZCrossTermAdmittance', $pb.PbFieldType.OE, defaultOrMaker: ArmSurfaceContact_Request_AdmittanceSetting.ADMITTANCE_SETTING_UNKNOWN, valueOf: ArmSurfaceContact_Request_AdmittanceSetting.valueOf, enumValues: ArmSurfaceContact_Request_AdmittanceSetting.values)
-    ..aOM<$59.DoubleValue>(18, _omitFieldNames ? '' : 'maxPosTrackingError', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(19, _omitFieldNames ? '' : 'maxRotTrackingError', subBuilder: $59.DoubleValue.create)
-    ..aOM<$61.Vec3>(20, _omitFieldNames ? '' : 'biasForceEwrtBody', subBuilder: $61.Vec3.create)
+    ..aOM<$58.DoubleValue>(18, _omitFieldNames ? '' : 'maxPosTrackingError', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(19, _omitFieldNames ? '' : 'maxRotTrackingError', subBuilder: $58.DoubleValue.create)
+    ..aOM<$60.Vec3>(20, _omitFieldNames ? '' : 'biasForceEwrtBody', subBuilder: $60.Vec3.create)
     ..e<ArmSurfaceContact_Request_AdmittanceSetting>(21, _omitFieldNames ? '' : 'xyAdmittance', $pb.PbFieldType.OE, defaultOrMaker: ArmSurfaceContact_Request_AdmittanceSetting.ADMITTANCE_SETTING_UNKNOWN, valueOf: ArmSurfaceContact_Request_AdmittanceSetting.valueOf, enumValues: ArmSurfaceContact_Request_AdmittanceSetting.values)
     ..e<ArmSurfaceContact_Request_AdmittanceSetting>(22, _omitFieldNames ? '' : 'zAdmittance', $pb.PbFieldType.OE, defaultOrMaker: ArmSurfaceContact_Request_AdmittanceSetting.ADMITTANCE_SETTING_UNKNOWN, valueOf: ArmSurfaceContact_Request_AdmittanceSetting.valueOf, enumValues: ArmSurfaceContact_Request_AdmittanceSetting.values)
-    ..aOM<$66.ClawGripperCommand_Request>(23, _omitFieldNames ? '' : 'gripperCommand', subBuilder: $66.ClawGripperCommand_Request.create)
+    ..aOM<$65.ClawGripperCommand_Request>(23, _omitFieldNames ? '' : 'gripperCommand', subBuilder: $65.ClawGripperCommand_Request.create)
     ..aOB(24, _omitFieldNames ? '' : 'isRobotFollowingHand')
     ..aOS(25, _omitFieldNames ? '' : 'rootFrameName')
-    ..aOM<$61.SE3Pose>(26, _omitFieldNames ? '' : 'rootTformTask', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(26, _omitFieldNames ? '' : 'rootTformTask', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -181,52 +181,52 @@ class ArmSurfaceContact_Request extends $pb.GeneratedMessage {
   /// This pose trajectory is optional if requesting a pure wrench at the end-effector,
   /// otherwise required for position or mixed force/position end-effector requests.
   @$pb.TagNumber(2)
-  $63.SE3Trajectory get poseTrajectoryInTask => $_getN(0);
+  $62.SE3Trajectory get poseTrajectoryInTask => $_getN(0);
   @$pb.TagNumber(2)
-  set poseTrajectoryInTask($63.SE3Trajectory v) { setField(2, v); }
+  set poseTrajectoryInTask($62.SE3Trajectory v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPoseTrajectoryInTask() => $_has(0);
   @$pb.TagNumber(2)
   void clearPoseTrajectoryInTask() => clearField(2);
   @$pb.TagNumber(2)
-  $63.SE3Trajectory ensurePoseTrajectoryInTask() => $_ensure(0);
+  $62.SE3Trajectory ensurePoseTrajectoryInTask() => $_ensure(0);
 
   /// Optional Maximum acceleration magnitude of the end-effector.
   /// Valid ranges (0, 20]
   @$pb.TagNumber(3)
-  $59.DoubleValue get maximumAcceleration => $_getN(1);
+  $58.DoubleValue get maximumAcceleration => $_getN(1);
   @$pb.TagNumber(3)
-  set maximumAcceleration($59.DoubleValue v) { setField(3, v); }
+  set maximumAcceleration($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMaximumAcceleration() => $_has(1);
   @$pb.TagNumber(3)
   void clearMaximumAcceleration() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureMaximumAcceleration() => $_ensure(1);
+  $58.DoubleValue ensureMaximumAcceleration() => $_ensure(1);
 
   /// Optional Maximum linear velocity magnitude of the end-effector. (m/s)
   @$pb.TagNumber(4)
-  $59.DoubleValue get maxLinearVelocity => $_getN(2);
+  $58.DoubleValue get maxLinearVelocity => $_getN(2);
   @$pb.TagNumber(4)
-  set maxLinearVelocity($59.DoubleValue v) { setField(4, v); }
+  set maxLinearVelocity($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMaxLinearVelocity() => $_has(2);
   @$pb.TagNumber(4)
   void clearMaxLinearVelocity() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureMaxLinearVelocity() => $_ensure(2);
+  $58.DoubleValue ensureMaxLinearVelocity() => $_ensure(2);
 
   /// Optional Maximum angular velocity magnitude of the end-effector. (rad/s)
   @$pb.TagNumber(5)
-  $59.DoubleValue get maxAngularVelocity => $_getN(3);
+  $58.DoubleValue get maxAngularVelocity => $_getN(3);
   @$pb.TagNumber(5)
-  set maxAngularVelocity($59.DoubleValue v) { setField(5, v); }
+  set maxAngularVelocity($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMaxAngularVelocity() => $_has(3);
   @$pb.TagNumber(5)
   void clearMaxAngularVelocity() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureMaxAngularVelocity() => $_ensure(3);
+  $58.DoubleValue ensureMaxAngularVelocity() => $_ensure(3);
 
   /// The tool pose relative to the parent link (wrist).
   /// Defaults to
@@ -234,15 +234,15 @@ class ArmSurfaceContact_Request extends $pb.GeneratedMessage {
   ///    [1 0 0 0]
   /// a frame with it's origin slightly in front of the gripper's palm plate aligned with wrists orientation.
   @$pb.TagNumber(6)
-  $61.SE3Pose get wristTformTool => $_getN(4);
+  $60.SE3Pose get wristTformTool => $_getN(4);
   @$pb.TagNumber(6)
-  set wristTformTool($61.SE3Pose v) { setField(6, v); }
+  set wristTformTool($60.SE3Pose v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasWristTformTool() => $_has(4);
   @$pb.TagNumber(6)
   void clearWristTformTool() => clearField(6);
   @$pb.TagNumber(6)
-  $61.SE3Pose ensureWristTformTool() => $_ensure(4);
+  $60.SE3Pose ensureWristTformTool() => $_ensure(4);
 
   @$pb.TagNumber(8)
   ArmSurfaceContact_Request_AxisMode get xAxis => $_getN(5);
@@ -274,15 +274,15 @@ class ArmSurfaceContact_Request extends $pb.GeneratedMessage {
   /// Amount of force to use on each axis, from 0 (no force) to 1.0 (maximum force), can also
   /// be negative.  Full range: [-1.0, 1.0]
   @$pb.TagNumber(12)
-  $61.Vec3 get pressForcePercentage => $_getN(8);
+  $60.Vec3 get pressForcePercentage => $_getN(8);
   @$pb.TagNumber(12)
-  set pressForcePercentage($61.Vec3 v) { setField(12, v); }
+  set pressForcePercentage($60.Vec3 v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasPressForcePercentage() => $_has(8);
   @$pb.TagNumber(12)
   void clearPressForcePercentage() => clearField(12);
   @$pb.TagNumber(12)
-  $61.Vec3 ensurePressForcePercentage() => $_ensure(8);
+  $60.Vec3 ensurePressForcePercentage() => $_ensure(8);
 
   @$pb.TagNumber(15)
   $core.bool get forceRemainNearCurrentJointConfiguration => $_getBF(9);
@@ -294,15 +294,15 @@ class ArmSurfaceContact_Request extends $pb.GeneratedMessage {
   void clearForceRemainNearCurrentJointConfiguration() => clearField(15);
 
   @$pb.TagNumber(16)
-  $65.ArmJointPosition get preferredJointConfiguration => $_getN(10);
+  $64.ArmJointPosition get preferredJointConfiguration => $_getN(10);
   @$pb.TagNumber(16)
-  set preferredJointConfiguration($65.ArmJointPosition v) { setField(16, v); }
+  set preferredJointConfiguration($64.ArmJointPosition v) { setField(16, v); }
   @$pb.TagNumber(16)
   $core.bool hasPreferredJointConfiguration() => $_has(10);
   @$pb.TagNumber(16)
   void clearPreferredJointConfiguration() => clearField(16);
   @$pb.TagNumber(16)
-  $65.ArmJointPosition ensurePreferredJointConfiguration() => $_ensure(10);
+  $64.ArmJointPosition ensurePreferredJointConfiguration() => $_ensure(10);
 
   /// Cross term, making force in the XY axis cause movement in the z-axis.
   /// By default is OFF
@@ -323,41 +323,41 @@ class ArmSurfaceContact_Request extends $pb.GeneratedMessage {
   /// trajectory specified in the rest of this message will be ignored.
   /// max position tracking error in meters
   @$pb.TagNumber(18)
-  $59.DoubleValue get maxPosTrackingError => $_getN(12);
+  $58.DoubleValue get maxPosTrackingError => $_getN(12);
   @$pb.TagNumber(18)
-  set maxPosTrackingError($59.DoubleValue v) { setField(18, v); }
+  set maxPosTrackingError($58.DoubleValue v) { setField(18, v); }
   @$pb.TagNumber(18)
   $core.bool hasMaxPosTrackingError() => $_has(12);
   @$pb.TagNumber(18)
   void clearMaxPosTrackingError() => clearField(18);
   @$pb.TagNumber(18)
-  $59.DoubleValue ensureMaxPosTrackingError() => $_ensure(12);
+  $58.DoubleValue ensureMaxPosTrackingError() => $_ensure(12);
 
   /// max orientation tracking error in radians
   @$pb.TagNumber(19)
-  $59.DoubleValue get maxRotTrackingError => $_getN(13);
+  $58.DoubleValue get maxRotTrackingError => $_getN(13);
   @$pb.TagNumber(19)
-  set maxRotTrackingError($59.DoubleValue v) { setField(19, v); }
+  set maxRotTrackingError($58.DoubleValue v) { setField(19, v); }
   @$pb.TagNumber(19)
   $core.bool hasMaxRotTrackingError() => $_has(13);
   @$pb.TagNumber(19)
   void clearMaxRotTrackingError() => clearField(19);
   @$pb.TagNumber(19)
-  $59.DoubleValue ensureMaxRotTrackingError() => $_ensure(13);
+  $58.DoubleValue ensureMaxRotTrackingError() => $_ensure(13);
 
   /// Specifies a force that the body should expect to feel.  This allows the robot to "lean into"
   /// an external force.  Be careful using this field, because if you lie to the robot, it can
   /// fall over.
   @$pb.TagNumber(20)
-  $61.Vec3 get biasForceEwrtBody => $_getN(14);
+  $60.Vec3 get biasForceEwrtBody => $_getN(14);
   @$pb.TagNumber(20)
-  set biasForceEwrtBody($61.Vec3 v) { setField(20, v); }
+  set biasForceEwrtBody($60.Vec3 v) { setField(20, v); }
   @$pb.TagNumber(20)
   $core.bool hasBiasForceEwrtBody() => $_has(14);
   @$pb.TagNumber(20)
   void clearBiasForceEwrtBody() => clearField(20);
   @$pb.TagNumber(20)
-  $61.Vec3 ensureBiasForceEwrtBody() => $_ensure(14);
+  $60.Vec3 ensureBiasForceEwrtBody() => $_ensure(14);
 
   /// Admittance settings for each axis in the admittance frame.
   @$pb.TagNumber(21)
@@ -380,15 +380,15 @@ class ArmSurfaceContact_Request extends $pb.GeneratedMessage {
 
   /// Gripper control
   @$pb.TagNumber(23)
-  $66.ClawGripperCommand_Request get gripperCommand => $_getN(17);
+  $65.ClawGripperCommand_Request get gripperCommand => $_getN(17);
   @$pb.TagNumber(23)
-  set gripperCommand($66.ClawGripperCommand_Request v) { setField(23, v); }
+  set gripperCommand($65.ClawGripperCommand_Request v) { setField(23, v); }
   @$pb.TagNumber(23)
   $core.bool hasGripperCommand() => $_has(17);
   @$pb.TagNumber(23)
   void clearGripperCommand() => clearField(23);
   @$pb.TagNumber(23)
-  $66.ClawGripperCommand_Request ensureGripperCommand() => $_ensure(17);
+  $65.ClawGripperCommand_Request ensureGripperCommand() => $_ensure(17);
 
   /// Set to true to have robot is walk around to follow the hand.
   @$pb.TagNumber(24)
@@ -415,15 +415,15 @@ class ArmSurfaceContact_Request extends $pb.GeneratedMessage {
   /// The fields below are specified in this optional task frame.  If unset int defaults
   /// to the identity transform and all quantities are therefore expressed in the root_frame_name.
   @$pb.TagNumber(26)
-  $61.SE3Pose get rootTformTask => $_getN(20);
+  $60.SE3Pose get rootTformTask => $_getN(20);
   @$pb.TagNumber(26)
-  set rootTformTask($61.SE3Pose v) { setField(26, v); }
+  set rootTformTask($60.SE3Pose v) { setField(26, v); }
   @$pb.TagNumber(26)
   $core.bool hasRootTformTask() => $_has(20);
   @$pb.TagNumber(26)
   void clearRootTformTask() => clearField(26);
   @$pb.TagNumber(26)
-  $61.SE3Pose ensureRootTformTask() => $_ensure(20);
+  $60.SE3Pose ensureRootTformTask() => $_ensure(20);
 }
 
 class ArmSurfaceContact_Feedback extends $pb.GeneratedMessage {

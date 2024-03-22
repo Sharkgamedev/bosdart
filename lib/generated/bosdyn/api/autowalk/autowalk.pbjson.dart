@@ -45,16 +45,27 @@ final $typed_data.Uint8List nodeIdentifierDescriptor = $convert.base64Decode(
 const ElementIdentifiers$json = {
   '1': 'ElementIdentifiers',
   '2': [
-    {'1': 'root_id', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.autowalk.NodeIdentifier', '10': 'rootId'},
+    {
+      '1': 'root_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.bosdyn.api.autowalk.NodeIdentifier',
+      '8': {'3': true},
+      '10': 'rootId',
+    },
     {'1': 'action_id', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.autowalk.NodeIdentifier', '10': 'actionId'},
+    {'1': 'navigation_id', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.autowalk.NodeIdentifier', '10': 'navigationId'},
   ],
 };
 
 /// Descriptor for `ElementIdentifiers`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List elementIdentifiersDescriptor = $convert.base64Decode(
-    'ChJFbGVtZW50SWRlbnRpZmllcnMSPAoHcm9vdF9pZBgBIAEoCzIjLmJvc2R5bi5hcGkuYXV0b3'
-    'dhbGsuTm9kZUlkZW50aWZpZXJSBnJvb3RJZBJACglhY3Rpb25faWQYAiABKAsyIy5ib3NkeW4u'
-    'YXBpLmF1dG93YWxrLk5vZGVJZGVudGlmaWVyUghhY3Rpb25JZA==');
+    'ChJFbGVtZW50SWRlbnRpZmllcnMSQAoHcm9vdF9pZBgBIAEoCzIjLmJvc2R5bi5hcGkuYXV0b3'
+    'dhbGsuTm9kZUlkZW50aWZpZXJCAhgBUgZyb290SWQSQAoJYWN0aW9uX2lkGAIgASgLMiMuYm9z'
+    'ZHluLmFwaS5hdXRvd2Fsay5Ob2RlSWRlbnRpZmllclIIYWN0aW9uSWQSSAoNbmF2aWdhdGlvbl'
+    '9pZBgDIAEoCzIjLmJvc2R5bi5hcGkuYXV0b3dhbGsuTm9kZUlkZW50aWZpZXJSDG5hdmlnYXRp'
+    'b25JZA==');
 
 @$core.Deprecated('Use compileAutowalkRequestDescriptor instead')
 const CompileAutowalkRequest$json = {

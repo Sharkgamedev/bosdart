@@ -149,6 +149,7 @@ const SetLocalizationResponse_QualityCheckResult$json = {
     {'1': 'QUALITY_CHECK_POOR_POINT_CLOUD_MATCH', '2': 2},
     {'1': 'QUALITY_CHECK_POOR_GRAVITY_ALIGNMENT', '2': 3},
     {'1': 'QUALITY_CHECK_SKIPPED', '2': 4},
+    {'1': 'QUALITY_CHECK_BAD_HEIGHT', '2': 5},
   ],
 };
 
@@ -175,10 +176,11 @@ final $typed_data.Uint8List setLocalizationResponseDescriptor = $convert.base64D
     'Ul9BV0FZEAYSGwoXU1RBVFVTX0ZJRFVDSUFMX1RPT19PTEQQBxIfChtTVEFUVVNfTk9fTUFUQ0'
     'hJTkdfRklEVUNJQUwQCBIiCh5TVEFUVVNfRklEVUNJQUxfUE9TRV9VTkNFUlRBSU4QCRIfChtT'
     'VEFUVVNfSU5DT01QQVRJQkxFX1NFTlNPUlMQChIiCh5TVEFUVVNfVklTVUFMX0FMSUdOTUVOVF'
-    '9GQUlMRUQQCyK5AQoSUXVhbGl0eUNoZWNrUmVzdWx0EhkKFVFVQUxJVFlfQ0hFQ0tfVU5LTk9X'
+    '9GQUlMRUQQCyLXAQoSUXVhbGl0eUNoZWNrUmVzdWx0EhkKFVFVQUxJVFlfQ0hFQ0tfVU5LTk9X'
     'ThAAEhkKFVFVQUxJVFlfQ0hFQ0tfU1VDQ0VTUxABEigKJFFVQUxJVFlfQ0hFQ0tfUE9PUl9QT0'
     'lOVF9DTE9VRF9NQVRDSBACEigKJFFVQUxJVFlfQ0hFQ0tfUE9PUl9HUkFWSVRZX0FMSUdOTUVO'
-    'VBADEhkKFVFVQUxJVFlfQ0hFQ0tfU0tJUFBFRBAE');
+    'VBADEhkKFVFVQUxJVFlfQ0hFQ0tfU0tJUFBFRBAEEhwKGFFVQUxJVFlfQ0hFQ0tfQkFEX0hFSU'
+    'dIVBAF');
 
 @$core.Deprecated('Use routeGenParamsDescriptor instead')
 const RouteGenParams$json = {
@@ -507,13 +509,31 @@ final $typed_data.Uint8List navigateRouteResponseDescriptor = $convert.base64Dec
     'RBVEVfUk9VVEUQDxIQCgxTVEFUVVNfU1RVQ0sQERIfChtTVEFUVVNfVU5SRUNPR05JWkVEX0NP'
     'TU1BTkQQEhIeChpTVEFUVVNfQVJFQV9DQUxMQkFDS19FUlJPUhAV');
 
+@$core.Deprecated('Use gPSNavigationParamsDescriptor instead')
+const GPSNavigationParams$json = {
+  '1': 'GPSNavigationParams',
+  '2': [
+    {'1': 'goal_llh', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.gps.LLH', '10': 'goalLlh'},
+    {'1': 'goal_yaw', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.DoubleValue', '10': 'goalYaw'},
+    {'1': 'max_distance_from_map', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.DoubleValue', '10': 'maxDistanceFromMap'},
+  ],
+};
+
+/// Descriptor for `GPSNavigationParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List gPSNavigationParamsDescriptor = $convert.base64Decode(
+    'ChNHUFNOYXZpZ2F0aW9uUGFyYW1zEi4KCGdvYWxfbGxoGAEgASgLMhMuYm9zZHluLmFwaS5ncH'
+    'MuTExIUgdnb2FsTGxoEjcKCGdvYWxfeWF3GAIgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJs'
+    'ZVZhbHVlUgdnb2FsWWF3Ek8KFW1heF9kaXN0YW5jZV9mcm9tX21hcBgDIAEoCzIcLmdvb2dsZS'
+    '5wcm90b2J1Zi5Eb3VibGVWYWx1ZVISbWF4RGlzdGFuY2VGcm9tTWFw');
+
 @$core.Deprecated('Use navigateToAnchorRequestDescriptor instead')
 const NavigateToAnchorRequest$json = {
   '1': 'NavigateToAnchorRequest',
   '2': [
     {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
     {'1': 'leases', '3': 2, '4': 3, '5': 11, '6': '.bosdyn.api.Lease', '10': 'leases'},
-    {'1': 'seed_tform_goal', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.SE3Pose', '10': 'seedTformGoal'},
+    {'1': 'seed_tform_goal', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.SE3Pose', '9': 0, '10': 'seedTformGoal'},
+    {'1': 'gps_navigation_params', '3': 11, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.GPSNavigationParams', '9': 0, '10': 'gpsNavigationParams'},
     {'1': 'goal_waypoint_rt_seed_ewrt_seed_tolerance', '3': 4, '4': 1, '5': 11, '6': '.bosdyn.api.Vec3', '10': 'goalWaypointRtSeedEwrtSeedTolerance'},
     {'1': 'route_params', '3': 6, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.RouteGenParams', '10': 'routeParams'},
     {'1': 'travel_params', '3': 7, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.TravelParams', '10': 'travelParams'},
@@ -521,21 +541,26 @@ const NavigateToAnchorRequest$json = {
     {'1': 'clock_identifier', '3': 9, '4': 1, '5': 9, '10': 'clockIdentifier'},
     {'1': 'command_id', '3': 10, '4': 1, '5': 13, '10': 'commandId'},
   ],
+  '8': [
+    {'1': 'goal'},
+  ],
 };
 
 /// Descriptor for `NavigateToAnchorRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List navigateToAnchorRequestDescriptor = $convert.base64Decode(
     'ChdOYXZpZ2F0ZVRvQW5jaG9yUmVxdWVzdBIxCgZoZWFkZXIYASABKAsyGS5ib3NkeW4uYXBpLl'
     'JlcXVlc3RIZWFkZXJSBmhlYWRlchIpCgZsZWFzZXMYAiADKAsyES5ib3NkeW4uYXBpLkxlYXNl'
-    'UgZsZWFzZXMSOwoPc2VlZF90Zm9ybV9nb2FsGAMgASgLMhMuYm9zZHluLmFwaS5TRTNQb3NlUg'
-    '1zZWVkVGZvcm1Hb2FsEmgKKWdvYWxfd2F5cG9pbnRfcnRfc2VlZF9ld3J0X3NlZWRfdG9sZXJh'
-    'bmNlGAQgASgLMhAuYm9zZHluLmFwaS5WZWMzUiNnb2FsV2F5cG9pbnRSdFNlZWRFd3J0U2VlZF'
-    'RvbGVyYW5jZRJHCgxyb3V0ZV9wYXJhbXMYBiABKAsyJC5ib3NkeW4uYXBpLmdyYXBoX25hdi5S'
-    'b3V0ZUdlblBhcmFtc1ILcm91dGVQYXJhbXMSRwoNdHJhdmVsX3BhcmFtcxgHIAEoCzIiLmJvc2'
-    'R5bi5hcGkuZ3JhcGhfbmF2LlRyYXZlbFBhcmFtc1IMdHJhdmVsUGFyYW1zEjUKCGVuZF90aW1l'
-    'GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIHZW5kVGltZRIpChBjbG9ja19pZG'
-    'VudGlmaWVyGAkgASgJUg9jbG9ja0lkZW50aWZpZXISHQoKY29tbWFuZF9pZBgKIAEoDVIJY29t'
-    'bWFuZElk');
+    'UgZsZWFzZXMSPQoPc2VlZF90Zm9ybV9nb2FsGAMgASgLMhMuYm9zZHluLmFwaS5TRTNQb3NlSA'
+    'BSDXNlZWRUZm9ybUdvYWwSXwoVZ3BzX25hdmlnYXRpb25fcGFyYW1zGAsgASgLMikuYm9zZHlu'
+    'LmFwaS5ncmFwaF9uYXYuR1BTTmF2aWdhdGlvblBhcmFtc0gAUhNncHNOYXZpZ2F0aW9uUGFyYW'
+    '1zEmgKKWdvYWxfd2F5cG9pbnRfcnRfc2VlZF9ld3J0X3NlZWRfdG9sZXJhbmNlGAQgASgLMhAu'
+    'Ym9zZHluLmFwaS5WZWMzUiNnb2FsV2F5cG9pbnRSdFNlZWRFd3J0U2VlZFRvbGVyYW5jZRJHCg'
+    'xyb3V0ZV9wYXJhbXMYBiABKAsyJC5ib3NkeW4uYXBpLmdyYXBoX25hdi5Sb3V0ZUdlblBhcmFt'
+    'c1ILcm91dGVQYXJhbXMSRwoNdHJhdmVsX3BhcmFtcxgHIAEoCzIiLmJvc2R5bi5hcGkuZ3JhcG'
+    'hfbmF2LlRyYXZlbFBhcmFtc1IMdHJhdmVsUGFyYW1zEjUKCGVuZF90aW1lGAggASgLMhouZ29v'
+    'Z2xlLnByb3RvYnVmLlRpbWVzdGFtcFIHZW5kVGltZRIpChBjbG9ja19pZGVudGlmaWVyGAkgAS'
+    'gJUg9jbG9ja0lkZW50aWZpZXISHQoKY29tbWFuZF9pZBgKIAEoDVIJY29tbWFuZElkQgYKBGdv'
+    'YWw=');
 
 @$core.Deprecated('Use navigateToAnchorResponseDescriptor instead')
 const NavigateToAnchorResponse$json = {
@@ -548,8 +573,9 @@ const NavigateToAnchorResponse$json = {
     {'1': 'command_id', '3': 4, '4': 1, '5': 13, '10': 'commandId'},
     {'1': 'error_waypoint_ids', '3': 5, '4': 3, '5': 9, '10': 'errorWaypointIds'},
     {'1': 'area_callback_error', '3': 7, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.AreaCallbackServiceError', '10': 'areaCallbackError'},
+    {'1': 'gps_status', '3': 8, '4': 1, '5': 14, '6': '.bosdyn.api.graph_nav.NavigateToAnchorResponse.GPSStatus', '10': 'gpsStatus'},
   ],
-  '4': [NavigateToAnchorResponse_Status$json],
+  '4': [NavigateToAnchorResponse_Status$json, NavigateToAnchorResponse_GPSStatus$json],
 };
 
 @$core.Deprecated('Use navigateToAnchorResponseDescriptor instead')
@@ -573,6 +599,18 @@ const NavigateToAnchorResponse_Status$json = {
     {'1': 'STATUS_UNRECOGNIZED_COMMAND', '2': 15},
     {'1': 'STATUS_INVALID_POSE', '2': 16},
     {'1': 'STATUS_AREA_CALLBACK_ERROR', '2': 17},
+    {'1': 'STATUS_INVALID_GPS_COMMAND', '2': 18},
+  ],
+};
+
+@$core.Deprecated('Use navigateToAnchorResponseDescriptor instead')
+const NavigateToAnchorResponse_GPSStatus$json = {
+  '1': 'GPSStatus',
+  '2': [
+    {'1': 'GPS_STATUS_UNKNOWN', '2': 0},
+    {'1': 'GPS_STATUS_OK', '2': 1},
+    {'1': 'GPS_STATUS_NO_COORDS_IN_MAP', '2': 2},
+    {'1': 'GPS_STATUS_TOO_FAR_FROM_MAP', '2': 3},
   ],
 };
 
@@ -586,15 +624,19 @@ final $typed_data.Uint8List navigateToAnchorResponseDescriptor = $convert.base64
     'JlZFN0YXRlUg1pbXBhaXJlZFN0YXRlEh0KCmNvbW1hbmRfaWQYBCABKA1SCWNvbW1hbmRJZBIs'
     'ChJlcnJvcl93YXlwb2ludF9pZHMYBSADKAlSEGVycm9yV2F5cG9pbnRJZHMSXgoTYXJlYV9jYW'
     'xsYmFja19lcnJvchgHIAEoCzIuLmJvc2R5bi5hcGkuZ3JhcGhfbmF2LkFyZWFDYWxsYmFja1Nl'
-    'cnZpY2VFcnJvclIRYXJlYUNhbGxiYWNrRXJyb3IiqQMKBlN0YXR1cxISCg5TVEFUVVNfVU5LTk'
-    '9XThAAEg0KCVNUQVRVU19PSxABEhYKElNUQVRVU19OT19USU1FU1lOQxACEhIKDlNUQVRVU19F'
-    'WFBJUkVEEAMSFgoSU1RBVFVTX1RPT19ESVNUQU5UEAQSGQoVU1RBVFVTX1JPQk9UX0lNUEFJUk'
-    'VEEAUSFAoQU1RBVFVTX1JFQ09SRElORxAGEhcKE1NUQVRVU19OT19BTkNIT1JJTkcQBxISCg5T'
-    'VEFUVVNfTk9fUEFUSBAIEhkKFVNUQVRVU19GRUFUVVJFX0RFU0VSVBAKEg8KC1NUQVRVU19MT1'
-    'NUEAsSHwobU1RBVFVTX05PVF9MT0NBTElaRURfVE9fTUFQEA0SIQodU1RBVFVTX0NPVUxEX05P'
-    'VF9VUERBVEVfUk9VVEUQDBIQCgxTVEFUVVNfU1RVQ0sQDhIfChtTVEFUVVNfVU5SRUNPR05JWk'
-    'VEX0NPTU1BTkQQDxIXChNTVEFUVVNfSU5WQUxJRF9QT1NFEBASHgoaU1RBVFVTX0FSRUFfQ0FM'
-    'TEJBQ0tfRVJST1IQEQ==');
+    'cnZpY2VFcnJvclIRYXJlYUNhbGxiYWNrRXJyb3ISVwoKZ3BzX3N0YXR1cxgIIAEoDjI4LmJvc2'
+    'R5bi5hcGkuZ3JhcGhfbmF2Lk5hdmlnYXRlVG9BbmNob3JSZXNwb25zZS5HUFNTdGF0dXNSCWdw'
+    'c1N0YXR1cyLJAwoGU3RhdHVzEhIKDlNUQVRVU19VTktOT1dOEAASDQoJU1RBVFVTX09LEAESFg'
+    'oSU1RBVFVTX05PX1RJTUVTWU5DEAISEgoOU1RBVFVTX0VYUElSRUQQAxIWChJTVEFUVVNfVE9P'
+    'X0RJU1RBTlQQBBIZChVTVEFUVVNfUk9CT1RfSU1QQUlSRUQQBRIUChBTVEFUVVNfUkVDT1JESU'
+    '5HEAYSFwoTU1RBVFVTX05PX0FOQ0hPUklORxAHEhIKDlNUQVRVU19OT19QQVRIEAgSGQoVU1RB'
+    'VFVTX0ZFQVRVUkVfREVTRVJUEAoSDwoLU1RBVFVTX0xPU1QQCxIfChtTVEFUVVNfTk9UX0xPQ0'
+    'FMSVpFRF9UT19NQVAQDRIhCh1TVEFUVVNfQ09VTERfTk9UX1VQREFURV9ST1VURRAMEhAKDFNU'
+    'QVRVU19TVFVDSxAOEh8KG1NUQVRVU19VTlJFQ09HTklaRURfQ09NTUFORBAPEhcKE1NUQVRVU1'
+    '9JTlZBTElEX1BPU0UQEBIeChpTVEFUVVNfQVJFQV9DQUxMQkFDS19FUlJPUhAREh4KGlNUQVRV'
+    'U19JTlZBTElEX0dQU19DT01NQU5EEBIieAoJR1BTU3RhdHVzEhYKEkdQU19TVEFUVVNfVU5LTk'
+    '9XThAAEhEKDUdQU19TVEFUVVNfT0sQARIfChtHUFNfU1RBVFVTX05PX0NPT1JEU19JTl9NQVAQ'
+    'AhIfChtHUFNfU1RBVFVTX1RPT19GQVJfRlJPTV9NQVAQAw==');
 
 @$core.Deprecated('Use navigationFeedbackRequestDescriptor instead')
 const NavigationFeedbackRequest$json = {
@@ -619,6 +661,8 @@ const NavigationFeedbackResponse$json = {
     {'1': 'impaired_state', '3': 6, '4': 1, '5': 11, '6': '.bosdyn.api.RobotImpairedState', '10': 'impairedState'},
     {'1': 'area_callback_errors', '3': 9, '4': 3, '5': 11, '6': '.bosdyn.api.graph_nav.NavigationFeedbackResponse.AreaCallbackErrorsEntry', '10': 'areaCallbackErrors'},
     {'1': 'remaining_route', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.Route', '10': 'remainingRoute'},
+    {'1': 'completed_route', '3': 18, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.CompletedRoute', '10': 'completedRoute'},
+    {'1': 'remaining_route_length', '3': 17, '4': 1, '5': 1, '10': 'remainingRouteLength'},
     {'1': 'command_id', '3': 4, '4': 1, '5': 13, '10': 'commandId'},
     {'1': 'last_ko_tform_goal', '3': 5, '4': 1, '5': 11, '6': '.bosdyn.api.SE3Pose', '10': 'lastKoTformGoal'},
     {'1': 'body_movement_status', '3': 7, '4': 1, '5': 14, '6': '.bosdyn.api.SE2TrajectoryCommand.Feedback.BodyMovementStatus', '10': 'bodyMovementStatus'},
@@ -739,49 +783,52 @@ final $typed_data.Uint8List navigationFeedbackResponseDescriptor = $convert.base
     'YWlyZWRTdGF0ZRJ6ChRhcmVhX2NhbGxiYWNrX2Vycm9ycxgJIAMoCzJILmJvc2R5bi5hcGkuZ3'
     'JhcGhfbmF2Lk5hdmlnYXRpb25GZWVkYmFja1Jlc3BvbnNlLkFyZWFDYWxsYmFja0Vycm9yc0Vu'
     'dHJ5UhJhcmVhQ2FsbGJhY2tFcnJvcnMSRAoPcmVtYWluaW5nX3JvdXRlGAMgASgLMhsuYm9zZH'
-    'luLmFwaS5ncmFwaF9uYXYuUm91dGVSDnJlbWFpbmluZ1JvdXRlEh0KCmNvbW1hbmRfaWQYBCAB'
-    'KA1SCWNvbW1hbmRJZBJAChJsYXN0X2tvX3Rmb3JtX2dvYWwYBSABKAsyEy5ib3NkeW4uYXBpLl'
-    'NFM1Bvc2VSD2xhc3RLb1Rmb3JtR29hbBJuChRib2R5X21vdmVtZW50X3N0YXR1cxgHIAEoDjI8'
-    'LmJvc2R5bi5hcGkuU0UyVHJhamVjdG9yeUNvbW1hbmQuRmVlZGJhY2suQm9keU1vdmVtZW50U3'
-    'RhdHVzUhJib2R5TW92ZW1lbnRTdGF0dXMSaAoTcGF0aF9mb2xsb3dpbmdfbW9kZRgIIAEoDjI4'
-    'LmJvc2R5bi5hcGkuZ3JhcGhfbmF2LkVkZ2UuQW5ub3RhdGlvbnMuUGF0aEZvbGxvd2luZ01vZG'
-    'VSEXBhdGhGb2xsb3dpbmdNb2RlEokBChlhY3RpdmVfcmVnaW9uX2luZm9ybWF0aW9uGAogAygL'
-    'Mk0uYm9zZHluLmFwaS5ncmFwaF9uYXYuTmF2aWdhdGlvbkZlZWRiYWNrUmVzcG9uc2UuQWN0aX'
-    'ZlUmVnaW9uSW5mb3JtYXRpb25FbnRyeVIXYWN0aXZlUmVnaW9uSW5mb3JtYXRpb24SfAoWcm91'
-    'dGVfZm9sbG93aW5nX3N0YXR1cxjoByABKA4yRS5ib3NkeW4uYXBpLmdyYXBoX25hdi5OYXZpZ2'
-    'F0aW9uRmVlZGJhY2tSZXNwb25zZS5Sb3V0ZUZvbGxvd2luZ1N0YXR1c1IUcm91dGVGb2xsb3dp'
-    'bmdTdGF0dXMSaQoPYmxvY2thZ2Vfc3RhdHVzGOkHIAEoDjI/LmJvc2R5bi5hcGkuZ3JhcGhfbm'
-    'F2Lk5hdmlnYXRpb25GZWVkYmFja1Jlc3BvbnNlLkJsb2NrYWdlU3RhdHVzUg5ibG9ja2FnZVN0'
-    'YXR1cxJfCgxzdHVja19yZWFzb24YCyABKA4yPC5ib3NkeW4uYXBpLmdyYXBoX25hdi5OYXZpZ2'
-    'F0aW9uRmVlZGJhY2tSZXNwb25zZS5TdHVja1JlYXNvblILc3R1Y2tSZWFzb24abgoXQXJlYUNh'
-    'bGxiYWNrRXJyb3JzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSPQoFdmFsdWUYAiABKAsyJy5ib3'
-    'NkeW4uYXBpLmdyYXBoX25hdi5BcmVhQ2FsbGJhY2tFcnJvclIFdmFsdWU6AjgBGpQBChxBY3Rp'
-    'dmVSZWdpb25JbmZvcm1hdGlvbkVudHJ5EhAKA2tleRgBIAEoCVIDa2V5El4KBXZhbHVlGAIgAS'
-    'gLMkguYm9zZHluLmFwaS5ncmFwaF9uYXYuTmF2aWdhdGlvbkZlZWRiYWNrUmVzcG9uc2UuQWN0'
-    'aXZlUmVnaW9uSW5mb3JtYXRpb25SBXZhbHVlOgI4ARrWAgoXQWN0aXZlUmVnaW9uSW5mb3JtYX'
-    'Rpb24SIAoLZGVzY3JpcHRpb24YASABKAlSC2Rlc2NyaXB0aW9uEiEKDHNlcnZpY2VfbmFtZRgC'
-    'IAEoCVILc2VydmljZU5hbWUSgAEKDXJlZ2lvbl9zdGF0dXMYAyABKA4yWy5ib3NkeW4uYXBpLm'
-    'dyYXBoX25hdi5OYXZpZ2F0aW9uRmVlZGJhY2tSZXNwb25zZS5BY3RpdmVSZWdpb25JbmZvcm1h'
-    'dGlvbi5BcmVhQ2FsbGJhY2tTdGF0dXNSDHJlZ2lvblN0YXR1cyJzChJBcmVhQ2FsbGJhY2tTdG'
-    'F0dXMSEgoOU1RBVFVTX1VOS05PV04QABIVChFTVEFUVVNfTkFWSUdBVElORxABEhIKDlNUQVRV'
-    'U19XQUlUSU5HEAISHgoaU1RBVFVTX0NBTExCQUNLX0lOX0NPTlRST0wQAyL1AgoGU3RhdHVzEh'
-    'IKDlNUQVRVU19VTktOT1dOEAASGgoWU1RBVFVTX0ZPTExPV0lOR19ST1VURRABEhcKE1NUQVRV'
-    'U19SRUFDSEVEX0dPQUwQAhITCg9TVEFUVVNfTk9fUk9VVEUQAxIaChZTVEFUVVNfTk9fTE9DQU'
-    'xJWkFUSU9OEAQSDwoLU1RBVFVTX0xPU1QQBRIQCgxTVEFUVVNfU1RVQ0sQBhIcChhTVEFUVVNf'
-    'Q09NTUFORF9USU1FRF9PVVQQBxIZChVTVEFUVVNfUk9CT1RfSU1QQUlSRUQQCBIbChdTVEFUVV'
-    'NfQ09OU1RSQUlOVF9GQVVMVBALEh0KGVNUQVRVU19DT01NQU5EX09WRVJSSURERU4QDBIhCh1T'
-    'VEFUVVNfTk9UX0xPQ0FMSVpFRF9UT19ST1VURRANEhYKElNUQVRVU19MRUFTRV9FUlJPUhAOEh'
-    '4KGlNUQVRVU19BUkVBX0NBTExCQUNLX0VSUk9SEA8i8QEKFFJvdXRlRm9sbG93aW5nU3RhdHVz'
-    'EiIKHlJPVVRFX0ZPTExPV0lOR19TVEFUVVNfVU5LTk9XThAAEioKJlJPVVRFX0ZPTExPV0lOR1'
-    '9TVEFUVVNfRk9MTE9XSU5HX1JPVVRFEAESLQopUk9VVEVfRk9MTE9XSU5HX1NUQVRVU19SRVRV'
-    'Uk5JTkdfVE9fUk9VVEUQAhI0CjBST1VURV9GT0xMT1dJTkdfU1RBVFVTX0ZPTExPV0lOR19BTF'
-    'RFUk5BVEVfUk9VVEUQAxIkCiBST1VURV9GT0xMT1dJTkdfU1RBVFVTX0VYUExPUklORxAEIpgB'
-    'Cg5CbG9ja2FnZVN0YXR1cxIbChdCTE9DS0FHRV9TVEFUVVNfVU5LTk9XThAAEh8KG0JMT0NLQU'
-    'dFX1NUQVRVU19ST1VURV9DTEVBUhABEi0KKUJMT0NLQUdFX1NUQVRVU19ST1VURV9CTE9DS0VE'
-    'X1RFTVBPUkFSSUxZEAISGQoVQkxPQ0tBR0VfU1RBVFVTX1NUVUNLEAMisAEKC1N0dWNrUmVhc2'
-    '9uEhgKFFNUVUNLX1JFQVNPTl9VTktOT1dOEAASGQoVU1RVQ0tfUkVBU09OX09CU1RBQ0xFEAES'
-    'JgoiU1RVQ0tfUkVBU09OX0FSRUFfQ0FMTEJBQ0tfQkxPQ0tFRBACEiUKIVNUVUNLX1JFQVNPTl'
-    '9BUkVBX0NBTExCQUNLX0ZBSUxFRBADEh0KGVNUVUNLX1JFQVNPTl9HT0FMX0JMT0NLRUQQBA==');
+    'luLmFwaS5ncmFwaF9uYXYuUm91dGVSDnJlbWFpbmluZ1JvdXRlEk0KD2NvbXBsZXRlZF9yb3V0'
+    'ZRgSIAEoCzIkLmJvc2R5bi5hcGkuZ3JhcGhfbmF2LkNvbXBsZXRlZFJvdXRlUg5jb21wbGV0ZW'
+    'RSb3V0ZRI0ChZyZW1haW5pbmdfcm91dGVfbGVuZ3RoGBEgASgBUhRyZW1haW5pbmdSb3V0ZUxl'
+    'bmd0aBIdCgpjb21tYW5kX2lkGAQgASgNUgljb21tYW5kSWQSQAoSbGFzdF9rb190Zm9ybV9nb2'
+    'FsGAUgASgLMhMuYm9zZHluLmFwaS5TRTNQb3NlUg9sYXN0S29UZm9ybUdvYWwSbgoUYm9keV9t'
+    'b3ZlbWVudF9zdGF0dXMYByABKA4yPC5ib3NkeW4uYXBpLlNFMlRyYWplY3RvcnlDb21tYW5kLk'
+    'ZlZWRiYWNrLkJvZHlNb3ZlbWVudFN0YXR1c1ISYm9keU1vdmVtZW50U3RhdHVzEmgKE3BhdGhf'
+    'Zm9sbG93aW5nX21vZGUYCCABKA4yOC5ib3NkeW4uYXBpLmdyYXBoX25hdi5FZGdlLkFubm90YX'
+    'Rpb25zLlBhdGhGb2xsb3dpbmdNb2RlUhFwYXRoRm9sbG93aW5nTW9kZRKJAQoZYWN0aXZlX3Jl'
+    'Z2lvbl9pbmZvcm1hdGlvbhgKIAMoCzJNLmJvc2R5bi5hcGkuZ3JhcGhfbmF2Lk5hdmlnYXRpb2'
+    '5GZWVkYmFja1Jlc3BvbnNlLkFjdGl2ZVJlZ2lvbkluZm9ybWF0aW9uRW50cnlSF2FjdGl2ZVJl'
+    'Z2lvbkluZm9ybWF0aW9uEnwKFnJvdXRlX2ZvbGxvd2luZ19zdGF0dXMY6AcgASgOMkUuYm9zZH'
+    'luLmFwaS5ncmFwaF9uYXYuTmF2aWdhdGlvbkZlZWRiYWNrUmVzcG9uc2UuUm91dGVGb2xsb3dp'
+    'bmdTdGF0dXNSFHJvdXRlRm9sbG93aW5nU3RhdHVzEmkKD2Jsb2NrYWdlX3N0YXR1cxjpByABKA'
+    '4yPy5ib3NkeW4uYXBpLmdyYXBoX25hdi5OYXZpZ2F0aW9uRmVlZGJhY2tSZXNwb25zZS5CbG9j'
+    'a2FnZVN0YXR1c1IOYmxvY2thZ2VTdGF0dXMSXwoMc3R1Y2tfcmVhc29uGAsgASgOMjwuYm9zZH'
+    'luLmFwaS5ncmFwaF9uYXYuTmF2aWdhdGlvbkZlZWRiYWNrUmVzcG9uc2UuU3R1Y2tSZWFzb25S'
+    'C3N0dWNrUmVhc29uGm4KF0FyZWFDYWxsYmFja0Vycm9yc0VudHJ5EhAKA2tleRgBIAEoCVIDa2'
+    'V5Ej0KBXZhbHVlGAIgASgLMicuYm9zZHluLmFwaS5ncmFwaF9uYXYuQXJlYUNhbGxiYWNrRXJy'
+    'b3JSBXZhbHVlOgI4ARqUAQocQWN0aXZlUmVnaW9uSW5mb3JtYXRpb25FbnRyeRIQCgNrZXkYAS'
+    'ABKAlSA2tleRJeCgV2YWx1ZRgCIAEoCzJILmJvc2R5bi5hcGkuZ3JhcGhfbmF2Lk5hdmlnYXRp'
+    'b25GZWVkYmFja1Jlc3BvbnNlLkFjdGl2ZVJlZ2lvbkluZm9ybWF0aW9uUgV2YWx1ZToCOAEa1g'
+    'IKF0FjdGl2ZVJlZ2lvbkluZm9ybWF0aW9uEiAKC2Rlc2NyaXB0aW9uGAEgASgJUgtkZXNjcmlw'
+    'dGlvbhIhCgxzZXJ2aWNlX25hbWUYAiABKAlSC3NlcnZpY2VOYW1lEoABCg1yZWdpb25fc3RhdH'
+    'VzGAMgASgOMlsuYm9zZHluLmFwaS5ncmFwaF9uYXYuTmF2aWdhdGlvbkZlZWRiYWNrUmVzcG9u'
+    'c2UuQWN0aXZlUmVnaW9uSW5mb3JtYXRpb24uQXJlYUNhbGxiYWNrU3RhdHVzUgxyZWdpb25TdG'
+    'F0dXMicwoSQXJlYUNhbGxiYWNrU3RhdHVzEhIKDlNUQVRVU19VTktOT1dOEAASFQoRU1RBVFVT'
+    'X05BVklHQVRJTkcQARISCg5TVEFUVVNfV0FJVElORxACEh4KGlNUQVRVU19DQUxMQkFDS19JTl'
+    '9DT05UUk9MEAMi9QIKBlN0YXR1cxISCg5TVEFUVVNfVU5LTk9XThAAEhoKFlNUQVRVU19GT0xM'
+    'T1dJTkdfUk9VVEUQARIXChNTVEFUVVNfUkVBQ0hFRF9HT0FMEAISEwoPU1RBVFVTX05PX1JPVV'
+    'RFEAMSGgoWU1RBVFVTX05PX0xPQ0FMSVpBVElPThAEEg8KC1NUQVRVU19MT1NUEAUSEAoMU1RB'
+    'VFVTX1NUVUNLEAYSHAoYU1RBVFVTX0NPTU1BTkRfVElNRURfT1VUEAcSGQoVU1RBVFVTX1JPQk'
+    '9UX0lNUEFJUkVEEAgSGwoXU1RBVFVTX0NPTlNUUkFJTlRfRkFVTFQQCxIdChlTVEFUVVNfQ09N'
+    'TUFORF9PVkVSUklEREVOEAwSIQodU1RBVFVTX05PVF9MT0NBTElaRURfVE9fUk9VVEUQDRIWCh'
+    'JTVEFUVVNfTEVBU0VfRVJST1IQDhIeChpTVEFUVVNfQVJFQV9DQUxMQkFDS19FUlJPUhAPIvEB'
+    'ChRSb3V0ZUZvbGxvd2luZ1N0YXR1cxIiCh5ST1VURV9GT0xMT1dJTkdfU1RBVFVTX1VOS05PV0'
+    '4QABIqCiZST1VURV9GT0xMT1dJTkdfU1RBVFVTX0ZPTExPV0lOR19ST1VURRABEi0KKVJPVVRF'
+    'X0ZPTExPV0lOR19TVEFUVVNfUkVUVVJOSU5HX1RPX1JPVVRFEAISNAowUk9VVEVfRk9MTE9XSU'
+    '5HX1NUQVRVU19GT0xMT1dJTkdfQUxURVJOQVRFX1JPVVRFEAMSJAogUk9VVEVfRk9MTE9XSU5H'
+    'X1NUQVRVU19FWFBMT1JJTkcQBCKYAQoOQmxvY2thZ2VTdGF0dXMSGwoXQkxPQ0tBR0VfU1RBVF'
+    'VTX1VOS05PV04QABIfChtCTE9DS0FHRV9TVEFUVVNfUk9VVEVfQ0xFQVIQARItCilCTE9DS0FH'
+    'RV9TVEFUVVNfUk9VVEVfQkxPQ0tFRF9URU1QT1JBUklMWRACEhkKFUJMT0NLQUdFX1NUQVRVU1'
+    '9TVFVDSxADIrABCgtTdHVja1JlYXNvbhIYChRTVFVDS19SRUFTT05fVU5LTk9XThAAEhkKFVNU'
+    'VUNLX1JFQVNPTl9PQlNUQUNMRRABEiYKIlNUVUNLX1JFQVNPTl9BUkVBX0NBTExCQUNLX0JMT0'
+    'NLRUQQAhIlCiFTVFVDS19SRUFTT05fQVJFQV9DQUxMQkFDS19GQUlMRUQQAxIdChlTVFVDS19S'
+    'RUFTT05fR09BTF9CTE9DS0VEEAQ=');
 
 @$core.Deprecated('Use getLocalizationStateRequestDescriptor instead')
 const GetLocalizationStateRequest$json = {
@@ -795,6 +842,7 @@ const GetLocalizationStateRequest$json = {
     {'1': 'request_live_world_objects', '3': 5, '4': 1, '5': 8, '10': 'requestLiveWorldObjects'},
     {'1': 'request_live_robot_state', '3': 6, '4': 1, '5': 8, '10': 'requestLiveRobotState'},
     {'1': 'compress_live_point_cloud', '3': 7, '4': 1, '5': 8, '10': 'compressLivePointCloud'},
+    {'1': 'request_gps_state', '3': 9, '4': 1, '5': 8, '10': 'requestGpsState'},
   ],
 };
 
@@ -808,7 +856,7 @@ final $typed_data.Uint8List getLocalizationStateRequestDescriptor = $convert.bas
     'I7ChpyZXF1ZXN0X2xpdmVfd29ybGRfb2JqZWN0cxgFIAEoCFIXcmVxdWVzdExpdmVXb3JsZE9i'
     'amVjdHMSNwoYcmVxdWVzdF9saXZlX3JvYm90X3N0YXRlGAYgASgIUhVyZXF1ZXN0TGl2ZVJvYm'
     '90U3RhdGUSOQoZY29tcHJlc3NfbGl2ZV9wb2ludF9jbG91ZBgHIAEoCFIWY29tcHJlc3NMaXZl'
-    'UG9pbnRDbG91ZA==');
+    'UG9pbnRDbG91ZBIqChFyZXF1ZXN0X2dwc19zdGF0ZRgJIAEoCFIPcmVxdWVzdEdwc1N0YXRl');
 
 @$core.Deprecated('Use remotePointCloudStatusDescriptor instead')
 const RemotePointCloudStatus$json = {
@@ -848,6 +896,7 @@ const GetLocalizationStateResponse$json = {
     {'1': 'remote_cloud_status', '3': 5, '4': 3, '5': 11, '6': '.bosdyn.api.graph_nav.RemotePointCloudStatus', '10': 'remoteCloudStatus'},
     {'1': 'live_data', '3': 6, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.WaypointSnapshot', '10': 'liveData'},
     {'1': 'lost_detector_state', '3': 7, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.LostDetectorState', '10': 'lostDetectorState'},
+    {'1': 'gps', '3': 8, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.GPSLocalization', '10': 'gps'},
   ],
 };
 
@@ -861,7 +910,8 @@ final $typed_data.Uint8List getLocalizationStateResponseDescriptor = $convert.ba
     '5SZW1vdGVQb2ludENsb3VkU3RhdHVzUhFyZW1vdGVDbG91ZFN0YXR1cxJDCglsaXZlX2RhdGEY'
     'BiABKAsyJi5ib3NkeW4uYXBpLmdyYXBoX25hdi5XYXlwb2ludFNuYXBzaG90UghsaXZlRGF0YR'
     'JXChNsb3N0X2RldGVjdG9yX3N0YXRlGAcgASgLMicuYm9zZHluLmFwaS5ncmFwaF9uYXYuTG9z'
-    'dERldGVjdG9yU3RhdGVSEWxvc3REZXRlY3RvclN0YXRl');
+    'dERldGVjdG9yU3RhdGVSEWxvc3REZXRlY3RvclN0YXRlEjcKA2dwcxgIIAEoCzIlLmJvc2R5bi'
+    '5hcGkuZ3JhcGhfbmF2LkdQU0xvY2FsaXphdGlvblIDZ3Bz');
 
 @$core.Deprecated('Use clearGraphRequestDescriptor instead')
 const ClearGraphRequest$json = {
@@ -967,6 +1017,7 @@ const UploadGraphResponse_ValidationStatus$json = {
     {'1': 'has_empty_edge_ids', '3': 12, '4': 1, '5': 8, '10': 'hasEmptyEdgeIds'},
     {'1': 'has_empty_waypoint_anchor_ids', '3': 13, '4': 1, '5': 8, '10': 'hasEmptyWaypointAnchorIds'},
     {'1': 'has_empty_object_anchor_ids', '3': 14, '4': 1, '5': 8, '10': 'hasEmptyObjectAnchorIds'},
+    {'1': 'malformed_staircase_edge_ids', '3': 15, '4': 3, '5': 11, '6': '.bosdyn.api.graph_nav.Edge.Id', '10': 'malformedStaircaseEdgeIds'},
   ],
 };
 
@@ -1000,7 +1051,7 @@ final $typed_data.Uint8List uploadGraphResponseDescriptor = $convert.base64Decod
     'cmFwaF9uYXYuQXJlYUNhbGxiYWNrU2VydmljZUVycm9yUhFhcmVhQ2FsbGJhY2tFcnJvchI7Cg'
     'ltYXBfc3RhdHMYCyABKAsyHi5ib3NkeW4uYXBpLmdyYXBoX25hdi5NYXBTdGF0c1IIbWFwU3Rh'
     'dHMSZwoRdmFsaWRhdGlvbl9zdGF0dXMYDCABKAsyOi5ib3NkeW4uYXBpLmdyYXBoX25hdi5VcG'
-    'xvYWRHcmFwaFJlc3BvbnNlLlZhbGlkYXRpb25TdGF0dXNSEHZhbGlkYXRpb25TdGF0dXMauQcK'
+    'xvYWRHcmFwaFJlc3BvbnNlLlZhbGlkYXRpb25TdGF0dXNSEHZhbGlkYXRpb25TdGF0dXMamQgK'
     'EFZhbGlkYXRpb25TdGF0dXMSQAodbWlzc2luZ193YXlwb2ludF9pZHNfaW5fZWRnZXMYASADKA'
     'lSGW1pc3NpbmdXYXlwb2ludElkc0luRWRnZXMSRAofbWlzc2luZ193YXlwb2ludF9pZHNfaW5f'
     'YW5jaG9ycxgCIAMoCVIbbWlzc2luZ1dheXBvaW50SWRzSW5BbmNob3JzEloKGmVkZ2VfaWRzX2'
@@ -1018,10 +1069,11 @@ final $typed_data.Uint8List uploadGraphResponseDescriptor = $convert.base64Decod
     'ZHMSKwoSaGFzX2VtcHR5X2VkZ2VfaWRzGAwgASgIUg9oYXNFbXB0eUVkZ2VJZHMSQAodaGFzX2'
     'VtcHR5X3dheXBvaW50X2FuY2hvcl9pZHMYDSABKAhSGWhhc0VtcHR5V2F5cG9pbnRBbmNob3JJ'
     'ZHMSPAobaGFzX2VtcHR5X29iamVjdF9hbmNob3JfaWRzGA4gASgIUhdoYXNFbXB0eU9iamVjdE'
-    'FuY2hvcklkcyKoAQoGU3RhdHVzEhIKDlNUQVRVU19VTktOT1dOEAASDQoJU1RBVFVTX09LEAES'
-    'IAocU1RBVFVTX01BUF9UT09fTEFSR0VfTElDRU5TRRADEhgKFFNUQVRVU19JTlZBTElEX0dSQV'
-    'BIEAQSHwobU1RBVFVTX0lOQ09NUEFUSUJMRV9TRU5TT1JTEAUSHgoaU1RBVFVTX0FSRUFfQ0FM'
-    'TEJBQ0tfRVJST1IQBg==');
+    'FuY2hvcklkcxJeChxtYWxmb3JtZWRfc3RhaXJjYXNlX2VkZ2VfaWRzGA8gAygLMh0uYm9zZHlu'
+    'LmFwaS5ncmFwaF9uYXYuRWRnZS5JZFIZbWFsZm9ybWVkU3RhaXJjYXNlRWRnZUlkcyKoAQoGU3'
+    'RhdHVzEhIKDlNUQVRVU19VTktOT1dOEAASDQoJU1RBVFVTX09LEAESIAocU1RBVFVTX01BUF9U'
+    'T09fTEFSR0VfTElDRU5TRRADEhgKFFNUQVRVU19JTlZBTElEX0dSQVBIEAQSHwobU1RBVFVTX0'
+    'lOQ09NUEFUSUJMRV9TRU5TT1JTEAUSHgoaU1RBVFVTX0FSRUFfQ0FMTEJBQ0tfRVJST1IQBg==');
 
 @$core.Deprecated('Use downloadGraphRequestDescriptor instead')
 const DownloadGraphRequest$json = {

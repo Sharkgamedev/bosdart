@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $67;
+import '../../../google/protobuf/any.pb.dart' as $66;
 import 'util.pbenum.dart';
 
 export 'util.pbenum.dart';
@@ -271,7 +271,7 @@ class ConstantValue extends $pb.GeneratedMessage {
     $core.String? stringValue,
     $fixnum.Int64? intValue,
     $core.bool? boolValue,
-    $67.Any? msgValue,
+    $66.Any? msgValue,
   }) {
     final $result = create();
     if (floatValue != null) {
@@ -309,7 +309,7 @@ class ConstantValue extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'stringValue')
     ..aInt64(3, _omitFieldNames ? '' : 'intValue')
     ..aOB(4, _omitFieldNames ? '' : 'boolValue')
-    ..aOM<$67.Any>(5, _omitFieldNames ? '' : 'msgValue', subBuilder: $67.Any.create)
+    ..aOM<$66.Any>(5, _omitFieldNames ? '' : 'msgValue', subBuilder: $66.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -374,15 +374,15 @@ class ConstantValue extends $pb.GeneratedMessage {
   void clearBoolValue() => clearField(4);
 
   @$pb.TagNumber(5)
-  $67.Any get msgValue => $_getN(4);
+  $66.Any get msgValue => $_getN(4);
   @$pb.TagNumber(5)
-  set msgValue($67.Any v) { setField(5, v); }
+  set msgValue($66.Any v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMsgValue() => $_has(4);
   @$pb.TagNumber(5)
   void clearMsgValue() => clearField(5);
   @$pb.TagNumber(5)
-  $67.Any ensureMsgValue() => $_ensure(4);
+  $66.Any ensureMsgValue() => $_ensure(4);
 }
 
 /// Data a user can associate with a node.
@@ -390,7 +390,7 @@ class UserData extends $pb.GeneratedMessage {
   factory UserData({
     $core.String? id,
     $core.List<$core.int>? bytestring,
-    $67.Any? sourceRepresentation,
+    $66.Any? sourceRepresentation,
   }) {
     final $result = create();
     if (id != null) {
@@ -411,7 +411,7 @@ class UserData extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserData', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.mission'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'bytestring', $pb.PbFieldType.OY)
-    ..aOM<$67.Any>(4, _omitFieldNames ? '' : 'sourceRepresentation', subBuilder: $67.Any.create)
+    ..aOM<$66.Any>(4, _omitFieldNames ? '' : 'sourceRepresentation', subBuilder: $66.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -463,15 +463,15 @@ class UserData extends $pb.GeneratedMessage {
   ///      - Nothing
   ///      - A [bosdyn.api.autowalk.Walk] if the mission was compiled using the Autowalk service.
   @$pb.TagNumber(4)
-  $67.Any get sourceRepresentation => $_getN(2);
+  $66.Any get sourceRepresentation => $_getN(2);
   @$pb.TagNumber(4)
-  set sourceRepresentation($67.Any v) { setField(4, v); }
+  set sourceRepresentation($66.Any v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSourceRepresentation() => $_has(2);
   @$pb.TagNumber(4)
   void clearSourceRepresentation() => clearField(4);
   @$pb.TagNumber(4)
-  $67.Any ensureSourceRepresentation() => $_ensure(2);
+  $66.Any ensureSourceRepresentation() => $_ensure(2);
 }
 
 

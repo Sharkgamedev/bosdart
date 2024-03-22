@@ -14,12 +14,12 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../header.pb.dart' as $68;
-import '../lease.pb.dart' as $13;
-import '../mission/mission.pb.dart' as $42;
-import '../mission/nodes.pb.dart' as $90;
+import '../header.pb.dart' as $67;
+import '../lease.pb.dart' as $14;
+import '../mission/mission.pb.dart' as $41;
+import '../mission/nodes.pb.dart' as $93;
 import 'autowalk.pbenum.dart';
-import 'walks.pb.dart' as $91;
+import 'walks.pb.dart' as $94;
 
 export 'autowalk.pbenum.dart';
 
@@ -145,15 +145,21 @@ class NodeIdentifier extends $pb.GeneratedMessage {
 
 class ElementIdentifiers extends $pb.GeneratedMessage {
   factory ElementIdentifiers({
+  @$core.Deprecated('This field is deprecated.')
     NodeIdentifier? rootId,
     NodeIdentifier? actionId,
+    NodeIdentifier? navigationId,
   }) {
     final $result = create();
     if (rootId != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.rootId = rootId;
     }
     if (actionId != null) {
       $result.actionId = actionId;
+    }
+    if (navigationId != null) {
+      $result.navigationId = navigationId;
     }
     return $result;
   }
@@ -164,6 +170,7 @@ class ElementIdentifiers extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ElementIdentifiers', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
     ..aOM<NodeIdentifier>(1, _omitFieldNames ? '' : 'rootId', subBuilder: NodeIdentifier.create)
     ..aOM<NodeIdentifier>(2, _omitFieldNames ? '' : 'actionId', subBuilder: NodeIdentifier.create)
+    ..aOM<NodeIdentifier>(3, _omitFieldNames ? '' : 'navigationId', subBuilder: NodeIdentifier.create)
     ..hasRequiredFields = false
   ;
 
@@ -189,14 +196,20 @@ class ElementIdentifiers extends $pb.GeneratedMessage {
   static ElementIdentifiers? _defaultInstance;
 
   /// Identifiable data for the root node of the element.
+  /// Deprecated as of 4.0. Please use navigation_id instead.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   NodeIdentifier get rootId => $_getN(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   set rootId(NodeIdentifier v) { setField(1, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   $core.bool hasRootId() => $_has(0);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   void clearRootId() => clearField(1);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(1)
   NodeIdentifier ensureRootId() => $_ensure(0);
 
@@ -211,12 +224,24 @@ class ElementIdentifiers extends $pb.GeneratedMessage {
   void clearActionId() => clearField(2);
   @$pb.TagNumber(2)
   NodeIdentifier ensureActionId() => $_ensure(1);
+
+  /// Identifiable data for the navigation node of the element.
+  @$pb.TagNumber(3)
+  NodeIdentifier get navigationId => $_getN(2);
+  @$pb.TagNumber(3)
+  set navigationId(NodeIdentifier v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNavigationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNavigationId() => clearField(3);
+  @$pb.TagNumber(3)
+  NodeIdentifier ensureNavigationId() => $_ensure(2);
 }
 
 class CompileAutowalkRequest extends $pb.GeneratedMessage {
   factory CompileAutowalkRequest({
-    $68.RequestHeader? header,
-    $91.Walk? walk,
+    $67.RequestHeader? header,
+    $94.Walk? walk,
     $core.bool? treatWarningsAsErrors,
   }) {
     final $result = create();
@@ -236,8 +261,8 @@ class CompileAutowalkRequest extends $pb.GeneratedMessage {
   factory CompileAutowalkRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompileAutowalkRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$91.Walk>(2, _omitFieldNames ? '' : 'walk', subBuilder: $91.Walk.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$94.Walk>(2, _omitFieldNames ? '' : 'walk', subBuilder: $94.Walk.create)
     ..aOB(5, _omitFieldNames ? '' : 'treatWarningsAsErrors')
     ..hasRequiredFields = false
   ;
@@ -265,27 +290,27 @@ class CompileAutowalkRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Walk to compile.
   @$pb.TagNumber(2)
-  $91.Walk get walk => $_getN(1);
+  $94.Walk get walk => $_getN(1);
   @$pb.TagNumber(2)
-  set walk($91.Walk v) { setField(2, v); }
+  set walk($94.Walk v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasWalk() => $_has(1);
   @$pb.TagNumber(2)
   void clearWalk() => clearField(2);
   @$pb.TagNumber(2)
-  $91.Walk ensureWalk() => $_ensure(1);
+  $94.Walk ensureWalk() => $_ensure(1);
 
   /// If this is set to true, mission compilation will fail if the Walk contains parameters that
   /// are set incorrectly. This can be useful during development to help the developer find issues
@@ -305,9 +330,9 @@ class CompileAutowalkRequest extends $pb.GeneratedMessage {
 
 class CompileAutowalkResponse extends $pb.GeneratedMessage {
   factory CompileAutowalkResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     CompileAutowalkResponse_Status? status,
-    $90.Node? root,
+    $93.Node? root,
     $core.Iterable<ElementIdentifiers>? elementIdentifiers,
     $core.Map<$core.int, FailedElement>? failedElements,
     NodeIdentifier? dockingNode,
@@ -342,9 +367,9 @@ class CompileAutowalkResponse extends $pb.GeneratedMessage {
   factory CompileAutowalkResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompileAutowalkResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<CompileAutowalkResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: CompileAutowalkResponse_Status.STATUS_UNKNOWN, valueOf: CompileAutowalkResponse_Status.valueOf, enumValues: CompileAutowalkResponse_Status.values)
-    ..aOM<$90.Node>(4, _omitFieldNames ? '' : 'root', subBuilder: $90.Node.create)
+    ..aOM<$93.Node>(4, _omitFieldNames ? '' : 'root', subBuilder: $93.Node.create)
     ..pc<ElementIdentifiers>(5, _omitFieldNames ? '' : 'elementIdentifiers', $pb.PbFieldType.PM, subBuilder: ElementIdentifiers.create)
     ..m<$core.int, FailedElement>(6, _omitFieldNames ? '' : 'failedElements', entryClassName: 'CompileAutowalkResponse.FailedElementsEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: FailedElement.create, valueDefaultOrMaker: FailedElement.getDefault, packageName: const $pb.PackageName('bosdyn.api.autowalk'))
     ..aOM<NodeIdentifier>(7, _omitFieldNames ? '' : 'dockingNode', subBuilder: NodeIdentifier.create)
@@ -375,15 +400,15 @@ class CompileAutowalkResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Result of compiling the mission.
   @$pb.TagNumber(2)
@@ -397,15 +422,15 @@ class CompileAutowalkResponse extends $pb.GeneratedMessage {
 
   /// Root node of compiled walk.
   @$pb.TagNumber(4)
-  $90.Node get root => $_getN(2);
+  $93.Node get root => $_getN(2);
   @$pb.TagNumber(4)
-  set root($90.Node v) { setField(4, v); }
+  set root($93.Node v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasRoot() => $_has(2);
   @$pb.TagNumber(4)
   void clearRoot() => clearField(4);
   @$pb.TagNumber(4)
-  $90.Node ensureRoot() => $_ensure(2);
+  $93.Node ensureRoot() => $_ensure(2);
 
   /// There will be one ElementIdentifier for each Element in the input Walk.
   /// The index of each ElementIdentifier corresponds to the index of the Element in the input
@@ -446,9 +471,9 @@ class CompileAutowalkResponse extends $pb.GeneratedMessage {
 
 class LoadAutowalkRequest extends $pb.GeneratedMessage {
   factory LoadAutowalkRequest({
-    $68.RequestHeader? header,
-    $91.Walk? walk,
-    $core.Iterable<$13.Lease>? leases,
+    $67.RequestHeader? header,
+    $94.Walk? walk,
+    $core.Iterable<$14.Lease>? leases,
     $core.bool? treatWarningsAsErrors,
   }) {
     final $result = create();
@@ -471,9 +496,9 @@ class LoadAutowalkRequest extends $pb.GeneratedMessage {
   factory LoadAutowalkRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoadAutowalkRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$91.Walk>(2, _omitFieldNames ? '' : 'walk', subBuilder: $91.Walk.create)
-    ..pc<$13.Lease>(3, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$94.Walk>(2, _omitFieldNames ? '' : 'walk', subBuilder: $94.Walk.create)
+    ..pc<$14.Lease>(3, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
     ..aOB(5, _omitFieldNames ? '' : 'treatWarningsAsErrors')
     ..hasRequiredFields = false
   ;
@@ -501,32 +526,32 @@ class LoadAutowalkRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Walk to compile
   @$pb.TagNumber(2)
-  $91.Walk get walk => $_getN(1);
+  $94.Walk get walk => $_getN(1);
   @$pb.TagNumber(2)
-  set walk($91.Walk v) { setField(2, v); }
+  set walk($94.Walk v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasWalk() => $_has(1);
   @$pb.TagNumber(2)
   void clearWalk() => clearField(2);
   @$pb.TagNumber(2)
-  $91.Walk ensureWalk() => $_ensure(1);
+  $94.Walk ensureWalk() => $_ensure(1);
 
   /// Leases that will be needed to validate the mission.
   /// Usually, no leases are necessary for validation, and this can be left empty.
   @$pb.TagNumber(3)
-  $core.List<$13.Lease> get leases => $_getList(2);
+  $core.List<$14.Lease> get leases => $_getList(2);
 
   /// If this is set to true, mission compilation will fail if the Walk contains parameters that
   /// are set incorrectly. This can be useful during development to help the developer find issues
@@ -546,10 +571,10 @@ class LoadAutowalkRequest extends $pb.GeneratedMessage {
 
 class LoadAutowalkResponse extends $pb.GeneratedMessage {
   factory LoadAutowalkResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     LoadAutowalkResponse_Status? status,
-    $core.Iterable<$13.LeaseUseResult>? leaseUseResults,
-    $core.Iterable<$42.FailedNode>? failedNodes,
+    $core.Iterable<$14.LeaseUseResult>? leaseUseResults,
+    $core.Iterable<$41.FailedNode>? failedNodes,
     $core.Iterable<ElementIdentifiers>? elementIdentifiers,
     $core.Map<$core.int, FailedElement>? failedElements,
     $fixnum.Int64? missionId,
@@ -591,10 +616,10 @@ class LoadAutowalkResponse extends $pb.GeneratedMessage {
   factory LoadAutowalkResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoadAutowalkResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.autowalk'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<LoadAutowalkResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: LoadAutowalkResponse_Status.STATUS_UNKNOWN, valueOf: LoadAutowalkResponse_Status.valueOf, enumValues: LoadAutowalkResponse_Status.values)
-    ..pc<$13.LeaseUseResult>(3, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $13.LeaseUseResult.create)
-    ..pc<$42.FailedNode>(5, _omitFieldNames ? '' : 'failedNodes', $pb.PbFieldType.PM, subBuilder: $42.FailedNode.create)
+    ..pc<$14.LeaseUseResult>(3, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $14.LeaseUseResult.create)
+    ..pc<$41.FailedNode>(5, _omitFieldNames ? '' : 'failedNodes', $pb.PbFieldType.PM, subBuilder: $41.FailedNode.create)
     ..pc<ElementIdentifiers>(7, _omitFieldNames ? '' : 'elementIdentifiers', $pb.PbFieldType.PM, subBuilder: ElementIdentifiers.create)
     ..m<$core.int, FailedElement>(8, _omitFieldNames ? '' : 'failedElements', entryClassName: 'LoadAutowalkResponse.FailedElementsEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OM, valueCreator: FailedElement.create, valueDefaultOrMaker: FailedElement.getDefault, packageName: const $pb.PackageName('bosdyn.api.autowalk'))
     ..aInt64(9, _omitFieldNames ? '' : 'missionId')
@@ -626,15 +651,15 @@ class LoadAutowalkResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Result of loading the mission.
   @$pb.TagNumber(2)
@@ -649,11 +674,11 @@ class LoadAutowalkResponse extends $pb.GeneratedMessage {
   /// Results from any leases that may have been used.
   /// As part of mission validation, some of the non-mission leases may have been used.
   @$pb.TagNumber(3)
-  $core.List<$13.LeaseUseResult> get leaseUseResults => $_getList(2);
+  $core.List<$14.LeaseUseResult> get leaseUseResults => $_getList(2);
 
   /// If certain nodes failed compilation or validation, they will be reported back in this field.
   @$pb.TagNumber(5)
-  $core.List<$42.FailedNode> get failedNodes => $_getList(3);
+  $core.List<$41.FailedNode> get failedNodes => $_getList(3);
 
   /// There will be one ElementIdentifier for each Element in the input Walk.
   /// The index of each ElementIdentifier corresponds to the index of the Element in the input

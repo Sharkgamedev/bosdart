@@ -68,12 +68,86 @@ final $typed_data.Uint8List areaCallbackInformationRequestDescriptor = $convert.
     'Ch5BcmVhQ2FsbGJhY2tJbmZvcm1hdGlvblJlcXVlc3QSMQoGaGVhZGVyGAEgASgLMhkuYm9zZH'
     'luLmFwaS5SZXF1ZXN0SGVhZGVyUgZoZWFkZXI=');
 
+@$core.Deprecated('Use stopConfigurationDescriptor instead')
+const StopConfiguration$json = {
+  '1': 'StopConfiguration',
+  '2': [
+    {'1': 'face_direction', '3': 3, '4': 1, '5': 14, '6': '.bosdyn.api.graph_nav.StopConfiguration.FaceDirection', '10': 'faceDirection'},
+    {'1': 'face_stairs_if_present', '3': 5, '4': 1, '5': 8, '10': 'faceStairsIfPresent'},
+    {'1': 'face_yaw_offset', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.DoubleValue', '10': 'faceYawOffset'},
+    {'1': 'max_distance', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.DoubleValue', '10': 'maxDistance'},
+    {'1': 'max_yaw', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.DoubleValue', '10': 'maxYaw'},
+  ],
+  '4': [StopConfiguration_FaceDirection$json],
+};
+
+@$core.Deprecated('Use stopConfigurationDescriptor instead')
+const StopConfiguration_FaceDirection$json = {
+  '1': 'FaceDirection',
+  '2': [
+    {'1': 'FACE_DIRECTION_UNKNOWN', '2': 0},
+    {'1': 'FACE_DIRECTION_ALONG_ROUTE', '2': 1},
+    {'1': 'FACE_DIRECTION_WAYPOINT_EXACT', '2': 2},
+    {'1': 'FACE_DIRECTION_WAYPOINT_AUTO', '2': 3},
+    {'1': 'FACE_DIRECTION_REGION_END', '2': 4},
+  ],
+};
+
+/// Descriptor for `StopConfiguration`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List stopConfigurationDescriptor = $convert.base64Decode(
+    'ChFTdG9wQ29uZmlndXJhdGlvbhJcCg5mYWNlX2RpcmVjdGlvbhgDIAEoDjI1LmJvc2R5bi5hcG'
+    'kuZ3JhcGhfbmF2LlN0b3BDb25maWd1cmF0aW9uLkZhY2VEaXJlY3Rpb25SDWZhY2VEaXJlY3Rp'
+    'b24SMwoWZmFjZV9zdGFpcnNfaWZfcHJlc2VudBgFIAEoCFITZmFjZVN0YWlyc0lmUHJlc2VudB'
+    'JECg9mYWNlX3lhd19vZmZzZXQYBCABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWVS'
+    'DWZhY2VZYXdPZmZzZXQSPwoMbWF4X2Rpc3RhbmNlGAEgASgLMhwuZ29vZ2xlLnByb3RvYnVmLk'
+    'RvdWJsZVZhbHVlUgttYXhEaXN0YW5jZRI1CgdtYXhfeWF3GAIgASgLMhwuZ29vZ2xlLnByb3Rv'
+    'YnVmLkRvdWJsZVZhbHVlUgZtYXhZYXcirwEKDUZhY2VEaXJlY3Rpb24SGgoWRkFDRV9ESVJFQ1'
+    'RJT05fVU5LTk9XThAAEh4KGkZBQ0VfRElSRUNUSU9OX0FMT05HX1JPVVRFEAESIQodRkFDRV9E'
+    'SVJFQ1RJT05fV0FZUE9JTlRfRVhBQ1QQAhIgChxGQUNFX0RJUkVDVElPTl9XQVlQT0lOVF9BVV'
+    'RPEAMSHQoZRkFDRV9ESVJFQ1RJT05fUkVHSU9OX0VORBAE');
+
 @$core.Deprecated('Use areaCallbackInformationDescriptor instead')
 const AreaCallbackInformation$json = {
   '1': 'AreaCallbackInformation',
   '2': [
     {'1': 'required_lease_resources', '3': 1, '4': 3, '5': 9, '10': 'requiredLeaseResources'},
     {'1': 'custom_params', '3': 4, '4': 1, '5': 11, '6': '.bosdyn.api.DictParam.Spec', '10': 'customParams'},
+    {'1': 'blockage', '3': 5, '4': 1, '5': 14, '6': '.bosdyn.api.graph_nav.AreaCallbackInformation.Blockage', '10': 'blockage'},
+    {'1': 'impairment_check', '3': 6, '4': 1, '5': 14, '6': '.bosdyn.api.graph_nav.AreaCallbackInformation.Impairment', '10': 'impairmentCheck'},
+    {'1': 'entity_waiting', '3': 7, '4': 1, '5': 14, '6': '.bosdyn.api.graph_nav.AreaCallbackInformation.EntityWaiting', '10': 'entityWaiting'},
+    {'1': 'default_stop', '3': 8, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.StopConfiguration', '10': 'defaultStop'},
+    {'1': 'map_config', '3': 9, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.AreaCallbackMapConfig', '10': 'mapConfig'},
+  ],
+  '4': [AreaCallbackInformation_Blockage$json, AreaCallbackInformation_Impairment$json, AreaCallbackInformation_EntityWaiting$json],
+};
+
+@$core.Deprecated('Use areaCallbackInformationDescriptor instead')
+const AreaCallbackInformation_Blockage$json = {
+  '1': 'Blockage',
+  '2': [
+    {'1': 'BLOCKAGE_UNKNOWN', '2': 0},
+    {'1': 'BLOCKAGE_SKIP', '2': 1},
+    {'1': 'BLOCKAGE_CHECK', '2': 2},
+  ],
+};
+
+@$core.Deprecated('Use areaCallbackInformationDescriptor instead')
+const AreaCallbackInformation_Impairment$json = {
+  '1': 'Impairment',
+  '2': [
+    {'1': 'IMPAIRMENT_UNKNOWN', '2': 0},
+    {'1': 'IMPAIRMENT_SKIP', '2': 1},
+    {'1': 'IMPAIRMENT_CHECK', '2': 2},
+  ],
+};
+
+@$core.Deprecated('Use areaCallbackInformationDescriptor instead')
+const AreaCallbackInformation_EntityWaiting$json = {
+  '1': 'EntityWaiting',
+  '2': [
+    {'1': 'ENTITY_WAITING_UNKNOWN', '2': 0},
+    {'1': 'ENTITY_WAITING_DISABLE', '2': 1},
+    {'1': 'ENTITY_WAITING_ENABLE', '2': 2},
   ],
 };
 
@@ -81,7 +155,20 @@ const AreaCallbackInformation$json = {
 final $typed_data.Uint8List areaCallbackInformationDescriptor = $convert.base64Decode(
     'ChdBcmVhQ2FsbGJhY2tJbmZvcm1hdGlvbhI4ChhyZXF1aXJlZF9sZWFzZV9yZXNvdXJjZXMYAS'
     'ADKAlSFnJlcXVpcmVkTGVhc2VSZXNvdXJjZXMSPwoNY3VzdG9tX3BhcmFtcxgEIAEoCzIaLmJv'
-    'c2R5bi5hcGkuRGljdFBhcmFtLlNwZWNSDGN1c3RvbVBhcmFtcw==');
+    'c2R5bi5hcGkuRGljdFBhcmFtLlNwZWNSDGN1c3RvbVBhcmFtcxJSCghibG9ja2FnZRgFIAEoDj'
+    'I2LmJvc2R5bi5hcGkuZ3JhcGhfbmF2LkFyZWFDYWxsYmFja0luZm9ybWF0aW9uLkJsb2NrYWdl'
+    'UghibG9ja2FnZRJjChBpbXBhaXJtZW50X2NoZWNrGAYgASgOMjguYm9zZHluLmFwaS5ncmFwaF'
+    '9uYXYuQXJlYUNhbGxiYWNrSW5mb3JtYXRpb24uSW1wYWlybWVudFIPaW1wYWlybWVudENoZWNr'
+    'EmIKDmVudGl0eV93YWl0aW5nGAcgASgOMjsuYm9zZHluLmFwaS5ncmFwaF9uYXYuQXJlYUNhbG'
+    'xiYWNrSW5mb3JtYXRpb24uRW50aXR5V2FpdGluZ1INZW50aXR5V2FpdGluZxJKCgxkZWZhdWx0'
+    'X3N0b3AYCCABKAsyJy5ib3NkeW4uYXBpLmdyYXBoX25hdi5TdG9wQ29uZmlndXJhdGlvblILZG'
+    'VmYXVsdFN0b3ASSgoKbWFwX2NvbmZpZxgJIAEoCzIrLmJvc2R5bi5hcGkuZ3JhcGhfbmF2LkFy'
+    'ZWFDYWxsYmFja01hcENvbmZpZ1IJbWFwQ29uZmlnIkcKCEJsb2NrYWdlEhQKEEJMT0NLQUdFX1'
+    'VOS05PV04QABIRCg1CTE9DS0FHRV9TS0lQEAESEgoOQkxPQ0tBR0VfQ0hFQ0sQAiJPCgpJbXBh'
+    'aXJtZW50EhYKEklNUEFJUk1FTlRfVU5LTk9XThAAEhMKD0lNUEFJUk1FTlRfU0tJUBABEhQKEE'
+    'lNUEFJUk1FTlRfQ0hFQ0sQAiJiCg1FbnRpdHlXYWl0aW5nEhoKFkVOVElUWV9XQUlUSU5HX1VO'
+    'S05PV04QABIaChZFTlRJVFlfV0FJVElOR19ESVNBQkxFEAESGQoVRU5USVRZX1dBSVRJTkdfRU'
+    '5BQkxFEAI=');
 
 @$core.Deprecated('Use areaCallbackInformationResponseDescriptor instead')
 const AreaCallbackInformationResponse$json = {
@@ -296,6 +383,7 @@ const UpdateCallbackResponse_NavPolicy$json = {
   '2': [
     {'1': 'at_start', '3': 1, '4': 1, '5': 14, '6': '.bosdyn.api.graph_nav.UpdateCallbackResponse.NavPolicy.Option', '10': 'atStart'},
     {'1': 'at_end', '3': 2, '4': 1, '5': 14, '6': '.bosdyn.api.graph_nav.UpdateCallbackResponse.NavPolicy.Option', '10': 'atEnd'},
+    {'1': 'end_config', '3': 4, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.StopConfiguration', '10': 'endConfig'},
   ],
   '4': [UpdateCallbackResponse_NavPolicy_Option$json],
 };
@@ -363,20 +451,21 @@ final $typed_data.Uint8List updateCallbackResponseDescriptor = $convert.base64De
     'EKElVwZGF0ZUxvY2FsaXphdGlvbhJqCgZjaGFuZ2UYASABKA4yUi5ib3NkeW4uYXBpLmdyYXBo'
     'X25hdi5VcGRhdGVDYWxsYmFja1Jlc3BvbnNlLlVwZGF0ZUxvY2FsaXphdGlvbi5Mb2NhbGl6YX'
     'Rpb25DaGFuZ2VSBmNoYW5nZSJHChJMb2NhbGl6YXRpb25DaGFuZ2USGAoUTE9DQUxJWkFUSU9O'
-    'X1VOS05PV04QABIXChNMT0NBTElaQVRJT05fQVRfRU5EEAEakwIKCU5hdlBvbGljeRJYCghhdF'
+    'X1VOS05PV04QABIXChNMT0NBTElaQVRJT05fQVRfRU5EEAEa2wIKCU5hdlBvbGljeRJYCghhdF'
     '9zdGFydBgBIAEoDjI9LmJvc2R5bi5hcGkuZ3JhcGhfbmF2LlVwZGF0ZUNhbGxiYWNrUmVzcG9u'
     'c2UuTmF2UG9saWN5Lk9wdGlvblIHYXRTdGFydBJUCgZhdF9lbmQYAiABKA4yPS5ib3NkeW4uYX'
     'BpLmdyYXBoX25hdi5VcGRhdGVDYWxsYmFja1Jlc3BvbnNlLk5hdlBvbGljeS5PcHRpb25SBWF0'
-    'RW5kIlYKBk9wdGlvbhISCg5PUFRJT05fVU5LTk9XThAAEhMKD09QVElPTl9DT05USU5VRRABEg'
-    '8KC09QVElPTl9TVE9QEAISEgoOT1BUSU9OX0NPTlRST0wQAxqXAgoFRXJyb3ISUgoFZXJyb3IY'
-    'ASABKA4yPC5ib3NkeW4uYXBpLmdyYXBoX25hdi5VcGRhdGVDYWxsYmFja1Jlc3BvbnNlLkVycm'
-    '9yLkVycm9yVHlwZVIFZXJyb3ISRgoRbGVhc2VfdXNlX3Jlc3VsdHMYAiADKAsyGi5ib3NkeW4u'
-    'YXBpLkxlYXNlVXNlUmVzdWx0Ug9sZWFzZVVzZVJlc3VsdHMicgoJRXJyb3JUeXBlEhEKDUVSUk'
-    '9SX1VOS05PV04QABIRCg1FUlJPUl9CTE9DS0VEEAESGQoVRVJST1JfQ0FMTEJBQ0tfRkFJTEVE'
-    'EAISDwoLRVJST1JfTEVBU0UQAxITCg9FUlJPUl9USU1FRF9PVVQQBBoKCghDb21wbGV0ZSJnCg'
-    'ZTdGF0dXMSEgoOU1RBVFVTX1VOS05PV04QABINCglTVEFUVVNfT0sQARIdChlTVEFUVVNfSU5W'
-    'QUxJRF9DT01NQU5EX0lEEAISGwoXU1RBVFVTX0VYUElSRURfRU5EX1RJTUUQA0IKCghyZXNwb2'
-    '5zZQ==');
+    'RW5kEkYKCmVuZF9jb25maWcYBCABKAsyJy5ib3NkeW4uYXBpLmdyYXBoX25hdi5TdG9wQ29uZm'
+    'lndXJhdGlvblIJZW5kQ29uZmlnIlYKBk9wdGlvbhISCg5PUFRJT05fVU5LTk9XThAAEhMKD09Q'
+    'VElPTl9DT05USU5VRRABEg8KC09QVElPTl9TVE9QEAISEgoOT1BUSU9OX0NPTlRST0wQAxqXAg'
+    'oFRXJyb3ISUgoFZXJyb3IYASABKA4yPC5ib3NkeW4uYXBpLmdyYXBoX25hdi5VcGRhdGVDYWxs'
+    'YmFja1Jlc3BvbnNlLkVycm9yLkVycm9yVHlwZVIFZXJyb3ISRgoRbGVhc2VfdXNlX3Jlc3VsdH'
+    'MYAiADKAsyGi5ib3NkeW4uYXBpLkxlYXNlVXNlUmVzdWx0Ug9sZWFzZVVzZVJlc3VsdHMicgoJ'
+    'RXJyb3JUeXBlEhEKDUVSUk9SX1VOS05PV04QABIRCg1FUlJPUl9CTE9DS0VEEAESGQoVRVJST1'
+    'JfQ0FMTEJBQ0tfRkFJTEVEEAISDwoLRVJST1JfTEVBU0UQAxITCg9FUlJPUl9USU1FRF9PVVQQ'
+    'BBoKCghDb21wbGV0ZSJnCgZTdGF0dXMSEgoOU1RBVFVTX1VOS05PV04QABINCglTVEFUVVNfT0'
+    'sQARIdChlTVEFUVVNfSU5WQUxJRF9DT01NQU5EX0lEEAISGwoXU1RBVFVTX0VYUElSRURfRU5E'
+    'X1RJTUUQA0IKCghyZXNwb25zZQ==');
 
 @$core.Deprecated('Use endCallbackRequestDescriptor instead')
 const EndCallbackRequest$json = {
@@ -420,4 +509,51 @@ final $typed_data.Uint8List endCallbackResponseDescriptor = $convert.base64Decod
     'di5FbmRDYWxsYmFja1Jlc3BvbnNlLlN0YXR1c1IGc3RhdHVzIm8KBlN0YXR1cxISCg5TVEFUVV'
     'NfVU5LTk9XThAAEg0KCVNUQVRVU19PSxABEh0KGVNUQVRVU19JTlZBTElEX0NPTU1BTkRfSUQQ'
     'AhIjCh9TVEFUVVNfU0hVVERPV05fQ0FMTEJBQ0tfRkFJTEVEEAM=');
+
+@$core.Deprecated('Use routeChangeRequestDescriptor instead')
+const RouteChangeRequest$json = {
+  '1': 'RouteChangeRequest',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
+    {'1': 'command_id', '3': 2, '4': 1, '5': 13, '10': 'commandId'},
+    {'1': 'route', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.Route', '10': 'route'},
+    {'1': 'unfinished_route', '3': 4, '4': 1, '5': 11, '6': '.bosdyn.api.graph_nav.Route', '10': 'unfinishedRoute'},
+  ],
+};
+
+/// Descriptor for `RouteChangeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List routeChangeRequestDescriptor = $convert.base64Decode(
+    'ChJSb3V0ZUNoYW5nZVJlcXVlc3QSMQoGaGVhZGVyGAEgASgLMhkuYm9zZHluLmFwaS5SZXF1ZX'
+    'N0SGVhZGVyUgZoZWFkZXISHQoKY29tbWFuZF9pZBgCIAEoDVIJY29tbWFuZElkEjEKBXJvdXRl'
+    'GAMgASgLMhsuYm9zZHluLmFwaS5ncmFwaF9uYXYuUm91dGVSBXJvdXRlEkYKEHVuZmluaXNoZW'
+    'Rfcm91dGUYBCABKAsyGy5ib3NkeW4uYXBpLmdyYXBoX25hdi5Sb3V0ZVIPdW5maW5pc2hlZFJv'
+    'dXRl');
+
+@$core.Deprecated('Use routeChangeResponseDescriptor instead')
+const RouteChangeResponse$json = {
+  '1': 'RouteChangeResponse',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
+    {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.bosdyn.api.graph_nav.RouteChangeResponse.Status', '10': 'status'},
+  ],
+  '4': [RouteChangeResponse_Status$json],
+};
+
+@$core.Deprecated('Use routeChangeResponseDescriptor instead')
+const RouteChangeResponse_Status$json = {
+  '1': 'Status',
+  '2': [
+    {'1': 'STATUS_UNKNOWN', '2': 0},
+    {'1': 'STATUS_OK', '2': 1},
+    {'1': 'STATUS_INVALID_COMMAND_ID', '2': 2},
+  ],
+};
+
+/// Descriptor for `RouteChangeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List routeChangeResponseDescriptor = $convert.base64Decode(
+    'ChNSb3V0ZUNoYW5nZVJlc3BvbnNlEjIKBmhlYWRlchgBIAEoCzIaLmJvc2R5bi5hcGkuUmVzcG'
+    '9uc2VIZWFkZXJSBmhlYWRlchJICgZzdGF0dXMYAiABKA4yMC5ib3NkeW4uYXBpLmdyYXBoX25h'
+    'di5Sb3V0ZUNoYW5nZVJlc3BvbnNlLlN0YXR1c1IGc3RhdHVzIkoKBlN0YXR1cxISCg5TVEFUVV'
+    'NfVU5LTk9XThAAEg0KCVNUQVRVU19PSxABEh0KGVNUQVRVU19JTlZBTElEX0NPTU1BTkRfSUQQ'
+    'Ag==');
 

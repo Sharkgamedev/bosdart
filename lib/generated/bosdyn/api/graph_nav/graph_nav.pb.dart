@@ -13,21 +13,24 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $62;
-import '../../../google/protobuf/timestamp.pb.dart' as $60;
-import '../basic_command.pbenum.dart' as $64;
-import '../data_chunk.pb.dart' as $34;
-import '../geometry.pb.dart' as $61;
-import '../header.pb.dart' as $68;
-import '../lease.pb.dart' as $13;
-import '../license.pbenum.dart' as $14;
+import '../../../google/protobuf/duration.pb.dart' as $61;
+import '../../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../../google/protobuf/wrappers.pb.dart' as $58;
+import '../basic_command.pbenum.dart' as $63;
+import '../data_chunk.pb.dart' as $4;
+import '../geometry.pb.dart' as $60;
+import '../gps/gps.pb.dart' as $85;
+import '../header.pb.dart' as $67;
+import '../lease.pb.dart' as $14;
+import '../license.pbenum.dart' as $15;
 import '../robot_state.pb.dart' as $26;
-import '../service_fault.pb.dart' as $9;
-import 'area_callback.pb.dart' as $36;
+import '../service_fault.pb.dart' as $10;
+import 'area_callback.pb.dart' as $35;
+import 'gps.pb.dart' as $91;
 import 'graph_nav.pbenum.dart';
-import 'map.pb.dart' as $87;
-import 'map.pbenum.dart' as $87;
-import 'nav.pb.dart' as $88;
+import 'map.pb.dart' as $89;
+import 'map.pbenum.dart' as $89;
+import 'nav.pb.dart' as $90;
 
 export 'graph_nav.pbenum.dart';
 
@@ -98,9 +101,9 @@ enum SetLocalizationRequest_Refinement {
 /// will be modified, and can be retrieved using a GetLocalizationStateRequest.
 class SetLocalizationRequest extends $pb.GeneratedMessage {
   factory SetLocalizationRequest({
-    $68.RequestHeader? header,
-    $88.Localization? initialGuess,
-    $61.SE3Pose? koTformBody,
+    $67.RequestHeader? header,
+    $90.Localization? initialGuess,
+    $60.SE3Pose? koTformBody,
     $core.double? maxDistance,
     $core.double? maxYaw,
     SetLocalizationRequest_FiducialInit? fiducialInit,
@@ -157,9 +160,9 @@ class SetLocalizationRequest extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetLocalizationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..oo(0, [9, 12])
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$88.Localization>(3, _omitFieldNames ? '' : 'initialGuess', subBuilder: $88.Localization.create)
-    ..aOM<$61.SE3Pose>(4, _omitFieldNames ? '' : 'koTformBody', subBuilder: $61.SE3Pose.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$90.Localization>(3, _omitFieldNames ? '' : 'initialGuess', subBuilder: $90.Localization.create)
+    ..aOM<$60.SE3Pose>(4, _omitFieldNames ? '' : 'koTformBody', subBuilder: $60.SE3Pose.create)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'maxDistance', $pb.PbFieldType.OD)
     ..a<$core.double>(6, _omitFieldNames ? '' : 'maxYaw', $pb.PbFieldType.OD)
     ..e<SetLocalizationRequest_FiducialInit>(7, _omitFieldNames ? '' : 'fiducialInit', $pb.PbFieldType.OE, defaultOrMaker: SetLocalizationRequest_FiducialInit.FIDUCIAL_INIT_UNKNOWN, valueOf: SetLocalizationRequest_FiducialInit.valueOf, enumValues: SetLocalizationRequest_FiducialInit.values)
@@ -197,42 +200,42 @@ class SetLocalizationRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Operator-supplied guess at localization.
   @$pb.TagNumber(3)
-  $88.Localization get initialGuess => $_getN(1);
+  $90.Localization get initialGuess => $_getN(1);
   @$pb.TagNumber(3)
-  set initialGuess($88.Localization v) { setField(3, v); }
+  set initialGuess($90.Localization v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasInitialGuess() => $_has(1);
   @$pb.TagNumber(3)
   void clearInitialGuess() => clearField(3);
   @$pb.TagNumber(3)
-  $88.Localization ensureInitialGuess() => $_ensure(1);
+  $90.Localization ensureInitialGuess() => $_ensure(1);
 
   /// Robot pose when the initial_guess was made.
   /// This overcomes the race that occurs when the client is trying to initialize a moving robot.
   /// GraphNav will use its local ko_tform_body and this ko_tform_body to update the initial
   /// localization guess, if necessary.
   @$pb.TagNumber(4)
-  $61.SE3Pose get koTformBody => $_getN(2);
+  $60.SE3Pose get koTformBody => $_getN(2);
   @$pb.TagNumber(4)
-  set koTformBody($61.SE3Pose v) { setField(4, v); }
+  set koTformBody($60.SE3Pose v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasKoTformBody() => $_has(2);
   @$pb.TagNumber(4)
   void clearKoTformBody() => clearField(4);
   @$pb.TagNumber(4)
-  $61.SE3Pose ensureKoTformBody() => $_ensure(2);
+  $60.SE3Pose ensureKoTformBody() => $_ensure(2);
 
   /// The max distance [meters] is how far away the robot is allowed to localize from the position supplied
   /// in the initial guess. If not specified, the offset is used directly. Otherwise it searches a neighborhood
@@ -397,7 +400,7 @@ class SensorCompatibilityStatus extends $pb.GeneratedMessage {
 
 class SetLocalizationResponse_SuspectedAmbiguity extends $pb.GeneratedMessage {
   factory SetLocalizationResponse_SuspectedAmbiguity({
-    $61.SE3Pose? alternateRobotTformWaypoint,
+    $60.SE3Pose? alternateRobotTformWaypoint,
   }) {
     final $result = create();
     if (alternateRobotTformWaypoint != null) {
@@ -410,7 +413,7 @@ class SetLocalizationResponse_SuspectedAmbiguity extends $pb.GeneratedMessage {
   factory SetLocalizationResponse_SuspectedAmbiguity.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetLocalizationResponse.SuspectedAmbiguity', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$61.SE3Pose>(1, _omitFieldNames ? '' : 'alternateRobotTformWaypoint', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(1, _omitFieldNames ? '' : 'alternateRobotTformWaypoint', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -438,25 +441,25 @@ class SetLocalizationResponse_SuspectedAmbiguity extends $pb.GeneratedMessage {
   /// Example of a potentially ambiguous localization near the
   /// result of the initialization.
   @$pb.TagNumber(1)
-  $61.SE3Pose get alternateRobotTformWaypoint => $_getN(0);
+  $60.SE3Pose get alternateRobotTformWaypoint => $_getN(0);
   @$pb.TagNumber(1)
-  set alternateRobotTformWaypoint($61.SE3Pose v) { setField(1, v); }
+  set alternateRobotTformWaypoint($60.SE3Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAlternateRobotTformWaypoint() => $_has(0);
   @$pb.TagNumber(1)
   void clearAlternateRobotTformWaypoint() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE3Pose ensureAlternateRobotTformWaypoint() => $_ensure(0);
+  $60.SE3Pose ensureAlternateRobotTformWaypoint() => $_ensure(0);
 }
 
 /// The SetLocalization response message contains the resulting localization to the map.
 class SetLocalizationResponse extends $pb.GeneratedMessage {
   factory SetLocalizationResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
     SetLocalizationResponse_Status? status,
     $core.String? errorReport,
-    $88.Localization? localization,
+    $90.Localization? localization,
     SetLocalizationResponse_SuspectedAmbiguity? suspectedAmbiguity,
     $26.RobotImpairedState? impairedState,
     SensorCompatibilityStatus? sensorStatus,
@@ -497,11 +500,11 @@ class SetLocalizationResponse extends $pb.GeneratedMessage {
   factory SetLocalizationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetLocalizationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..e<SetLocalizationResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: SetLocalizationResponse_Status.STATUS_UNKNOWN, valueOf: SetLocalizationResponse_Status.valueOf, enumValues: SetLocalizationResponse_Status.values)
     ..aOS(4, _omitFieldNames ? '' : 'errorReport')
-    ..aOM<$88.Localization>(5, _omitFieldNames ? '' : 'localization', subBuilder: $88.Localization.create)
+    ..aOM<$90.Localization>(5, _omitFieldNames ? '' : 'localization', subBuilder: $90.Localization.create)
     ..aOM<SetLocalizationResponse_SuspectedAmbiguity>(7, _omitFieldNames ? '' : 'suspectedAmbiguity', subBuilder: SetLocalizationResponse_SuspectedAmbiguity.create)
     ..aOM<$26.RobotImpairedState>(8, _omitFieldNames ? '' : 'impairedState', subBuilder: $26.RobotImpairedState.create)
     ..aOM<SensorCompatibilityStatus>(9, _omitFieldNames ? '' : 'sensorStatus', subBuilder: SensorCompatibilityStatus.create)
@@ -532,27 +535,27 @@ class SetLocalizationResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Result of using the lease.
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
   /// Return status for the request.
   @$pb.TagNumber(3)
@@ -576,15 +579,15 @@ class SetLocalizationResponse extends $pb.GeneratedMessage {
 
   /// Result of localization.
   @$pb.TagNumber(5)
-  $88.Localization get localization => $_getN(4);
+  $90.Localization get localization => $_getN(4);
   @$pb.TagNumber(5)
-  set localization($88.Localization v) { setField(5, v); }
+  set localization($90.Localization v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasLocalization() => $_has(4);
   @$pb.TagNumber(5)
   void clearLocalization() => clearField(5);
   @$pb.TagNumber(5)
-  $88.Localization ensureLocalization() => $_ensure(4);
+  $90.Localization ensureLocalization() => $_ensure(4);
 
   /// Alternative information if the localization is ambiguous.
   @$pb.TagNumber(7)
@@ -611,7 +614,7 @@ class SetLocalizationResponse extends $pb.GeneratedMessage {
   $26.RobotImpairedState ensureImpairedState() => $_ensure(6);
 
   /// This status determines whether the robot has compatible sensors for the
-  /// map that was recorded. Note that if sensors aren't working, STATUS_IMPARIED
+  /// map that was recorded. Note that if sensors aren't working, STATUS_IMPAIRED
   /// will be returned, rather than STATUS_INCOMPATIBLE_SENSORS.
   @$pb.TagNumber(9)
   SensorCompatibilityStatus get sensorStatus => $_getN(7);
@@ -674,14 +677,14 @@ class TravelParams extends $pb.GeneratedMessage {
   factory TravelParams({
     $core.double? maxDistance,
     $core.double? maxYaw,
-    $61.SE2VelocityLimit? velocityLimit,
+    $60.SE2VelocityLimit? velocityLimit,
     $core.bool? ignoreFinalYaw,
     TravelParams_FeatureQualityTolerance? featureQualityTolerance,
     $core.bool? disableDirectedExploration,
     $core.bool? disableAlternateRouteFinding,
-    $87.Edge_Annotations_PathFollowingMode? pathFollowingMode,
-    $62.Duration? blockedPathWaitTime,
-    $87.Edge_Annotations_GroundClutterAvoidanceMode? groundClutterMode,
+    $89.Edge_Annotations_PathFollowingMode? pathFollowingMode,
+    $61.Duration? blockedPathWaitTime,
+    $89.Edge_Annotations_GroundClutterAvoidanceMode? groundClutterMode,
   }) {
     final $result = create();
     if (maxDistance != null) {
@@ -723,14 +726,14 @@ class TravelParams extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TravelParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..a<$core.double>(1, _omitFieldNames ? '' : 'maxDistance', $pb.PbFieldType.OD)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'maxYaw', $pb.PbFieldType.OD)
-    ..aOM<$61.SE2VelocityLimit>(3, _omitFieldNames ? '' : 'velocityLimit', subBuilder: $61.SE2VelocityLimit.create)
+    ..aOM<$60.SE2VelocityLimit>(3, _omitFieldNames ? '' : 'velocityLimit', subBuilder: $60.SE2VelocityLimit.create)
     ..aOB(4, _omitFieldNames ? '' : 'ignoreFinalYaw')
     ..e<TravelParams_FeatureQualityTolerance>(5, _omitFieldNames ? '' : 'featureQualityTolerance', $pb.PbFieldType.OE, defaultOrMaker: TravelParams_FeatureQualityTolerance.TOLERANCE_UNKNOWN, valueOf: TravelParams_FeatureQualityTolerance.valueOf, enumValues: TravelParams_FeatureQualityTolerance.values)
     ..aOB(6, _omitFieldNames ? '' : 'disableDirectedExploration')
     ..aOB(8, _omitFieldNames ? '' : 'disableAlternateRouteFinding')
-    ..e<$87.Edge_Annotations_PathFollowingMode>(9, _omitFieldNames ? '' : 'pathFollowingMode', $pb.PbFieldType.OE, defaultOrMaker: $87.Edge_Annotations_PathFollowingMode.PATH_MODE_UNKNOWN, valueOf: $87.Edge_Annotations_PathFollowingMode.valueOf, enumValues: $87.Edge_Annotations_PathFollowingMode.values)
-    ..aOM<$62.Duration>(10, _omitFieldNames ? '' : 'blockedPathWaitTime', subBuilder: $62.Duration.create)
-    ..e<$87.Edge_Annotations_GroundClutterAvoidanceMode>(11, _omitFieldNames ? '' : 'groundClutterMode', $pb.PbFieldType.OE, defaultOrMaker: $87.Edge_Annotations_GroundClutterAvoidanceMode.GROUND_CLUTTER_UNKNOWN, valueOf: $87.Edge_Annotations_GroundClutterAvoidanceMode.valueOf, enumValues: $87.Edge_Annotations_GroundClutterAvoidanceMode.values)
+    ..e<$89.Edge_Annotations_PathFollowingMode>(9, _omitFieldNames ? '' : 'pathFollowingMode', $pb.PbFieldType.OE, defaultOrMaker: $89.Edge_Annotations_PathFollowingMode.PATH_MODE_UNKNOWN, valueOf: $89.Edge_Annotations_PathFollowingMode.valueOf, enumValues: $89.Edge_Annotations_PathFollowingMode.values)
+    ..aOM<$61.Duration>(10, _omitFieldNames ? '' : 'blockedPathWaitTime', subBuilder: $61.Duration.create)
+    ..e<$89.Edge_Annotations_GroundClutterAvoidanceMode>(11, _omitFieldNames ? '' : 'groundClutterMode', $pb.PbFieldType.OE, defaultOrMaker: $89.Edge_Annotations_GroundClutterAvoidanceMode.GROUND_CLUTTER_UNKNOWN, valueOf: $89.Edge_Annotations_GroundClutterAvoidanceMode.valueOf, enumValues: $89.Edge_Annotations_GroundClutterAvoidanceMode.values)
     ..hasRequiredFields = false
   ;
 
@@ -780,15 +783,15 @@ class TravelParams extends $pb.GeneratedMessage {
   /// Speed the robot should use.
   /// Omit to let the robot choose.
   @$pb.TagNumber(3)
-  $61.SE2VelocityLimit get velocityLimit => $_getN(2);
+  $60.SE2VelocityLimit get velocityLimit => $_getN(2);
   @$pb.TagNumber(3)
-  set velocityLimit($61.SE2VelocityLimit v) { setField(3, v); }
+  set velocityLimit($60.SE2VelocityLimit v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasVelocityLimit() => $_has(2);
   @$pb.TagNumber(3)
   void clearVelocityLimit() => clearField(3);
   @$pb.TagNumber(3)
-  $61.SE2VelocityLimit ensureVelocityLimit() => $_ensure(2);
+  $60.SE2VelocityLimit ensureVelocityLimit() => $_ensure(2);
 
   /// If true, the robot will only try to achieve
   /// the final translation of the route. Otherwise,
@@ -833,9 +836,9 @@ class TravelParams extends $pb.GeneratedMessage {
 
   /// Path following mode
   @$pb.TagNumber(9)
-  $87.Edge_Annotations_PathFollowingMode get pathFollowingMode => $_getN(7);
+  $89.Edge_Annotations_PathFollowingMode get pathFollowingMode => $_getN(7);
   @$pb.TagNumber(9)
-  set pathFollowingMode($87.Edge_Annotations_PathFollowingMode v) { setField(9, v); }
+  set pathFollowingMode($89.Edge_Annotations_PathFollowingMode v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasPathFollowingMode() => $_has(7);
   @$pb.TagNumber(9)
@@ -843,21 +846,21 @@ class TravelParams extends $pb.GeneratedMessage {
 
   /// Time to wait for blocked path to clear (seconds)
   @$pb.TagNumber(10)
-  $62.Duration get blockedPathWaitTime => $_getN(8);
+  $61.Duration get blockedPathWaitTime => $_getN(8);
   @$pb.TagNumber(10)
-  set blockedPathWaitTime($62.Duration v) { setField(10, v); }
+  set blockedPathWaitTime($61.Duration v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasBlockedPathWaitTime() => $_has(8);
   @$pb.TagNumber(10)
   void clearBlockedPathWaitTime() => clearField(10);
   @$pb.TagNumber(10)
-  $62.Duration ensureBlockedPathWaitTime() => $_ensure(8);
+  $61.Duration ensureBlockedPathWaitTime() => $_ensure(8);
 
   /// Ground clutter avoidance mode.
   @$pb.TagNumber(11)
-  $87.Edge_Annotations_GroundClutterAvoidanceMode get groundClutterMode => $_getN(9);
+  $89.Edge_Annotations_GroundClutterAvoidanceMode get groundClutterMode => $_getN(9);
   @$pb.TagNumber(11)
-  set groundClutterMode($87.Edge_Annotations_GroundClutterAvoidanceMode v) { setField(11, v); }
+  set groundClutterMode($89.Edge_Annotations_GroundClutterAvoidanceMode v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasGroundClutterMode() => $_has(9);
   @$pb.TagNumber(11)
@@ -866,8 +869,8 @@ class TravelParams extends $pb.GeneratedMessage {
 
 class ModifyNavigationResponse extends $pb.GeneratedMessage {
   factory ModifyNavigationResponse({
-    $68.ResponseHeader? header,
-    $core.Iterable<$13.LeaseUseResult>? leaseUseResults,
+    $67.ResponseHeader? header,
+    $core.Iterable<$14.LeaseUseResult>? leaseUseResults,
     ModifyNavigationResponse_Status? status,
   }) {
     final $result = create();
@@ -887,8 +890,8 @@ class ModifyNavigationResponse extends $pb.GeneratedMessage {
   factory ModifyNavigationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ModifyNavigationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..pc<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..pc<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $14.LeaseUseResult.create)
     ..e<ModifyNavigationResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ModifyNavigationResponse_Status.STATUS_UNKNOWN, valueOf: ModifyNavigationResponse_Status.valueOf, enumValues: ModifyNavigationResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -915,19 +918,19 @@ class ModifyNavigationResponse extends $pb.GeneratedMessage {
   static ModifyNavigationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Results of using the various leases.
   @$pb.TagNumber(2)
-  $core.List<$13.LeaseUseResult> get leaseUseResults => $_getList(1);
+  $core.List<$14.LeaseUseResult> get leaseUseResults => $_getList(1);
 
   /// Status code specific to the ModifyNavigationResponse.
   @$pb.TagNumber(3)
@@ -948,14 +951,14 @@ class ModifyNavigationResponse extends $pb.GeneratedMessage {
 /// the NavigationFeedbackRequest RPC.
 class NavigateToRequest extends $pb.GeneratedMessage {
   factory NavigateToRequest({
-    $68.RequestHeader? header,
-    $core.Iterable<$13.Lease>? leases,
+    $67.RequestHeader? header,
+    $core.Iterable<$14.Lease>? leases,
     $core.String? destinationWaypointId,
     RouteGenParams? routeParams,
     TravelParams? travelParams,
-    $60.Timestamp? endTime,
+    $59.Timestamp? endTime,
     $core.String? clockIdentifier,
-    $61.SE2Pose? destinationWaypointTformBodyGoal,
+    $60.SE2Pose? destinationWaypointTformBodyGoal,
     $core.int? commandId,
     RouteFollowingParams_RouteBlockedBehavior? routeBlockedBehavior,
   }) {
@@ -997,14 +1000,14 @@ class NavigateToRequest extends $pb.GeneratedMessage {
   factory NavigateToRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NavigateToRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..pc<$13.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..pc<$14.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
     ..aOS(3, _omitFieldNames ? '' : 'destinationWaypointId')
     ..aOM<RouteGenParams>(4, _omitFieldNames ? '' : 'routeParams', subBuilder: RouteGenParams.create)
     ..aOM<TravelParams>(5, _omitFieldNames ? '' : 'travelParams', subBuilder: TravelParams.create)
-    ..aOM<$60.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
     ..aOS(7, _omitFieldNames ? '' : 'clockIdentifier')
-    ..aOM<$61.SE2Pose>(8, _omitFieldNames ? '' : 'destinationWaypointTformBodyGoal', subBuilder: $61.SE2Pose.create)
+    ..aOM<$60.SE2Pose>(8, _omitFieldNames ? '' : 'destinationWaypointTformBodyGoal', subBuilder: $60.SE2Pose.create)
     ..a<$core.int>(9, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
     ..e<RouteFollowingParams_RouteBlockedBehavior>(10, _omitFieldNames ? '' : 'routeBlockedBehavior', $pb.PbFieldType.OE, defaultOrMaker: RouteFollowingParams_RouteBlockedBehavior.ROUTE_BLOCKED_UNKNOWN, valueOf: RouteFollowingParams_RouteBlockedBehavior.valueOf, enumValues: RouteFollowingParams_RouteBlockedBehavior.values)
     ..hasRequiredFields = false
@@ -1033,19 +1036,19 @@ class NavigateToRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The Leases to show ownership of the robot and the graph.
   @$pb.TagNumber(2)
-  $core.List<$13.Lease> get leases => $_getList(1);
+  $core.List<$14.Lease> get leases => $_getList(1);
 
   /// ID of the waypoint to go to.
   @$pb.TagNumber(3)
@@ -1083,15 +1086,15 @@ class NavigateToRequest extends $pb.GeneratedMessage {
 
   /// The timestamp (in robot time) that the navigation command is valid until.
   @$pb.TagNumber(6)
-  $60.Timestamp get endTime => $_getN(5);
+  $59.Timestamp get endTime => $_getN(5);
   @$pb.TagNumber(6)
-  set endTime($60.Timestamp v) { setField(6, v); }
+  set endTime($59.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearEndTime() => clearField(6);
   @$pb.TagNumber(6)
-  $60.Timestamp ensureEndTime() => $_ensure(5);
+  $59.Timestamp ensureEndTime() => $_ensure(5);
 
   /// Identifier provided by the time sync service to verify time sync between robot and client.
   @$pb.TagNumber(7)
@@ -1108,15 +1111,15 @@ class NavigateToRequest extends $pb.GeneratedMessage {
   /// destination waypoint, and then travel in a straight line from the destination waypoint to the
   /// offset goal, attempting to avoid obstacles along the way.
   @$pb.TagNumber(8)
-  $61.SE2Pose get destinationWaypointTformBodyGoal => $_getN(7);
+  $60.SE2Pose get destinationWaypointTformBodyGoal => $_getN(7);
   @$pb.TagNumber(8)
-  set destinationWaypointTformBodyGoal($61.SE2Pose v) { setField(8, v); }
+  set destinationWaypointTformBodyGoal($60.SE2Pose v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasDestinationWaypointTformBodyGoal() => $_has(7);
   @$pb.TagNumber(8)
   void clearDestinationWaypointTformBodyGoal() => clearField(8);
   @$pb.TagNumber(8)
-  $61.SE2Pose ensureDestinationWaypointTformBodyGoal() => $_ensure(7);
+  $60.SE2Pose ensureDestinationWaypointTformBodyGoal() => $_ensure(7);
 
   /// Unique identifier for the command. If 0, this is a new command, otherwise it is a continuation
   /// of an existing command. If this is a continuation of an existing command, all parameters will be
@@ -1145,8 +1148,8 @@ class NavigateToRequest extends $pb.GeneratedMessage {
 /// is provided to specify the ID that the user may use to poll the system for feedback on the NavigateTo command.
 class NavigateToResponse extends $pb.GeneratedMessage {
   factory NavigateToResponse({
-    $68.ResponseHeader? header,
-    $core.Iterable<$13.LeaseUseResult>? leaseUseResults,
+    $67.ResponseHeader? header,
+    $core.Iterable<$14.LeaseUseResult>? leaseUseResults,
     NavigateToResponse_Status? status,
     $core.int? commandId,
     $core.Iterable<$core.String>? errorWaypointIds,
@@ -1182,8 +1185,8 @@ class NavigateToResponse extends $pb.GeneratedMessage {
   factory NavigateToResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NavigateToResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..pc<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..pc<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $14.LeaseUseResult.create)
     ..e<NavigateToResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NavigateToResponse_Status.STATUS_UNKNOWN, valueOf: NavigateToResponse_Status.valueOf, enumValues: NavigateToResponse_Status.values)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
     ..pPS(5, _omitFieldNames ? '' : 'errorWaypointIds')
@@ -1215,19 +1218,19 @@ class NavigateToResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Results of using the various leases.
   @$pb.TagNumber(2)
-  $core.List<$13.LeaseUseResult> get leaseUseResults => $_getList(1);
+  $core.List<$14.LeaseUseResult> get leaseUseResults => $_getList(1);
 
   /// Return status for the request.
   @$pb.TagNumber(3)
@@ -1363,13 +1366,13 @@ class RouteFollowingParams extends $pb.GeneratedMessage {
 /// poll the system for feedback on this command. The RPC does not block until the route is completed.
 class NavigateRouteRequest extends $pb.GeneratedMessage {
   factory NavigateRouteRequest({
-    $68.RequestHeader? header,
-    $core.Iterable<$13.Lease>? leases,
-    $88.Route? route,
+    $67.RequestHeader? header,
+    $core.Iterable<$14.Lease>? leases,
+    $90.Route? route,
     TravelParams? travelParams,
-    $60.Timestamp? endTime,
+    $59.Timestamp? endTime,
     $core.String? clockIdentifier,
-    $61.SE2Pose? destinationWaypointTformBodyGoal,
+    $60.SE2Pose? destinationWaypointTformBodyGoal,
     $core.int? commandId,
     RouteFollowingParams? routeFollowParams,
   }) {
@@ -1408,13 +1411,13 @@ class NavigateRouteRequest extends $pb.GeneratedMessage {
   factory NavigateRouteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NavigateRouteRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..pc<$13.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
-    ..aOM<$88.Route>(3, _omitFieldNames ? '' : 'route', subBuilder: $88.Route.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..pc<$14.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
+    ..aOM<$90.Route>(3, _omitFieldNames ? '' : 'route', subBuilder: $90.Route.create)
     ..aOM<TravelParams>(4, _omitFieldNames ? '' : 'travelParams', subBuilder: TravelParams.create)
-    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
     ..aOS(6, _omitFieldNames ? '' : 'clockIdentifier')
-    ..aOM<$61.SE2Pose>(7, _omitFieldNames ? '' : 'destinationWaypointTformBodyGoal', subBuilder: $61.SE2Pose.create)
+    ..aOM<$60.SE2Pose>(7, _omitFieldNames ? '' : 'destinationWaypointTformBodyGoal', subBuilder: $60.SE2Pose.create)
     ..a<$core.int>(8, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
     ..aOM<RouteFollowingParams>(9, _omitFieldNames ? '' : 'routeFollowParams', subBuilder: RouteFollowingParams.create)
     ..hasRequiredFields = false
@@ -1443,31 +1446,31 @@ class NavigateRouteRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The Lease to show ownership of the robot.
   @$pb.TagNumber(2)
-  $core.List<$13.Lease> get leases => $_getList(1);
+  $core.List<$14.Lease> get leases => $_getList(1);
 
   /// A route for the robot to follow.
   @$pb.TagNumber(3)
-  $88.Route get route => $_getN(2);
+  $90.Route get route => $_getN(2);
   @$pb.TagNumber(3)
-  set route($88.Route v) { setField(3, v); }
+  set route($90.Route v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasRoute() => $_has(2);
   @$pb.TagNumber(3)
   void clearRoute() => clearField(3);
   @$pb.TagNumber(3)
-  $88.Route ensureRoute() => $_ensure(2);
+  $90.Route ensureRoute() => $_ensure(2);
 
   /// How to travel the route.
   @$pb.TagNumber(4)
@@ -1483,15 +1486,15 @@ class NavigateRouteRequest extends $pb.GeneratedMessage {
 
   /// The timestamp (in robot time) that the navigation command is valid until.
   @$pb.TagNumber(5)
-  $60.Timestamp get endTime => $_getN(4);
+  $59.Timestamp get endTime => $_getN(4);
   @$pb.TagNumber(5)
-  set endTime($60.Timestamp v) { setField(5, v); }
+  set endTime($59.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasEndTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearEndTime() => clearField(5);
   @$pb.TagNumber(5)
-  $60.Timestamp ensureEndTime() => $_ensure(4);
+  $59.Timestamp ensureEndTime() => $_ensure(4);
 
   /// Identifier provided by the time sync service to verify time sync between robot and client.
   @$pb.TagNumber(6)
@@ -1509,15 +1512,15 @@ class NavigateRouteRequest extends $pb.GeneratedMessage {
   /// destination waypoint, and then travel in a straight line from the destination waypoint to the
   /// offset goal, attempting to avoid obstacles along the way.
   @$pb.TagNumber(7)
-  $61.SE2Pose get destinationWaypointTformBodyGoal => $_getN(6);
+  $60.SE2Pose get destinationWaypointTformBodyGoal => $_getN(6);
   @$pb.TagNumber(7)
-  set destinationWaypointTformBodyGoal($61.SE2Pose v) { setField(7, v); }
+  set destinationWaypointTformBodyGoal($60.SE2Pose v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasDestinationWaypointTformBodyGoal() => $_has(6);
   @$pb.TagNumber(7)
   void clearDestinationWaypointTformBodyGoal() => clearField(7);
   @$pb.TagNumber(7)
-  $61.SE2Pose ensureDestinationWaypointTformBodyGoal() => $_ensure(6);
+  $60.SE2Pose ensureDestinationWaypointTformBodyGoal() => $_ensure(6);
 
   /// Unique identifier for the command. If 0, this is a new command, otherwise it is a continuation
   /// of an existing command.
@@ -1548,12 +1551,12 @@ class NavigateRouteRequest extends $pb.GeneratedMessage {
 /// is provided to specify the ID that the user may use to poll the system for feedback on the NavigateRoute command.
 class NavigateRouteResponse extends $pb.GeneratedMessage {
   factory NavigateRouteResponse({
-    $68.ResponseHeader? header,
-    $core.Iterable<$13.LeaseUseResult>? leaseUseResults,
+    $67.ResponseHeader? header,
+    $core.Iterable<$14.LeaseUseResult>? leaseUseResults,
     NavigateRouteResponse_Status? status,
     $core.int? commandId,
     $core.Iterable<$core.String>? errorWaypointIds,
-    $core.Iterable<$87.Edge_Id>? errorEdgeIds,
+    $core.Iterable<$89.Edge_Id>? errorEdgeIds,
     $26.RobotImpairedState? impairedState,
     AreaCallbackServiceError? areaCallbackError,
   }) {
@@ -1589,12 +1592,12 @@ class NavigateRouteResponse extends $pb.GeneratedMessage {
   factory NavigateRouteResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NavigateRouteResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..pc<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..pc<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $14.LeaseUseResult.create)
     ..e<NavigateRouteResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NavigateRouteResponse_Status.STATUS_UNKNOWN, valueOf: NavigateRouteResponse_Status.valueOf, enumValues: NavigateRouteResponse_Status.values)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
     ..pPS(5, _omitFieldNames ? '' : 'errorWaypointIds')
-    ..pc<$87.Edge_Id>(6, _omitFieldNames ? '' : 'errorEdgeIds', $pb.PbFieldType.PM, subBuilder: $87.Edge_Id.create)
+    ..pc<$89.Edge_Id>(6, _omitFieldNames ? '' : 'errorEdgeIds', $pb.PbFieldType.PM, subBuilder: $89.Edge_Id.create)
     ..aOM<$26.RobotImpairedState>(7, _omitFieldNames ? '' : 'impairedState', subBuilder: $26.RobotImpairedState.create)
     ..aOM<AreaCallbackServiceError>(8, _omitFieldNames ? '' : 'areaCallbackError', subBuilder: AreaCallbackServiceError.create)
     ..hasRequiredFields = false
@@ -1623,19 +1626,19 @@ class NavigateRouteResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Details about how the lease was used.
   @$pb.TagNumber(2)
-  $core.List<$13.LeaseUseResult> get leaseUseResults => $_getList(1);
+  $core.List<$14.LeaseUseResult> get leaseUseResults => $_getList(1);
 
   /// Return status for the request.
   @$pb.TagNumber(3)
@@ -1663,7 +1666,7 @@ class NavigateRouteResponse extends $pb.GeneratedMessage {
 
   /// On a relevant error status code (STATUS_INVALID_EDGE), this is populated with the edge ID's that cased the error.
   @$pb.TagNumber(6)
-  $core.List<$87.Edge_Id> get errorEdgeIds => $_getList(5);
+  $core.List<$89.Edge_Id> get errorEdgeIds => $_getList(5);
 
   /// If the status is ROBOT_IMPAIRED, this is why the robot is impaired.
   @$pb.TagNumber(7)
@@ -1690,6 +1693,104 @@ class NavigateRouteResponse extends $pb.GeneratedMessage {
   AreaCallbackServiceError ensureAreaCallbackError() => $_ensure(7);
 }
 
+/// Parameters controlling how the robot will navigate to a GPS coordinate.
+class GPSNavigationParams extends $pb.GeneratedMessage {
+  factory GPSNavigationParams({
+    $85.LLH? goalLlh,
+    $58.DoubleValue? goalYaw,
+    $58.DoubleValue? maxDistanceFromMap,
+  }) {
+    final $result = create();
+    if (goalLlh != null) {
+      $result.goalLlh = goalLlh;
+    }
+    if (goalYaw != null) {
+      $result.goalYaw = goalYaw;
+    }
+    if (maxDistanceFromMap != null) {
+      $result.maxDistanceFromMap = maxDistanceFromMap;
+    }
+    return $result;
+  }
+  GPSNavigationParams._() : super();
+  factory GPSNavigationParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GPSNavigationParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GPSNavigationParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
+    ..aOM<$85.LLH>(1, _omitFieldNames ? '' : 'goalLlh', subBuilder: $85.LLH.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'goalYaw', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'maxDistanceFromMap', subBuilder: $58.DoubleValue.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GPSNavigationParams clone() => GPSNavigationParams()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GPSNavigationParams copyWith(void Function(GPSNavigationParams) updates) => super.copyWith((message) => updates(message as GPSNavigationParams)) as GPSNavigationParams;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GPSNavigationParams create() => GPSNavigationParams._();
+  GPSNavigationParams createEmptyInstance() => create();
+  static $pb.PbList<GPSNavigationParams> createRepeated() => $pb.PbList<GPSNavigationParams>();
+  @$core.pragma('dart2js:noInline')
+  static GPSNavigationParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GPSNavigationParams>(create);
+  static GPSNavigationParams? _defaultInstance;
+
+  /// The goal position as latitude/longitude. Height is ignored.
+  @$pb.TagNumber(1)
+  $85.LLH get goalLlh => $_getN(0);
+  @$pb.TagNumber(1)
+  set goalLlh($85.LLH v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGoalLlh() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGoalLlh() => clearField(1);
+  @$pb.TagNumber(1)
+  $85.LLH ensureGoalLlh() => $_ensure(0);
+
+  /// Counter-clockwise rotation in radians around the "up" axis that the robot will try to achieve at the goal. This is a bearing
+  /// around the "up" axis such that East points to zero yaw, and West is pi radians yaw. If not provided, the robot will try to
+  /// achieve any allowable orientation at the goal.
+  @$pb.TagNumber(2)
+  $58.DoubleValue get goalYaw => $_getN(1);
+  @$pb.TagNumber(2)
+  set goalYaw($58.DoubleValue v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGoalYaw() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGoalYaw() => clearField(2);
+  @$pb.TagNumber(2)
+  $58.DoubleValue ensureGoalYaw() => $_ensure(1);
+
+  /// The maximum distance we are willing to accept for the LLH coordinate from the mapped data in meters. This
+  /// is a 2 dimensional measurement (height is not considered). If not filled out, Spot will decide based on
+  /// internal defaults.
+  @$pb.TagNumber(3)
+  $58.DoubleValue get maxDistanceFromMap => $_getN(2);
+  @$pb.TagNumber(3)
+  set maxDistanceFromMap($58.DoubleValue v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMaxDistanceFromMap() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMaxDistanceFromMap() => clearField(3);
+  @$pb.TagNumber(3)
+  $58.DoubleValue ensureMaxDistanceFromMap() => $_ensure(2);
+}
+
+enum NavigateToAnchorRequest_Goal {
+  seedTformGoal, 
+  gpsNavigationParams, 
+  notSet
+}
+
 /// The NavigateToAnchorRequest can be used to command GraphNav to drive the robot to a specific
 /// place in an anchoring. GraphNav will find the waypoint that has the shortest path length from
 /// robot's current position but is still close to the goal. GraphNav will plan a path through the
@@ -1702,15 +1803,16 @@ class NavigateRouteResponse extends $pb.GeneratedMessage {
 /// of the NavigateToAnchor command using the NavigationFeedbackRequest RPC.
 class NavigateToAnchorRequest extends $pb.GeneratedMessage {
   factory NavigateToAnchorRequest({
-    $68.RequestHeader? header,
-    $core.Iterable<$13.Lease>? leases,
-    $61.SE3Pose? seedTformGoal,
-    $61.Vec3? goalWaypointRtSeedEwrtSeedTolerance,
+    $67.RequestHeader? header,
+    $core.Iterable<$14.Lease>? leases,
+    $60.SE3Pose? seedTformGoal,
+    $60.Vec3? goalWaypointRtSeedEwrtSeedTolerance,
     RouteGenParams? routeParams,
     TravelParams? travelParams,
-    $60.Timestamp? endTime,
+    $59.Timestamp? endTime,
     $core.String? clockIdentifier,
     $core.int? commandId,
+    GPSNavigationParams? gpsNavigationParams,
   }) {
     final $result = create();
     if (header != null) {
@@ -1740,22 +1842,32 @@ class NavigateToAnchorRequest extends $pb.GeneratedMessage {
     if (commandId != null) {
       $result.commandId = commandId;
     }
+    if (gpsNavigationParams != null) {
+      $result.gpsNavigationParams = gpsNavigationParams;
+    }
     return $result;
   }
   NavigateToAnchorRequest._() : super();
   factory NavigateToAnchorRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NavigateToAnchorRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
+  static const $core.Map<$core.int, NavigateToAnchorRequest_Goal> _NavigateToAnchorRequest_GoalByTag = {
+    3 : NavigateToAnchorRequest_Goal.seedTformGoal,
+    11 : NavigateToAnchorRequest_Goal.gpsNavigationParams,
+    0 : NavigateToAnchorRequest_Goal.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NavigateToAnchorRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..pc<$13.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
-    ..aOM<$61.SE3Pose>(3, _omitFieldNames ? '' : 'seedTformGoal', subBuilder: $61.SE3Pose.create)
-    ..aOM<$61.Vec3>(4, _omitFieldNames ? '' : 'goalWaypointRtSeedEwrtSeedTolerance', subBuilder: $61.Vec3.create)
+    ..oo(0, [3, 11])
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..pc<$14.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
+    ..aOM<$60.SE3Pose>(3, _omitFieldNames ? '' : 'seedTformGoal', subBuilder: $60.SE3Pose.create)
+    ..aOM<$60.Vec3>(4, _omitFieldNames ? '' : 'goalWaypointRtSeedEwrtSeedTolerance', subBuilder: $60.Vec3.create)
     ..aOM<RouteGenParams>(6, _omitFieldNames ? '' : 'routeParams', subBuilder: RouteGenParams.create)
     ..aOM<TravelParams>(7, _omitFieldNames ? '' : 'travelParams', subBuilder: TravelParams.create)
-    ..aOM<$60.Timestamp>(8, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(8, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
     ..aOS(9, _omitFieldNames ? '' : 'clockIdentifier')
     ..a<$core.int>(10, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
+    ..aOM<GPSNavigationParams>(11, _omitFieldNames ? '' : 'gpsNavigationParams', subBuilder: GPSNavigationParams.create)
     ..hasRequiredFields = false
   ;
 
@@ -1780,49 +1892,52 @@ class NavigateToAnchorRequest extends $pb.GeneratedMessage {
   static NavigateToAnchorRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NavigateToAnchorRequest>(create);
   static NavigateToAnchorRequest? _defaultInstance;
 
+  NavigateToAnchorRequest_Goal whichGoal() => _NavigateToAnchorRequest_GoalByTag[$_whichOneof(0)]!;
+  void clearGoal() => clearField($_whichOneof(0));
+
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The Leases to show ownership of the robot and the graph.
   @$pb.TagNumber(2)
-  $core.List<$13.Lease> get leases => $_getList(1);
+  $core.List<$14.Lease> get leases => $_getList(1);
 
   /// The goal, expressed with respect to the seed frame of the current anchoring.
   /// The robot will use the z value to find the goal waypoint, but the final z height the robot
   /// achieves will depend on the terrain height at the offset from the goal.
   @$pb.TagNumber(3)
-  $61.SE3Pose get seedTformGoal => $_getN(2);
+  $60.SE3Pose get seedTformGoal => $_getN(2);
   @$pb.TagNumber(3)
-  set seedTformGoal($61.SE3Pose v) { setField(3, v); }
+  set seedTformGoal($60.SE3Pose v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasSeedTformGoal() => $_has(2);
   @$pb.TagNumber(3)
   void clearSeedTformGoal() => clearField(3);
   @$pb.TagNumber(3)
-  $61.SE3Pose ensureSeedTformGoal() => $_ensure(2);
+  $60.SE3Pose ensureSeedTformGoal() => $_ensure(2);
 
   /// These parameters control selection of the goal waypoint. In seed frame, they are the x, y,
   /// and z tolerances with respect to the goal pose within which waypoints will be considered.
   /// If these values are negative, or too small, reasonable defaults will be used.
   @$pb.TagNumber(4)
-  $61.Vec3 get goalWaypointRtSeedEwrtSeedTolerance => $_getN(3);
+  $60.Vec3 get goalWaypointRtSeedEwrtSeedTolerance => $_getN(3);
   @$pb.TagNumber(4)
-  set goalWaypointRtSeedEwrtSeedTolerance($61.Vec3 v) { setField(4, v); }
+  set goalWaypointRtSeedEwrtSeedTolerance($60.Vec3 v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasGoalWaypointRtSeedEwrtSeedTolerance() => $_has(3);
   @$pb.TagNumber(4)
   void clearGoalWaypointRtSeedEwrtSeedTolerance() => clearField(4);
   @$pb.TagNumber(4)
-  $61.Vec3 ensureGoalWaypointRtSeedEwrtSeedTolerance() => $_ensure(3);
+  $60.Vec3 ensureGoalWaypointRtSeedEwrtSeedTolerance() => $_ensure(3);
 
   /// Preferences on how to pick the route.
   @$pb.TagNumber(6)
@@ -1850,15 +1965,15 @@ class NavigateToAnchorRequest extends $pb.GeneratedMessage {
 
   /// The timestamp (in robot time) that the navigation command is valid until.
   @$pb.TagNumber(8)
-  $60.Timestamp get endTime => $_getN(6);
+  $59.Timestamp get endTime => $_getN(6);
   @$pb.TagNumber(8)
-  set endTime($60.Timestamp v) { setField(8, v); }
+  set endTime($59.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasEndTime() => $_has(6);
   @$pb.TagNumber(8)
   void clearEndTime() => clearField(8);
   @$pb.TagNumber(8)
-  $60.Timestamp ensureEndTime() => $_ensure(6);
+  $59.Timestamp ensureEndTime() => $_ensure(6);
 
   /// Identifier provided by the time sync service to verify time sync between robot and client.
   @$pb.TagNumber(9)
@@ -1881,6 +1996,21 @@ class NavigateToAnchorRequest extends $pb.GeneratedMessage {
   $core.bool hasCommandId() => $_has(8);
   @$pb.TagNumber(10)
   void clearCommandId() => clearField(10);
+
+  /// If given, the NavigateToAnchor request will instead be interpreted as a command to navigate to GPS coordinates.
+  /// When given, the seed_tform_goal will be ignored,and instead the parameters in this message will be used. Otherwise,
+  /// the NavigateToAnchorRequest works identically to when seed_tform_goal is used instead.  For example, the TravelParams
+  /// will be respected for this kind of goal.
+  @$pb.TagNumber(11)
+  GPSNavigationParams get gpsNavigationParams => $_getN(9);
+  @$pb.TagNumber(11)
+  set gpsNavigationParams(GPSNavigationParams v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasGpsNavigationParams() => $_has(9);
+  @$pb.TagNumber(11)
+  void clearGpsNavigationParams() => clearField(11);
+  @$pb.TagNumber(11)
+  GPSNavigationParams ensureGpsNavigationParams() => $_ensure(9);
 }
 
 /// Response to a NavigateToAnchorRequest. This is returned immediately after the request is
@@ -1888,13 +2018,14 @@ class NavigateToAnchorRequest extends $pb.GeneratedMessage {
 /// for feedback on the NavigateTo command.
 class NavigateToAnchorResponse extends $pb.GeneratedMessage {
   factory NavigateToAnchorResponse({
-    $68.ResponseHeader? header,
-    $core.Iterable<$13.LeaseUseResult>? leaseUseResults,
+    $67.ResponseHeader? header,
+    $core.Iterable<$14.LeaseUseResult>? leaseUseResults,
     NavigateToAnchorResponse_Status? status,
     $core.int? commandId,
     $core.Iterable<$core.String>? errorWaypointIds,
     $26.RobotImpairedState? impairedState,
     AreaCallbackServiceError? areaCallbackError,
+    NavigateToAnchorResponse_GPSStatus? gpsStatus,
   }) {
     final $result = create();
     if (header != null) {
@@ -1918,6 +2049,9 @@ class NavigateToAnchorResponse extends $pb.GeneratedMessage {
     if (areaCallbackError != null) {
       $result.areaCallbackError = areaCallbackError;
     }
+    if (gpsStatus != null) {
+      $result.gpsStatus = gpsStatus;
+    }
     return $result;
   }
   NavigateToAnchorResponse._() : super();
@@ -1925,13 +2059,14 @@ class NavigateToAnchorResponse extends $pb.GeneratedMessage {
   factory NavigateToAnchorResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NavigateToAnchorResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..pc<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..pc<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResults', $pb.PbFieldType.PM, subBuilder: $14.LeaseUseResult.create)
     ..e<NavigateToAnchorResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NavigateToAnchorResponse_Status.STATUS_UNKNOWN, valueOf: NavigateToAnchorResponse_Status.valueOf, enumValues: NavigateToAnchorResponse_Status.values)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
     ..pPS(5, _omitFieldNames ? '' : 'errorWaypointIds')
     ..aOM<$26.RobotImpairedState>(6, _omitFieldNames ? '' : 'impairedState', subBuilder: $26.RobotImpairedState.create)
     ..aOM<AreaCallbackServiceError>(7, _omitFieldNames ? '' : 'areaCallbackError', subBuilder: AreaCallbackServiceError.create)
+    ..e<NavigateToAnchorResponse_GPSStatus>(8, _omitFieldNames ? '' : 'gpsStatus', $pb.PbFieldType.OE, defaultOrMaker: NavigateToAnchorResponse_GPSStatus.GPS_STATUS_UNKNOWN, valueOf: NavigateToAnchorResponse_GPSStatus.valueOf, enumValues: NavigateToAnchorResponse_GPSStatus.values)
     ..hasRequiredFields = false
   ;
 
@@ -1958,19 +2093,19 @@ class NavigateToAnchorResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Results of using the various leases.
   @$pb.TagNumber(2)
-  $core.List<$13.LeaseUseResult> get leaseUseResults => $_getList(1);
+  $core.List<$14.LeaseUseResult> get leaseUseResults => $_getList(1);
 
   /// Return status for the request.
   @$pb.TagNumber(3)
@@ -2019,6 +2154,16 @@ class NavigateToAnchorResponse extends $pb.GeneratedMessage {
   void clearAreaCallbackError() => clearField(7);
   @$pb.TagNumber(7)
   AreaCallbackServiceError ensureAreaCallbackError() => $_ensure(6);
+
+  /// Result of the GPS command.
+  @$pb.TagNumber(8)
+  NavigateToAnchorResponse_GPSStatus get gpsStatus => $_getN(7);
+  @$pb.TagNumber(8)
+  set gpsStatus(NavigateToAnchorResponse_GPSStatus v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasGpsStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearGpsStatus() => clearField(8);
 }
 
 /// The NavigationFeedback request message uses the command_id of a navigation request to get
@@ -2027,7 +2172,7 @@ class NavigateToAnchorResponse extends $pb.GeneratedMessage {
 /// it times out or completes. New commands override old ones.
 class NavigationFeedbackRequest extends $pb.GeneratedMessage {
   factory NavigationFeedbackRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.int? commandId,
   }) {
     final $result = create();
@@ -2044,7 +2189,7 @@ class NavigationFeedbackRequest extends $pb.GeneratedMessage {
   factory NavigationFeedbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NavigationFeedbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
@@ -2072,15 +2217,15 @@ class NavigationFeedbackRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Unique identifier for the command, provided by nav command response.
   /// Omit to get feedback on currently executing command.
@@ -2180,17 +2325,19 @@ class NavigationFeedbackResponse_ActiveRegionInformation extends $pb.GeneratedMe
 /// progress and current status for the command.
 class NavigationFeedbackResponse extends $pb.GeneratedMessage {
   factory NavigationFeedbackResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     NavigationFeedbackResponse_Status? status,
-    $88.Route? remainingRoute,
+    $90.Route? remainingRoute,
     $core.int? commandId,
-    $61.SE3Pose? lastKoTformGoal,
+    $60.SE3Pose? lastKoTformGoal,
     $26.RobotImpairedState? impairedState,
-    $64.SE2TrajectoryCommand_Feedback_BodyMovementStatus? bodyMovementStatus,
-    $87.Edge_Annotations_PathFollowingMode? pathFollowingMode,
-    $core.Map<$core.String, $36.AreaCallbackError>? areaCallbackErrors,
+    $63.SE2TrajectoryCommand_Feedback_BodyMovementStatus? bodyMovementStatus,
+    $89.Edge_Annotations_PathFollowingMode? pathFollowingMode,
+    $core.Map<$core.String, $35.AreaCallbackError>? areaCallbackErrors,
     $core.Map<$core.String, NavigationFeedbackResponse_ActiveRegionInformation>? activeRegionInformation,
     NavigationFeedbackResponse_StuckReason? stuckReason,
+    $core.double? remainingRouteLength,
+    $90.CompletedRoute? completedRoute,
     NavigationFeedbackResponse_RouteFollowingStatus? routeFollowingStatus,
     NavigationFeedbackResponse_BlockageStatus? blockageStatus,
   }) {
@@ -2228,6 +2375,12 @@ class NavigationFeedbackResponse extends $pb.GeneratedMessage {
     if (stuckReason != null) {
       $result.stuckReason = stuckReason;
     }
+    if (remainingRouteLength != null) {
+      $result.remainingRouteLength = remainingRouteLength;
+    }
+    if (completedRoute != null) {
+      $result.completedRoute = completedRoute;
+    }
     if (routeFollowingStatus != null) {
       $result.routeFollowingStatus = routeFollowingStatus;
     }
@@ -2241,17 +2394,19 @@ class NavigationFeedbackResponse extends $pb.GeneratedMessage {
   factory NavigationFeedbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NavigationFeedbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<NavigationFeedbackResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NavigationFeedbackResponse_Status.STATUS_UNKNOWN, valueOf: NavigationFeedbackResponse_Status.valueOf, enumValues: NavigationFeedbackResponse_Status.values)
-    ..aOM<$88.Route>(3, _omitFieldNames ? '' : 'remainingRoute', subBuilder: $88.Route.create)
+    ..aOM<$90.Route>(3, _omitFieldNames ? '' : 'remainingRoute', subBuilder: $90.Route.create)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'commandId', $pb.PbFieldType.OU3)
-    ..aOM<$61.SE3Pose>(5, _omitFieldNames ? '' : 'lastKoTformGoal', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(5, _omitFieldNames ? '' : 'lastKoTformGoal', subBuilder: $60.SE3Pose.create)
     ..aOM<$26.RobotImpairedState>(6, _omitFieldNames ? '' : 'impairedState', subBuilder: $26.RobotImpairedState.create)
-    ..e<$64.SE2TrajectoryCommand_Feedback_BodyMovementStatus>(7, _omitFieldNames ? '' : 'bodyMovementStatus', $pb.PbFieldType.OE, defaultOrMaker: $64.SE2TrajectoryCommand_Feedback_BodyMovementStatus.BODY_STATUS_UNKNOWN, valueOf: $64.SE2TrajectoryCommand_Feedback_BodyMovementStatus.valueOf, enumValues: $64.SE2TrajectoryCommand_Feedback_BodyMovementStatus.values)
-    ..e<$87.Edge_Annotations_PathFollowingMode>(8, _omitFieldNames ? '' : 'pathFollowingMode', $pb.PbFieldType.OE, defaultOrMaker: $87.Edge_Annotations_PathFollowingMode.PATH_MODE_UNKNOWN, valueOf: $87.Edge_Annotations_PathFollowingMode.valueOf, enumValues: $87.Edge_Annotations_PathFollowingMode.values)
-    ..m<$core.String, $36.AreaCallbackError>(9, _omitFieldNames ? '' : 'areaCallbackErrors', entryClassName: 'NavigationFeedbackResponse.AreaCallbackErrorsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $36.AreaCallbackError.create, valueDefaultOrMaker: $36.AreaCallbackError.getDefault, packageName: const $pb.PackageName('bosdyn.api.graph_nav'))
+    ..e<$63.SE2TrajectoryCommand_Feedback_BodyMovementStatus>(7, _omitFieldNames ? '' : 'bodyMovementStatus', $pb.PbFieldType.OE, defaultOrMaker: $63.SE2TrajectoryCommand_Feedback_BodyMovementStatus.BODY_STATUS_UNKNOWN, valueOf: $63.SE2TrajectoryCommand_Feedback_BodyMovementStatus.valueOf, enumValues: $63.SE2TrajectoryCommand_Feedback_BodyMovementStatus.values)
+    ..e<$89.Edge_Annotations_PathFollowingMode>(8, _omitFieldNames ? '' : 'pathFollowingMode', $pb.PbFieldType.OE, defaultOrMaker: $89.Edge_Annotations_PathFollowingMode.PATH_MODE_UNKNOWN, valueOf: $89.Edge_Annotations_PathFollowingMode.valueOf, enumValues: $89.Edge_Annotations_PathFollowingMode.values)
+    ..m<$core.String, $35.AreaCallbackError>(9, _omitFieldNames ? '' : 'areaCallbackErrors', entryClassName: 'NavigationFeedbackResponse.AreaCallbackErrorsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $35.AreaCallbackError.create, valueDefaultOrMaker: $35.AreaCallbackError.getDefault, packageName: const $pb.PackageName('bosdyn.api.graph_nav'))
     ..m<$core.String, NavigationFeedbackResponse_ActiveRegionInformation>(10, _omitFieldNames ? '' : 'activeRegionInformation', entryClassName: 'NavigationFeedbackResponse.ActiveRegionInformationEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: NavigationFeedbackResponse_ActiveRegionInformation.create, valueDefaultOrMaker: NavigationFeedbackResponse_ActiveRegionInformation.getDefault, packageName: const $pb.PackageName('bosdyn.api.graph_nav'))
     ..e<NavigationFeedbackResponse_StuckReason>(11, _omitFieldNames ? '' : 'stuckReason', $pb.PbFieldType.OE, defaultOrMaker: NavigationFeedbackResponse_StuckReason.STUCK_REASON_UNKNOWN, valueOf: NavigationFeedbackResponse_StuckReason.valueOf, enumValues: NavigationFeedbackResponse_StuckReason.values)
+    ..a<$core.double>(17, _omitFieldNames ? '' : 'remainingRouteLength', $pb.PbFieldType.OD)
+    ..aOM<$90.CompletedRoute>(18, _omitFieldNames ? '' : 'completedRoute', subBuilder: $90.CompletedRoute.create)
     ..e<NavigationFeedbackResponse_RouteFollowingStatus>(1000, _omitFieldNames ? '' : 'routeFollowingStatus', $pb.PbFieldType.OE, defaultOrMaker: NavigationFeedbackResponse_RouteFollowingStatus.ROUTE_FOLLOWING_STATUS_UNKNOWN, valueOf: NavigationFeedbackResponse_RouteFollowingStatus.valueOf, enumValues: NavigationFeedbackResponse_RouteFollowingStatus.values)
     ..e<NavigationFeedbackResponse_BlockageStatus>(1001, _omitFieldNames ? '' : 'blockageStatus', $pb.PbFieldType.OE, defaultOrMaker: NavigationFeedbackResponse_BlockageStatus.BLOCKAGE_STATUS_UNKNOWN, valueOf: NavigationFeedbackResponse_BlockageStatus.valueOf, enumValues: NavigationFeedbackResponse_BlockageStatus.values)
     ..hasRequiredFields = false
@@ -2280,15 +2435,15 @@ class NavigationFeedbackResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
@@ -2302,15 +2457,15 @@ class NavigationFeedbackResponse extends $pb.GeneratedMessage {
 
   /// Remaining part of current route.
   @$pb.TagNumber(3)
-  $88.Route get remainingRoute => $_getN(2);
+  $90.Route get remainingRoute => $_getN(2);
   @$pb.TagNumber(3)
-  set remainingRoute($88.Route v) { setField(3, v); }
+  set remainingRoute($90.Route v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasRemainingRoute() => $_has(2);
   @$pb.TagNumber(3)
   void clearRemainingRoute() => clearField(3);
   @$pb.TagNumber(3)
-  $88.Route ensureRemainingRoute() => $_ensure(2);
+  $90.Route ensureRemainingRoute() => $_ensure(2);
 
   /// ID of the command this feedback corresponds to.
   @$pb.TagNumber(4)
@@ -2324,15 +2479,15 @@ class NavigationFeedbackResponse extends $pb.GeneratedMessage {
 
   /// The most recent transform describing the robot's pose relative to the navigation goal.
   @$pb.TagNumber(5)
-  $61.SE3Pose get lastKoTformGoal => $_getN(4);
+  $60.SE3Pose get lastKoTformGoal => $_getN(4);
   @$pb.TagNumber(5)
-  set lastKoTformGoal($61.SE3Pose v) { setField(5, v); }
+  set lastKoTformGoal($60.SE3Pose v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasLastKoTformGoal() => $_has(4);
   @$pb.TagNumber(5)
   void clearLastKoTformGoal() => clearField(5);
   @$pb.TagNumber(5)
-  $61.SE3Pose ensureLastKoTformGoal() => $_ensure(4);
+  $60.SE3Pose ensureLastKoTformGoal() => $_ensure(4);
 
   /// If the status is ROBOT_IMPAIRED, this is why the robot is impaired.
   @$pb.TagNumber(6)
@@ -2348,9 +2503,9 @@ class NavigationFeedbackResponse extends $pb.GeneratedMessage {
 
   /// Indicates whether the robot's body is currently in motion.
   @$pb.TagNumber(7)
-  $64.SE2TrajectoryCommand_Feedback_BodyMovementStatus get bodyMovementStatus => $_getN(6);
+  $63.SE2TrajectoryCommand_Feedback_BodyMovementStatus get bodyMovementStatus => $_getN(6);
   @$pb.TagNumber(7)
-  set bodyMovementStatus($64.SE2TrajectoryCommand_Feedback_BodyMovementStatus v) { setField(7, v); }
+  set bodyMovementStatus($63.SE2TrajectoryCommand_Feedback_BodyMovementStatus v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasBodyMovementStatus() => $_has(6);
   @$pb.TagNumber(7)
@@ -2358,9 +2513,9 @@ class NavigationFeedbackResponse extends $pb.GeneratedMessage {
 
   /// Path following mode
   @$pb.TagNumber(8)
-  $87.Edge_Annotations_PathFollowingMode get pathFollowingMode => $_getN(7);
+  $89.Edge_Annotations_PathFollowingMode get pathFollowingMode => $_getN(7);
   @$pb.TagNumber(8)
-  set pathFollowingMode($87.Edge_Annotations_PathFollowingMode v) { setField(8, v); }
+  set pathFollowingMode($89.Edge_Annotations_PathFollowingMode v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasPathFollowingMode() => $_has(7);
   @$pb.TagNumber(8)
@@ -2369,7 +2524,7 @@ class NavigationFeedbackResponse extends $pb.GeneratedMessage {
   /// If the status is AREA_CALLBACK_ERROR, this map will be filled out with the error.
   /// The key of the map is the region id.
   @$pb.TagNumber(9)
-  $core.Map<$core.String, $36.AreaCallbackError> get areaCallbackErrors => $_getMap(8);
+  $core.Map<$core.String, $35.AreaCallbackError> get areaCallbackErrors => $_getMap(8);
 
   /// Map of Region IDs with relevant information
   @$pb.TagNumber(10)
@@ -2385,23 +2540,49 @@ class NavigationFeedbackResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   void clearStuckReason() => clearField(11);
 
+  /// Estimated length of remaining route.
+  @$pb.TagNumber(17)
+  $core.double get remainingRouteLength => $_getN(11);
+  @$pb.TagNumber(17)
+  set remainingRouteLength($core.double v) { $_setDouble(11, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasRemainingRouteLength() => $_has(11);
+  @$pb.TagNumber(17)
+  void clearRemainingRouteLength() => clearField(17);
+
+  /// The completed route taken for this command.  Intended primarily for visualization
+  /// of route progress.
+  /// Do not use this to determine if the route is finished, as under certain conditions
+  /// edges can be reported as completed before the route is done.  Check the status for
+  /// STATUS_REACHED_GOAL to determine if the robot has finished the route.
+  @$pb.TagNumber(18)
+  $90.CompletedRoute get completedRoute => $_getN(12);
+  @$pb.TagNumber(18)
+  set completedRoute($90.CompletedRoute v) { setField(18, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasCompletedRoute() => $_has(12);
+  @$pb.TagNumber(18)
+  void clearCompletedRoute() => clearField(18);
+  @$pb.TagNumber(18)
+  $90.CompletedRoute ensureCompletedRoute() => $_ensure(12);
+
   /// Additional information about what kind of route the robot is following and why.
   @$pb.TagNumber(1000)
-  NavigationFeedbackResponse_RouteFollowingStatus get routeFollowingStatus => $_getN(11);
+  NavigationFeedbackResponse_RouteFollowingStatus get routeFollowingStatus => $_getN(13);
   @$pb.TagNumber(1000)
   set routeFollowingStatus(NavigationFeedbackResponse_RouteFollowingStatus v) { setField(1000, v); }
   @$pb.TagNumber(1000)
-  $core.bool hasRouteFollowingStatus() => $_has(11);
+  $core.bool hasRouteFollowingStatus() => $_has(13);
   @$pb.TagNumber(1000)
   void clearRouteFollowingStatus() => clearField(1000);
 
   /// Additional information about whether or not the robot believes the current route to be blocked.
   @$pb.TagNumber(1001)
-  NavigationFeedbackResponse_BlockageStatus get blockageStatus => $_getN(12);
+  NavigationFeedbackResponse_BlockageStatus get blockageStatus => $_getN(14);
   @$pb.TagNumber(1001)
   set blockageStatus(NavigationFeedbackResponse_BlockageStatus v) { setField(1001, v); }
   @$pb.TagNumber(1001)
-  $core.bool hasBlockageStatus() => $_has(12);
+  $core.bool hasBlockageStatus() => $_has(14);
   @$pb.TagNumber(1001)
   void clearBlockageStatus() => clearField(1001);
 }
@@ -2411,7 +2592,7 @@ class NavigationFeedbackResponse extends $pb.GeneratedMessage {
 /// pose of the robot with respect to that waypoint.
 class GetLocalizationStateRequest extends $pb.GeneratedMessage {
   factory GetLocalizationStateRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.bool? requestLivePointCloud,
     $core.bool? requestLiveImages,
     $core.bool? requestLiveTerrainMaps,
@@ -2419,6 +2600,7 @@ class GetLocalizationStateRequest extends $pb.GeneratedMessage {
     $core.bool? requestLiveRobotState,
     $core.bool? compressLivePointCloud,
     $core.String? waypointId,
+    $core.bool? requestGpsState,
   }) {
     final $result = create();
     if (header != null) {
@@ -2445,6 +2627,9 @@ class GetLocalizationStateRequest extends $pb.GeneratedMessage {
     if (waypointId != null) {
       $result.waypointId = waypointId;
     }
+    if (requestGpsState != null) {
+      $result.requestGpsState = requestGpsState;
+    }
     return $result;
   }
   GetLocalizationStateRequest._() : super();
@@ -2452,7 +2637,7 @@ class GetLocalizationStateRequest extends $pb.GeneratedMessage {
   factory GetLocalizationStateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocalizationStateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOB(2, _omitFieldNames ? '' : 'requestLivePointCloud')
     ..aOB(3, _omitFieldNames ? '' : 'requestLiveImages')
     ..aOB(4, _omitFieldNames ? '' : 'requestLiveTerrainMaps')
@@ -2460,6 +2645,7 @@ class GetLocalizationStateRequest extends $pb.GeneratedMessage {
     ..aOB(6, _omitFieldNames ? '' : 'requestLiveRobotState')
     ..aOB(7, _omitFieldNames ? '' : 'compressLivePointCloud')
     ..aOS(8, _omitFieldNames ? '' : 'waypointId')
+    ..aOB(9, _omitFieldNames ? '' : 'requestGpsState')
     ..hasRequiredFields = false
   ;
 
@@ -2486,15 +2672,15 @@ class GetLocalizationStateRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// If true, request the live edge-segmented point cloud that was used
   /// to generate this localization.
@@ -2568,6 +2754,16 @@ class GetLocalizationStateRequest extends $pb.GeneratedMessage {
   $core.bool hasWaypointId() => $_has(7);
   @$pb.TagNumber(8)
   void clearWaypointId() => clearField(8);
+
+  /// If true, request data about the robot's GPS localization.
+  @$pb.TagNumber(9)
+  $core.bool get requestGpsState => $_getBF(8);
+  @$pb.TagNumber(9)
+  set requestGpsState($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasRequestGpsState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRequestGpsState() => clearField(9);
 }
 
 /// Message describing the state of a remote point cloud service (such as a velodyne).
@@ -2713,12 +2909,13 @@ class LostDetectorState extends $pb.GeneratedMessage {
 /// as any requested live data information.
 class GetLocalizationStateResponse extends $pb.GeneratedMessage {
   factory GetLocalizationStateResponse({
-    $68.ResponseHeader? header,
-    $88.Localization? localization,
+    $67.ResponseHeader? header,
+    $90.Localization? localization,
     $26.KinematicState? robotKinematics,
     $core.Iterable<RemotePointCloudStatus>? remoteCloudStatus,
-    $87.WaypointSnapshot? liveData,
+    $89.WaypointSnapshot? liveData,
     LostDetectorState? lostDetectorState,
+    $91.GPSLocalization? gps,
   }) {
     final $result = create();
     if (header != null) {
@@ -2739,6 +2936,9 @@ class GetLocalizationStateResponse extends $pb.GeneratedMessage {
     if (lostDetectorState != null) {
       $result.lostDetectorState = lostDetectorState;
     }
+    if (gps != null) {
+      $result.gps = gps;
+    }
     return $result;
   }
   GetLocalizationStateResponse._() : super();
@@ -2746,12 +2946,13 @@ class GetLocalizationStateResponse extends $pb.GeneratedMessage {
   factory GetLocalizationStateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLocalizationStateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$88.Localization>(2, _omitFieldNames ? '' : 'localization', subBuilder: $88.Localization.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$90.Localization>(2, _omitFieldNames ? '' : 'localization', subBuilder: $90.Localization.create)
     ..aOM<$26.KinematicState>(4, _omitFieldNames ? '' : 'robotKinematics', subBuilder: $26.KinematicState.create)
     ..pc<RemotePointCloudStatus>(5, _omitFieldNames ? '' : 'remoteCloudStatus', $pb.PbFieldType.PM, subBuilder: RemotePointCloudStatus.create)
-    ..aOM<$87.WaypointSnapshot>(6, _omitFieldNames ? '' : 'liveData', subBuilder: $87.WaypointSnapshot.create)
+    ..aOM<$89.WaypointSnapshot>(6, _omitFieldNames ? '' : 'liveData', subBuilder: $89.WaypointSnapshot.create)
     ..aOM<LostDetectorState>(7, _omitFieldNames ? '' : 'lostDetectorState', subBuilder: LostDetectorState.create)
+    ..aOM<$91.GPSLocalization>(8, _omitFieldNames ? '' : 'gps', subBuilder: $91.GPSLocalization.create)
     ..hasRequiredFields = false
   ;
 
@@ -2778,28 +2979,28 @@ class GetLocalizationStateResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Where the robot currently is. If a waypoint_id was specified in the request, this localization
   /// will be relative to that waypoint.
   @$pb.TagNumber(2)
-  $88.Localization get localization => $_getN(1);
+  $90.Localization get localization => $_getN(1);
   @$pb.TagNumber(2)
-  set localization($88.Localization v) { setField(2, v); }
+  set localization($90.Localization v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLocalization() => $_has(1);
   @$pb.TagNumber(2)
   void clearLocalization() => clearField(2);
   @$pb.TagNumber(2)
-  $88.Localization ensureLocalization() => $_ensure(1);
+  $90.Localization ensureLocalization() => $_ensure(1);
 
   /// Robot kinematic state at time of localization.
   @$pb.TagNumber(4)
@@ -2820,15 +3021,15 @@ class GetLocalizationStateResponse extends $pb.GeneratedMessage {
   /// Contains live data at the time of localization, with elements only filled out
   /// if requested.
   @$pb.TagNumber(6)
-  $87.WaypointSnapshot get liveData => $_getN(4);
+  $89.WaypointSnapshot get liveData => $_getN(4);
   @$pb.TagNumber(6)
-  set liveData($87.WaypointSnapshot v) { setField(6, v); }
+  set liveData($89.WaypointSnapshot v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasLiveData() => $_has(4);
   @$pb.TagNumber(6)
   void clearLiveData() => clearField(6);
   @$pb.TagNumber(6)
-  $87.WaypointSnapshot ensureLiveData() => $_ensure(4);
+  $89.WaypointSnapshot ensureLiveData() => $_ensure(4);
 
   /// If the robot drives around without a good localization for a while, eventually
   /// it becomes "lost."  I.E. it has a localization, but it no longer trusts
@@ -2844,6 +3045,19 @@ class GetLocalizationStateResponse extends $pb.GeneratedMessage {
   void clearLostDetectorState() => clearField(7);
   @$pb.TagNumber(7)
   LostDetectorState ensureLostDetectorState() => $_ensure(5);
+
+  /// If the robot has GPS capability and the map was recorded with GPS, this message will show graph nav's estimate of
+  /// the robot location in earth-centered frames. To see the raw GPS data, look at the WorldObject list.
+  @$pb.TagNumber(8)
+  $91.GPSLocalization get gps => $_getN(6);
+  @$pb.TagNumber(8)
+  set gps($91.GPSLocalization v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasGps() => $_has(6);
+  @$pb.TagNumber(8)
+  void clearGps() => clearField(8);
+  @$pb.TagNumber(8)
+  $91.GPSLocalization ensureGps() => $_ensure(6);
 }
 
 /// Clears the graph on the server. Also clears GraphNav's localization to the graph.
@@ -2851,8 +3065,8 @@ class GetLocalizationStateResponse extends $pb.GeneratedMessage {
 /// operation. This RPC may not be used while recording a map.
 class ClearGraphRequest extends $pb.GeneratedMessage {
   factory ClearGraphRequest({
-    $68.RequestHeader? header,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $14.Lease? lease,
   }) {
     final $result = create();
     if (header != null) {
@@ -2868,8 +3082,8 @@ class ClearGraphRequest extends $pb.GeneratedMessage {
   factory ClearGraphRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClearGraphRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$13.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$14.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..hasRequiredFields = false
   ;
 
@@ -2896,34 +3110,34 @@ class ClearGraphRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The Lease to show ownership of graph-nav service.
   @$pb.TagNumber(2)
-  $13.Lease get lease => $_getN(1);
+  $14.Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
-  set lease($13.Lease v) { setField(2, v); }
+  set lease($14.Lease v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLease() => $_has(1);
   @$pb.TagNumber(2)
   void clearLease() => clearField(2);
   @$pb.TagNumber(2)
-  $13.Lease ensureLease() => $_ensure(1);
+  $14.Lease ensureLease() => $_ensure(1);
 }
 
 /// The results of the ClearGraphRequest.
 class ClearGraphResponse extends $pb.GeneratedMessage {
   factory ClearGraphResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
     ClearGraphResponse_Status? status,
   }) {
     final $result = create();
@@ -2943,8 +3157,8 @@ class ClearGraphResponse extends $pb.GeneratedMessage {
   factory ClearGraphResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClearGraphResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..e<ClearGraphResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ClearGraphResponse_Status.STATUS_UNKNOWN, valueOf: ClearGraphResponse_Status.valueOf, enumValues: ClearGraphResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -2972,27 +3186,27 @@ class ClearGraphResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Details about how the lease was used.
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
   /// Status of the ClearGraphResponse.
   @$pb.TagNumber(3)
@@ -3009,9 +3223,9 @@ class ClearGraphResponse extends $pb.GeneratedMessage {
 /// currently exists on the server.
 class UploadGraphRequest extends $pb.GeneratedMessage {
   factory UploadGraphRequest({
-    $68.RequestHeader? header,
-    $87.Graph? graph,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $89.Graph? graph,
+    $14.Lease? lease,
     $core.bool? generateNewAnchoring,
     $core.bool? treatValidationWarningsAsErrors,
   }) {
@@ -3038,9 +3252,9 @@ class UploadGraphRequest extends $pb.GeneratedMessage {
   factory UploadGraphRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadGraphRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$87.Graph>(2, _omitFieldNames ? '' : 'graph', subBuilder: $87.Graph.create)
-    ..aOM<$13.Lease>(3, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$89.Graph>(2, _omitFieldNames ? '' : 'graph', subBuilder: $89.Graph.create)
+    ..aOM<$14.Lease>(3, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..aOB(4, _omitFieldNames ? '' : 'generateNewAnchoring')
     ..aOB(5, _omitFieldNames ? '' : 'treatValidationWarningsAsErrors')
     ..hasRequiredFields = false
@@ -3069,40 +3283,40 @@ class UploadGraphRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Structure of the graph containing waypoints and edges without
   /// underlying sensor data.
   @$pb.TagNumber(2)
-  $87.Graph get graph => $_getN(1);
+  $89.Graph get graph => $_getN(1);
   @$pb.TagNumber(2)
-  set graph($87.Graph v) { setField(2, v); }
+  set graph($89.Graph v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasGraph() => $_has(1);
   @$pb.TagNumber(2)
   void clearGraph() => clearField(2);
   @$pb.TagNumber(2)
-  $87.Graph ensureGraph() => $_ensure(1);
+  $89.Graph ensureGraph() => $_ensure(1);
 
   /// The Lease to show ownership of graph-nav service.
   @$pb.TagNumber(3)
-  $13.Lease get lease => $_getN(2);
+  $14.Lease get lease => $_getN(2);
   @$pb.TagNumber(3)
-  set lease($13.Lease v) { setField(3, v); }
+  set lease($14.Lease v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLease() => $_has(2);
   @$pb.TagNumber(3)
   void clearLease() => clearField(3);
   @$pb.TagNumber(3)
-  $13.Lease ensureLease() => $_ensure(2);
+  $14.Lease ensureLease() => $_ensure(2);
 
   /// If this is true, generate an (overwrite the) anchoring on upload.
   @$pb.TagNumber(4)
@@ -3132,18 +3346,19 @@ class UploadGraphResponse_ValidationStatus extends $pb.GeneratedMessage {
   factory UploadGraphResponse_ValidationStatus({
     $core.Iterable<$core.String>? missingWaypointIdsInEdges,
     $core.Iterable<$core.String>? missingWaypointIdsInAnchors,
-    $core.Iterable<$87.Edge_Id>? edgeIdsInvalidTransform,
+    $core.Iterable<$89.Edge_Id>? edgeIdsInvalidTransform,
     $core.Iterable<$core.String>? waypointAnchorsInvalidTransform,
     $core.Iterable<$core.String>? objectAnchorsInvalidTransform,
     $core.Iterable<$core.String>? duplicateWaypointIds,
     $core.Iterable<$core.String>? duplicateWaypointAnchorIds,
     $core.Iterable<$core.String>? duplicateObjectAnchorIds,
-    $core.Iterable<$87.Edge_Id>? duplicateEdgeIds,
+    $core.Iterable<$89.Edge_Id>? duplicateEdgeIds,
     $core.Iterable<$core.String>? invalidWaypointIdsSelfEdges,
     $core.bool? hasEmptyWaypointIds,
     $core.bool? hasEmptyEdgeIds,
     $core.bool? hasEmptyWaypointAnchorIds,
     $core.bool? hasEmptyObjectAnchorIds,
+    $core.Iterable<$89.Edge_Id>? malformedStaircaseEdgeIds,
   }) {
     final $result = create();
     if (missingWaypointIdsInEdges != null) {
@@ -3188,6 +3403,9 @@ class UploadGraphResponse_ValidationStatus extends $pb.GeneratedMessage {
     if (hasEmptyObjectAnchorIds != null) {
       $result.hasEmptyObjectAnchorIds = hasEmptyObjectAnchorIds;
     }
+    if (malformedStaircaseEdgeIds != null) {
+      $result.malformedStaircaseEdgeIds.addAll(malformedStaircaseEdgeIds);
+    }
     return $result;
   }
   UploadGraphResponse_ValidationStatus._() : super();
@@ -3197,18 +3415,19 @@ class UploadGraphResponse_ValidationStatus extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadGraphResponse.ValidationStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'missingWaypointIdsInEdges')
     ..pPS(2, _omitFieldNames ? '' : 'missingWaypointIdsInAnchors')
-    ..pc<$87.Edge_Id>(3, _omitFieldNames ? '' : 'edgeIdsInvalidTransform', $pb.PbFieldType.PM, subBuilder: $87.Edge_Id.create)
+    ..pc<$89.Edge_Id>(3, _omitFieldNames ? '' : 'edgeIdsInvalidTransform', $pb.PbFieldType.PM, subBuilder: $89.Edge_Id.create)
     ..pPS(4, _omitFieldNames ? '' : 'waypointAnchorsInvalidTransform')
     ..pPS(5, _omitFieldNames ? '' : 'objectAnchorsInvalidTransform')
     ..pPS(6, _omitFieldNames ? '' : 'duplicateWaypointIds')
     ..pPS(7, _omitFieldNames ? '' : 'duplicateWaypointAnchorIds')
     ..pPS(8, _omitFieldNames ? '' : 'duplicateObjectAnchorIds')
-    ..pc<$87.Edge_Id>(9, _omitFieldNames ? '' : 'duplicateEdgeIds', $pb.PbFieldType.PM, subBuilder: $87.Edge_Id.create)
+    ..pc<$89.Edge_Id>(9, _omitFieldNames ? '' : 'duplicateEdgeIds', $pb.PbFieldType.PM, subBuilder: $89.Edge_Id.create)
     ..pPS(10, _omitFieldNames ? '' : 'invalidWaypointIdsSelfEdges')
     ..aOB(11, _omitFieldNames ? '' : 'hasEmptyWaypointIds')
     ..aOB(12, _omitFieldNames ? '' : 'hasEmptyEdgeIds')
     ..aOB(13, _omitFieldNames ? '' : 'hasEmptyWaypointAnchorIds')
     ..aOB(14, _omitFieldNames ? '' : 'hasEmptyObjectAnchorIds')
+    ..pc<$89.Edge_Id>(15, _omitFieldNames ? '' : 'malformedStaircaseEdgeIds', $pb.PbFieldType.PM, subBuilder: $89.Edge_Id.create)
     ..hasRequiredFields = false
   ;
 
@@ -3247,7 +3466,7 @@ class UploadGraphResponse_ValidationStatus extends $pb.GeneratedMessage {
   /// that have an invalid transform. Valid transforms have quaternion rotations that are normalized.
   /// This is a warning. Edges with invalid transforms will be fixed on upload.
   @$pb.TagNumber(3)
-  $core.List<$87.Edge_Id> get edgeIdsInvalidTransform => $_getList(2);
+  $core.List<$89.Edge_Id> get edgeIdsInvalidTransform => $_getList(2);
 
   /// One or more waypoint anchors in the anchoring have an invalid transform. These are the waypoint IDs
   /// that have an invalid transform. Valid transforms have quaternion rotations that are normalized.
@@ -3283,7 +3502,7 @@ class UploadGraphResponse_ValidationStatus extends $pb.GeneratedMessage {
   /// of times that they are duplicated in the request. Note that edges are *not* directional, and it is impossible
   /// to have both a->b *and* b->a in the same map. This is an error. Fix the graph and re-upload.
   @$pb.TagNumber(9)
-  $core.List<$87.Edge_Id> get duplicateEdgeIds => $_getList(8);
+  $core.List<$89.Edge_Id> get duplicateEdgeIds => $_getList(8);
 
   /// Edges are not allowed to have the same "from" and "to" waypoint. These are the waypoint IDs which have self
   /// edges in the UploadGraph request. This is an error. Fix the graph and re-upload.
@@ -3330,6 +3549,10 @@ class UploadGraphResponse_ValidationStatus extends $pb.GeneratedMessage {
   $core.bool hasHasEmptyObjectAnchorIds() => $_has(13);
   @$pb.TagNumber(14)
   void clearHasEmptyObjectAnchorIds() => clearField(14);
+
+  /// One or more edges had a malformed staircase annotation. This is an error. Remove, rerecord, or fix the annotation.
+  @$pb.TagNumber(15)
+  $core.List<$89.Edge_Id> get malformedStaircaseEdgeIds => $_getList(14);
 }
 
 /// Response to the UploadGraphRequest. After uploading a graph, the user is expected
@@ -3338,17 +3561,17 @@ class UploadGraphResponse_ValidationStatus extends $pb.GeneratedMessage {
 /// be uploaded by the client.
 class UploadGraphResponse extends $pb.GeneratedMessage {
   factory UploadGraphResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
     $core.Iterable<$core.String>? loadedWaypointSnapshotIds,
     $core.Iterable<$core.String>? unknownWaypointSnapshotIds,
     $core.Iterable<$core.String>? loadedEdgeSnapshotIds,
     $core.Iterable<$core.String>? unknownEdgeSnapshotIds,
-    $14.LicenseInfo_Status? licenseStatus,
+    $15.LicenseInfo_Status? licenseStatus,
     UploadGraphResponse_Status? status,
     SensorCompatibilityStatus? sensorStatus,
     AreaCallbackServiceError? areaCallbackError,
-    $87.MapStats? mapStats,
+    $89.MapStats? mapStats,
     UploadGraphResponse_ValidationStatus? validationStatus,
   }) {
     final $result = create();
@@ -3395,17 +3618,17 @@ class UploadGraphResponse extends $pb.GeneratedMessage {
   factory UploadGraphResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadGraphResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..pPS(3, _omitFieldNames ? '' : 'loadedWaypointSnapshotIds')
     ..pPS(4, _omitFieldNames ? '' : 'unknownWaypointSnapshotIds')
     ..pPS(5, _omitFieldNames ? '' : 'loadedEdgeSnapshotIds')
     ..pPS(6, _omitFieldNames ? '' : 'unknownEdgeSnapshotIds')
-    ..e<$14.LicenseInfo_Status>(7, _omitFieldNames ? '' : 'licenseStatus', $pb.PbFieldType.OE, defaultOrMaker: $14.LicenseInfo_Status.STATUS_UNKNOWN, valueOf: $14.LicenseInfo_Status.valueOf, enumValues: $14.LicenseInfo_Status.values)
+    ..e<$15.LicenseInfo_Status>(7, _omitFieldNames ? '' : 'licenseStatus', $pb.PbFieldType.OE, defaultOrMaker: $15.LicenseInfo_Status.STATUS_UNKNOWN, valueOf: $15.LicenseInfo_Status.valueOf, enumValues: $15.LicenseInfo_Status.values)
     ..e<UploadGraphResponse_Status>(8, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UploadGraphResponse_Status.STATUS_UNKNOWN, valueOf: UploadGraphResponse_Status.valueOf, enumValues: UploadGraphResponse_Status.values)
     ..aOM<SensorCompatibilityStatus>(9, _omitFieldNames ? '' : 'sensorStatus', subBuilder: SensorCompatibilityStatus.create)
     ..aOM<AreaCallbackServiceError>(10, _omitFieldNames ? '' : 'areaCallbackError', subBuilder: AreaCallbackServiceError.create)
-    ..aOM<$87.MapStats>(11, _omitFieldNames ? '' : 'mapStats', subBuilder: $87.MapStats.create)
+    ..aOM<$89.MapStats>(11, _omitFieldNames ? '' : 'mapStats', subBuilder: $89.MapStats.create)
     ..aOM<UploadGraphResponse_ValidationStatus>(12, _omitFieldNames ? '' : 'validationStatus', subBuilder: UploadGraphResponse_ValidationStatus.create)
     ..hasRequiredFields = false
   ;
@@ -3433,27 +3656,27 @@ class UploadGraphResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Details about how the lease was used.
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
   /// The waypoint snapshot ids for which there was cached data.
   @$pb.TagNumber(3)
@@ -3473,9 +3696,9 @@ class UploadGraphResponse extends $pb.GeneratedMessage {
 
   /// Large graphs can only be uploaded if the license permits them.
   @$pb.TagNumber(7)
-  $14.LicenseInfo_Status get licenseStatus => $_getN(6);
+  $15.LicenseInfo_Status get licenseStatus => $_getN(6);
   @$pb.TagNumber(7)
-  set licenseStatus($14.LicenseInfo_Status v) { setField(7, v); }
+  set licenseStatus($15.LicenseInfo_Status v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasLicenseStatus() => $_has(6);
   @$pb.TagNumber(7)
@@ -3516,15 +3739,15 @@ class UploadGraphResponse extends $pb.GeneratedMessage {
 
   /// General map statistics.
   @$pb.TagNumber(11)
-  $87.MapStats get mapStats => $_getN(10);
+  $89.MapStats get mapStats => $_getN(10);
   @$pb.TagNumber(11)
-  set mapStats($87.MapStats v) { setField(11, v); }
+  set mapStats($89.MapStats v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasMapStats() => $_has(10);
   @$pb.TagNumber(11)
   void clearMapStats() => clearField(11);
   @$pb.TagNumber(11)
-  $87.MapStats ensureMapStats() => $_ensure(10);
+  $89.MapStats ensureMapStats() => $_ensure(10);
 
   /// If the returned status is STATUS_INVALID_GRAPH, this contains the detailed information about why the
   /// graph was invalid. Note that some graph validation errors are warnings and the robot will be able to navigate
@@ -3548,7 +3771,7 @@ class UploadGraphResponse extends $pb.GeneratedMessage {
 /// the graph are required to exist on the server for GraphNav to localize and navigate.
 class DownloadGraphRequest extends $pb.GeneratedMessage {
   factory DownloadGraphRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -3561,7 +3784,7 @@ class DownloadGraphRequest extends $pb.GeneratedMessage {
   factory DownloadGraphRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadGraphRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -3588,22 +3811,22 @@ class DownloadGraphRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The DownloadGraph response message includes the current graph on the robot.
 class DownloadGraphResponse extends $pb.GeneratedMessage {
   factory DownloadGraphResponse({
-    $68.ResponseHeader? header,
-    $87.Graph? graph,
+    $67.ResponseHeader? header,
+    $89.Graph? graph,
   }) {
     final $result = create();
     if (header != null) {
@@ -3619,8 +3842,8 @@ class DownloadGraphResponse extends $pb.GeneratedMessage {
   factory DownloadGraphResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadGraphResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$87.Graph>(2, _omitFieldNames ? '' : 'graph', subBuilder: $87.Graph.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$89.Graph>(2, _omitFieldNames ? '' : 'graph', subBuilder: $89.Graph.create)
     ..hasRequiredFields = false
   ;
 
@@ -3647,27 +3870,27 @@ class DownloadGraphResponse extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The structure of the graph.
   @$pb.TagNumber(2)
-  $87.Graph get graph => $_getN(1);
+  $89.Graph get graph => $_getN(1);
   @$pb.TagNumber(2)
-  set graph($87.Graph v) { setField(2, v); }
+  set graph($89.Graph v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasGraph() => $_has(1);
   @$pb.TagNumber(2)
   void clearGraph() => clearField(2);
   @$pb.TagNumber(2)
-  $87.Graph ensureGraph() => $_ensure(1);
+  $89.Graph ensureGraph() => $_ensure(1);
 }
 
 /// Used to upload waypoint snapshot in chunks for a specific waypoint snapshot. Waypoint
@@ -3676,9 +3899,9 @@ class DownloadGraphResponse extends $pb.GeneratedMessage {
 /// overwhelming gRPC with large http requests.
 class UploadWaypointSnapshotRequest extends $pb.GeneratedMessage {
   factory UploadWaypointSnapshotRequest({
-    $68.RequestHeader? header,
-    $34.DataChunk? chunk,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $4.DataChunk? chunk,
+    $14.Lease? lease,
   }) {
     final $result = create();
     if (header != null) {
@@ -3697,9 +3920,9 @@ class UploadWaypointSnapshotRequest extends $pb.GeneratedMessage {
   factory UploadWaypointSnapshotRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadWaypointSnapshotRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$34.DataChunk>(3, _omitFieldNames ? '' : 'chunk', subBuilder: $34.DataChunk.create)
-    ..aOM<$13.Lease>(4, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$4.DataChunk>(3, _omitFieldNames ? '' : 'chunk', subBuilder: $4.DataChunk.create)
+    ..aOM<$14.Lease>(4, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..hasRequiredFields = false
   ;
 
@@ -3726,52 +3949,52 @@ class UploadWaypointSnapshotRequest extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Serialized bytes of a WaypointSnapshot message, restricted to a chunk no larger than 4MB in size.
   /// To break the data into chunks, first serialize it to bytes. Then, send the bytes in order as DataChunk objects.
   /// The chunks will be concatenated together on the server, and deserialized.
   @$pb.TagNumber(3)
-  $34.DataChunk get chunk => $_getN(1);
+  $4.DataChunk get chunk => $_getN(1);
   @$pb.TagNumber(3)
-  set chunk($34.DataChunk v) { setField(3, v); }
+  set chunk($4.DataChunk v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasChunk() => $_has(1);
   @$pb.TagNumber(3)
   void clearChunk() => clearField(3);
   @$pb.TagNumber(3)
-  $34.DataChunk ensureChunk() => $_ensure(1);
+  $4.DataChunk ensureChunk() => $_ensure(1);
 
   /// The Leases to show ownership of the graph-nav service.
   @$pb.TagNumber(4)
-  $13.Lease get lease => $_getN(2);
+  $14.Lease get lease => $_getN(2);
   @$pb.TagNumber(4)
-  set lease($13.Lease v) { setField(4, v); }
+  set lease($14.Lease v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLease() => $_has(2);
   @$pb.TagNumber(4)
   void clearLease() => clearField(4);
   @$pb.TagNumber(4)
-  $13.Lease ensureLease() => $_ensure(2);
+  $14.Lease ensureLease() => $_ensure(2);
 }
 
 /// One response for the entire WaypointSnapshot after all chunks have
 /// been concatenated and deserialized.
 class UploadWaypointSnapshotResponse extends $pb.GeneratedMessage {
   factory UploadWaypointSnapshotResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
     UploadWaypointSnapshotResponse_Status? status,
     SensorCompatibilityStatus? sensorStatus,
-    $87.MapStats? mapStats,
+    $89.MapStats? mapStats,
   }) {
     final $result = create();
     if (header != null) {
@@ -3796,11 +4019,11 @@ class UploadWaypointSnapshotResponse extends $pb.GeneratedMessage {
   factory UploadWaypointSnapshotResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadWaypointSnapshotResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..e<UploadWaypointSnapshotResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UploadWaypointSnapshotResponse_Status.STATUS_UNKNOWN, valueOf: UploadWaypointSnapshotResponse_Status.valueOf, enumValues: UploadWaypointSnapshotResponse_Status.values)
     ..aOM<SensorCompatibilityStatus>(4, _omitFieldNames ? '' : 'sensorStatus', subBuilder: SensorCompatibilityStatus.create)
-    ..aOM<$87.MapStats>(5, _omitFieldNames ? '' : 'mapStats', subBuilder: $87.MapStats.create)
+    ..aOM<$89.MapStats>(5, _omitFieldNames ? '' : 'mapStats', subBuilder: $89.MapStats.create)
     ..hasRequiredFields = false
   ;
 
@@ -3827,27 +4050,27 @@ class UploadWaypointSnapshotResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Details about how the lease was used.
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
   @$pb.TagNumber(3)
   UploadWaypointSnapshotResponse_Status get status => $_getN(2);
@@ -3871,15 +4094,15 @@ class UploadWaypointSnapshotResponse extends $pb.GeneratedMessage {
 
   /// General map statistics after upload.
   @$pb.TagNumber(5)
-  $87.MapStats get mapStats => $_getN(4);
+  $89.MapStats get mapStats => $_getN(4);
   @$pb.TagNumber(5)
-  set mapStats($87.MapStats v) { setField(5, v); }
+  set mapStats($89.MapStats v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMapStats() => $_has(4);
   @$pb.TagNumber(5)
   void clearMapStats() => clearField(5);
   @$pb.TagNumber(5)
-  $87.MapStats ensureMapStats() => $_ensure(4);
+  $89.MapStats ensureMapStats() => $_ensure(4);
 }
 
 /// Used to upload edge data in chunks for a specific edge snapshot. Edge snapshots contain
@@ -3888,9 +4111,9 @@ class UploadWaypointSnapshotResponse extends $pb.GeneratedMessage {
 /// overwhelming gRPC with large http requests.
 class UploadEdgeSnapshotRequest extends $pb.GeneratedMessage {
   factory UploadEdgeSnapshotRequest({
-    $68.RequestHeader? header,
-    $34.DataChunk? chunk,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $4.DataChunk? chunk,
+    $14.Lease? lease,
   }) {
     final $result = create();
     if (header != null) {
@@ -3909,9 +4132,9 @@ class UploadEdgeSnapshotRequest extends $pb.GeneratedMessage {
   factory UploadEdgeSnapshotRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadEdgeSnapshotRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$34.DataChunk>(4, _omitFieldNames ? '' : 'chunk', subBuilder: $34.DataChunk.create)
-    ..aOM<$13.Lease>(5, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$4.DataChunk>(4, _omitFieldNames ? '' : 'chunk', subBuilder: $4.DataChunk.create)
+    ..aOM<$14.Lease>(5, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..hasRequiredFields = false
   ;
 
@@ -3938,50 +4161,50 @@ class UploadEdgeSnapshotRequest extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Serialized bytes of a EdgeSnapshot message, restricted to a chunk no larger than 4MB in size.
   /// To break the data into chunks, first serialize it to bytes. Then, send the bytes in order as DataChunk objects.
   /// The chunks will be concatenated together on the server, and deserialized
   @$pb.TagNumber(4)
-  $34.DataChunk get chunk => $_getN(1);
+  $4.DataChunk get chunk => $_getN(1);
   @$pb.TagNumber(4)
-  set chunk($34.DataChunk v) { setField(4, v); }
+  set chunk($4.DataChunk v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasChunk() => $_has(1);
   @$pb.TagNumber(4)
   void clearChunk() => clearField(4);
   @$pb.TagNumber(4)
-  $34.DataChunk ensureChunk() => $_ensure(1);
+  $4.DataChunk ensureChunk() => $_ensure(1);
 
   /// The Leases to show ownership of the graph-nav service.
   @$pb.TagNumber(5)
-  $13.Lease get lease => $_getN(2);
+  $14.Lease get lease => $_getN(2);
   @$pb.TagNumber(5)
-  set lease($13.Lease v) { setField(5, v); }
+  set lease($14.Lease v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasLease() => $_has(2);
   @$pb.TagNumber(5)
   void clearLease() => clearField(5);
   @$pb.TagNumber(5)
-  $13.Lease ensureLease() => $_ensure(2);
+  $14.Lease ensureLease() => $_ensure(2);
 }
 
 /// One response for the entire EdgeSnapshot after all chunks have
 /// been concatenated and deserialized.
 class UploadEdgeSnapshotResponse extends $pb.GeneratedMessage {
   factory UploadEdgeSnapshotResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
-    $87.MapStats? mapStats,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
+    $89.MapStats? mapStats,
   }) {
     final $result = create();
     if (header != null) {
@@ -4000,9 +4223,9 @@ class UploadEdgeSnapshotResponse extends $pb.GeneratedMessage {
   factory UploadEdgeSnapshotResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadEdgeSnapshotResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
-    ..aOM<$87.MapStats>(3, _omitFieldNames ? '' : 'mapStats', subBuilder: $87.MapStats.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
+    ..aOM<$89.MapStats>(3, _omitFieldNames ? '' : 'mapStats', subBuilder: $89.MapStats.create)
     ..hasRequiredFields = false
   ;
 
@@ -4029,39 +4252,39 @@ class UploadEdgeSnapshotResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Details about how the lease was used.
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
   /// General map statistics after upload.
   @$pb.TagNumber(3)
-  $87.MapStats get mapStats => $_getN(2);
+  $89.MapStats get mapStats => $_getN(2);
   @$pb.TagNumber(3)
-  set mapStats($87.MapStats v) { setField(3, v); }
+  set mapStats($89.MapStats v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMapStats() => $_has(2);
   @$pb.TagNumber(3)
   void clearMapStats() => clearField(3);
   @$pb.TagNumber(3)
-  $87.MapStats ensureMapStats() => $_ensure(2);
+  $89.MapStats ensureMapStats() => $_ensure(2);
 }
 
 /// The DownloadWaypointSnapshot request asks for a specific waypoint snapshot id to
@@ -4070,7 +4293,7 @@ class UploadEdgeSnapshotResponse extends $pb.GeneratedMessage {
 /// request the waypoint snapshot from the server using the DownloadWaypointSnapshot RPC.
 class DownloadWaypointSnapshotRequest extends $pb.GeneratedMessage {
   factory DownloadWaypointSnapshotRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? waypointSnapshotId,
     $core.bool? downloadImages,
     $core.bool? compressPointCloud,
@@ -4099,7 +4322,7 @@ class DownloadWaypointSnapshotRequest extends $pb.GeneratedMessage {
   factory DownloadWaypointSnapshotRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadWaypointSnapshotRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'waypointSnapshotId')
     ..aOB(3, _omitFieldNames ? '' : 'downloadImages')
     ..aOB(4, _omitFieldNames ? '' : 'compressPointCloud')
@@ -4130,15 +4353,15 @@ class DownloadWaypointSnapshotRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// ID of the snapshot associated with a waypoint.
   @$pb.TagNumber(2)
@@ -4190,10 +4413,10 @@ class DownloadWaypointSnapshotRequest extends $pb.GeneratedMessage {
 /// to stream these data to avoid overwhelming gRPC with large http requests.
 class DownloadWaypointSnapshotResponse extends $pb.GeneratedMessage {
   factory DownloadWaypointSnapshotResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     DownloadWaypointSnapshotResponse_Status? status,
     $core.String? waypointSnapshotId,
-    $34.DataChunk? chunk,
+    $4.DataChunk? chunk,
   }) {
     final $result = create();
     if (header != null) {
@@ -4215,10 +4438,10 @@ class DownloadWaypointSnapshotResponse extends $pb.GeneratedMessage {
   factory DownloadWaypointSnapshotResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadWaypointSnapshotResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<DownloadWaypointSnapshotResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: DownloadWaypointSnapshotResponse_Status.STATUS_UNKNOWN, valueOf: DownloadWaypointSnapshotResponse_Status.valueOf, enumValues: DownloadWaypointSnapshotResponse_Status.values)
     ..aOS(4, _omitFieldNames ? '' : 'waypointSnapshotId')
-    ..aOM<$34.DataChunk>(5, _omitFieldNames ? '' : 'chunk', subBuilder: $34.DataChunk.create)
+    ..aOM<$4.DataChunk>(5, _omitFieldNames ? '' : 'chunk', subBuilder: $4.DataChunk.create)
     ..hasRequiredFields = false
   ;
 
@@ -4245,15 +4468,15 @@ class DownloadWaypointSnapshotResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
@@ -4280,22 +4503,22 @@ class DownloadWaypointSnapshotResponse extends $pb.GeneratedMessage {
   /// into a single byte string. Then, deserialize the byte string into a
   /// WaypointSnapshot object.
   @$pb.TagNumber(5)
-  $34.DataChunk get chunk => $_getN(3);
+  $4.DataChunk get chunk => $_getN(3);
   @$pb.TagNumber(5)
-  set chunk($34.DataChunk v) { setField(5, v); }
+  set chunk($4.DataChunk v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasChunk() => $_has(3);
   @$pb.TagNumber(5)
   void clearChunk() => clearField(5);
   @$pb.TagNumber(5)
-  $34.DataChunk ensureChunk() => $_ensure(3);
+  $4.DataChunk ensureChunk() => $_ensure(3);
 }
 
 /// The DownloadEdgeSnapshot request asks for a specific edge snapshot id to
 /// be downloaded. Edge snapshots contain the large sensor data stored in each edge.
 class DownloadEdgeSnapshotRequest extends $pb.GeneratedMessage {
   factory DownloadEdgeSnapshotRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? edgeSnapshotId,
   }) {
     final $result = create();
@@ -4312,7 +4535,7 @@ class DownloadEdgeSnapshotRequest extends $pb.GeneratedMessage {
   factory DownloadEdgeSnapshotRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadEdgeSnapshotRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'edgeSnapshotId')
     ..hasRequiredFields = false
   ;
@@ -4340,15 +4563,15 @@ class DownloadEdgeSnapshotRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// ID of the data associated with an edge.
   @$pb.TagNumber(2)
@@ -4366,10 +4589,10 @@ class DownloadEdgeSnapshotRequest extends $pb.GeneratedMessage {
 /// to stream these data to avoid overwhelming gRPC with large http requests.
 class DownloadEdgeSnapshotResponse extends $pb.GeneratedMessage {
   factory DownloadEdgeSnapshotResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     DownloadEdgeSnapshotResponse_Status? status,
     $core.String? edgeSnapshotId,
-    $34.DataChunk? chunk,
+    $4.DataChunk? chunk,
   }) {
     final $result = create();
     if (header != null) {
@@ -4391,10 +4614,10 @@ class DownloadEdgeSnapshotResponse extends $pb.GeneratedMessage {
   factory DownloadEdgeSnapshotResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadEdgeSnapshotResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<DownloadEdgeSnapshotResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: DownloadEdgeSnapshotResponse_Status.STATUS_UNKNOWN, valueOf: DownloadEdgeSnapshotResponse_Status.valueOf, enumValues: DownloadEdgeSnapshotResponse_Status.values)
     ..aOS(4, _omitFieldNames ? '' : 'edgeSnapshotId')
-    ..aOM<$34.DataChunk>(5, _omitFieldNames ? '' : 'chunk', subBuilder: $34.DataChunk.create)
+    ..aOM<$4.DataChunk>(5, _omitFieldNames ? '' : 'chunk', subBuilder: $4.DataChunk.create)
     ..hasRequiredFields = false
   ;
 
@@ -4421,15 +4644,15 @@ class DownloadEdgeSnapshotResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
@@ -4456,22 +4679,22 @@ class DownloadEdgeSnapshotResponse extends $pb.GeneratedMessage {
   /// into a single byte string. Then, deserialize the byte string into an
   /// EdgeSnapshot object.
   @$pb.TagNumber(5)
-  $34.DataChunk get chunk => $_getN(3);
+  $4.DataChunk get chunk => $_getN(3);
   @$pb.TagNumber(5)
-  set chunk($34.DataChunk v) { setField(5, v); }
+  set chunk($4.DataChunk v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasChunk() => $_has(3);
   @$pb.TagNumber(5)
   void clearChunk() => clearField(5);
   @$pb.TagNumber(5)
-  $34.DataChunk ensureChunk() => $_ensure(3);
+  $4.DataChunk ensureChunk() => $_ensure(3);
 }
 
 /// Information about problems Area Callback services specifified in a map or on a route.
 class AreaCallbackServiceError extends $pb.GeneratedMessage {
   factory AreaCallbackServiceError({
     $core.Iterable<$core.String>? missingServices,
-    $core.Iterable<$9.ServiceFault>? faultedServices,
+    $core.Iterable<$10.ServiceFault>? faultedServices,
   }) {
     final $result = create();
     if (missingServices != null) {
@@ -4488,7 +4711,7 @@ class AreaCallbackServiceError extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AreaCallbackServiceError', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'missingServices')
-    ..pc<$9.ServiceFault>(2, _omitFieldNames ? '' : 'faultedServices', $pb.PbFieldType.PM, subBuilder: $9.ServiceFault.create)
+    ..pc<$10.ServiceFault>(2, _omitFieldNames ? '' : 'faultedServices', $pb.PbFieldType.PM, subBuilder: $10.ServiceFault.create)
     ..hasRequiredFields = false
   ;
 
@@ -4521,13 +4744,13 @@ class AreaCallbackServiceError extends $pb.GeneratedMessage {
 
   /// Area Callback services that were requested but are reporting critical faults.
   @$pb.TagNumber(2)
-  $core.List<$9.ServiceFault> get faultedServices => $_getList(1);
+  $core.List<$10.ServiceFault> get faultedServices => $_getList(1);
 }
 
 /// Run a check on the currently loaded map.
 class ValidateGraphRequest extends $pb.GeneratedMessage {
   factory ValidateGraphRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -4540,7 +4763,7 @@ class ValidateGraphRequest extends $pb.GeneratedMessage {
   factory ValidateGraphRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ValidateGraphRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -4566,21 +4789,21 @@ class ValidateGraphRequest extends $pb.GeneratedMessage {
   static ValidateGraphRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Report possible errors with the loaded map.
 class ValidateGraphResponse extends $pb.GeneratedMessage {
   factory ValidateGraphResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     ValidateGraphResponse_Status? status,
     SensorCompatibilityStatus? sensorStatus,
     AreaCallbackServiceError? areaCallbackError,
@@ -4605,7 +4828,7 @@ class ValidateGraphResponse extends $pb.GeneratedMessage {
   factory ValidateGraphResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ValidateGraphResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<ValidateGraphResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ValidateGraphResponse_Status.STATUS_UNKNOWN, valueOf: ValidateGraphResponse_Status.valueOf, enumValues: ValidateGraphResponse_Status.values)
     ..aOM<SensorCompatibilityStatus>(3, _omitFieldNames ? '' : 'sensorStatus', subBuilder: SensorCompatibilityStatus.create)
     ..aOM<AreaCallbackServiceError>(4, _omitFieldNames ? '' : 'areaCallbackError', subBuilder: AreaCallbackServiceError.create)
@@ -4634,15 +4857,15 @@ class ValidateGraphResponse extends $pb.GeneratedMessage {
   static ValidateGraphResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Status of the currently loaded map.
   @$pb.TagNumber(2)

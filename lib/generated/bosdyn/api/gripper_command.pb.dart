@@ -13,10 +13,10 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/wrappers.pb.dart' as $59;
-import 'basic_command.pbenum.dart' as $64;
+import '../../google/protobuf/wrappers.pb.dart' as $58;
+import 'basic_command.pbenum.dart' as $63;
 import 'gripper_command.pbenum.dart';
-import 'trajectory.pb.dart' as $63;
+import 'trajectory.pb.dart' as $62;
 
 export 'gripper_command.pbenum.dart';
 
@@ -97,7 +97,7 @@ enum GripperCommand_Feedback_Command {
 class GripperCommand_Feedback extends $pb.GeneratedMessage {
   factory GripperCommand_Feedback({
     ClawGripperCommand_Feedback? clawGripperFeedback,
-    $64.RobotCommandFeedbackStatus_Status? status,
+    $63.RobotCommandFeedbackStatus_Status? status,
   }) {
     final $result = create();
     if (clawGripperFeedback != null) {
@@ -119,7 +119,7 @@ class GripperCommand_Feedback extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GripperCommand.Feedback', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..oo(0, [1])
     ..aOM<ClawGripperCommand_Feedback>(1, _omitFieldNames ? '' : 'clawGripperFeedback', subBuilder: ClawGripperCommand_Feedback.create)
-    ..e<$64.RobotCommandFeedbackStatus_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: $64.RobotCommandFeedbackStatus_Status.STATUS_UNKNOWN, valueOf: $64.RobotCommandFeedbackStatus_Status.valueOf, enumValues: $64.RobotCommandFeedbackStatus_Status.values)
+    ..e<$63.RobotCommandFeedbackStatus_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: $63.RobotCommandFeedbackStatus_Status.STATUS_UNKNOWN, valueOf: $63.RobotCommandFeedbackStatus_Status.valueOf, enumValues: $63.RobotCommandFeedbackStatus_Status.values)
     ..hasRequiredFields = false
   ;
 
@@ -160,9 +160,9 @@ class GripperCommand_Feedback extends $pb.GeneratedMessage {
   ClawGripperCommand_Feedback ensureClawGripperFeedback() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $64.RobotCommandFeedbackStatus_Status get status => $_getN(1);
+  $63.RobotCommandFeedbackStatus_Status get status => $_getN(1);
   @$pb.TagNumber(2)
-  set status($64.RobotCommandFeedbackStatus_Status v) { setField(2, v); }
+  set status($63.RobotCommandFeedbackStatus_Status v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasStatus() => $_has(1);
   @$pb.TagNumber(2)
@@ -205,10 +205,10 @@ class GripperCommand extends $pb.GeneratedMessage {
 
 class ClawGripperCommand_Request extends $pb.GeneratedMessage {
   factory ClawGripperCommand_Request({
-    $59.DoubleValue? maximumOpenCloseVelocity,
-    $59.DoubleValue? maximumOpenCloseAcceleration,
-    $59.DoubleValue? maximumTorque,
-    $63.ScalarTrajectory? trajectory,
+    $58.DoubleValue? maximumOpenCloseVelocity,
+    $58.DoubleValue? maximumOpenCloseAcceleration,
+    $58.DoubleValue? maximumTorque,
+    $62.ScalarTrajectory? trajectory,
     $core.bool? disableForceOnContact,
   }) {
     final $result = create();
@@ -234,10 +234,10 @@ class ClawGripperCommand_Request extends $pb.GeneratedMessage {
   factory ClawGripperCommand_Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClawGripperCommand.Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'maximumOpenCloseVelocity', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'maximumOpenCloseAcceleration', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'maximumTorque', subBuilder: $59.DoubleValue.create)
-    ..aOM<$63.ScalarTrajectory>(5, _omitFieldNames ? '' : 'trajectory', subBuilder: $63.ScalarTrajectory.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'maximumOpenCloseVelocity', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'maximumOpenCloseAcceleration', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'maximumTorque', subBuilder: $58.DoubleValue.create)
+    ..aOM<$62.ScalarTrajectory>(5, _omitFieldNames ? '' : 'trajectory', subBuilder: $62.ScalarTrajectory.create)
     ..aOB(6, _omitFieldNames ? '' : 'disableForceOnContact')
     ..hasRequiredFields = false
   ;
@@ -265,39 +265,39 @@ class ClawGripperCommand_Request extends $pb.GeneratedMessage {
 
   /// If unspecified, a default value of 10 (rad/s) will be used.
   @$pb.TagNumber(2)
-  $59.DoubleValue get maximumOpenCloseVelocity => $_getN(0);
+  $58.DoubleValue get maximumOpenCloseVelocity => $_getN(0);
   @$pb.TagNumber(2)
-  set maximumOpenCloseVelocity($59.DoubleValue v) { setField(2, v); }
+  set maximumOpenCloseVelocity($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasMaximumOpenCloseVelocity() => $_has(0);
   @$pb.TagNumber(2)
   void clearMaximumOpenCloseVelocity() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureMaximumOpenCloseVelocity() => $_ensure(0);
+  $58.DoubleValue ensureMaximumOpenCloseVelocity() => $_ensure(0);
 
   /// If unspecified, a default value of 40 (rad/s/s) will be used.
   @$pb.TagNumber(3)
-  $59.DoubleValue get maximumOpenCloseAcceleration => $_getN(1);
+  $58.DoubleValue get maximumOpenCloseAcceleration => $_getN(1);
   @$pb.TagNumber(3)
-  set maximumOpenCloseAcceleration($59.DoubleValue v) { setField(3, v); }
+  set maximumOpenCloseAcceleration($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMaximumOpenCloseAcceleration() => $_has(1);
   @$pb.TagNumber(3)
   void clearMaximumOpenCloseAcceleration() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureMaximumOpenCloseAcceleration() => $_ensure(1);
+  $58.DoubleValue ensureMaximumOpenCloseAcceleration() => $_ensure(1);
 
   /// Maximum torque applied. If unspecified, a default value of 5.5 (Nm) will be used.
   @$pb.TagNumber(4)
-  $59.DoubleValue get maximumTorque => $_getN(2);
+  $58.DoubleValue get maximumTorque => $_getN(2);
   @$pb.TagNumber(4)
-  set maximumTorque($59.DoubleValue v) { setField(4, v); }
+  set maximumTorque($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasMaximumTorque() => $_has(2);
   @$pb.TagNumber(4)
   void clearMaximumTorque() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureMaximumTorque() => $_ensure(2);
+  $58.DoubleValue ensureMaximumTorque() => $_ensure(2);
 
   /// Scalar trajectory for opening/closing the gripper. If 1 point is specified
   /// with no end time, we will execute a minimum time trajectory that observes
@@ -310,15 +310,15 @@ class ClawGripperCommand_Request extends $pb.GeneratedMessage {
   /// position is radians: 0 is fully closed -1.5708 (-90 degrees) is fully open
   /// velocity is radians / sec.
   @$pb.TagNumber(5)
-  $63.ScalarTrajectory get trajectory => $_getN(3);
+  $62.ScalarTrajectory get trajectory => $_getN(3);
   @$pb.TagNumber(5)
-  set trajectory($63.ScalarTrajectory v) { setField(5, v); }
+  set trajectory($62.ScalarTrajectory v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTrajectory() => $_has(3);
   @$pb.TagNumber(5)
   void clearTrajectory() => clearField(5);
   @$pb.TagNumber(5)
-  $63.ScalarTrajectory ensureTrajectory() => $_ensure(3);
+  $62.ScalarTrajectory ensureTrajectory() => $_ensure(3);
 
   /// By default the gripper transitions to force control when it detects an object closing.
   /// Setting this field to true disables the transition to force control on contact detection

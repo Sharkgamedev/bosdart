@@ -14,14 +14,14 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $62;
-import '../../../google/protobuf/timestamp.pb.dart' as $60;
-import '../../../google/protobuf/wrappers.pb.dart' as $59;
-import '../data_chunk.pb.dart' as $34;
-import '../geometry.pb.dart' as $61;
-import '../header.pb.dart' as $68;
-import '../lease.pb.dart' as $13;
-import 'choreography_params.pb.dart' as $82;
+import '../../../google/protobuf/duration.pb.dart' as $61;
+import '../../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../../google/protobuf/wrappers.pb.dart' as $58;
+import '../data_chunk.pb.dart' as $4;
+import '../geometry.pb.dart' as $60;
+import '../header.pb.dart' as $67;
+import '../lease.pb.dart' as $14;
+import 'choreography_params.pb.dart' as $83;
 import 'choreography_sequence.pbenum.dart';
 
 export 'choreography_sequence.pbenum.dart';
@@ -29,7 +29,7 @@ export 'choreography_sequence.pbenum.dart';
 /// Request a list of all possible moves and the associated parameters (min/max values).
 class ListAllMovesRequest extends $pb.GeneratedMessage {
   factory ListAllMovesRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -42,7 +42,7 @@ class ListAllMovesRequest extends $pb.GeneratedMessage {
   factory ListAllMovesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAllMovesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -69,21 +69,21 @@ class ListAllMovesRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Response for ListAllMoves that defines the list of available moves and their parameter types.
 class ListAllMovesResponse extends $pb.GeneratedMessage {
   factory ListAllMovesResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<MoveInfo>? moves,
     $core.String? moveParamConfig,
   }) {
@@ -104,7 +104,7 @@ class ListAllMovesResponse extends $pb.GeneratedMessage {
   factory ListAllMovesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAllMovesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<MoveInfo>(2, _omitFieldNames ? '' : 'moves', $pb.PbFieldType.PM, subBuilder: MoveInfo.create)
     ..aOS(3, _omitFieldNames ? '' : 'moveParamConfig')
     ..hasRequiredFields = false
@@ -133,15 +133,15 @@ class ListAllMovesResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// List of moves that the robot knows about.
   @$pb.TagNumber(2)
@@ -161,7 +161,7 @@ class ListAllMovesResponse extends $pb.GeneratedMessage {
 /// Request a list of all playable choreography sequences that the robot knows about
 class ListAllSequencesRequest extends $pb.GeneratedMessage {
   factory ListAllSequencesRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -174,7 +174,7 @@ class ListAllSequencesRequest extends $pb.GeneratedMessage {
   factory ListAllSequencesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAllSequencesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -201,20 +201,20 @@ class ListAllSequencesRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class ListAllSequencesResponse extends $pb.GeneratedMessage {
   factory ListAllSequencesResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   @$core.Deprecated('This field is deprecated.')
     $core.Iterable<$core.String>? knownSequences,
     $core.Iterable<SequenceInfo>? sequenceInfo,
@@ -237,7 +237,7 @@ class ListAllSequencesResponse extends $pb.GeneratedMessage {
   factory ListAllSequencesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAllSequencesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pPS(2, _omitFieldNames ? '' : 'knownSequences')
     ..pc<SequenceInfo>(3, _omitFieldNames ? '' : 'sequenceInfo', $pb.PbFieldType.PM, subBuilder: SequenceInfo.create)
     ..hasRequiredFields = false
@@ -266,15 +266,15 @@ class ListAllSequencesResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// DEPRECATED as of 3.2.0: The string list of known sequence names has been
   /// deprecated and replaced by the repeated field sequence_info.
@@ -377,10 +377,173 @@ class SequenceInfo extends $pb.GeneratedMessage {
   void clearExitState() => clearField(4);
 }
 
+/// Request all the information needed to play a choreography sequence, this includes the sequence
+/// itself and any animations the sequence uses.
+class GetChoreographySequenceRequest extends $pb.GeneratedMessage {
+  factory GetChoreographySequenceRequest({
+    $67.RequestHeader? header,
+    $core.String? sequenceName,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (sequenceName != null) {
+      $result.sequenceName = sequenceName;
+    }
+    return $result;
+  }
+  GetChoreographySequenceRequest._() : super();
+  factory GetChoreographySequenceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetChoreographySequenceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetChoreographySequenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOS(2, _omitFieldNames ? '' : 'sequenceName')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetChoreographySequenceRequest clone() => GetChoreographySequenceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetChoreographySequenceRequest copyWith(void Function(GetChoreographySequenceRequest) updates) => super.copyWith((message) => updates(message as GetChoreographySequenceRequest)) as GetChoreographySequenceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetChoreographySequenceRequest create() => GetChoreographySequenceRequest._();
+  GetChoreographySequenceRequest createEmptyInstance() => create();
+  static $pb.PbList<GetChoreographySequenceRequest> createRepeated() => $pb.PbList<GetChoreographySequenceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetChoreographySequenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetChoreographySequenceRequest>(create);
+  static GetChoreographySequenceRequest? _defaultInstance;
+
+  /// Common request header
+  @$pb.TagNumber(1)
+  $67.RequestHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.RequestHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.RequestHeader ensureHeader() => $_ensure(0);
+
+  /// Name of the requested sequence.
+  @$pb.TagNumber(2)
+  $core.String get sequenceName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sequenceName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSequenceName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSequenceName() => clearField(2);
+}
+
+class GetChoreographySequenceResponse extends $pb.GeneratedMessage {
+  factory GetChoreographySequenceResponse({
+    $67.ResponseHeader? header,
+    GetChoreographySequenceResponse_Status? status,
+    ChoreographySequence? choreographySequence,
+    $core.Iterable<Animation>? animatedMoves,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (choreographySequence != null) {
+      $result.choreographySequence = choreographySequence;
+    }
+    if (animatedMoves != null) {
+      $result.animatedMoves.addAll(animatedMoves);
+    }
+    return $result;
+  }
+  GetChoreographySequenceResponse._() : super();
+  factory GetChoreographySequenceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetChoreographySequenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetChoreographySequenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..e<GetChoreographySequenceResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: GetChoreographySequenceResponse_Status.STATUS_UNKNOWN, valueOf: GetChoreographySequenceResponse_Status.valueOf, enumValues: GetChoreographySequenceResponse_Status.values)
+    ..aOM<ChoreographySequence>(3, _omitFieldNames ? '' : 'choreographySequence', subBuilder: ChoreographySequence.create)
+    ..pc<Animation>(4, _omitFieldNames ? '' : 'animatedMoves', $pb.PbFieldType.PM, subBuilder: Animation.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetChoreographySequenceResponse clone() => GetChoreographySequenceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetChoreographySequenceResponse copyWith(void Function(GetChoreographySequenceResponse) updates) => super.copyWith((message) => updates(message as GetChoreographySequenceResponse)) as GetChoreographySequenceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetChoreographySequenceResponse create() => GetChoreographySequenceResponse._();
+  GetChoreographySequenceResponse createEmptyInstance() => create();
+  static $pb.PbList<GetChoreographySequenceResponse> createRepeated() => $pb.PbList<GetChoreographySequenceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetChoreographySequenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetChoreographySequenceResponse>(create);
+  static GetChoreographySequenceResponse? _defaultInstance;
+
+  /// Common response header.
+  @$pb.TagNumber(1)
+  $67.ResponseHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.ResponseHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  GetChoreographySequenceResponse_Status get status => $_getN(1);
+  @$pb.TagNumber(2)
+  set status(GetChoreographySequenceResponse_Status v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => clearField(2);
+
+  /// ChoreographySequence with the name of the requested sequence.
+  @$pb.TagNumber(3)
+  ChoreographySequence get choreographySequence => $_getN(2);
+  @$pb.TagNumber(3)
+  set choreographySequence(ChoreographySequence v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasChoreographySequence() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChoreographySequence() => clearField(3);
+  @$pb.TagNumber(3)
+  ChoreographySequence ensureChoreographySequence() => $_ensure(2);
+
+  /// All Animations used in the returned ChoreographySequence.
+  @$pb.TagNumber(4)
+  $core.List<Animation> get animatedMoves => $_getList(3);
+}
+
 /// Delete the retained file for a choreography sequence so the sequence will be forgotten on reboot
 class DeleteSequenceRequest extends $pb.GeneratedMessage {
   factory DeleteSequenceRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? sequenceName,
   }) {
     final $result = create();
@@ -397,7 +560,7 @@ class DeleteSequenceRequest extends $pb.GeneratedMessage {
   factory DeleteSequenceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSequenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'sequenceName')
     ..hasRequiredFields = false
   ;
@@ -425,17 +588,17 @@ class DeleteSequenceRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
-  /// Name of the sequence to delete, sequence will be forgotten on the next reboot
+  /// Name of the sequence to delete.
   @$pb.TagNumber(2)
   $core.String get sequenceName => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -448,7 +611,7 @@ class DeleteSequenceRequest extends $pb.GeneratedMessage {
 
 class DeleteSequenceResponse extends $pb.GeneratedMessage {
   factory DeleteSequenceResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     DeleteSequenceResponse_Status? status,
   }) {
     final $result = create();
@@ -465,7 +628,7 @@ class DeleteSequenceResponse extends $pb.GeneratedMessage {
   factory DeleteSequenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSequenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<DeleteSequenceResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: DeleteSequenceResponse_Status.STATUS_UNKNOWN, valueOf: DeleteSequenceResponse_Status.valueOf, enumValues: DeleteSequenceResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -493,15 +656,15 @@ class DeleteSequenceResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   DeleteSequenceResponse_Status get status => $_getN(1);
@@ -516,7 +679,7 @@ class DeleteSequenceResponse extends $pb.GeneratedMessage {
 /// Write a choreography sequence as a file to robot memory so it will be retained through reboot
 class SaveSequenceRequest extends $pb.GeneratedMessage {
   factory SaveSequenceRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? sequenceName,
     $core.Iterable<$core.String>? addLabels,
   }) {
@@ -537,7 +700,7 @@ class SaveSequenceRequest extends $pb.GeneratedMessage {
   factory SaveSequenceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SaveSequenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'sequenceName')
     ..pPS(3, _omitFieldNames ? '' : 'addLabels')
     ..hasRequiredFields = false
@@ -566,15 +729,15 @@ class SaveSequenceRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Name of the sequence to be added to the selection of retained sequences
   @$pb.TagNumber(2)
@@ -593,7 +756,7 @@ class SaveSequenceRequest extends $pb.GeneratedMessage {
 
 class SaveSequenceResponse extends $pb.GeneratedMessage {
   factory SaveSequenceResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     SaveSequenceResponse_Status? status,
   }) {
     final $result = create();
@@ -610,7 +773,7 @@ class SaveSequenceResponse extends $pb.GeneratedMessage {
   factory SaveSequenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SaveSequenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<SaveSequenceResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: SaveSequenceResponse_Status.STATUS_UNKNOWN, valueOf: SaveSequenceResponse_Status.valueOf, enumValues: SaveSequenceResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -638,15 +801,15 @@ class SaveSequenceResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   SaveSequenceResponse_Status get status => $_getN(1);
@@ -662,7 +825,7 @@ class SaveSequenceResponse extends $pb.GeneratedMessage {
 /// that sequence with the new metadata
 class ModifyChoreographyInfoRequest extends $pb.GeneratedMessage {
   factory ModifyChoreographyInfoRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? sequenceName,
     $core.Iterable<$core.String>? addLabels,
     $core.Iterable<$core.String>? removeLabels,
@@ -687,7 +850,7 @@ class ModifyChoreographyInfoRequest extends $pb.GeneratedMessage {
   factory ModifyChoreographyInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ModifyChoreographyInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'sequenceName')
     ..pPS(3, _omitFieldNames ? '' : 'addLabels')
     ..pPS(4, _omitFieldNames ? '' : 'removeLabels')
@@ -717,15 +880,15 @@ class ModifyChoreographyInfoRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Name of the sequence to be modified
   @$pb.TagNumber(2)
@@ -748,7 +911,7 @@ class ModifyChoreographyInfoRequest extends $pb.GeneratedMessage {
 
 class ModifyChoreographyInfoResponse extends $pb.GeneratedMessage {
   factory ModifyChoreographyInfoResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     ModifyChoreographyInfoResponse_Status? status,
   }) {
     final $result = create();
@@ -765,7 +928,7 @@ class ModifyChoreographyInfoResponse extends $pb.GeneratedMessage {
   factory ModifyChoreographyInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ModifyChoreographyInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<ModifyChoreographyInfoResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ModifyChoreographyInfoResponse_Status.STATUS_UNKNOWN, valueOf: ModifyChoreographyInfoResponse_Status.valueOf, enumValues: ModifyChoreographyInfoResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -793,15 +956,15 @@ class ModifyChoreographyInfoResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ModifyChoreographyInfoResponse_Status get status => $_getN(1);
@@ -817,7 +980,7 @@ class ModifyChoreographyInfoResponse extends $pb.GeneratedMessage {
 /// choreography related files
 class ClearAllSequenceFilesRequest extends $pb.GeneratedMessage {
   factory ClearAllSequenceFilesRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -830,7 +993,7 @@ class ClearAllSequenceFilesRequest extends $pb.GeneratedMessage {
   factory ClearAllSequenceFilesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClearAllSequenceFilesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -857,20 +1020,20 @@ class ClearAllSequenceFilesRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class ClearAllSequenceFilesResponse extends $pb.GeneratedMessage {
   factory ClearAllSequenceFilesResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     ClearAllSequenceFilesResponse_Status? status,
   }) {
     final $result = create();
@@ -887,7 +1050,7 @@ class ClearAllSequenceFilesResponse extends $pb.GeneratedMessage {
   factory ClearAllSequenceFilesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClearAllSequenceFilesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<ClearAllSequenceFilesResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ClearAllSequenceFilesResponse_Status.STATUS_UNKNOWN, valueOf: ClearAllSequenceFilesResponse_Status.valueOf, enumValues: ClearAllSequenceFilesResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -915,15 +1078,15 @@ class ClearAllSequenceFilesResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ClearAllSequenceFilesResponse_Status get status => $_getN(1);
@@ -937,7 +1100,7 @@ class ClearAllSequenceFilesResponse extends $pb.GeneratedMessage {
 
 class UploadChoreographyRequest extends $pb.GeneratedMessage {
   factory UploadChoreographyRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     ChoreographySequence? choreographySequence,
     $core.bool? nonStrictParsing,
   }) {
@@ -958,7 +1121,7 @@ class UploadChoreographyRequest extends $pb.GeneratedMessage {
   factory UploadChoreographyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadChoreographyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<ChoreographySequence>(2, _omitFieldNames ? '' : 'choreographySequence', subBuilder: ChoreographySequence.create)
     ..aOB(3, _omitFieldNames ? '' : 'nonStrictParsing')
     ..hasRequiredFields = false
@@ -987,15 +1150,15 @@ class UploadChoreographyRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// ChoreographySequence to upload and store in memory
   @$pb.TagNumber(2)
@@ -1024,7 +1187,7 @@ class UploadChoreographyRequest extends $pb.GeneratedMessage {
 
 class UploadChoreographyResponse extends $pb.GeneratedMessage {
   factory UploadChoreographyResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<$core.String>? warnings,
   }) {
     final $result = create();
@@ -1041,7 +1204,7 @@ class UploadChoreographyResponse extends $pb.GeneratedMessage {
   factory UploadChoreographyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadChoreographyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pPS(3, _omitFieldNames ? '' : 'warnings')
     ..hasRequiredFields = false
   ;
@@ -1071,15 +1234,15 @@ class UploadChoreographyResponse extends $pb.GeneratedMessage {
   /// be set, which means that the choreography did not respect bounds of the parameters or has
   /// other attributes missing or incorrect.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// If the uploaded choreography is invalid (will throw a header InvalidRequest status), then
   /// certain warning messages will be populated here to indicate which choreography moves or
@@ -1090,9 +1253,9 @@ class UploadChoreographyResponse extends $pb.GeneratedMessage {
 
 class UploadAnimatedMoveRequest extends $pb.GeneratedMessage {
   factory UploadAnimatedMoveRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     Animation? animatedMove,
-    $59.StringValue? animatedMoveGeneratedId,
+    $58.StringValue? animatedMoveGeneratedId,
   }) {
     final $result = create();
     if (header != null) {
@@ -1111,9 +1274,9 @@ class UploadAnimatedMoveRequest extends $pb.GeneratedMessage {
   factory UploadAnimatedMoveRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadAnimatedMoveRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<Animation>(2, _omitFieldNames ? '' : 'animatedMove', subBuilder: Animation.create)
-    ..aOM<$59.StringValue>(3, _omitFieldNames ? '' : 'animatedMoveGeneratedId', subBuilder: $59.StringValue.create)
+    ..aOM<$58.StringValue>(3, _omitFieldNames ? '' : 'animatedMoveGeneratedId', subBuilder: $58.StringValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1140,15 +1303,15 @@ class UploadAnimatedMoveRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// AnimatedMove to upload to the robot and create a dance move from.
   @$pb.TagNumber(2)
@@ -1168,20 +1331,20 @@ class UploadAnimatedMoveRequest extends $pb.GeneratedMessage {
   /// message in the ListAllMoves RPC. This ID allows the choreography client to only reupload
   /// animations that have changed or do not exist on robot already.
   @$pb.TagNumber(3)
-  $59.StringValue get animatedMoveGeneratedId => $_getN(2);
+  $58.StringValue get animatedMoveGeneratedId => $_getN(2);
   @$pb.TagNumber(3)
-  set animatedMoveGeneratedId($59.StringValue v) { setField(3, v); }
+  set animatedMoveGeneratedId($58.StringValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasAnimatedMoveGeneratedId() => $_has(2);
   @$pb.TagNumber(3)
   void clearAnimatedMoveGeneratedId() => clearField(3);
   @$pb.TagNumber(3)
-  $59.StringValue ensureAnimatedMoveGeneratedId() => $_ensure(2);
+  $58.StringValue ensureAnimatedMoveGeneratedId() => $_ensure(2);
 }
 
 class UploadAnimatedMoveResponse extends $pb.GeneratedMessage {
   factory UploadAnimatedMoveResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     UploadAnimatedMoveResponse_Status? status,
     $core.Iterable<$core.String>? warnings,
   }) {
@@ -1202,7 +1365,7 @@ class UploadAnimatedMoveResponse extends $pb.GeneratedMessage {
   factory UploadAnimatedMoveResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadAnimatedMoveResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<UploadAnimatedMoveResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UploadAnimatedMoveResponse_Status.STATUS_UNKNOWN, valueOf: UploadAnimatedMoveResponse_Status.valueOf, enumValues: UploadAnimatedMoveResponse_Status.values)
     ..pPS(3, _omitFieldNames ? '' : 'warnings')
     ..hasRequiredFields = false
@@ -1231,15 +1394,15 @@ class UploadAnimatedMoveResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   UploadAnimatedMoveResponse_Status get status => $_getN(1);
@@ -1260,11 +1423,11 @@ class UploadAnimatedMoveResponse extends $pb.GeneratedMessage {
 
 class ExecuteChoreographyRequest extends $pb.GeneratedMessage {
   factory ExecuteChoreographyRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? choreographySequenceName,
-    $60.Timestamp? startTime,
+    $59.Timestamp? startTime,
     $core.double? choreographyStartingSlice,
-    $13.Lease? lease,
+    $14.Lease? lease,
   }) {
     final $result = create();
     if (header != null) {
@@ -1289,11 +1452,11 @@ class ExecuteChoreographyRequest extends $pb.GeneratedMessage {
   factory ExecuteChoreographyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExecuteChoreographyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'choreographySequenceName')
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'startTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'startTime', subBuilder: $59.Timestamp.create)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'choreographyStartingSlice', $pb.PbFieldType.OD)
-    ..aOM<$13.Lease>(6, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$14.Lease>(6, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..hasRequiredFields = false
   ;
 
@@ -1320,15 +1483,15 @@ class ExecuteChoreographyRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The string name of the ChoreographySequence to use.
   @$pb.TagNumber(2)
@@ -1343,17 +1506,17 @@ class ExecuteChoreographyRequest extends $pb.GeneratedMessage {
   /// The absolute time to start the choreography at. This should be in the robot's clock so we can
   /// synchronize music playing and the robot's choreography.
   @$pb.TagNumber(3)
-  $60.Timestamp get startTime => $_getN(2);
+  $59.Timestamp get startTime => $_getN(2);
   @$pb.TagNumber(3)
-  set startTime($60.Timestamp v) { setField(3, v); }
+  set startTime($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasStartTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearStartTime() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureStartTime() => $_ensure(2);
+  $59.Timestamp ensureStartTime() => $_ensure(2);
 
-  /// The slice (betas/sub-beats) that the choreography should begin excution at.
+  /// The slice (betas/sub-beats) that the choreography should begin execution at.
   @$pb.TagNumber(4)
   $core.double get choreographyStartingSlice => $_getN(3);
   @$pb.TagNumber(4)
@@ -1365,21 +1528,21 @@ class ExecuteChoreographyRequest extends $pb.GeneratedMessage {
 
   /// / The Lease to show ownership of the robot body.
   @$pb.TagNumber(6)
-  $13.Lease get lease => $_getN(4);
+  $14.Lease get lease => $_getN(4);
   @$pb.TagNumber(6)
-  set lease($13.Lease v) { setField(6, v); }
+  set lease($14.Lease v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasLease() => $_has(4);
   @$pb.TagNumber(6)
   void clearLease() => clearField(6);
   @$pb.TagNumber(6)
-  $13.Lease ensureLease() => $_ensure(4);
+  $14.Lease ensureLease() => $_ensure(4);
 }
 
 class ExecuteChoreographyResponse extends $pb.GeneratedMessage {
   factory ExecuteChoreographyResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
     ExecuteChoreographyResponse_Status? status,
     $core.int? executionId,
   }) {
@@ -1403,8 +1566,8 @@ class ExecuteChoreographyResponse extends $pb.GeneratedMessage {
   factory ExecuteChoreographyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExecuteChoreographyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..e<ExecuteChoreographyResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ExecuteChoreographyResponse_Status.STATUS_UNKNOWN, valueOf: ExecuteChoreographyResponse_Status.valueOf, enumValues: ExecuteChoreographyResponse_Status.values)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'executionId', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
@@ -1433,26 +1596,26 @@ class ExecuteChoreographyResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
   @$pb.TagNumber(3)
   ExecuteChoreographyResponse_Status get status => $_getN(2);
@@ -1464,7 +1627,7 @@ class ExecuteChoreographyResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(3);
 
   /// Unique ID for the execution.
-  /// Will increment whenever an ExecuteChoreographRequest is received.
+  /// Will increment whenever an ExecuteChoreographyRequest is received.
   /// Will reset upon robot boot.
   @$pb.TagNumber(4)
   $core.int get executionId => $_getIZ(3);
@@ -1478,8 +1641,8 @@ class ExecuteChoreographyResponse extends $pb.GeneratedMessage {
 
 class StartRecordingStateRequest extends $pb.GeneratedMessage {
   factory StartRecordingStateRequest({
-    $68.RequestHeader? header,
-    $62.Duration? continueRecordingDuration,
+    $67.RequestHeader? header,
+    $61.Duration? continueRecordingDuration,
     $fixnum.Int64? recordingSessionId,
   }) {
     final $result = create();
@@ -1499,8 +1662,8 @@ class StartRecordingStateRequest extends $pb.GeneratedMessage {
   factory StartRecordingStateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartRecordingStateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$62.Duration>(2, _omitFieldNames ? '' : 'continueRecordingDuration', subBuilder: $62.Duration.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$61.Duration>(2, _omitFieldNames ? '' : 'continueRecordingDuration', subBuilder: $61.Duration.create)
     ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'recordingSessionId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
@@ -1528,15 +1691,15 @@ class StartRecordingStateRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// How long should the robot record for if no stop RPC is sent. A recording session can be
   /// extended by setting the recording_session_id below to a non-zero value matching the ID for
@@ -1545,15 +1708,15 @@ class StartRecordingStateRequest extends $pb.GeneratedMessage {
   /// (continue_recording_duration), unless another continuation request updates this end time. The
   /// robot has an internal maximum recording time of 5 minutes for the complete session log.
   @$pb.TagNumber(2)
-  $62.Duration get continueRecordingDuration => $_getN(1);
+  $61.Duration get continueRecordingDuration => $_getN(1);
   @$pb.TagNumber(2)
-  set continueRecordingDuration($62.Duration v) { setField(2, v); }
+  set continueRecordingDuration($61.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasContinueRecordingDuration() => $_has(1);
   @$pb.TagNumber(2)
   void clearContinueRecordingDuration() => clearField(2);
   @$pb.TagNumber(2)
-  $62.Duration ensureContinueRecordingDuration() => $_ensure(1);
+  $61.Duration ensureContinueRecordingDuration() => $_ensure(1);
 
   /// Provide the unique identifier of the recording session to extend the recording end time for.
   /// If the recording_session_id is 0, then it will create a new session and the robot will clear
@@ -1572,7 +1735,7 @@ class StartRecordingStateRequest extends $pb.GeneratedMessage {
 
 class StartRecordingStateResponse extends $pb.GeneratedMessage {
   factory StartRecordingStateResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     StartRecordingStateResponse_Status? status,
     $fixnum.Int64? recordingSessionId,
   }) {
@@ -1593,7 +1756,7 @@ class StartRecordingStateResponse extends $pb.GeneratedMessage {
   factory StartRecordingStateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartRecordingStateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<StartRecordingStateResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: StartRecordingStateResponse_Status.STATUS_UNKNOWN, valueOf: StartRecordingStateResponse_Status.valueOf, enumValues: StartRecordingStateResponse_Status.values)
     ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'recordingSessionId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
@@ -1622,15 +1785,15 @@ class StartRecordingStateResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   StartRecordingStateResponse_Status get status => $_getN(1);
@@ -1654,7 +1817,7 @@ class StartRecordingStateResponse extends $pb.GeneratedMessage {
 
 class StopRecordingStateRequest extends $pb.GeneratedMessage {
   factory StopRecordingStateRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1667,7 +1830,7 @@ class StopRecordingStateRequest extends $pb.GeneratedMessage {
   factory StopRecordingStateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopRecordingStateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1694,20 +1857,20 @@ class StopRecordingStateRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class StopRecordingStateResponse extends $pb.GeneratedMessage {
   factory StopRecordingStateResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1720,7 +1883,7 @@ class StopRecordingStateResponse extends $pb.GeneratedMessage {
   factory StopRecordingStateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopRecordingStateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1747,20 +1910,20 @@ class StopRecordingStateResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 class DownloadRobotStateLogRequest extends $pb.GeneratedMessage {
   factory DownloadRobotStateLogRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     DownloadRobotStateLogRequest_LogType? logType,
   }) {
     final $result = create();
@@ -1777,7 +1940,7 @@ class DownloadRobotStateLogRequest extends $pb.GeneratedMessage {
   factory DownloadRobotStateLogRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadRobotStateLogRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..e<DownloadRobotStateLogRequest_LogType>(2, _omitFieldNames ? '' : 'logType', $pb.PbFieldType.OE, defaultOrMaker: DownloadRobotStateLogRequest_LogType.LOG_TYPE_UNKNOWN, valueOf: DownloadRobotStateLogRequest_LogType.valueOf, enumValues: DownloadRobotStateLogRequest_LogType.values)
     ..hasRequiredFields = false
   ;
@@ -1805,15 +1968,15 @@ class DownloadRobotStateLogRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Which data should we download.
   @$pb.TagNumber(2)
@@ -1833,7 +1996,7 @@ class LoggedJoints extends $pb.GeneratedMessage {
     LegJointAngles? hl,
     LegJointAngles? hr,
     ArmJointAngles? arm,
-    $59.DoubleValue? gripperAngle,
+    $58.DoubleValue? gripperAngle,
   }) {
     final $result = create();
     if (fl != null) {
@@ -1866,7 +2029,7 @@ class LoggedJoints extends $pb.GeneratedMessage {
     ..aOM<LegJointAngles>(3, _omitFieldNames ? '' : 'hl', subBuilder: LegJointAngles.create)
     ..aOM<LegJointAngles>(4, _omitFieldNames ? '' : 'hr', subBuilder: LegJointAngles.create)
     ..aOM<ArmJointAngles>(5, _omitFieldNames ? '' : 'arm', subBuilder: ArmJointAngles.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'gripperAngle', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'gripperAngle', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1948,15 +2111,15 @@ class LoggedJoints extends $pb.GeneratedMessage {
   ArmJointAngles ensureArm() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $59.DoubleValue get gripperAngle => $_getN(5);
+  $58.DoubleValue get gripperAngle => $_getN(5);
   @$pb.TagNumber(6)
-  set gripperAngle($59.DoubleValue v) { setField(6, v); }
+  set gripperAngle($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasGripperAngle() => $_has(5);
   @$pb.TagNumber(6)
   void clearGripperAngle() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureGripperAngle() => $_ensure(5);
+  $58.DoubleValue ensureGripperAngle() => $_ensure(5);
 }
 
 class LoggedFootContacts extends $pb.GeneratedMessage {
@@ -2055,8 +2218,8 @@ class LoggedFootContacts extends $pb.GeneratedMessage {
 class LoggedStateKeyFrame extends $pb.GeneratedMessage {
   factory LoggedStateKeyFrame({
     LoggedJoints? jointAngles,
-    $61.SE3Pose? animationTformBody,
-    $60.Timestamp? timestamp,
+    $60.SE3Pose? animationTformBody,
+    $59.Timestamp? timestamp,
     LoggedFootContacts? footContactState,
   }) {
     final $result = create();
@@ -2080,8 +2243,8 @@ class LoggedStateKeyFrame extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoggedStateKeyFrame', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..aOM<LoggedJoints>(1, _omitFieldNames ? '' : 'jointAngles', subBuilder: LoggedJoints.create)
-    ..aOM<$61.SE3Pose>(2, _omitFieldNames ? '' : 'animationTformBody', subBuilder: $61.SE3Pose.create)
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$60.SE3Pose>(2, _omitFieldNames ? '' : 'animationTformBody', subBuilder: $60.SE3Pose.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..aOM<LoggedFootContacts>(4, _omitFieldNames ? '' : 'footContactState', subBuilder: LoggedFootContacts.create)
     ..hasRequiredFields = false
   ;
@@ -2122,27 +2285,27 @@ class LoggedStateKeyFrame extends $pb.GeneratedMessage {
   /// The current pose of the robot body in animation frame. The animation frame is defined
   /// based on the robot's footprint when the log first started recording.
   @$pb.TagNumber(2)
-  $61.SE3Pose get animationTformBody => $_getN(1);
+  $60.SE3Pose get animationTformBody => $_getN(1);
   @$pb.TagNumber(2)
-  set animationTformBody($61.SE3Pose v) { setField(2, v); }
+  set animationTformBody($60.SE3Pose v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAnimationTformBody() => $_has(1);
   @$pb.TagNumber(2)
   void clearAnimationTformBody() => clearField(2);
   @$pb.TagNumber(2)
-  $61.SE3Pose ensureAnimationTformBody() => $_ensure(1);
+  $60.SE3Pose ensureAnimationTformBody() => $_ensure(1);
 
   /// The timestamp (in robot time) for the key frame.
   @$pb.TagNumber(3)
-  $60.Timestamp get timestamp => $_getN(2);
+  $59.Timestamp get timestamp => $_getN(2);
   @$pb.TagNumber(3)
-  set timestamp($60.Timestamp v) { setField(3, v); }
+  set timestamp($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimestamp() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimestamp() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureTimestamp() => $_ensure(2);
+  $59.Timestamp ensureTimestamp() => $_ensure(2);
 
   /// Foot contacts for the robot.
   @$pb.TagNumber(4)
@@ -2207,9 +2370,9 @@ class ChoreographyStateLog extends $pb.GeneratedMessage {
 
 class DownloadRobotStateLogResponse extends $pb.GeneratedMessage {
   factory DownloadRobotStateLogResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     DownloadRobotStateLogResponse_Status? status,
-    $34.DataChunk? chunk,
+    $4.DataChunk? chunk,
   }) {
     final $result = create();
     if (header != null) {
@@ -2228,9 +2391,9 @@ class DownloadRobotStateLogResponse extends $pb.GeneratedMessage {
   factory DownloadRobotStateLogResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadRobotStateLogResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<DownloadRobotStateLogResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: DownloadRobotStateLogResponse_Status.STATUS_UNKNOWN, valueOf: DownloadRobotStateLogResponse_Status.valueOf, enumValues: DownloadRobotStateLogResponse_Status.values)
-    ..aOM<$34.DataChunk>(3, _omitFieldNames ? '' : 'chunk', subBuilder: $34.DataChunk.create)
+    ..aOM<$4.DataChunk>(3, _omitFieldNames ? '' : 'chunk', subBuilder: $4.DataChunk.create)
     ..hasRequiredFields = false
   ;
 
@@ -2257,15 +2420,15 @@ class DownloadRobotStateLogResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
@@ -2282,15 +2445,15 @@ class DownloadRobotStateLogResponse extends $pb.GeneratedMessage {
   /// into a single byte string. Then, deserialize the byte string into an
   /// ChoreographyStateLog object.
   @$pb.TagNumber(3)
-  $34.DataChunk get chunk => $_getN(2);
+  $4.DataChunk get chunk => $_getN(2);
   @$pb.TagNumber(3)
-  set chunk($34.DataChunk v) { setField(3, v); }
+  set chunk($4.DataChunk v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasChunk() => $_has(2);
   @$pb.TagNumber(3)
   void clearChunk() => clearField(3);
   @$pb.TagNumber(3)
-  $34.DataChunk ensureChunk() => $_ensure(2);
+  $4.DataChunk ensureChunk() => $_ensure(2);
 }
 
 enum MoveParams_Params {
@@ -2339,41 +2502,41 @@ class MoveParams extends $pb.GeneratedMessage {
     $core.int? startSlice,
     $core.int? requestedSlices,
     $core.int? id,
-    $82.JumpParams? jumpParams,
-    $82.RotateBodyParams? rotateBodyParams,
-    $82.StepParams? stepParams,
-    $82.ButtCircleParams? buttCircleParams,
-    $82.TurnParams? turnParams,
-    $82.Pace2StepParams? pace2stepParams,
-    $82.TwerkParams? twerkParams,
-    $82.ChickenHeadParams? chickenHeadParams,
-    $82.ClapParams? clapParams,
-    $82.FrontUpParams? frontUpParams,
-    $82.SwayParams? swayParams,
-    $82.BodyHoldParams? bodyHoldParams,
-    $82.ArmMoveParams? armMoveParams,
-    $82.KneelLegMoveParams? kneelLegMoveParams,
-    $82.RunningManParams? runningManParams,
-    $82.KneelCircleParams? kneelCircleParams,
-    $82.GripperParams? gripperParams,
-    $82.HopParams? hopParams,
-    $82.RandomRotateParams? randomRotateParams,
-    $82.CrawlParams? crawlParams,
-    $82.SideParams? sideParams,
-    $82.BourreeParams? bourreeParams,
-    $82.WorkspaceArmMoveParams? workspaceArmMoveParams,
-    $82.Figure8Params? figure8Params,
-    $82.KneelLegMove2Params? kneelLegMove2Params,
-    $82.FidgetStandParams? fidgetStandParams,
-    $82.GotoParams? gotoParams,
-    $82.FrameSnapshotParams? frameSnapshotParams,
-    $82.SetColorParams? setColorParams,
-    $82.RippleColorParams? rippleColorParams,
-    $82.FadeColorParams? fadeColorParams,
-    $82.IndependentColorParams? independentColorParams,
-    $82.CustomGaitParams? customGaitParams,
-    $82.LegJointParams? legJointParams,
-    $82.AnimateParams? animateParams,
+    $83.JumpParams? jumpParams,
+    $83.RotateBodyParams? rotateBodyParams,
+    $83.StepParams? stepParams,
+    $83.ButtCircleParams? buttCircleParams,
+    $83.TurnParams? turnParams,
+    $83.Pace2StepParams? pace2stepParams,
+    $83.TwerkParams? twerkParams,
+    $83.ChickenHeadParams? chickenHeadParams,
+    $83.ClapParams? clapParams,
+    $83.FrontUpParams? frontUpParams,
+    $83.SwayParams? swayParams,
+    $83.BodyHoldParams? bodyHoldParams,
+    $83.ArmMoveParams? armMoveParams,
+    $83.KneelLegMoveParams? kneelLegMoveParams,
+    $83.RunningManParams? runningManParams,
+    $83.KneelCircleParams? kneelCircleParams,
+    $83.GripperParams? gripperParams,
+    $83.HopParams? hopParams,
+    $83.RandomRotateParams? randomRotateParams,
+    $83.CrawlParams? crawlParams,
+    $83.SideParams? sideParams,
+    $83.BourreeParams? bourreeParams,
+    $83.WorkspaceArmMoveParams? workspaceArmMoveParams,
+    $83.Figure8Params? figure8Params,
+    $83.KneelLegMove2Params? kneelLegMove2Params,
+    $83.FidgetStandParams? fidgetStandParams,
+    $83.GotoParams? gotoParams,
+    $83.FrameSnapshotParams? frameSnapshotParams,
+    $83.SetColorParams? setColorParams,
+    $83.RippleColorParams? rippleColorParams,
+    $83.FadeColorParams? fadeColorParams,
+    $83.IndependentColorParams? independentColorParams,
+    $83.CustomGaitParams? customGaitParams,
+    $83.LegJointParams? legJointParams,
+    $83.AnimateParams? animateParams,
   }) {
     final $result = create();
     if (type != null) {
@@ -2543,41 +2706,41 @@ class MoveParams extends $pb.GeneratedMessage {
     ..a<$core.int>(2, _omitFieldNames ? '' : 'startSlice', $pb.PbFieldType.O3)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'requestedSlices', $pb.PbFieldType.O3)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'id', $pb.PbFieldType.O3)
-    ..aOM<$82.JumpParams>(11, _omitFieldNames ? '' : 'jumpParams', subBuilder: $82.JumpParams.create)
-    ..aOM<$82.RotateBodyParams>(12, _omitFieldNames ? '' : 'rotateBodyParams', subBuilder: $82.RotateBodyParams.create)
-    ..aOM<$82.StepParams>(13, _omitFieldNames ? '' : 'stepParams', subBuilder: $82.StepParams.create)
-    ..aOM<$82.ButtCircleParams>(14, _omitFieldNames ? '' : 'buttCircleParams', subBuilder: $82.ButtCircleParams.create)
-    ..aOM<$82.TurnParams>(15, _omitFieldNames ? '' : 'turnParams', subBuilder: $82.TurnParams.create)
-    ..aOM<$82.Pace2StepParams>(16, _omitFieldNames ? '' : 'pace2stepParams', protoName: 'pace_2step_params', subBuilder: $82.Pace2StepParams.create)
-    ..aOM<$82.TwerkParams>(17, _omitFieldNames ? '' : 'twerkParams', subBuilder: $82.TwerkParams.create)
-    ..aOM<$82.ChickenHeadParams>(18, _omitFieldNames ? '' : 'chickenHeadParams', subBuilder: $82.ChickenHeadParams.create)
-    ..aOM<$82.ClapParams>(19, _omitFieldNames ? '' : 'clapParams', subBuilder: $82.ClapParams.create)
-    ..aOM<$82.FrontUpParams>(20, _omitFieldNames ? '' : 'frontUpParams', subBuilder: $82.FrontUpParams.create)
-    ..aOM<$82.SwayParams>(21, _omitFieldNames ? '' : 'swayParams', subBuilder: $82.SwayParams.create)
-    ..aOM<$82.BodyHoldParams>(22, _omitFieldNames ? '' : 'bodyHoldParams', subBuilder: $82.BodyHoldParams.create)
-    ..aOM<$82.ArmMoveParams>(23, _omitFieldNames ? '' : 'armMoveParams', subBuilder: $82.ArmMoveParams.create)
-    ..aOM<$82.KneelLegMoveParams>(24, _omitFieldNames ? '' : 'kneelLegMoveParams', subBuilder: $82.KneelLegMoveParams.create)
-    ..aOM<$82.RunningManParams>(25, _omitFieldNames ? '' : 'runningManParams', subBuilder: $82.RunningManParams.create)
-    ..aOM<$82.KneelCircleParams>(26, _omitFieldNames ? '' : 'kneelCircleParams', subBuilder: $82.KneelCircleParams.create)
-    ..aOM<$82.GripperParams>(27, _omitFieldNames ? '' : 'gripperParams', subBuilder: $82.GripperParams.create)
-    ..aOM<$82.HopParams>(28, _omitFieldNames ? '' : 'hopParams', subBuilder: $82.HopParams.create)
-    ..aOM<$82.RandomRotateParams>(29, _omitFieldNames ? '' : 'randomRotateParams', subBuilder: $82.RandomRotateParams.create)
-    ..aOM<$82.CrawlParams>(30, _omitFieldNames ? '' : 'crawlParams', subBuilder: $82.CrawlParams.create)
-    ..aOM<$82.SideParams>(31, _omitFieldNames ? '' : 'sideParams', subBuilder: $82.SideParams.create)
-    ..aOM<$82.BourreeParams>(32, _omitFieldNames ? '' : 'bourreeParams', subBuilder: $82.BourreeParams.create)
-    ..aOM<$82.WorkspaceArmMoveParams>(33, _omitFieldNames ? '' : 'workspaceArmMoveParams', subBuilder: $82.WorkspaceArmMoveParams.create)
-    ..aOM<$82.Figure8Params>(34, _omitFieldNames ? '' : 'figure8Params', subBuilder: $82.Figure8Params.create)
-    ..aOM<$82.KneelLegMove2Params>(35, _omitFieldNames ? '' : 'kneelLegMove2Params', subBuilder: $82.KneelLegMove2Params.create)
-    ..aOM<$82.FidgetStandParams>(36, _omitFieldNames ? '' : 'fidgetStandParams', subBuilder: $82.FidgetStandParams.create)
-    ..aOM<$82.GotoParams>(37, _omitFieldNames ? '' : 'gotoParams', subBuilder: $82.GotoParams.create)
-    ..aOM<$82.FrameSnapshotParams>(38, _omitFieldNames ? '' : 'frameSnapshotParams', subBuilder: $82.FrameSnapshotParams.create)
-    ..aOM<$82.SetColorParams>(39, _omitFieldNames ? '' : 'setColorParams', subBuilder: $82.SetColorParams.create)
-    ..aOM<$82.RippleColorParams>(40, _omitFieldNames ? '' : 'rippleColorParams', subBuilder: $82.RippleColorParams.create)
-    ..aOM<$82.FadeColorParams>(41, _omitFieldNames ? '' : 'fadeColorParams', subBuilder: $82.FadeColorParams.create)
-    ..aOM<$82.IndependentColorParams>(42, _omitFieldNames ? '' : 'independentColorParams', subBuilder: $82.IndependentColorParams.create)
-    ..aOM<$82.CustomGaitParams>(43, _omitFieldNames ? '' : 'customGaitParams', subBuilder: $82.CustomGaitParams.create)
-    ..aOM<$82.LegJointParams>(100, _omitFieldNames ? '' : 'legJointParams', subBuilder: $82.LegJointParams.create)
-    ..aOM<$82.AnimateParams>(1000, _omitFieldNames ? '' : 'animateParams', subBuilder: $82.AnimateParams.create)
+    ..aOM<$83.JumpParams>(11, _omitFieldNames ? '' : 'jumpParams', subBuilder: $83.JumpParams.create)
+    ..aOM<$83.RotateBodyParams>(12, _omitFieldNames ? '' : 'rotateBodyParams', subBuilder: $83.RotateBodyParams.create)
+    ..aOM<$83.StepParams>(13, _omitFieldNames ? '' : 'stepParams', subBuilder: $83.StepParams.create)
+    ..aOM<$83.ButtCircleParams>(14, _omitFieldNames ? '' : 'buttCircleParams', subBuilder: $83.ButtCircleParams.create)
+    ..aOM<$83.TurnParams>(15, _omitFieldNames ? '' : 'turnParams', subBuilder: $83.TurnParams.create)
+    ..aOM<$83.Pace2StepParams>(16, _omitFieldNames ? '' : 'pace2stepParams', protoName: 'pace_2step_params', subBuilder: $83.Pace2StepParams.create)
+    ..aOM<$83.TwerkParams>(17, _omitFieldNames ? '' : 'twerkParams', subBuilder: $83.TwerkParams.create)
+    ..aOM<$83.ChickenHeadParams>(18, _omitFieldNames ? '' : 'chickenHeadParams', subBuilder: $83.ChickenHeadParams.create)
+    ..aOM<$83.ClapParams>(19, _omitFieldNames ? '' : 'clapParams', subBuilder: $83.ClapParams.create)
+    ..aOM<$83.FrontUpParams>(20, _omitFieldNames ? '' : 'frontUpParams', subBuilder: $83.FrontUpParams.create)
+    ..aOM<$83.SwayParams>(21, _omitFieldNames ? '' : 'swayParams', subBuilder: $83.SwayParams.create)
+    ..aOM<$83.BodyHoldParams>(22, _omitFieldNames ? '' : 'bodyHoldParams', subBuilder: $83.BodyHoldParams.create)
+    ..aOM<$83.ArmMoveParams>(23, _omitFieldNames ? '' : 'armMoveParams', subBuilder: $83.ArmMoveParams.create)
+    ..aOM<$83.KneelLegMoveParams>(24, _omitFieldNames ? '' : 'kneelLegMoveParams', subBuilder: $83.KneelLegMoveParams.create)
+    ..aOM<$83.RunningManParams>(25, _omitFieldNames ? '' : 'runningManParams', subBuilder: $83.RunningManParams.create)
+    ..aOM<$83.KneelCircleParams>(26, _omitFieldNames ? '' : 'kneelCircleParams', subBuilder: $83.KneelCircleParams.create)
+    ..aOM<$83.GripperParams>(27, _omitFieldNames ? '' : 'gripperParams', subBuilder: $83.GripperParams.create)
+    ..aOM<$83.HopParams>(28, _omitFieldNames ? '' : 'hopParams', subBuilder: $83.HopParams.create)
+    ..aOM<$83.RandomRotateParams>(29, _omitFieldNames ? '' : 'randomRotateParams', subBuilder: $83.RandomRotateParams.create)
+    ..aOM<$83.CrawlParams>(30, _omitFieldNames ? '' : 'crawlParams', subBuilder: $83.CrawlParams.create)
+    ..aOM<$83.SideParams>(31, _omitFieldNames ? '' : 'sideParams', subBuilder: $83.SideParams.create)
+    ..aOM<$83.BourreeParams>(32, _omitFieldNames ? '' : 'bourreeParams', subBuilder: $83.BourreeParams.create)
+    ..aOM<$83.WorkspaceArmMoveParams>(33, _omitFieldNames ? '' : 'workspaceArmMoveParams', subBuilder: $83.WorkspaceArmMoveParams.create)
+    ..aOM<$83.Figure8Params>(34, _omitFieldNames ? '' : 'figure8Params', subBuilder: $83.Figure8Params.create)
+    ..aOM<$83.KneelLegMove2Params>(35, _omitFieldNames ? '' : 'kneelLegMove2Params', subBuilder: $83.KneelLegMove2Params.create)
+    ..aOM<$83.FidgetStandParams>(36, _omitFieldNames ? '' : 'fidgetStandParams', subBuilder: $83.FidgetStandParams.create)
+    ..aOM<$83.GotoParams>(37, _omitFieldNames ? '' : 'gotoParams', subBuilder: $83.GotoParams.create)
+    ..aOM<$83.FrameSnapshotParams>(38, _omitFieldNames ? '' : 'frameSnapshotParams', subBuilder: $83.FrameSnapshotParams.create)
+    ..aOM<$83.SetColorParams>(39, _omitFieldNames ? '' : 'setColorParams', subBuilder: $83.SetColorParams.create)
+    ..aOM<$83.RippleColorParams>(40, _omitFieldNames ? '' : 'rippleColorParams', subBuilder: $83.RippleColorParams.create)
+    ..aOM<$83.FadeColorParams>(41, _omitFieldNames ? '' : 'fadeColorParams', subBuilder: $83.FadeColorParams.create)
+    ..aOM<$83.IndependentColorParams>(42, _omitFieldNames ? '' : 'independentColorParams', subBuilder: $83.IndependentColorParams.create)
+    ..aOM<$83.CustomGaitParams>(43, _omitFieldNames ? '' : 'customGaitParams', subBuilder: $83.CustomGaitParams.create)
+    ..aOM<$83.LegJointParams>(100, _omitFieldNames ? '' : 'legJointParams', subBuilder: $83.LegJointParams.create)
+    ..aOM<$83.AnimateParams>(1000, _omitFieldNames ? '' : 'animateParams', subBuilder: $83.AnimateParams.create)
     ..hasRequiredFields = false
   ;
 
@@ -2651,389 +2814,389 @@ class MoveParams extends $pb.GeneratedMessage {
   void clearId() => clearField(4);
 
   @$pb.TagNumber(11)
-  $82.JumpParams get jumpParams => $_getN(4);
+  $83.JumpParams get jumpParams => $_getN(4);
   @$pb.TagNumber(11)
-  set jumpParams($82.JumpParams v) { setField(11, v); }
+  set jumpParams($83.JumpParams v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasJumpParams() => $_has(4);
   @$pb.TagNumber(11)
   void clearJumpParams() => clearField(11);
   @$pb.TagNumber(11)
-  $82.JumpParams ensureJumpParams() => $_ensure(4);
+  $83.JumpParams ensureJumpParams() => $_ensure(4);
 
   @$pb.TagNumber(12)
-  $82.RotateBodyParams get rotateBodyParams => $_getN(5);
+  $83.RotateBodyParams get rotateBodyParams => $_getN(5);
   @$pb.TagNumber(12)
-  set rotateBodyParams($82.RotateBodyParams v) { setField(12, v); }
+  set rotateBodyParams($83.RotateBodyParams v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasRotateBodyParams() => $_has(5);
   @$pb.TagNumber(12)
   void clearRotateBodyParams() => clearField(12);
   @$pb.TagNumber(12)
-  $82.RotateBodyParams ensureRotateBodyParams() => $_ensure(5);
+  $83.RotateBodyParams ensureRotateBodyParams() => $_ensure(5);
 
   @$pb.TagNumber(13)
-  $82.StepParams get stepParams => $_getN(6);
+  $83.StepParams get stepParams => $_getN(6);
   @$pb.TagNumber(13)
-  set stepParams($82.StepParams v) { setField(13, v); }
+  set stepParams($83.StepParams v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasStepParams() => $_has(6);
   @$pb.TagNumber(13)
   void clearStepParams() => clearField(13);
   @$pb.TagNumber(13)
-  $82.StepParams ensureStepParams() => $_ensure(6);
+  $83.StepParams ensureStepParams() => $_ensure(6);
 
   @$pb.TagNumber(14)
-  $82.ButtCircleParams get buttCircleParams => $_getN(7);
+  $83.ButtCircleParams get buttCircleParams => $_getN(7);
   @$pb.TagNumber(14)
-  set buttCircleParams($82.ButtCircleParams v) { setField(14, v); }
+  set buttCircleParams($83.ButtCircleParams v) { setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasButtCircleParams() => $_has(7);
   @$pb.TagNumber(14)
   void clearButtCircleParams() => clearField(14);
   @$pb.TagNumber(14)
-  $82.ButtCircleParams ensureButtCircleParams() => $_ensure(7);
+  $83.ButtCircleParams ensureButtCircleParams() => $_ensure(7);
 
   @$pb.TagNumber(15)
-  $82.TurnParams get turnParams => $_getN(8);
+  $83.TurnParams get turnParams => $_getN(8);
   @$pb.TagNumber(15)
-  set turnParams($82.TurnParams v) { setField(15, v); }
+  set turnParams($83.TurnParams v) { setField(15, v); }
   @$pb.TagNumber(15)
   $core.bool hasTurnParams() => $_has(8);
   @$pb.TagNumber(15)
   void clearTurnParams() => clearField(15);
   @$pb.TagNumber(15)
-  $82.TurnParams ensureTurnParams() => $_ensure(8);
+  $83.TurnParams ensureTurnParams() => $_ensure(8);
 
   @$pb.TagNumber(16)
-  $82.Pace2StepParams get pace2stepParams => $_getN(9);
+  $83.Pace2StepParams get pace2stepParams => $_getN(9);
   @$pb.TagNumber(16)
-  set pace2stepParams($82.Pace2StepParams v) { setField(16, v); }
+  set pace2stepParams($83.Pace2StepParams v) { setField(16, v); }
   @$pb.TagNumber(16)
   $core.bool hasPace2stepParams() => $_has(9);
   @$pb.TagNumber(16)
   void clearPace2stepParams() => clearField(16);
   @$pb.TagNumber(16)
-  $82.Pace2StepParams ensurePace2stepParams() => $_ensure(9);
+  $83.Pace2StepParams ensurePace2stepParams() => $_ensure(9);
 
   @$pb.TagNumber(17)
-  $82.TwerkParams get twerkParams => $_getN(10);
+  $83.TwerkParams get twerkParams => $_getN(10);
   @$pb.TagNumber(17)
-  set twerkParams($82.TwerkParams v) { setField(17, v); }
+  set twerkParams($83.TwerkParams v) { setField(17, v); }
   @$pb.TagNumber(17)
   $core.bool hasTwerkParams() => $_has(10);
   @$pb.TagNumber(17)
   void clearTwerkParams() => clearField(17);
   @$pb.TagNumber(17)
-  $82.TwerkParams ensureTwerkParams() => $_ensure(10);
+  $83.TwerkParams ensureTwerkParams() => $_ensure(10);
 
   @$pb.TagNumber(18)
-  $82.ChickenHeadParams get chickenHeadParams => $_getN(11);
+  $83.ChickenHeadParams get chickenHeadParams => $_getN(11);
   @$pb.TagNumber(18)
-  set chickenHeadParams($82.ChickenHeadParams v) { setField(18, v); }
+  set chickenHeadParams($83.ChickenHeadParams v) { setField(18, v); }
   @$pb.TagNumber(18)
   $core.bool hasChickenHeadParams() => $_has(11);
   @$pb.TagNumber(18)
   void clearChickenHeadParams() => clearField(18);
   @$pb.TagNumber(18)
-  $82.ChickenHeadParams ensureChickenHeadParams() => $_ensure(11);
+  $83.ChickenHeadParams ensureChickenHeadParams() => $_ensure(11);
 
   @$pb.TagNumber(19)
-  $82.ClapParams get clapParams => $_getN(12);
+  $83.ClapParams get clapParams => $_getN(12);
   @$pb.TagNumber(19)
-  set clapParams($82.ClapParams v) { setField(19, v); }
+  set clapParams($83.ClapParams v) { setField(19, v); }
   @$pb.TagNumber(19)
   $core.bool hasClapParams() => $_has(12);
   @$pb.TagNumber(19)
   void clearClapParams() => clearField(19);
   @$pb.TagNumber(19)
-  $82.ClapParams ensureClapParams() => $_ensure(12);
+  $83.ClapParams ensureClapParams() => $_ensure(12);
 
   @$pb.TagNumber(20)
-  $82.FrontUpParams get frontUpParams => $_getN(13);
+  $83.FrontUpParams get frontUpParams => $_getN(13);
   @$pb.TagNumber(20)
-  set frontUpParams($82.FrontUpParams v) { setField(20, v); }
+  set frontUpParams($83.FrontUpParams v) { setField(20, v); }
   @$pb.TagNumber(20)
   $core.bool hasFrontUpParams() => $_has(13);
   @$pb.TagNumber(20)
   void clearFrontUpParams() => clearField(20);
   @$pb.TagNumber(20)
-  $82.FrontUpParams ensureFrontUpParams() => $_ensure(13);
+  $83.FrontUpParams ensureFrontUpParams() => $_ensure(13);
 
   @$pb.TagNumber(21)
-  $82.SwayParams get swayParams => $_getN(14);
+  $83.SwayParams get swayParams => $_getN(14);
   @$pb.TagNumber(21)
-  set swayParams($82.SwayParams v) { setField(21, v); }
+  set swayParams($83.SwayParams v) { setField(21, v); }
   @$pb.TagNumber(21)
   $core.bool hasSwayParams() => $_has(14);
   @$pb.TagNumber(21)
   void clearSwayParams() => clearField(21);
   @$pb.TagNumber(21)
-  $82.SwayParams ensureSwayParams() => $_ensure(14);
+  $83.SwayParams ensureSwayParams() => $_ensure(14);
 
   @$pb.TagNumber(22)
-  $82.BodyHoldParams get bodyHoldParams => $_getN(15);
+  $83.BodyHoldParams get bodyHoldParams => $_getN(15);
   @$pb.TagNumber(22)
-  set bodyHoldParams($82.BodyHoldParams v) { setField(22, v); }
+  set bodyHoldParams($83.BodyHoldParams v) { setField(22, v); }
   @$pb.TagNumber(22)
   $core.bool hasBodyHoldParams() => $_has(15);
   @$pb.TagNumber(22)
   void clearBodyHoldParams() => clearField(22);
   @$pb.TagNumber(22)
-  $82.BodyHoldParams ensureBodyHoldParams() => $_ensure(15);
+  $83.BodyHoldParams ensureBodyHoldParams() => $_ensure(15);
 
   @$pb.TagNumber(23)
-  $82.ArmMoveParams get armMoveParams => $_getN(16);
+  $83.ArmMoveParams get armMoveParams => $_getN(16);
   @$pb.TagNumber(23)
-  set armMoveParams($82.ArmMoveParams v) { setField(23, v); }
+  set armMoveParams($83.ArmMoveParams v) { setField(23, v); }
   @$pb.TagNumber(23)
   $core.bool hasArmMoveParams() => $_has(16);
   @$pb.TagNumber(23)
   void clearArmMoveParams() => clearField(23);
   @$pb.TagNumber(23)
-  $82.ArmMoveParams ensureArmMoveParams() => $_ensure(16);
+  $83.ArmMoveParams ensureArmMoveParams() => $_ensure(16);
 
   @$pb.TagNumber(24)
-  $82.KneelLegMoveParams get kneelLegMoveParams => $_getN(17);
+  $83.KneelLegMoveParams get kneelLegMoveParams => $_getN(17);
   @$pb.TagNumber(24)
-  set kneelLegMoveParams($82.KneelLegMoveParams v) { setField(24, v); }
+  set kneelLegMoveParams($83.KneelLegMoveParams v) { setField(24, v); }
   @$pb.TagNumber(24)
   $core.bool hasKneelLegMoveParams() => $_has(17);
   @$pb.TagNumber(24)
   void clearKneelLegMoveParams() => clearField(24);
   @$pb.TagNumber(24)
-  $82.KneelLegMoveParams ensureKneelLegMoveParams() => $_ensure(17);
+  $83.KneelLegMoveParams ensureKneelLegMoveParams() => $_ensure(17);
 
   @$pb.TagNumber(25)
-  $82.RunningManParams get runningManParams => $_getN(18);
+  $83.RunningManParams get runningManParams => $_getN(18);
   @$pb.TagNumber(25)
-  set runningManParams($82.RunningManParams v) { setField(25, v); }
+  set runningManParams($83.RunningManParams v) { setField(25, v); }
   @$pb.TagNumber(25)
   $core.bool hasRunningManParams() => $_has(18);
   @$pb.TagNumber(25)
   void clearRunningManParams() => clearField(25);
   @$pb.TagNumber(25)
-  $82.RunningManParams ensureRunningManParams() => $_ensure(18);
+  $83.RunningManParams ensureRunningManParams() => $_ensure(18);
 
   @$pb.TagNumber(26)
-  $82.KneelCircleParams get kneelCircleParams => $_getN(19);
+  $83.KneelCircleParams get kneelCircleParams => $_getN(19);
   @$pb.TagNumber(26)
-  set kneelCircleParams($82.KneelCircleParams v) { setField(26, v); }
+  set kneelCircleParams($83.KneelCircleParams v) { setField(26, v); }
   @$pb.TagNumber(26)
   $core.bool hasKneelCircleParams() => $_has(19);
   @$pb.TagNumber(26)
   void clearKneelCircleParams() => clearField(26);
   @$pb.TagNumber(26)
-  $82.KneelCircleParams ensureKneelCircleParams() => $_ensure(19);
+  $83.KneelCircleParams ensureKneelCircleParams() => $_ensure(19);
 
   @$pb.TagNumber(27)
-  $82.GripperParams get gripperParams => $_getN(20);
+  $83.GripperParams get gripperParams => $_getN(20);
   @$pb.TagNumber(27)
-  set gripperParams($82.GripperParams v) { setField(27, v); }
+  set gripperParams($83.GripperParams v) { setField(27, v); }
   @$pb.TagNumber(27)
   $core.bool hasGripperParams() => $_has(20);
   @$pb.TagNumber(27)
   void clearGripperParams() => clearField(27);
   @$pb.TagNumber(27)
-  $82.GripperParams ensureGripperParams() => $_ensure(20);
+  $83.GripperParams ensureGripperParams() => $_ensure(20);
 
   @$pb.TagNumber(28)
-  $82.HopParams get hopParams => $_getN(21);
+  $83.HopParams get hopParams => $_getN(21);
   @$pb.TagNumber(28)
-  set hopParams($82.HopParams v) { setField(28, v); }
+  set hopParams($83.HopParams v) { setField(28, v); }
   @$pb.TagNumber(28)
   $core.bool hasHopParams() => $_has(21);
   @$pb.TagNumber(28)
   void clearHopParams() => clearField(28);
   @$pb.TagNumber(28)
-  $82.HopParams ensureHopParams() => $_ensure(21);
+  $83.HopParams ensureHopParams() => $_ensure(21);
 
   @$pb.TagNumber(29)
-  $82.RandomRotateParams get randomRotateParams => $_getN(22);
+  $83.RandomRotateParams get randomRotateParams => $_getN(22);
   @$pb.TagNumber(29)
-  set randomRotateParams($82.RandomRotateParams v) { setField(29, v); }
+  set randomRotateParams($83.RandomRotateParams v) { setField(29, v); }
   @$pb.TagNumber(29)
   $core.bool hasRandomRotateParams() => $_has(22);
   @$pb.TagNumber(29)
   void clearRandomRotateParams() => clearField(29);
   @$pb.TagNumber(29)
-  $82.RandomRotateParams ensureRandomRotateParams() => $_ensure(22);
+  $83.RandomRotateParams ensureRandomRotateParams() => $_ensure(22);
 
   @$pb.TagNumber(30)
-  $82.CrawlParams get crawlParams => $_getN(23);
+  $83.CrawlParams get crawlParams => $_getN(23);
   @$pb.TagNumber(30)
-  set crawlParams($82.CrawlParams v) { setField(30, v); }
+  set crawlParams($83.CrawlParams v) { setField(30, v); }
   @$pb.TagNumber(30)
   $core.bool hasCrawlParams() => $_has(23);
   @$pb.TagNumber(30)
   void clearCrawlParams() => clearField(30);
   @$pb.TagNumber(30)
-  $82.CrawlParams ensureCrawlParams() => $_ensure(23);
+  $83.CrawlParams ensureCrawlParams() => $_ensure(23);
 
   @$pb.TagNumber(31)
-  $82.SideParams get sideParams => $_getN(24);
+  $83.SideParams get sideParams => $_getN(24);
   @$pb.TagNumber(31)
-  set sideParams($82.SideParams v) { setField(31, v); }
+  set sideParams($83.SideParams v) { setField(31, v); }
   @$pb.TagNumber(31)
   $core.bool hasSideParams() => $_has(24);
   @$pb.TagNumber(31)
   void clearSideParams() => clearField(31);
   @$pb.TagNumber(31)
-  $82.SideParams ensureSideParams() => $_ensure(24);
+  $83.SideParams ensureSideParams() => $_ensure(24);
 
   @$pb.TagNumber(32)
-  $82.BourreeParams get bourreeParams => $_getN(25);
+  $83.BourreeParams get bourreeParams => $_getN(25);
   @$pb.TagNumber(32)
-  set bourreeParams($82.BourreeParams v) { setField(32, v); }
+  set bourreeParams($83.BourreeParams v) { setField(32, v); }
   @$pb.TagNumber(32)
   $core.bool hasBourreeParams() => $_has(25);
   @$pb.TagNumber(32)
   void clearBourreeParams() => clearField(32);
   @$pb.TagNumber(32)
-  $82.BourreeParams ensureBourreeParams() => $_ensure(25);
+  $83.BourreeParams ensureBourreeParams() => $_ensure(25);
 
   @$pb.TagNumber(33)
-  $82.WorkspaceArmMoveParams get workspaceArmMoveParams => $_getN(26);
+  $83.WorkspaceArmMoveParams get workspaceArmMoveParams => $_getN(26);
   @$pb.TagNumber(33)
-  set workspaceArmMoveParams($82.WorkspaceArmMoveParams v) { setField(33, v); }
+  set workspaceArmMoveParams($83.WorkspaceArmMoveParams v) { setField(33, v); }
   @$pb.TagNumber(33)
   $core.bool hasWorkspaceArmMoveParams() => $_has(26);
   @$pb.TagNumber(33)
   void clearWorkspaceArmMoveParams() => clearField(33);
   @$pb.TagNumber(33)
-  $82.WorkspaceArmMoveParams ensureWorkspaceArmMoveParams() => $_ensure(26);
+  $83.WorkspaceArmMoveParams ensureWorkspaceArmMoveParams() => $_ensure(26);
 
   @$pb.TagNumber(34)
-  $82.Figure8Params get figure8Params => $_getN(27);
+  $83.Figure8Params get figure8Params => $_getN(27);
   @$pb.TagNumber(34)
-  set figure8Params($82.Figure8Params v) { setField(34, v); }
+  set figure8Params($83.Figure8Params v) { setField(34, v); }
   @$pb.TagNumber(34)
   $core.bool hasFigure8Params() => $_has(27);
   @$pb.TagNumber(34)
   void clearFigure8Params() => clearField(34);
   @$pb.TagNumber(34)
-  $82.Figure8Params ensureFigure8Params() => $_ensure(27);
+  $83.Figure8Params ensureFigure8Params() => $_ensure(27);
 
   @$pb.TagNumber(35)
-  $82.KneelLegMove2Params get kneelLegMove2Params => $_getN(28);
+  $83.KneelLegMove2Params get kneelLegMove2Params => $_getN(28);
   @$pb.TagNumber(35)
-  set kneelLegMove2Params($82.KneelLegMove2Params v) { setField(35, v); }
+  set kneelLegMove2Params($83.KneelLegMove2Params v) { setField(35, v); }
   @$pb.TagNumber(35)
   $core.bool hasKneelLegMove2Params() => $_has(28);
   @$pb.TagNumber(35)
   void clearKneelLegMove2Params() => clearField(35);
   @$pb.TagNumber(35)
-  $82.KneelLegMove2Params ensureKneelLegMove2Params() => $_ensure(28);
+  $83.KneelLegMove2Params ensureKneelLegMove2Params() => $_ensure(28);
 
   @$pb.TagNumber(36)
-  $82.FidgetStandParams get fidgetStandParams => $_getN(29);
+  $83.FidgetStandParams get fidgetStandParams => $_getN(29);
   @$pb.TagNumber(36)
-  set fidgetStandParams($82.FidgetStandParams v) { setField(36, v); }
+  set fidgetStandParams($83.FidgetStandParams v) { setField(36, v); }
   @$pb.TagNumber(36)
   $core.bool hasFidgetStandParams() => $_has(29);
   @$pb.TagNumber(36)
   void clearFidgetStandParams() => clearField(36);
   @$pb.TagNumber(36)
-  $82.FidgetStandParams ensureFidgetStandParams() => $_ensure(29);
+  $83.FidgetStandParams ensureFidgetStandParams() => $_ensure(29);
 
   @$pb.TagNumber(37)
-  $82.GotoParams get gotoParams => $_getN(30);
+  $83.GotoParams get gotoParams => $_getN(30);
   @$pb.TagNumber(37)
-  set gotoParams($82.GotoParams v) { setField(37, v); }
+  set gotoParams($83.GotoParams v) { setField(37, v); }
   @$pb.TagNumber(37)
   $core.bool hasGotoParams() => $_has(30);
   @$pb.TagNumber(37)
   void clearGotoParams() => clearField(37);
   @$pb.TagNumber(37)
-  $82.GotoParams ensureGotoParams() => $_ensure(30);
+  $83.GotoParams ensureGotoParams() => $_ensure(30);
 
   @$pb.TagNumber(38)
-  $82.FrameSnapshotParams get frameSnapshotParams => $_getN(31);
+  $83.FrameSnapshotParams get frameSnapshotParams => $_getN(31);
   @$pb.TagNumber(38)
-  set frameSnapshotParams($82.FrameSnapshotParams v) { setField(38, v); }
+  set frameSnapshotParams($83.FrameSnapshotParams v) { setField(38, v); }
   @$pb.TagNumber(38)
   $core.bool hasFrameSnapshotParams() => $_has(31);
   @$pb.TagNumber(38)
   void clearFrameSnapshotParams() => clearField(38);
   @$pb.TagNumber(38)
-  $82.FrameSnapshotParams ensureFrameSnapshotParams() => $_ensure(31);
+  $83.FrameSnapshotParams ensureFrameSnapshotParams() => $_ensure(31);
 
   @$pb.TagNumber(39)
-  $82.SetColorParams get setColorParams => $_getN(32);
+  $83.SetColorParams get setColorParams => $_getN(32);
   @$pb.TagNumber(39)
-  set setColorParams($82.SetColorParams v) { setField(39, v); }
+  set setColorParams($83.SetColorParams v) { setField(39, v); }
   @$pb.TagNumber(39)
   $core.bool hasSetColorParams() => $_has(32);
   @$pb.TagNumber(39)
   void clearSetColorParams() => clearField(39);
   @$pb.TagNumber(39)
-  $82.SetColorParams ensureSetColorParams() => $_ensure(32);
+  $83.SetColorParams ensureSetColorParams() => $_ensure(32);
 
   @$pb.TagNumber(40)
-  $82.RippleColorParams get rippleColorParams => $_getN(33);
+  $83.RippleColorParams get rippleColorParams => $_getN(33);
   @$pb.TagNumber(40)
-  set rippleColorParams($82.RippleColorParams v) { setField(40, v); }
+  set rippleColorParams($83.RippleColorParams v) { setField(40, v); }
   @$pb.TagNumber(40)
   $core.bool hasRippleColorParams() => $_has(33);
   @$pb.TagNumber(40)
   void clearRippleColorParams() => clearField(40);
   @$pb.TagNumber(40)
-  $82.RippleColorParams ensureRippleColorParams() => $_ensure(33);
+  $83.RippleColorParams ensureRippleColorParams() => $_ensure(33);
 
   @$pb.TagNumber(41)
-  $82.FadeColorParams get fadeColorParams => $_getN(34);
+  $83.FadeColorParams get fadeColorParams => $_getN(34);
   @$pb.TagNumber(41)
-  set fadeColorParams($82.FadeColorParams v) { setField(41, v); }
+  set fadeColorParams($83.FadeColorParams v) { setField(41, v); }
   @$pb.TagNumber(41)
   $core.bool hasFadeColorParams() => $_has(34);
   @$pb.TagNumber(41)
   void clearFadeColorParams() => clearField(41);
   @$pb.TagNumber(41)
-  $82.FadeColorParams ensureFadeColorParams() => $_ensure(34);
+  $83.FadeColorParams ensureFadeColorParams() => $_ensure(34);
 
   @$pb.TagNumber(42)
-  $82.IndependentColorParams get independentColorParams => $_getN(35);
+  $83.IndependentColorParams get independentColorParams => $_getN(35);
   @$pb.TagNumber(42)
-  set independentColorParams($82.IndependentColorParams v) { setField(42, v); }
+  set independentColorParams($83.IndependentColorParams v) { setField(42, v); }
   @$pb.TagNumber(42)
   $core.bool hasIndependentColorParams() => $_has(35);
   @$pb.TagNumber(42)
   void clearIndependentColorParams() => clearField(42);
   @$pb.TagNumber(42)
-  $82.IndependentColorParams ensureIndependentColorParams() => $_ensure(35);
+  $83.IndependentColorParams ensureIndependentColorParams() => $_ensure(35);
 
   @$pb.TagNumber(43)
-  $82.CustomGaitParams get customGaitParams => $_getN(36);
+  $83.CustomGaitParams get customGaitParams => $_getN(36);
   @$pb.TagNumber(43)
-  set customGaitParams($82.CustomGaitParams v) { setField(43, v); }
+  set customGaitParams($83.CustomGaitParams v) { setField(43, v); }
   @$pb.TagNumber(43)
   $core.bool hasCustomGaitParams() => $_has(36);
   @$pb.TagNumber(43)
   void clearCustomGaitParams() => clearField(43);
   @$pb.TagNumber(43)
-  $82.CustomGaitParams ensureCustomGaitParams() => $_ensure(36);
+  $83.CustomGaitParams ensureCustomGaitParams() => $_ensure(36);
 
   @$pb.TagNumber(100)
-  $82.LegJointParams get legJointParams => $_getN(37);
+  $83.LegJointParams get legJointParams => $_getN(37);
   @$pb.TagNumber(100)
-  set legJointParams($82.LegJointParams v) { setField(100, v); }
+  set legJointParams($83.LegJointParams v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasLegJointParams() => $_has(37);
   @$pb.TagNumber(100)
   void clearLegJointParams() => clearField(100);
   @$pb.TagNumber(100)
-  $82.LegJointParams ensureLegJointParams() => $_ensure(37);
+  $83.LegJointParams ensureLegJointParams() => $_ensure(37);
 
   @$pb.TagNumber(1000)
-  $82.AnimateParams get animateParams => $_getN(38);
+  $83.AnimateParams get animateParams => $_getN(38);
   @$pb.TagNumber(1000)
-  set animateParams($82.AnimateParams v) { setField(1000, v); }
+  set animateParams($83.AnimateParams v) { setField(1000, v); }
   @$pb.TagNumber(1000)
   $core.bool hasAnimateParams() => $_has(38);
   @$pb.TagNumber(1000)
   void clearAnimateParams() => clearField(1000);
   @$pb.TagNumber(1000)
-  $82.AnimateParams ensureAnimateParams() => $_ensure(38);
+  $83.AnimateParams ensureAnimateParams() => $_ensure(38);
 }
 
 enum MoveCommand_Command {
@@ -3045,7 +3208,7 @@ class MoveCommand extends $pb.GeneratedMessage {
   factory MoveCommand({
     $core.String? moveType,
     $core.int? moveId,
-    $82.CustomGaitCommand? customGaitCommand,
+    $83.CustomGaitCommand? customGaitCommand,
   }) {
     final $result = create();
     if (moveType != null) {
@@ -3071,7 +3234,7 @@ class MoveCommand extends $pb.GeneratedMessage {
     ..oo(0, [3])
     ..aOS(1, _omitFieldNames ? '' : 'moveType')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'moveId', $pb.PbFieldType.O3)
-    ..aOM<$82.CustomGaitCommand>(3, _omitFieldNames ? '' : 'customGaitCommand', subBuilder: $82.CustomGaitCommand.create)
+    ..aOM<$83.CustomGaitCommand>(3, _omitFieldNames ? '' : 'customGaitCommand', subBuilder: $83.CustomGaitCommand.create)
     ..hasRequiredFields = false
   ;
 
@@ -3120,23 +3283,23 @@ class MoveCommand extends $pb.GeneratedMessage {
   void clearMoveId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $82.CustomGaitCommand get customGaitCommand => $_getN(2);
+  $83.CustomGaitCommand get customGaitCommand => $_getN(2);
   @$pb.TagNumber(3)
-  set customGaitCommand($82.CustomGaitCommand v) { setField(3, v); }
+  set customGaitCommand($83.CustomGaitCommand v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCustomGaitCommand() => $_has(2);
   @$pb.TagNumber(3)
   void clearCustomGaitCommand() => clearField(3);
   @$pb.TagNumber(3)
-  $82.CustomGaitCommand ensureCustomGaitCommand() => $_ensure(2);
+  $83.CustomGaitCommand ensureCustomGaitCommand() => $_ensure(2);
 }
 
 class ChoreographyCommandRequest extends $pb.GeneratedMessage {
   factory ChoreographyCommandRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<MoveCommand>? commands,
-    $13.Lease? lease,
-    $60.Timestamp? commandEndTime,
+    $14.Lease? lease,
+    $59.Timestamp? commandEndTime,
   }) {
     final $result = create();
     if (header != null) {
@@ -3158,10 +3321,10 @@ class ChoreographyCommandRequest extends $pb.GeneratedMessage {
   factory ChoreographyCommandRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChoreographyCommandRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pc<MoveCommand>(2, _omitFieldNames ? '' : 'commands', $pb.PbFieldType.PM, subBuilder: MoveCommand.create)
-    ..aOM<$13.Lease>(3, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
-    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'commandEndTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$14.Lease>(3, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'commandEndTime', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -3188,15 +3351,15 @@ class ChoreographyCommandRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Commands intended for individual moves.
   /// Repeated because multiple moves may be playing simultaneously and we may want to command
@@ -3206,33 +3369,33 @@ class ChoreographyCommandRequest extends $pb.GeneratedMessage {
 
   /// The Lease to show ownership of the robot body.
   @$pb.TagNumber(3)
-  $13.Lease get lease => $_getN(2);
+  $14.Lease get lease => $_getN(2);
   @$pb.TagNumber(3)
-  set lease($13.Lease v) { setField(3, v); }
+  set lease($14.Lease v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLease() => $_has(2);
   @$pb.TagNumber(3)
   void clearLease() => clearField(3);
   @$pb.TagNumber(3)
-  $13.Lease ensureLease() => $_ensure(2);
+  $14.Lease ensureLease() => $_ensure(2);
 
   /// When the commands expire.  In the robot's clock.
   @$pb.TagNumber(4)
-  $60.Timestamp get commandEndTime => $_getN(3);
+  $59.Timestamp get commandEndTime => $_getN(3);
   @$pb.TagNumber(4)
-  set commandEndTime($60.Timestamp v) { setField(4, v); }
+  set commandEndTime($59.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasCommandEndTime() => $_has(3);
   @$pb.TagNumber(4)
   void clearCommandEndTime() => clearField(4);
   @$pb.TagNumber(4)
-  $60.Timestamp ensureCommandEndTime() => $_ensure(3);
+  $59.Timestamp ensureCommandEndTime() => $_ensure(3);
 }
 
 class ChoreographyCommandResponse extends $pb.GeneratedMessage {
   factory ChoreographyCommandResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
     $core.Iterable<ChoreographyCommandResponse_Status>? status,
   }) {
     final $result = create();
@@ -3252,8 +3415,8 @@ class ChoreographyCommandResponse extends $pb.GeneratedMessage {
   factory ChoreographyCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChoreographyCommandResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..pc<ChoreographyCommandResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.KE, valueOf: ChoreographyCommandResponse_Status.valueOf, enumValues: ChoreographyCommandResponse_Status.values, defaultEnumValue: ChoreographyCommandResponse_Status.STATUS_UNKNOWN)
     ..hasRequiredFields = false
   ;
@@ -3281,26 +3444,26 @@ class ChoreographyCommandResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
   /// One status for each command sent.
   @$pb.TagNumber(3)
@@ -3325,7 +3488,7 @@ class MoveInfo extends $pb.GeneratedMessage {
     $core.int? minMoveLengthSlices,
     $core.int? maxMoveLengthSlices,
     $core.double? moveLengthTime,
-    $59.StringValue? animatedMoveGeneratedId,
+    $58.StringValue? animatedMoveGeneratedId,
     $core.bool? controlsLights,
     $core.bool? controlsAnnotations,
     $core.bool? isLooping,
@@ -3410,7 +3573,7 @@ class MoveInfo extends $pb.GeneratedMessage {
     ..a<$core.int>(13, _omitFieldNames ? '' : 'minMoveLengthSlices', $pb.PbFieldType.O3)
     ..a<$core.int>(14, _omitFieldNames ? '' : 'maxMoveLengthSlices', $pb.PbFieldType.O3)
     ..a<$core.double>(15, _omitFieldNames ? '' : 'moveLengthTime', $pb.PbFieldType.OD)
-    ..aOM<$59.StringValue>(16, _omitFieldNames ? '' : 'animatedMoveGeneratedId', subBuilder: $59.StringValue.create)
+    ..aOM<$58.StringValue>(16, _omitFieldNames ? '' : 'animatedMoveGeneratedId', subBuilder: $58.StringValue.create)
     ..aOB(17, _omitFieldNames ? '' : 'controlsLights')
     ..aOB(18, _omitFieldNames ? '' : 'controlsAnnotations')
     ..aOB(19, _omitFieldNames ? '' : 'isLooping')
@@ -3586,15 +3749,15 @@ class MoveInfo extends $pb.GeneratedMessage {
   /// to track which version of the animated move is currently saved on robot. The ID can be unset,
   /// meaning the RPC which uploaded the animation did not provide an identifying hash.
   @$pb.TagNumber(16)
-  $59.StringValue get animatedMoveGeneratedId => $_getN(15);
+  $58.StringValue get animatedMoveGeneratedId => $_getN(15);
   @$pb.TagNumber(16)
-  set animatedMoveGeneratedId($59.StringValue v) { setField(16, v); }
+  set animatedMoveGeneratedId($58.StringValue v) { setField(16, v); }
   @$pb.TagNumber(16)
   $core.bool hasAnimatedMoveGeneratedId() => $_has(15);
   @$pb.TagNumber(16)
   void clearAnimatedMoveGeneratedId() => clearField(16);
   @$pb.TagNumber(16)
-  $59.StringValue ensureAnimatedMoveGeneratedId() => $_ensure(15);
+  $58.StringValue ensureAnimatedMoveGeneratedId() => $_ensure(15);
 
   @$pb.TagNumber(17)
   $core.bool get controlsLights => $_getBF(16);
@@ -3926,7 +4089,7 @@ class ChoreographySequence extends $pb.GeneratedMessage {
   ChoreographyInfo ensureChoreographyInfo() => $_ensure(3);
 
   /// Can be used to specify an explicit entrance_state in the case where the first legs-track move
-  /// accepts multiple entrace_states.
+  /// accepts multiple entrance_states.
   /// Will also be used if the sequence contains no legs-track moves.
   /// Can otherwise be left unset.
   /// If set and not within the set of acceptable entrance_states for the first legs-track move,
@@ -4088,7 +4251,7 @@ class ChoreographerSave extends $pb.GeneratedMessage {
   void clearChoreographyStartSlice() => clearField(4);
 }
 
-/// Represents an animated dance move that can be used whithin choreographies after uploading.
+/// Represents an animated dance move that can be used within choreographies after uploading.
 class Animation extends $pb.GeneratedMessage {
   factory Animation({
     $core.String? name,
@@ -4099,9 +4262,9 @@ class Animation extends $pb.GeneratedMessage {
     $core.bool? controlsGripper,
     $core.double? bpm,
     $core.bool? retimeToIntegerSlices,
-    $82.AnimateParams? minimumParameters,
-    $82.AnimateParams? defaultParameters,
-    $82.AnimateParams? maximumParameters,
+    $83.AnimateParams? minimumParameters,
+    $83.AnimateParams? defaultParameters,
+    $83.AnimateParams? maximumParameters,
     $core.bool? truncatable,
     $core.bool? extendable,
     $core.bool? neutralStart,
@@ -4210,9 +4373,9 @@ class Animation extends $pb.GeneratedMessage {
     ..aOB(6, _omitFieldNames ? '' : 'controlsGripper')
     ..a<$core.double>(7, _omitFieldNames ? '' : 'bpm', $pb.PbFieldType.OD)
     ..aOB(8, _omitFieldNames ? '' : 'retimeToIntegerSlices')
-    ..aOM<$82.AnimateParams>(9, _omitFieldNames ? '' : 'minimumParameters', subBuilder: $82.AnimateParams.create)
-    ..aOM<$82.AnimateParams>(10, _omitFieldNames ? '' : 'defaultParameters', subBuilder: $82.AnimateParams.create)
-    ..aOM<$82.AnimateParams>(11, _omitFieldNames ? '' : 'maximumParameters', subBuilder: $82.AnimateParams.create)
+    ..aOM<$83.AnimateParams>(9, _omitFieldNames ? '' : 'minimumParameters', subBuilder: $83.AnimateParams.create)
+    ..aOM<$83.AnimateParams>(10, _omitFieldNames ? '' : 'defaultParameters', subBuilder: $83.AnimateParams.create)
+    ..aOM<$83.AnimateParams>(11, _omitFieldNames ? '' : 'maximumParameters', subBuilder: $83.AnimateParams.create)
     ..aOB(12, _omitFieldNames ? '' : 'truncatable')
     ..aOB(13, _omitFieldNames ? '' : 'extendable')
     ..aOB(14, _omitFieldNames ? '' : 'neutralStart')
@@ -4330,37 +4493,37 @@ class Animation extends $pb.GeneratedMessage {
   /// also be used when uploading a ChoreographySequence containing the animation to validate
   /// that the animated move is allowed.
   @$pb.TagNumber(9)
-  $82.AnimateParams get minimumParameters => $_getN(8);
+  $83.AnimateParams get minimumParameters => $_getN(8);
   @$pb.TagNumber(9)
-  set minimumParameters($82.AnimateParams v) { setField(9, v); }
+  set minimumParameters($83.AnimateParams v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasMinimumParameters() => $_has(8);
   @$pb.TagNumber(9)
   void clearMinimumParameters() => clearField(9);
   @$pb.TagNumber(9)
-  $82.AnimateParams ensureMinimumParameters() => $_ensure(8);
+  $83.AnimateParams ensureMinimumParameters() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $82.AnimateParams get defaultParameters => $_getN(9);
+  $83.AnimateParams get defaultParameters => $_getN(9);
   @$pb.TagNumber(10)
-  set defaultParameters($82.AnimateParams v) { setField(10, v); }
+  set defaultParameters($83.AnimateParams v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasDefaultParameters() => $_has(9);
   @$pb.TagNumber(10)
   void clearDefaultParameters() => clearField(10);
   @$pb.TagNumber(10)
-  $82.AnimateParams ensureDefaultParameters() => $_ensure(9);
+  $83.AnimateParams ensureDefaultParameters() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  $82.AnimateParams get maximumParameters => $_getN(10);
+  $83.AnimateParams get maximumParameters => $_getN(10);
   @$pb.TagNumber(11)
-  set maximumParameters($82.AnimateParams v) { setField(11, v); }
+  set maximumParameters($83.AnimateParams v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasMaximumParameters() => $_has(10);
   @$pb.TagNumber(11)
   void clearMaximumParameters() => clearField(11);
   @$pb.TagNumber(11)
-  $82.AnimateParams ensureMaximumParameters() => $_ensure(10);
+  $83.AnimateParams ensureMaximumParameters() => $_ensure(10);
 
   /// Indicates if the animated moves can be  shortened (the animated move will be cut off). Not
   /// supported for leg moves.
@@ -4638,7 +4801,7 @@ class AnimationKeyframe extends $pb.GeneratedMessage {
 
 class AnimateGripper extends $pb.GeneratedMessage {
   factory AnimateGripper({
-    $59.DoubleValue? gripperAngle,
+    $58.DoubleValue? gripperAngle,
   }) {
     final $result = create();
     if (gripperAngle != null) {
@@ -4651,7 +4814,7 @@ class AnimateGripper extends $pb.GeneratedMessage {
   factory AnimateGripper.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnimateGripper', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'gripperAngle', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'gripperAngle', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -4677,15 +4840,15 @@ class AnimateGripper extends $pb.GeneratedMessage {
   static AnimateGripper? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get gripperAngle => $_getN(0);
+  $58.DoubleValue get gripperAngle => $_getN(0);
   @$pb.TagNumber(1)
-  set gripperAngle($59.DoubleValue v) { setField(1, v); }
+  set gripperAngle($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasGripperAngle() => $_has(0);
   @$pb.TagNumber(1)
   void clearGripperAngle() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureGripperAngle() => $_ensure(0);
+  $58.DoubleValue ensureGripperAngle() => $_ensure(0);
 }
 
 enum AnimateArm_HandPose_Orientation {
@@ -4698,9 +4861,9 @@ enum AnimateArm_HandPose_Orientation {
 /// euler angles
 class AnimateArm_HandPose extends $pb.GeneratedMessage {
   factory AnimateArm_HandPose({
-    $61.Vec3Value? position,
-    $82.EulerZYXValue? eulerAngles,
-    $61.Quaternion? quaternion,
+    $60.Vec3Value? position,
+    $83.EulerZYXValue? eulerAngles,
+    $60.Quaternion? quaternion,
   }) {
     final $result = create();
     if (position != null) {
@@ -4725,9 +4888,9 @@ class AnimateArm_HandPose extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnimateArm.HandPose', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..oo(0, [3, 4])
-    ..aOM<$61.Vec3Value>(1, _omitFieldNames ? '' : 'position', subBuilder: $61.Vec3Value.create)
-    ..aOM<$82.EulerZYXValue>(3, _omitFieldNames ? '' : 'eulerAngles', subBuilder: $82.EulerZYXValue.create)
-    ..aOM<$61.Quaternion>(4, _omitFieldNames ? '' : 'quaternion', subBuilder: $61.Quaternion.create)
+    ..aOM<$60.Vec3Value>(1, _omitFieldNames ? '' : 'position', subBuilder: $60.Vec3Value.create)
+    ..aOM<$83.EulerZYXValue>(3, _omitFieldNames ? '' : 'eulerAngles', subBuilder: $83.EulerZYXValue.create)
+    ..aOM<$60.Quaternion>(4, _omitFieldNames ? '' : 'quaternion', subBuilder: $60.Quaternion.create)
     ..hasRequiredFields = false
   ;
 
@@ -4756,39 +4919,39 @@ class AnimateArm_HandPose extends $pb.GeneratedMessage {
   void clearOrientation() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
-  $61.Vec3Value get position => $_getN(0);
+  $60.Vec3Value get position => $_getN(0);
   @$pb.TagNumber(1)
-  set position($61.Vec3Value v) { setField(1, v); }
+  set position($60.Vec3Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPosition() => $_has(0);
   @$pb.TagNumber(1)
   void clearPosition() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3Value ensurePosition() => $_ensure(0);
+  $60.Vec3Value ensurePosition() => $_ensure(0);
 
   /// The hand's orientation described with euler angles (yaw, pitch, roll).
   @$pb.TagNumber(3)
-  $82.EulerZYXValue get eulerAngles => $_getN(1);
+  $83.EulerZYXValue get eulerAngles => $_getN(1);
   @$pb.TagNumber(3)
-  set eulerAngles($82.EulerZYXValue v) { setField(3, v); }
+  set eulerAngles($83.EulerZYXValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEulerAngles() => $_has(1);
   @$pb.TagNumber(3)
   void clearEulerAngles() => clearField(3);
   @$pb.TagNumber(3)
-  $82.EulerZYXValue ensureEulerAngles() => $_ensure(1);
+  $83.EulerZYXValue ensureEulerAngles() => $_ensure(1);
 
   /// The hand's orientation described with a quaternion.
   @$pb.TagNumber(4)
-  $61.Quaternion get quaternion => $_getN(2);
+  $60.Quaternion get quaternion => $_getN(2);
   @$pb.TagNumber(4)
-  set quaternion($61.Quaternion v) { setField(4, v); }
+  set quaternion($60.Quaternion v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasQuaternion() => $_has(2);
   @$pb.TagNumber(4)
   void clearQuaternion() => clearField(4);
   @$pb.TagNumber(4)
-  $61.Quaternion ensureQuaternion() => $_ensure(2);
+  $60.Quaternion ensureQuaternion() => $_ensure(2);
 }
 
 enum AnimateArm_Arm {
@@ -4881,12 +5044,12 @@ class AnimateArm extends $pb.GeneratedMessage {
 /// begins. At least one arm joint must be specified.
 class ArmJointAngles extends $pb.GeneratedMessage {
   factory ArmJointAngles({
-    $59.DoubleValue? shoulder0,
-    $59.DoubleValue? shoulder1,
-    $59.DoubleValue? elbow0,
-    $59.DoubleValue? elbow1,
-    $59.DoubleValue? wrist0,
-    $59.DoubleValue? wrist1,
+    $58.DoubleValue? shoulder0,
+    $58.DoubleValue? shoulder1,
+    $58.DoubleValue? elbow0,
+    $58.DoubleValue? elbow1,
+    $58.DoubleValue? wrist0,
+    $58.DoubleValue? wrist1,
   }) {
     final $result = create();
     if (shoulder0 != null) {
@@ -4914,12 +5077,12 @@ class ArmJointAngles extends $pb.GeneratedMessage {
   factory ArmJointAngles.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ArmJointAngles', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$59.DoubleValue>(1, _omitFieldNames ? '' : 'shoulder0', protoName: 'shoulder_0', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'shoulder1', protoName: 'shoulder_1', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'elbow0', protoName: 'elbow_0', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'elbow1', protoName: 'elbow_1', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'wrist0', protoName: 'wrist_0', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'wrist1', protoName: 'wrist_1', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(1, _omitFieldNames ? '' : 'shoulder0', protoName: 'shoulder_0', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'shoulder1', protoName: 'shoulder_1', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'elbow0', protoName: 'elbow_0', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'elbow1', protoName: 'elbow_1', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'wrist0', protoName: 'wrist_0', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'wrist1', protoName: 'wrist_1', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -4945,70 +5108,70 @@ class ArmJointAngles extends $pb.GeneratedMessage {
   static ArmJointAngles? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $59.DoubleValue get shoulder0 => $_getN(0);
+  $58.DoubleValue get shoulder0 => $_getN(0);
   @$pb.TagNumber(1)
-  set shoulder0($59.DoubleValue v) { setField(1, v); }
+  set shoulder0($58.DoubleValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasShoulder0() => $_has(0);
   @$pb.TagNumber(1)
   void clearShoulder0() => clearField(1);
   @$pb.TagNumber(1)
-  $59.DoubleValue ensureShoulder0() => $_ensure(0);
+  $58.DoubleValue ensureShoulder0() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $59.DoubleValue get shoulder1 => $_getN(1);
+  $58.DoubleValue get shoulder1 => $_getN(1);
   @$pb.TagNumber(2)
-  set shoulder1($59.DoubleValue v) { setField(2, v); }
+  set shoulder1($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasShoulder1() => $_has(1);
   @$pb.TagNumber(2)
   void clearShoulder1() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureShoulder1() => $_ensure(1);
+  $58.DoubleValue ensureShoulder1() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.DoubleValue get elbow0 => $_getN(2);
+  $58.DoubleValue get elbow0 => $_getN(2);
   @$pb.TagNumber(3)
-  set elbow0($59.DoubleValue v) { setField(3, v); }
+  set elbow0($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasElbow0() => $_has(2);
   @$pb.TagNumber(3)
   void clearElbow0() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureElbow0() => $_ensure(2);
+  $58.DoubleValue ensureElbow0() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $59.DoubleValue get elbow1 => $_getN(3);
+  $58.DoubleValue get elbow1 => $_getN(3);
   @$pb.TagNumber(4)
-  set elbow1($59.DoubleValue v) { setField(4, v); }
+  set elbow1($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasElbow1() => $_has(3);
   @$pb.TagNumber(4)
   void clearElbow1() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureElbow1() => $_ensure(3);
+  $58.DoubleValue ensureElbow1() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $59.DoubleValue get wrist0 => $_getN(4);
+  $58.DoubleValue get wrist0 => $_getN(4);
   @$pb.TagNumber(5)
-  set wrist0($59.DoubleValue v) { setField(5, v); }
+  set wrist0($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasWrist0() => $_has(4);
   @$pb.TagNumber(5)
   void clearWrist0() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureWrist0() => $_ensure(4);
+  $58.DoubleValue ensureWrist0() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $59.DoubleValue get wrist1 => $_getN(5);
+  $58.DoubleValue get wrist1 => $_getN(5);
   @$pb.TagNumber(6)
-  set wrist1($59.DoubleValue v) { setField(6, v); }
+  set wrist1($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasWrist1() => $_has(5);
   @$pb.TagNumber(6)
   void clearWrist1() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureWrist1() => $_ensure(5);
+  $58.DoubleValue ensureWrist1() => $_ensure(5);
 }
 
 enum AnimateBody_Position {
@@ -5027,10 +5190,10 @@ enum AnimateBody_Orientation {
 /// one dimension of the body must be specified.
 class AnimateBody extends $pb.GeneratedMessage {
   factory AnimateBody({
-    $61.Vec3Value? bodyPos,
-    $61.Vec3Value? comPos,
-    $82.EulerZYXValue? eulerAngles,
-    $61.Quaternion? quaternion,
+    $60.Vec3Value? bodyPos,
+    $60.Vec3Value? comPos,
+    $83.EulerZYXValue? eulerAngles,
+    $60.Quaternion? quaternion,
   }) {
     final $result = create();
     if (bodyPos != null) {
@@ -5064,10 +5227,10 @@ class AnimateBody extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnimateBody', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..oo(0, [1, 2])
     ..oo(1, [3, 4])
-    ..aOM<$61.Vec3Value>(1, _omitFieldNames ? '' : 'bodyPos', subBuilder: $61.Vec3Value.create)
-    ..aOM<$61.Vec3Value>(2, _omitFieldNames ? '' : 'comPos', subBuilder: $61.Vec3Value.create)
-    ..aOM<$82.EulerZYXValue>(3, _omitFieldNames ? '' : 'eulerAngles', subBuilder: $82.EulerZYXValue.create)
-    ..aOM<$61.Quaternion>(4, _omitFieldNames ? '' : 'quaternion', subBuilder: $61.Quaternion.create)
+    ..aOM<$60.Vec3Value>(1, _omitFieldNames ? '' : 'bodyPos', subBuilder: $60.Vec3Value.create)
+    ..aOM<$60.Vec3Value>(2, _omitFieldNames ? '' : 'comPos', subBuilder: $60.Vec3Value.create)
+    ..aOM<$83.EulerZYXValue>(3, _omitFieldNames ? '' : 'eulerAngles', subBuilder: $83.EulerZYXValue.create)
+    ..aOM<$60.Quaternion>(4, _omitFieldNames ? '' : 'quaternion', subBuilder: $60.Quaternion.create)
     ..hasRequiredFields = false
   ;
 
@@ -5100,51 +5263,51 @@ class AnimateBody extends $pb.GeneratedMessage {
 
   /// The body position in the animation frame.
   @$pb.TagNumber(1)
-  $61.Vec3Value get bodyPos => $_getN(0);
+  $60.Vec3Value get bodyPos => $_getN(0);
   @$pb.TagNumber(1)
-  set bodyPos($61.Vec3Value v) { setField(1, v); }
+  set bodyPos($60.Vec3Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBodyPos() => $_has(0);
   @$pb.TagNumber(1)
   void clearBodyPos() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3Value ensureBodyPos() => $_ensure(0);
+  $60.Vec3Value ensureBodyPos() => $_ensure(0);
 
   /// The body's center of mass position in the animation frame.
   @$pb.TagNumber(2)
-  $61.Vec3Value get comPos => $_getN(1);
+  $60.Vec3Value get comPos => $_getN(1);
   @$pb.TagNumber(2)
-  set comPos($61.Vec3Value v) { setField(2, v); }
+  set comPos($60.Vec3Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasComPos() => $_has(1);
   @$pb.TagNumber(2)
   void clearComPos() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3Value ensureComPos() => $_ensure(1);
+  $60.Vec3Value ensureComPos() => $_ensure(1);
 
   /// The body's orientation described with euler angles (yaw, pitch, roll).
   @$pb.TagNumber(3)
-  $82.EulerZYXValue get eulerAngles => $_getN(2);
+  $83.EulerZYXValue get eulerAngles => $_getN(2);
   @$pb.TagNumber(3)
-  set eulerAngles($82.EulerZYXValue v) { setField(3, v); }
+  set eulerAngles($83.EulerZYXValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEulerAngles() => $_has(2);
   @$pb.TagNumber(3)
   void clearEulerAngles() => clearField(3);
   @$pb.TagNumber(3)
-  $82.EulerZYXValue ensureEulerAngles() => $_ensure(2);
+  $83.EulerZYXValue ensureEulerAngles() => $_ensure(2);
 
   /// The body's orientation described with a quaternion.
   @$pb.TagNumber(4)
-  $61.Quaternion get quaternion => $_getN(3);
+  $60.Quaternion get quaternion => $_getN(3);
   @$pb.TagNumber(4)
-  set quaternion($61.Quaternion v) { setField(4, v); }
+  set quaternion($60.Quaternion v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasQuaternion() => $_has(3);
   @$pb.TagNumber(4)
   void clearQuaternion() => clearField(4);
   @$pb.TagNumber(4)
-  $61.Quaternion ensureQuaternion() => $_ensure(3);
+  $60.Quaternion ensureQuaternion() => $_ensure(3);
 }
 
 /// The AnimateLegs keyframe describes each leg using either joint angles or the foot position.
@@ -5258,8 +5421,8 @@ enum AnimateSingleLeg_Leg {
 class AnimateSingleLeg extends $pb.GeneratedMessage {
   factory AnimateSingleLeg({
     LegJointAngles? jointAngles,
-    $61.Vec3Value? footPos,
-    $59.BoolValue? stance,
+    $60.Vec3Value? footPos,
+    $58.BoolValue? stance,
   }) {
     final $result = create();
     if (jointAngles != null) {
@@ -5285,8 +5448,8 @@ class AnimateSingleLeg extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnimateSingleLeg', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..oo(0, [1, 2])
     ..aOM<LegJointAngles>(1, _omitFieldNames ? '' : 'jointAngles', subBuilder: LegJointAngles.create)
-    ..aOM<$61.Vec3Value>(2, _omitFieldNames ? '' : 'footPos', subBuilder: $61.Vec3Value.create)
-    ..aOM<$59.BoolValue>(3, _omitFieldNames ? '' : 'stance', subBuilder: $59.BoolValue.create)
+    ..aOM<$60.Vec3Value>(2, _omitFieldNames ? '' : 'footPos', subBuilder: $60.Vec3Value.create)
+    ..aOM<$58.BoolValue>(3, _omitFieldNames ? '' : 'stance', subBuilder: $58.BoolValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -5328,32 +5491,32 @@ class AnimateSingleLeg extends $pb.GeneratedMessage {
 
   /// The foot position of the leg in the animation frame.
   @$pb.TagNumber(2)
-  $61.Vec3Value get footPos => $_getN(1);
+  $60.Vec3Value get footPos => $_getN(1);
   @$pb.TagNumber(2)
-  set footPos($61.Vec3Value v) { setField(2, v); }
+  set footPos($60.Vec3Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFootPos() => $_has(1);
   @$pb.TagNumber(2)
   void clearFootPos() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3Value ensureFootPos() => $_ensure(1);
+  $60.Vec3Value ensureFootPos() => $_ensure(1);
 
   /// If true, the foot is in contact with the ground and standing. If false, the
   /// foot is in swing. If unset, the contact will be inferred from the leg joint angles
   /// or foot position.
   @$pb.TagNumber(3)
-  $59.BoolValue get stance => $_getN(2);
+  $58.BoolValue get stance => $_getN(2);
   @$pb.TagNumber(3)
-  set stance($59.BoolValue v) { setField(3, v); }
+  set stance($58.BoolValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasStance() => $_has(2);
   @$pb.TagNumber(3)
   void clearStance() => clearField(3);
   @$pb.TagNumber(3)
-  $59.BoolValue ensureStance() => $_ensure(2);
+  $58.BoolValue ensureStance() => $_ensure(2);
 }
 
-/// Descprition of each leg joint angle (hip x/y and knee) in radians.
+/// Description of each leg joint angle (hip x/y and knee) in radians.
 class LegJointAngles extends $pb.GeneratedMessage {
   factory LegJointAngles({
     $core.double? hipX,
@@ -5440,7 +5603,7 @@ enum ActiveMove_CommandLimits {
 class ActiveMove extends $pb.GeneratedMessage {
   factory ActiveMove({
     MoveParams? move,
-    $82.CustomGaitCommandLimits? customGaitCommandLimits,
+    $83.CustomGaitCommandLimits? customGaitCommandLimits,
   }) {
     final $result = create();
     if (move != null) {
@@ -5462,7 +5625,7 @@ class ActiveMove extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ActiveMove', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..oo(0, [2])
     ..aOM<MoveParams>(1, _omitFieldNames ? '' : 'move', subBuilder: MoveParams.create)
-    ..aOM<$82.CustomGaitCommandLimits>(2, _omitFieldNames ? '' : 'customGaitCommandLimits', subBuilder: $82.CustomGaitCommandLimits.create)
+    ..aOM<$83.CustomGaitCommandLimits>(2, _omitFieldNames ? '' : 'customGaitCommandLimits', subBuilder: $83.CustomGaitCommandLimits.create)
     ..hasRequiredFields = false
   ;
 
@@ -5503,20 +5666,20 @@ class ActiveMove extends $pb.GeneratedMessage {
   MoveParams ensureMove() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $82.CustomGaitCommandLimits get customGaitCommandLimits => $_getN(1);
+  $83.CustomGaitCommandLimits get customGaitCommandLimits => $_getN(1);
   @$pb.TagNumber(2)
-  set customGaitCommandLimits($82.CustomGaitCommandLimits v) { setField(2, v); }
+  set customGaitCommandLimits($83.CustomGaitCommandLimits v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCustomGaitCommandLimits() => $_has(1);
   @$pb.TagNumber(2)
   void clearCustomGaitCommandLimits() => clearField(2);
   @$pb.TagNumber(2)
-  $82.CustomGaitCommandLimits ensureCustomGaitCommandLimits() => $_ensure(1);
+  $83.CustomGaitCommandLimits ensureCustomGaitCommandLimits() => $_ensure(1);
 }
 
 class ChoreographyStatusRequest extends $pb.GeneratedMessage {
   factory ChoreographyStatusRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -5529,7 +5692,7 @@ class ChoreographyStatusRequest extends $pb.GeneratedMessage {
   factory ChoreographyStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChoreographyStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -5556,27 +5719,28 @@ class ChoreographyStatusRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class ChoreographyStatusResponse extends $pb.GeneratedMessage {
   factory ChoreographyStatusResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     ChoreographyStatusResponse_Status? status,
     $core.int? executionId,
     $core.double? currentSlice,
     $core.Iterable<ActiveMove>? activeMoves,
     $core.int? sequenceSlices,
     $core.double? sequenceSlicesPerMinute,
-    $60.Timestamp? validityTime,
+    $59.Timestamp? validityTime,
+    $core.String? sequenceName,
   }) {
     final $result = create();
     if (header != null) {
@@ -5603,6 +5767,9 @@ class ChoreographyStatusResponse extends $pb.GeneratedMessage {
     if (validityTime != null) {
       $result.validityTime = validityTime;
     }
+    if (sequenceName != null) {
+      $result.sequenceName = sequenceName;
+    }
     return $result;
   }
   ChoreographyStatusResponse._() : super();
@@ -5610,14 +5777,15 @@ class ChoreographyStatusResponse extends $pb.GeneratedMessage {
   factory ChoreographyStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChoreographyStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<ChoreographyStatusResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ChoreographyStatusResponse_Status.STATUS_UNKNOWN, valueOf: ChoreographyStatusResponse_Status.valueOf, enumValues: ChoreographyStatusResponse_Status.values)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'executionId', $pb.PbFieldType.O3)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'currentSlice', $pb.PbFieldType.OD)
     ..pc<ActiveMove>(5, _omitFieldNames ? '' : 'activeMoves', $pb.PbFieldType.PM, subBuilder: ActiveMove.create)
     ..a<$core.int>(6, _omitFieldNames ? '' : 'sequenceSlices', $pb.PbFieldType.O3)
     ..a<$core.double>(7, _omitFieldNames ? '' : 'sequenceSlicesPerMinute', $pb.PbFieldType.OD)
-    ..aOM<$60.Timestamp>(8, _omitFieldNames ? '' : 'validityTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(8, _omitFieldNames ? '' : 'validityTime', subBuilder: $59.Timestamp.create)
+    ..aOS(9, _omitFieldNames ? '' : 'sequenceName')
     ..hasRequiredFields = false
   ;
 
@@ -5644,15 +5812,15 @@ class ChoreographyStatusResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ChoreographyStatusResponse_Status get status => $_getN(1);
@@ -5710,15 +5878,220 @@ class ChoreographyStatusResponse extends $pb.GeneratedMessage {
 
   /// When this was true in robot time.
   @$pb.TagNumber(8)
-  $60.Timestamp get validityTime => $_getN(7);
+  $59.Timestamp get validityTime => $_getN(7);
   @$pb.TagNumber(8)
-  set validityTime($60.Timestamp v) { setField(8, v); }
+  set validityTime($59.Timestamp v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasValidityTime() => $_has(7);
   @$pb.TagNumber(8)
   void clearValidityTime() => clearField(8);
   @$pb.TagNumber(8)
-  $60.Timestamp ensureValidityTime() => $_ensure(7);
+  $59.Timestamp ensureValidityTime() => $_ensure(7);
+
+  /// Name of the active sequence, None if the robot is not in a dance state.
+  @$pb.TagNumber(9)
+  $core.String get sequenceName => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set sequenceName($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasSequenceName() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSequenceName() => clearField(9);
+}
+
+class ChoreographyTimeAdjustRequest extends $pb.GeneratedMessage {
+  factory ChoreographyTimeAdjustRequest({
+    $67.RequestHeader? header,
+    $59.Timestamp? overrideStartTime,
+    $61.Duration? acceptableTimeDifference,
+    $61.Duration? validityTime,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (overrideStartTime != null) {
+      $result.overrideStartTime = overrideStartTime;
+    }
+    if (acceptableTimeDifference != null) {
+      $result.acceptableTimeDifference = acceptableTimeDifference;
+    }
+    if (validityTime != null) {
+      $result.validityTime = validityTime;
+    }
+    return $result;
+  }
+  ChoreographyTimeAdjustRequest._() : super();
+  factory ChoreographyTimeAdjustRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChoreographyTimeAdjustRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChoreographyTimeAdjustRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'overrideStartTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$61.Duration>(3, _omitFieldNames ? '' : 'acceptableTimeDifference', subBuilder: $61.Duration.create)
+    ..aOM<$61.Duration>(4, _omitFieldNames ? '' : 'validityTime', subBuilder: $61.Duration.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ChoreographyTimeAdjustRequest clone() => ChoreographyTimeAdjustRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ChoreographyTimeAdjustRequest copyWith(void Function(ChoreographyTimeAdjustRequest) updates) => super.copyWith((message) => updates(message as ChoreographyTimeAdjustRequest)) as ChoreographyTimeAdjustRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ChoreographyTimeAdjustRequest create() => ChoreographyTimeAdjustRequest._();
+  ChoreographyTimeAdjustRequest createEmptyInstance() => create();
+  static $pb.PbList<ChoreographyTimeAdjustRequest> createRepeated() => $pb.PbList<ChoreographyTimeAdjustRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ChoreographyTimeAdjustRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChoreographyTimeAdjustRequest>(create);
+  static ChoreographyTimeAdjustRequest? _defaultInstance;
+
+  /// Common request header
+  @$pb.TagNumber(1)
+  $67.RequestHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.RequestHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.RequestHeader ensureHeader() => $_ensure(0);
+
+  /// The absolute time to start the choreography at. This start time will override the start time
+  /// defined in an ExecuteChoreographyRequest if it fits within the limits defined by the
+  /// acceptable_time_difference and the override_validity_time. This should be in the robot's
+  /// clock.
+  @$pb.TagNumber(2)
+  $59.Timestamp get overrideStartTime => $_getN(1);
+  @$pb.TagNumber(2)
+  set overrideStartTime($59.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOverrideStartTime() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOverrideStartTime() => clearField(2);
+  @$pb.TagNumber(2)
+  $59.Timestamp ensureOverrideStartTime() => $_ensure(1);
+
+  /// The maximum difference in time, in seconds, between an ExecuteChoreography start time and the
+  /// override time where the override start time will used instead of the ExecuteChoreography
+  /// start time. If the difference between the override time and the ExecuteChoreographyRequest
+  /// time is bigger than the acceptable_time_difference value, the override time will not be used.
+  /// When specified the acceptable_time_difference can be at most 2 minutes. If not specified, the
+  /// acceptable_time_difference will be 20 seconds.
+  @$pb.TagNumber(3)
+  $61.Duration get acceptableTimeDifference => $_getN(2);
+  @$pb.TagNumber(3)
+  set acceptableTimeDifference($61.Duration v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAcceptableTimeDifference() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAcceptableTimeDifference() => clearField(3);
+  @$pb.TagNumber(3)
+  $61.Duration ensureAcceptableTimeDifference() => $_ensure(2);
+
+  /// For what period of time, in seconds from the current moment, should this override start time
+  /// be considered valid. override start times that are further in the future than the override
+  /// validity period won't be accepted when received. When specified, override_validity_time can
+  /// be at most 5 minutes past the current time. If not specified override_validity_time will be
+  /// 60 seconds.
+  @$pb.TagNumber(4)
+  $61.Duration get validityTime => $_getN(3);
+  @$pb.TagNumber(4)
+  set validityTime($61.Duration v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasValidityTime() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearValidityTime() => clearField(4);
+  @$pb.TagNumber(4)
+  $61.Duration ensureValidityTime() => $_ensure(3);
+}
+
+class ChoreographyTimeAdjustResponse extends $pb.GeneratedMessage {
+  factory ChoreographyTimeAdjustResponse({
+    $67.ResponseHeader? header,
+    ChoreographyTimeAdjustResponse_Status? status,
+    $core.Iterable<$core.String>? warnings,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (warnings != null) {
+      $result.warnings.addAll(warnings);
+    }
+    return $result;
+  }
+  ChoreographyTimeAdjustResponse._() : super();
+  factory ChoreographyTimeAdjustResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ChoreographyTimeAdjustResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ChoreographyTimeAdjustResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..e<ChoreographyTimeAdjustResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ChoreographyTimeAdjustResponse_Status.STATUS_UNKNOWN, valueOf: ChoreographyTimeAdjustResponse_Status.valueOf, enumValues: ChoreographyTimeAdjustResponse_Status.values)
+    ..pPS(3, _omitFieldNames ? '' : 'warnings')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ChoreographyTimeAdjustResponse clone() => ChoreographyTimeAdjustResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ChoreographyTimeAdjustResponse copyWith(void Function(ChoreographyTimeAdjustResponse) updates) => super.copyWith((message) => updates(message as ChoreographyTimeAdjustResponse)) as ChoreographyTimeAdjustResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ChoreographyTimeAdjustResponse create() => ChoreographyTimeAdjustResponse._();
+  ChoreographyTimeAdjustResponse createEmptyInstance() => create();
+  static $pb.PbList<ChoreographyTimeAdjustResponse> createRepeated() => $pb.PbList<ChoreographyTimeAdjustResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ChoreographyTimeAdjustResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ChoreographyTimeAdjustResponse>(create);
+  static ChoreographyTimeAdjustResponse? _defaultInstance;
+
+  /// Common response header
+  @$pb.TagNumber(1)
+  $67.ResponseHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.ResponseHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  ChoreographyTimeAdjustResponse_Status get status => $_getN(1);
+  @$pb.TagNumber(2)
+  set status(ChoreographyTimeAdjustResponse_Status v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => clearField(2);
+
+  /// If certain parameters didn't fall within the correct limits warning messages describing those
+  /// issues will be populated here to indicate those problems. If there were issues with
+  /// parameters other than the override_start_time there may be warnings even if the response
+  /// status was STATUS_OK.
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get warnings => $_getList(2);
 }
 
 

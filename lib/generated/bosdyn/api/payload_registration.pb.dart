@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'header.pb.dart' as $68;
+import 'header.pb.dart' as $67;
 import 'payload.pb.dart' as $20;
 import 'payload_registration.pbenum.dart';
 import 'robot_id.pb.dart' as $25;
@@ -24,7 +24,7 @@ export 'payload_registration.pbenum.dart';
 /// able to register it to the directory.
 class RegisterPayloadRequest extends $pb.GeneratedMessage {
   factory RegisterPayloadRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $20.Payload? payload,
     $core.String? payloadSecret,
   }) {
@@ -45,7 +45,7 @@ class RegisterPayloadRequest extends $pb.GeneratedMessage {
   factory RegisterPayloadRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterPayloadRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<$20.Payload>(2, _omitFieldNames ? '' : 'payload', subBuilder: $20.Payload.create)
     ..aOS(3, _omitFieldNames ? '' : 'payloadSecret')
     ..hasRequiredFields = false
@@ -74,15 +74,15 @@ class RegisterPayloadRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The payload to register, which must have, at minimum, GUID specified correctly.
   /// The admin console can be used to verify that the payload definition is valid
@@ -113,7 +113,7 @@ class RegisterPayloadRequest extends $pb.GeneratedMessage {
 /// registered to the directory.
 class RegisterPayloadResponse extends $pb.GeneratedMessage {
   factory RegisterPayloadResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     RegisterPayloadResponse_Status? status,
   }) {
     final $result = create();
@@ -130,7 +130,7 @@ class RegisterPayloadResponse extends $pb.GeneratedMessage {
   factory RegisterPayloadResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterPayloadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<RegisterPayloadResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: RegisterPayloadResponse_Status.STATUS_UNKNOWN, valueOf: RegisterPayloadResponse_Status.valueOf, enumValues: RegisterPayloadResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -158,15 +158,15 @@ class RegisterPayloadResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
@@ -184,7 +184,7 @@ class RegisterPayloadResponse extends $pb.GeneratedMessage {
 /// GUID and is_authorized fields are immutable and cannot be updated.
 class UpdatePayloadVersionRequest extends $pb.GeneratedMessage {
   factory UpdatePayloadVersionRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   @$core.Deprecated('This field is deprecated.')
     $core.String? payloadGuid,
   @$core.Deprecated('This field is deprecated.')
@@ -217,7 +217,7 @@ class UpdatePayloadVersionRequest extends $pb.GeneratedMessage {
   factory UpdatePayloadVersionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePayloadVersionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'payloadGuid')
     ..aOS(3, _omitFieldNames ? '' : 'payloadSecret')
     ..aOM<$25.SoftwareVersion>(4, _omitFieldNames ? '' : 'updatedVersion', subBuilder: $25.SoftwareVersion.create)
@@ -248,15 +248,15 @@ class UpdatePayloadVersionRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The GUID of the payload to be updated.
   /// DEPRECATED as of 3.0.0. Please use payload_credentials instead.
@@ -317,7 +317,7 @@ class UpdatePayloadVersionRequest extends $pb.GeneratedMessage {
 /// successful.
 class UpdatePayloadVersionResponse extends $pb.GeneratedMessage {
   factory UpdatePayloadVersionResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     UpdatePayloadVersionResponse_Status? status,
   }) {
     final $result = create();
@@ -334,7 +334,7 @@ class UpdatePayloadVersionResponse extends $pb.GeneratedMessage {
   factory UpdatePayloadVersionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePayloadVersionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<UpdatePayloadVersionResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UpdatePayloadVersionResponse_Status.STATUS_UNKNOWN, valueOf: UpdatePayloadVersionResponse_Status.valueOf, enumValues: UpdatePayloadVersionResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -362,15 +362,15 @@ class UpdatePayloadVersionResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
@@ -388,7 +388,7 @@ class UpdatePayloadVersionResponse extends $pb.GeneratedMessage {
 /// The returned user token will have limited access to the services necessary for a simple payload.
 class GetPayloadAuthTokenRequest extends $pb.GeneratedMessage {
   factory GetPayloadAuthTokenRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   @$core.Deprecated('This field is deprecated.')
     $core.String? payloadGuid,
   @$core.Deprecated('This field is deprecated.')
@@ -417,7 +417,7 @@ class GetPayloadAuthTokenRequest extends $pb.GeneratedMessage {
   factory GetPayloadAuthTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPayloadAuthTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'payloadGuid')
     ..aOS(3, _omitFieldNames ? '' : 'payloadSecret')
     ..aOM<PayloadCredentials>(4, _omitFieldNames ? '' : 'payloadCredentials', subBuilder: PayloadCredentials.create)
@@ -447,15 +447,15 @@ class GetPayloadAuthTokenRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The GUID to identify which payload to get the auth token for.
   /// DEPRECATED as of 3.0.0. Please use payload_credentials instead.
@@ -503,7 +503,7 @@ class GetPayloadAuthTokenRequest extends $pb.GeneratedMessage {
 /// The GetPayloadAuthToken response message that returns the token for the payload.
 class GetPayloadAuthTokenResponse extends $pb.GeneratedMessage {
   factory GetPayloadAuthTokenResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     GetPayloadAuthTokenResponse_Status? status,
     $core.String? token,
   }) {
@@ -524,7 +524,7 @@ class GetPayloadAuthTokenResponse extends $pb.GeneratedMessage {
   factory GetPayloadAuthTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPayloadAuthTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<GetPayloadAuthTokenResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: GetPayloadAuthTokenResponse_Status.STATUS_UNKNOWN, valueOf: GetPayloadAuthTokenResponse_Status.valueOf, enumValues: GetPayloadAuthTokenResponse_Status.values)
     ..aOS(3, _omitFieldNames ? '' : 'token')
     ..hasRequiredFields = false
@@ -553,15 +553,15 @@ class GetPayloadAuthTokenResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
@@ -589,7 +589,7 @@ class GetPayloadAuthTokenResponse extends $pb.GeneratedMessage {
 /// GUID is immutable and cannot be updated.
 class UpdatePayloadAttachedRequest extends $pb.GeneratedMessage {
   factory UpdatePayloadAttachedRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     PayloadCredentials? payloadCredentials,
     UpdatePayloadAttachedRequest_Request? request,
   }) {
@@ -610,7 +610,7 @@ class UpdatePayloadAttachedRequest extends $pb.GeneratedMessage {
   factory UpdatePayloadAttachedRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePayloadAttachedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<PayloadCredentials>(2, _omitFieldNames ? '' : 'payloadCredentials', subBuilder: PayloadCredentials.create)
     ..e<UpdatePayloadAttachedRequest_Request>(3, _omitFieldNames ? '' : 'request', $pb.PbFieldType.OE, defaultOrMaker: UpdatePayloadAttachedRequest_Request.REQUEST_UNKNOWN, valueOf: UpdatePayloadAttachedRequest_Request.valueOf, enumValues: UpdatePayloadAttachedRequest_Request.values)
     ..hasRequiredFields = false
@@ -639,15 +639,15 @@ class UpdatePayloadAttachedRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Payload credentials, used to identify the payload and authorize the changes.
   @$pb.TagNumber(2)
@@ -676,7 +676,7 @@ class UpdatePayloadAttachedRequest extends $pb.GeneratedMessage {
 /// successful.
 class UpdatePayloadAttachedResponse extends $pb.GeneratedMessage {
   factory UpdatePayloadAttachedResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     UpdatePayloadAttachedResponse_Status? status,
   }) {
     final $result = create();
@@ -693,7 +693,7 @@ class UpdatePayloadAttachedResponse extends $pb.GeneratedMessage {
   factory UpdatePayloadAttachedResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePayloadAttachedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<UpdatePayloadAttachedResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UpdatePayloadAttachedResponse_Status.STATUS_UNKNOWN, valueOf: UpdatePayloadAttachedResponse_Status.valueOf, enumValues: UpdatePayloadAttachedResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -721,15 +721,15 @@ class UpdatePayloadAttachedResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)

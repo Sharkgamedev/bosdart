@@ -19,8 +19,6 @@ class GetAuthTokenResponse_Status extends $pb.ProtobufEnum {
   static const GetAuthTokenResponse_Status STATUS_INVALID_LOGIN = GetAuthTokenResponse_Status._(2, _omitEnumNames ? '' : 'STATUS_INVALID_LOGIN');
   static const GetAuthTokenResponse_Status STATUS_INVALID_TOKEN = GetAuthTokenResponse_Status._(3, _omitEnumNames ? '' : 'STATUS_INVALID_TOKEN');
   static const GetAuthTokenResponse_Status STATUS_TEMPORARILY_LOCKED_OUT = GetAuthTokenResponse_Status._(4, _omitEnumNames ? '' : 'STATUS_TEMPORARILY_LOCKED_OUT');
-  static const GetAuthTokenResponse_Status STATUS_INVALID_APPLICATION_TOKEN = GetAuthTokenResponse_Status._(5, _omitEnumNames ? '' : 'STATUS_INVALID_APPLICATION_TOKEN');
-  static const GetAuthTokenResponse_Status STATUS_EXPIRED_APPLICATION_TOKEN = GetAuthTokenResponse_Status._(6, _omitEnumNames ? '' : 'STATUS_EXPIRED_APPLICATION_TOKEN');
 
   static const $core.List<GetAuthTokenResponse_Status> values = <GetAuthTokenResponse_Status> [
     STATUS_UNKNOWN,
@@ -28,8 +26,6 @@ class GetAuthTokenResponse_Status extends $pb.ProtobufEnum {
     STATUS_INVALID_LOGIN,
     STATUS_INVALID_TOKEN,
     STATUS_TEMPORARILY_LOCKED_OUT,
-    STATUS_INVALID_APPLICATION_TOKEN,
-    STATUS_EXPIRED_APPLICATION_TOKEN,
   ];
 
   static final $core.Map<$core.int, GetAuthTokenResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);

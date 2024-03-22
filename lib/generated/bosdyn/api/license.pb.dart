@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $60;
-import 'header.pb.dart' as $68;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
+import 'header.pb.dart' as $67;
 import 'license.pbenum.dart';
 
 export 'license.pbenum.dart';
@@ -24,8 +24,8 @@ class LicenseInfo extends $pb.GeneratedMessage {
     LicenseInfo_Status? status,
     $core.String? id,
     $core.String? robotSerial,
-    $60.Timestamp? notValidBefore,
-    $60.Timestamp? notValidAfter,
+    $59.Timestamp? notValidBefore,
+    $59.Timestamp? notValidAfter,
     $core.Iterable<$core.String>? licensedFeatures,
   }) {
     final $result = create();
@@ -57,8 +57,8 @@ class LicenseInfo extends $pb.GeneratedMessage {
     ..e<LicenseInfo_Status>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: LicenseInfo_Status.STATUS_UNKNOWN, valueOf: LicenseInfo_Status.valueOf, enumValues: LicenseInfo_Status.values)
     ..aOS(2, _omitFieldNames ? '' : 'id')
     ..aOS(3, _omitFieldNames ? '' : 'robotSerial')
-    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'notValidBefore', subBuilder: $60.Timestamp.create)
-    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'notValidAfter', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'notValidBefore', subBuilder: $59.Timestamp.create)
+    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'notValidAfter', subBuilder: $59.Timestamp.create)
     ..pPS(6, _omitFieldNames ? '' : 'licensedFeatures')
     ..hasRequiredFields = false
   ;
@@ -116,27 +116,27 @@ class LicenseInfo extends $pb.GeneratedMessage {
 
   /// The license is not valid for use for any dates before this timestamp.
   @$pb.TagNumber(4)
-  $60.Timestamp get notValidBefore => $_getN(3);
+  $59.Timestamp get notValidBefore => $_getN(3);
   @$pb.TagNumber(4)
-  set notValidBefore($60.Timestamp v) { setField(4, v); }
+  set notValidBefore($59.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasNotValidBefore() => $_has(3);
   @$pb.TagNumber(4)
   void clearNotValidBefore() => clearField(4);
   @$pb.TagNumber(4)
-  $60.Timestamp ensureNotValidBefore() => $_ensure(3);
+  $59.Timestamp ensureNotValidBefore() => $_ensure(3);
 
   /// The license is not valid for use for any dates after this timestamp.
   @$pb.TagNumber(5)
-  $60.Timestamp get notValidAfter => $_getN(4);
+  $59.Timestamp get notValidAfter => $_getN(4);
   @$pb.TagNumber(5)
-  set notValidAfter($60.Timestamp v) { setField(5, v); }
+  set notValidAfter($59.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasNotValidAfter() => $_has(4);
   @$pb.TagNumber(5)
   void clearNotValidAfter() => clearField(5);
   @$pb.TagNumber(5)
-  $60.Timestamp ensureNotValidAfter() => $_ensure(4);
+  $59.Timestamp ensureNotValidAfter() => $_ensure(4);
 
   /// / Human readable list of licensed features included for this license.
   @$pb.TagNumber(6)
@@ -145,7 +145,7 @@ class LicenseInfo extends $pb.GeneratedMessage {
 
 class GetLicenseInfoRequest extends $pb.GeneratedMessage {
   factory GetLicenseInfoRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -158,7 +158,7 @@ class GetLicenseInfoRequest extends $pb.GeneratedMessage {
   factory GetLicenseInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLicenseInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -184,20 +184,20 @@ class GetLicenseInfoRequest extends $pb.GeneratedMessage {
   static GetLicenseInfoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class GetLicenseInfoResponse extends $pb.GeneratedMessage {
   factory GetLicenseInfoResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     LicenseInfo? license,
   }) {
     final $result = create();
@@ -214,7 +214,7 @@ class GetLicenseInfoResponse extends $pb.GeneratedMessage {
   factory GetLicenseInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLicenseInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<LicenseInfo>(2, _omitFieldNames ? '' : 'license', subBuilder: LicenseInfo.create)
     ..hasRequiredFields = false
   ;
@@ -241,15 +241,15 @@ class GetLicenseInfoResponse extends $pb.GeneratedMessage {
   static GetLicenseInfoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The details about the current license that is uploaded to the robot.
   @$pb.TagNumber(2)
@@ -266,7 +266,7 @@ class GetLicenseInfoResponse extends $pb.GeneratedMessage {
 
 class GetFeatureEnabledRequest extends $pb.GeneratedMessage {
   factory GetFeatureEnabledRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<$core.String>? featureCodes,
   }) {
     final $result = create();
@@ -283,7 +283,7 @@ class GetFeatureEnabledRequest extends $pb.GeneratedMessage {
   factory GetFeatureEnabledRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFeatureEnabledRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pPS(2, _omitFieldNames ? '' : 'featureCodes')
     ..hasRequiredFields = false
   ;
@@ -311,15 +311,15 @@ class GetFeatureEnabledRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Check if specific named features are enabled on the robot under the currently
   /// loaded license.
@@ -329,7 +329,7 @@ class GetFeatureEnabledRequest extends $pb.GeneratedMessage {
 
 class GetFeatureEnabledResponse extends $pb.GeneratedMessage {
   factory GetFeatureEnabledResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Map<$core.String, $core.bool>? featureEnabled,
   }) {
     final $result = create();
@@ -346,7 +346,7 @@ class GetFeatureEnabledResponse extends $pb.GeneratedMessage {
   factory GetFeatureEnabledResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFeatureEnabledResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..m<$core.String, $core.bool>(2, _omitFieldNames ? '' : 'featureEnabled', entryClassName: 'GetFeatureEnabledResponse.FeatureEnabledEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OB, packageName: const $pb.PackageName('bosdyn.api'))
     ..hasRequiredFields = false
   ;
@@ -374,15 +374,15 @@ class GetFeatureEnabledResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The resulting map showing the feature name (as the map key) and a boolean indicating
   /// if the feature is enabled with this license (as the map value).

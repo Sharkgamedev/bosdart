@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/wrappers.pb.dart' as $59;
-import '../header.pb.dart' as $68;
+import '../../../google/protobuf/wrappers.pb.dart' as $58;
+import '../header.pb.dart' as $67;
 import 'network.pbenum.dart';
 
 export 'network.pbenum.dart';
@@ -22,10 +22,10 @@ export 'network.pbenum.dart';
 /// Network configuration data.
 class NetworkTuple extends $pb.GeneratedMessage {
   factory NetworkTuple({
-    $59.UInt32Value? address,
-    $59.UInt32Value? netmask,
-    $59.UInt32Value? gateway,
-    $59.UInt32Value? mtu,
+    $58.UInt32Value? address,
+    $58.UInt32Value? netmask,
+    $58.UInt32Value? gateway,
+    $58.UInt32Value? mtu,
   }) {
     final $result = create();
     if (address != null) {
@@ -47,10 +47,10 @@ class NetworkTuple extends $pb.GeneratedMessage {
   factory NetworkTuple.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetworkTuple', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$59.UInt32Value>(2, _omitFieldNames ? '' : 'address', subBuilder: $59.UInt32Value.create)
-    ..aOM<$59.UInt32Value>(3, _omitFieldNames ? '' : 'netmask', subBuilder: $59.UInt32Value.create)
-    ..aOM<$59.UInt32Value>(4, _omitFieldNames ? '' : 'gateway', subBuilder: $59.UInt32Value.create)
-    ..aOM<$59.UInt32Value>(5, _omitFieldNames ? '' : 'mtu', subBuilder: $59.UInt32Value.create)
+    ..aOM<$58.UInt32Value>(2, _omitFieldNames ? '' : 'address', subBuilder: $58.UInt32Value.create)
+    ..aOM<$58.UInt32Value>(3, _omitFieldNames ? '' : 'netmask', subBuilder: $58.UInt32Value.create)
+    ..aOM<$58.UInt32Value>(4, _omitFieldNames ? '' : 'gateway', subBuilder: $58.UInt32Value.create)
+    ..aOM<$58.UInt32Value>(5, _omitFieldNames ? '' : 'mtu', subBuilder: $58.UInt32Value.create)
     ..hasRequiredFields = false
   ;
 
@@ -77,58 +77,58 @@ class NetworkTuple extends $pb.GeneratedMessage {
 
   /// a big-endian representation of an IPv4 address
   @$pb.TagNumber(2)
-  $59.UInt32Value get address => $_getN(0);
+  $58.UInt32Value get address => $_getN(0);
   @$pb.TagNumber(2)
-  set address($59.UInt32Value v) { setField(2, v); }
+  set address($58.UInt32Value v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAddress() => $_has(0);
   @$pb.TagNumber(2)
   void clearAddress() => clearField(2);
   @$pb.TagNumber(2)
-  $59.UInt32Value ensureAddress() => $_ensure(0);
+  $58.UInt32Value ensureAddress() => $_ensure(0);
 
   /// The mask used for defining the system's subnet
   @$pb.TagNumber(3)
-  $59.UInt32Value get netmask => $_getN(1);
+  $58.UInt32Value get netmask => $_getN(1);
   @$pb.TagNumber(3)
-  set netmask($59.UInt32Value v) { setField(3, v); }
+  set netmask($58.UInt32Value v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasNetmask() => $_has(1);
   @$pb.TagNumber(3)
   void clearNetmask() => clearField(3);
   @$pb.TagNumber(3)
-  $59.UInt32Value ensureNetmask() => $_ensure(1);
+  $58.UInt32Value ensureNetmask() => $_ensure(1);
 
   /// A global routing is set up for the address defined below (if present)
   @$pb.TagNumber(4)
-  $59.UInt32Value get gateway => $_getN(2);
+  $58.UInt32Value get gateway => $_getN(2);
   @$pb.TagNumber(4)
-  set gateway($59.UInt32Value v) { setField(4, v); }
+  set gateway($58.UInt32Value v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasGateway() => $_has(2);
   @$pb.TagNumber(4)
   void clearGateway() => clearField(4);
   @$pb.TagNumber(4)
-  $59.UInt32Value ensureGateway() => $_ensure(2);
+  $58.UInt32Value ensureGateway() => $_ensure(2);
 
   /// If MTU is present, and <16 bits wide, then it is set for the ethernet interface's MTU
   /// if not, the MTU is set to 1500
   @$pb.TagNumber(5)
-  $59.UInt32Value get mtu => $_getN(3);
+  $58.UInt32Value get mtu => $_getN(3);
   @$pb.TagNumber(5)
-  set mtu($59.UInt32Value v) { setField(5, v); }
+  set mtu($58.UInt32Value v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMtu() => $_has(3);
   @$pb.TagNumber(5)
   void clearMtu() => clearField(5);
   @$pb.TagNumber(5)
-  $59.UInt32Value ensureMtu() => $_ensure(3);
+  $58.UInt32Value ensureMtu() => $_ensure(3);
 }
 
 /// Retrieve current network configuration.
 class GetNetworkSettingsRequest extends $pb.GeneratedMessage {
   factory GetNetworkSettingsRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -141,7 +141,7 @@ class GetNetworkSettingsRequest extends $pb.GeneratedMessage {
   factory GetNetworkSettingsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetNetworkSettingsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -168,21 +168,21 @@ class GetNetworkSettingsRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Provides the current network configuration.
 class GetNetworkSettingsResponse extends $pb.GeneratedMessage {
   factory GetNetworkSettingsResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     NetworkTuple? settings,
   }) {
     final $result = create();
@@ -199,7 +199,7 @@ class GetNetworkSettingsResponse extends $pb.GeneratedMessage {
   factory GetNetworkSettingsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetNetworkSettingsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<NetworkTuple>(2, _omitFieldNames ? '' : 'settings', subBuilder: NetworkTuple.create)
     ..hasRequiredFields = false
   ;
@@ -227,15 +227,15 @@ class GetNetworkSettingsResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Current network configuration.
   @$pb.TagNumber(2)
@@ -253,7 +253,7 @@ class GetNetworkSettingsResponse extends $pb.GeneratedMessage {
 /// Request the SSL certificate currently in use.
 class GetSSLCertRequest extends $pb.GeneratedMessage {
   factory GetSSLCertRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -266,7 +266,7 @@ class GetSSLCertRequest extends $pb.GeneratedMessage {
   factory GetSSLCertRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSSLCertRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -293,21 +293,21 @@ class GetSSLCertRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Provides the SSL certificate currently in use.
 class GetSSLCertResponse extends $pb.GeneratedMessage {
   factory GetSSLCertResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.String? certificate,
   }) {
     final $result = create();
@@ -324,7 +324,7 @@ class GetSSLCertResponse extends $pb.GeneratedMessage {
   factory GetSSLCertResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSSLCertResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'certificate')
     ..hasRequiredFields = false
   ;
@@ -352,15 +352,15 @@ class GetSSLCertResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// An ASCII-armored representation of the SSL certificate
   @$pb.TagNumber(2)
@@ -445,9 +445,9 @@ enum ICEServer_auth_params_Credential {
 
 class ICEServer_auth_params extends $pb.GeneratedMessage {
   factory ICEServer_auth_params({
-    $59.StringValue? username,
+    $58.StringValue? username,
     ICEServer_auth_params_oauth_pair? oauth,
-    $59.StringValue? password,
+    $58.StringValue? password,
   }) {
     final $result = create();
     if (username != null) {
@@ -472,9 +472,9 @@ class ICEServer_auth_params extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ICEServer.auth_params', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
     ..oo(0, [2, 3])
-    ..aOM<$59.StringValue>(1, _omitFieldNames ? '' : 'username', subBuilder: $59.StringValue.create)
+    ..aOM<$58.StringValue>(1, _omitFieldNames ? '' : 'username', subBuilder: $58.StringValue.create)
     ..aOM<ICEServer_auth_params_oauth_pair>(2, _omitFieldNames ? '' : 'oauth', subBuilder: ICEServer_auth_params_oauth_pair.create)
-    ..aOM<$59.StringValue>(3, _omitFieldNames ? '' : 'password', subBuilder: $59.StringValue.create)
+    ..aOM<$58.StringValue>(3, _omitFieldNames ? '' : 'password', subBuilder: $58.StringValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -504,15 +504,15 @@ class ICEServer_auth_params extends $pb.GeneratedMessage {
 
   /// username is optional, and is only used for authenticated TURN servers
   @$pb.TagNumber(1)
-  $59.StringValue get username => $_getN(0);
+  $58.StringValue get username => $_getN(0);
   @$pb.TagNumber(1)
-  set username($59.StringValue v) { setField(1, v); }
+  set username($58.StringValue v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUsername() => $_has(0);
   @$pb.TagNumber(1)
   void clearUsername() => clearField(1);
   @$pb.TagNumber(1)
-  $59.StringValue ensureUsername() => $_ensure(0);
+  $58.StringValue ensureUsername() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ICEServer_auth_params_oauth_pair get oauth => $_getN(1);
@@ -526,15 +526,15 @@ class ICEServer_auth_params extends $pb.GeneratedMessage {
   ICEServer_auth_params_oauth_pair ensureOauth() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $59.StringValue get password => $_getN(2);
+  $58.StringValue get password => $_getN(2);
   @$pb.TagNumber(3)
-  set password($59.StringValue v) { setField(3, v); }
+  set password($58.StringValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasPassword() => $_has(2);
   @$pb.TagNumber(3)
   void clearPassword() => clearField(3);
   @$pb.TagNumber(3)
-  $59.StringValue ensurePassword() => $_ensure(2);
+  $58.StringValue ensurePassword() => $_ensure(2);
 }
 
 /// Servers used in the ICE resolution process.
@@ -653,7 +653,7 @@ class ICEServer extends $pb.GeneratedMessage {
 /// Request the servers used for ICE resolution.
 class GetICEConfigurationRequest extends $pb.GeneratedMessage {
   factory GetICEConfigurationRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -666,7 +666,7 @@ class GetICEConfigurationRequest extends $pb.GeneratedMessage {
   factory GetICEConfigurationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetICEConfigurationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -693,21 +693,21 @@ class GetICEConfigurationRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Provides the ICE resolution servers.
 class GetICEConfigurationResponse extends $pb.GeneratedMessage {
   factory GetICEConfigurationResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<ICEServer>? servers,
   }) {
     final $result = create();
@@ -724,7 +724,7 @@ class GetICEConfigurationResponse extends $pb.GeneratedMessage {
   factory GetICEConfigurationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetICEConfigurationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<ICEServer>(2, _omitFieldNames ? '' : 'servers', $pb.PbFieldType.PM, subBuilder: ICEServer.create)
     ..hasRequiredFields = false
   ;
@@ -752,15 +752,15 @@ class GetICEConfigurationResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// List of servers used for ICE resolution.
   @$pb.TagNumber(2)
@@ -772,7 +772,7 @@ class GetICEConfigurationResponse extends $pb.GeneratedMessage {
 /// It is *not* appended.
 class SetICEConfigurationRequest extends $pb.GeneratedMessage {
   factory SetICEConfigurationRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<ICEServer>? servers,
   }) {
     final $result = create();
@@ -789,7 +789,7 @@ class SetICEConfigurationRequest extends $pb.GeneratedMessage {
   factory SetICEConfigurationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetICEConfigurationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pc<ICEServer>(2, _omitFieldNames ? '' : 'servers', $pb.PbFieldType.PM, subBuilder: ICEServer.create)
     ..hasRequiredFields = false
   ;
@@ -817,15 +817,15 @@ class SetICEConfigurationRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// List of servers used for ICE resolution.
   @$pb.TagNumber(2)
@@ -835,7 +835,7 @@ class SetICEConfigurationRequest extends $pb.GeneratedMessage {
 /// Result of modifying the ICE configuration.
 class SetICEConfigurationResponse extends $pb.GeneratedMessage {
   factory SetICEConfigurationResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -848,7 +848,7 @@ class SetICEConfigurationResponse extends $pb.GeneratedMessage {
   factory SetICEConfigurationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetICEConfigurationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -875,15 +875,15 @@ class SetICEConfigurationResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 

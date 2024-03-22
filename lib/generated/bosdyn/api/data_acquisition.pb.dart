@@ -14,18 +14,19 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/any.pb.dart' as $67;
-import '../../google/protobuf/duration.pb.dart' as $62;
-import '../../google/protobuf/struct.pb.dart' as $58;
-import '../../google/protobuf/timestamp.pb.dart' as $60;
+import '../../google/protobuf/any.pb.dart' as $66;
+import '../../google/protobuf/duration.pb.dart' as $61;
+import '../../google/protobuf/struct.pb.dart' as $57;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
 import 'alerts.pb.dart' as $75;
 import 'data_acquisition.pbenum.dart';
-import 'header.pb.dart' as $68;
-import 'image.pb.dart' as $11;
-import 'image.pbenum.dart' as $11;
+import 'header.pb.dart' as $67;
+import 'image.pb.dart' as $12;
+import 'image.pbenum.dart' as $12;
 import 'network_compute_bridge.pb.dart' as $18;
 import 'network_compute_bridge.pbenum.dart' as $18;
-import 'service_customization.pb.dart' as $72;
+import 'service_customization.pb.dart' as $71;
+import 'signals.pb.dart' as $76;
 
 export 'data_acquisition.pbenum.dart';
 
@@ -37,7 +38,8 @@ class DataAcquisitionCapability extends $pb.GeneratedMessage {
     $core.String? description,
     $core.String? channelName,
     $core.String? serviceName,
-    $72.DictParam_Spec? customParams,
+    $71.DictParam_Spec? customParams,
+    $core.bool? hasLiveData,
   }) {
     final $result = create();
     if (name != null) {
@@ -55,6 +57,9 @@ class DataAcquisitionCapability extends $pb.GeneratedMessage {
     if (customParams != null) {
       $result.customParams = customParams;
     }
+    if (hasLiveData != null) {
+      $result.hasLiveData = hasLiveData;
+    }
     return $result;
   }
   DataAcquisitionCapability._() : super();
@@ -66,7 +71,8 @@ class DataAcquisitionCapability extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'description')
     ..aOS(3, _omitFieldNames ? '' : 'channelName')
     ..aOS(4, _omitFieldNames ? '' : 'serviceName')
-    ..aOM<$72.DictParam_Spec>(5, _omitFieldNames ? '' : 'customParams', subBuilder: $72.DictParam_Spec.create)
+    ..aOM<$71.DictParam_Spec>(5, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam_Spec.create)
+    ..aOB(6, _omitFieldNames ? '' : 'hasLiveData')
     ..hasRequiredFields = false
   ;
 
@@ -135,15 +141,25 @@ class DataAcquisitionCapability extends $pb.GeneratedMessage {
 
   /// Custom parameters supported by this instance of the service.
   @$pb.TagNumber(5)
-  $72.DictParam_Spec get customParams => $_getN(4);
+  $71.DictParam_Spec get customParams => $_getN(4);
   @$pb.TagNumber(5)
-  set customParams($72.DictParam_Spec v) { setField(5, v); }
+  set customParams($71.DictParam_Spec v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCustomParams() => $_has(4);
   @$pb.TagNumber(5)
   void clearCustomParams() => clearField(5);
   @$pb.TagNumber(5)
-  $72.DictParam_Spec ensureCustomParams() => $_ensure(4);
+  $71.DictParam_Spec ensureCustomParams() => $_ensure(4);
+
+  /// Capability has live data available via GetLiveData RPC.
+  @$pb.TagNumber(6)
+  $core.bool get hasLiveData => $_getBF(5);
+  @$pb.TagNumber(6)
+  set hasLiveData($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasHasLiveData() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearHasLiveData() => clearField(6);
 }
 
 /// Description of an image acquisition capability. The image acquisition capabilities will be
@@ -154,7 +170,7 @@ class ImageAcquisitionCapability extends $pb.GeneratedMessage {
     $core.String? serviceName,
   @$core.Deprecated('This field is deprecated.')
     $core.Iterable<$core.String>? imageSourceNames,
-    $core.Iterable<$11.ImageSource>? imageSources,
+    $core.Iterable<$12.ImageSource>? imageSources,
   }) {
     final $result = create();
     if (serviceName != null) {
@@ -176,7 +192,7 @@ class ImageAcquisitionCapability extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImageAcquisitionCapability', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'serviceName')
     ..pPS(2, _omitFieldNames ? '' : 'imageSourceNames')
-    ..pc<$11.ImageSource>(3, _omitFieldNames ? '' : 'imageSources', $pb.PbFieldType.PM, subBuilder: $11.ImageSource.create)
+    ..pc<$12.ImageSource>(3, _omitFieldNames ? '' : 'imageSources', $pb.PbFieldType.PM, subBuilder: $12.ImageSource.create)
     ..hasRequiredFields = false
   ;
 
@@ -219,7 +235,7 @@ class ImageAcquisitionCapability extends $pb.GeneratedMessage {
 
   /// List of image sources reported by the image service (through the ListImageSources RPC).
   @$pb.TagNumber(3)
-  $core.List<$11.ImageSource> get imageSources => $_getList(2);
+  $core.List<$12.ImageSource> get imageSources => $_getList(2);
 }
 
 class NetworkComputeCapability extends $pb.GeneratedMessage {
@@ -389,7 +405,7 @@ class CaptureActionId extends $pb.GeneratedMessage {
   factory CaptureActionId({
     $core.String? actionName,
     $core.String? groupName,
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
   }) {
     final $result = create();
     if (actionName != null) {
@@ -410,7 +426,7 @@ class CaptureActionId extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CaptureActionId', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'actionName')
     ..aOS(2, _omitFieldNames ? '' : 'groupName')
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -460,17 +476,17 @@ class CaptureActionId extends $pb.GeneratedMessage {
 
   /// Time (in the robot's clock) at which this capture was triggered. If the timestamp is not
   /// specified in the AcquireData RPC, the main data acquisition service on robot will populate
-  /// the timestamp field with the timestamp of when the RPC was recieved.
+  /// the timestamp field with the timestamp of when the RPC was received.
   @$pb.TagNumber(3)
-  $60.Timestamp get timestamp => $_getN(2);
+  $59.Timestamp get timestamp => $_getN(2);
   @$pb.TagNumber(3)
-  set timestamp($60.Timestamp v) { setField(3, v); }
+  set timestamp($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimestamp() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimestamp() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureTimestamp() => $_ensure(2);
+  $59.Timestamp ensureTimestamp() => $_ensure(2);
 }
 
 /// A way to identify an individual piece of data stored in the data buffer.
@@ -585,7 +601,7 @@ class DataIdentifier extends $pb.GeneratedMessage {
 /// that capture action.
 class Metadata extends $pb.GeneratedMessage {
   factory Metadata({
-    $58.Struct? data,
+    $57.Struct? data,
   }) {
     final $result = create();
     if (data != null) {
@@ -598,7 +614,7 @@ class Metadata extends $pb.GeneratedMessage {
   factory Metadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Metadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$58.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $58.Struct.create)
+    ..aOM<$57.Struct>(1, _omitFieldNames ? '' : 'data', subBuilder: $57.Struct.create)
     ..hasRequiredFields = false
   ;
 
@@ -625,15 +641,15 @@ class Metadata extends $pb.GeneratedMessage {
 
   /// JSON representation of metadata.
   @$pb.TagNumber(1)
-  $58.Struct get data => $_getN(0);
+  $57.Struct get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($58.Struct v) { setField(1, v); }
+  set data($57.Struct v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
   void clearData() => clearField(1);
   @$pb.TagNumber(1)
-  $58.Struct ensureData() => $_ensure(0);
+  $57.Struct ensureData() => $_ensure(0);
 }
 
 /// This message can be stored as a DataBlob in the data buffer in order to be recognized as
@@ -794,8 +810,8 @@ class ImageSourceCapture extends $pb.GeneratedMessage {
   @$core.Deprecated('This field is deprecated.')
     $core.String? imageSource,
   @$core.Deprecated('This field is deprecated.')
-    $11.Image_PixelFormat? pixelFormat,
-    $11.ImageRequest? imageRequest,
+    $12.Image_PixelFormat? pixelFormat,
+    $12.ImageRequest? imageRequest,
   }) {
     final $result = create();
     if (imageService != null) {
@@ -821,8 +837,8 @@ class ImageSourceCapture extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImageSourceCapture', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'imageService')
     ..aOS(2, _omitFieldNames ? '' : 'imageSource')
-    ..e<$11.Image_PixelFormat>(3, _omitFieldNames ? '' : 'pixelFormat', $pb.PbFieldType.OE, defaultOrMaker: $11.Image_PixelFormat.PIXEL_FORMAT_UNKNOWN, valueOf: $11.Image_PixelFormat.valueOf, enumValues: $11.Image_PixelFormat.values)
-    ..aOM<$11.ImageRequest>(4, _omitFieldNames ? '' : 'imageRequest', subBuilder: $11.ImageRequest.create)
+    ..e<$12.Image_PixelFormat>(3, _omitFieldNames ? '' : 'pixelFormat', $pb.PbFieldType.OE, defaultOrMaker: $12.Image_PixelFormat.PIXEL_FORMAT_UNKNOWN, valueOf: $12.Image_PixelFormat.valueOf, enumValues: $12.Image_PixelFormat.values)
+    ..aOM<$12.ImageRequest>(4, _omitFieldNames ? '' : 'imageRequest', subBuilder: $12.ImageRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -877,10 +893,10 @@ class ImageSourceCapture extends $pb.GeneratedMessage {
   /// Specific pixel format to capture reported by the ImageAcquisitionCapability message.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
-  $11.Image_PixelFormat get pixelFormat => $_getN(2);
+  $12.Image_PixelFormat get pixelFormat => $_getN(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
-  set pixelFormat($11.Image_PixelFormat v) { setField(3, v); }
+  set pixelFormat($12.Image_PixelFormat v) { setField(3, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.bool hasPixelFormat() => $_has(2);
@@ -890,23 +906,23 @@ class ImageSourceCapture extends $pb.GeneratedMessage {
 
   /// Options for requesting this particular image.
   @$pb.TagNumber(4)
-  $11.ImageRequest get imageRequest => $_getN(3);
+  $12.ImageRequest get imageRequest => $_getN(3);
   @$pb.TagNumber(4)
-  set imageRequest($11.ImageRequest v) { setField(4, v); }
+  set imageRequest($12.ImageRequest v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasImageRequest() => $_has(3);
   @$pb.TagNumber(4)
   void clearImageRequest() => clearField(4);
   @$pb.TagNumber(4)
-  $11.ImageRequest ensureImageRequest() => $_ensure(3);
+  $12.ImageRequest ensureImageRequest() => $_ensure(3);
 }
 
-/// An individual capture which can be specified in the AcquireData request to identify a piece of
-/// non-image data to be collected.
+/// An individual capture which can be specified in the AcquireData or LiveData request to identify
+/// a piece of non-image data to be collected.
 class DataCapture extends $pb.GeneratedMessage {
   factory DataCapture({
     $core.String? name,
-    $72.DictParam? customParams,
+    $71.DictParam? customParams,
   }) {
     final $result = create();
     if (name != null) {
@@ -923,7 +939,7 @@ class DataCapture extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataCapture', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$72.DictParam>(9, _omitFieldNames ? '' : 'customParams', subBuilder: $72.DictParam.create)
+    ..aOM<$71.DictParam>(9, _omitFieldNames ? '' : 'customParams', subBuilder: $71.DictParam.create)
     ..hasRequiredFields = false
   ;
 
@@ -962,15 +978,15 @@ class DataCapture extends $pb.GeneratedMessage {
   /// Values passed to the service at capture time.
   /// See the DictParam.Spec in DataAcquisitionCapability.
   @$pb.TagNumber(9)
-  $72.DictParam get customParams => $_getN(1);
+  $71.DictParam get customParams => $_getN(1);
   @$pb.TagNumber(9)
-  set customParams($72.DictParam v) { setField(9, v); }
+  set customParams($71.DictParam v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasCustomParams() => $_has(1);
   @$pb.TagNumber(9)
   void clearCustomParams() => clearField(9);
   @$pb.TagNumber(9)
-  $72.DictParam ensureCustomParams() => $_ensure(1);
+  $71.DictParam ensureCustomParams() => $_ensure(1);
 }
 
 enum NetworkComputeCapture_Input {
@@ -1150,7 +1166,7 @@ class DataError extends $pb.GeneratedMessage {
   factory DataError({
     DataIdentifier? dataId,
     $core.String? errorMessage,
-    $67.Any? errorData,
+    $66.Any? errorData,
   }) {
     final $result = create();
     if (dataId != null) {
@@ -1171,7 +1187,7 @@ class DataError extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataError', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOM<DataIdentifier>(1, _omitFieldNames ? '' : 'dataId', subBuilder: DataIdentifier.create)
     ..aOS(2, _omitFieldNames ? '' : 'errorMessage')
-    ..aOM<$67.Any>(3, _omitFieldNames ? '' : 'errorData', subBuilder: $67.Any.create)
+    ..aOM<$66.Any>(3, _omitFieldNames ? '' : 'errorData', subBuilder: $66.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -1222,15 +1238,15 @@ class DataError extends $pb.GeneratedMessage {
 
   /// Custom plugin-specific data about the problem.
   @$pb.TagNumber(3)
-  $67.Any get errorData => $_getN(2);
+  $66.Any get errorData => $_getN(2);
   @$pb.TagNumber(3)
-  set errorData($67.Any v) { setField(3, v); }
+  set errorData($66.Any v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasErrorData() => $_has(2);
   @$pb.TagNumber(3)
   void clearErrorData() => clearField(3);
   @$pb.TagNumber(3)
-  $67.Any ensureErrorData() => $_ensure(2);
+  $66.Any ensureErrorData() => $_ensure(2);
 }
 
 /// An error associated with a particular data acquisition plugin service that was
@@ -1413,11 +1429,11 @@ class NetworkComputeError extends $pb.GeneratedMessage {
 
 class AcquireDataRequest extends $pb.GeneratedMessage {
   factory AcquireDataRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     CaptureActionId? actionId,
     Metadata? metadata,
     AcquisitionRequestList? acquisitionRequests,
-    $62.Duration? minTimeout,
+    $61.Duration? minTimeout,
   }) {
     final $result = create();
     if (header != null) {
@@ -1442,11 +1458,11 @@ class AcquireDataRequest extends $pb.GeneratedMessage {
   factory AcquireDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcquireDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<CaptureActionId>(2, _omitFieldNames ? '' : 'actionId', subBuilder: CaptureActionId.create)
     ..aOM<Metadata>(3, _omitFieldNames ? '' : 'metadata', subBuilder: Metadata.create)
     ..aOM<AcquisitionRequestList>(4, _omitFieldNames ? '' : 'acquisitionRequests', subBuilder: AcquisitionRequestList.create)
-    ..aOM<$62.Duration>(5, _omitFieldNames ? '' : 'minTimeout', subBuilder: $62.Duration.create)
+    ..aOM<$61.Duration>(5, _omitFieldNames ? '' : 'minTimeout', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -1473,15 +1489,15 @@ class AcquireDataRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Define the unique action that all data should be saved with.
   @$pb.TagNumber(2)
@@ -1525,20 +1541,20 @@ class AcquireDataRequest extends $pb.GeneratedMessage {
   /// The amount of time allowed will be the maximum of this duration and any requests
   /// made to plugins or other capture sources.
   @$pb.TagNumber(5)
-  $62.Duration get minTimeout => $_getN(4);
+  $61.Duration get minTimeout => $_getN(4);
   @$pb.TagNumber(5)
-  set minTimeout($62.Duration v) { setField(5, v); }
+  set minTimeout($61.Duration v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasMinTimeout() => $_has(4);
   @$pb.TagNumber(5)
   void clearMinTimeout() => clearField(5);
   @$pb.TagNumber(5)
-  $62.Duration ensureMinTimeout() => $_ensure(4);
+  $61.Duration ensureMinTimeout() => $_ensure(4);
 }
 
 class AcquireDataResponse extends $pb.GeneratedMessage {
   factory AcquireDataResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     AcquireDataResponse_Status? status,
     $core.int? requestId,
   }) {
@@ -1559,7 +1575,7 @@ class AcquireDataResponse extends $pb.GeneratedMessage {
   factory AcquireDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcquireDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<AcquireDataResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: AcquireDataResponse_Status.STATUS_UNKNOWN, valueOf: AcquireDataResponse_Status.valueOf, enumValues: AcquireDataResponse_Status.values)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'requestId', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
@@ -1588,15 +1604,15 @@ class AcquireDataResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Result of the AcquirePluginData RPC call. Further monitoring on the success of the
   /// acquisition request can be done using the GetStatus RPC.
@@ -1623,7 +1639,7 @@ class AcquireDataResponse extends $pb.GeneratedMessage {
 /// Message sent by main Data Acquisition service to all data acquisition plugin services.
 class AcquirePluginDataRequest extends $pb.GeneratedMessage {
   factory AcquirePluginDataRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<DataIdentifier>? dataId,
     Metadata? metadata,
     CaptureActionId? actionId,
@@ -1652,7 +1668,7 @@ class AcquirePluginDataRequest extends $pb.GeneratedMessage {
   factory AcquirePluginDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcquirePluginDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pc<DataIdentifier>(2, _omitFieldNames ? '' : 'dataId', $pb.PbFieldType.PM, subBuilder: DataIdentifier.create)
     ..aOM<Metadata>(3, _omitFieldNames ? '' : 'metadata', subBuilder: Metadata.create)
     ..aOM<CaptureActionId>(4, _omitFieldNames ? '' : 'actionId', subBuilder: CaptureActionId.create)
@@ -1683,15 +1699,15 @@ class AcquirePluginDataRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Metadata acquirers use these DataIdentifier objects to associate them with the acquired
   /// metadata when storing them in the DataBuffer.
@@ -1740,11 +1756,11 @@ class AcquirePluginDataRequest extends $pb.GeneratedMessage {
 
 class AcquirePluginDataResponse extends $pb.GeneratedMessage {
   factory AcquirePluginDataResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     AcquirePluginDataResponse_Status? status,
     $core.int? requestId,
-    $60.Timestamp? timeoutDeadline,
-    $72.CustomParamError? customParamError,
+    $59.Timestamp? timeoutDeadline,
+    $71.CustomParamError? customParamError,
   }) {
     final $result = create();
     if (header != null) {
@@ -1769,11 +1785,11 @@ class AcquirePluginDataResponse extends $pb.GeneratedMessage {
   factory AcquirePluginDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcquirePluginDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<AcquirePluginDataResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: AcquirePluginDataResponse_Status.STATUS_UNKNOWN, valueOf: AcquirePluginDataResponse_Status.valueOf, enumValues: AcquirePluginDataResponse_Status.values)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'requestId', $pb.PbFieldType.OU3)
-    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'timeoutDeadline', subBuilder: $60.Timestamp.create)
-    ..aOM<$72.CustomParamError>(6, _omitFieldNames ? '' : 'customParamError', subBuilder: $72.CustomParamError.create)
+    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'timeoutDeadline', subBuilder: $59.Timestamp.create)
+    ..aOM<$71.CustomParamError>(6, _omitFieldNames ? '' : 'customParamError', subBuilder: $71.CustomParamError.create)
     ..hasRequiredFields = false
   ;
 
@@ -1800,15 +1816,15 @@ class AcquirePluginDataResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Result of the AcquirePluginData RPC call. Further monitoring on the success of the
   /// acquisition request can be done using the GetStatus RPC.
@@ -1834,32 +1850,32 @@ class AcquirePluginDataResponse extends $pb.GeneratedMessage {
   /// Time (in the robot's clock) by which this capture should definitely be complete.
   /// If it is not complete by this time, something has gone wrong.
   @$pb.TagNumber(5)
-  $60.Timestamp get timeoutDeadline => $_getN(3);
+  $59.Timestamp get timeoutDeadline => $_getN(3);
   @$pb.TagNumber(5)
-  set timeoutDeadline($60.Timestamp v) { setField(5, v); }
+  set timeoutDeadline($59.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTimeoutDeadline() => $_has(3);
   @$pb.TagNumber(5)
   void clearTimeoutDeadline() => clearField(5);
   @$pb.TagNumber(5)
-  $60.Timestamp ensureTimeoutDeadline() => $_ensure(3);
+  $59.Timestamp ensureTimeoutDeadline() => $_ensure(3);
 
   /// Filled out if status is STATUS_CUSTOM_PARAMS_ERROR.
   @$pb.TagNumber(6)
-  $72.CustomParamError get customParamError => $_getN(4);
+  $71.CustomParamError get customParamError => $_getN(4);
   @$pb.TagNumber(6)
-  set customParamError($72.CustomParamError v) { setField(6, v); }
+  set customParamError($71.CustomParamError v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCustomParamError() => $_has(4);
   @$pb.TagNumber(6)
   void clearCustomParamError() => clearField(6);
   @$pb.TagNumber(6)
-  $72.CustomParamError ensureCustomParamError() => $_ensure(4);
+  $71.CustomParamError ensureCustomParamError() => $_ensure(4);
 }
 
 class GetStatusRequest extends $pb.GeneratedMessage {
   factory GetStatusRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.int? requestId,
   }) {
     final $result = create();
@@ -1876,7 +1892,7 @@ class GetStatusRequest extends $pb.GeneratedMessage {
   factory GetStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'requestId', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
@@ -1904,15 +1920,15 @@ class GetStatusRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Which acquisition to check the status of.
   @$pb.TagNumber(2)
@@ -1927,7 +1943,7 @@ class GetStatusRequest extends $pb.GeneratedMessage {
 
 class GetStatusResponse extends $pb.GeneratedMessage {
   factory GetStatusResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     GetStatusResponse_Status? status,
     $core.Iterable<DataIdentifier>? dataSaved,
     $core.Iterable<DataError>? dataErrors,
@@ -1960,7 +1976,7 @@ class GetStatusResponse extends $pb.GeneratedMessage {
   factory GetStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<GetStatusResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: GetStatusResponse_Status.STATUS_UNKNOWN, valueOf: GetStatusResponse_Status.valueOf, enumValues: GetStatusResponse_Status.values)
     ..pc<DataIdentifier>(3, _omitFieldNames ? '' : 'dataSaved', $pb.PbFieldType.PM, subBuilder: DataIdentifier.create)
     ..pc<DataError>(9, _omitFieldNames ? '' : 'dataErrors', $pb.PbFieldType.PM, subBuilder: DataError.create)
@@ -1992,15 +2008,15 @@ class GetStatusResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   GetStatusResponse_Status get status => $_getN(1);
@@ -2034,7 +2050,7 @@ class GetStatusResponse extends $pb.GeneratedMessage {
 
 class GetServiceInfoRequest extends $pb.GeneratedMessage {
   factory GetServiceInfoRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -2047,7 +2063,7 @@ class GetServiceInfoRequest extends $pb.GeneratedMessage {
   factory GetServiceInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServiceInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -2074,20 +2090,20 @@ class GetServiceInfoRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 class GetServiceInfoResponse extends $pb.GeneratedMessage {
   factory GetServiceInfoResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     AcquisitionCapabilityList? capabilities,
   }) {
     final $result = create();
@@ -2104,7 +2120,7 @@ class GetServiceInfoResponse extends $pb.GeneratedMessage {
   factory GetServiceInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServiceInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<AcquisitionCapabilityList>(2, _omitFieldNames ? '' : 'capabilities', subBuilder: AcquisitionCapabilityList.create)
     ..hasRequiredFields = false
   ;
@@ -2132,15 +2148,15 @@ class GetServiceInfoResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// List of capabilities that the data acquisition (plugin) service can
   /// collect and save data for.
@@ -2158,7 +2174,7 @@ class GetServiceInfoResponse extends $pb.GeneratedMessage {
 
 class CancelAcquisitionRequest extends $pb.GeneratedMessage {
   factory CancelAcquisitionRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.int? requestId,
   }) {
     final $result = create();
@@ -2175,7 +2191,7 @@ class CancelAcquisitionRequest extends $pb.GeneratedMessage {
   factory CancelAcquisitionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CancelAcquisitionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'requestId', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
@@ -2203,15 +2219,15 @@ class CancelAcquisitionRequest extends $pb.GeneratedMessage {
 
   /// Common request header
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Which acquisition request to cancel.
   @$pb.TagNumber(2)
@@ -2226,7 +2242,7 @@ class CancelAcquisitionRequest extends $pb.GeneratedMessage {
 
 class CancelAcquisitionResponse extends $pb.GeneratedMessage {
   factory CancelAcquisitionResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     CancelAcquisitionResponse_Status? status,
   }) {
     final $result = create();
@@ -2243,7 +2259,7 @@ class CancelAcquisitionResponse extends $pb.GeneratedMessage {
   factory CancelAcquisitionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CancelAcquisitionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<CancelAcquisitionResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: CancelAcquisitionResponse_Status.STATUS_UNKNOWN, valueOf: CancelAcquisitionResponse_Status.valueOf, enumValues: CancelAcquisitionResponse_Status.values)
     ..hasRequiredFields = false
   ;
@@ -2271,15 +2287,15 @@ class CancelAcquisitionResponse extends $pb.GeneratedMessage {
 
   /// Common response header
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The status of the Cancellation RPC. Further monitoring on the success of the cancellation
   /// request can be done using the GetStatus RPC.
@@ -2291,6 +2307,223 @@ class CancelAcquisitionResponse extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(1);
   @$pb.TagNumber(2)
   void clearStatus() => clearField(2);
+}
+
+/// Request live data from a DAQ plugin service by DataCapture capability name.
+class LiveDataRequest extends $pb.GeneratedMessage {
+  factory LiveDataRequest({
+    $67.RequestHeader? header,
+    $core.Iterable<DataCapture>? dataCaptures,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (dataCaptures != null) {
+      $result.dataCaptures.addAll(dataCaptures);
+    }
+    return $result;
+  }
+  LiveDataRequest._() : super();
+  factory LiveDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LiveDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LiveDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..pc<DataCapture>(3, _omitFieldNames ? '' : 'dataCaptures', $pb.PbFieldType.PM, subBuilder: DataCapture.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LiveDataRequest clone() => LiveDataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LiveDataRequest copyWith(void Function(LiveDataRequest) updates) => super.copyWith((message) => updates(message as LiveDataRequest)) as LiveDataRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveDataRequest create() => LiveDataRequest._();
+  LiveDataRequest createEmptyInstance() => create();
+  static $pb.PbList<LiveDataRequest> createRepeated() => $pb.PbList<LiveDataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static LiveDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LiveDataRequest>(create);
+  static LiveDataRequest? _defaultInstance;
+
+  /// Common request header.
+  @$pb.TagNumber(1)
+  $67.RequestHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.RequestHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.RequestHeader ensureHeader() => $_ensure(0);
+
+  /// Include capability name and parameter values.
+  @$pb.TagNumber(3)
+  $core.List<DataCapture> get dataCaptures => $_getList(1);
+}
+
+class LiveDataResponse_CapabilityLiveData extends $pb.GeneratedMessage {
+  factory LiveDataResponse_CapabilityLiveData({
+    $core.Map<$core.String, $76.Signal>? signals,
+    $core.String? name,
+    LiveDataResponse_CapabilityLiveData_Status? status,
+    $71.CustomParamError? customParamError,
+  }) {
+    final $result = create();
+    if (signals != null) {
+      $result.signals.addAll(signals);
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (customParamError != null) {
+      $result.customParamError = customParamError;
+    }
+    return $result;
+  }
+  LiveDataResponse_CapabilityLiveData._() : super();
+  factory LiveDataResponse_CapabilityLiveData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LiveDataResponse_CapabilityLiveData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LiveDataResponse.CapabilityLiveData', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..m<$core.String, $76.Signal>(1, _omitFieldNames ? '' : 'signals', entryClassName: 'LiveDataResponse.CapabilityLiveData.SignalsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $76.Signal.create, valueDefaultOrMaker: $76.Signal.getDefault, packageName: const $pb.PackageName('bosdyn.api'))
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..e<LiveDataResponse_CapabilityLiveData_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: LiveDataResponse_CapabilityLiveData_Status.STATUS_UNKNOWN, valueOf: LiveDataResponse_CapabilityLiveData_Status.valueOf, enumValues: LiveDataResponse_CapabilityLiveData_Status.values)
+    ..aOM<$71.CustomParamError>(4, _omitFieldNames ? '' : 'customParamError', subBuilder: $71.CustomParamError.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LiveDataResponse_CapabilityLiveData clone() => LiveDataResponse_CapabilityLiveData()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LiveDataResponse_CapabilityLiveData copyWith(void Function(LiveDataResponse_CapabilityLiveData) updates) => super.copyWith((message) => updates(message as LiveDataResponse_CapabilityLiveData)) as LiveDataResponse_CapabilityLiveData;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveDataResponse_CapabilityLiveData create() => LiveDataResponse_CapabilityLiveData._();
+  LiveDataResponse_CapabilityLiveData createEmptyInstance() => create();
+  static $pb.PbList<LiveDataResponse_CapabilityLiveData> createRepeated() => $pb.PbList<LiveDataResponse_CapabilityLiveData>();
+  @$core.pragma('dart2js:noInline')
+  static LiveDataResponse_CapabilityLiveData getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LiveDataResponse_CapabilityLiveData>(create);
+  static LiveDataResponse_CapabilityLiveData? _defaultInstance;
+
+  /// Map of signal id to signal specification and data.
+  @$pb.TagNumber(1)
+  $core.Map<$core.String, $76.Signal> get signals => $_getMap(0);
+
+  /// Unique name of the data that is captured.
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  LiveDataResponse_CapabilityLiveData_Status get status => $_getN(2);
+  @$pb.TagNumber(3)
+  set status(LiveDataResponse_CapabilityLiveData_Status v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => clearField(3);
+
+  /// Filled out if status is STATUS_CUSTOM_PARAMS_ERROR.
+  @$pb.TagNumber(4)
+  $71.CustomParamError get customParamError => $_getN(3);
+  @$pb.TagNumber(4)
+  set customParamError($71.CustomParamError v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCustomParamError() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCustomParamError() => clearField(4);
+  @$pb.TagNumber(4)
+  $71.CustomParamError ensureCustomParamError() => $_ensure(3);
+}
+
+/// Live data response of a DAQ plugin service for a single capability.
+class LiveDataResponse extends $pb.GeneratedMessage {
+  factory LiveDataResponse({
+    $67.ResponseHeader? header,
+    $core.Iterable<LiveDataResponse_CapabilityLiveData>? liveData,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (liveData != null) {
+      $result.liveData.addAll(liveData);
+    }
+    return $result;
+  }
+  LiveDataResponse._() : super();
+  factory LiveDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LiveDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LiveDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..pc<LiveDataResponse_CapabilityLiveData>(3, _omitFieldNames ? '' : 'liveData', $pb.PbFieldType.PM, subBuilder: LiveDataResponse_CapabilityLiveData.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LiveDataResponse clone() => LiveDataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LiveDataResponse copyWith(void Function(LiveDataResponse) updates) => super.copyWith((message) => updates(message as LiveDataResponse)) as LiveDataResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveDataResponse create() => LiveDataResponse._();
+  LiveDataResponse createEmptyInstance() => create();
+  static $pb.PbList<LiveDataResponse> createRepeated() => $pb.PbList<LiveDataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static LiveDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LiveDataResponse>(create);
+  static LiveDataResponse? _defaultInstance;
+
+  /// Common response header.
+  @$pb.TagNumber(1)
+  $67.ResponseHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.ResponseHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
+
+  /// One entry for each data capture in the request. Order matches LiveDataRequest order.
+  @$pb.TagNumber(3)
+  $core.List<LiveDataResponse_CapabilityLiveData> get liveData => $_getList(1);
 }
 
 

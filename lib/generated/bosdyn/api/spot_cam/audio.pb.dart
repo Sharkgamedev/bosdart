@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/wrappers.pb.dart' as $59;
-import '../data_chunk.pb.dart' as $34;
-import '../header.pb.dart' as $68;
+import '../../../google/protobuf/wrappers.pb.dart' as $58;
+import '../data_chunk.pb.dart' as $4;
+import '../header.pb.dart' as $67;
 import 'audio.pbenum.dart';
 
 export 'audio.pbenum.dart';
@@ -76,7 +76,7 @@ class Sound extends $pb.GeneratedMessage {
 /// Request for all sounds present on the robot.
 class ListSoundsRequest extends $pb.GeneratedMessage {
   factory ListSoundsRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -89,7 +89,7 @@ class ListSoundsRequest extends $pb.GeneratedMessage {
   factory ListSoundsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSoundsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -116,21 +116,21 @@ class ListSoundsRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// List of all sounds present on the robot.
 class ListSoundsResponse extends $pb.GeneratedMessage {
   factory ListSoundsResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<Sound>? sounds,
   }) {
     final $result = create();
@@ -147,7 +147,7 @@ class ListSoundsResponse extends $pb.GeneratedMessage {
   factory ListSoundsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSoundsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<Sound>(2, _omitFieldNames ? '' : 'sounds', $pb.PbFieldType.PM, subBuilder: Sound.create)
     ..hasRequiredFields = false
   ;
@@ -175,15 +175,15 @@ class ListSoundsResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// All sounds currently loaded.
   @$pb.TagNumber(2)
@@ -193,7 +193,7 @@ class ListSoundsResponse extends $pb.GeneratedMessage {
 /// Set the desired volume level of the system.
 class SetVolumeRequest extends $pb.GeneratedMessage {
   factory SetVolumeRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.double? volume,
   }) {
     final $result = create();
@@ -210,7 +210,7 @@ class SetVolumeRequest extends $pb.GeneratedMessage {
   factory SetVolumeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetVolumeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'volume', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
@@ -238,15 +238,15 @@ class SetVolumeRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// volume, as a percentage of maximum.
   @$pb.TagNumber(2)
@@ -262,7 +262,7 @@ class SetVolumeRequest extends $pb.GeneratedMessage {
 /// Result of changing the system volume level.
 class SetVolumeResponse extends $pb.GeneratedMessage {
   factory SetVolumeResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -275,7 +275,7 @@ class SetVolumeResponse extends $pb.GeneratedMessage {
   factory SetVolumeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetVolumeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -302,21 +302,21 @@ class SetVolumeResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 /// Query the current volume level of the system.
 class GetVolumeRequest extends $pb.GeneratedMessage {
   factory GetVolumeRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -329,7 +329,7 @@ class GetVolumeRequest extends $pb.GeneratedMessage {
   factory GetVolumeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetVolumeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -356,21 +356,21 @@ class GetVolumeRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Provides the current volume level of the system.
 class GetVolumeResponse extends $pb.GeneratedMessage {
   factory GetVolumeResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.double? volume,
   }) {
     final $result = create();
@@ -387,7 +387,7 @@ class GetVolumeResponse extends $pb.GeneratedMessage {
   factory GetVolumeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetVolumeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'volume', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
@@ -415,15 +415,15 @@ class GetVolumeResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// volume, as a percentage of maximum.
   @$pb.TagNumber(2)
@@ -439,9 +439,9 @@ class GetVolumeResponse extends $pb.GeneratedMessage {
 /// Begin playing a loaded sound from the robot's speakers.
 class PlaySoundRequest extends $pb.GeneratedMessage {
   factory PlaySoundRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     Sound? sound,
-    $59.FloatValue? gain,
+    $58.FloatValue? gain,
   }) {
     final $result = create();
     if (header != null) {
@@ -460,9 +460,9 @@ class PlaySoundRequest extends $pb.GeneratedMessage {
   factory PlaySoundRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlaySoundRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<Sound>(2, _omitFieldNames ? '' : 'sound', subBuilder: Sound.create)
-    ..aOM<$59.FloatValue>(3, _omitFieldNames ? '' : 'gain', subBuilder: $59.FloatValue.create)
+    ..aOM<$58.FloatValue>(3, _omitFieldNames ? '' : 'gain', subBuilder: $58.FloatValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -489,15 +489,15 @@ class PlaySoundRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The sound identifier as uploaded by LoadSoundRequest or listed in ListSoundsResponse.
   @$pb.TagNumber(2)
@@ -514,21 +514,21 @@ class PlaySoundRequest extends $pb.GeneratedMessage {
   /// If the gain field is populated, then volume of the sound is
   /// multiplied by this value.  Does not modify the system volume level.
   @$pb.TagNumber(3)
-  $59.FloatValue get gain => $_getN(2);
+  $58.FloatValue get gain => $_getN(2);
   @$pb.TagNumber(3)
-  set gain($59.FloatValue v) { setField(3, v); }
+  set gain($58.FloatValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasGain() => $_has(2);
   @$pb.TagNumber(3)
   void clearGain() => clearField(3);
   @$pb.TagNumber(3)
-  $59.FloatValue ensureGain() => $_ensure(2);
+  $58.FloatValue ensureGain() => $_ensure(2);
 }
 
 /// Result of staring playback of a sound.
 class PlaySoundResponse extends $pb.GeneratedMessage {
   factory PlaySoundResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -541,7 +541,7 @@ class PlaySoundResponse extends $pb.GeneratedMessage {
   factory PlaySoundResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PlaySoundResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -568,21 +568,21 @@ class PlaySoundResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 /// Remove a loaded sound from the library of loaded sounds.
 class DeleteSoundRequest extends $pb.GeneratedMessage {
   factory DeleteSoundRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     Sound? sound,
   }) {
     final $result = create();
@@ -599,7 +599,7 @@ class DeleteSoundRequest extends $pb.GeneratedMessage {
   factory DeleteSoundRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSoundRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<Sound>(2, _omitFieldNames ? '' : 'sound', subBuilder: Sound.create)
     ..hasRequiredFields = false
   ;
@@ -627,15 +627,15 @@ class DeleteSoundRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The sound identifier as uploaded by LoadSoundRequest or listed in ListSoundsResponse.
   @$pb.TagNumber(2)
@@ -653,7 +653,7 @@ class DeleteSoundRequest extends $pb.GeneratedMessage {
 /// Result of deleting a sound from the library.
 class DeleteSoundResponse extends $pb.GeneratedMessage {
   factory DeleteSoundResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -666,7 +666,7 @@ class DeleteSoundResponse extends $pb.GeneratedMessage {
   factory DeleteSoundResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSoundResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -693,23 +693,23 @@ class DeleteSoundResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 /// Load a new sound onto the robot for future playback.
 class LoadSoundRequest extends $pb.GeneratedMessage {
   factory LoadSoundRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     Sound? sound,
-    $34.DataChunk? data,
+    $4.DataChunk? data,
   }) {
     final $result = create();
     if (header != null) {
@@ -728,9 +728,9 @@ class LoadSoundRequest extends $pb.GeneratedMessage {
   factory LoadSoundRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoadSoundRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<Sound>(2, _omitFieldNames ? '' : 'sound', subBuilder: Sound.create)
-    ..aOM<$34.DataChunk>(3, _omitFieldNames ? '' : 'data', subBuilder: $34.DataChunk.create)
+    ..aOM<$4.DataChunk>(3, _omitFieldNames ? '' : 'data', subBuilder: $4.DataChunk.create)
     ..hasRequiredFields = false
   ;
 
@@ -757,15 +757,15 @@ class LoadSoundRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Identifier for the sound.
   /// If the same identifier is used as a previously loaded sound, that sound will be overwritten
@@ -783,21 +783,21 @@ class LoadSoundRequest extends $pb.GeneratedMessage {
 
   /// WAV bytes to be joined.
   @$pb.TagNumber(3)
-  $34.DataChunk get data => $_getN(2);
+  $4.DataChunk get data => $_getN(2);
   @$pb.TagNumber(3)
-  set data($34.DataChunk v) { setField(3, v); }
+  set data($4.DataChunk v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasData() => $_has(2);
   @$pb.TagNumber(3)
   void clearData() => clearField(3);
   @$pb.TagNumber(3)
-  $34.DataChunk ensureData() => $_ensure(2);
+  $4.DataChunk ensureData() => $_ensure(2);
 }
 
 /// Result of uploading a sound.
 class LoadSoundResponse extends $pb.GeneratedMessage {
   factory LoadSoundResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -810,7 +810,7 @@ class LoadSoundResponse extends $pb.GeneratedMessage {
   factory LoadSoundResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoadSoundResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -837,21 +837,21 @@ class LoadSoundResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 /// Request to set the audio capture channel
 class SetAudioCaptureChannelRequest extends $pb.GeneratedMessage {
   factory SetAudioCaptureChannelRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     AudioCaptureChannel? channel,
   }) {
     final $result = create();
@@ -868,7 +868,7 @@ class SetAudioCaptureChannelRequest extends $pb.GeneratedMessage {
   factory SetAudioCaptureChannelRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetAudioCaptureChannelRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..e<AudioCaptureChannel>(2, _omitFieldNames ? '' : 'channel', $pb.PbFieldType.OE, defaultOrMaker: AudioCaptureChannel.AUDIO_CHANNEL_UNKNOWN, valueOf: AudioCaptureChannel.valueOf, enumValues: AudioCaptureChannel.values)
     ..hasRequiredFields = false
   ;
@@ -895,15 +895,15 @@ class SetAudioCaptureChannelRequest extends $pb.GeneratedMessage {
   static SetAudioCaptureChannelRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   AudioCaptureChannel get channel => $_getN(1);
@@ -918,7 +918,7 @@ class SetAudioCaptureChannelRequest extends $pb.GeneratedMessage {
 /// Result of setting the audio capture channel
 class SetAudioCaptureChannelResponse extends $pb.GeneratedMessage {
   factory SetAudioCaptureChannelResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -931,7 +931,7 @@ class SetAudioCaptureChannelResponse extends $pb.GeneratedMessage {
   factory SetAudioCaptureChannelResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetAudioCaptureChannelResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -957,21 +957,21 @@ class SetAudioCaptureChannelResponse extends $pb.GeneratedMessage {
   static SetAudioCaptureChannelResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 /// Request to get the audio capture channel
 class GetAudioCaptureChannelRequest extends $pb.GeneratedMessage {
   factory GetAudioCaptureChannelRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -984,7 +984,7 @@ class GetAudioCaptureChannelRequest extends $pb.GeneratedMessage {
   factory GetAudioCaptureChannelRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAudioCaptureChannelRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1010,21 +1010,21 @@ class GetAudioCaptureChannelRequest extends $pb.GeneratedMessage {
   static GetAudioCaptureChannelRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Result of getting the audio capture channel
 class GetAudioCaptureChannelResponse extends $pb.GeneratedMessage {
   factory GetAudioCaptureChannelResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     AudioCaptureChannel? channel,
   }) {
     final $result = create();
@@ -1041,7 +1041,7 @@ class GetAudioCaptureChannelResponse extends $pb.GeneratedMessage {
   factory GetAudioCaptureChannelResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAudioCaptureChannelResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<AudioCaptureChannel>(2, _omitFieldNames ? '' : 'channel', $pb.PbFieldType.OE, defaultOrMaker: AudioCaptureChannel.AUDIO_CHANNEL_UNKNOWN, valueOf: AudioCaptureChannel.valueOf, enumValues: AudioCaptureChannel.values)
     ..hasRequiredFields = false
   ;
@@ -1068,15 +1068,15 @@ class GetAudioCaptureChannelResponse extends $pb.GeneratedMessage {
   static GetAudioCaptureChannelResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   AudioCaptureChannel get channel => $_getN(1);
@@ -1091,7 +1091,7 @@ class GetAudioCaptureChannelResponse extends $pb.GeneratedMessage {
 /// Request to set the audio capture channel
 class SetAudioCaptureGainRequest extends $pb.GeneratedMessage {
   factory SetAudioCaptureGainRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     AudioCaptureChannel? channel,
     $core.double? gain,
   }) {
@@ -1112,7 +1112,7 @@ class SetAudioCaptureGainRequest extends $pb.GeneratedMessage {
   factory SetAudioCaptureGainRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetAudioCaptureGainRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..e<AudioCaptureChannel>(2, _omitFieldNames ? '' : 'channel', $pb.PbFieldType.OE, defaultOrMaker: AudioCaptureChannel.AUDIO_CHANNEL_UNKNOWN, valueOf: AudioCaptureChannel.valueOf, enumValues: AudioCaptureChannel.values)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'gain', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
@@ -1140,15 +1140,15 @@ class SetAudioCaptureGainRequest extends $pb.GeneratedMessage {
   static SetAudioCaptureGainRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   AudioCaptureChannel get channel => $_getN(1);
@@ -1173,7 +1173,7 @@ class SetAudioCaptureGainRequest extends $pb.GeneratedMessage {
 /// Result of setting the audio capture gain
 class SetAudioCaptureGainResponse extends $pb.GeneratedMessage {
   factory SetAudioCaptureGainResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1186,7 +1186,7 @@ class SetAudioCaptureGainResponse extends $pb.GeneratedMessage {
   factory SetAudioCaptureGainResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetAudioCaptureGainResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1212,21 +1212,21 @@ class SetAudioCaptureGainResponse extends $pb.GeneratedMessage {
   static SetAudioCaptureGainResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 /// Request to get the audio capture channel
 class GetAudioCaptureGainRequest extends $pb.GeneratedMessage {
   factory GetAudioCaptureGainRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     AudioCaptureChannel? channel,
   }) {
     final $result = create();
@@ -1243,7 +1243,7 @@ class GetAudioCaptureGainRequest extends $pb.GeneratedMessage {
   factory GetAudioCaptureGainRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAudioCaptureGainRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..e<AudioCaptureChannel>(2, _omitFieldNames ? '' : 'channel', $pb.PbFieldType.OE, defaultOrMaker: AudioCaptureChannel.AUDIO_CHANNEL_UNKNOWN, valueOf: AudioCaptureChannel.valueOf, enumValues: AudioCaptureChannel.values)
     ..hasRequiredFields = false
   ;
@@ -1270,15 +1270,15 @@ class GetAudioCaptureGainRequest extends $pb.GeneratedMessage {
   static GetAudioCaptureGainRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   AudioCaptureChannel get channel => $_getN(1);
@@ -1293,7 +1293,7 @@ class GetAudioCaptureGainRequest extends $pb.GeneratedMessage {
 /// Result of getting the audio capture gain
 class GetAudioCaptureGainResponse extends $pb.GeneratedMessage {
   factory GetAudioCaptureGainResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.double? gain,
   }) {
     final $result = create();
@@ -1310,7 +1310,7 @@ class GetAudioCaptureGainResponse extends $pb.GeneratedMessage {
   factory GetAudioCaptureGainResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAudioCaptureGainResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'gain', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
@@ -1337,15 +1337,15 @@ class GetAudioCaptureGainResponse extends $pb.GeneratedMessage {
   static GetAudioCaptureGainResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Gain for microphone, range from 0.0 to 1.0
   @$pb.TagNumber(2)

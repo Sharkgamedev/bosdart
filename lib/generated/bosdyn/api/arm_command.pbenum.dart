@@ -154,12 +154,14 @@ class ArmImpedanceCommand_Feedback_Status extends $pb.ProtobufEnum {
   static const ArmImpedanceCommand_Feedback_Status STATUS_TRAJECTORY_COMPLETE = ArmImpedanceCommand_Feedback_Status._(1, _omitEnumNames ? '' : 'STATUS_TRAJECTORY_COMPLETE');
   static const ArmImpedanceCommand_Feedback_Status STATUS_IN_PROGRESS = ArmImpedanceCommand_Feedback_Status._(2, _omitEnumNames ? '' : 'STATUS_IN_PROGRESS');
   static const ArmImpedanceCommand_Feedback_Status STATUS_TRAJECTORY_STALLED = ArmImpedanceCommand_Feedback_Status._(3, _omitEnumNames ? '' : 'STATUS_TRAJECTORY_STALLED');
+  static const ArmImpedanceCommand_Feedback_Status STATUS_TRAJECTORY_CANCELLED = ArmImpedanceCommand_Feedback_Status._(4, _omitEnumNames ? '' : 'STATUS_TRAJECTORY_CANCELLED');
 
   static const $core.List<ArmImpedanceCommand_Feedback_Status> values = <ArmImpedanceCommand_Feedback_Status> [
     STATUS_UNKNOWN,
     STATUS_TRAJECTORY_COMPLETE,
     STATUS_IN_PROGRESS,
     STATUS_TRAJECTORY_STALLED,
+    STATUS_TRAJECTORY_CANCELLED,
   ];
 
   static final $core.Map<$core.int, ArmImpedanceCommand_Feedback_Status> _byValue = $pb.ProtobufEnum.initByValue(values);

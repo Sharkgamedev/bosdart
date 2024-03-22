@@ -34,11 +34,19 @@ const Staircase$json = {
   '2': [
     {'1': 'knowledge_type', '3': 1, '4': 1, '5': 14, '6': '.bosdyn.api.Staircase.KnowledgeType', '10': 'knowledgeType'},
     {'1': 'stair_tform', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.StairTransform', '10': 'stairTform'},
-    {'1': 'number_of_steps', '3': 3, '4': 1, '5': 5, '10': 'numberOfSteps'},
+    {
+      '1': 'number_of_steps',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '8': {'3': true},
+      '10': 'numberOfSteps',
+    },
     {'1': 'average_rise', '3': 4, '4': 1, '5': 1, '10': 'averageRise'},
     {'1': 'average_run', '3': 5, '4': 1, '5': 1, '10': 'averageRun'},
     {'1': 'average_width', '3': 6, '4': 1, '5': 11, '6': '.bosdyn.api.Staircase.Width', '10': 'averageWidth'},
     {'1': 'steps', '3': 7, '4': 3, '5': 11, '6': '.bosdyn.api.Staircase.Step', '10': 'steps'},
+    {'1': 'id', '3': 8, '4': 1, '5': 9, '10': 'id'},
   ],
   '3': [Staircase_Width$json, Staircase_Step$json],
   '4': [Staircase_KnowledgeType$json],
@@ -92,21 +100,22 @@ const Staircase_KnowledgeType$json = {
 final $typed_data.Uint8List staircaseDescriptor = $convert.base64Decode(
     'CglTdGFpcmNhc2USSgoOa25vd2xlZGdlX3R5cGUYASABKA4yIy5ib3NkeW4uYXBpLlN0YWlyY2'
     'FzZS5Lbm93bGVkZ2VUeXBlUg1rbm93bGVkZ2VUeXBlEjsKC3N0YWlyX3Rmb3JtGAIgASgLMhou'
-    'Ym9zZHluLmFwaS5TdGFpclRyYW5zZm9ybVIKc3RhaXJUZm9ybRImCg9udW1iZXJfb2Zfc3RlcH'
-    'MYAyABKAVSDW51bWJlck9mU3RlcHMSIQoMYXZlcmFnZV9yaXNlGAQgASgBUgthdmVyYWdlUmlz'
-    'ZRIfCgthdmVyYWdlX3J1bhgFIAEoAVIKYXZlcmFnZVJ1bhJACg1hdmVyYWdlX3dpZHRoGAYgAS'
-    'gLMhsuYm9zZHluLmFwaS5TdGFpcmNhc2UuV2lkdGhSDGF2ZXJhZ2VXaWR0aBIwCgVzdGVwcxgH'
-    'IAMoCzIaLmJvc2R5bi5hcGkuU3RhaXJjYXNlLlN0ZXBSBXN0ZXBzGvsBCgVXaWR0aBIUCgV3aW'
-    'R0aBgBIAEoAVIFd2lkdGgSTQoNYm91bmRlZF93aWR0aBgCIAEoDjIoLmJvc2R5bi5hcGkuU3Rh'
-    'aXJjYXNlLldpZHRoLkJvdW5kZWRXaWR0aFIMYm91bmRlZFdpZHRoIowBCgxCb3VuZGVkV2lkdG'
-    'gSGQoVQk9VTkRFRF9XSURUSF9VTktOT1dOEAASGQoVQk9VTkRFRF9XSURUSF9ORUlUSEVSEAES'
-    'FgoSQk9VTkRFRF9XSURUSF9XRVNUEAISFgoSQk9VTkRFRF9XSURUSF9FQVNUEAMSFgoSQk9VTk'
-    'RFRF9XSURUSF9CT1RIEAQaiQEKBFN0ZXASJgoFcG9pbnQYASABKAsyEC5ib3NkeW4uYXBpLlZl'
-    'YzNSBXBvaW50EiYKBW5vcnRoGAIgASgLMhAuYm9zZHluLmFwaS5WZWMyUgVub3J0aBIxCgV3aW'
-    'R0aBgDIAEoCzIbLmJvc2R5bi5hcGkuU3RhaXJjYXNlLldpZHRoUgV3aWR0aCKqAQoNS25vd2xl'
-    'ZGdlVHlwZRIaChZLTk9XTEVER0VfVFlQRV9VTktOT1dOEAASGQoVS05PV0xFREdFX1RZUEVfTU'
-    'FQUEVEEAESIgoeS05PV0xFREdFX1RZUEVfVFJBQ0tFRF9PTkdPSU5HEAISJAogS05PV0xFREdF'
-    'X1RZUEVfVFJBQ0tFRF9DT01QTEVURUQQAxIYChRLTk9XTEVER0VfVFlQRV9PVEhFUhAE');
+    'Ym9zZHluLmFwaS5TdGFpclRyYW5zZm9ybVIKc3RhaXJUZm9ybRIqCg9udW1iZXJfb2Zfc3RlcH'
+    'MYAyABKAVCAhgBUg1udW1iZXJPZlN0ZXBzEiEKDGF2ZXJhZ2VfcmlzZRgEIAEoAVILYXZlcmFn'
+    'ZVJpc2USHwoLYXZlcmFnZV9ydW4YBSABKAFSCmF2ZXJhZ2VSdW4SQAoNYXZlcmFnZV93aWR0aB'
+    'gGIAEoCzIbLmJvc2R5bi5hcGkuU3RhaXJjYXNlLldpZHRoUgxhdmVyYWdlV2lkdGgSMAoFc3Rl'
+    'cHMYByADKAsyGi5ib3NkeW4uYXBpLlN0YWlyY2FzZS5TdGVwUgVzdGVwcxIOCgJpZBgIIAEoCV'
+    'ICaWQa+wEKBVdpZHRoEhQKBXdpZHRoGAEgASgBUgV3aWR0aBJNCg1ib3VuZGVkX3dpZHRoGAIg'
+    'ASgOMiguYm9zZHluLmFwaS5TdGFpcmNhc2UuV2lkdGguQm91bmRlZFdpZHRoUgxib3VuZGVkV2'
+    'lkdGgijAEKDEJvdW5kZWRXaWR0aBIZChVCT1VOREVEX1dJRFRIX1VOS05PV04QABIZChVCT1VO'
+    'REVEX1dJRFRIX05FSVRIRVIQARIWChJCT1VOREVEX1dJRFRIX1dFU1QQAhIWChJCT1VOREVEX1'
+    'dJRFRIX0VBU1QQAxIWChJCT1VOREVEX1dJRFRIX0JPVEgQBBqJAQoEU3RlcBImCgVwb2ludBgB'
+    'IAEoCzIQLmJvc2R5bi5hcGkuVmVjM1IFcG9pbnQSJgoFbm9ydGgYAiABKAsyEC5ib3NkeW4uYX'
+    'BpLlZlYzJSBW5vcnRoEjEKBXdpZHRoGAMgASgLMhsuYm9zZHluLmFwaS5TdGFpcmNhc2UuV2lk'
+    'dGhSBXdpZHRoIqoBCg1Lbm93bGVkZ2VUeXBlEhoKFktOT1dMRURHRV9UWVBFX1VOS05PV04QAB'
+    'IZChVLTk9XTEVER0VfVFlQRV9NQVBQRUQQARIiCh5LTk9XTEVER0VfVFlQRV9UUkFDS0VEX09O'
+    'R09JTkcQAhIkCiBLTk9XTEVER0VfVFlQRV9UUkFDS0VEX0NPTVBMRVRFRBADEhgKFEtOT1dMRU'
+    'RHRV9UWVBFX09USEVSEAQ=');
 
 @$core.Deprecated('Use straightStaircaseDescriptor instead')
 const StraightStaircase$json = {

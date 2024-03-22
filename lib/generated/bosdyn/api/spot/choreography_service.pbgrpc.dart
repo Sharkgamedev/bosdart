@@ -29,6 +29,10 @@ class ChoreographyServiceClient extends $grpc.Client {
       '/bosdyn.api.spot.ChoreographyService/ListAllSequences',
       ($29.ListAllSequencesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $29.ListAllSequencesResponse.fromBuffer(value));
+  static final _$getChoreographySequence = $grpc.ClientMethod<$29.GetChoreographySequenceRequest, $29.GetChoreographySequenceResponse>(
+      '/bosdyn.api.spot.ChoreographyService/GetChoreographySequence',
+      ($29.GetChoreographySequenceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $29.GetChoreographySequenceResponse.fromBuffer(value));
   static final _$deleteSequence = $grpc.ClientMethod<$29.DeleteSequenceRequest, $29.DeleteSequenceResponse>(
       '/bosdyn.api.spot.ChoreographyService/DeleteSequence',
       ($29.DeleteSequenceRequest value) => value.writeToBuffer(),
@@ -77,6 +81,10 @@ class ChoreographyServiceClient extends $grpc.Client {
       '/bosdyn.api.spot.ChoreographyService/ChoreographyCommand',
       ($29.ChoreographyCommandRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $29.ChoreographyCommandResponse.fromBuffer(value));
+  static final _$choreographyTimeAdjust = $grpc.ClientMethod<$29.ChoreographyTimeAdjustRequest, $29.ChoreographyTimeAdjustResponse>(
+      '/bosdyn.api.spot.ChoreographyService/ChoreographyTimeAdjust',
+      ($29.ChoreographyTimeAdjustRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $29.ChoreographyTimeAdjustResponse.fromBuffer(value));
 
   ChoreographyServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -90,6 +98,10 @@ class ChoreographyServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$29.ListAllSequencesResponse> listAllSequences($29.ListAllSequencesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listAllSequences, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$29.GetChoreographySequenceResponse> getChoreographySequence($29.GetChoreographySequenceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getChoreographySequence, request, options: options);
   }
 
   $grpc.ResponseFuture<$29.DeleteSequenceResponse> deleteSequence($29.DeleteSequenceRequest request, {$grpc.CallOptions? options}) {
@@ -139,6 +151,10 @@ class ChoreographyServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$29.ChoreographyCommandResponse> choreographyCommand($29.ChoreographyCommandRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$choreographyCommand, request, options: options);
   }
+
+  $grpc.ResponseFuture<$29.ChoreographyTimeAdjustResponse> choreographyTimeAdjust($29.ChoreographyTimeAdjustRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$choreographyTimeAdjust, request, options: options);
+  }
 }
 
 @$pb.GrpcServiceName('bosdyn.api.spot.ChoreographyService')
@@ -160,6 +176,13 @@ abstract class ChoreographyServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $29.ListAllSequencesRequest.fromBuffer(value),
         ($29.ListAllSequencesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$29.GetChoreographySequenceRequest, $29.GetChoreographySequenceResponse>(
+        'GetChoreographySequence',
+        getChoreographySequence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $29.GetChoreographySequenceRequest.fromBuffer(value),
+        ($29.GetChoreographySequenceResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$29.DeleteSequenceRequest, $29.DeleteSequenceResponse>(
         'DeleteSequence',
         deleteSequence_Pre,
@@ -244,6 +267,13 @@ abstract class ChoreographyServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $29.ChoreographyCommandRequest.fromBuffer(value),
         ($29.ChoreographyCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$29.ChoreographyTimeAdjustRequest, $29.ChoreographyTimeAdjustResponse>(
+        'ChoreographyTimeAdjust',
+        choreographyTimeAdjust_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $29.ChoreographyTimeAdjustRequest.fromBuffer(value),
+        ($29.ChoreographyTimeAdjustResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$29.ListAllMovesResponse> listAllMoves_Pre($grpc.ServiceCall call, $async.Future<$29.ListAllMovesRequest> request) async {
@@ -252,6 +282,10 @@ abstract class ChoreographyServiceBase extends $grpc.Service {
 
   $async.Future<$29.ListAllSequencesResponse> listAllSequences_Pre($grpc.ServiceCall call, $async.Future<$29.ListAllSequencesRequest> request) async {
     return listAllSequences(call, await request);
+  }
+
+  $async.Future<$29.GetChoreographySequenceResponse> getChoreographySequence_Pre($grpc.ServiceCall call, $async.Future<$29.GetChoreographySequenceRequest> request) async {
+    return getChoreographySequence(call, await request);
   }
 
   $async.Future<$29.DeleteSequenceResponse> deleteSequence_Pre($grpc.ServiceCall call, $async.Future<$29.DeleteSequenceRequest> request) async {
@@ -302,8 +336,13 @@ abstract class ChoreographyServiceBase extends $grpc.Service {
     return choreographyCommand(call, await request);
   }
 
+  $async.Future<$29.ChoreographyTimeAdjustResponse> choreographyTimeAdjust_Pre($grpc.ServiceCall call, $async.Future<$29.ChoreographyTimeAdjustRequest> request) async {
+    return choreographyTimeAdjust(call, await request);
+  }
+
   $async.Future<$29.ListAllMovesResponse> listAllMoves($grpc.ServiceCall call, $29.ListAllMovesRequest request);
   $async.Future<$29.ListAllSequencesResponse> listAllSequences($grpc.ServiceCall call, $29.ListAllSequencesRequest request);
+  $async.Future<$29.GetChoreographySequenceResponse> getChoreographySequence($grpc.ServiceCall call, $29.GetChoreographySequenceRequest request);
   $async.Future<$29.DeleteSequenceResponse> deleteSequence($grpc.ServiceCall call, $29.DeleteSequenceRequest request);
   $async.Future<$29.SaveSequenceResponse> saveSequence($grpc.ServiceCall call, $29.SaveSequenceRequest request);
   $async.Future<$29.ModifyChoreographyInfoResponse> modifyChoreographyInfo($grpc.ServiceCall call, $29.ModifyChoreographyInfoRequest request);
@@ -316,4 +355,5 @@ abstract class ChoreographyServiceBase extends $grpc.Service {
   $async.Stream<$29.DownloadRobotStateLogResponse> downloadRobotStateLog($grpc.ServiceCall call, $29.DownloadRobotStateLogRequest request);
   $async.Future<$29.ChoreographyStatusResponse> choreographyStatus($grpc.ServiceCall call, $29.ChoreographyStatusRequest request);
   $async.Future<$29.ChoreographyCommandResponse> choreographyCommand($grpc.ServiceCall call, $29.ChoreographyCommandRequest request);
+  $async.Future<$29.ChoreographyTimeAdjustResponse> choreographyTimeAdjust($grpc.ServiceCall call, $29.ChoreographyTimeAdjustRequest request);
 }

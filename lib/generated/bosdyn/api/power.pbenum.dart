@@ -126,5 +126,45 @@ class FanPowerCommandFeedbackResponse_Status extends $pb.ProtobufEnum {
   const FanPowerCommandFeedbackResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
+/// Types of safety stop commands the robot can execute.
+class ResetSafetyStopRequest_SafetyStopType extends $pb.ProtobufEnum {
+  static const ResetSafetyStopRequest_SafetyStopType SAFETY_STOP_UNKNOWN = ResetSafetyStopRequest_SafetyStopType._(0, _omitEnumNames ? '' : 'SAFETY_STOP_UNKNOWN');
+  static const ResetSafetyStopRequest_SafetyStopType SAFETY_STOP_PRIMARY = ResetSafetyStopRequest_SafetyStopType._(1, _omitEnumNames ? '' : 'SAFETY_STOP_PRIMARY');
+  static const ResetSafetyStopRequest_SafetyStopType SAFETY_STOP_REDUNDANT = ResetSafetyStopRequest_SafetyStopType._(2, _omitEnumNames ? '' : 'SAFETY_STOP_REDUNDANT');
+
+  static const $core.List<ResetSafetyStopRequest_SafetyStopType> values = <ResetSafetyStopRequest_SafetyStopType> [
+    SAFETY_STOP_UNKNOWN,
+    SAFETY_STOP_PRIMARY,
+    SAFETY_STOP_REDUNDANT,
+  ];
+
+  static final $core.Map<$core.int, ResetSafetyStopRequest_SafetyStopType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ResetSafetyStopRequest_SafetyStopType? valueOf($core.int value) => _byValue[value];
+
+  const ResetSafetyStopRequest_SafetyStopType._($core.int v, $core.String n) : super(v, n);
+}
+
+/// Feedback on the reset safety stop command.
+class ResetSafetyStopResponse_Status extends $pb.ProtobufEnum {
+  static const ResetSafetyStopResponse_Status STATUS_UNKNOWN = ResetSafetyStopResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
+  static const ResetSafetyStopResponse_Status STATUS_OK = ResetSafetyStopResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
+  static const ResetSafetyStopResponse_Status STATUS_INCOMPATIBLE_HARDWARE_ERROR = ResetSafetyStopResponse_Status._(2, _omitEnumNames ? '' : 'STATUS_INCOMPATIBLE_HARDWARE_ERROR');
+  static const ResetSafetyStopResponse_Status STATUS_FAILED = ResetSafetyStopResponse_Status._(3, _omitEnumNames ? '' : 'STATUS_FAILED');
+  static const ResetSafetyStopResponse_Status STATUS_UNKNOWN_STOP_TYPE = ResetSafetyStopResponse_Status._(4, _omitEnumNames ? '' : 'STATUS_UNKNOWN_STOP_TYPE');
+
+  static const $core.List<ResetSafetyStopResponse_Status> values = <ResetSafetyStopResponse_Status> [
+    STATUS_UNKNOWN,
+    STATUS_OK,
+    STATUS_INCOMPATIBLE_HARDWARE_ERROR,
+    STATUS_FAILED,
+    STATUS_UNKNOWN_STOP_TYPE,
+  ];
+
+  static final $core.Map<$core.int, ResetSafetyStopResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ResetSafetyStopResponse_Status? valueOf($core.int value) => _byValue[value];
+
+  const ResetSafetyStopResponse_Status._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

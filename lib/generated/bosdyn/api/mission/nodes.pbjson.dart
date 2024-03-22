@@ -20,8 +20,60 @@ const Node$json = {
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'user_data', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.mission.UserData', '10': 'userData'},
     {'1': 'reference_id', '3': 3, '4': 1, '5': 9, '10': 'referenceId'},
-    {'1': 'impl', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Any', '9': 0, '10': 'impl'},
+    {
+      '1': 'impl',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Any',
+      '8': {'3': true},
+      '9': 0,
+      '10': 'impl',
+    },
     {'1': 'node_reference', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'nodeReference'},
+    {'1': 'condition', '3': 9, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Condition', '9': 0, '10': 'condition'},
+    {'1': 'sequence', '3': 10, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Sequence', '9': 0, '10': 'sequence'},
+    {'1': 'selector', '3': 11, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Selector', '9': 0, '10': 'selector'},
+    {'1': 'repeat', '3': 12, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Repeat', '9': 0, '10': 'repeat'},
+    {'1': 'retain_lease', '3': 13, '4': 1, '5': 11, '6': '.bosdyn.api.mission.RetainLease', '9': 0, '10': 'retainLease'},
+    {'1': 'retry', '3': 14, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Retry', '9': 0, '10': 'retry'},
+    {'1': 'for_duration', '3': 15, '4': 1, '5': 11, '6': '.bosdyn.api.mission.ForDuration', '9': 0, '10': 'forDuration'},
+    {'1': 'bosdyn_dock_state', '3': 16, '4': 1, '5': 11, '6': '.bosdyn.api.mission.BosdynDockState', '9': 0, '10': 'bosdynDockState'},
+    {'1': 'bosdyn_power_request', '3': 17, '4': 1, '5': 11, '6': '.bosdyn.api.mission.BosdynPowerRequest', '9': 0, '10': 'bosdynPowerRequest'},
+    {'1': 'bosdyn_robot_state', '3': 18, '4': 1, '5': 11, '6': '.bosdyn.api.mission.BosdynRobotState', '9': 0, '10': 'bosdynRobotState'},
+    {'1': 'bosdyn_robot_command', '3': 19, '4': 1, '5': 11, '6': '.bosdyn.api.mission.BosdynRobotCommand', '9': 0, '10': 'bosdynRobotCommand'},
+    {'1': 'remote_grpc', '3': 20, '4': 1, '5': 11, '6': '.bosdyn.api.mission.RemoteGrpc', '9': 0, '10': 'remoteGrpc'},
+    {'1': 'sleep', '3': 21, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Sleep', '9': 0, '10': 'sleep'},
+    {'1': 'prompt', '3': 22, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Prompt', '9': 0, '10': 'prompt'},
+    {'1': 'set_blackboard', '3': 23, '4': 1, '5': 11, '6': '.bosdyn.api.mission.SetBlackboard', '9': 0, '10': 'setBlackboard'},
+    {'1': 'date_to_blackboard', '3': 24, '4': 1, '5': 11, '6': '.bosdyn.api.mission.DateToBlackboard', '9': 0, '10': 'dateToBlackboard'},
+    {'1': 'define_blackboard', '3': 25, '4': 1, '5': 11, '6': '.bosdyn.api.mission.DefineBlackboard', '9': 0, '10': 'defineBlackboard'},
+    {'1': 'format_blackboard', '3': 26, '4': 1, '5': 11, '6': '.bosdyn.api.mission.FormatBlackboard', '9': 0, '10': 'formatBlackboard'},
+    {'1': 'constant_result', '3': 27, '4': 1, '5': 11, '6': '.bosdyn.api.mission.ConstantResult', '9': 0, '10': 'constantResult'},
+    {'1': 'bosdyn_navigate_route', '3': 29, '4': 1, '5': 11, '6': '.bosdyn.api.mission.BosdynNavigateRoute', '9': 0, '10': 'bosdynNavigateRoute'},
+    {'1': 'bosdyn_navigate_to', '3': 30, '4': 1, '5': 11, '6': '.bosdyn.api.mission.BosdynNavigateTo', '9': 0, '10': 'bosdynNavigateTo'},
+    {'1': 'bosdyn_graph_nav_state', '3': 31, '4': 1, '5': 11, '6': '.bosdyn.api.mission.BosdynGraphNavState', '9': 0, '10': 'bosdynGraphNavState'},
+    {'1': 'bosdyn_graph_nav_localize', '3': 32, '4': 1, '5': 11, '6': '.bosdyn.api.mission.BosdynGraphNavLocalize', '9': 0, '10': 'bosdynGraphNavLocalize'},
+    {'1': 'bosdyn_record_event', '3': 33, '4': 1, '5': 11, '6': '.bosdyn.api.mission.BosdynRecordEvent', '9': 0, '10': 'bosdynRecordEvent'},
+    {'1': 'simple_parallel', '3': 34, '4': 1, '5': 11, '6': '.bosdyn.api.mission.SimpleParallel', '9': 0, '10': 'simpleParallel'},
+    {'1': 'spot_cam_ptz', '3': 35, '4': 1, '5': 11, '6': '.bosdyn.api.mission.SpotCamPtz', '9': 0, '10': 'spotCamPtz'},
+    {'1': 'spot_cam_store_media', '3': 36, '4': 1, '5': 11, '6': '.bosdyn.api.mission.SpotCamStoreMedia', '9': 0, '10': 'spotCamStoreMedia'},
+    {'1': 'spot_cam_led', '3': 37, '4': 1, '5': 11, '6': '.bosdyn.api.mission.SpotCamLed', '9': 0, '10': 'spotCamLed'},
+    {'1': 'spot_cam_focus_state', '3': 58, '4': 1, '5': 11, '6': '.bosdyn.api.mission.SpotCamFocusState', '9': 0, '10': 'spotCamFocusState'},
+    {'1': 'spot_cam_reset_autofocus', '3': 38, '4': 1, '5': 11, '6': '.bosdyn.api.mission.SpotCamResetAutofocus', '9': 0, '10': 'spotCamResetAutofocus'},
+    {'1': 'store_metadata', '3': 39, '4': 1, '5': 11, '6': '.bosdyn.api.mission.StoreMetadata', '9': 0, '10': 'storeMetadata'},
+    {'1': 'switch', '3': 40, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Switch', '9': 0, '10': 'switch'},
+    {'1': 'data_acquisition', '3': 41, '4': 1, '5': 11, '6': '.bosdyn.api.mission.DataAcquisition', '9': 0, '10': 'dataAcquisition'},
+    {'1': 'data_acquisition_on_interruption', '3': 42, '4': 1, '5': 11, '6': '.bosdyn.api.mission.DataAcquisitionOnInterruption', '9': 0, '10': 'dataAcquisitionOnInterruption'},
+    {'1': 'dock', '3': 43, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Dock', '9': 0, '10': 'dock'},
+    {'1': 'restart_when_paused', '3': 49, '4': 1, '5': 11, '6': '.bosdyn.api.mission.RestartWhenPaused', '9': 0, '10': 'restartWhenPaused'},
+    {'1': 'clear_behavior_faults', '3': 50, '4': 1, '5': 11, '6': '.bosdyn.api.mission.ClearBehaviorFaults', '9': 0, '10': 'clearBehaviorFaults'},
+    {'1': 'bosdyn_gripper_camera_params_state', '3': 51, '4': 1, '5': 11, '6': '.bosdyn.api.mission.BosdynGripperCameraParamsState', '9': 0, '10': 'bosdynGripperCameraParamsState'},
+    {'1': 'set_gripper_camera_params', '3': 52, '4': 1, '5': 11, '6': '.bosdyn.api.mission.SetGripperCameraParams', '9': 0, '10': 'setGripperCameraParams'},
+    {'1': 'parallel_and', '3': 54, '4': 1, '5': 11, '6': '.bosdyn.api.mission.ParallelAnd', '9': 0, '10': 'parallelAnd'},
+    {'1': 'set_grasp_override', '3': 55, '4': 1, '5': 11, '6': '.bosdyn.api.mission.SetGraspOverride', '9': 0, '10': 'setGraspOverride'},
+    {'1': 'execute_choreography', '3': 56, '4': 1, '5': 11, '6': '.bosdyn.api.mission.ExecuteChoreography', '9': 0, '10': 'executeChoreography'},
+    {'1': 'mission_upload_choreography', '3': 57, '4': 1, '5': 11, '6': '.bosdyn.api.mission.MissionUploadChoreography', '9': 0, '10': 'missionUploadChoreography'},
     {'1': 'parameter_values', '3': 6, '4': 3, '5': 11, '6': '.bosdyn.api.mission.KeyValue', '10': 'parameterValues'},
     {'1': 'overrides', '3': 7, '4': 3, '5': 11, '6': '.bosdyn.api.mission.KeyValue', '10': 'overrides'},
     {'1': 'parameters', '3': 8, '4': 3, '5': 11, '6': '.bosdyn.api.mission.VariableDeclaration', '10': 'parameters'},
@@ -35,12 +87,75 @@ const Node$json = {
 final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'CgROb2RlEhIKBG5hbWUYASABKAlSBG5hbWUSOQoJdXNlcl9kYXRhGAIgASgLMhwuYm9zZHluLm'
     'FwaS5taXNzaW9uLlVzZXJEYXRhUgh1c2VyRGF0YRIhCgxyZWZlcmVuY2VfaWQYAyABKAlSC3Jl'
-    'ZmVyZW5jZUlkEioKBGltcGwYBCABKAsyFC5nb29nbGUucHJvdG9idWYuQW55SABSBGltcGwSJw'
-    'oObm9kZV9yZWZlcmVuY2UYBSABKAlIAFINbm9kZVJlZmVyZW5jZRJHChBwYXJhbWV0ZXJfdmFs'
-    'dWVzGAYgAygLMhwuYm9zZHluLmFwaS5taXNzaW9uLktleVZhbHVlUg9wYXJhbWV0ZXJWYWx1ZX'
-    'MSOgoJb3ZlcnJpZGVzGAcgAygLMhwuYm9zZHluLmFwaS5taXNzaW9uLktleVZhbHVlUglvdmVy'
-    'cmlkZXMSRwoKcGFyYW1ldGVycxgIIAMoCzInLmJvc2R5bi5hcGkubWlzc2lvbi5WYXJpYWJsZU'
-    'RlY2xhcmF0aW9uUgpwYXJhbWV0ZXJzQgYKBHR5cGU=');
+    'ZmVyZW5jZUlkEi4KBGltcGwYBCABKAsyFC5nb29nbGUucHJvdG9idWYuQW55QgIYAUgAUgRpbX'
+    'BsEicKDm5vZGVfcmVmZXJlbmNlGAUgASgJSABSDW5vZGVSZWZlcmVuY2USPQoJY29uZGl0aW9u'
+    'GAkgASgLMh0uYm9zZHluLmFwaS5taXNzaW9uLkNvbmRpdGlvbkgAUgljb25kaXRpb24SOgoIc2'
+    'VxdWVuY2UYCiABKAsyHC5ib3NkeW4uYXBpLm1pc3Npb24uU2VxdWVuY2VIAFIIc2VxdWVuY2US'
+    'OgoIc2VsZWN0b3IYCyABKAsyHC5ib3NkeW4uYXBpLm1pc3Npb24uU2VsZWN0b3JIAFIIc2VsZW'
+    'N0b3ISNAoGcmVwZWF0GAwgASgLMhouYm9zZHluLmFwaS5taXNzaW9uLlJlcGVhdEgAUgZyZXBl'
+    'YXQSRAoMcmV0YWluX2xlYXNlGA0gASgLMh8uYm9zZHluLmFwaS5taXNzaW9uLlJldGFpbkxlYX'
+    'NlSABSC3JldGFpbkxlYXNlEjEKBXJldHJ5GA4gASgLMhkuYm9zZHluLmFwaS5taXNzaW9uLlJl'
+    'dHJ5SABSBXJldHJ5EkQKDGZvcl9kdXJhdGlvbhgPIAEoCzIfLmJvc2R5bi5hcGkubWlzc2lvbi'
+    '5Gb3JEdXJhdGlvbkgAUgtmb3JEdXJhdGlvbhJRChFib3NkeW5fZG9ja19zdGF0ZRgQIAEoCzIj'
+    'LmJvc2R5bi5hcGkubWlzc2lvbi5Cb3NkeW5Eb2NrU3RhdGVIAFIPYm9zZHluRG9ja1N0YXRlEl'
+    'oKFGJvc2R5bl9wb3dlcl9yZXF1ZXN0GBEgASgLMiYuYm9zZHluLmFwaS5taXNzaW9uLkJvc2R5'
+    'blBvd2VyUmVxdWVzdEgAUhJib3NkeW5Qb3dlclJlcXVlc3QSVAoSYm9zZHluX3JvYm90X3N0YX'
+    'RlGBIgASgLMiQuYm9zZHluLmFwaS5taXNzaW9uLkJvc2R5blJvYm90U3RhdGVIAFIQYm9zZHlu'
+    'Um9ib3RTdGF0ZRJaChRib3NkeW5fcm9ib3RfY29tbWFuZBgTIAEoCzImLmJvc2R5bi5hcGkubW'
+    'lzc2lvbi5Cb3NkeW5Sb2JvdENvbW1hbmRIAFISYm9zZHluUm9ib3RDb21tYW5kEkEKC3JlbW90'
+    'ZV9ncnBjGBQgASgLMh4uYm9zZHluLmFwaS5taXNzaW9uLlJlbW90ZUdycGNIAFIKcmVtb3RlR3'
+    'JwYxIxCgVzbGVlcBgVIAEoCzIZLmJvc2R5bi5hcGkubWlzc2lvbi5TbGVlcEgAUgVzbGVlcBI0'
+    'CgZwcm9tcHQYFiABKAsyGi5ib3NkeW4uYXBpLm1pc3Npb24uUHJvbXB0SABSBnByb21wdBJKCg'
+    '5zZXRfYmxhY2tib2FyZBgXIAEoCzIhLmJvc2R5bi5hcGkubWlzc2lvbi5TZXRCbGFja2JvYXJk'
+    'SABSDXNldEJsYWNrYm9hcmQSVAoSZGF0ZV90b19ibGFja2JvYXJkGBggASgLMiQuYm9zZHluLm'
+    'FwaS5taXNzaW9uLkRhdGVUb0JsYWNrYm9hcmRIAFIQZGF0ZVRvQmxhY2tib2FyZBJTChFkZWZp'
+    'bmVfYmxhY2tib2FyZBgZIAEoCzIkLmJvc2R5bi5hcGkubWlzc2lvbi5EZWZpbmVCbGFja2JvYX'
+    'JkSABSEGRlZmluZUJsYWNrYm9hcmQSUwoRZm9ybWF0X2JsYWNrYm9hcmQYGiABKAsyJC5ib3Nk'
+    'eW4uYXBpLm1pc3Npb24uRm9ybWF0QmxhY2tib2FyZEgAUhBmb3JtYXRCbGFja2JvYXJkEk0KD2'
+    'NvbnN0YW50X3Jlc3VsdBgbIAEoCzIiLmJvc2R5bi5hcGkubWlzc2lvbi5Db25zdGFudFJlc3Vs'
+    'dEgAUg5jb25zdGFudFJlc3VsdBJdChVib3NkeW5fbmF2aWdhdGVfcm91dGUYHSABKAsyJy5ib3'
+    'NkeW4uYXBpLm1pc3Npb24uQm9zZHluTmF2aWdhdGVSb3V0ZUgAUhNib3NkeW5OYXZpZ2F0ZVJv'
+    'dXRlElQKEmJvc2R5bl9uYXZpZ2F0ZV90bxgeIAEoCzIkLmJvc2R5bi5hcGkubWlzc2lvbi5Cb3'
+    'NkeW5OYXZpZ2F0ZVRvSABSEGJvc2R5bk5hdmlnYXRlVG8SXgoWYm9zZHluX2dyYXBoX25hdl9z'
+    'dGF0ZRgfIAEoCzInLmJvc2R5bi5hcGkubWlzc2lvbi5Cb3NkeW5HcmFwaE5hdlN0YXRlSABSE2'
+    'Jvc2R5bkdyYXBoTmF2U3RhdGUSZwoZYm9zZHluX2dyYXBoX25hdl9sb2NhbGl6ZRggIAEoCzIq'
+    'LmJvc2R5bi5hcGkubWlzc2lvbi5Cb3NkeW5HcmFwaE5hdkxvY2FsaXplSABSFmJvc2R5bkdyYX'
+    'BoTmF2TG9jYWxpemUSVwoTYm9zZHluX3JlY29yZF9ldmVudBghIAEoCzIlLmJvc2R5bi5hcGku'
+    'bWlzc2lvbi5Cb3NkeW5SZWNvcmRFdmVudEgAUhFib3NkeW5SZWNvcmRFdmVudBJNCg9zaW1wbG'
+    'VfcGFyYWxsZWwYIiABKAsyIi5ib3NkeW4uYXBpLm1pc3Npb24uU2ltcGxlUGFyYWxsZWxIAFIO'
+    'c2ltcGxlUGFyYWxsZWwSQgoMc3BvdF9jYW1fcHR6GCMgASgLMh4uYm9zZHluLmFwaS5taXNzaW'
+    '9uLlNwb3RDYW1QdHpIAFIKc3BvdENhbVB0ehJYChRzcG90X2NhbV9zdG9yZV9tZWRpYRgkIAEo'
+    'CzIlLmJvc2R5bi5hcGkubWlzc2lvbi5TcG90Q2FtU3RvcmVNZWRpYUgAUhFzcG90Q2FtU3Rvcm'
+    'VNZWRpYRJCCgxzcG90X2NhbV9sZWQYJSABKAsyHi5ib3NkeW4uYXBpLm1pc3Npb24uU3BvdENh'
+    'bUxlZEgAUgpzcG90Q2FtTGVkElgKFHNwb3RfY2FtX2ZvY3VzX3N0YXRlGDogASgLMiUuYm9zZH'
+    'luLmFwaS5taXNzaW9uLlNwb3RDYW1Gb2N1c1N0YXRlSABSEXNwb3RDYW1Gb2N1c1N0YXRlEmQK'
+    'GHNwb3RfY2FtX3Jlc2V0X2F1dG9mb2N1cxgmIAEoCzIpLmJvc2R5bi5hcGkubWlzc2lvbi5TcG'
+    '90Q2FtUmVzZXRBdXRvZm9jdXNIAFIVc3BvdENhbVJlc2V0QXV0b2ZvY3VzEkoKDnN0b3JlX21l'
+    'dGFkYXRhGCcgASgLMiEuYm9zZHluLmFwaS5taXNzaW9uLlN0b3JlTWV0YWRhdGFIAFINc3Rvcm'
+    'VNZXRhZGF0YRI0CgZzd2l0Y2gYKCABKAsyGi5ib3NkeW4uYXBpLm1pc3Npb24uU3dpdGNoSABS'
+    'BnN3aXRjaBJQChBkYXRhX2FjcXVpc2l0aW9uGCkgASgLMiMuYm9zZHluLmFwaS5taXNzaW9uLk'
+    'RhdGFBY3F1aXNpdGlvbkgAUg9kYXRhQWNxdWlzaXRpb24SfAogZGF0YV9hY3F1aXNpdGlvbl9v'
+    'bl9pbnRlcnJ1cHRpb24YKiABKAsyMS5ib3NkeW4uYXBpLm1pc3Npb24uRGF0YUFjcXVpc2l0aW'
+    '9uT25JbnRlcnJ1cHRpb25IAFIdZGF0YUFjcXVpc2l0aW9uT25JbnRlcnJ1cHRpb24SLgoEZG9j'
+    'axgrIAEoCzIYLmJvc2R5bi5hcGkubWlzc2lvbi5Eb2NrSABSBGRvY2sSVwoTcmVzdGFydF93aG'
+    'VuX3BhdXNlZBgxIAEoCzIlLmJvc2R5bi5hcGkubWlzc2lvbi5SZXN0YXJ0V2hlblBhdXNlZEgA'
+    'UhFyZXN0YXJ0V2hlblBhdXNlZBJdChVjbGVhcl9iZWhhdmlvcl9mYXVsdHMYMiABKAsyJy5ib3'
+    'NkeW4uYXBpLm1pc3Npb24uQ2xlYXJCZWhhdmlvckZhdWx0c0gAUhNjbGVhckJlaGF2aW9yRmF1'
+    'bHRzEoABCiJib3NkeW5fZ3JpcHBlcl9jYW1lcmFfcGFyYW1zX3N0YXRlGDMgASgLMjIuYm9zZH'
+    'luLmFwaS5taXNzaW9uLkJvc2R5bkdyaXBwZXJDYW1lcmFQYXJhbXNTdGF0ZUgAUh5ib3NkeW5H'
+    'cmlwcGVyQ2FtZXJhUGFyYW1zU3RhdGUSZwoZc2V0X2dyaXBwZXJfY2FtZXJhX3BhcmFtcxg0IA'
+    'EoCzIqLmJvc2R5bi5hcGkubWlzc2lvbi5TZXRHcmlwcGVyQ2FtZXJhUGFyYW1zSABSFnNldEdy'
+    'aXBwZXJDYW1lcmFQYXJhbXMSRAoMcGFyYWxsZWxfYW5kGDYgASgLMh8uYm9zZHluLmFwaS5taX'
+    'NzaW9uLlBhcmFsbGVsQW5kSABSC3BhcmFsbGVsQW5kElQKEnNldF9ncmFzcF9vdmVycmlkZRg3'
+    'IAEoCzIkLmJvc2R5bi5hcGkubWlzc2lvbi5TZXRHcmFzcE92ZXJyaWRlSABSEHNldEdyYXNwT3'
+    'ZlcnJpZGUSXAoUZXhlY3V0ZV9jaG9yZW9ncmFwaHkYOCABKAsyJy5ib3NkeW4uYXBpLm1pc3Np'
+    'b24uRXhlY3V0ZUNob3Jlb2dyYXBoeUgAUhNleGVjdXRlQ2hvcmVvZ3JhcGh5Em8KG21pc3Npb2'
+    '5fdXBsb2FkX2Nob3Jlb2dyYXBoeRg5IAEoCzItLmJvc2R5bi5hcGkubWlzc2lvbi5NaXNzaW9u'
+    'VXBsb2FkQ2hvcmVvZ3JhcGh5SABSGW1pc3Npb25VcGxvYWRDaG9yZW9ncmFwaHkSRwoQcGFyYW'
+    '1ldGVyX3ZhbHVlcxgGIAMoCzIcLmJvc2R5bi5hcGkubWlzc2lvbi5LZXlWYWx1ZVIPcGFyYW1l'
+    'dGVyVmFsdWVzEjoKCW92ZXJyaWRlcxgHIAMoCzIcLmJvc2R5bi5hcGkubWlzc2lvbi5LZXlWYW'
+    'x1ZVIJb3ZlcnJpZGVzEkcKCnBhcmFtZXRlcnMYCCADKAsyJy5ib3NkeW4uYXBpLm1pc3Npb24u'
+    'VmFyaWFibGVEZWNsYXJhdGlvblIKcGFyYW1ldGVyc0IGCgR0eXBl');
 
 @$core.Deprecated('Use sequenceDescriptor instead')
 const Sequence$json = {
@@ -482,6 +597,41 @@ final $typed_data.Uint8List sleepDescriptor = $convert.base64Decode(
     'CgVTbGVlcBIYCgdzZWNvbmRzGAEgASgCUgdzZWNvbmRzEiwKEnJlc3RhcnRfYWZ0ZXJfc3RvcB'
     'gCIAEoCFIQcmVzdGFydEFmdGVyU3RvcA==');
 
+@$core.Deprecated('Use executeChoreographyDescriptor instead')
+const ExecuteChoreography$json = {
+  '1': 'ExecuteChoreography',
+  '2': [
+    {'1': 'service_name', '3': 1, '4': 1, '5': 9, '10': 'serviceName'},
+    {'1': 'host', '3': 2, '4': 1, '5': 9, '10': 'host'},
+    {'1': 'sequence_name', '3': 3, '4': 1, '5': 9, '10': 'sequenceName'},
+  ],
+};
+
+/// Descriptor for `ExecuteChoreography`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List executeChoreographyDescriptor = $convert.base64Decode(
+    'ChNFeGVjdXRlQ2hvcmVvZ3JhcGh5EiEKDHNlcnZpY2VfbmFtZRgBIAEoCVILc2VydmljZU5hbW'
+    'USEgoEaG9zdBgCIAEoCVIEaG9zdBIjCg1zZXF1ZW5jZV9uYW1lGAMgASgJUgxzZXF1ZW5jZU5h'
+    'bWU=');
+
+@$core.Deprecated('Use missionUploadChoreographyDescriptor instead')
+const MissionUploadChoreography$json = {
+  '1': 'MissionUploadChoreography',
+  '2': [
+    {'1': 'service_name', '3': 1, '4': 1, '5': 9, '10': 'serviceName'},
+    {'1': 'host', '3': 2, '4': 1, '5': 9, '10': 'host'},
+    {'1': 'choreography_sequences', '3': 3, '4': 3, '5': 11, '6': '.bosdyn.api.spot.ChoreographySequence', '10': 'choreographySequences'},
+    {'1': 'animated_moves', '3': 4, '4': 3, '5': 11, '6': '.bosdyn.api.spot.Animation', '10': 'animatedMoves'},
+  ],
+};
+
+/// Descriptor for `MissionUploadChoreography`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List missionUploadChoreographyDescriptor = $convert.base64Decode(
+    'ChlNaXNzaW9uVXBsb2FkQ2hvcmVvZ3JhcGh5EiEKDHNlcnZpY2VfbmFtZRgBIAEoCVILc2Vydm'
+    'ljZU5hbWUSEgoEaG9zdBgCIAEoCVIEaG9zdBJcChZjaG9yZW9ncmFwaHlfc2VxdWVuY2VzGAMg'
+    'AygLMiUuYm9zZHluLmFwaS5zcG90LkNob3Jlb2dyYXBoeVNlcXVlbmNlUhVjaG9yZW9ncmFwaH'
+    'lTZXF1ZW5jZXMSQQoOYW5pbWF0ZWRfbW92ZXMYBCADKAsyGi5ib3NkeW4uYXBpLnNwb3QuQW5p'
+    'bWF0aW9uUg1hbmltYXRlZE1vdmVz');
+
 @$core.Deprecated('Use promptDescriptor instead')
 const Prompt$json = {
   '1': 'Prompt',
@@ -489,13 +639,26 @@ const Prompt$json = {
     {'1': 'always_reprompt', '3': 1, '4': 1, '5': 8, '10': 'alwaysReprompt'},
     {'1': 'text', '3': 2, '4': 1, '5': 9, '10': 'text'},
     {'1': 'source', '3': 3, '4': 1, '5': 9, '10': 'source'},
-    {'1': 'options', '3': 4, '4': 3, '5': 11, '6': '.bosdyn.api.mission.Prompt.Option', '10': 'options'},
+    {
+      '1': 'options',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.bosdyn.api.mission.Prompt.Option',
+      '8': {'3': true},
+      '10': 'options',
+    },
+    {'1': 'options_list', '3': 9, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Prompt.OptionsList', '9': 0, '10': 'optionsList'},
+    {'1': 'custom_params', '3': 10, '4': 1, '5': 11, '6': '.bosdyn.api.DictParam.Spec', '9': 0, '10': 'customParams'},
     {'1': 'child', '3': 5, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Node', '10': 'child'},
     {'1': 'for_autonomous_processing', '3': 6, '4': 1, '5': 8, '10': 'forAutonomousProcessing'},
     {'1': 'severity', '3': 7, '4': 1, '5': 14, '6': '.bosdyn.api.AlertData.SeverityLevel', '10': 'severity'},
     {'1': 'question_name_in_blackboard', '3': 8, '4': 1, '5': 9, '10': 'questionNameInBlackboard'},
   ],
-  '3': [Prompt_Option$json],
+  '3': [Prompt_Option$json, Prompt_OptionsList$json],
+  '8': [
+    {'1': 'answer_spec'},
+  ],
 };
 
 @$core.Deprecated('Use promptDescriptor instead')
@@ -507,17 +670,29 @@ const Prompt_Option$json = {
   ],
 };
 
+@$core.Deprecated('Use promptDescriptor instead')
+const Prompt_OptionsList$json = {
+  '1': 'OptionsList',
+  '2': [
+    {'1': 'options', '3': 1, '4': 3, '5': 11, '6': '.bosdyn.api.mission.Prompt.Option', '10': 'options'},
+  ],
+};
+
 /// Descriptor for `Prompt`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List promptDescriptor = $convert.base64Decode(
     'CgZQcm9tcHQSJwoPYWx3YXlzX3JlcHJvbXB0GAEgASgIUg5hbHdheXNSZXByb21wdBISCgR0ZX'
-    'h0GAIgASgJUgR0ZXh0EhYKBnNvdXJjZRgDIAEoCVIGc291cmNlEjsKB29wdGlvbnMYBCADKAsy'
-    'IS5ib3NkeW4uYXBpLm1pc3Npb24uUHJvbXB0Lk9wdGlvblIHb3B0aW9ucxIuCgVjaGlsZBgFIA'
-    'EoCzIYLmJvc2R5bi5hcGkubWlzc2lvbi5Ob2RlUgVjaGlsZBI6Chlmb3JfYXV0b25vbW91c19w'
-    'cm9jZXNzaW5nGAYgASgIUhdmb3JBdXRvbm9tb3VzUHJvY2Vzc2luZxI/CghzZXZlcml0eRgHIA'
-    'EoDjIjLmJvc2R5bi5hcGkuQWxlcnREYXRhLlNldmVyaXR5TGV2ZWxSCHNldmVyaXR5Ej0KG3F1'
-    'ZXN0aW9uX25hbWVfaW5fYmxhY2tib2FyZBgIIAEoCVIYcXVlc3Rpb25OYW1lSW5CbGFja2JvYX'
-    'JkGj0KBk9wdGlvbhISCgR0ZXh0GAEgASgJUgR0ZXh0Eh8KC2Fuc3dlcl9jb2RlGAIgASgDUgph'
-    'bnN3ZXJDb2Rl');
+    'h0GAIgASgJUgR0ZXh0EhYKBnNvdXJjZRgDIAEoCVIGc291cmNlEj8KB29wdGlvbnMYBCADKAsy'
+    'IS5ib3NkeW4uYXBpLm1pc3Npb24uUHJvbXB0Lk9wdGlvbkICGAFSB29wdGlvbnMSSwoMb3B0aW'
+    '9uc19saXN0GAkgASgLMiYuYm9zZHluLmFwaS5taXNzaW9uLlByb21wdC5PcHRpb25zTGlzdEgA'
+    'UgtvcHRpb25zTGlzdBJBCg1jdXN0b21fcGFyYW1zGAogASgLMhouYm9zZHluLmFwaS5EaWN0UG'
+    'FyYW0uU3BlY0gAUgxjdXN0b21QYXJhbXMSLgoFY2hpbGQYBSABKAsyGC5ib3NkeW4uYXBpLm1p'
+    'c3Npb24uTm9kZVIFY2hpbGQSOgoZZm9yX2F1dG9ub21vdXNfcHJvY2Vzc2luZxgGIAEoCFIXZm'
+    '9yQXV0b25vbW91c1Byb2Nlc3NpbmcSPwoIc2V2ZXJpdHkYByABKA4yIy5ib3NkeW4uYXBpLkFs'
+    'ZXJ0RGF0YS5TZXZlcml0eUxldmVsUghzZXZlcml0eRI9ChtxdWVzdGlvbl9uYW1lX2luX2JsYW'
+    'NrYm9hcmQYCCABKAlSGHF1ZXN0aW9uTmFtZUluQmxhY2tib2FyZBo9CgZPcHRpb24SEgoEdGV4'
+    'dBgBIAEoCVIEdGV4dBIfCgthbnN3ZXJfY29kZRgCIAEoA1IKYW5zd2VyQ29kZRpKCgtPcHRpb2'
+    '5zTGlzdBI7CgdvcHRpb25zGAEgAygLMiEuYm9zZHluLmFwaS5taXNzaW9uLlByb21wdC5PcHRp'
+    'b25SB29wdGlvbnNCDQoLYW5zd2VyX3NwZWM=');
 
 @$core.Deprecated('Use bosdynGripperCameraParamsStateDescriptor instead')
 const BosdynGripperCameraParamsState$json = {
@@ -654,6 +829,22 @@ final $typed_data.Uint8List spotCamLedDescriptor = $convert.base64Decode(
     'U3BvdENhbUxlZC5CcmlnaHRuZXNzZXNFbnRyeVIMYnJpZ2h0bmVzc2VzGj8KEUJyaWdodG5lc3'
     'Nlc0VudHJ5EhAKA2tleRgBIAEoBVIDa2V5EhQKBXZhbHVlGAIgASgCUgV2YWx1ZToCOAE=');
 
+@$core.Deprecated('Use spotCamFocusStateDescriptor instead')
+const SpotCamFocusState$json = {
+  '1': 'SpotCamFocusState',
+  '2': [
+    {'1': 'service_name', '3': 1, '4': 1, '5': 9, '10': 'serviceName'},
+    {'1': 'host', '3': 2, '4': 1, '5': 9, '10': 'host'},
+    {'1': 'focus_state', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.spot_cam.PtzFocusState', '10': 'focusState'},
+  ],
+};
+
+/// Descriptor for `SpotCamFocusState`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spotCamFocusStateDescriptor = $convert.base64Decode(
+    'ChFTcG90Q2FtRm9jdXNTdGF0ZRIhCgxzZXJ2aWNlX25hbWUYASABKAlSC3NlcnZpY2VOYW1lEh'
+    'IKBGhvc3QYAiABKAlSBGhvc3QSQwoLZm9jdXNfc3RhdGUYAyABKAsyIi5ib3NkeW4uYXBpLnNw'
+    'b3RfY2FtLlB0ekZvY3VzU3RhdGVSCmZvY3VzU3RhdGU=');
+
 @$core.Deprecated('Use spotCamResetAutofocusDescriptor instead')
 const SpotCamResetAutofocus$json = {
   '1': 'SpotCamResetAutofocus',
@@ -759,6 +950,7 @@ const DataAcquisition$json = {
     {'1': 'metadata_name_in_blackboard', '3': 9, '4': 1, '5': 9, '10': 'metadataNameInBlackboard'},
     {'1': 'action_name_format', '3': 7, '4': 1, '5': 9, '10': 'actionNameFormat'},
     {'1': 'disable_cancel_on_pause_or_stop', '3': 8, '4': 1, '5': 8, '10': 'disableCancelOnPauseOrStop'},
+    {'1': 'format_metadata', '3': 10, '4': 1, '5': 8, '10': 'formatMetadata'},
   ],
   '4': [DataAcquisition_CompletionBehavior$json],
 };
@@ -784,9 +976,9 @@ final $typed_data.Uint8List dataAcquisitionDescriptor = $convert.base64Decode(
     'Y2tib2FyZBI9ChttZXRhZGF0YV9uYW1lX2luX2JsYWNrYm9hcmQYCSABKAlSGG1ldGFkYXRhTm'
     'FtZUluQmxhY2tib2FyZBIsChJhY3Rpb25fbmFtZV9mb3JtYXQYByABKAlSEGFjdGlvbk5hbWVG'
     'b3JtYXQSQwofZGlzYWJsZV9jYW5jZWxfb25fcGF1c2Vfb3Jfc3RvcBgIIAEoCFIaZGlzYWJsZU'
-    'NhbmNlbE9uUGF1c2VPclN0b3AiYQoSQ29tcGxldGlvbkJlaGF2aW9yEhQKEENPTVBMRVRFX1VO'
-    'S05PV04QABIYChRDT01QTEVURV9BRlRFUl9TQVZFRBABEhsKF0NPTVBMRVRFX0FGVEVSX0FDUV'
-    'VJUkVEEAI=');
+    'NhbmNlbE9uUGF1c2VPclN0b3ASJwoPZm9ybWF0X21ldGFkYXRhGAogASgIUg5mb3JtYXRNZXRh'
+    'ZGF0YSJhChJDb21wbGV0aW9uQmVoYXZpb3ISFAoQQ09NUExFVEVfVU5LTk9XThAAEhgKFENPTV'
+    'BMRVRFX0FGVEVSX1NBVkVEEAESGwoXQ09NUExFVEVfQUZURVJfQUNRVUlSRUQQAg==');
 
 @$core.Deprecated('Use retainLeaseDescriptor instead')
 const RetainLease$json = {

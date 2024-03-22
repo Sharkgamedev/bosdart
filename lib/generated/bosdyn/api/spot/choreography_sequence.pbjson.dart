@@ -112,6 +112,54 @@ final $typed_data.Uint8List sequenceInfoDescriptor = $convert.base64Decode(
     'FwoTU0FWRURfU1RBVEVfVU5LTk9XThAAEhkKFVNBVkVEX1NUQVRFX1RFTVBPUkFSWRABEhgKFF'
     'NBVkVEX1NUQVRFX1JFVEFJTkVEEAISGQoVU0FWRURfU1RBVEVfUEVSTUFORU5UEAM=');
 
+@$core.Deprecated('Use getChoreographySequenceRequestDescriptor instead')
+const GetChoreographySequenceRequest$json = {
+  '1': 'GetChoreographySequenceRequest',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
+    {'1': 'sequence_name', '3': 2, '4': 1, '5': 9, '10': 'sequenceName'},
+  ],
+};
+
+/// Descriptor for `GetChoreographySequenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getChoreographySequenceRequestDescriptor = $convert.base64Decode(
+    'Ch5HZXRDaG9yZW9ncmFwaHlTZXF1ZW5jZVJlcXVlc3QSMQoGaGVhZGVyGAEgASgLMhkuYm9zZH'
+    'luLmFwaS5SZXF1ZXN0SGVhZGVyUgZoZWFkZXISIwoNc2VxdWVuY2VfbmFtZRgCIAEoCVIMc2Vx'
+    'dWVuY2VOYW1l');
+
+@$core.Deprecated('Use getChoreographySequenceResponseDescriptor instead')
+const GetChoreographySequenceResponse$json = {
+  '1': 'GetChoreographySequenceResponse',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
+    {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.bosdyn.api.spot.GetChoreographySequenceResponse.Status', '10': 'status'},
+    {'1': 'choreography_sequence', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.spot.ChoreographySequence', '10': 'choreographySequence'},
+    {'1': 'animated_moves', '3': 4, '4': 3, '5': 11, '6': '.bosdyn.api.spot.Animation', '10': 'animatedMoves'},
+  ],
+  '4': [GetChoreographySequenceResponse_Status$json],
+};
+
+@$core.Deprecated('Use getChoreographySequenceResponseDescriptor instead')
+const GetChoreographySequenceResponse_Status$json = {
+  '1': 'Status',
+  '2': [
+    {'1': 'STATUS_UNKNOWN', '2': 0},
+    {'1': 'STATUS_OK', '2': 1},
+    {'1': 'STATUS_UNKNOWN_SEQUENCE', '2': 2},
+  ],
+};
+
+/// Descriptor for `GetChoreographySequenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getChoreographySequenceResponseDescriptor = $convert.base64Decode(
+    'Ch9HZXRDaG9yZW9ncmFwaHlTZXF1ZW5jZVJlc3BvbnNlEjIKBmhlYWRlchgBIAEoCzIaLmJvc2'
+    'R5bi5hcGkuUmVzcG9uc2VIZWFkZXJSBmhlYWRlchJPCgZzdGF0dXMYAiABKA4yNy5ib3NkeW4u'
+    'YXBpLnNwb3QuR2V0Q2hvcmVvZ3JhcGh5U2VxdWVuY2VSZXNwb25zZS5TdGF0dXNSBnN0YXR1cx'
+    'JaChVjaG9yZW9ncmFwaHlfc2VxdWVuY2UYAyABKAsyJS5ib3NkeW4uYXBpLnNwb3QuQ2hvcmVv'
+    'Z3JhcGh5U2VxdWVuY2VSFGNob3Jlb2dyYXBoeVNlcXVlbmNlEkEKDmFuaW1hdGVkX21vdmVzGA'
+    'QgAygLMhouYm9zZHluLmFwaS5zcG90LkFuaW1hdGlvblINYW5pbWF0ZWRNb3ZlcyJICgZTdGF0'
+    'dXMSEgoOU1RBVFVTX1VOS05PV04QABINCglTVEFUVVNfT0sQARIbChdTVEFUVVNfVU5LTk9XTl'
+    '9TRVFVRU5DRRAC');
+
 @$core.Deprecated('Use deleteSequenceRequestDescriptor instead')
 const DeleteSequenceRequest$json = {
   '1': 'DeleteSequenceRequest',
@@ -416,6 +464,7 @@ const ExecuteChoreographyResponse_Status$json = {
     {'1': 'STATUS_INVALID_UPLOADED_CHOREOGRAPHY', '2': 2},
     {'1': 'STATUS_ROBOT_COMMAND_ISSUES', '2': 3},
     {'1': 'STATUS_LEASE_ERROR', '2': 4},
+    {'1': 'STATUS_UNKNOWN_SEQUENCE', '2': 5},
   ],
 };
 
@@ -425,10 +474,10 @@ final $typed_data.Uint8List executeChoreographyResponseDescriptor = $convert.bas
     'FwaS5SZXNwb25zZUhlYWRlclIGaGVhZGVyEkQKEGxlYXNlX3VzZV9yZXN1bHQYAiABKAsyGi5i'
     'b3NkeW4uYXBpLkxlYXNlVXNlUmVzdWx0Ug5sZWFzZVVzZVJlc3VsdBJLCgZzdGF0dXMYAyABKA'
     '4yMy5ib3NkeW4uYXBpLnNwb3QuRXhlY3V0ZUNob3Jlb2dyYXBoeVJlc3BvbnNlLlN0YXR1c1IG'
-    'c3RhdHVzEiEKDGV4ZWN1dGlvbl9pZBgEIAEoBVILZXhlY3V0aW9uSWQijgEKBlN0YXR1cxISCg'
+    'c3RhdHVzEiEKDGV4ZWN1dGlvbl9pZBgEIAEoBVILZXhlY3V0aW9uSWQiqwEKBlN0YXR1cxISCg'
     '5TVEFUVVNfVU5LTk9XThAAEg0KCVNUQVRVU19PSxABEigKJFNUQVRVU19JTlZBTElEX1VQTE9B'
     'REVEX0NIT1JFT0dSQVBIWRACEh8KG1NUQVRVU19ST0JPVF9DT01NQU5EX0lTU1VFUxADEhYKEl'
-    'NUQVRVU19MRUFTRV9FUlJPUhAE');
+    'NUQVRVU19MRUFTRV9FUlJPUhAEEhsKF1NUQVRVU19VTktOT1dOX1NFUVVFTkNFEAU=');
 
 @$core.Deprecated('Use startRecordingStateRequestDescriptor instead')
 const StartRecordingStateRequest$json = {
@@ -1275,6 +1324,7 @@ const ChoreographyStatusResponse$json = {
     {'1': 'sequence_slices', '3': 6, '4': 1, '5': 5, '10': 'sequenceSlices'},
     {'1': 'sequence_slices_per_minute', '3': 7, '4': 1, '5': 1, '10': 'sequenceSlicesPerMinute'},
     {'1': 'validity_time', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'validityTime'},
+    {'1': 'sequence_name', '3': 9, '4': 1, '5': 9, '10': 'sequenceName'},
   ],
   '4': [ChoreographyStatusResponse_Status$json],
 };
@@ -1306,9 +1356,63 @@ final $typed_data.Uint8List choreographyStatusResponseDescriptor = $convert.base
     'ZlUgthY3RpdmVNb3ZlcxInCg9zZXF1ZW5jZV9zbGljZXMYBiABKAVSDnNlcXVlbmNlU2xpY2Vz'
     'EjsKGnNlcXVlbmNlX3NsaWNlc19wZXJfbWludXRlGAcgASgBUhdzZXF1ZW5jZVNsaWNlc1Blck'
     '1pbnV0ZRI/Cg12YWxpZGl0eV90aW1lGAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt'
-    'cFIMdmFsaWRpdHlUaW1lIvMBCgZTdGF0dXMSEgoOU1RBVFVTX1VOS05PV04QABISCg5TVEFUVV'
-    'NfREFOQ0lORxABEh0KGVNUQVRVU19DT01QTEVURURfU0VRVUVOQ0UQAhITCg9TVEFUVVNfUFJF'
-    'UFBJTkcQAxIhCh1TVEFUVVNfV0FJVElOR19GT1JfU1RBUlRfVElNRRAEEhUKEVNUQVRVU19WQU'
-    'xJREFUSU5HEAUSFgoSU1RBVFVTX0lOVEVSUlVQVEVEEAYSEQoNU1RBVFVTX0ZBTExFThAHEhYK'
-    'ElNUQVRVU19QT1dFUkVEX09GRhAIEhAKDFNUQVRVU19PVEhFUhAJ');
+    'cFIMdmFsaWRpdHlUaW1lEiMKDXNlcXVlbmNlX25hbWUYCSABKAlSDHNlcXVlbmNlTmFtZSLzAQ'
+    'oGU3RhdHVzEhIKDlNUQVRVU19VTktOT1dOEAASEgoOU1RBVFVTX0RBTkNJTkcQARIdChlTVEFU'
+    'VVNfQ09NUExFVEVEX1NFUVVFTkNFEAISEwoPU1RBVFVTX1BSRVBQSU5HEAMSIQodU1RBVFVTX1'
+    'dBSVRJTkdfRk9SX1NUQVJUX1RJTUUQBBIVChFTVEFUVVNfVkFMSURBVElORxAFEhYKElNUQVRV'
+    'U19JTlRFUlJVUFRFRBAGEhEKDVNUQVRVU19GQUxMRU4QBxIWChJTVEFUVVNfUE9XRVJFRF9PRk'
+    'YQCBIQCgxTVEFUVVNfT1RIRVIQCQ==');
+
+@$core.Deprecated('Use choreographyTimeAdjustRequestDescriptor instead')
+const ChoreographyTimeAdjustRequest$json = {
+  '1': 'ChoreographyTimeAdjustRequest',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
+    {'1': 'override_start_time', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'overrideStartTime'},
+    {'1': 'acceptable_time_difference', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'acceptableTimeDifference'},
+    {'1': 'validity_time', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'validityTime'},
+  ],
+};
+
+/// Descriptor for `ChoreographyTimeAdjustRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List choreographyTimeAdjustRequestDescriptor = $convert.base64Decode(
+    'Ch1DaG9yZW9ncmFwaHlUaW1lQWRqdXN0UmVxdWVzdBIxCgZoZWFkZXIYASABKAsyGS5ib3NkeW'
+    '4uYXBpLlJlcXVlc3RIZWFkZXJSBmhlYWRlchJKChNvdmVycmlkZV9zdGFydF90aW1lGAIgASgL'
+    'MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIRb3ZlcnJpZGVTdGFydFRpbWUSVwoaYWNjZX'
+    'B0YWJsZV90aW1lX2RpZmZlcmVuY2UYAyABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25S'
+    'GGFjY2VwdGFibGVUaW1lRGlmZmVyZW5jZRI+Cg12YWxpZGl0eV90aW1lGAQgASgLMhkuZ29vZ2'
+    'xlLnByb3RvYnVmLkR1cmF0aW9uUgx2YWxpZGl0eVRpbWU=');
+
+@$core.Deprecated('Use choreographyTimeAdjustResponseDescriptor instead')
+const ChoreographyTimeAdjustResponse$json = {
+  '1': 'ChoreographyTimeAdjustResponse',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
+    {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.bosdyn.api.spot.ChoreographyTimeAdjustResponse.Status', '10': 'status'},
+    {'1': 'warnings', '3': 3, '4': 3, '5': 9, '10': 'warnings'},
+  ],
+  '4': [ChoreographyTimeAdjustResponse_Status$json],
+};
+
+@$core.Deprecated('Use choreographyTimeAdjustResponseDescriptor instead')
+const ChoreographyTimeAdjustResponse_Status$json = {
+  '1': 'Status',
+  '2': [
+    {'1': 'STATUS_UNKNOWN', '2': 0},
+    {'1': 'STATUS_OK', '2': 1},
+    {'1': 'STATUS_BEFORE_CURRENT_TIME', '2': 2},
+    {'1': 'STATUS_EXCEEDS_VALIDITY_TIME', '2': 3},
+    {'1': 'STATUS_OVERRIDE_TIME_UNSET', '2': 4},
+  ],
+};
+
+/// Descriptor for `ChoreographyTimeAdjustResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List choreographyTimeAdjustResponseDescriptor = $convert.base64Decode(
+    'Ch5DaG9yZW9ncmFwaHlUaW1lQWRqdXN0UmVzcG9uc2USMgoGaGVhZGVyGAEgASgLMhouYm9zZH'
+    'luLmFwaS5SZXNwb25zZUhlYWRlclIGaGVhZGVyEk4KBnN0YXR1cxgCIAEoDjI2LmJvc2R5bi5h'
+    'cGkuc3BvdC5DaG9yZW9ncmFwaHlUaW1lQWRqdXN0UmVzcG9uc2UuU3RhdHVzUgZzdGF0dXMSGg'
+    'oId2FybmluZ3MYAyADKAlSCHdhcm5pbmdzIo0BCgZTdGF0dXMSEgoOU1RBVFVTX1VOS05PV04Q'
+    'ABINCglTVEFUVVNfT0sQARIeChpTVEFUVVNfQkVGT1JFX0NVUlJFTlRfVElNRRACEiAKHFNUQV'
+    'RVU19FWENFRURTX1ZBTElESVRZX1RJTUUQAxIeChpTVEFUVVNfT1ZFUlJJREVfVElNRV9VTlNF'
+    'VBAE');
 

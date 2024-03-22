@@ -14,20 +14,20 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/field_mask.pb.dart' as $84;
-import '../../../google/protobuf/timestamp.pb.dart' as $60;
-import '../../../google/protobuf/wrappers.pb.dart' as $59;
-import '../geometry.pb.dart' as $61;
-import '../image.pb.dart' as $11;
-import '../local_grid.pb.dart' as $15;
+import '../../../google/protobuf/field_mask.pb.dart' as $86;
+import '../../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../../google/protobuf/wrappers.pb.dart' as $58;
+import '../geometry.pb.dart' as $60;
+import '../image.pb.dart' as $12;
+import '../local_grid.pb.dart' as $16;
 import '../payload.pb.dart' as $20;
 import '../point_cloud.pb.dart' as $21;
 import '../robot_id.pb.dart' as $25;
 import '../robot_state.pb.dart' as $26;
-import '../spot/robot_command.pb.dart' as $85;
-import '../stairs.pb.dart' as $74;
+import '../spot/robot_command.pb.dart' as $87;
+import '../stairs.pb.dart' as $73;
 import '../world_object.pb.dart' as $28;
-import 'area_callback_data.pb.dart' as $86;
+import 'area_callback_data.pb.dart' as $88;
 import 'map.pbenum.dart';
 
 export 'map.pbenum.dart';
@@ -376,16 +376,105 @@ class Waypoint_Annotations_LoopClosureSettings extends $pb.GeneratedMessage {
   void clearMaxOdometryPathLength() => clearField(4);
 }
 
+/// Waypoints can optionally define where they are in an Earth-Centered-Earth-Fixed (ECEF) frame, which
+/// can aid in localization.
+class Waypoint_Annotations_GPSSettings extends $pb.GeneratedMessage {
+  factory Waypoint_Annotations_GPSSettings({
+    AnnotationState? state,
+    $60.SE3Pose? ecefTformWaypoint,
+    $core.bool? disableGpsLocalization,
+  }) {
+    final $result = create();
+    if (state != null) {
+      $result.state = state;
+    }
+    if (ecefTformWaypoint != null) {
+      $result.ecefTformWaypoint = ecefTformWaypoint;
+    }
+    if (disableGpsLocalization != null) {
+      $result.disableGpsLocalization = disableGpsLocalization;
+    }
+    return $result;
+  }
+  Waypoint_Annotations_GPSSettings._() : super();
+  factory Waypoint_Annotations_GPSSettings.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Waypoint_Annotations_GPSSettings.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Waypoint.Annotations.GPSSettings', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
+    ..e<AnnotationState>(1, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: AnnotationState.ANNOTATION_STATE_UNKNOWN, valueOf: AnnotationState.valueOf, enumValues: AnnotationState.values)
+    ..aOM<$60.SE3Pose>(2, _omitFieldNames ? '' : 'ecefTformWaypoint', subBuilder: $60.SE3Pose.create)
+    ..aOB(5, _omitFieldNames ? '' : 'disableGpsLocalization')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Waypoint_Annotations_GPSSettings clone() => Waypoint_Annotations_GPSSettings()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Waypoint_Annotations_GPSSettings copyWith(void Function(Waypoint_Annotations_GPSSettings) updates) => super.copyWith((message) => updates(message as Waypoint_Annotations_GPSSettings)) as Waypoint_Annotations_GPSSettings;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Waypoint_Annotations_GPSSettings create() => Waypoint_Annotations_GPSSettings._();
+  Waypoint_Annotations_GPSSettings createEmptyInstance() => create();
+  static $pb.PbList<Waypoint_Annotations_GPSSettings> createRepeated() => $pb.PbList<Waypoint_Annotations_GPSSettings>();
+  @$core.pragma('dart2js:noInline')
+  static Waypoint_Annotations_GPSSettings getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Waypoint_Annotations_GPSSettings>(create);
+  static Waypoint_Annotations_GPSSettings? _defaultInstance;
+
+  /// If the annotation state is set, the GPS settings will be applied. Otherwise, they will be ignored.
+  /// If ignored, GPS will only be used at this waypoint if data from a GPS exists in the waypoint snapshot, and the
+  /// robot has a GPS payload installed and running. Set the annotation state to override this behavior.
+  @$pb.TagNumber(1)
+  AnnotationState get state => $_getN(0);
+  @$pb.TagNumber(1)
+  set state(AnnotationState v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasState() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearState() => clearField(1);
+
+  /// This defines the pose of the waypoint in the Earth-Centered-Earth-Fixed (ECEF) frame.
+  @$pb.TagNumber(2)
+  $60.SE3Pose get ecefTformWaypoint => $_getN(1);
+  @$pb.TagNumber(2)
+  set ecefTformWaypoint($60.SE3Pose v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEcefTformWaypoint() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEcefTformWaypoint() => clearField(2);
+  @$pb.TagNumber(2)
+  $60.SE3Pose ensureEcefTformWaypoint() => $_ensure(1);
+
+  /// If true, GPS localization will be disabled at this waypoint. If false, the robot will use GPS when available
+  /// to localize to this waypoint.
+  @$pb.TagNumber(5)
+  $core.bool get disableGpsLocalization => $_getBF(2);
+  @$pb.TagNumber(5)
+  set disableGpsLocalization($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDisableGpsLocalization() => $_has(2);
+  @$pb.TagNumber(5)
+  void clearDisableGpsLocalization() => clearField(5);
+}
+
 /// Annotations understood by BostonDynamics systems.
 class Waypoint_Annotations extends $pb.GeneratedMessage {
   factory Waypoint_Annotations({
     $core.String? name,
-    $61.SE3Covariance? icpVariance,
+    $60.SE3Covariance? icpVariance,
     Waypoint_Annotations_LocalizeRegion? scanMatchRegion,
-    $60.Timestamp? creationTime,
+    $59.Timestamp? creationTime,
     Waypoint_WaypointSource? waypointSource,
     ClientMetadata? clientMetadata,
     Waypoint_Annotations_LoopClosureSettings? loopClosureSettings,
+    Waypoint_Annotations_GPSSettings? gpsSettings,
   }) {
     final $result = create();
     if (name != null) {
@@ -409,6 +498,9 @@ class Waypoint_Annotations extends $pb.GeneratedMessage {
     if (loopClosureSettings != null) {
       $result.loopClosureSettings = loopClosureSettings;
     }
+    if (gpsSettings != null) {
+      $result.gpsSettings = gpsSettings;
+    }
     return $result;
   }
   Waypoint_Annotations._() : super();
@@ -417,12 +509,13 @@ class Waypoint_Annotations extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Waypoint.Annotations', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$61.SE3Covariance>(2, _omitFieldNames ? '' : 'icpVariance', subBuilder: $61.SE3Covariance.create)
+    ..aOM<$60.SE3Covariance>(2, _omitFieldNames ? '' : 'icpVariance', subBuilder: $60.SE3Covariance.create)
     ..aOM<Waypoint_Annotations_LocalizeRegion>(3, _omitFieldNames ? '' : 'scanMatchRegion', subBuilder: Waypoint_Annotations_LocalizeRegion.create)
-    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'creationTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'creationTime', subBuilder: $59.Timestamp.create)
     ..e<Waypoint_WaypointSource>(5, _omitFieldNames ? '' : 'waypointSource', $pb.PbFieldType.OE, defaultOrMaker: Waypoint_WaypointSource.WAYPOINT_SOURCE_UNKNOWN, valueOf: Waypoint_WaypointSource.valueOf, enumValues: Waypoint_WaypointSource.values)
     ..aOM<ClientMetadata>(6, _omitFieldNames ? '' : 'clientMetadata', subBuilder: ClientMetadata.create)
     ..aOM<Waypoint_Annotations_LoopClosureSettings>(7, _omitFieldNames ? '' : 'loopClosureSettings', subBuilder: Waypoint_Annotations_LoopClosureSettings.create)
+    ..aOM<Waypoint_Annotations_GPSSettings>(8, _omitFieldNames ? '' : 'gpsSettings', subBuilder: Waypoint_Annotations_GPSSettings.create)
     ..hasRequiredFields = false
   ;
 
@@ -460,15 +553,15 @@ class Waypoint_Annotations extends $pb.GeneratedMessage {
   /// Estimate of the variance of ICP when performed at this waypoint, collected at record
   /// time.
   @$pb.TagNumber(2)
-  $61.SE3Covariance get icpVariance => $_getN(1);
+  $60.SE3Covariance get icpVariance => $_getN(1);
   @$pb.TagNumber(2)
-  set icpVariance($61.SE3Covariance v) { setField(2, v); }
+  set icpVariance($60.SE3Covariance v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasIcpVariance() => $_has(1);
   @$pb.TagNumber(2)
   void clearIcpVariance() => clearField(2);
   @$pb.TagNumber(2)
-  $61.SE3Covariance ensureIcpVariance() => $_ensure(1);
+  $60.SE3Covariance ensureIcpVariance() => $_ensure(1);
 
   /// Options for how to localize to a waypoint (if at all).
   @$pb.TagNumber(3)
@@ -484,15 +577,15 @@ class Waypoint_Annotations extends $pb.GeneratedMessage {
 
   /// The time that the waypoint was created while recording a map.
   @$pb.TagNumber(4)
-  $60.Timestamp get creationTime => $_getN(3);
+  $59.Timestamp get creationTime => $_getN(3);
   @$pb.TagNumber(4)
-  set creationTime($60.Timestamp v) { setField(4, v); }
+  set creationTime($59.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasCreationTime() => $_has(3);
   @$pb.TagNumber(4)
   void clearCreationTime() => clearField(4);
   @$pb.TagNumber(4)
-  $60.Timestamp ensureCreationTime() => $_ensure(3);
+  $59.Timestamp ensureCreationTime() => $_ensure(3);
 
   /// How this waypoint was made.
   @$pb.TagNumber(5)
@@ -529,6 +622,18 @@ class Waypoint_Annotations extends $pb.GeneratedMessage {
   void clearLoopClosureSettings() => clearField(7);
   @$pb.TagNumber(7)
   Waypoint_Annotations_LoopClosureSettings ensureLoopClosureSettings() => $_ensure(6);
+
+  /// Optional GPS navigation settings for this waypoint.
+  @$pb.TagNumber(8)
+  Waypoint_Annotations_GPSSettings get gpsSettings => $_getN(7);
+  @$pb.TagNumber(8)
+  set gpsSettings(Waypoint_Annotations_GPSSettings v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasGpsSettings() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearGpsSettings() => clearField(8);
+  @$pb.TagNumber(8)
+  Waypoint_Annotations_GPSSettings ensureGpsSettings() => $_ensure(7);
 }
 
 /// A base element of the graph nav map. A waypoint consists of a reference frame, a name,
@@ -537,7 +642,7 @@ class Waypoint extends $pb.GeneratedMessage {
   factory Waypoint({
     $core.String? id,
     $core.String? snapshotId,
-    $61.SE3Pose? waypointTformKo,
+    $60.SE3Pose? waypointTformKo,
     Waypoint_Annotations? annotations,
   }) {
     final $result = create();
@@ -562,7 +667,7 @@ class Waypoint extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Waypoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'snapshotId')
-    ..aOM<$61.SE3Pose>(3, _omitFieldNames ? '' : 'waypointTformKo', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(3, _omitFieldNames ? '' : 'waypointTformKo', subBuilder: $60.SE3Pose.create)
     ..aOM<Waypoint_Annotations>(4, _omitFieldNames ? '' : 'annotations', subBuilder: Waypoint_Annotations.create)
     ..hasRequiredFields = false
   ;
@@ -611,15 +716,15 @@ class Waypoint extends $pb.GeneratedMessage {
 
   /// Transform from the KO frame (at time of recording) to the waypoint.
   @$pb.TagNumber(3)
-  $61.SE3Pose get waypointTformKo => $_getN(2);
+  $60.SE3Pose get waypointTformKo => $_getN(2);
   @$pb.TagNumber(3)
-  set waypointTformKo($61.SE3Pose v) { setField(3, v); }
+  set waypointTformKo($60.SE3Pose v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasWaypointTformKo() => $_has(2);
   @$pb.TagNumber(3)
   void clearWaypointTformKo() => clearField(3);
   @$pb.TagNumber(3)
-  $61.SE3Pose ensureWaypointTformKo() => $_ensure(2);
+  $60.SE3Pose ensureWaypointTformKo() => $_ensure(2);
 
   /// Annotations specific to the current waypoint.
   @$pb.TagNumber(4)
@@ -756,18 +861,18 @@ class ClientMetadata extends $pb.GeneratedMessage {
 class WaypointSnapshot extends $pb.GeneratedMessage {
   factory WaypointSnapshot({
     $core.String? id,
-    $core.Iterable<$11.ImageResponse>? images,
+    $core.Iterable<$12.ImageResponse>? images,
     $21.PointCloud? pointCloud,
     $core.Iterable<$28.WorldObject>? objects,
     $26.RobotState? robotState,
-    $core.Iterable<$15.LocalGrid>? robotLocalGrids,
+    $core.Iterable<$16.LocalGrid>? robotLocalGrids,
     $core.bool? isPointCloudProcessed,
     $core.String? versionId,
     $core.bool? hasRemotePointCloudSensor,
-    $61.SE3Pose? bodyTformRemotePointCloudSensor,
+    $60.SE3Pose? bodyTformRemotePointCloudSensor,
     $core.Iterable<$20.Payload>? payloads,
     $25.RobotId? robotId,
-    $60.Timestamp? recordingStartedOn,
+    $59.Timestamp? recordingStartedOn,
   }) {
     final $result = create();
     if (id != null) {
@@ -817,18 +922,18 @@ class WaypointSnapshot extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WaypointSnapshot', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..pc<$11.ImageResponse>(2, _omitFieldNames ? '' : 'images', $pb.PbFieldType.PM, subBuilder: $11.ImageResponse.create)
+    ..pc<$12.ImageResponse>(2, _omitFieldNames ? '' : 'images', $pb.PbFieldType.PM, subBuilder: $12.ImageResponse.create)
     ..aOM<$21.PointCloud>(3, _omitFieldNames ? '' : 'pointCloud', subBuilder: $21.PointCloud.create)
     ..pc<$28.WorldObject>(4, _omitFieldNames ? '' : 'objects', $pb.PbFieldType.PM, subBuilder: $28.WorldObject.create)
     ..aOM<$26.RobotState>(5, _omitFieldNames ? '' : 'robotState', subBuilder: $26.RobotState.create)
-    ..pc<$15.LocalGrid>(6, _omitFieldNames ? '' : 'robotLocalGrids', $pb.PbFieldType.PM, subBuilder: $15.LocalGrid.create)
+    ..pc<$16.LocalGrid>(6, _omitFieldNames ? '' : 'robotLocalGrids', $pb.PbFieldType.PM, subBuilder: $16.LocalGrid.create)
     ..aOB(8, _omitFieldNames ? '' : 'isPointCloudProcessed')
     ..aOS(9, _omitFieldNames ? '' : 'versionId')
     ..aOB(10, _omitFieldNames ? '' : 'hasRemotePointCloudSensor')
-    ..aOM<$61.SE3Pose>(11, _omitFieldNames ? '' : 'bodyTformRemotePointCloudSensor', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(11, _omitFieldNames ? '' : 'bodyTformRemotePointCloudSensor', subBuilder: $60.SE3Pose.create)
     ..pc<$20.Payload>(12, _omitFieldNames ? '' : 'payloads', $pb.PbFieldType.PM, subBuilder: $20.Payload.create)
     ..aOM<$25.RobotId>(14, _omitFieldNames ? '' : 'robotId', subBuilder: $25.RobotId.create)
-    ..aOM<$60.Timestamp>(15, _omitFieldNames ? '' : 'recordingStartedOn', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(15, _omitFieldNames ? '' : 'recordingStartedOn', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -866,7 +971,7 @@ class WaypointSnapshot extends $pb.GeneratedMessage {
 
   /// Any images captured at the waypoint.
   @$pb.TagNumber(2)
-  $core.List<$11.ImageResponse> get images => $_getList(1);
+  $core.List<$12.ImageResponse> get images => $_getList(1);
 
   /// Aggregated point cloud data.
   @$pb.TagNumber(3)
@@ -898,7 +1003,7 @@ class WaypointSnapshot extends $pb.GeneratedMessage {
 
   /// Robot grid data.
   @$pb.TagNumber(6)
-  $core.List<$15.LocalGrid> get robotLocalGrids => $_getList(5);
+  $core.List<$16.LocalGrid> get robotLocalGrids => $_getList(5);
 
   /// If true, the point cloud of this snapshot has been processed.
   @$pb.TagNumber(8)
@@ -936,15 +1041,15 @@ class WaypointSnapshot extends $pb.GeneratedMessage {
   /// Transform from the robot body to the remote point cloud sensor's
   /// reference frame.
   @$pb.TagNumber(11)
-  $61.SE3Pose get bodyTformRemotePointCloudSensor => $_getN(9);
+  $60.SE3Pose get bodyTformRemotePointCloudSensor => $_getN(9);
   @$pb.TagNumber(11)
-  set bodyTformRemotePointCloudSensor($61.SE3Pose v) { setField(11, v); }
+  set bodyTformRemotePointCloudSensor($60.SE3Pose v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasBodyTformRemotePointCloudSensor() => $_has(9);
   @$pb.TagNumber(11)
   void clearBodyTformRemotePointCloudSensor() => clearField(11);
   @$pb.TagNumber(11)
-  $61.SE3Pose ensureBodyTformRemotePointCloudSensor() => $_ensure(9);
+  $60.SE3Pose ensureBodyTformRemotePointCloudSensor() => $_ensure(9);
 
   /// Defines the payloads attached to the robot at this waypoint.
   @$pb.TagNumber(12)
@@ -965,15 +1070,15 @@ class WaypointSnapshot extends $pb.GeneratedMessage {
   /// Information about when the recording session started in robot time basis.
   /// This will be filled out by the recording service when StartRecording is called.
   @$pb.TagNumber(15)
-  $60.Timestamp get recordingStartedOn => $_getN(12);
+  $59.Timestamp get recordingStartedOn => $_getN(12);
   @$pb.TagNumber(15)
-  set recordingStartedOn($60.Timestamp v) { setField(15, v); }
+  set recordingStartedOn($59.Timestamp v) { setField(15, v); }
   @$pb.TagNumber(15)
   $core.bool hasRecordingStartedOn() => $_has(12);
   @$pb.TagNumber(15)
   void clearRecordingStartedOn() => clearField(15);
   @$pb.TagNumber(15)
-  $60.Timestamp ensureRecordingStartedOn() => $_ensure(12);
+  $59.Timestamp ensureRecordingStartedOn() => $_ensure(12);
 }
 
 /// An edge is uniquely identified by the waypoints it connects.
@@ -1050,8 +1155,9 @@ class Edge_Annotations_StairData extends $pb.GeneratedMessage {
   factory Edge_Annotations_StairData({
     AnnotationState? state,
   @$core.Deprecated('This field is deprecated.')
-    $74.StraightStaircase? straightStaircase,
-    $74.StaircaseWithLandings? staircaseWithLandings,
+    $73.StraightStaircase? straightStaircase,
+    $73.StaircaseWithLandings? staircaseWithLandings,
+    Edge_Annotations_StairData_DescentPreference? descentPreference,
   }) {
     final $result = create();
     if (state != null) {
@@ -1064,6 +1170,9 @@ class Edge_Annotations_StairData extends $pb.GeneratedMessage {
     if (staircaseWithLandings != null) {
       $result.staircaseWithLandings = staircaseWithLandings;
     }
+    if (descentPreference != null) {
+      $result.descentPreference = descentPreference;
+    }
     return $result;
   }
   Edge_Annotations_StairData._() : super();
@@ -1072,8 +1181,9 @@ class Edge_Annotations_StairData extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Edge.Annotations.StairData', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..e<AnnotationState>(1, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: AnnotationState.ANNOTATION_STATE_UNKNOWN, valueOf: AnnotationState.valueOf, enumValues: AnnotationState.values)
-    ..aOM<$74.StraightStaircase>(2, _omitFieldNames ? '' : 'straightStaircase', subBuilder: $74.StraightStaircase.create)
-    ..aOM<$74.StaircaseWithLandings>(3, _omitFieldNames ? '' : 'staircaseWithLandings', subBuilder: $74.StaircaseWithLandings.create)
+    ..aOM<$73.StraightStaircase>(2, _omitFieldNames ? '' : 'straightStaircase', subBuilder: $73.StraightStaircase.create)
+    ..aOM<$73.StaircaseWithLandings>(3, _omitFieldNames ? '' : 'staircaseWithLandings', subBuilder: $73.StaircaseWithLandings.create)
+    ..e<Edge_Annotations_StairData_DescentPreference>(4, _omitFieldNames ? '' : 'descentPreference', $pb.PbFieldType.OE, defaultOrMaker: Edge_Annotations_StairData_DescentPreference.DESCENT_PREFERENCE_UNKNOWN, valueOf: Edge_Annotations_StairData_DescentPreference.valueOf, enumValues: Edge_Annotations_StairData_DescentPreference.values)
     ..hasRequiredFields = false
   ;
 
@@ -1112,10 +1222,10 @@ class Edge_Annotations_StairData extends $pb.GeneratedMessage {
   /// DEPRECATED as of 3.3.  Please use staircase_with_landings.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $74.StraightStaircase get straightStaircase => $_getN(1);
+  $73.StraightStaircase get straightStaircase => $_getN(1);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  set straightStaircase($74.StraightStaircase v) { setField(2, v); }
+  set straightStaircase($73.StraightStaircase v) { setField(2, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
   $core.bool hasStraightStaircase() => $_has(1);
@@ -1124,38 +1234,41 @@ class Edge_Annotations_StairData extends $pb.GeneratedMessage {
   void clearStraightStaircase() => clearField(2);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(2)
-  $74.StraightStaircase ensureStraightStaircase() => $_ensure(1);
+  $73.StraightStaircase ensureStraightStaircase() => $_ensure(1);
 
   /// Parameters describing an arbitrary staircase.
   @$pb.TagNumber(3)
-  $74.StaircaseWithLandings get staircaseWithLandings => $_getN(2);
+  $73.StaircaseWithLandings get staircaseWithLandings => $_getN(2);
   @$pb.TagNumber(3)
-  set staircaseWithLandings($74.StaircaseWithLandings v) { setField(3, v); }
+  set staircaseWithLandings($73.StaircaseWithLandings v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasStaircaseWithLandings() => $_has(2);
   @$pb.TagNumber(3)
   void clearStaircaseWithLandings() => clearField(3);
   @$pb.TagNumber(3)
-  $74.StaircaseWithLandings ensureStaircaseWithLandings() => $_ensure(2);
+  $73.StaircaseWithLandings ensureStaircaseWithLandings() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  Edge_Annotations_StairData_DescentPreference get descentPreference => $_getN(3);
+  @$pb.TagNumber(4)
+  set descentPreference(Edge_Annotations_StairData_DescentPreference v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDescentPreference() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDescentPreference() => clearField(4);
 }
 
 /// Annotations understood by BostonDynamics systems.
 class Edge_Annotations extends $pb.GeneratedMessage {
   factory Edge_Annotations({
-  @$core.Deprecated('This field is deprecated.')
-    $61.SE2VelocityLimit? velLimit,
     Edge_Annotations_StairData? stairs,
     Edge_Annotations_DirectionConstraint? directionConstraint,
-    $59.BoolValue? requireAlignment,
+    $58.BoolValue? requireAlignment,
   @$core.Deprecated('This field is deprecated.')
-    $59.BoolValue? flatGround,
-  @$core.Deprecated('This field is deprecated.')
-    $59.DoubleValue? groundMuHint,
-  @$core.Deprecated('This field is deprecated.')
-    $59.BoolValue? gratedFloor,
-    $84.FieldMask? overrideMobilityParams,
-    $85.MobilityParams? mobilityParams,
-    $59.DoubleValue? cost,
+    $58.BoolValue? flatGround,
+    $86.FieldMask? overrideMobilityParams,
+    $87.MobilityParams? mobilityParams,
+    $58.DoubleValue? cost,
     Edge_EdgeSource? edgeSource,
     $core.bool? disableAlternateRouteFinding,
     Edge_Annotations_PathFollowingMode? pathFollowingMode,
@@ -1164,10 +1277,6 @@ class Edge_Annotations extends $pb.GeneratedMessage {
     Edge_Annotations_GroundClutterAvoidanceMode? groundClutterMode,
   }) {
     final $result = create();
-    if (velLimit != null) {
-      // ignore: deprecated_member_use_from_same_package
-      $result.velLimit = velLimit;
-    }
     if (stairs != null) {
       $result.stairs = stairs;
     }
@@ -1180,14 +1289,6 @@ class Edge_Annotations extends $pb.GeneratedMessage {
     if (flatGround != null) {
       // ignore: deprecated_member_use_from_same_package
       $result.flatGround = flatGround;
-    }
-    if (groundMuHint != null) {
-      // ignore: deprecated_member_use_from_same_package
-      $result.groundMuHint = groundMuHint;
-    }
-    if (gratedFloor != null) {
-      // ignore: deprecated_member_use_from_same_package
-      $result.gratedFloor = gratedFloor;
     }
     if (overrideMobilityParams != null) {
       $result.overrideMobilityParams = overrideMobilityParams;
@@ -1223,16 +1324,13 @@ class Edge_Annotations extends $pb.GeneratedMessage {
   factory Edge_Annotations.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Edge.Annotations', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$61.SE2VelocityLimit>(1, _omitFieldNames ? '' : 'velLimit', subBuilder: $61.SE2VelocityLimit.create)
     ..aOM<Edge_Annotations_StairData>(2, _omitFieldNames ? '' : 'stairs', subBuilder: Edge_Annotations_StairData.create)
     ..e<Edge_Annotations_DirectionConstraint>(4, _omitFieldNames ? '' : 'directionConstraint', $pb.PbFieldType.OE, defaultOrMaker: Edge_Annotations_DirectionConstraint.DIRECTION_CONSTRAINT_UNKNOWN, valueOf: Edge_Annotations_DirectionConstraint.valueOf, enumValues: Edge_Annotations_DirectionConstraint.values)
-    ..aOM<$59.BoolValue>(5, _omitFieldNames ? '' : 'requireAlignment', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.BoolValue>(6, _omitFieldNames ? '' : 'flatGround', subBuilder: $59.BoolValue.create)
-    ..aOM<$59.DoubleValue>(7, _omitFieldNames ? '' : 'groundMuHint', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.BoolValue>(8, _omitFieldNames ? '' : 'gratedFloor', subBuilder: $59.BoolValue.create)
-    ..aOM<$84.FieldMask>(9, _omitFieldNames ? '' : 'overrideMobilityParams', subBuilder: $84.FieldMask.create)
-    ..aOM<$85.MobilityParams>(10, _omitFieldNames ? '' : 'mobilityParams', subBuilder: $85.MobilityParams.create)
-    ..aOM<$59.DoubleValue>(11, _omitFieldNames ? '' : 'cost', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.BoolValue>(5, _omitFieldNames ? '' : 'requireAlignment', subBuilder: $58.BoolValue.create)
+    ..aOM<$58.BoolValue>(6, _omitFieldNames ? '' : 'flatGround', subBuilder: $58.BoolValue.create)
+    ..aOM<$86.FieldMask>(9, _omitFieldNames ? '' : 'overrideMobilityParams', subBuilder: $86.FieldMask.create)
+    ..aOM<$87.MobilityParams>(10, _omitFieldNames ? '' : 'mobilityParams', subBuilder: $87.MobilityParams.create)
+    ..aOM<$58.DoubleValue>(11, _omitFieldNames ? '' : 'cost', subBuilder: $58.DoubleValue.create)
     ..e<Edge_EdgeSource>(12, _omitFieldNames ? '' : 'edgeSource', $pb.PbFieldType.OE, defaultOrMaker: Edge_EdgeSource.EDGE_SOURCE_UNKNOWN, valueOf: Edge_EdgeSource.valueOf, enumValues: Edge_EdgeSource.values)
     ..aOB(13, _omitFieldNames ? '' : 'disableAlternateRouteFinding')
     ..e<Edge_Annotations_PathFollowingMode>(14, _omitFieldNames ? '' : 'pathFollowingMode', $pb.PbFieldType.OE, defaultOrMaker: Edge_Annotations_PathFollowingMode.PATH_MODE_UNKNOWN, valueOf: Edge_Annotations_PathFollowingMode.valueOf, enumValues: Edge_Annotations_PathFollowingMode.values)
@@ -1263,119 +1361,59 @@ class Edge_Annotations extends $pb.GeneratedMessage {
   static Edge_Annotations getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Edge_Annotations>(create);
   static Edge_Annotations? _defaultInstance;
 
-  /// Velocity limits to use while traversing the edge.
-  /// These are maxima and minima, NOT target speeds.
-  /// DEPRECATED as of 2.4 and will be removed in 4.0. Please use mobility_params.vel_limit.
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $61.SE2VelocityLimit get velLimit => $_getN(0);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  set velLimit($61.SE2VelocityLimit v) { setField(1, v); }
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $core.bool hasVelLimit() => $_has(0);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  void clearVelLimit() => clearField(1);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(1)
-  $61.SE2VelocityLimit ensureVelLimit() => $_ensure(0);
-
   /// Stairs information/parameters specific to the edge.
   @$pb.TagNumber(2)
-  Edge_Annotations_StairData get stairs => $_getN(1);
+  Edge_Annotations_StairData get stairs => $_getN(0);
   @$pb.TagNumber(2)
   set stairs(Edge_Annotations_StairData v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasStairs() => $_has(1);
+  $core.bool hasStairs() => $_has(0);
   @$pb.TagNumber(2)
   void clearStairs() => clearField(2);
   @$pb.TagNumber(2)
-  Edge_Annotations_StairData ensureStairs() => $_ensure(1);
+  Edge_Annotations_StairData ensureStairs() => $_ensure(0);
 
   /// Direction constraints for how the robot must move and the directions it can face
   /// when traversing the edge.
   @$pb.TagNumber(4)
-  Edge_Annotations_DirectionConstraint get directionConstraint => $_getN(2);
+  Edge_Annotations_DirectionConstraint get directionConstraint => $_getN(1);
   @$pb.TagNumber(4)
   set directionConstraint(Edge_Annotations_DirectionConstraint v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasDirectionConstraint() => $_has(2);
+  $core.bool hasDirectionConstraint() => $_has(1);
   @$pb.TagNumber(4)
   void clearDirectionConstraint() => clearField(4);
 
   /// If true, the robot must be aligned with the edge in yaw before traversing it.
   @$pb.TagNumber(5)
-  $59.BoolValue get requireAlignment => $_getN(3);
+  $58.BoolValue get requireAlignment => $_getN(2);
   @$pb.TagNumber(5)
-  set requireAlignment($59.BoolValue v) { setField(5, v); }
+  set requireAlignment($58.BoolValue v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasRequireAlignment() => $_has(3);
+  $core.bool hasRequireAlignment() => $_has(2);
   @$pb.TagNumber(5)
   void clearRequireAlignment() => clearField(5);
   @$pb.TagNumber(5)
-  $59.BoolValue ensureRequireAlignment() => $_ensure(3);
+  $58.BoolValue ensureRequireAlignment() => $_ensure(2);
 
   /// If true, the edge crosses flat ground and the robot shouldn't try to climb over
   /// obstacles.
   /// DEPRECATED as of 3.3.  Replaced by ground_clutter_mode.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
-  $59.BoolValue get flatGround => $_getN(4);
+  $58.BoolValue get flatGround => $_getN(3);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
-  set flatGround($59.BoolValue v) { setField(6, v); }
+  set flatGround($58.BoolValue v) { setField(6, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
-  $core.bool hasFlatGround() => $_has(4);
+  $core.bool hasFlatGround() => $_has(3);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
   void clearFlatGround() => clearField(6);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(6)
-  $59.BoolValue ensureFlatGround() => $_ensure(4);
-
-  /// Terrain coefficient of friction user hint. This value must be postive and will clamped if
-  /// necessary on the robot side. Best suggested values lie in the range between 0.4 and 0.8
-  /// (which is the robot's default.)
-  /// DEPRECATED as of 2.1 and will be removed in 4.0. Use mobility_params instead, which
-  /// includes ground_mu_hint as part of the terrain_params.
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(7)
-  $59.DoubleValue get groundMuHint => $_getN(5);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(7)
-  set groundMuHint($59.DoubleValue v) { setField(7, v); }
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(7)
-  $core.bool hasGroundMuHint() => $_has(5);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(7)
-  void clearGroundMuHint() => clearField(7);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(7)
-  $59.DoubleValue ensureGroundMuHint() => $_ensure(5);
-
-  /// If true, the edge crosses over grated metal. This changes some parameters of the robot's
-  /// perception system to allow it to see grated floors bettter.
-  /// DEPRECATED as of 2.1 and will be removed in 4.0. Use mobility_params instead, which
-  /// includes grated_floor as part of the terrain_params.
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(8)
-  $59.BoolValue get gratedFloor => $_getN(6);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(8)
-  set gratedFloor($59.BoolValue v) { setField(8, v); }
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(8)
-  $core.bool hasGratedFloor() => $_has(6);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(8)
-  void clearGratedFloor() => clearField(8);
-  @$core.Deprecated('This field is deprecated.')
-  @$pb.TagNumber(8)
-  $59.BoolValue ensureGratedFloor() => $_ensure(6);
+  $58.BoolValue ensureFlatGround() => $_ensure(3);
 
   /// Overrides the following fields of the mobility parameters to whatever is
   /// stored in the map. For example, if this FieldMask contains "stairs_mode" and
@@ -1385,78 +1423,78 @@ class Edge_Annotations extends $pb.GeneratedMessage {
   /// stored in the mobility parameters and the TravelParams of the entire route will be used
   /// for this edge (regardless of what override_mobility_params says).
   @$pb.TagNumber(9)
-  $84.FieldMask get overrideMobilityParams => $_getN(7);
+  $86.FieldMask get overrideMobilityParams => $_getN(4);
   @$pb.TagNumber(9)
-  set overrideMobilityParams($84.FieldMask v) { setField(9, v); }
+  set overrideMobilityParams($86.FieldMask v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasOverrideMobilityParams() => $_has(7);
+  $core.bool hasOverrideMobilityParams() => $_has(4);
   @$pb.TagNumber(9)
   void clearOverrideMobilityParams() => clearField(9);
   @$pb.TagNumber(9)
-  $84.FieldMask ensureOverrideMobilityParams() => $_ensure(7);
+  $86.FieldMask ensureOverrideMobilityParams() => $_ensure(4);
 
   /// Contains terrain parameters, swing height, obstacle avoidance parameters, etc.
   /// When the robot crosses this edge, it will use the mobility parameters here.
   @$pb.TagNumber(10)
-  $85.MobilityParams get mobilityParams => $_getN(8);
+  $87.MobilityParams get mobilityParams => $_getN(5);
   @$pb.TagNumber(10)
-  set mobilityParams($85.MobilityParams v) { setField(10, v); }
+  set mobilityParams($87.MobilityParams v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasMobilityParams() => $_has(8);
+  $core.bool hasMobilityParams() => $_has(5);
   @$pb.TagNumber(10)
   void clearMobilityParams() => clearField(10);
   @$pb.TagNumber(10)
-  $85.MobilityParams ensureMobilityParams() => $_ensure(8);
+  $87.MobilityParams ensureMobilityParams() => $_ensure(5);
 
   /// Assign edges a cost; used when finding the "shortest" (lowest cost) path.
   @$pb.TagNumber(11)
-  $59.DoubleValue get cost => $_getN(9);
+  $58.DoubleValue get cost => $_getN(6);
   @$pb.TagNumber(11)
-  set cost($59.DoubleValue v) { setField(11, v); }
+  set cost($58.DoubleValue v) { setField(11, v); }
   @$pb.TagNumber(11)
-  $core.bool hasCost() => $_has(9);
+  $core.bool hasCost() => $_has(6);
   @$pb.TagNumber(11)
   void clearCost() => clearField(11);
   @$pb.TagNumber(11)
-  $59.DoubleValue ensureCost() => $_ensure(9);
+  $58.DoubleValue ensureCost() => $_ensure(6);
 
   /// How this edge was made.
   @$pb.TagNumber(12)
-  Edge_EdgeSource get edgeSource => $_getN(10);
+  Edge_EdgeSource get edgeSource => $_getN(7);
   @$pb.TagNumber(12)
   set edgeSource(Edge_EdgeSource v) { setField(12, v); }
   @$pb.TagNumber(12)
-  $core.bool hasEdgeSource() => $_has(10);
+  $core.bool hasEdgeSource() => $_has(7);
   @$pb.TagNumber(12)
   void clearEdgeSource() => clearField(12);
 
   /// If true, disables alternate-route-finding for this edge.
   @$pb.TagNumber(13)
-  $core.bool get disableAlternateRouteFinding => $_getBF(11);
+  $core.bool get disableAlternateRouteFinding => $_getBF(8);
   @$pb.TagNumber(13)
-  set disableAlternateRouteFinding($core.bool v) { $_setBool(11, v); }
+  set disableAlternateRouteFinding($core.bool v) { $_setBool(8, v); }
   @$pb.TagNumber(13)
-  $core.bool hasDisableAlternateRouteFinding() => $_has(11);
+  $core.bool hasDisableAlternateRouteFinding() => $_has(8);
   @$pb.TagNumber(13)
   void clearDisableAlternateRouteFinding() => clearField(13);
 
   /// Path following mode for this edge.
   @$pb.TagNumber(14)
-  Edge_Annotations_PathFollowingMode get pathFollowingMode => $_getN(12);
+  Edge_Annotations_PathFollowingMode get pathFollowingMode => $_getN(9);
   @$pb.TagNumber(14)
   set pathFollowingMode(Edge_Annotations_PathFollowingMode v) { setField(14, v); }
   @$pb.TagNumber(14)
-  $core.bool hasPathFollowingMode() => $_has(12);
+  $core.bool hasPathFollowingMode() => $_has(9);
   @$pb.TagNumber(14)
   void clearPathFollowingMode() => clearField(14);
 
   /// Disable directed exploration for this edge.
   @$pb.TagNumber(15)
-  $core.bool get disableDirectedExploration => $_getBF(13);
+  $core.bool get disableDirectedExploration => $_getBF(10);
   @$pb.TagNumber(15)
-  set disableDirectedExploration($core.bool v) { $_setBool(13, v); }
+  set disableDirectedExploration($core.bool v) { $_setBool(10, v); }
   @$pb.TagNumber(15)
-  $core.bool hasDisableDirectedExploration() => $_has(13);
+  $core.bool hasDisableDirectedExploration() => $_has(10);
   @$pb.TagNumber(15)
   void clearDisableDirectedExploration() => clearField(15);
 
@@ -1464,14 +1502,14 @@ class Edge_Annotations extends $pb.GeneratedMessage {
   /// The string is a unique id for this region, which may be shared
   /// across multiple edges.
   @$pb.TagNumber(16)
-  $core.Map<$core.String, AreaCallbackRegion> get areaCallbacks => $_getMap(14);
+  $core.Map<$core.String, AreaCallbackRegion> get areaCallbacks => $_getMap(11);
 
   @$pb.TagNumber(17)
-  Edge_Annotations_GroundClutterAvoidanceMode get groundClutterMode => $_getN(15);
+  Edge_Annotations_GroundClutterAvoidanceMode get groundClutterMode => $_getN(12);
   @$pb.TagNumber(17)
   set groundClutterMode(Edge_Annotations_GroundClutterAvoidanceMode v) { setField(17, v); }
   @$pb.TagNumber(17)
-  $core.bool hasGroundClutterMode() => $_has(15);
+  $core.bool hasGroundClutterMode() => $_has(12);
   @$pb.TagNumber(17)
   void clearGroundClutterMode() => clearField(17);
 }
@@ -1483,7 +1521,7 @@ class Edge extends $pb.GeneratedMessage {
   factory Edge({
     Edge_Id? id,
     $core.String? snapshotId,
-    $61.SE3Pose? fromTformTo,
+    $60.SE3Pose? fromTformTo,
     Edge_Annotations? annotations,
   }) {
     final $result = create();
@@ -1508,7 +1546,7 @@ class Edge extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Edge', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..aOM<Edge_Id>(1, _omitFieldNames ? '' : 'id', subBuilder: Edge_Id.create)
     ..aOS(2, _omitFieldNames ? '' : 'snapshotId')
-    ..aOM<$61.SE3Pose>(3, _omitFieldNames ? '' : 'fromTformTo', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(3, _omitFieldNames ? '' : 'fromTformTo', subBuilder: $60.SE3Pose.create)
     ..aOM<Edge_Annotations>(4, _omitFieldNames ? '' : 'annotations', subBuilder: Edge_Annotations.create)
     ..hasRequiredFields = false
   ;
@@ -1559,15 +1597,15 @@ class Edge extends $pb.GeneratedMessage {
 
   /// Describes the transform between the "from" waypoint and the "to" waypoint.
   @$pb.TagNumber(3)
-  $61.SE3Pose get fromTformTo => $_getN(2);
+  $60.SE3Pose get fromTformTo => $_getN(2);
   @$pb.TagNumber(3)
-  set fromTformTo($61.SE3Pose v) { setField(3, v); }
+  set fromTformTo($60.SE3Pose v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFromTformTo() => $_has(2);
   @$pb.TagNumber(3)
   void clearFromTformTo() => clearField(3);
   @$pb.TagNumber(3)
-  $61.SE3Pose ensureFromTformTo() => $_ensure(2);
+  $60.SE3Pose ensureFromTformTo() => $_ensure(2);
 
   /// Annotations specific to the current edge.
   @$pb.TagNumber(4)
@@ -1584,11 +1622,11 @@ class Edge extends $pb.GeneratedMessage {
 
 class EdgeSnapshot_Stance extends $pb.GeneratedMessage {
   factory EdgeSnapshot_Stance({
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
     $core.Iterable<$26.FootState>? footStates,
-    $61.SE3Pose? koTformBody,
-    $59.BoolValue? planarGround,
-    $61.SE3Pose? visionTformBody,
+    $60.SE3Pose? koTformBody,
+    $58.BoolValue? planarGround,
+    $60.SE3Pose? visionTformBody,
   }) {
     final $result = create();
     if (timestamp != null) {
@@ -1613,11 +1651,11 @@ class EdgeSnapshot_Stance extends $pb.GeneratedMessage {
   factory EdgeSnapshot_Stance.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EdgeSnapshot.Stance', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..pc<$26.FootState>(2, _omitFieldNames ? '' : 'footStates', $pb.PbFieldType.PM, subBuilder: $26.FootState.create)
-    ..aOM<$61.SE3Pose>(3, _omitFieldNames ? '' : 'koTformBody', subBuilder: $61.SE3Pose.create)
-    ..aOM<$59.BoolValue>(4, _omitFieldNames ? '' : 'planarGround', subBuilder: $59.BoolValue.create)
-    ..aOM<$61.SE3Pose>(5, _omitFieldNames ? '' : 'visionTformBody', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(3, _omitFieldNames ? '' : 'koTformBody', subBuilder: $60.SE3Pose.create)
+    ..aOM<$58.BoolValue>(4, _omitFieldNames ? '' : 'planarGround', subBuilder: $58.BoolValue.create)
+    ..aOM<$60.SE3Pose>(5, _omitFieldNames ? '' : 'visionTformBody', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -1644,15 +1682,15 @@ class EdgeSnapshot_Stance extends $pb.GeneratedMessage {
 
   /// Timestamp of the stance.
   @$pb.TagNumber(1)
-  $60.Timestamp get timestamp => $_getN(0);
+  $59.Timestamp get timestamp => $_getN(0);
   @$pb.TagNumber(1)
-  set timestamp($60.Timestamp v) { setField(1, v); }
+  set timestamp($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimestamp() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimestamp() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureTimestamp() => $_ensure(0);
+  $59.Timestamp ensureTimestamp() => $_ensure(0);
 
   /// List of all the foot positions for a single stance.
   @$pb.TagNumber(2)
@@ -1660,39 +1698,39 @@ class EdgeSnapshot_Stance extends $pb.GeneratedMessage {
 
   /// KO Body position corresponding to this stance.
   @$pb.TagNumber(3)
-  $61.SE3Pose get koTformBody => $_getN(2);
+  $60.SE3Pose get koTformBody => $_getN(2);
   @$pb.TagNumber(3)
-  set koTformBody($61.SE3Pose v) { setField(3, v); }
+  set koTformBody($60.SE3Pose v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasKoTformBody() => $_has(2);
   @$pb.TagNumber(3)
   void clearKoTformBody() => clearField(3);
   @$pb.TagNumber(3)
-  $61.SE3Pose ensureKoTformBody() => $_ensure(2);
+  $60.SE3Pose ensureKoTformBody() => $_ensure(2);
 
   /// Does this stance correspond to a planar ground region.
   @$pb.TagNumber(4)
-  $59.BoolValue get planarGround => $_getN(3);
+  $58.BoolValue get planarGround => $_getN(3);
   @$pb.TagNumber(4)
-  set planarGround($59.BoolValue v) { setField(4, v); }
+  set planarGround($58.BoolValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasPlanarGround() => $_has(3);
   @$pb.TagNumber(4)
   void clearPlanarGround() => clearField(4);
   @$pb.TagNumber(4)
-  $59.BoolValue ensurePlanarGround() => $_ensure(3);
+  $58.BoolValue ensurePlanarGround() => $_ensure(3);
 
   /// Vision Body position corresponding to this stance.
   @$pb.TagNumber(5)
-  $61.SE3Pose get visionTformBody => $_getN(4);
+  $60.SE3Pose get visionTformBody => $_getN(4);
   @$pb.TagNumber(5)
-  set visionTformBody($61.SE3Pose v) { setField(5, v); }
+  set visionTformBody($60.SE3Pose v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasVisionTformBody() => $_has(4);
   @$pb.TagNumber(5)
   void clearVisionTformBody() => clearField(5);
   @$pb.TagNumber(5)
-  $61.SE3Pose ensureVisionTformBody() => $_ensure(4);
+  $60.SE3Pose ensureVisionTformBody() => $_ensure(4);
 }
 
 /// Relevant data collected along the edge.
@@ -1701,7 +1739,7 @@ class EdgeSnapshot extends $pb.GeneratedMessage {
   factory EdgeSnapshot({
     $core.String? id,
     $core.Iterable<EdgeSnapshot_Stance>? stances,
-    $core.Map<$core.String, $86.AreaCallbackData>? areaCallbacks,
+    $core.Map<$core.String, $88.AreaCallbackData>? areaCallbacks,
   }) {
     final $result = create();
     if (id != null) {
@@ -1722,7 +1760,7 @@ class EdgeSnapshot extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EdgeSnapshot', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..pc<EdgeSnapshot_Stance>(2, _omitFieldNames ? '' : 'stances', $pb.PbFieldType.PM, subBuilder: EdgeSnapshot_Stance.create)
-    ..m<$core.String, $86.AreaCallbackData>(16, _omitFieldNames ? '' : 'areaCallbacks', entryClassName: 'EdgeSnapshot.AreaCallbacksEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $86.AreaCallbackData.create, valueDefaultOrMaker: $86.AreaCallbackData.getDefault, packageName: const $pb.PackageName('bosdyn.api.graph_nav'))
+    ..m<$core.String, $88.AreaCallbackData>(16, _omitFieldNames ? '' : 'areaCallbacks', entryClassName: 'EdgeSnapshot.AreaCallbacksEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $88.AreaCallbackData.create, valueDefaultOrMaker: $88.AreaCallbackData.getDefault, packageName: const $pb.PackageName('bosdyn.api.graph_nav'))
     ..hasRequiredFields = false
   ;
 
@@ -1764,14 +1802,14 @@ class EdgeSnapshot extends $pb.GeneratedMessage {
 
   /// Data used by area callback services to perform their action.
   @$pb.TagNumber(16)
-  $core.Map<$core.String, $86.AreaCallbackData> get areaCallbacks => $_getMap(2);
+  $core.Map<$core.String, $88.AreaCallbackData> get areaCallbacks => $_getMap(2);
 }
 
 /// This associates a waypoint with a common reference frame, which is not necessarily metric.
 class Anchor extends $pb.GeneratedMessage {
   factory Anchor({
     $core.String? id,
-    $61.SE3Pose? seedTformWaypoint,
+    $60.SE3Pose? seedTformWaypoint,
   }) {
     final $result = create();
     if (id != null) {
@@ -1788,7 +1826,7 @@ class Anchor extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Anchor', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$61.SE3Pose>(2, _omitFieldNames ? '' : 'seedTformWaypoint', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(2, _omitFieldNames ? '' : 'seedTformWaypoint', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -1825,22 +1863,22 @@ class Anchor extends $pb.GeneratedMessage {
 
   /// Pose of the waypoint in the seed frame.
   @$pb.TagNumber(2)
-  $61.SE3Pose get seedTformWaypoint => $_getN(1);
+  $60.SE3Pose get seedTformWaypoint => $_getN(1);
   @$pb.TagNumber(2)
-  set seedTformWaypoint($61.SE3Pose v) { setField(2, v); }
+  set seedTformWaypoint($60.SE3Pose v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasSeedTformWaypoint() => $_has(1);
   @$pb.TagNumber(2)
   void clearSeedTformWaypoint() => clearField(2);
   @$pb.TagNumber(2)
-  $61.SE3Pose ensureSeedTformWaypoint() => $_ensure(1);
+  $60.SE3Pose ensureSeedTformWaypoint() => $_ensure(1);
 }
 
 /// This associates a world object with a common reference frame, which is not necessarily metric.
 class AnchoredWorldObject extends $pb.GeneratedMessage {
   factory AnchoredWorldObject({
     $core.String? id,
-    $61.SE3Pose? seedTformObject,
+    $60.SE3Pose? seedTformObject,
   }) {
     final $result = create();
     if (id != null) {
@@ -1857,7 +1895,7 @@ class AnchoredWorldObject extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnchoredWorldObject', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$61.SE3Pose>(2, _omitFieldNames ? '' : 'seedTformObject', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(2, _omitFieldNames ? '' : 'seedTformObject', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -1894,15 +1932,15 @@ class AnchoredWorldObject extends $pb.GeneratedMessage {
 
   /// Pose of the object in the seed frame.
   @$pb.TagNumber(2)
-  $61.SE3Pose get seedTformObject => $_getN(1);
+  $60.SE3Pose get seedTformObject => $_getN(1);
   @$pb.TagNumber(2)
-  set seedTformObject($61.SE3Pose v) { setField(2, v); }
+  set seedTformObject($60.SE3Pose v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasSeedTformObject() => $_has(1);
   @$pb.TagNumber(2)
   void clearSeedTformObject() => clearField(2);
   @$pb.TagNumber(2)
-  $61.SE3Pose ensureSeedTformObject() => $_ensure(1);
+  $60.SE3Pose ensureSeedTformObject() => $_ensure(1);
 }
 
 class Anchoring extends $pb.GeneratedMessage {
@@ -1965,7 +2003,7 @@ class AreaCallbackRegion extends $pb.GeneratedMessage {
   factory AreaCallbackRegion({
     $core.String? serviceName,
     $core.String? description,
-    $86.AreaCallbackData? recordedData,
+    $88.AreaCallbackData? recordedData,
   }) {
     final $result = create();
     if (serviceName != null) {
@@ -1986,7 +2024,7 @@ class AreaCallbackRegion extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AreaCallbackRegion', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.graph_nav'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'serviceName')
     ..aOS(3, _omitFieldNames ? '' : 'description')
-    ..aOM<$86.AreaCallbackData>(4, _omitFieldNames ? '' : 'recordedData', subBuilder: $86.AreaCallbackData.create)
+    ..aOM<$88.AreaCallbackData>(4, _omitFieldNames ? '' : 'recordedData', subBuilder: $88.AreaCallbackData.create)
     ..hasRequiredFields = false
   ;
 
@@ -2033,15 +2071,15 @@ class AreaCallbackRegion extends $pb.GeneratedMessage {
 
   /// Configuration data associated with this area callback.
   @$pb.TagNumber(4)
-  $86.AreaCallbackData get recordedData => $_getN(2);
+  $88.AreaCallbackData get recordedData => $_getN(2);
   @$pb.TagNumber(4)
-  set recordedData($86.AreaCallbackData v) { setField(4, v); }
+  set recordedData($88.AreaCallbackData v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasRecordedData() => $_has(2);
   @$pb.TagNumber(4)
   void clearRecordedData() => clearField(4);
   @$pb.TagNumber(4)
-  $86.AreaCallbackData ensureRecordedData() => $_ensure(2);
+  $88.AreaCallbackData ensureRecordedData() => $_ensure(2);
 }
 
 /// This is an arbitrary collection of waypoints and edges. The edges and waypoints are not required

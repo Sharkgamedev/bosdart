@@ -15,20 +15,20 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'service_fault.pb.dart' as $9;
+import 'service_fault.pb.dart' as $10;
 
 export 'fault_service.pb.dart';
 
 @$pb.GrpcServiceName('bosdyn.api.FaultService')
 class FaultServiceClient extends $grpc.Client {
-  static final _$triggerServiceFault = $grpc.ClientMethod<$9.TriggerServiceFaultRequest, $9.TriggerServiceFaultResponse>(
+  static final _$triggerServiceFault = $grpc.ClientMethod<$10.TriggerServiceFaultRequest, $10.TriggerServiceFaultResponse>(
       '/bosdyn.api.FaultService/TriggerServiceFault',
-      ($9.TriggerServiceFaultRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $9.TriggerServiceFaultResponse.fromBuffer(value));
-  static final _$clearServiceFault = $grpc.ClientMethod<$9.ClearServiceFaultRequest, $9.ClearServiceFaultResponse>(
+      ($10.TriggerServiceFaultRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.TriggerServiceFaultResponse.fromBuffer(value));
+  static final _$clearServiceFault = $grpc.ClientMethod<$10.ClearServiceFaultRequest, $10.ClearServiceFaultResponse>(
       '/bosdyn.api.FaultService/ClearServiceFault',
-      ($9.ClearServiceFaultRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $9.ClearServiceFaultResponse.fromBuffer(value));
+      ($10.ClearServiceFaultRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $10.ClearServiceFaultResponse.fromBuffer(value));
 
   FaultServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -36,11 +36,11 @@ class FaultServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$9.TriggerServiceFaultResponse> triggerServiceFault($9.TriggerServiceFaultRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$10.TriggerServiceFaultResponse> triggerServiceFault($10.TriggerServiceFaultRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$triggerServiceFault, request, options: options);
   }
 
-  $grpc.ResponseFuture<$9.ClearServiceFaultResponse> clearServiceFault($9.ClearServiceFaultRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$10.ClearServiceFaultResponse> clearServiceFault($10.ClearServiceFaultRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$clearServiceFault, request, options: options);
   }
 }
@@ -50,30 +50,30 @@ abstract class FaultServiceBase extends $grpc.Service {
   $core.String get $name => 'bosdyn.api.FaultService';
 
   FaultServiceBase() {
-    $addMethod($grpc.ServiceMethod<$9.TriggerServiceFaultRequest, $9.TriggerServiceFaultResponse>(
+    $addMethod($grpc.ServiceMethod<$10.TriggerServiceFaultRequest, $10.TriggerServiceFaultResponse>(
         'TriggerServiceFault',
         triggerServiceFault_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $9.TriggerServiceFaultRequest.fromBuffer(value),
-        ($9.TriggerServiceFaultResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$9.ClearServiceFaultRequest, $9.ClearServiceFaultResponse>(
+        ($core.List<$core.int> value) => $10.TriggerServiceFaultRequest.fromBuffer(value),
+        ($10.TriggerServiceFaultResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$10.ClearServiceFaultRequest, $10.ClearServiceFaultResponse>(
         'ClearServiceFault',
         clearServiceFault_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $9.ClearServiceFaultRequest.fromBuffer(value),
-        ($9.ClearServiceFaultResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $10.ClearServiceFaultRequest.fromBuffer(value),
+        ($10.ClearServiceFaultResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$9.TriggerServiceFaultResponse> triggerServiceFault_Pre($grpc.ServiceCall call, $async.Future<$9.TriggerServiceFaultRequest> request) async {
+  $async.Future<$10.TriggerServiceFaultResponse> triggerServiceFault_Pre($grpc.ServiceCall call, $async.Future<$10.TriggerServiceFaultRequest> request) async {
     return triggerServiceFault(call, await request);
   }
 
-  $async.Future<$9.ClearServiceFaultResponse> clearServiceFault_Pre($grpc.ServiceCall call, $async.Future<$9.ClearServiceFaultRequest> request) async {
+  $async.Future<$10.ClearServiceFaultResponse> clearServiceFault_Pre($grpc.ServiceCall call, $async.Future<$10.ClearServiceFaultRequest> request) async {
     return clearServiceFault(call, await request);
   }
 
-  $async.Future<$9.TriggerServiceFaultResponse> triggerServiceFault($grpc.ServiceCall call, $9.TriggerServiceFaultRequest request);
-  $async.Future<$9.ClearServiceFaultResponse> clearServiceFault($grpc.ServiceCall call, $9.ClearServiceFaultRequest request);
+  $async.Future<$10.TriggerServiceFaultResponse> triggerServiceFault($grpc.ServiceCall call, $10.TriggerServiceFaultRequest request);
+  $async.Future<$10.ClearServiceFaultResponse> clearServiceFault($grpc.ServiceCall call, $10.ClearServiceFaultRequest request);
 }

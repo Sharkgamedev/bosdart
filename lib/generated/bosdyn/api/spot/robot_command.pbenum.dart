@@ -54,12 +54,14 @@ class SwingHeight extends $pb.ProtobufEnum {
   static const SwingHeight SWING_HEIGHT_LOW = SwingHeight._(1, _omitEnumNames ? '' : 'SWING_HEIGHT_LOW');
   static const SwingHeight SWING_HEIGHT_MEDIUM = SwingHeight._(2, _omitEnumNames ? '' : 'SWING_HEIGHT_MEDIUM');
   static const SwingHeight SWING_HEIGHT_HIGH = SwingHeight._(3, _omitEnumNames ? '' : 'SWING_HEIGHT_HIGH');
+  static const SwingHeight SWING_HEIGHT_AUTO = SwingHeight._(4, _omitEnumNames ? '' : 'SWING_HEIGHT_AUTO');
 
   static const $core.List<SwingHeight> values = <SwingHeight> [
     SWING_HEIGHT_UNKNOWN,
     SWING_HEIGHT_LOW,
     SWING_HEIGHT_MEDIUM,
     SWING_HEIGHT_HIGH,
+    SWING_HEIGHT_AUTO,
   ];
 
   static final $core.Map<$core.int, SwingHeight> _byValue = $pb.ProtobufEnum.initByValue(values);

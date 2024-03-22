@@ -13,10 +13,10 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../basic_command.pbenum.dart' as $64;
-import '../geometry.pb.dart' as $61;
-import '../header.pb.dart' as $68;
-import '../lease.pb.dart' as $13;
+import '../basic_command.pbenum.dart' as $63;
+import '../geometry.pb.dart' as $60;
+import '../header.pb.dart' as $67;
+import '../lease.pb.dart' as $14;
 import 'door.pbenum.dart';
 
 export 'door.pbenum.dart';
@@ -24,8 +24,8 @@ export 'door.pbenum.dart';
 /// A door command for the robot to execute plus a lease.
 class OpenDoorCommandRequest extends $pb.GeneratedMessage {
   factory OpenDoorCommandRequest({
-    $68.RequestHeader? header,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $14.Lease? lease,
     DoorCommand_Request? doorCommand,
   }) {
     final $result = create();
@@ -45,8 +45,8 @@ class OpenDoorCommandRequest extends $pb.GeneratedMessage {
   factory OpenDoorCommandRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OpenDoorCommandRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$13.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$14.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..aOM<DoorCommand_Request>(4, _omitFieldNames ? '' : 'doorCommand', subBuilder: DoorCommand_Request.create)
     ..hasRequiredFields = false
   ;
@@ -74,27 +74,27 @@ class OpenDoorCommandRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The Lease to show ownership of the robot.
   @$pb.TagNumber(2)
-  $13.Lease get lease => $_getN(1);
+  $14.Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
-  set lease($13.Lease v) { setField(2, v); }
+  set lease($14.Lease v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLease() => $_has(1);
   @$pb.TagNumber(2)
   void clearLease() => clearField(2);
   @$pb.TagNumber(2)
-  $13.Lease ensureLease() => $_ensure(1);
+  $14.Lease ensureLease() => $_ensure(1);
 
   /// The command to execute.
   @$pb.TagNumber(4)
@@ -112,8 +112,8 @@ class OpenDoorCommandRequest extends $pb.GeneratedMessage {
 /// Response to the door command request.
 class OpenDoorCommandResponse extends $pb.GeneratedMessage {
   factory OpenDoorCommandResponse({
-    $68.ResponseHeader? header,
-    $13.LeaseUseResult? leaseUseResult,
+    $67.ResponseHeader? header,
+    $14.LeaseUseResult? leaseUseResult,
     OpenDoorCommandResponse_Status? status,
     $core.String? message,
     $core.int? doorCommandId,
@@ -141,8 +141,8 @@ class OpenDoorCommandResponse extends $pb.GeneratedMessage {
   factory OpenDoorCommandResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OpenDoorCommandResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..aOM<$13.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<$14.LeaseUseResult>(2, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..e<OpenDoorCommandResponse_Status>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: OpenDoorCommandResponse_Status.STATUS_UNKNOWN, valueOf: OpenDoorCommandResponse_Status.valueOf, enumValues: OpenDoorCommandResponse_Status.values)
     ..aOS(4, _omitFieldNames ? '' : 'message')
     ..a<$core.int>(5, _omitFieldNames ? '' : 'doorCommandId', $pb.PbFieldType.OU3)
@@ -172,27 +172,27 @@ class OpenDoorCommandResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Details about how the lease was used.
   @$pb.TagNumber(2)
-  $13.LeaseUseResult get leaseUseResult => $_getN(1);
+  $14.LeaseUseResult get leaseUseResult => $_getN(1);
   @$pb.TagNumber(2)
-  set leaseUseResult($13.LeaseUseResult v) { setField(2, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLeaseUseResult() => $_has(1);
   @$pb.TagNumber(2)
   void clearLeaseUseResult() => clearField(2);
   @$pb.TagNumber(2)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(1);
 
   /// Return status for a request.
   @$pb.TagNumber(3)
@@ -228,7 +228,7 @@ class OpenDoorCommandResponse extends $pb.GeneratedMessage {
 /// A request for feedback of a specific door command.
 class OpenDoorFeedbackRequest extends $pb.GeneratedMessage {
   factory OpenDoorFeedbackRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.int? doorCommandId,
   }) {
     final $result = create();
@@ -245,7 +245,7 @@ class OpenDoorFeedbackRequest extends $pb.GeneratedMessage {
   factory OpenDoorFeedbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OpenDoorFeedbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'doorCommandId', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
@@ -273,15 +273,15 @@ class OpenDoorFeedbackRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Unique identifier for the command, provided by OpenDoorResponse.
   @$pb.TagNumber(2)
@@ -297,10 +297,10 @@ class OpenDoorFeedbackRequest extends $pb.GeneratedMessage {
 /// Feedback for a specific door command. This RPC reports the robot's progress opening a door.
 class OpenDoorFeedbackResponse extends $pb.GeneratedMessage {
   factory OpenDoorFeedbackResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     DoorCommand_Feedback? feedback,
-    $13.LeaseUseResult? leaseUseResult,
-    $64.RobotCommandFeedbackStatus_Status? status,
+    $14.LeaseUseResult? leaseUseResult,
+    $63.RobotCommandFeedbackStatus_Status? status,
   }) {
     final $result = create();
     if (header != null) {
@@ -322,10 +322,10 @@ class OpenDoorFeedbackResponse extends $pb.GeneratedMessage {
   factory OpenDoorFeedbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OpenDoorFeedbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<DoorCommand_Feedback>(2, _omitFieldNames ? '' : 'feedback', subBuilder: DoorCommand_Feedback.create)
-    ..aOM<$13.LeaseUseResult>(3, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
-    ..e<$64.RobotCommandFeedbackStatus_Status>(100, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: $64.RobotCommandFeedbackStatus_Status.STATUS_UNKNOWN, valueOf: $64.RobotCommandFeedbackStatus_Status.valueOf, enumValues: $64.RobotCommandFeedbackStatus_Status.values)
+    ..aOM<$14.LeaseUseResult>(3, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
+    ..e<$63.RobotCommandFeedbackStatus_Status>(100, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: $63.RobotCommandFeedbackStatus_Status.STATUS_UNKNOWN, valueOf: $63.RobotCommandFeedbackStatus_Status.valueOf, enumValues: $63.RobotCommandFeedbackStatus_Status.values)
     ..hasRequiredFields = false
   ;
 
@@ -352,15 +352,15 @@ class OpenDoorFeedbackResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Specific door full body command feedback.
   @$pb.TagNumber(2)
@@ -376,21 +376,21 @@ class OpenDoorFeedbackResponse extends $pb.GeneratedMessage {
 
   /// Details about how the lease was used (unset if unknown).
   @$pb.TagNumber(3)
-  $13.LeaseUseResult get leaseUseResult => $_getN(2);
+  $14.LeaseUseResult get leaseUseResult => $_getN(2);
   @$pb.TagNumber(3)
-  set leaseUseResult($13.LeaseUseResult v) { setField(3, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLeaseUseResult() => $_has(2);
   @$pb.TagNumber(3)
   void clearLeaseUseResult() => clearField(3);
   @$pb.TagNumber(3)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(2);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(2);
 
   /// Generic robot command feedback.
   @$pb.TagNumber(100)
-  $64.RobotCommandFeedbackStatus_Status get status => $_getN(3);
+  $63.RobotCommandFeedbackStatus_Status get status => $_getN(3);
   @$pb.TagNumber(100)
-  set status($64.RobotCommandFeedbackStatus_Status v) { setField(100, v); }
+  set status($63.RobotCommandFeedbackStatus_Status v) { setField(100, v); }
   @$pb.TagNumber(100)
   $core.bool hasStatus() => $_has(3);
   @$pb.TagNumber(100)
@@ -402,8 +402,8 @@ class OpenDoorFeedbackResponse extends $pb.GeneratedMessage {
 class DoorCommand_AutoGraspCommand extends $pb.GeneratedMessage {
   factory DoorCommand_AutoGraspCommand({
     $core.String? frameName,
-    $61.Vec3? searchRayStartInFrame,
-    $61.Vec3? searchRayEndInFrame,
+    $60.Vec3? searchRayStartInFrame,
+    $60.Vec3? searchRayEndInFrame,
     DoorCommand_HingeSide? hingeSide,
     DoorCommand_SwingDirection? swingDirection,
   }) {
@@ -431,8 +431,8 @@ class DoorCommand_AutoGraspCommand extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DoorCommand.AutoGraspCommand', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'frameName')
-    ..aOM<$61.Vec3>(2, _omitFieldNames ? '' : 'searchRayStartInFrame', subBuilder: $61.Vec3.create)
-    ..aOM<$61.Vec3>(3, _omitFieldNames ? '' : 'searchRayEndInFrame', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(2, _omitFieldNames ? '' : 'searchRayStartInFrame', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec3>(3, _omitFieldNames ? '' : 'searchRayEndInFrame', subBuilder: $60.Vec3.create)
     ..e<DoorCommand_HingeSide>(4, _omitFieldNames ? '' : 'hingeSide', $pb.PbFieldType.OE, defaultOrMaker: DoorCommand_HingeSide.HINGE_SIDE_UNKNOWN, valueOf: DoorCommand_HingeSide.valueOf, enumValues: DoorCommand_HingeSide.values)
     ..e<DoorCommand_SwingDirection>(5, _omitFieldNames ? '' : 'swingDirection', $pb.PbFieldType.OE, defaultOrMaker: DoorCommand_SwingDirection.SWING_DIRECTION_UNKNOWN, valueOf: DoorCommand_SwingDirection.valueOf, enumValues: DoorCommand_SwingDirection.values)
     ..hasRequiredFields = false
@@ -471,27 +471,27 @@ class DoorCommand_AutoGraspCommand extends $pb.GeneratedMessage {
 
   /// The start of the ray the robot searches along for the door handle.
   @$pb.TagNumber(2)
-  $61.Vec3 get searchRayStartInFrame => $_getN(1);
+  $60.Vec3 get searchRayStartInFrame => $_getN(1);
   @$pb.TagNumber(2)
-  set searchRayStartInFrame($61.Vec3 v) { setField(2, v); }
+  set searchRayStartInFrame($60.Vec3 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasSearchRayStartInFrame() => $_has(1);
   @$pb.TagNumber(2)
   void clearSearchRayStartInFrame() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3 ensureSearchRayStartInFrame() => $_ensure(1);
+  $60.Vec3 ensureSearchRayStartInFrame() => $_ensure(1);
 
   /// The end of the ray the robot searches along for the door handle.
   @$pb.TagNumber(3)
-  $61.Vec3 get searchRayEndInFrame => $_getN(2);
+  $60.Vec3 get searchRayEndInFrame => $_getN(2);
   @$pb.TagNumber(3)
-  set searchRayEndInFrame($61.Vec3 v) { setField(3, v); }
+  set searchRayEndInFrame($60.Vec3 v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasSearchRayEndInFrame() => $_has(2);
   @$pb.TagNumber(3)
   void clearSearchRayEndInFrame() => clearField(3);
   @$pb.TagNumber(3)
-  $61.Vec3 ensureSearchRayEndInFrame() => $_ensure(2);
+  $60.Vec3 ensureSearchRayEndInFrame() => $_ensure(2);
 
   /// The side of the hinge with respect to the robot when facing the door.
   @$pb.TagNumber(4)
@@ -603,7 +603,7 @@ class DoorCommand_WarmstartCommand extends $pb.GeneratedMessage {
 class DoorCommand_AutoPushCommand extends $pb.GeneratedMessage {
   factory DoorCommand_AutoPushCommand({
     $core.String? frameName,
-    $61.Vec3? pushPointInFrame,
+    $60.Vec3? pushPointInFrame,
     DoorCommand_HingeSide? hingeSide,
   }) {
     final $result = create();
@@ -624,7 +624,7 @@ class DoorCommand_AutoPushCommand extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DoorCommand.AutoPushCommand', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'frameName')
-    ..aOM<$61.Vec3>(2, _omitFieldNames ? '' : 'pushPointInFrame', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(2, _omitFieldNames ? '' : 'pushPointInFrame', subBuilder: $60.Vec3.create)
     ..e<DoorCommand_HingeSide>(3, _omitFieldNames ? '' : 'hingeSide', $pb.PbFieldType.OE, defaultOrMaker: DoorCommand_HingeSide.HINGE_SIDE_UNKNOWN, valueOf: DoorCommand_HingeSide.valueOf, enumValues: DoorCommand_HingeSide.values)
     ..hasRequiredFields = false
   ;
@@ -662,15 +662,15 @@ class DoorCommand_AutoPushCommand extends $pb.GeneratedMessage {
 
   /// The point that the robot will push on.
   @$pb.TagNumber(2)
-  $61.Vec3 get pushPointInFrame => $_getN(1);
+  $60.Vec3 get pushPointInFrame => $_getN(1);
   @$pb.TagNumber(2)
-  set pushPointInFrame($61.Vec3 v) { setField(2, v); }
+  set pushPointInFrame($60.Vec3 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPushPointInFrame() => $_has(1);
   @$pb.TagNumber(2)
   void clearPushPointInFrame() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3 ensurePushPointInFrame() => $_ensure(1);
+  $60.Vec3 ensurePushPointInFrame() => $_ensure(1);
 
   /// The side of the hinge with respect to the robot when facing the door.
   @$pb.TagNumber(3)

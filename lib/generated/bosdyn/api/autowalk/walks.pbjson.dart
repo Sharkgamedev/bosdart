@@ -24,6 +24,7 @@ const Walk$json = {
     {'1': 'elements', '3': 5, '4': 3, '5': 11, '6': '.bosdyn.api.autowalk.Element', '10': 'elements'},
     {'1': 'docks', '3': 6, '4': 3, '5': 11, '6': '.bosdyn.api.autowalk.Dock', '10': 'docks'},
     {'1': 'id', '3': 8, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'choreography_items', '3': 9, '4': 1, '5': 11, '6': '.bosdyn.api.autowalk.ChoreographyItems', '10': 'choreographyItems'},
   ],
   '9': [
     {'1': 3, '2': 4},
@@ -38,7 +39,8 @@ final $typed_data.Uint8List walkDescriptor = $convert.base64Decode(
     '1hcF9uYW1lGAcgASgJUgdtYXBOYW1lEiEKDG1pc3Npb25fbmFtZRgEIAEoCVILbWlzc2lvbk5h'
     'bWUSOAoIZWxlbWVudHMYBSADKAsyHC5ib3NkeW4uYXBpLmF1dG93YWxrLkVsZW1lbnRSCGVsZW'
     '1lbnRzEi8KBWRvY2tzGAYgAygLMhkuYm9zZHluLmFwaS5hdXRvd2Fsay5Eb2NrUgVkb2NrcxIO'
-    'CgJpZBgIIAEoCVICaWRKBAgDEAQ=');
+    'CgJpZBgIIAEoCVICaWQSVQoSY2hvcmVvZ3JhcGh5X2l0ZW1zGAkgASgLMiYuYm9zZHluLmFwaS'
+    '5hdXRvd2Fsay5DaG9yZW9ncmFwaHlJdGVtc1IRY2hvcmVvZ3JhcGh5SXRlbXNKBAgDEAQ=');
 
 @$core.Deprecated('Use globalParametersDescriptor instead')
 const GlobalParameters$json = {
@@ -77,6 +79,22 @@ final $typed_data.Uint8List dockDescriptor = $convert.base64Decode(
     'ABKAlSEGRvY2tlZFdheXBvaW50SWQSRQoQdGFyZ2V0X3ByZXBfcG9zZRgDIAEoCzIbLmJvc2R5'
     'bi5hcGkuYXV0b3dhbGsuVGFyZ2V0Ug50YXJnZXRQcmVwUG9zZRJCCg9wcm9tcHRfZHVyYXRpb2'
     '4YBCABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SDnByb21wdER1cmF0aW9u');
+
+@$core.Deprecated('Use choreographyItemsDescriptor instead')
+const ChoreographyItems$json = {
+  '1': 'ChoreographyItems',
+  '2': [
+    {'1': 'choreography_sequences', '3': 1, '4': 3, '5': 11, '6': '.bosdyn.api.spot.ChoreographySequence', '10': 'choreographySequences'},
+    {'1': 'animated_moves', '3': 2, '4': 3, '5': 11, '6': '.bosdyn.api.spot.Animation', '10': 'animatedMoves'},
+  ],
+};
+
+/// Descriptor for `ChoreographyItems`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List choreographyItemsDescriptor = $convert.base64Decode(
+    'ChFDaG9yZW9ncmFwaHlJdGVtcxJcChZjaG9yZW9ncmFwaHlfc2VxdWVuY2VzGAEgAygLMiUuYm'
+    '9zZHluLmFwaS5zcG90LkNob3Jlb2dyYXBoeVNlcXVlbmNlUhVjaG9yZW9ncmFwaHlTZXF1ZW5j'
+    'ZXMSQQoOYW5pbWF0ZWRfbW92ZXMYAiADKAsyGi5ib3NkeW4uYXBpLnNwb3QuQW5pbWF0aW9uUg'
+    '1hbmltYXRlZE1vdmVz');
 
 @$core.Deprecated('Use playbackModeDescriptor instead')
 const PlaybackMode$json = {
@@ -163,8 +181,10 @@ const Target$json = {
     {'1': 'navigate_to', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.autowalk.Target.NavigateTo', '9': 0, '10': 'navigateTo'},
     {'1': 'navigate_route', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.autowalk.Target.NavigateRoute', '9': 0, '10': 'navigateRoute'},
     {'1': 'relocalize', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.autowalk.Target.Relocalize', '10': 'relocalize'},
+    {'1': 'target_stow_behavior', '3': 5, '4': 1, '5': 14, '6': '.bosdyn.api.autowalk.Target.TargetStowBehavior', '10': 'targetStowBehavior'},
   ],
   '3': [Target_Relocalize$json, Target_NavigateTo$json, Target_NavigateRoute$json],
+  '4': [Target_TargetStowBehavior$json],
   '8': [
     {'1': 'target'},
   ],
@@ -196,20 +216,36 @@ const Target_NavigateRoute$json = {
   ],
 };
 
+@$core.Deprecated('Use targetDescriptor instead')
+const Target_TargetStowBehavior$json = {
+  '1': 'TargetStowBehavior',
+  '2': [
+    {'1': 'TARGET_STOW_BEHAVIOR_UNKNOWN', '2': 0},
+    {'1': 'TARGET_STOW_BEHAVIOR_AUTO', '2': 1},
+    {'1': 'TARGET_STOW_BEHAVIOR_NEVER', '2': 2},
+    {'1': 'TARGET_STOW_BEHAVIOR_ALWAYS', '2': 3},
+  ],
+};
+
 /// Descriptor for `Target`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List targetDescriptor = $convert.base64Decode(
     'CgZUYXJnZXQSSQoLbmF2aWdhdGVfdG8YASABKAsyJi5ib3NkeW4uYXBpLmF1dG93YWxrLlRhcm'
     'dldC5OYXZpZ2F0ZVRvSABSCm5hdmlnYXRlVG8SUgoObmF2aWdhdGVfcm91dGUYAiABKAsyKS5i'
     'b3NkeW4uYXBpLmF1dG93YWxrLlRhcmdldC5OYXZpZ2F0ZVJvdXRlSABSDW5hdmlnYXRlUm91dG'
     'USRgoKcmVsb2NhbGl6ZRgDIAEoCzImLmJvc2R5bi5hcGkuYXV0b3dhbGsuVGFyZ2V0LlJlbG9j'
-    'YWxpemVSCnJlbG9jYWxpemUadAoKUmVsb2NhbGl6ZRJmChhzZXRfbG9jYWxpemF0aW9uX3JlcX'
-    'Vlc3QYASABKAsyLC5ib3NkeW4uYXBpLmdyYXBoX25hdi5TZXRMb2NhbGl6YXRpb25SZXF1ZXN0'
-    'UhZzZXRMb2NhbGl6YXRpb25SZXF1ZXN0Go0BCgpOYXZpZ2F0ZVRvEjYKF2Rlc3RpbmF0aW9uX3'
-    'dheXBvaW50X2lkGAEgASgJUhVkZXN0aW5hdGlvbldheXBvaW50SWQSRwoNdHJhdmVsX3BhcmFt'
-    'cxgDIAEoCzIiLmJvc2R5bi5hcGkuZ3JhcGhfbmF2LlRyYXZlbFBhcmFtc1IMdHJhdmVsUGFyYW'
-    '1zGosBCg1OYXZpZ2F0ZVJvdXRlEjEKBXJvdXRlGAEgASgLMhsuYm9zZHluLmFwaS5ncmFwaF9u'
-    'YXYuUm91dGVSBXJvdXRlEkcKDXRyYXZlbF9wYXJhbXMYAiABKAsyIi5ib3NkeW4uYXBpLmdyYX'
-    'BoX25hdi5UcmF2ZWxQYXJhbXNSDHRyYXZlbFBhcmFtc0IICgZ0YXJnZXQ=');
+    'YWxpemVSCnJlbG9jYWxpemUSYAoUdGFyZ2V0X3N0b3dfYmVoYXZpb3IYBSABKA4yLi5ib3NkeW'
+    '4uYXBpLmF1dG93YWxrLlRhcmdldC5UYXJnZXRTdG93QmVoYXZpb3JSEnRhcmdldFN0b3dCZWhh'
+    'dmlvchp0CgpSZWxvY2FsaXplEmYKGHNldF9sb2NhbGl6YXRpb25fcmVxdWVzdBgBIAEoCzIsLm'
+    'Jvc2R5bi5hcGkuZ3JhcGhfbmF2LlNldExvY2FsaXphdGlvblJlcXVlc3RSFnNldExvY2FsaXph'
+    'dGlvblJlcXVlc3QajQEKCk5hdmlnYXRlVG8SNgoXZGVzdGluYXRpb25fd2F5cG9pbnRfaWQYAS'
+    'ABKAlSFWRlc3RpbmF0aW9uV2F5cG9pbnRJZBJHCg10cmF2ZWxfcGFyYW1zGAMgASgLMiIuYm9z'
+    'ZHluLmFwaS5ncmFwaF9uYXYuVHJhdmVsUGFyYW1zUgx0cmF2ZWxQYXJhbXMaiwEKDU5hdmlnYX'
+    'RlUm91dGUSMQoFcm91dGUYASABKAsyGy5ib3NkeW4uYXBpLmdyYXBoX25hdi5Sb3V0ZVIFcm91'
+    'dGUSRwoNdHJhdmVsX3BhcmFtcxgCIAEoCzIiLmJvc2R5bi5hcGkuZ3JhcGhfbmF2LlRyYXZlbF'
+    'BhcmFtc1IMdHJhdmVsUGFyYW1zIpYBChJUYXJnZXRTdG93QmVoYXZpb3ISIAocVEFSR0VUX1NU'
+    'T1dfQkVIQVZJT1JfVU5LTk9XThAAEh0KGVRBUkdFVF9TVE9XX0JFSEFWSU9SX0FVVE8QARIeCh'
+    'pUQVJHRVRfU1RPV19CRUhBVklPUl9ORVZFUhACEh8KG1RBUkdFVF9TVE9XX0JFSEFWSU9SX0FM'
+    'V0FZUxADQggKBnRhcmdldA==');
 
 @$core.Deprecated('Use actionDescriptor instead')
 const Action$json = {
@@ -218,9 +254,10 @@ const Action$json = {
     {'1': 'sleep', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.autowalk.Action.Sleep', '9': 0, '10': 'sleep'},
     {'1': 'data_acquisition', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.autowalk.Action.DataAcquisition', '9': 0, '10': 'dataAcquisition'},
     {'1': 'remote_grpc', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.autowalk.Action.RemoteGrpc', '9': 0, '10': 'remoteGrpc'},
+    {'1': 'execute_choreography', '3': 5, '4': 1, '5': 11, '6': '.bosdyn.api.autowalk.Action.ExecuteChoreography', '9': 0, '10': 'executeChoreography'},
     {'1': 'node', '3': 4, '4': 1, '5': 11, '6': '.bosdyn.api.mission.Node', '9': 0, '10': 'node'},
   ],
-  '3': [Action_Sleep$json, Action_DataAcquisition$json, Action_RemoteGrpc$json],
+  '3': [Action_Sleep$json, Action_DataAcquisition$json, Action_RemoteGrpc$json, Action_ExecuteChoreography$json],
   '8': [
     {'1': 'action'},
   ],
@@ -266,28 +303,39 @@ const Action_RemoteGrpc$json = {
   ],
 };
 
+@$core.Deprecated('Use actionDescriptor instead')
+const Action_ExecuteChoreography$json = {
+  '1': 'ExecuteChoreography',
+  '2': [
+    {'1': 'sequence_name', '3': 1, '4': 1, '5': 9, '10': 'sequenceName'},
+  ],
+};
+
 /// Descriptor for `Action`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List actionDescriptor = $convert.base64Decode(
     'CgZBY3Rpb24SOQoFc2xlZXAYASABKAsyIS5ib3NkeW4uYXBpLmF1dG93YWxrLkFjdGlvbi5TbG'
     'VlcEgAUgVzbGVlcBJYChBkYXRhX2FjcXVpc2l0aW9uGAIgASgLMisuYm9zZHluLmFwaS5hdXRv'
     'd2Fsay5BY3Rpb24uRGF0YUFjcXVpc2l0aW9uSABSD2RhdGFBY3F1aXNpdGlvbhJJCgtyZW1vdG'
     'VfZ3JwYxgDIAEoCzImLmJvc2R5bi5hcGkuYXV0b3dhbGsuQWN0aW9uLlJlbW90ZUdycGNIAFIK'
-    'cmVtb3RlR3JwYxIuCgRub2RlGAQgASgLMhguYm9zZHluLmFwaS5taXNzaW9uLk5vZGVIAFIEbm'
-    '9kZRo+CgVTbGVlcBI1CghkdXJhdGlvbhgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlv'
-    'blIIZHVyYXRpb24a/AIKD0RhdGFBY3F1aXNpdGlvbhJQChRhY3F1aXJlX2RhdGFfcmVxdWVzdB'
-    'gBIAEoCzIeLmJvc2R5bi5hcGkuQWNxdWlyZURhdGFSZXF1ZXN0UhJhY3F1aXJlRGF0YVJlcXVl'
-    'c3QSZwoTY29tcGxldGlvbl9iZWhhdmlvchgCIAEoDjI2LmJvc2R5bi5hcGkubWlzc2lvbi5EYX'
-    'RhQWNxdWlzaXRpb24uQ29tcGxldGlvbkJlaGF2aW9yUhJjb21wbGV0aW9uQmVoYXZpb3ISXQoX'
-    'bGFzdF9rbm93bl9jYXBhYmlsaXRpZXMYAyABKAsyJS5ib3NkeW4uYXBpLkFjcXVpc2l0aW9uQ2'
-    'FwYWJpbGl0eUxpc3RSFWxhc3RLbm93bkNhcGFiaWxpdGllcxJPChJyZWNvcmRfdGltZV9pbWFn'
-    'ZXMYBCADKAsyIS5ib3NkeW4uYXBpLkltYWdlQ2FwdHVyZUFuZFNvdXJjZVIQcmVjb3JkVGltZU'
-    'ltYWdlcxriAgoKUmVtb3RlR3JwYxIhCgxzZXJ2aWNlX25hbWUYASABKAlSC3NlcnZpY2VOYW1l'
-    'EjoKC3JwY190aW1lb3V0GAIgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgpycGNUaW'
-    '1lb3V0EicKD2xlYXNlX3Jlc291cmNlcxgDIAMoCVIObGVhc2VSZXNvdXJjZXMSOAoGaW5wdXRz'
-    'GAQgAygLMhwuYm9zZHluLmFwaS5taXNzaW9uLktleVZhbHVlQgIYAVIGaW5wdXRzEkEKCnBhcm'
-    'FtZXRlcnMYBSABKAsyIS5ib3NkeW4uYXBpLkN1c3RvbVBhcmFtQ29sbGVjdGlvblIKcGFyYW1l'
-    'dGVycxJPChJyZWNvcmRfdGltZV9pbWFnZXMYBiADKAsyIS5ib3NkeW4uYXBpLkltYWdlQ2FwdH'
-    'VyZUFuZFNvdXJjZVIQcmVjb3JkVGltZUltYWdlc0IICgZhY3Rpb24=');
+    'cmVtb3RlR3JwYxJkChRleGVjdXRlX2Nob3Jlb2dyYXBoeRgFIAEoCzIvLmJvc2R5bi5hcGkuYX'
+    'V0b3dhbGsuQWN0aW9uLkV4ZWN1dGVDaG9yZW9ncmFwaHlIAFITZXhlY3V0ZUNob3Jlb2dyYXBo'
+    'eRIuCgRub2RlGAQgASgLMhguYm9zZHluLmFwaS5taXNzaW9uLk5vZGVIAFIEbm9kZRo+CgVTbG'
+    'VlcBI1CghkdXJhdGlvbhgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvblIIZHVyYXRp'
+    'b24a/AIKD0RhdGFBY3F1aXNpdGlvbhJQChRhY3F1aXJlX2RhdGFfcmVxdWVzdBgBIAEoCzIeLm'
+    'Jvc2R5bi5hcGkuQWNxdWlyZURhdGFSZXF1ZXN0UhJhY3F1aXJlRGF0YVJlcXVlc3QSZwoTY29t'
+    'cGxldGlvbl9iZWhhdmlvchgCIAEoDjI2LmJvc2R5bi5hcGkubWlzc2lvbi5EYXRhQWNxdWlzaX'
+    'Rpb24uQ29tcGxldGlvbkJlaGF2aW9yUhJjb21wbGV0aW9uQmVoYXZpb3ISXQoXbGFzdF9rbm93'
+    'bl9jYXBhYmlsaXRpZXMYAyABKAsyJS5ib3NkeW4uYXBpLkFjcXVpc2l0aW9uQ2FwYWJpbGl0eU'
+    'xpc3RSFWxhc3RLbm93bkNhcGFiaWxpdGllcxJPChJyZWNvcmRfdGltZV9pbWFnZXMYBCADKAsy'
+    'IS5ib3NkeW4uYXBpLkltYWdlQ2FwdHVyZUFuZFNvdXJjZVIQcmVjb3JkVGltZUltYWdlcxriAg'
+    'oKUmVtb3RlR3JwYxIhCgxzZXJ2aWNlX25hbWUYASABKAlSC3NlcnZpY2VOYW1lEjoKC3JwY190'
+    'aW1lb3V0GAIgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgpycGNUaW1lb3V0EicKD2'
+    'xlYXNlX3Jlc291cmNlcxgDIAMoCVIObGVhc2VSZXNvdXJjZXMSOAoGaW5wdXRzGAQgAygLMhwu'
+    'Ym9zZHluLmFwaS5taXNzaW9uLktleVZhbHVlQgIYAVIGaW5wdXRzEkEKCnBhcmFtZXRlcnMYBS'
+    'ABKAsyIS5ib3NkeW4uYXBpLkN1c3RvbVBhcmFtQ29sbGVjdGlvblIKcGFyYW1ldGVycxJPChJy'
+    'ZWNvcmRfdGltZV9pbWFnZXMYBiADKAsyIS5ib3NkeW4uYXBpLkltYWdlQ2FwdHVyZUFuZFNvdX'
+    'JjZVIQcmVjb3JkVGltZUltYWdlcxo6ChNFeGVjdXRlQ2hvcmVvZ3JhcGh5EiMKDXNlcXVlbmNl'
+    'X25hbWUYASABKAlSDHNlcXVlbmNlTmFtZUIICgZhY3Rpb24=');
 
 @$core.Deprecated('Use actionWrapperDescriptor instead')
 const ActionWrapper$json = {
@@ -365,6 +413,7 @@ const ActionWrapper_SpotCamAlignment_Alignment$json = {
     {'1': 'sensor_id', '3': 2, '4': 1, '5': 9, '10': 'sensorId'},
     {'1': 'scene_object_id', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'sceneObjectId'},
     {'1': 'is_skipped', '3': 4, '4': 1, '5': 8, '10': 'isSkipped'},
+    {'1': 'focus_state', '3': 5, '4': 1, '5': 11, '6': '.bosdyn.api.spot_cam.PtzFocusState', '10': 'focusState'},
   ],
   '8': [
     {'1': 'reference'},
@@ -397,6 +446,7 @@ const ActionWrapper_GripperCommand$json = {
   '1': 'GripperCommand',
   '2': [
     {'1': 'request', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.GripperCommand.Request', '10': 'request'},
+    {'1': 'disable_post_action_close', '3': 2, '4': 1, '5': 8, '10': 'disablePostActionClose'},
   ],
 };
 
@@ -422,26 +472,28 @@ final $typed_data.Uint8List actionWrapperDescriptor = $convert.base64Decode(
     'RuZXNzZXNFbnRyeVIMYnJpZ2h0bmVzc2VzGj8KEUJyaWdodG5lc3Nlc0VudHJ5EhAKA2tleRgB'
     'IAEoBVIDa2V5EhQKBXZhbHVlGAIgASgCUgV2YWx1ZToCOAEaUQoKU3BvdENhbVB0ehJDCgxwdH'
     'pfcG9zaXRpb24YASABKAsyIC5ib3NkeW4uYXBpLnNwb3RfY2FtLlB0elBvc2l0aW9uUgtwdHpQ'
-    'b3NpdGlvbhqWAwoQU3BvdENhbUFsaWdubWVudBJdCgphbGlnbm1lbnRzGAIgAygLMj0uYm9zZH'
+    'b3NpdGlvbhrbAwoQU3BvdENhbUFsaWdubWVudBJdCgphbGlnbm1lbnRzGAIgAygLMj0uYm9zZH'
     'luLmFwaS5hdXRvd2Fsay5BY3Rpb25XcmFwcGVyLlNwb3RDYW1BbGlnbm1lbnQuQWxpZ25tZW50'
     'UgphbGlnbm1lbnRzEkMKE3RhcmdldF90Zm9ybV9zZW5zb3IYAyABKAsyEy5ib3NkeW4uYXBpLl'
     'NFM1Bvc2VSEXRhcmdldFRmb3JtU2Vuc29yEh0KCmZpbmFsX3pvb20YBCABKAJSCWZpbmFsWm9v'
-    'bRIqChF0YXJnZXRfc2Vuc29yX2lkcxgFIAMoCVIPdGFyZ2V0U2Vuc29ySWRzGpIBCglBbGlnbm'
+    'bRIqChF0YXJnZXRfc2Vuc29yX2lkcxgFIAMoCVIPdGFyZ2V0U2Vuc29ySWRzGtcBCglBbGlnbm'
     '1lbnQSEgoEem9vbRgBIAEoAlIEem9vbRIbCglzZW5zb3JfaWQYAiABKAlSCHNlbnNvcklkEigK'
     'D3NjZW5lX29iamVjdF9pZBgDIAEoCUgAUg1zY2VuZU9iamVjdElkEh0KCmlzX3NraXBwZWQYBC'
-    'ABKAhSCWlzU2tpcHBlZEILCglyZWZlcmVuY2Ua5QMKEUFybVNlbnNvclBvaW50aW5nEkkKEGpv'
-    'aW50X3RyYWplY3RvcnkYAiABKAsyHi5ib3NkeW4uYXBpLkFybUpvaW50VHJhamVjdG9yeVIPam'
-    '9pbnRUcmFqZWN0b3J5Ej0KEHdyaXN0X3Rmb3JtX3Rvb2wYAyABKAsyEy5ib3NkeW4uYXBpLlNF'
-    'M1Bvc2VSDndyaXN0VGZvcm1Ub29sElQKGXBvc2VfdHJhamVjdG9yeV9ydF90YXJnZXQYBCABKA'
-    'syGS5ib3NkeW4uYXBpLlNFM1RyYWplY3RvcnlSFnBvc2VUcmFqZWN0b3J5UnRUYXJnZXQSVAoc'
-    'dGFyZ2V0X3Rmb3JtX21lYXN1cmVkX29mZnNldBgHIAEoCzITLmJvc2R5bi5hcGkuU0UyUG9zZV'
-    'IZdGFyZ2V0VGZvcm1NZWFzdXJlZE9mZnNldBJqChJib2R5X2Fzc2lzdF9wYXJhbXMYBSABKAsy'
-    'PC5ib3NkeW4uYXBpLnNwb3QuQm9keUNvbnRyb2xQYXJhbXMuQm9keUFzc2lzdEZvck1hbmlwdW'
-    'xhdGlvblIQYm9keUFzc2lzdFBhcmFtcxIuChNmb3JjZV9zdG93X292ZXJyaWRlGAYgASgIUhFm'
-    'b3JjZVN0b3dPdmVycmlkZRpOChNHcmlwcGVyQ2FtZXJhUGFyYW1zEjcKBnBhcmFtcxgBIAEoCz'
-    'IfLmJvc2R5bi5hcGkuR3JpcHBlckNhbWVyYVBhcmFtc1IGcGFyYW1zGk4KDkdyaXBwZXJDb21t'
-    'YW5kEjwKB3JlcXVlc3QYASABKAsyIi5ib3NkeW4uYXBpLkdyaXBwZXJDb21tYW5kLlJlcXVlc3'
-    'RSB3JlcXVlc3Q=');
+    'ABKAhSCWlzU2tpcHBlZBJDCgtmb2N1c19zdGF0ZRgFIAEoCzIiLmJvc2R5bi5hcGkuc3BvdF9j'
+    'YW0uUHR6Rm9jdXNTdGF0ZVIKZm9jdXNTdGF0ZUILCglyZWZlcmVuY2Ua5QMKEUFybVNlbnNvcl'
+    'BvaW50aW5nEkkKEGpvaW50X3RyYWplY3RvcnkYAiABKAsyHi5ib3NkeW4uYXBpLkFybUpvaW50'
+    'VHJhamVjdG9yeVIPam9pbnRUcmFqZWN0b3J5Ej0KEHdyaXN0X3Rmb3JtX3Rvb2wYAyABKAsyEy'
+    '5ib3NkeW4uYXBpLlNFM1Bvc2VSDndyaXN0VGZvcm1Ub29sElQKGXBvc2VfdHJhamVjdG9yeV9y'
+    'dF90YXJnZXQYBCABKAsyGS5ib3NkeW4uYXBpLlNFM1RyYWplY3RvcnlSFnBvc2VUcmFqZWN0b3'
+    'J5UnRUYXJnZXQSVAocdGFyZ2V0X3Rmb3JtX21lYXN1cmVkX29mZnNldBgHIAEoCzITLmJvc2R5'
+    'bi5hcGkuU0UyUG9zZVIZdGFyZ2V0VGZvcm1NZWFzdXJlZE9mZnNldBJqChJib2R5X2Fzc2lzdF'
+    '9wYXJhbXMYBSABKAsyPC5ib3NkeW4uYXBpLnNwb3QuQm9keUNvbnRyb2xQYXJhbXMuQm9keUFz'
+    'c2lzdEZvck1hbmlwdWxhdGlvblIQYm9keUFzc2lzdFBhcmFtcxIuChNmb3JjZV9zdG93X292ZX'
+    'JyaWRlGAYgASgIUhFmb3JjZVN0b3dPdmVycmlkZRpOChNHcmlwcGVyQ2FtZXJhUGFyYW1zEjcK'
+    'BnBhcmFtcxgBIAEoCzIfLmJvc2R5bi5hcGkuR3JpcHBlckNhbWVyYVBhcmFtc1IGcGFyYW1zGo'
+    'kBCg5HcmlwcGVyQ29tbWFuZBI8CgdyZXF1ZXN0GAEgASgLMiIuYm9zZHluLmFwaS5HcmlwcGVy'
+    'Q29tbWFuZC5SZXF1ZXN0UgdyZXF1ZXN0EjkKGWRpc2FibGVfcG9zdF9hY3Rpb25fY2xvc2UYAi'
+    'ABKAhSFmRpc2FibGVQb3N0QWN0aW9uQ2xvc2U=');
 
 @$core.Deprecated('Use failureBehaviorDescriptor instead')
 const FailureBehavior$json = {

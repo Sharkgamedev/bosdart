@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../arm_command.pb.dart' as $65;
-import '../geometry.pb.dart' as $61;
-import '../header.pb.dart' as $68;
+import '../arm_command.pb.dart' as $64;
+import '../geometry.pb.dart' as $60;
+import '../header.pb.dart' as $67;
 import '../robot_state.pb.dart' as $26;
 import 'inverse_kinematics.pbenum.dart';
 
@@ -23,10 +23,10 @@ export 'inverse_kinematics.pbenum.dart';
 
 class InverseKinematicsRequest_FixedStance extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest_FixedStance({
-    $61.Vec3? flRtScene,
-    $61.Vec3? frRtScene,
-    $61.Vec3? hlRtScene,
-    $61.Vec3? hrRtScene,
+    $60.Vec3? flRtScene,
+    $60.Vec3? frRtScene,
+    $60.Vec3? hlRtScene,
+    $60.Vec3? hrRtScene,
   }) {
     final $result = create();
     if (flRtScene != null) {
@@ -48,10 +48,10 @@ class InverseKinematicsRequest_FixedStance extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest_FixedStance.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InverseKinematicsRequest.FixedStance', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'flRtScene', subBuilder: $61.Vec3.create)
-    ..aOM<$61.Vec3>(2, _omitFieldNames ? '' : 'frRtScene', subBuilder: $61.Vec3.create)
-    ..aOM<$61.Vec3>(3, _omitFieldNames ? '' : 'hlRtScene', subBuilder: $61.Vec3.create)
-    ..aOM<$61.Vec3>(4, _omitFieldNames ? '' : 'hrRtScene', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'flRtScene', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec3>(2, _omitFieldNames ? '' : 'frRtScene', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec3>(3, _omitFieldNames ? '' : 'hlRtScene', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec3>(4, _omitFieldNames ? '' : 'hrRtScene', subBuilder: $60.Vec3.create)
     ..hasRequiredFields = false
   ;
 
@@ -79,53 +79,53 @@ class InverseKinematicsRequest_FixedStance extends $pb.GeneratedMessage {
   /// The feet will be constrained to the specified positions relative to the scene frame. If
   /// unspecified, these will default to the current positions of the feet.
   @$pb.TagNumber(1)
-  $61.Vec3 get flRtScene => $_getN(0);
+  $60.Vec3 get flRtScene => $_getN(0);
   @$pb.TagNumber(1)
-  set flRtScene($61.Vec3 v) { setField(1, v); }
+  set flRtScene($60.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFlRtScene() => $_has(0);
   @$pb.TagNumber(1)
   void clearFlRtScene() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3 ensureFlRtScene() => $_ensure(0);
+  $60.Vec3 ensureFlRtScene() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $61.Vec3 get frRtScene => $_getN(1);
+  $60.Vec3 get frRtScene => $_getN(1);
   @$pb.TagNumber(2)
-  set frRtScene($61.Vec3 v) { setField(2, v); }
+  set frRtScene($60.Vec3 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFrRtScene() => $_has(1);
   @$pb.TagNumber(2)
   void clearFrRtScene() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3 ensureFrRtScene() => $_ensure(1);
+  $60.Vec3 ensureFrRtScene() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $61.Vec3 get hlRtScene => $_getN(2);
+  $60.Vec3 get hlRtScene => $_getN(2);
   @$pb.TagNumber(3)
-  set hlRtScene($61.Vec3 v) { setField(3, v); }
+  set hlRtScene($60.Vec3 v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasHlRtScene() => $_has(2);
   @$pb.TagNumber(3)
   void clearHlRtScene() => clearField(3);
   @$pb.TagNumber(3)
-  $61.Vec3 ensureHlRtScene() => $_ensure(2);
+  $60.Vec3 ensureHlRtScene() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $61.Vec3 get hrRtScene => $_getN(3);
+  $60.Vec3 get hrRtScene => $_getN(3);
   @$pb.TagNumber(4)
-  set hrRtScene($61.Vec3 v) { setField(4, v); }
+  set hrRtScene($60.Vec3 v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasHrRtScene() => $_has(3);
   @$pb.TagNumber(4)
   void clearHrRtScene() => clearField(4);
   @$pb.TagNumber(4)
-  $61.Vec3 ensureHrRtScene() => $_ensure(3);
+  $60.Vec3 ensureHrRtScene() => $_ensure(3);
 }
 
 class InverseKinematicsRequest_OnGroundPlaneStance extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest_OnGroundPlaneStance({
-    $61.SE3Pose? sceneTformGround,
+    $60.SE3Pose? sceneTformGround,
   }) {
     final $result = create();
     if (sceneTformGround != null) {
@@ -138,7 +138,7 @@ class InverseKinematicsRequest_OnGroundPlaneStance extends $pb.GeneratedMessage 
   factory InverseKinematicsRequest_OnGroundPlaneStance.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InverseKinematicsRequest.OnGroundPlaneStance', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.SE3Pose>(1, _omitFieldNames ? '' : 'sceneTformGround', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(1, _omitFieldNames ? '' : 'sceneTformGround', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -166,20 +166,20 @@ class InverseKinematicsRequest_OnGroundPlaneStance extends $pb.GeneratedMessage 
   /// The feet will be constrained to lie on the XY-plane of the ground frame. If unspecified
   /// the ground plane will be the robot's current ground plane estimate.
   @$pb.TagNumber(1)
-  $61.SE3Pose get sceneTformGround => $_getN(0);
+  $60.SE3Pose get sceneTformGround => $_getN(0);
   @$pb.TagNumber(1)
-  set sceneTformGround($61.SE3Pose v) { setField(1, v); }
+  set sceneTformGround($60.SE3Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSceneTformGround() => $_has(0);
   @$pb.TagNumber(1)
   void clearSceneTformGround() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE3Pose ensureSceneTformGround() => $_ensure(0);
+  $60.SE3Pose ensureSceneTformGround() => $_ensure(0);
 }
 
 class InverseKinematicsRequest_WristMountedTool extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest_WristMountedTool({
-    $61.SE3Pose? wristTformTool,
+    $60.SE3Pose? wristTformTool,
   }) {
     final $result = create();
     if (wristTformTool != null) {
@@ -192,7 +192,7 @@ class InverseKinematicsRequest_WristMountedTool extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest_WristMountedTool.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InverseKinematicsRequest.WristMountedTool', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.SE3Pose>(1, _omitFieldNames ? '' : 'wristTformTool', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(1, _omitFieldNames ? '' : 'wristTformTool', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -224,20 +224,20 @@ class InverseKinematicsRequest_WristMountedTool extends $pb.GeneratedMessage {
   /// a frame with its origin slightly in front of the gripper's palm plate aligned with the
   /// wrist's orientation.
   @$pb.TagNumber(1)
-  $61.SE3Pose get wristTformTool => $_getN(0);
+  $60.SE3Pose get wristTformTool => $_getN(0);
   @$pb.TagNumber(1)
-  set wristTformTool($61.SE3Pose v) { setField(1, v); }
+  set wristTformTool($60.SE3Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasWristTformTool() => $_has(0);
   @$pb.TagNumber(1)
   void clearWristTformTool() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE3Pose ensureWristTformTool() => $_ensure(0);
+  $60.SE3Pose ensureWristTformTool() => $_ensure(0);
 }
 
 class InverseKinematicsRequest_BodyMountedTool extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest_BodyMountedTool({
-    $61.SE3Pose? bodyTformTool,
+    $60.SE3Pose? bodyTformTool,
   }) {
     final $result = create();
     if (bodyTformTool != null) {
@@ -250,7 +250,7 @@ class InverseKinematicsRequest_BodyMountedTool extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest_BodyMountedTool.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InverseKinematicsRequest.BodyMountedTool', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.SE3Pose>(1, _omitFieldNames ? '' : 'bodyTformTool', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(1, _omitFieldNames ? '' : 'bodyTformTool', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -278,20 +278,20 @@ class InverseKinematicsRequest_BodyMountedTool extends $pb.GeneratedMessage {
   /// The tool pose relative to the parent link (body). Defaults to identity, making the tool
   /// frame coincident with the body frame
   @$pb.TagNumber(1)
-  $61.SE3Pose get bodyTformTool => $_getN(0);
+  $60.SE3Pose get bodyTformTool => $_getN(0);
   @$pb.TagNumber(1)
-  set bodyTformTool($61.SE3Pose v) { setField(1, v); }
+  set bodyTformTool($60.SE3Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBodyTformTool() => $_has(0);
   @$pb.TagNumber(1)
   void clearBodyTformTool() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE3Pose ensureBodyTformTool() => $_ensure(0);
+  $60.SE3Pose ensureBodyTformTool() => $_ensure(0);
 }
 
 class InverseKinematicsRequest_ToolPoseTask extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest_ToolPoseTask({
-    $61.SE3Pose? taskTformDesiredTool,
+    $60.SE3Pose? taskTformDesiredTool,
   }) {
     final $result = create();
     if (taskTformDesiredTool != null) {
@@ -304,7 +304,7 @@ class InverseKinematicsRequest_ToolPoseTask extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest_ToolPoseTask.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InverseKinematicsRequest.ToolPoseTask', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.SE3Pose>(1, _omitFieldNames ? '' : 'taskTformDesiredTool', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(1, _omitFieldNames ? '' : 'taskTformDesiredTool', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -331,21 +331,21 @@ class InverseKinematicsRequest_ToolPoseTask extends $pb.GeneratedMessage {
 
   /// The desired pose of the tool expressed in the task frame. Defaults to identity.
   @$pb.TagNumber(1)
-  $61.SE3Pose get taskTformDesiredTool => $_getN(0);
+  $60.SE3Pose get taskTformDesiredTool => $_getN(0);
   @$pb.TagNumber(1)
-  set taskTformDesiredTool($61.SE3Pose v) { setField(1, v); }
+  set taskTformDesiredTool($60.SE3Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTaskTformDesiredTool() => $_has(0);
   @$pb.TagNumber(1)
   void clearTaskTformDesiredTool() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE3Pose ensureTaskTformDesiredTool() => $_ensure(0);
+  $60.SE3Pose ensureTaskTformDesiredTool() => $_ensure(0);
 }
 
 class InverseKinematicsRequest_ToolGazeTask extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest_ToolGazeTask({
-    $61.Vec3? targetInTask,
-    $61.SE3Pose? taskTformDesiredTool,
+    $60.Vec3? targetInTask,
+    $60.SE3Pose? taskTformDesiredTool,
   }) {
     final $result = create();
     if (targetInTask != null) {
@@ -361,8 +361,8 @@ class InverseKinematicsRequest_ToolGazeTask extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest_ToolGazeTask.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InverseKinematicsRequest.ToolGazeTask', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'targetInTask', subBuilder: $61.Vec3.create)
-    ..aOM<$61.SE3Pose>(2, _omitFieldNames ? '' : 'taskTformDesiredTool', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'targetInTask', subBuilder: $60.Vec3.create)
+    ..aOM<$60.SE3Pose>(2, _omitFieldNames ? '' : 'taskTformDesiredTool', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -389,29 +389,29 @@ class InverseKinematicsRequest_ToolGazeTask extends $pb.GeneratedMessage {
 
   /// The point to “look at” with the x-axis of the tool frame. Defaults to the zero vector.
   @$pb.TagNumber(1)
-  $61.Vec3 get targetInTask => $_getN(0);
+  $60.Vec3 get targetInTask => $_getN(0);
   @$pb.TagNumber(1)
-  set targetInTask($61.Vec3 v) { setField(1, v); }
+  set targetInTask($60.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTargetInTask() => $_has(0);
   @$pb.TagNumber(1)
   void clearTargetInTask() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3 ensureTargetInTask() => $_ensure(0);
+  $60.Vec3 ensureTargetInTask() => $_ensure(0);
 
   /// Optional desired pose of the tool expressed in the task frame. Will be
   /// constrained to 'look at' the target regardless of the requested orientation. If unset,
   /// only the “look at” constraint will be applied.
   @$pb.TagNumber(2)
-  $61.SE3Pose get taskTformDesiredTool => $_getN(1);
+  $60.SE3Pose get taskTformDesiredTool => $_getN(1);
   @$pb.TagNumber(2)
-  set taskTformDesiredTool($61.SE3Pose v) { setField(2, v); }
+  set taskTformDesiredTool($60.SE3Pose v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTaskTformDesiredTool() => $_has(1);
   @$pb.TagNumber(2)
   void clearTaskTformDesiredTool() => clearField(2);
   @$pb.TagNumber(2)
-  $61.SE3Pose ensureTaskTformDesiredTool() => $_ensure(1);
+  $60.SE3Pose ensureTaskTformDesiredTool() => $_ensure(1);
 }
 
 enum InverseKinematicsRequest_StanceSpecification {
@@ -443,13 +443,13 @@ enum InverseKinematicsRequest_TaskSpecification {
 /// stability in addition to the requirements specified in the request.
 class InverseKinematicsRequest extends $pb.GeneratedMessage {
   factory InverseKinematicsRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? rootFrameName,
-    $61.SE3Pose? rootTformScene,
-    $61.SE3Pose? sceneTformTask,
-    $65.ArmJointPosition? nominalArmConfigurationOverrides,
+    $60.SE3Pose? rootTformScene,
+    $60.SE3Pose? sceneTformTask,
+    $64.ArmJointPosition? nominalArmConfigurationOverrides,
     InverseKinematicsRequest_NamedArmConfiguration? nominalArmConfiguration,
-    $61.SE3Pose? sceneTformBodyNominal,
+    $60.SE3Pose? sceneTformBodyNominal,
     InverseKinematicsRequest_FixedStance? fixedStance,
     InverseKinematicsRequest_OnGroundPlaneStance? onGroundPlaneStance,
     InverseKinematicsRequest_WristMountedTool? wristMountedTool,
@@ -522,13 +522,13 @@ class InverseKinematicsRequest extends $pb.GeneratedMessage {
     ..oo(0, [8, 9])
     ..oo(1, [10, 11])
     ..oo(2, [12, 13])
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'rootFrameName')
-    ..aOM<$61.SE3Pose>(3, _omitFieldNames ? '' : 'rootTformScene', subBuilder: $61.SE3Pose.create)
-    ..aOM<$61.SE3Pose>(4, _omitFieldNames ? '' : 'sceneTformTask', subBuilder: $61.SE3Pose.create)
-    ..aOM<$65.ArmJointPosition>(5, _omitFieldNames ? '' : 'nominalArmConfigurationOverrides', subBuilder: $65.ArmJointPosition.create)
+    ..aOM<$60.SE3Pose>(3, _omitFieldNames ? '' : 'rootTformScene', subBuilder: $60.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(4, _omitFieldNames ? '' : 'sceneTformTask', subBuilder: $60.SE3Pose.create)
+    ..aOM<$64.ArmJointPosition>(5, _omitFieldNames ? '' : 'nominalArmConfigurationOverrides', subBuilder: $64.ArmJointPosition.create)
     ..e<InverseKinematicsRequest_NamedArmConfiguration>(6, _omitFieldNames ? '' : 'nominalArmConfiguration', $pb.PbFieldType.OE, defaultOrMaker: InverseKinematicsRequest_NamedArmConfiguration.ARM_CONFIG_UNKNOWN, valueOf: InverseKinematicsRequest_NamedArmConfiguration.valueOf, enumValues: InverseKinematicsRequest_NamedArmConfiguration.values)
-    ..aOM<$61.SE3Pose>(7, _omitFieldNames ? '' : 'sceneTformBodyNominal', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(7, _omitFieldNames ? '' : 'sceneTformBodyNominal', subBuilder: $60.SE3Pose.create)
     ..aOM<InverseKinematicsRequest_FixedStance>(8, _omitFieldNames ? '' : 'fixedStance', subBuilder: InverseKinematicsRequest_FixedStance.create)
     ..aOM<InverseKinematicsRequest_OnGroundPlaneStance>(9, _omitFieldNames ? '' : 'onGroundPlaneStance', subBuilder: InverseKinematicsRequest_OnGroundPlaneStance.create)
     ..aOM<InverseKinematicsRequest_WristMountedTool>(10, _omitFieldNames ? '' : 'wristMountedTool', subBuilder: InverseKinematicsRequest_WristMountedTool.create)
@@ -569,15 +569,15 @@ class InverseKinematicsRequest extends $pb.GeneratedMessage {
   void clearTaskSpecification() => clearField($_whichOneof(2));
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The root frame is the parent for the optional scene frame. The root frame must be
   /// either “vision" or “odom”.
@@ -596,42 +596,42 @@ class InverseKinematicsRequest extends $pb.GeneratedMessage {
   /// kinematics problem is most easily defined relative to some other frame (e.g. the frame
   /// defined by a fiducial detection next to a piece of equipment).
   @$pb.TagNumber(3)
-  $61.SE3Pose get rootTformScene => $_getN(2);
+  $60.SE3Pose get rootTformScene => $_getN(2);
   @$pb.TagNumber(3)
-  set rootTformScene($61.SE3Pose v) { setField(3, v); }
+  set rootTformScene($60.SE3Pose v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasRootTformScene() => $_has(2);
   @$pb.TagNumber(3)
   void clearRootTformScene() => clearField(3);
   @$pb.TagNumber(3)
-  $61.SE3Pose ensureRootTformScene() => $_ensure(2);
+  $60.SE3Pose ensureRootTformScene() => $_ensure(2);
 
   /// Tool related fields below are specified in this optional task frame.  If unset it defaults
   /// to the identity transform and all task frame quantities are therefore expressed in the scene
   /// frame.
   @$pb.TagNumber(4)
-  $61.SE3Pose get sceneTformTask => $_getN(3);
+  $60.SE3Pose get sceneTformTask => $_getN(3);
   @$pb.TagNumber(4)
-  set sceneTformTask($61.SE3Pose v) { setField(4, v); }
+  set sceneTformTask($60.SE3Pose v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSceneTformTask() => $_has(3);
   @$pb.TagNumber(4)
   void clearSceneTformTask() => clearField(4);
   @$pb.TagNumber(4)
-  $61.SE3Pose ensureSceneTformTask() => $_ensure(3);
+  $60.SE3Pose ensureSceneTformTask() => $_ensure(3);
 
   /// Entries override the nominal joint positions for the specified arm joints. Unspecified joints
   /// will use the values specified by nominal_arm_configuration.
   @$pb.TagNumber(5)
-  $65.ArmJointPosition get nominalArmConfigurationOverrides => $_getN(4);
+  $64.ArmJointPosition get nominalArmConfigurationOverrides => $_getN(4);
   @$pb.TagNumber(5)
-  set nominalArmConfigurationOverrides($65.ArmJointPosition v) { setField(5, v); }
+  set nominalArmConfigurationOverrides($64.ArmJointPosition v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasNominalArmConfigurationOverrides() => $_has(4);
   @$pb.TagNumber(5)
   void clearNominalArmConfigurationOverrides() => clearField(5);
   @$pb.TagNumber(5)
-  $65.ArmJointPosition ensureNominalArmConfigurationOverrides() => $_ensure(4);
+  $64.ArmJointPosition ensureNominalArmConfigurationOverrides() => $_ensure(4);
 
   /// The solver will prefer arm configurations close to the specified named configuration.
   /// Defaults to ARM_CONFIG_CURRENT.
@@ -647,15 +647,15 @@ class InverseKinematicsRequest extends $pb.GeneratedMessage {
   /// The solver will prefer configurations that put the body close to this pose. Default to the
   /// current body pose.
   @$pb.TagNumber(7)
-  $61.SE3Pose get sceneTformBodyNominal => $_getN(6);
+  $60.SE3Pose get sceneTformBodyNominal => $_getN(6);
   @$pb.TagNumber(7)
-  set sceneTformBodyNominal($61.SE3Pose v) { setField(7, v); }
+  set sceneTformBodyNominal($60.SE3Pose v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasSceneTformBodyNominal() => $_has(6);
   @$pb.TagNumber(7)
   void clearSceneTformBodyNominal() => clearField(7);
   @$pb.TagNumber(7)
-  $61.SE3Pose ensureSceneTformBodyNominal() => $_ensure(6);
+  $60.SE3Pose ensureSceneTformBodyNominal() => $_ensure(6);
 
   @$pb.TagNumber(8)
   InverseKinematicsRequest_FixedStance get fixedStance => $_getN(7);
@@ -732,7 +732,7 @@ class InverseKinematicsRequest extends $pb.GeneratedMessage {
 /// will be empty.
 class InverseKinematicsResponse extends $pb.GeneratedMessage {
   factory InverseKinematicsResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     InverseKinematicsResponse_Status? status,
     $26.KinematicState? robotConfiguration,
   }) {
@@ -753,7 +753,7 @@ class InverseKinematicsResponse extends $pb.GeneratedMessage {
   factory InverseKinematicsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InverseKinematicsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<InverseKinematicsResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: InverseKinematicsResponse_Status.STATUS_UNKNOWN, valueOf: InverseKinematicsResponse_Status.valueOf, enumValues: InverseKinematicsResponse_Status.values)
     ..aOM<$26.KinematicState>(3, _omitFieldNames ? '' : 'robotConfiguration', subBuilder: $26.KinematicState.create)
     ..hasRequiredFields = false
@@ -781,15 +781,15 @@ class InverseKinematicsResponse extends $pb.GeneratedMessage {
   static InverseKinematicsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status of the request.
   @$pb.TagNumber(2)

@@ -13,12 +13,12 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $60;
-import '../data_chunk.pb.dart' as $34;
-import '../geometry.pb.dart' as $61;
-import '../header.pb.dart' as $68;
-import '../image.pbenum.dart' as $11;
-import 'camera.pb.dart' as $83;
+import '../../../google/protobuf/timestamp.pb.dart' as $59;
+import '../data_chunk.pb.dart' as $4;
+import '../geometry.pb.dart' as $60;
+import '../header.pb.dart' as $67;
+import '../image.pbenum.dart' as $12;
+import 'camera.pb.dart' as $84;
 import 'logging.pbenum.dart';
 
 export 'logging.pbenum.dart';
@@ -28,7 +28,7 @@ class Logpoint_ImageParams extends $pb.GeneratedMessage {
   factory Logpoint_ImageParams({
     $core.int? width,
     $core.int? height,
-    $11.Image_PixelFormat? format,
+    $12.Image_PixelFormat? format,
   }) {
     final $result = create();
     if (width != null) {
@@ -49,7 +49,7 @@ class Logpoint_ImageParams extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Logpoint.ImageParams', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'width', $pb.PbFieldType.O3)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'height', $pb.PbFieldType.O3)
-    ..e<$11.Image_PixelFormat>(3, _omitFieldNames ? '' : 'format', $pb.PbFieldType.OE, defaultOrMaker: $11.Image_PixelFormat.PIXEL_FORMAT_UNKNOWN, valueOf: $11.Image_PixelFormat.valueOf, enumValues: $11.Image_PixelFormat.values)
+    ..e<$12.Image_PixelFormat>(3, _omitFieldNames ? '' : 'format', $pb.PbFieldType.OE, defaultOrMaker: $12.Image_PixelFormat.PIXEL_FORMAT_UNKNOWN, valueOf: $12.Image_PixelFormat.valueOf, enumValues: $12.Image_PixelFormat.values)
     ..hasRequiredFields = false
   ;
 
@@ -93,9 +93,9 @@ class Logpoint_ImageParams extends $pb.GeneratedMessage {
   void clearHeight() => clearField(2);
 
   @$pb.TagNumber(3)
-  $11.Image_PixelFormat get format => $_getN(2);
+  $12.Image_PixelFormat get format => $_getN(2);
   @$pb.TagNumber(3)
-  set format($11.Image_PixelFormat v) { setField(3, v); }
+  set format($12.Image_PixelFormat v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFormat() => $_has(2);
   @$pb.TagNumber(3)
@@ -110,10 +110,10 @@ class Logpoint_Calibration extends $pb.GeneratedMessage {
     $core.int? width,
     $core.int? height,
   @$core.Deprecated('This field is deprecated.')
-    $61.SE3Pose? baseTfromSensor,
-    $83.Camera_PinholeIntrinsics? intrinsics,
+    $60.SE3Pose? baseTfromSensor,
+    $84.Camera_PinholeIntrinsics? intrinsics,
     $core.String? baseFrameName,
-    $61.SE3Pose? baseTformSensor,
+    $60.SE3Pose? baseTformSensor,
   }) {
     final $result = create();
     if (xoffset != null) {
@@ -152,10 +152,10 @@ class Logpoint_Calibration extends $pb.GeneratedMessage {
     ..a<$core.int>(2, _omitFieldNames ? '' : 'yoffset', $pb.PbFieldType.O3)
     ..a<$core.int>(3, _omitFieldNames ? '' : 'width', $pb.PbFieldType.O3)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'height', $pb.PbFieldType.O3)
-    ..aOM<$61.SE3Pose>(5, _omitFieldNames ? '' : 'baseTfromSensor', subBuilder: $61.SE3Pose.create)
-    ..aOM<$83.Camera_PinholeIntrinsics>(6, _omitFieldNames ? '' : 'intrinsics', subBuilder: $83.Camera_PinholeIntrinsics.create)
+    ..aOM<$60.SE3Pose>(5, _omitFieldNames ? '' : 'baseTfromSensor', subBuilder: $60.SE3Pose.create)
+    ..aOM<$84.Camera_PinholeIntrinsics>(6, _omitFieldNames ? '' : 'intrinsics', subBuilder: $84.Camera_PinholeIntrinsics.create)
     ..aOS(7, _omitFieldNames ? '' : 'baseFrameName')
-    ..aOM<$61.SE3Pose>(8, _omitFieldNames ? '' : 'baseTformSensor', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(8, _omitFieldNames ? '' : 'baseTformSensor', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -222,10 +222,10 @@ class Logpoint_Calibration extends $pb.GeneratedMessage {
   /// in geometry.proto.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
-  $61.SE3Pose get baseTfromSensor => $_getN(4);
+  $60.SE3Pose get baseTfromSensor => $_getN(4);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
-  set baseTfromSensor($61.SE3Pose v) { setField(5, v); }
+  set baseTfromSensor($60.SE3Pose v) { setField(5, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
   $core.bool hasBaseTfromSensor() => $_has(4);
@@ -234,18 +234,18 @@ class Logpoint_Calibration extends $pb.GeneratedMessage {
   void clearBaseTfromSensor() => clearField(5);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(5)
-  $61.SE3Pose ensureBaseTfromSensor() => $_ensure(4);
+  $60.SE3Pose ensureBaseTfromSensor() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $83.Camera_PinholeIntrinsics get intrinsics => $_getN(5);
+  $84.Camera_PinholeIntrinsics get intrinsics => $_getN(5);
   @$pb.TagNumber(6)
-  set intrinsics($83.Camera_PinholeIntrinsics v) { setField(6, v); }
+  set intrinsics($84.Camera_PinholeIntrinsics v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasIntrinsics() => $_has(5);
   @$pb.TagNumber(6)
   void clearIntrinsics() => clearField(6);
   @$pb.TagNumber(6)
-  $83.Camera_PinholeIntrinsics ensureIntrinsics() => $_ensure(5);
+  $84.Camera_PinholeIntrinsics ensureIntrinsics() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get baseFrameName => $_getSZ(6);
@@ -258,15 +258,15 @@ class Logpoint_Calibration extends $pb.GeneratedMessage {
 
   /// The transform from the named base frame to this specific camera
   @$pb.TagNumber(8)
-  $61.SE3Pose get baseTformSensor => $_getN(7);
+  $60.SE3Pose get baseTformSensor => $_getN(7);
   @$pb.TagNumber(8)
-  set baseTformSensor($61.SE3Pose v) { setField(8, v); }
+  set baseTformSensor($60.SE3Pose v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasBaseTformSensor() => $_has(7);
   @$pb.TagNumber(8)
   void clearBaseTformSensor() => clearField(8);
   @$pb.TagNumber(8)
-  $61.SE3Pose ensureBaseTformSensor() => $_ensure(7);
+  $60.SE3Pose ensureBaseTformSensor() => $_ensure(7);
 }
 
 /// A representation of a stored data acquisition.
@@ -276,7 +276,7 @@ class Logpoint extends $pb.GeneratedMessage {
     Logpoint_RecordType? type,
     Logpoint_LogStatus? status,
     $core.String? tag,
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
     Logpoint_ImageParams? imageParams,
     $core.Iterable<Logpoint_Calibration>? calibration,
     Logpoint_QueueStatus? queueStatus,
@@ -317,7 +317,7 @@ class Logpoint extends $pb.GeneratedMessage {
     ..e<Logpoint_RecordType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: Logpoint_RecordType.STILLIMAGE, valueOf: Logpoint_RecordType.valueOf, enumValues: Logpoint_RecordType.values)
     ..e<Logpoint_LogStatus>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: Logpoint_LogStatus.FAILED, valueOf: Logpoint_LogStatus.valueOf, enumValues: Logpoint_LogStatus.values)
     ..aOS(4, _omitFieldNames ? '' : 'tag')
-    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..aOM<Logpoint_ImageParams>(6, _omitFieldNames ? '' : 'imageParams', subBuilder: Logpoint_ImageParams.create)
     ..pc<Logpoint_Calibration>(7, _omitFieldNames ? '' : 'calibration', $pb.PbFieldType.PM, subBuilder: Logpoint_Calibration.create)
     ..e<Logpoint_QueueStatus>(8, _omitFieldNames ? '' : 'queueStatus', $pb.PbFieldType.OE, defaultOrMaker: Logpoint_QueueStatus.QUEUED_UNKNOWN, valueOf: Logpoint_QueueStatus.valueOf, enumValues: Logpoint_QueueStatus.values)
@@ -387,15 +387,15 @@ class Logpoint extends $pb.GeneratedMessage {
 
   /// Time of acquisition.
   @$pb.TagNumber(5)
-  $60.Timestamp get timestamp => $_getN(4);
+  $59.Timestamp get timestamp => $_getN(4);
   @$pb.TagNumber(5)
-  set timestamp($60.Timestamp v) { setField(5, v); }
+  set timestamp($59.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasTimestamp() => $_has(4);
   @$pb.TagNumber(5)
   void clearTimestamp() => clearField(5);
   @$pb.TagNumber(5)
-  $60.Timestamp ensureTimestamp() => $_ensure(4);
+  $59.Timestamp ensureTimestamp() => $_ensure(4);
 
   /// Image format of the stored data.
   @$pb.TagNumber(6)
@@ -427,7 +427,7 @@ class Logpoint extends $pb.GeneratedMessage {
 /// Delete a log point from the store.
 class DeleteRequest extends $pb.GeneratedMessage {
   factory DeleteRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     Logpoint? point,
   }) {
     final $result = create();
@@ -444,7 +444,7 @@ class DeleteRequest extends $pb.GeneratedMessage {
   factory DeleteRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<Logpoint>(2, _omitFieldNames ? '' : 'point', subBuilder: Logpoint.create)
     ..hasRequiredFields = false
   ;
@@ -472,15 +472,15 @@ class DeleteRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Log point to delete.  Only the name is used.
   @$pb.TagNumber(2)
@@ -498,7 +498,7 @@ class DeleteRequest extends $pb.GeneratedMessage {
 /// Response to a deletion with any errors that occurred.
 class DeleteResponse extends $pb.GeneratedMessage {
   factory DeleteResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -511,7 +511,7 @@ class DeleteResponse extends $pb.GeneratedMessage {
   factory DeleteResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -538,21 +538,21 @@ class DeleteResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 /// Request for status about the current stage of data acquisition.
 class GetStatusRequest extends $pb.GeneratedMessage {
   factory GetStatusRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     Logpoint? point,
   }) {
     final $result = create();
@@ -569,7 +569,7 @@ class GetStatusRequest extends $pb.GeneratedMessage {
   factory GetStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<Logpoint>(2, _omitFieldNames ? '' : 'point', subBuilder: Logpoint.create)
     ..hasRequiredFields = false
   ;
@@ -597,15 +597,15 @@ class GetStatusRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Log point to query.  Only the name is used.
   @$pb.TagNumber(2)
@@ -623,7 +623,7 @@ class GetStatusRequest extends $pb.GeneratedMessage {
 /// Provide an update on the stage of data acquisition.
 class GetStatusResponse extends $pb.GeneratedMessage {
   factory GetStatusResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     Logpoint? point,
   }) {
     final $result = create();
@@ -640,7 +640,7 @@ class GetStatusResponse extends $pb.GeneratedMessage {
   factory GetStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<Logpoint>(2, _omitFieldNames ? '' : 'point', subBuilder: Logpoint.create)
     ..hasRequiredFields = false
   ;
@@ -668,15 +668,15 @@ class GetStatusResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The logpoint returned here can be used to add a tag to the Logpoint later
   @$pb.TagNumber(2)
@@ -694,7 +694,7 @@ class GetStatusResponse extends $pb.GeneratedMessage {
 /// Retrieve the binary data associated with a log point.
 class RetrieveRequest extends $pb.GeneratedMessage {
   factory RetrieveRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     Logpoint? point,
   }) {
     final $result = create();
@@ -711,7 +711,7 @@ class RetrieveRequest extends $pb.GeneratedMessage {
   factory RetrieveRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RetrieveRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<Logpoint>(2, _omitFieldNames ? '' : 'point', subBuilder: Logpoint.create)
     ..hasRequiredFields = false
   ;
@@ -739,15 +739,15 @@ class RetrieveRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Log point to retrieve.  Only the name is used.
   @$pb.TagNumber(2)
@@ -768,9 +768,9 @@ class RetrieveRequest extends $pb.GeneratedMessage {
 /// Storing a panorama will process the data into a stitched image.
 class RetrieveResponse extends $pb.GeneratedMessage {
   factory RetrieveResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     Logpoint? logpoint,
-    $34.DataChunk? data,
+    $4.DataChunk? data,
   }) {
     final $result = create();
     if (header != null) {
@@ -789,9 +789,9 @@ class RetrieveResponse extends $pb.GeneratedMessage {
   factory RetrieveResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RetrieveResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<Logpoint>(2, _omitFieldNames ? '' : 'logpoint', subBuilder: Logpoint.create)
-    ..aOM<$34.DataChunk>(3, _omitFieldNames ? '' : 'data', subBuilder: $34.DataChunk.create)
+    ..aOM<$4.DataChunk>(3, _omitFieldNames ? '' : 'data', subBuilder: $4.DataChunk.create)
     ..hasRequiredFields = false
   ;
 
@@ -818,15 +818,15 @@ class RetrieveResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Log point retrieved.
   @$pb.TagNumber(2)
@@ -842,15 +842,15 @@ class RetrieveResponse extends $pb.GeneratedMessage {
 
   /// Data chunk bytes field should be concatenated together to recover the binary data.
   @$pb.TagNumber(3)
-  $34.DataChunk get data => $_getN(2);
+  $4.DataChunk get data => $_getN(2);
   @$pb.TagNumber(3)
-  set data($34.DataChunk v) { setField(3, v); }
+  set data($4.DataChunk v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasData() => $_has(2);
   @$pb.TagNumber(3)
   void clearData() => clearField(3);
   @$pb.TagNumber(3)
-  $34.DataChunk ensureData() => $_ensure(2);
+  $4.DataChunk ensureData() => $_ensure(2);
 }
 
 /// Retrieve the binary data associated with a log point, with no processing applied.
@@ -858,7 +858,7 @@ class RetrieveResponse extends $pb.GeneratedMessage {
 /// For IR, the temperature at each pixel is 0.1 * the int value in Kelvin.
 class RetrieveRawDataRequest extends $pb.GeneratedMessage {
   factory RetrieveRawDataRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     Logpoint? point,
   }) {
     final $result = create();
@@ -875,7 +875,7 @@ class RetrieveRawDataRequest extends $pb.GeneratedMessage {
   factory RetrieveRawDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RetrieveRawDataRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<Logpoint>(2, _omitFieldNames ? '' : 'point', subBuilder: Logpoint.create)
     ..hasRequiredFields = false
   ;
@@ -903,15 +903,15 @@ class RetrieveRawDataRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Log point to retrieve.  Only the name is used.
   @$pb.TagNumber(2)
@@ -928,9 +928,9 @@ class RetrieveRawDataRequest extends $pb.GeneratedMessage {
 
 class RetrieveRawDataResponse extends $pb.GeneratedMessage {
   factory RetrieveRawDataResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     Logpoint? logpoint,
-    $34.DataChunk? data,
+    $4.DataChunk? data,
   }) {
     final $result = create();
     if (header != null) {
@@ -949,9 +949,9 @@ class RetrieveRawDataResponse extends $pb.GeneratedMessage {
   factory RetrieveRawDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RetrieveRawDataResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<Logpoint>(2, _omitFieldNames ? '' : 'logpoint', subBuilder: Logpoint.create)
-    ..aOM<$34.DataChunk>(3, _omitFieldNames ? '' : 'data', subBuilder: $34.DataChunk.create)
+    ..aOM<$4.DataChunk>(3, _omitFieldNames ? '' : 'data', subBuilder: $4.DataChunk.create)
     ..hasRequiredFields = false
   ;
 
@@ -978,15 +978,15 @@ class RetrieveRawDataResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Log point retrieved.
   @$pb.TagNumber(2)
@@ -1002,22 +1002,22 @@ class RetrieveRawDataResponse extends $pb.GeneratedMessage {
 
   /// Data chunk bytes field should be concatenated together to recover the binary data.
   @$pb.TagNumber(3)
-  $34.DataChunk get data => $_getN(2);
+  $4.DataChunk get data => $_getN(2);
   @$pb.TagNumber(3)
-  set data($34.DataChunk v) { setField(3, v); }
+  set data($4.DataChunk v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasData() => $_has(2);
   @$pb.TagNumber(3)
   void clearData() => clearField(3);
   @$pb.TagNumber(3)
-  $34.DataChunk ensureData() => $_ensure(2);
+  $4.DataChunk ensureData() => $_ensure(2);
 }
 
 /// Trigger a data acquisition.
 class StoreRequest extends $pb.GeneratedMessage {
   factory StoreRequest({
-    $68.RequestHeader? header,
-    $83.Camera? camera,
+    $67.RequestHeader? header,
+    $84.Camera? camera,
     Logpoint_RecordType? type,
     $core.String? tag,
   }) {
@@ -1041,8 +1041,8 @@ class StoreRequest extends $pb.GeneratedMessage {
   factory StoreRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$83.Camera>(2, _omitFieldNames ? '' : 'camera', subBuilder: $83.Camera.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$84.Camera>(2, _omitFieldNames ? '' : 'camera', subBuilder: $84.Camera.create)
     ..e<Logpoint_RecordType>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: Logpoint_RecordType.STILLIMAGE, valueOf: Logpoint_RecordType.valueOf, enumValues: Logpoint_RecordType.values)
     ..aOS(4, _omitFieldNames ? '' : 'tag')
     ..hasRequiredFields = false
@@ -1071,27 +1071,27 @@ class StoreRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Which camera to capture.
   @$pb.TagNumber(2)
-  $83.Camera get camera => $_getN(1);
+  $84.Camera get camera => $_getN(1);
   @$pb.TagNumber(2)
-  set camera($83.Camera v) { setField(2, v); }
+  set camera($84.Camera v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCamera() => $_has(1);
   @$pb.TagNumber(2)
   void clearCamera() => clearField(2);
   @$pb.TagNumber(2)
-  $83.Camera ensureCamera() => $_ensure(1);
+  $84.Camera ensureCamera() => $_ensure(1);
 
   /// Type of data capture to perform.
   @$pb.TagNumber(3)
@@ -1117,7 +1117,7 @@ class StoreRequest extends $pb.GeneratedMessage {
 /// Result of data acquisition trigger.
 class StoreResponse extends $pb.GeneratedMessage {
   factory StoreResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     Logpoint? point,
   }) {
     final $result = create();
@@ -1134,7 +1134,7 @@ class StoreResponse extends $pb.GeneratedMessage {
   factory StoreResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StoreResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<Logpoint>(2, _omitFieldNames ? '' : 'point', subBuilder: Logpoint.create)
     ..hasRequiredFields = false
   ;
@@ -1162,15 +1162,15 @@ class StoreResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The log point returned here can be used to add a tag to the Logpoint later
   /// It will very likely be in th 'QUEUED' state.
@@ -1189,7 +1189,7 @@ class StoreResponse extends $pb.GeneratedMessage {
 /// Add tag metadata to an existing log point.
 class TagRequest extends $pb.GeneratedMessage {
   factory TagRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     Logpoint? point,
   }) {
     final $result = create();
@@ -1206,7 +1206,7 @@ class TagRequest extends $pb.GeneratedMessage {
   factory TagRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TagRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<Logpoint>(2, _omitFieldNames ? '' : 'point', subBuilder: Logpoint.create)
     ..hasRequiredFields = false
   ;
@@ -1234,15 +1234,15 @@ class TagRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Logpoint to add metadata to. Name and tag are used.
   @$pb.TagNumber(2)
@@ -1260,7 +1260,7 @@ class TagRequest extends $pb.GeneratedMessage {
 /// Result of adding tag metadata to a log point.
 class TagResponse extends $pb.GeneratedMessage {
   factory TagResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1273,7 +1273,7 @@ class TagResponse extends $pb.GeneratedMessage {
   factory TagResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TagResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1300,21 +1300,21 @@ class TagResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 /// Request the available cameras.
 class ListCamerasRequest extends $pb.GeneratedMessage {
   factory ListCamerasRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1327,7 +1327,7 @@ class ListCamerasRequest extends $pb.GeneratedMessage {
   factory ListCamerasRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCamerasRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1354,22 +1354,22 @@ class ListCamerasRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Provide the list of available cameras.
 class ListCamerasResponse extends $pb.GeneratedMessage {
   factory ListCamerasResponse({
-    $68.ResponseHeader? header,
-    $core.Iterable<$83.Camera>? cameras,
+    $67.ResponseHeader? header,
+    $core.Iterable<$84.Camera>? cameras,
   }) {
     final $result = create();
     if (header != null) {
@@ -1385,8 +1385,8 @@ class ListCamerasResponse extends $pb.GeneratedMessage {
   factory ListCamerasResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCamerasResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
-    ..pc<$83.Camera>(2, _omitFieldNames ? '' : 'cameras', $pb.PbFieldType.PM, subBuilder: $83.Camera.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..pc<$84.Camera>(2, _omitFieldNames ? '' : 'cameras', $pb.PbFieldType.PM, subBuilder: $84.Camera.create)
     ..hasRequiredFields = false
   ;
 
@@ -1413,25 +1413,25 @@ class ListCamerasResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// List of all cameras which can be used in a StoreRequest.
   @$pb.TagNumber(2)
-  $core.List<$83.Camera> get cameras => $_getList(1);
+  $core.List<$84.Camera> get cameras => $_getList(1);
 }
 
 /// List all available log points, whether they have completed or not.
 class ListLogpointsRequest extends $pb.GeneratedMessage {
   factory ListLogpointsRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1444,7 +1444,7 @@ class ListLogpointsRequest extends $pb.GeneratedMessage {
   factory ListLogpointsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLogpointsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1471,21 +1471,21 @@ class ListLogpointsRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Provide all log points in the system.
 class ListLogpointsResponse extends $pb.GeneratedMessage {
   factory ListLogpointsResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<Logpoint>? logpoints,
   }) {
     final $result = create();
@@ -1502,7 +1502,7 @@ class ListLogpointsResponse extends $pb.GeneratedMessage {
   factory ListLogpointsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLogpointsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<Logpoint>(2, _omitFieldNames ? '' : 'logpoints', $pb.PbFieldType.PM, subBuilder: Logpoint.create)
     ..hasRequiredFields = false
   ;
@@ -1530,15 +1530,15 @@ class ListLogpointsResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// List of all the individual log points concatenated into a list.
   /// This stream may take a long time to complete if there are a lot of stored images.
@@ -1549,7 +1549,7 @@ class ListLogpointsResponse extends $pb.GeneratedMessage {
 /// Set encryption for the disk.
 class SetPassphraseRequest extends $pb.GeneratedMessage {
   factory SetPassphraseRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? passphrase,
   }) {
     final $result = create();
@@ -1566,7 +1566,7 @@ class SetPassphraseRequest extends $pb.GeneratedMessage {
   factory SetPassphraseRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPassphraseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'passphrase')
     ..hasRequiredFields = false
   ;
@@ -1594,15 +1594,15 @@ class SetPassphraseRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// After setting the passphrase, please reboot the system to
   /// remount the encrypted filesystem layer.
@@ -1621,7 +1621,7 @@ class SetPassphraseRequest extends $pb.GeneratedMessage {
 /// remount the encrypted filesystem layer.
 class SetPassphraseResponse extends $pb.GeneratedMessage {
   factory SetPassphraseResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1634,7 +1634,7 @@ class SetPassphraseResponse extends $pb.GeneratedMessage {
   factory SetPassphraseResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetPassphraseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1661,21 +1661,21 @@ class SetPassphraseResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 /// Change debug logging settings on the SpotCam.
 class DebugRequest extends $pb.GeneratedMessage {
   factory DebugRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.bool? enableTemperature,
     $core.bool? enableHumidity,
     $core.bool? enableBIT,
@@ -1708,7 +1708,7 @@ class DebugRequest extends $pb.GeneratedMessage {
   factory DebugRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DebugRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOB(2, _omitFieldNames ? '' : 'enableTemperature')
     ..aOB(3, _omitFieldNames ? '' : 'enableHumidity')
     ..aOB(4, _omitFieldNames ? '' : 'enableBIT', protoName: 'enable_BIT')
@@ -1740,15 +1740,15 @@ class DebugRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Set true to enable logging of temperature data;
   @$pb.TagNumber(2)
@@ -1809,7 +1809,7 @@ class DebugRequest extends $pb.GeneratedMessage {
 /// Response with any errors for debug setting changes.
 class DebugResponse extends $pb.GeneratedMessage {
   factory DebugResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1822,7 +1822,7 @@ class DebugResponse extends $pb.GeneratedMessage {
   factory DebugResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DebugResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1849,15 +1849,15 @@ class DebugResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 

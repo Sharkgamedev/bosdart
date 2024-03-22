@@ -253,6 +253,7 @@ const ArmCartesianCommand_Request$json = {
     {'1': 'ry_axis', '3': 12, '4': 1, '5': 14, '6': '.bosdyn.api.ArmCartesianCommand.Request.AxisMode', '10': 'ryAxis'},
     {'1': 'rz_axis', '3': 13, '4': 1, '5': 14, '6': '.bosdyn.api.ArmCartesianCommand.Request.AxisMode', '10': 'rzAxis'},
     {'1': 'wrench_trajectory_in_task', '3': 14, '4': 1, '5': 11, '6': '.bosdyn.api.WrenchTrajectory', '10': 'wrenchTrajectoryInTask'},
+    {'1': 'disable_velocity_limiting', '3': 21, '4': 1, '5': 11, '6': '.google.protobuf.BoolValue', '10': 'disableVelocityLimiting'},
   ],
   '4': [ArmCartesianCommand_Request_AxisMode$json],
   '8': [
@@ -300,7 +301,7 @@ const ArmCartesianCommand_Feedback_Status$json = {
 
 /// Descriptor for `ArmCartesianCommand`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List armCartesianCommandDescriptor = $convert.base64Decode(
-    'ChNBcm1DYXJ0ZXNpYW5Db21tYW5kGswLCgdSZXF1ZXN0EiYKD3Jvb3RfZnJhbWVfbmFtZRgTIA'
+    'ChNBcm1DYXJ0ZXNpYW5Db21tYW5kGqQMCgdSZXF1ZXN0EiYKD3Jvb3RfZnJhbWVfbmFtZRgTIA'
     'EoCVINcm9vdEZyYW1lTmFtZRI9ChB3cmlzdF90Zm9ybV90b29sGAYgASgLMhMuYm9zZHluLmFw'
     'aS5TRTNQb3NlUg53cmlzdFRmb3JtVG9vbBI7Cg9yb290X3Rmb3JtX3Rhc2sYFCABKAsyEy5ib3'
     'NkeW4uYXBpLlNFM1Bvc2VSDXJvb3RUZm9ybVRhc2sSUAoXcG9zZV90cmFqZWN0b3J5X2luX3Rh'
@@ -325,18 +326,19 @@ final $typed_data.Uint8List armCartesianCommandDescriptor = $convert.base64Decod
     'b21tYW5kLlJlcXVlc3QuQXhpc01vZGVSBnJ5QXhpcxJJCgdyel9heGlzGA0gASgOMjAuYm9zZH'
     'luLmFwaS5Bcm1DYXJ0ZXNpYW5Db21tYW5kLlJlcXVlc3QuQXhpc01vZGVSBnJ6QXhpcxJXChl3'
     'cmVuY2hfdHJhamVjdG9yeV9pbl90YXNrGA4gASgLMhwuYm9zZHluLmFwaS5XcmVuY2hUcmFqZW'
-    'N0b3J5UhZ3cmVuY2hUcmFqZWN0b3J5SW5UYXNrIjcKCEF4aXNNb2RlEhYKEkFYSVNfTU9ERV9Q'
-    'T1NJVElPThAAEhMKD0FYSVNfTU9ERV9GT1JDRRABQhUKE2pvaW50X2NvbmZpZ3VyYXRpb25KBA'
-    'gBEAJKBAgHEAga7AMKCEZlZWRiYWNrEkcKBnN0YXR1cxgBIAEoDjIvLmJvc2R5bi5hcGkuQXJt'
-    'Q2FydGVzaWFuQ29tbWFuZC5GZWVkYmFjay5TdGF0dXNSBnN0YXR1cxI9ChttZWFzdXJlZF9wb3'
-    'NfdHJhY2tpbmdfZXJyb3IYAiABKAFSGG1lYXN1cmVkUG9zVHJhY2tpbmdFcnJvchI9ChttZWFz'
-    'dXJlZF9yb3RfdHJhY2tpbmdfZXJyb3IYAyABKAFSGG1lYXN1cmVkUm90VHJhY2tpbmdFcnJvch'
-    'JACh1tZWFzdXJlZF9wb3NfZGlzdGFuY2VfdG9fZ29hbBgEIAEoAVIZbWVhc3VyZWRQb3NEaXN0'
-    'YW5jZVRvR29hbBJACh1tZWFzdXJlZF9yb3RfZGlzdGFuY2VfdG9fZ29hbBgFIAEoAVIZbWVhc3'
-    'VyZWRSb3REaXN0YW5jZVRvR29hbCKUAQoGU3RhdHVzEhIKDlNUQVRVU19VTktOT1dOEAASHgoa'
-    'U1RBVFVTX1RSQUpFQ1RPUllfQ09NUExFVEUQARIWChJTVEFUVVNfSU5fUFJPR1JFU1MQAhIfCh'
-    'tTVEFUVVNfVFJBSkVDVE9SWV9DQU5DRUxMRUQQAxIdChlTVEFUVVNfVFJBSkVDVE9SWV9TVEFM'
-    'TEVEEAQ=');
+    'N0b3J5UhZ3cmVuY2hUcmFqZWN0b3J5SW5UYXNrElYKGWRpc2FibGVfdmVsb2NpdHlfbGltaXRp'
+    'bmcYFSABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlUhdkaXNhYmxlVmVsb2NpdHlMaW'
+    '1pdGluZyI3CghBeGlzTW9kZRIWChJBWElTX01PREVfUE9TSVRJT04QABITCg9BWElTX01PREVf'
+    'Rk9SQ0UQAUIVChNqb2ludF9jb25maWd1cmF0aW9uSgQIARACSgQIBxAIGuwDCghGZWVkYmFjax'
+    'JHCgZzdGF0dXMYASABKA4yLy5ib3NkeW4uYXBpLkFybUNhcnRlc2lhbkNvbW1hbmQuRmVlZGJh'
+    'Y2suU3RhdHVzUgZzdGF0dXMSPQobbWVhc3VyZWRfcG9zX3RyYWNraW5nX2Vycm9yGAIgASgBUh'
+    'htZWFzdXJlZFBvc1RyYWNraW5nRXJyb3ISPQobbWVhc3VyZWRfcm90X3RyYWNraW5nX2Vycm9y'
+    'GAMgASgBUhhtZWFzdXJlZFJvdFRyYWNraW5nRXJyb3ISQAodbWVhc3VyZWRfcG9zX2Rpc3Rhbm'
+    'NlX3RvX2dvYWwYBCABKAFSGW1lYXN1cmVkUG9zRGlzdGFuY2VUb0dvYWwSQAodbWVhc3VyZWRf'
+    'cm90X2Rpc3RhbmNlX3RvX2dvYWwYBSABKAFSGW1lYXN1cmVkUm90RGlzdGFuY2VUb0dvYWwilA'
+    'EKBlN0YXR1cxISCg5TVEFUVVNfVU5LTk9XThAAEh4KGlNUQVRVU19UUkFKRUNUT1JZX0NPTVBM'
+    'RVRFEAESFgoSU1RBVFVTX0lOX1BST0dSRVNTEAISHwobU1RBVFVTX1RSQUpFQ1RPUllfQ0FOQ0'
+    'VMTEVEEAMSHQoZU1RBVFVTX1RSQUpFQ1RPUllfU1RBTExFRBAE');
 
 @$core.Deprecated('Use armJointMoveCommandDescriptor instead')
 const ArmJointMoveCommand$json = {
@@ -599,6 +601,7 @@ const ArmImpedanceCommand_Request$json = {
     {'1': 'diagonal_damping_matrix', '3': 7, '4': 1, '5': 11, '6': '.bosdyn.api.Vector', '10': 'diagonalDampingMatrix'},
     {'1': 'max_force_mag', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.DoubleValue', '10': 'maxForceMag'},
     {'1': 'max_torque_mag', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.DoubleValue', '10': 'maxTorqueMag'},
+    {'1': 'disable_safety_check', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.BoolValue', '10': 'disableSafetyCheck'},
   ],
 };
 
@@ -625,12 +628,13 @@ const ArmImpedanceCommand_Feedback_Status$json = {
     {'1': 'STATUS_TRAJECTORY_COMPLETE', '2': 1},
     {'1': 'STATUS_IN_PROGRESS', '2': 2},
     {'1': 'STATUS_TRAJECTORY_STALLED', '2': 3},
+    {'1': 'STATUS_TRAJECTORY_CANCELLED', '2': 4},
   ],
 };
 
 /// Descriptor for `ArmImpedanceCommand`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List armImpedanceCommandDescriptor = $convert.base64Decode(
-    'ChNBcm1JbXBlZGFuY2VDb21tYW5kGpAFCgdSZXF1ZXN0EiYKD3Jvb3RfZnJhbWVfbmFtZRgBIA'
+    'ChNBcm1JbXBlZGFuY2VDb21tYW5kGt4FCgdSZXF1ZXN0EiYKD3Jvb3RfZnJhbWVfbmFtZRgBIA'
     'EoCVINcm9vdEZyYW1lTmFtZRI7Cg9yb290X3Rmb3JtX3Rhc2sYAiABKAsyEy5ib3NkeW4uYXBp'
     'LlNFM1Bvc2VSDXJvb3RUZm9ybVRhc2sSPQoQd3Jpc3RfdGZvcm1fdG9vbBgDIAEoCzITLmJvc2'
     'R5bi5hcGkuU0UzUG9zZVIOd3Jpc3RUZm9ybVRvb2wSUAoXdGFza190Zm9ybV9kZXNpcmVkX3Rv'
@@ -642,21 +646,23 @@ final $typed_data.Uint8List armImpedanceCommandDescriptor = $convert.base64Decod
     'ABKAsyEi5ib3NkeW4uYXBpLlZlY3RvclIVZGlhZ29uYWxEYW1waW5nTWF0cml4EkAKDW1heF9m'
     'b3JjZV9tYWcYCCABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWVSC21heEZvcmNlTW'
     'FnEkIKDm1heF90b3JxdWVfbWFnGAkgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVl'
-    'UgxtYXhUb3JxdWVNYWcalgcKCEZlZWRiYWNrEkcKBnN0YXR1cxgBIAEoDjIvLmJvc2R5bi5hcG'
-    'kuQXJtSW1wZWRhbmNlQ29tbWFuZC5GZWVkYmFjay5TdGF0dXNSBnN0YXR1cxJOChN0cmFuc2Zv'
-    'cm1zX3NuYXBzaG90GAIgASgLMh0uYm9zZHluLmFwaS5GcmFtZVRyZWVTbmFwc2hvdFISdHJhbn'
-    'Nmb3Jtc1NuYXBzaG90EoQBCjdjb21tYW5kZWRfd3JlbmNoX2Zyb21fc3RpZmZuZXNzX2F0X3Rv'
-    'b2xfaW5fZGVzaXJlZF90b29sGAMgASgLMhIuYm9zZHluLmFwaS5XcmVuY2hSL2NvbW1hbmRlZF'
-    'dyZW5jaEZyb21TdGlmZm5lc3NBdFRvb2xJbkRlc2lyZWRUb29sEoABCjVjb21tYW5kZWRfd3Jl'
-    'bmNoX2Zyb21fZGFtcGluZ19hdF90b29sX2luX2Rlc2lyZWRfdG9vbBgEIAEoCzISLmJvc2R5bi'
-    '5hcGkuV3JlbmNoUi1jb21tYW5kZWRXcmVuY2hGcm9tRGFtcGluZ0F0VG9vbEluRGVzaXJlZFRv'
-    'b2wSiQEKOmNvbW1hbmRlZF93cmVuY2hfZnJvbV9mZWVkX2ZvcndhcmRfYXRfdG9vbF9pbl9kZX'
-    'NpcmVkX3Rvb2wYBSABKAsyEi5ib3NkeW4uYXBpLldyZW5jaFIxY29tbWFuZGVkV3JlbmNoRnJv'
-    'bUZlZWRGb3J3YXJkQXRUb29sSW5EZXNpcmVkVG9vbBJzCi50b3RhbF9jb21tYW5kZWRfd3Jlbm'
-    'NoX2F0X3Rvb2xfaW5fZGVzaXJlZF90b29sGAYgASgLMhIuYm9zZHluLmFwaS5XcmVuY2hSJ3Rv'
-    'dGFsQ29tbWFuZGVkV3JlbmNoQXRUb29sSW5EZXNpcmVkVG9vbBJxCi10b3RhbF9tZWFzdXJlZF'
-    '93cmVuY2hfYXRfdG9vbF9pbl9kZXNpcmVkX3Rvb2wYByABKAsyEi5ib3NkeW4uYXBpLldyZW5j'
-    'aFImdG90YWxNZWFzdXJlZFdyZW5jaEF0VG9vbEluRGVzaXJlZFRvb2wicwoGU3RhdHVzEhIKDl'
-    'NUQVRVU19VTktOT1dOEAASHgoaU1RBVFVTX1RSQUpFQ1RPUllfQ09NUExFVEUQARIWChJTVEFU'
-    'VVNfSU5fUFJPR1JFU1MQAhIdChlTVEFUVVNfVFJBSkVDVE9SWV9TVEFMTEVEEAM=');
+    'UgxtYXhUb3JxdWVNYWcSTAoUZGlzYWJsZV9zYWZldHlfY2hlY2sYCiABKAsyGi5nb29nbGUucH'
+    'JvdG9idWYuQm9vbFZhbHVlUhJkaXNhYmxlU2FmZXR5Q2hlY2sauAcKCEZlZWRiYWNrEkcKBnN0'
+    'YXR1cxgBIAEoDjIvLmJvc2R5bi5hcGkuQXJtSW1wZWRhbmNlQ29tbWFuZC5GZWVkYmFjay5TdG'
+    'F0dXNSBnN0YXR1cxJOChN0cmFuc2Zvcm1zX3NuYXBzaG90GAIgASgLMh0uYm9zZHluLmFwaS5G'
+    'cmFtZVRyZWVTbmFwc2hvdFISdHJhbnNmb3Jtc1NuYXBzaG90EoQBCjdjb21tYW5kZWRfd3Jlbm'
+    'NoX2Zyb21fc3RpZmZuZXNzX2F0X3Rvb2xfaW5fZGVzaXJlZF90b29sGAMgASgLMhIuYm9zZHlu'
+    'LmFwaS5XcmVuY2hSL2NvbW1hbmRlZFdyZW5jaEZyb21TdGlmZm5lc3NBdFRvb2xJbkRlc2lyZW'
+    'RUb29sEoABCjVjb21tYW5kZWRfd3JlbmNoX2Zyb21fZGFtcGluZ19hdF90b29sX2luX2Rlc2ly'
+    'ZWRfdG9vbBgEIAEoCzISLmJvc2R5bi5hcGkuV3JlbmNoUi1jb21tYW5kZWRXcmVuY2hGcm9tRG'
+    'FtcGluZ0F0VG9vbEluRGVzaXJlZFRvb2wSiQEKOmNvbW1hbmRlZF93cmVuY2hfZnJvbV9mZWVk'
+    'X2ZvcndhcmRfYXRfdG9vbF9pbl9kZXNpcmVkX3Rvb2wYBSABKAsyEi5ib3NkeW4uYXBpLldyZW'
+    '5jaFIxY29tbWFuZGVkV3JlbmNoRnJvbUZlZWRGb3J3YXJkQXRUb29sSW5EZXNpcmVkVG9vbBJz'
+    'Ci50b3RhbF9jb21tYW5kZWRfd3JlbmNoX2F0X3Rvb2xfaW5fZGVzaXJlZF90b29sGAYgASgLMh'
+    'IuYm9zZHluLmFwaS5XcmVuY2hSJ3RvdGFsQ29tbWFuZGVkV3JlbmNoQXRUb29sSW5EZXNpcmVk'
+    'VG9vbBJxCi10b3RhbF9tZWFzdXJlZF93cmVuY2hfYXRfdG9vbF9pbl9kZXNpcmVkX3Rvb2wYBy'
+    'ABKAsyEi5ib3NkeW4uYXBpLldyZW5jaFImdG90YWxNZWFzdXJlZFdyZW5jaEF0VG9vbEluRGVz'
+    'aXJlZFRvb2wilAEKBlN0YXR1cxISCg5TVEFUVVNfVU5LTk9XThAAEh4KGlNUQVRVU19UUkFKRU'
+    'NUT1JZX0NPTVBMRVRFEAESFgoSU1RBVFVTX0lOX1BST0dSRVNTEAISHQoZU1RBVFVTX1RSQUpF'
+    'Q1RPUllfU1RBTExFRBADEh8KG1NUQVRVU19UUkFKRUNUT1JZX0NBTkNFTExFRBAE');
 

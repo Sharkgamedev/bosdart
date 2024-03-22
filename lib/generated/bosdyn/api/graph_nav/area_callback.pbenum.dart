@@ -32,6 +32,90 @@ class AreaCallbackError_CallError extends $pb.ProtobufEnum {
   const AreaCallbackError_CallError._($core.int v, $core.String n) : super(v, n);
 }
 
+/// What direction robot should face.
+class StopConfiguration_FaceDirection extends $pb.ProtobufEnum {
+  static const StopConfiguration_FaceDirection FACE_DIRECTION_UNKNOWN = StopConfiguration_FaceDirection._(0, _omitEnumNames ? '' : 'FACE_DIRECTION_UNKNOWN');
+  static const StopConfiguration_FaceDirection FACE_DIRECTION_ALONG_ROUTE = StopConfiguration_FaceDirection._(1, _omitEnumNames ? '' : 'FACE_DIRECTION_ALONG_ROUTE');
+  static const StopConfiguration_FaceDirection FACE_DIRECTION_WAYPOINT_EXACT = StopConfiguration_FaceDirection._(2, _omitEnumNames ? '' : 'FACE_DIRECTION_WAYPOINT_EXACT');
+  static const StopConfiguration_FaceDirection FACE_DIRECTION_WAYPOINT_AUTO = StopConfiguration_FaceDirection._(3, _omitEnumNames ? '' : 'FACE_DIRECTION_WAYPOINT_AUTO');
+  static const StopConfiguration_FaceDirection FACE_DIRECTION_REGION_END = StopConfiguration_FaceDirection._(4, _omitEnumNames ? '' : 'FACE_DIRECTION_REGION_END');
+
+  static const $core.List<StopConfiguration_FaceDirection> values = <StopConfiguration_FaceDirection> [
+    FACE_DIRECTION_UNKNOWN,
+    FACE_DIRECTION_ALONG_ROUTE,
+    FACE_DIRECTION_WAYPOINT_EXACT,
+    FACE_DIRECTION_WAYPOINT_AUTO,
+    FACE_DIRECTION_REGION_END,
+  ];
+
+  static final $core.Map<$core.int, StopConfiguration_FaceDirection> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static StopConfiguration_FaceDirection? valueOf($core.int value) => _byValue[value];
+
+  const StopConfiguration_FaceDirection._($core.int v, $core.String n) : super(v, n);
+}
+
+/// Specify what graph nav should expect to detect for blockages in this region.  For example, if
+/// the callback can open doors, the region may initially look blocked due to a closed door, but
+/// Graph Nav should still expect it to be traversable.
+class AreaCallbackInformation_Blockage extends $pb.ProtobufEnum {
+  static const AreaCallbackInformation_Blockage BLOCKAGE_UNKNOWN = AreaCallbackInformation_Blockage._(0, _omitEnumNames ? '' : 'BLOCKAGE_UNKNOWN');
+  static const AreaCallbackInformation_Blockage BLOCKAGE_SKIP = AreaCallbackInformation_Blockage._(1, _omitEnumNames ? '' : 'BLOCKAGE_SKIP');
+  static const AreaCallbackInformation_Blockage BLOCKAGE_CHECK = AreaCallbackInformation_Blockage._(2, _omitEnumNames ? '' : 'BLOCKAGE_CHECK');
+
+  static const $core.List<AreaCallbackInformation_Blockage> values = <AreaCallbackInformation_Blockage> [
+    BLOCKAGE_UNKNOWN,
+    BLOCKAGE_SKIP,
+    BLOCKAGE_CHECK,
+  ];
+
+  static final $core.Map<$core.int, AreaCallbackInformation_Blockage> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AreaCallbackInformation_Blockage? valueOf($core.int value) => _byValue[value];
+
+  const AreaCallbackInformation_Blockage._($core.int v, $core.String n) : super(v, n);
+}
+
+/// Specify whether graph nav should check for impairment when the callback is in control of the
+/// robot.  Certain failures may make Graph Nav unable to navigate, but may not affect the
+/// callback.  If the callback is in control of the robot, it may be preferable to let it finish
+/// and return control to Graph Nav before reporting any impaired error instead of interrupting
+/// the callback.
+class AreaCallbackInformation_Impairment extends $pb.ProtobufEnum {
+  static const AreaCallbackInformation_Impairment IMPAIRMENT_UNKNOWN = AreaCallbackInformation_Impairment._(0, _omitEnumNames ? '' : 'IMPAIRMENT_UNKNOWN');
+  static const AreaCallbackInformation_Impairment IMPAIRMENT_SKIP = AreaCallbackInformation_Impairment._(1, _omitEnumNames ? '' : 'IMPAIRMENT_SKIP');
+  static const AreaCallbackInformation_Impairment IMPAIRMENT_CHECK = AreaCallbackInformation_Impairment._(2, _omitEnumNames ? '' : 'IMPAIRMENT_CHECK');
+
+  static const $core.List<AreaCallbackInformation_Impairment> values = <AreaCallbackInformation_Impairment> [
+    IMPAIRMENT_UNKNOWN,
+    IMPAIRMENT_SKIP,
+    IMPAIRMENT_CHECK,
+  ];
+
+  static final $core.Map<$core.int, AreaCallbackInformation_Impairment> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AreaCallbackInformation_Impairment? valueOf($core.int value) => _byValue[value];
+
+  const AreaCallbackInformation_Impairment._($core.int v, $core.String n) : super(v, n);
+}
+
+/// Control whether Graph Nav will stop and wait for nearby entities when crossing the region.
+/// Entity waiting is normally on for regular Graph Nav, but is by default turned off inside Area
+/// callback regions.
+class AreaCallbackInformation_EntityWaiting extends $pb.ProtobufEnum {
+  static const AreaCallbackInformation_EntityWaiting ENTITY_WAITING_UNKNOWN = AreaCallbackInformation_EntityWaiting._(0, _omitEnumNames ? '' : 'ENTITY_WAITING_UNKNOWN');
+  static const AreaCallbackInformation_EntityWaiting ENTITY_WAITING_DISABLE = AreaCallbackInformation_EntityWaiting._(1, _omitEnumNames ? '' : 'ENTITY_WAITING_DISABLE');
+  static const AreaCallbackInformation_EntityWaiting ENTITY_WAITING_ENABLE = AreaCallbackInformation_EntityWaiting._(2, _omitEnumNames ? '' : 'ENTITY_WAITING_ENABLE');
+
+  static const $core.List<AreaCallbackInformation_EntityWaiting> values = <AreaCallbackInformation_EntityWaiting> [
+    ENTITY_WAITING_UNKNOWN,
+    ENTITY_WAITING_DISABLE,
+    ENTITY_WAITING_ENABLE,
+  ];
+
+  static final $core.Map<$core.int, AreaCallbackInformation_EntityWaiting> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AreaCallbackInformation_EntityWaiting? valueOf($core.int value) => _byValue[value];
+
+  const AreaCallbackInformation_EntityWaiting._($core.int v, $core.String n) : super(v, n);
+}
+
 class BeginCallbackResponse_Status extends $pb.ProtobufEnum {
   static const BeginCallbackResponse_Status STATUS_UNKNOWN = BeginCallbackResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
   static const BeginCallbackResponse_Status STATUS_OK = BeginCallbackResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
@@ -186,6 +270,23 @@ class EndCallbackResponse_Status extends $pb.ProtobufEnum {
   static EndCallbackResponse_Status? valueOf($core.int value) => _byValue[value];
 
   const EndCallbackResponse_Status._($core.int v, $core.String n) : super(v, n);
+}
+
+class RouteChangeResponse_Status extends $pb.ProtobufEnum {
+  static const RouteChangeResponse_Status STATUS_UNKNOWN = RouteChangeResponse_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
+  static const RouteChangeResponse_Status STATUS_OK = RouteChangeResponse_Status._(1, _omitEnumNames ? '' : 'STATUS_OK');
+  static const RouteChangeResponse_Status STATUS_INVALID_COMMAND_ID = RouteChangeResponse_Status._(2, _omitEnumNames ? '' : 'STATUS_INVALID_COMMAND_ID');
+
+  static const $core.List<RouteChangeResponse_Status> values = <RouteChangeResponse_Status> [
+    STATUS_UNKNOWN,
+    STATUS_OK,
+    STATUS_INVALID_COMMAND_ID,
+  ];
+
+  static final $core.Map<$core.int, RouteChangeResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static RouteChangeResponse_Status? valueOf($core.int value) => _byValue[value];
+
+  const RouteChangeResponse_Status._($core.int v, $core.String n) : super(v, n);
 }
 
 

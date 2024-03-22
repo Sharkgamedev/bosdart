@@ -14,9 +14,9 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest_import_lite.pb.dart' as $94;
-import 'unittest_import_lite.pbenum.dart' as $94;
-import 'unittest_import_public_lite.pb.dart' as $95;
+import 'unittest_import_lite.pb.dart' as $97;
+import 'unittest_import_lite.pbenum.dart' as $97;
+import 'unittest_import_public_lite.pb.dart' as $98;
 import 'unittest_lite.pbenum.dart';
 
 export 'unittest_lite.pbenum.dart';
@@ -274,13 +274,13 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
     TestAllTypesLite_OptionalGroup? optionalGroup,
     TestAllTypesLite_NestedMessage? optionalNestedMessage,
     ForeignMessageLite? optionalForeignMessage,
-    $94.ImportMessageLite? optionalImportMessage,
+    $97.ImportMessageLite? optionalImportMessage,
     TestAllTypesLite_NestedEnum? optionalNestedEnum,
     ForeignEnumLite? optionalForeignEnum,
-    $94.ImportEnumLite? optionalImportEnum,
+    $97.ImportEnumLite? optionalImportEnum,
     $core.String? optionalStringPiece,
     $core.String? optionalCord,
-    $95.PublicImportMessageLite? optionalPublicImportMessage,
+    $98.PublicImportMessageLite? optionalPublicImportMessage,
     TestAllTypesLite_NestedMessage? optionalLazyMessage,
     TestAllTypesLite_NestedMessage? optionalUnverifiedLazyMessage,
     $core.Iterable<$core.int>? repeatedInt32,
@@ -301,10 +301,10 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
     $core.Iterable<TestAllTypesLite_RepeatedGroup>? repeatedGroup,
     $core.Iterable<TestAllTypesLite_NestedMessage>? repeatedNestedMessage,
     $core.Iterable<ForeignMessageLite>? repeatedForeignMessage,
-    $core.Iterable<$94.ImportMessageLite>? repeatedImportMessage,
+    $core.Iterable<$97.ImportMessageLite>? repeatedImportMessage,
     $core.Iterable<TestAllTypesLite_NestedEnum>? repeatedNestedEnum,
     $core.Iterable<ForeignEnumLite>? repeatedForeignEnum,
-    $core.Iterable<$94.ImportEnumLite>? repeatedImportEnum,
+    $core.Iterable<$97.ImportEnumLite>? repeatedImportEnum,
     $core.Iterable<$core.String>? repeatedStringPiece,
     $core.Iterable<$core.String>? repeatedCord,
     $core.Iterable<TestAllTypesLite_NestedMessage>? repeatedLazyMessage,
@@ -325,7 +325,7 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
     $core.List<$core.int>? defaultBytes,
     TestAllTypesLite_NestedEnum? defaultNestedEnum,
     ForeignEnumLite? defaultForeignEnum,
-    $94.ImportEnumLite? defaultImportEnum,
+    $97.ImportEnumLite? defaultImportEnum,
     $core.String? defaultStringPiece,
     $core.String? defaultCord,
     $core.int? oneofUint32,
@@ -609,13 +609,13 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
     ..a<TestAllTypesLite_OptionalGroup>(16, _omitFieldNames ? '' : 'optionalgroup', $pb.PbFieldType.OG, subBuilder: TestAllTypesLite_OptionalGroup.create, defaultOrMaker: TestAllTypesLite_OptionalGroup.getDefault)
     ..aOM<TestAllTypesLite_NestedMessage>(18, _omitFieldNames ? '' : 'optionalNestedMessage', subBuilder: TestAllTypesLite_NestedMessage.create)
     ..aOM<ForeignMessageLite>(19, _omitFieldNames ? '' : 'optionalForeignMessage', subBuilder: ForeignMessageLite.create)
-    ..aOM<$94.ImportMessageLite>(20, _omitFieldNames ? '' : 'optionalImportMessage', subBuilder: $94.ImportMessageLite.create)
+    ..aOM<$97.ImportMessageLite>(20, _omitFieldNames ? '' : 'optionalImportMessage', subBuilder: $97.ImportMessageLite.create)
     ..e<TestAllTypesLite_NestedEnum>(21, _omitFieldNames ? '' : 'optionalNestedEnum', $pb.PbFieldType.OE, defaultOrMaker: TestAllTypesLite_NestedEnum.FOO, valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values)
     ..e<ForeignEnumLite>(22, _omitFieldNames ? '' : 'optionalForeignEnum', $pb.PbFieldType.OE, defaultOrMaker: ForeignEnumLite.FOREIGN_LITE_FOO, valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values)
-    ..e<$94.ImportEnumLite>(23, _omitFieldNames ? '' : 'optionalImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $94.ImportEnumLite.IMPORT_LITE_FOO, valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values)
+    ..e<$97.ImportEnumLite>(23, _omitFieldNames ? '' : 'optionalImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $97.ImportEnumLite.IMPORT_LITE_FOO, valueOf: $97.ImportEnumLite.valueOf, enumValues: $97.ImportEnumLite.values)
     ..aOS(24, _omitFieldNames ? '' : 'optionalStringPiece')
     ..aOS(25, _omitFieldNames ? '' : 'optionalCord')
-    ..aOM<$95.PublicImportMessageLite>(26, _omitFieldNames ? '' : 'optionalPublicImportMessage', subBuilder: $95.PublicImportMessageLite.create)
+    ..aOM<$98.PublicImportMessageLite>(26, _omitFieldNames ? '' : 'optionalPublicImportMessage', subBuilder: $98.PublicImportMessageLite.create)
     ..aOM<TestAllTypesLite_NestedMessage>(27, _omitFieldNames ? '' : 'optionalLazyMessage', subBuilder: TestAllTypesLite_NestedMessage.create)
     ..aOM<TestAllTypesLite_NestedMessage>(28, _omitFieldNames ? '' : 'optionalUnverifiedLazyMessage', subBuilder: TestAllTypesLite_NestedMessage.create)
     ..p<$core.int>(31, _omitFieldNames ? '' : 'repeatedInt32', $pb.PbFieldType.P3)
@@ -636,10 +636,10 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
     ..pc<TestAllTypesLite_RepeatedGroup>(46, _omitFieldNames ? '' : 'repeatedgroup', $pb.PbFieldType.PG, subBuilder: TestAllTypesLite_RepeatedGroup.create)
     ..pc<TestAllTypesLite_NestedMessage>(48, _omitFieldNames ? '' : 'repeatedNestedMessage', $pb.PbFieldType.PM, subBuilder: TestAllTypesLite_NestedMessage.create)
     ..pc<ForeignMessageLite>(49, _omitFieldNames ? '' : 'repeatedForeignMessage', $pb.PbFieldType.PM, subBuilder: ForeignMessageLite.create)
-    ..pc<$94.ImportMessageLite>(50, _omitFieldNames ? '' : 'repeatedImportMessage', $pb.PbFieldType.PM, subBuilder: $94.ImportMessageLite.create)
+    ..pc<$97.ImportMessageLite>(50, _omitFieldNames ? '' : 'repeatedImportMessage', $pb.PbFieldType.PM, subBuilder: $97.ImportMessageLite.create)
     ..pc<TestAllTypesLite_NestedEnum>(51, _omitFieldNames ? '' : 'repeatedNestedEnum', $pb.PbFieldType.PE, valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values, defaultEnumValue: TestAllTypesLite_NestedEnum.FOO)
     ..pc<ForeignEnumLite>(52, _omitFieldNames ? '' : 'repeatedForeignEnum', $pb.PbFieldType.PE, valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values, defaultEnumValue: ForeignEnumLite.FOREIGN_LITE_FOO)
-    ..pc<$94.ImportEnumLite>(53, _omitFieldNames ? '' : 'repeatedImportEnum', $pb.PbFieldType.PE, valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values, defaultEnumValue: $94.ImportEnumLite.IMPORT_LITE_FOO)
+    ..pc<$97.ImportEnumLite>(53, _omitFieldNames ? '' : 'repeatedImportEnum', $pb.PbFieldType.PE, valueOf: $97.ImportEnumLite.valueOf, enumValues: $97.ImportEnumLite.values, defaultEnumValue: $97.ImportEnumLite.IMPORT_LITE_FOO)
     ..pPS(54, _omitFieldNames ? '' : 'repeatedStringPiece')
     ..pPS(55, _omitFieldNames ? '' : 'repeatedCord')
     ..pc<TestAllTypesLite_NestedMessage>(57, _omitFieldNames ? '' : 'repeatedLazyMessage', $pb.PbFieldType.PM, subBuilder: TestAllTypesLite_NestedMessage.create)
@@ -660,7 +660,7 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(75, _omitFieldNames ? '' : 'defaultBytes', $pb.PbFieldType.OY, defaultOrMaker: () => <$core.int>[0x77,0x6f,0x72,0x6c,0x64])
     ..e<TestAllTypesLite_NestedEnum>(81, _omitFieldNames ? '' : 'defaultNestedEnum', $pb.PbFieldType.OE, defaultOrMaker: TestAllTypesLite_NestedEnum.BAR, valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values)
     ..e<ForeignEnumLite>(82, _omitFieldNames ? '' : 'defaultForeignEnum', $pb.PbFieldType.OE, defaultOrMaker: ForeignEnumLite.FOREIGN_LITE_BAR, valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values)
-    ..e<$94.ImportEnumLite>(83, _omitFieldNames ? '' : 'defaultImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $94.ImportEnumLite.IMPORT_LITE_BAR, valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values)
+    ..e<$97.ImportEnumLite>(83, _omitFieldNames ? '' : 'defaultImportEnum', $pb.PbFieldType.OE, defaultOrMaker: $97.ImportEnumLite.IMPORT_LITE_BAR, valueOf: $97.ImportEnumLite.valueOf, enumValues: $97.ImportEnumLite.values)
     ..a<$core.String>(84, _omitFieldNames ? '' : 'defaultStringPiece', $pb.PbFieldType.OS, defaultOrMaker: 'abc')
     ..a<$core.String>(85, _omitFieldNames ? '' : 'defaultCord', $pb.PbFieldType.OS, defaultOrMaker: '123')
     ..a<$core.int>(111, _omitFieldNames ? '' : 'oneofUint32', $pb.PbFieldType.OU3)
@@ -865,15 +865,15 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   ForeignMessageLite ensureOptionalForeignMessage() => $_ensure(17);
 
   @$pb.TagNumber(20)
-  $94.ImportMessageLite get optionalImportMessage => $_getN(18);
+  $97.ImportMessageLite get optionalImportMessage => $_getN(18);
   @$pb.TagNumber(20)
-  set optionalImportMessage($94.ImportMessageLite v) { setField(20, v); }
+  set optionalImportMessage($97.ImportMessageLite v) { setField(20, v); }
   @$pb.TagNumber(20)
   $core.bool hasOptionalImportMessage() => $_has(18);
   @$pb.TagNumber(20)
   void clearOptionalImportMessage() => clearField(20);
   @$pb.TagNumber(20)
-  $94.ImportMessageLite ensureOptionalImportMessage() => $_ensure(18);
+  $97.ImportMessageLite ensureOptionalImportMessage() => $_ensure(18);
 
   @$pb.TagNumber(21)
   TestAllTypesLite_NestedEnum get optionalNestedEnum => $_getN(19);
@@ -894,9 +894,9 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   void clearOptionalForeignEnum() => clearField(22);
 
   @$pb.TagNumber(23)
-  $94.ImportEnumLite get optionalImportEnum => $_getN(21);
+  $97.ImportEnumLite get optionalImportEnum => $_getN(21);
   @$pb.TagNumber(23)
-  set optionalImportEnum($94.ImportEnumLite v) { setField(23, v); }
+  set optionalImportEnum($97.ImportEnumLite v) { setField(23, v); }
   @$pb.TagNumber(23)
   $core.bool hasOptionalImportEnum() => $_has(21);
   @$pb.TagNumber(23)
@@ -922,15 +922,15 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
 
   /// Defined in unittest_import_public.proto
   @$pb.TagNumber(26)
-  $95.PublicImportMessageLite get optionalPublicImportMessage => $_getN(24);
+  $98.PublicImportMessageLite get optionalPublicImportMessage => $_getN(24);
   @$pb.TagNumber(26)
-  set optionalPublicImportMessage($95.PublicImportMessageLite v) { setField(26, v); }
+  set optionalPublicImportMessage($98.PublicImportMessageLite v) { setField(26, v); }
   @$pb.TagNumber(26)
   $core.bool hasOptionalPublicImportMessage() => $_has(24);
   @$pb.TagNumber(26)
   void clearOptionalPublicImportMessage() => clearField(26);
   @$pb.TagNumber(26)
-  $95.PublicImportMessageLite ensureOptionalPublicImportMessage() => $_ensure(24);
+  $98.PublicImportMessageLite ensureOptionalPublicImportMessage() => $_ensure(24);
 
   @$pb.TagNumber(27)
   TestAllTypesLite_NestedMessage get optionalLazyMessage => $_getN(25);
@@ -1010,7 +1010,7 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   $core.List<ForeignMessageLite> get repeatedForeignMessage => $_getList(44);
 
   @$pb.TagNumber(50)
-  $core.List<$94.ImportMessageLite> get repeatedImportMessage => $_getList(45);
+  $core.List<$97.ImportMessageLite> get repeatedImportMessage => $_getList(45);
 
   @$pb.TagNumber(51)
   $core.List<TestAllTypesLite_NestedEnum> get repeatedNestedEnum => $_getList(46);
@@ -1019,7 +1019,7 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   $core.List<ForeignEnumLite> get repeatedForeignEnum => $_getList(47);
 
   @$pb.TagNumber(53)
-  $core.List<$94.ImportEnumLite> get repeatedImportEnum => $_getList(48);
+  $core.List<$97.ImportEnumLite> get repeatedImportEnum => $_getList(48);
 
   @$pb.TagNumber(54)
   $core.List<$core.String> get repeatedStringPiece => $_getList(49);
@@ -1185,9 +1185,9 @@ class TestAllTypesLite extends $pb.GeneratedMessage {
   void clearDefaultForeignEnum() => clearField(82);
 
   @$pb.TagNumber(83)
-  $94.ImportEnumLite get defaultImportEnum => $_getN(69);
+  $97.ImportEnumLite get defaultImportEnum => $_getN(69);
   @$pb.TagNumber(83)
-  set defaultImportEnum($94.ImportEnumLite v) { setField(83, v); }
+  set defaultImportEnum($97.ImportEnumLite v) { setField(83, v); }
   @$pb.TagNumber(83)
   $core.bool hasDefaultImportEnum() => $_has(69);
   @$pb.TagNumber(83)
@@ -3253,13 +3253,13 @@ class Unittest_lite {
   static final optionalGroupExtensionLite = $pb.Extension<OptionalGroup_extension_lite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalGroupExtensionLite', 16, $pb.PbFieldType.OG, defaultOrMaker: OptionalGroup_extension_lite.getDefault, subBuilder: OptionalGroup_extension_lite.create);
   static final optionalNestedMessageExtensionLite = $pb.Extension<TestAllTypesLite_NestedMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalNestedMessageExtensionLite', 18, $pb.PbFieldType.OM, defaultOrMaker: TestAllTypesLite_NestedMessage.getDefault, subBuilder: TestAllTypesLite_NestedMessage.create);
   static final optionalForeignMessageExtensionLite = $pb.Extension<ForeignMessageLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalForeignMessageExtensionLite', 19, $pb.PbFieldType.OM, defaultOrMaker: ForeignMessageLite.getDefault, subBuilder: ForeignMessageLite.create);
-  static final optionalImportMessageExtensionLite = $pb.Extension<$94.ImportMessageLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalImportMessageExtensionLite', 20, $pb.PbFieldType.OM, defaultOrMaker: $94.ImportMessageLite.getDefault, subBuilder: $94.ImportMessageLite.create);
+  static final optionalImportMessageExtensionLite = $pb.Extension<$97.ImportMessageLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalImportMessageExtensionLite', 20, $pb.PbFieldType.OM, defaultOrMaker: $97.ImportMessageLite.getDefault, subBuilder: $97.ImportMessageLite.create);
   static final optionalNestedEnumExtensionLite = $pb.Extension<TestAllTypesLite_NestedEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalNestedEnumExtensionLite', 21, $pb.PbFieldType.OE, defaultOrMaker: TestAllTypesLite_NestedEnum.FOO, valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values);
   static final optionalForeignEnumExtensionLite = $pb.Extension<ForeignEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalForeignEnumExtensionLite', 22, $pb.PbFieldType.OE, defaultOrMaker: ForeignEnumLite.FOREIGN_LITE_FOO, valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values);
-  static final optionalImportEnumExtensionLite = $pb.Extension<$94.ImportEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalImportEnumExtensionLite', 23, $pb.PbFieldType.OE, defaultOrMaker: $94.ImportEnumLite.IMPORT_LITE_FOO, valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values);
+  static final optionalImportEnumExtensionLite = $pb.Extension<$97.ImportEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalImportEnumExtensionLite', 23, $pb.PbFieldType.OE, defaultOrMaker: $97.ImportEnumLite.IMPORT_LITE_FOO, valueOf: $97.ImportEnumLite.valueOf, enumValues: $97.ImportEnumLite.values);
   static final optionalStringPieceExtensionLite = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalStringPieceExtensionLite', 24, $pb.PbFieldType.OS);
   static final optionalCordExtensionLite = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalCordExtensionLite', 25, $pb.PbFieldType.OS);
-  static final optionalPublicImportMessageExtensionLite = $pb.Extension<$95.PublicImportMessageLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalPublicImportMessageExtensionLite', 26, $pb.PbFieldType.OM, defaultOrMaker: $95.PublicImportMessageLite.getDefault, subBuilder: $95.PublicImportMessageLite.create);
+  static final optionalPublicImportMessageExtensionLite = $pb.Extension<$98.PublicImportMessageLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalPublicImportMessageExtensionLite', 26, $pb.PbFieldType.OM, defaultOrMaker: $98.PublicImportMessageLite.getDefault, subBuilder: $98.PublicImportMessageLite.create);
   static final optionalLazyMessageExtensionLite = $pb.Extension<TestAllTypesLite_NestedMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalLazyMessageExtensionLite', 27, $pb.PbFieldType.OM, defaultOrMaker: TestAllTypesLite_NestedMessage.getDefault, subBuilder: TestAllTypesLite_NestedMessage.create);
   static final optionalUnverifiedLazyMessageExtensionLite = $pb.Extension<TestAllTypesLite_NestedMessage>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'optionalUnverifiedLazyMessageExtensionLite', 28, $pb.PbFieldType.OM, defaultOrMaker: TestAllTypesLite_NestedMessage.getDefault, subBuilder: TestAllTypesLite_NestedMessage.create);
   static final repeatedInt32ExtensionLite = $pb.Extension<$core.int>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedInt32ExtensionLite', 31, $pb.PbFieldType.P3, check: $pb.getCheckFunction($pb.PbFieldType.P3));
@@ -3280,10 +3280,10 @@ class Unittest_lite {
   static final repeatedGroupExtensionLite = $pb.Extension<RepeatedGroup_extension_lite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedGroupExtensionLite', 46, $pb.PbFieldType.PG, check: $pb.getCheckFunction($pb.PbFieldType.PG), subBuilder: RepeatedGroup_extension_lite.create);
   static final repeatedNestedMessageExtensionLite = $pb.Extension<TestAllTypesLite_NestedMessage>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedNestedMessageExtensionLite', 48, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: TestAllTypesLite_NestedMessage.create);
   static final repeatedForeignMessageExtensionLite = $pb.Extension<ForeignMessageLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedForeignMessageExtensionLite', 49, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: ForeignMessageLite.create);
-  static final repeatedImportMessageExtensionLite = $pb.Extension<$94.ImportMessageLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedImportMessageExtensionLite', 50, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: $94.ImportMessageLite.create);
+  static final repeatedImportMessageExtensionLite = $pb.Extension<$97.ImportMessageLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedImportMessageExtensionLite', 50, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: $97.ImportMessageLite.create);
   static final repeatedNestedEnumExtensionLite = $pb.Extension<TestAllTypesLite_NestedEnum>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedNestedEnumExtensionLite', 51, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values);
   static final repeatedForeignEnumExtensionLite = $pb.Extension<ForeignEnumLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedForeignEnumExtensionLite', 52, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values);
-  static final repeatedImportEnumExtensionLite = $pb.Extension<$94.ImportEnumLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedImportEnumExtensionLite', 53, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values);
+  static final repeatedImportEnumExtensionLite = $pb.Extension<$97.ImportEnumLite>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedImportEnumExtensionLite', 53, $pb.PbFieldType.PE, check: $pb.getCheckFunction($pb.PbFieldType.PE), valueOf: $97.ImportEnumLite.valueOf, enumValues: $97.ImportEnumLite.values);
   static final repeatedStringPieceExtensionLite = $pb.Extension<$core.String>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedStringPieceExtensionLite', 54, $pb.PbFieldType.PS, check: $pb.getCheckFunction($pb.PbFieldType.PS));
   static final repeatedCordExtensionLite = $pb.Extension<$core.String>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedCordExtensionLite', 55, $pb.PbFieldType.PS, check: $pb.getCheckFunction($pb.PbFieldType.PS));
   static final repeatedLazyMessageExtensionLite = $pb.Extension<TestAllTypesLite_NestedMessage>.repeated(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'repeatedLazyMessageExtensionLite', 57, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: TestAllTypesLite_NestedMessage.create);
@@ -3304,7 +3304,7 @@ class Unittest_lite {
   static final defaultBytesExtensionLite = $pb.Extension<$core.List<$core.int>>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultBytesExtensionLite', 75, $pb.PbFieldType.OY, defaultOrMaker: () => <$core.int>[0x77,0x6f,0x72,0x6c,0x64]);
   static final defaultNestedEnumExtensionLite = $pb.Extension<TestAllTypesLite_NestedEnum>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultNestedEnumExtensionLite', 81, $pb.PbFieldType.OE, defaultOrMaker: TestAllTypesLite_NestedEnum.BAR, valueOf: TestAllTypesLite_NestedEnum.valueOf, enumValues: TestAllTypesLite_NestedEnum.values);
   static final defaultForeignEnumExtensionLite = $pb.Extension<ForeignEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultForeignEnumExtensionLite', 82, $pb.PbFieldType.OE, defaultOrMaker: ForeignEnumLite.FOREIGN_LITE_BAR, valueOf: ForeignEnumLite.valueOf, enumValues: ForeignEnumLite.values);
-  static final defaultImportEnumExtensionLite = $pb.Extension<$94.ImportEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultImportEnumExtensionLite', 83, $pb.PbFieldType.OE, defaultOrMaker: $94.ImportEnumLite.IMPORT_LITE_BAR, valueOf: $94.ImportEnumLite.valueOf, enumValues: $94.ImportEnumLite.values);
+  static final defaultImportEnumExtensionLite = $pb.Extension<$97.ImportEnumLite>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultImportEnumExtensionLite', 83, $pb.PbFieldType.OE, defaultOrMaker: $97.ImportEnumLite.IMPORT_LITE_BAR, valueOf: $97.ImportEnumLite.valueOf, enumValues: $97.ImportEnumLite.values);
   static final defaultStringPieceExtensionLite = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultStringPieceExtensionLite', 84, $pb.PbFieldType.OS, defaultOrMaker: 'abc');
   static final defaultCordExtensionLite = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'defaultCordExtensionLite', 85, $pb.PbFieldType.OS, defaultOrMaker: '123');
   static final oneofUint32ExtensionLite = $pb.Extension<$core.int>(_omitMessageNames ? '' : 'protobuf_unittest.TestAllExtensionsLite', _omitFieldNames ? '' : 'oneofUint32ExtensionLite', 111, $pb.PbFieldType.OU3);

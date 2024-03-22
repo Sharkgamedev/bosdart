@@ -14,13 +14,13 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $60;
-import '../../google/protobuf/wrappers.pb.dart' as $59;
-import 'data_buffer.pb.dart' as $4;
-import 'data_buffer.pbenum.dart' as $4;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../google/protobuf/wrappers.pb.dart' as $58;
+import 'data_buffer.pb.dart' as $5;
+import 'data_buffer.pbenum.dart' as $5;
 import 'data_index.pbenum.dart';
-import 'header.pb.dart' as $68;
-import 'time_range.pb.dart' as $77;
+import 'header.pb.dart' as $67;
+import 'time_range.pb.dart' as $78;
 
 export 'data_index.pbenum.dart';
 
@@ -178,8 +178,8 @@ class EventSpec extends $pb.GeneratedMessage {
   factory EventSpec({
     $core.String? source,
     $core.String? type,
-    $59.Int32Value? level,
-    $4.Event_LogPreserveHint? logPreserveHint,
+    $58.Int32Value? level,
+    $5.Event_LogPreserveHint? logPreserveHint,
   }) {
     final $result = create();
     if (source != null) {
@@ -203,8 +203,8 @@ class EventSpec extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventSpec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'source')
     ..aOS(2, _omitFieldNames ? '' : 'type')
-    ..aOM<$59.Int32Value>(3, _omitFieldNames ? '' : 'level', subBuilder: $59.Int32Value.create)
-    ..e<$4.Event_LogPreserveHint>(4, _omitFieldNames ? '' : 'logPreserveHint', $pb.PbFieldType.OE, defaultOrMaker: $4.Event_LogPreserveHint.LOG_PRESERVE_HINT_UNSET, valueOf: $4.Event_LogPreserveHint.valueOf, enumValues: $4.Event_LogPreserveHint.values)
+    ..aOM<$58.Int32Value>(3, _omitFieldNames ? '' : 'level', subBuilder: $58.Int32Value.create)
+    ..e<$5.Event_LogPreserveHint>(4, _omitFieldNames ? '' : 'logPreserveHint', $pb.PbFieldType.OE, defaultOrMaker: $5.Event_LogPreserveHint.LOG_PRESERVE_HINT_UNSET, valueOf: $5.Event_LogPreserveHint.valueOf, enumValues: $5.Event_LogPreserveHint.values)
     ..hasRequiredFields = false
   ;
 
@@ -248,20 +248,20 @@ class EventSpec extends $pb.GeneratedMessage {
   void clearType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $59.Int32Value get level => $_getN(2);
+  $58.Int32Value get level => $_getN(2);
   @$pb.TagNumber(3)
-  set level($59.Int32Value v) { setField(3, v); }
+  set level($58.Int32Value v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLevel() => $_has(2);
   @$pb.TagNumber(3)
   void clearLevel() => clearField(3);
   @$pb.TagNumber(3)
-  $59.Int32Value ensureLevel() => $_ensure(2);
+  $58.Int32Value ensureLevel() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $4.Event_LogPreserveHint get logPreserveHint => $_getN(3);
+  $5.Event_LogPreserveHint get logPreserveHint => $_getN(3);
   @$pb.TagNumber(4)
-  set logPreserveHint($4.Event_LogPreserveHint v) { setField(4, v); }
+  set logPreserveHint($5.Event_LogPreserveHint v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLogPreserveHint() => $_has(3);
   @$pb.TagNumber(4)
@@ -276,15 +276,15 @@ class PageInfo extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? path,
     $core.String? source,
-    $77.TimeRange? timeRange,
+    $78.TimeRange? timeRange,
     $fixnum.Int64? numTicks,
     $fixnum.Int64? totalBytes,
     PageInfo_PageFormat? format,
     PageInfo_Compression? compression,
     $core.bool? isOpen,
     $core.bool? isDownloaded,
-    $60.Timestamp? deletedTimestamp,
-    $60.Timestamp? downloadStartedTimestamp,
+    $59.Timestamp? deletedTimestamp,
+    $59.Timestamp? downloadStartedTimestamp,
     $core.bool? requestPreserve,
   }) {
     final $result = create();
@@ -337,15 +337,15 @@ class PageInfo extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'path')
     ..aOS(3, _omitFieldNames ? '' : 'source')
-    ..aOM<$77.TimeRange>(4, _omitFieldNames ? '' : 'timeRange', subBuilder: $77.TimeRange.create)
+    ..aOM<$78.TimeRange>(4, _omitFieldNames ? '' : 'timeRange', subBuilder: $78.TimeRange.create)
     ..aInt64(5, _omitFieldNames ? '' : 'numTicks')
     ..aInt64(6, _omitFieldNames ? '' : 'totalBytes')
     ..e<PageInfo_PageFormat>(7, _omitFieldNames ? '' : 'format', $pb.PbFieldType.OE, defaultOrMaker: PageInfo_PageFormat.FORMAT_UNKNOWN, valueOf: PageInfo_PageFormat.valueOf, enumValues: PageInfo_PageFormat.values)
     ..e<PageInfo_Compression>(8, _omitFieldNames ? '' : 'compression', $pb.PbFieldType.OE, defaultOrMaker: PageInfo_Compression.COMPRESSION_UNKNOWN, valueOf: PageInfo_Compression.valueOf, enumValues: PageInfo_Compression.values)
     ..aOB(9, _omitFieldNames ? '' : 'isOpen')
     ..aOB(10, _omitFieldNames ? '' : 'isDownloaded')
-    ..aOM<$60.Timestamp>(11, _omitFieldNames ? '' : 'deletedTimestamp', subBuilder: $60.Timestamp.create)
-    ..aOM<$60.Timestamp>(12, _omitFieldNames ? '' : 'downloadStartedTimestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(11, _omitFieldNames ? '' : 'deletedTimestamp', subBuilder: $59.Timestamp.create)
+    ..aOM<$59.Timestamp>(12, _omitFieldNames ? '' : 'downloadStartedTimestamp', subBuilder: $59.Timestamp.create)
     ..aOB(13, _omitFieldNames ? '' : 'requestPreserve')
     ..hasRequiredFields = false
   ;
@@ -400,15 +400,15 @@ class PageInfo extends $pb.GeneratedMessage {
 
   /// Time range of the relevant data in the page.
   @$pb.TagNumber(4)
-  $77.TimeRange get timeRange => $_getN(3);
+  $78.TimeRange get timeRange => $_getN(3);
   @$pb.TagNumber(4)
-  set timeRange($77.TimeRange v) { setField(4, v); }
+  set timeRange($78.TimeRange v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTimeRange() => $_has(3);
   @$pb.TagNumber(4)
   void clearTimeRange() => clearField(4);
   @$pb.TagNumber(4)
-  $77.TimeRange ensureTimeRange() => $_ensure(3);
+  $78.TimeRange ensureTimeRange() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $fixnum.Int64 get numTicks => $_getI64(4);
@@ -468,27 +468,27 @@ class PageInfo extends $pb.GeneratedMessage {
 
   /// If this exists, the page was deleted from the robot at the specified time.
   @$pb.TagNumber(11)
-  $60.Timestamp get deletedTimestamp => $_getN(10);
+  $59.Timestamp get deletedTimestamp => $_getN(10);
   @$pb.TagNumber(11)
-  set deletedTimestamp($60.Timestamp v) { setField(11, v); }
+  set deletedTimestamp($59.Timestamp v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasDeletedTimestamp() => $_has(10);
   @$pb.TagNumber(11)
   void clearDeletedTimestamp() => clearField(11);
   @$pb.TagNumber(11)
-  $60.Timestamp ensureDeletedTimestamp() => $_ensure(10);
+  $59.Timestamp ensureDeletedTimestamp() => $_ensure(10);
 
   /// If this exists, download from this page was started at the specified time.
   @$pb.TagNumber(12)
-  $60.Timestamp get downloadStartedTimestamp => $_getN(11);
+  $59.Timestamp get downloadStartedTimestamp => $_getN(11);
   @$pb.TagNumber(12)
-  set downloadStartedTimestamp($60.Timestamp v) { setField(12, v); }
+  set downloadStartedTimestamp($59.Timestamp v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasDownloadStartedTimestamp() => $_has(11);
   @$pb.TagNumber(12)
   void clearDownloadStartedTimestamp() => clearField(12);
   @$pb.TagNumber(12)
-  $60.Timestamp ensureDownloadStartedTimestamp() => $_ensure(11);
+  $59.Timestamp ensureDownloadStartedTimestamp() => $_ensure(11);
 
   /// True if data has been requested to be preserved.
   @$pb.TagNumber(13)
@@ -504,7 +504,7 @@ class PageInfo extends $pb.GeneratedMessage {
 /// A set of pages of data which contain specied GRPC request and response messages.
 class GrpcPages extends $pb.GeneratedMessage {
   factory GrpcPages({
-    $77.TimeRange? timeRange,
+    $78.TimeRange? timeRange,
     GrpcSpec? spec,
     $core.Iterable<PageInfo>? pages,
   }) {
@@ -525,7 +525,7 @@ class GrpcPages extends $pb.GeneratedMessage {
   factory GrpcPages.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GrpcPages', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$77.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $77.TimeRange.create)
+    ..aOM<$78.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $78.TimeRange.create)
     ..aOM<GrpcSpec>(2, _omitFieldNames ? '' : 'spec', subBuilder: GrpcSpec.create)
     ..pc<PageInfo>(3, _omitFieldNames ? '' : 'pages', $pb.PbFieldType.PM, subBuilder: PageInfo.create)
     ..hasRequiredFields = false
@@ -553,15 +553,15 @@ class GrpcPages extends $pb.GeneratedMessage {
   static GrpcPages? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $77.TimeRange get timeRange => $_getN(0);
+  $78.TimeRange get timeRange => $_getN(0);
   @$pb.TagNumber(1)
-  set timeRange($77.TimeRange v) { setField(1, v); }
+  set timeRange($78.TimeRange v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimeRange() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimeRange() => clearField(1);
   @$pb.TagNumber(1)
-  $77.TimeRange ensureTimeRange() => $_ensure(0);
+  $78.TimeRange ensureTimeRange() => $_ensure(0);
 
   @$pb.TagNumber(2)
   GrpcSpec get spec => $_getN(1);
@@ -650,7 +650,7 @@ class BlobPage extends $pb.GeneratedMessage {
 /// A set of pages of data which contain specified Blob messages from the data-buffer.
 class BlobPages extends $pb.GeneratedMessage {
   factory BlobPages({
-    $77.TimeRange? timeRange,
+    $78.TimeRange? timeRange,
     $core.Iterable<BlobPage>? pages,
   }) {
     final $result = create();
@@ -667,7 +667,7 @@ class BlobPages extends $pb.GeneratedMessage {
   factory BlobPages.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BlobPages', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$77.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $77.TimeRange.create)
+    ..aOM<$78.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $78.TimeRange.create)
     ..pc<BlobPage>(3, _omitFieldNames ? '' : 'pages', $pb.PbFieldType.PM, subBuilder: BlobPage.create)
     ..hasRequiredFields = false
   ;
@@ -694,15 +694,15 @@ class BlobPages extends $pb.GeneratedMessage {
   static BlobPages? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $77.TimeRange get timeRange => $_getN(0);
+  $78.TimeRange get timeRange => $_getN(0);
   @$pb.TagNumber(1)
-  set timeRange($77.TimeRange v) { setField(1, v); }
+  set timeRange($78.TimeRange v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimeRange() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimeRange() => clearField(1);
   @$pb.TagNumber(1)
-  $77.TimeRange ensureTimeRange() => $_ensure(0);
+  $78.TimeRange ensureTimeRange() => $_ensure(0);
 
   @$pb.TagNumber(3)
   $core.List<BlobPage> get pages => $_getList(1);
@@ -711,7 +711,7 @@ class BlobPages extends $pb.GeneratedMessage {
 /// A set of pages and the associated time range they cover.
 class PagesAndTimestamp extends $pb.GeneratedMessage {
   factory PagesAndTimestamp({
-    $77.TimeRange? timeRange,
+    $78.TimeRange? timeRange,
     $core.Iterable<PageInfo>? pages,
   }) {
     final $result = create();
@@ -728,7 +728,7 @@ class PagesAndTimestamp extends $pb.GeneratedMessage {
   factory PagesAndTimestamp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PagesAndTimestamp', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$77.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $77.TimeRange.create)
+    ..aOM<$78.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $78.TimeRange.create)
     ..pc<PageInfo>(2, _omitFieldNames ? '' : 'pages', $pb.PbFieldType.PM, subBuilder: PageInfo.create)
     ..hasRequiredFields = false
   ;
@@ -755,15 +755,15 @@ class PagesAndTimestamp extends $pb.GeneratedMessage {
   static PagesAndTimestamp? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $77.TimeRange get timeRange => $_getN(0);
+  $78.TimeRange get timeRange => $_getN(0);
   @$pb.TagNumber(1)
-  set timeRange($77.TimeRange v) { setField(1, v); }
+  set timeRange($78.TimeRange v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimeRange() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimeRange() => clearField(1);
   @$pb.TagNumber(1)
-  $77.TimeRange ensureTimeRange() => $_ensure(0);
+  $78.TimeRange ensureTimeRange() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<PageInfo> get pages => $_getList(1);
@@ -772,7 +772,7 @@ class PagesAndTimestamp extends $pb.GeneratedMessage {
 /// A query for pages containing the desired data.
 class DataQuery extends $pb.GeneratedMessage {
   factory DataQuery({
-    $77.TimeRange? timeRange,
+    $78.TimeRange? timeRange,
     $core.Iterable<BlobSpec>? blobs,
     $core.bool? textMessages,
     $core.bool? events,
@@ -801,7 +801,7 @@ class DataQuery extends $pb.GeneratedMessage {
   factory DataQuery.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataQuery', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$77.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $77.TimeRange.create)
+    ..aOM<$78.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $78.TimeRange.create)
     ..pc<BlobSpec>(2, _omitFieldNames ? '' : 'blobs', $pb.PbFieldType.PM, subBuilder: BlobSpec.create)
     ..aOB(3, _omitFieldNames ? '' : 'textMessages')
     ..aOB(4, _omitFieldNames ? '' : 'events')
@@ -832,15 +832,15 @@ class DataQuery extends $pb.GeneratedMessage {
 
   /// Timespan for data we want to query
   @$pb.TagNumber(1)
-  $77.TimeRange get timeRange => $_getN(0);
+  $78.TimeRange get timeRange => $_getN(0);
   @$pb.TagNumber(1)
-  set timeRange($77.TimeRange v) { setField(1, v); }
+  set timeRange($78.TimeRange v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimeRange() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimeRange() => clearField(1);
   @$pb.TagNumber(1)
-  $77.TimeRange ensureTimeRange() => $_ensure(0);
+  $78.TimeRange ensureTimeRange() => $_ensure(0);
 
   /// Request for pages containing different kinds of data.
   @$pb.TagNumber(2)
@@ -880,7 +880,7 @@ class DataQuery extends $pb.GeneratedMessage {
 /// Description of data matching a given DataQuery.
 class DataIndex extends $pb.GeneratedMessage {
   factory DataIndex({
-    $77.TimeRange? timeRange,
+    $78.TimeRange? timeRange,
     $core.Iterable<BlobPages>? blobs,
     PagesAndTimestamp? textMessages,
     PagesAndTimestamp? events,
@@ -909,7 +909,7 @@ class DataIndex extends $pb.GeneratedMessage {
   factory DataIndex.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataIndex', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$77.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $77.TimeRange.create)
+    ..aOM<$78.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $78.TimeRange.create)
     ..pc<BlobPages>(2, _omitFieldNames ? '' : 'blobs', $pb.PbFieldType.PM, subBuilder: BlobPages.create)
     ..aOM<PagesAndTimestamp>(3, _omitFieldNames ? '' : 'textMessages', subBuilder: PagesAndTimestamp.create)
     ..aOM<PagesAndTimestamp>(4, _omitFieldNames ? '' : 'events', subBuilder: PagesAndTimestamp.create)
@@ -939,15 +939,15 @@ class DataIndex extends $pb.GeneratedMessage {
   static DataIndex? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $77.TimeRange get timeRange => $_getN(0);
+  $78.TimeRange get timeRange => $_getN(0);
   @$pb.TagNumber(1)
-  set timeRange($77.TimeRange v) { setField(1, v); }
+  set timeRange($78.TimeRange v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimeRange() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimeRange() => clearField(1);
   @$pb.TagNumber(1)
-  $77.TimeRange ensureTimeRange() => $_ensure(0);
+  $78.TimeRange ensureTimeRange() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<BlobPages> get blobs => $_getList(1);
@@ -989,7 +989,7 @@ class DataIndex extends $pb.GeneratedMessage {
 /// A request for Events and/or OperatorComments over a given time range.
 class EventsCommentsSpec extends $pb.GeneratedMessage {
   factory EventsCommentsSpec({
-    $77.TimeRange? timeRange,
+    $78.TimeRange? timeRange,
     $core.Iterable<EventSpec>? events,
     $core.bool? comments,
     $core.int? maxEvents,
@@ -1018,7 +1018,7 @@ class EventsCommentsSpec extends $pb.GeneratedMessage {
   factory EventsCommentsSpec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventsCommentsSpec', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$77.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $77.TimeRange.create)
+    ..aOM<$78.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $78.TimeRange.create)
     ..pc<EventSpec>(2, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: EventSpec.create)
     ..aOB(3, _omitFieldNames ? '' : 'comments')
     ..a<$core.int>(4, _omitFieldNames ? '' : 'maxEvents', $pb.PbFieldType.OU3)
@@ -1049,15 +1049,15 @@ class EventsCommentsSpec extends $pb.GeneratedMessage {
 
   /// Timespan for data we want to query
   @$pb.TagNumber(1)
-  $77.TimeRange get timeRange => $_getN(0);
+  $78.TimeRange get timeRange => $_getN(0);
   @$pb.TagNumber(1)
-  set timeRange($77.TimeRange v) { setField(1, v); }
+  set timeRange($78.TimeRange v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimeRange() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimeRange() => clearField(1);
   @$pb.TagNumber(1)
-  $77.TimeRange ensureTimeRange() => $_ensure(0);
+  $78.TimeRange ensureTimeRange() => $_ensure(0);
 
   /// Return events which match the request.
   @$pb.TagNumber(2)
@@ -1097,9 +1097,9 @@ class EventsCommentsSpec extends $pb.GeneratedMessage {
 /// Requested Events and/or OperatorComments.
 class EventsComments extends $pb.GeneratedMessage {
   factory EventsComments({
-    $77.TimeRange? timeRange,
-    $core.Iterable<$4.Event>? events,
-    $core.Iterable<$4.OperatorComment>? operatorComments,
+    $78.TimeRange? timeRange,
+    $core.Iterable<$5.Event>? events,
+    $core.Iterable<$5.OperatorComment>? operatorComments,
     $core.bool? eventsLimited,
     $core.bool? operatorCommentsLimited,
   }) {
@@ -1126,9 +1126,9 @@ class EventsComments extends $pb.GeneratedMessage {
   factory EventsComments.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventsComments', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$77.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $77.TimeRange.create)
-    ..pc<$4.Event>(2, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: $4.Event.create)
-    ..pc<$4.OperatorComment>(3, _omitFieldNames ? '' : 'operatorComments', $pb.PbFieldType.PM, subBuilder: $4.OperatorComment.create)
+    ..aOM<$78.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $78.TimeRange.create)
+    ..pc<$5.Event>(2, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: $5.Event.create)
+    ..pc<$5.OperatorComment>(3, _omitFieldNames ? '' : 'operatorComments', $pb.PbFieldType.PM, subBuilder: $5.OperatorComment.create)
     ..aOB(4, _omitFieldNames ? '' : 'eventsLimited')
     ..aOB(5, _omitFieldNames ? '' : 'operatorCommentsLimited')
     ..hasRequiredFields = false
@@ -1157,21 +1157,21 @@ class EventsComments extends $pb.GeneratedMessage {
 
   /// Timespan for data
   @$pb.TagNumber(1)
-  $77.TimeRange get timeRange => $_getN(0);
+  $78.TimeRange get timeRange => $_getN(0);
   @$pb.TagNumber(1)
-  set timeRange($77.TimeRange v) { setField(1, v); }
+  set timeRange($78.TimeRange v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimeRange() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimeRange() => clearField(1);
   @$pb.TagNumber(1)
-  $77.TimeRange ensureTimeRange() => $_ensure(0);
+  $78.TimeRange ensureTimeRange() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$4.Event> get events => $_getList(1);
+  $core.List<$5.Event> get events => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$4.OperatorComment> get operatorComments => $_getList(2);
+  $core.List<$5.OperatorComment> get operatorComments => $_getList(2);
 
   /// True if the number of events returned was limited by query maximum.
   @$pb.TagNumber(4)
@@ -1297,7 +1297,7 @@ class DataBufferStatus extends $pb.GeneratedMessage {
 /// GRPC request for data index information.
 class GetDataIndexResponse extends $pb.GeneratedMessage {
   factory GetDataIndexResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     DataIndex? dataIndex,
   }) {
     final $result = create();
@@ -1314,7 +1314,7 @@ class GetDataIndexResponse extends $pb.GeneratedMessage {
   factory GetDataIndexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDataIndexResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<DataIndex>(2, _omitFieldNames ? '' : 'dataIndex', subBuilder: DataIndex.create)
     ..hasRequiredFields = false
   ;
@@ -1341,15 +1341,15 @@ class GetDataIndexResponse extends $pb.GeneratedMessage {
   static GetDataIndexResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   DataIndex get dataIndex => $_getN(1);
@@ -1366,7 +1366,7 @@ class GetDataIndexResponse extends $pb.GeneratedMessage {
 /// GRPC response with requested data index information.
 class GetDataIndexRequest extends $pb.GeneratedMessage {
   factory GetDataIndexRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     DataQuery? dataQuery,
   }) {
     final $result = create();
@@ -1383,7 +1383,7 @@ class GetDataIndexRequest extends $pb.GeneratedMessage {
   factory GetDataIndexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDataIndexRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<DataQuery>(2, _omitFieldNames ? '' : 'dataQuery', subBuilder: DataQuery.create)
     ..hasRequiredFields = false
   ;
@@ -1410,15 +1410,15 @@ class GetDataIndexRequest extends $pb.GeneratedMessage {
   static GetDataIndexRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   DataQuery get dataQuery => $_getN(1);
@@ -1435,7 +1435,7 @@ class GetDataIndexRequest extends $pb.GeneratedMessage {
 /// GRPC request for Events and OperatorComments.
 class GetEventsCommentsRequest extends $pb.GeneratedMessage {
   factory GetEventsCommentsRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     EventsCommentsSpec? eventCommentRequest,
   }) {
     final $result = create();
@@ -1452,7 +1452,7 @@ class GetEventsCommentsRequest extends $pb.GeneratedMessage {
   factory GetEventsCommentsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEventsCommentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<EventsCommentsSpec>(2, _omitFieldNames ? '' : 'eventCommentRequest', subBuilder: EventsCommentsSpec.create)
     ..hasRequiredFields = false
   ;
@@ -1479,15 +1479,15 @@ class GetEventsCommentsRequest extends $pb.GeneratedMessage {
   static GetEventsCommentsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   EventsCommentsSpec get eventCommentRequest => $_getN(1);
@@ -1504,7 +1504,7 @@ class GetEventsCommentsRequest extends $pb.GeneratedMessage {
 /// GRPC response with requested Events and OperatorComments.
 class GetEventsCommentsResponse extends $pb.GeneratedMessage {
   factory GetEventsCommentsResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     EventsComments? eventsComments,
   }) {
     final $result = create();
@@ -1521,7 +1521,7 @@ class GetEventsCommentsResponse extends $pb.GeneratedMessage {
   factory GetEventsCommentsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetEventsCommentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<EventsComments>(2, _omitFieldNames ? '' : 'eventsComments', subBuilder: EventsComments.create)
     ..hasRequiredFields = false
   ;
@@ -1548,15 +1548,15 @@ class GetEventsCommentsResponse extends $pb.GeneratedMessage {
   static GetEventsCommentsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   EventsComments get eventsComments => $_getN(1);
@@ -1572,7 +1572,7 @@ class GetEventsCommentsResponse extends $pb.GeneratedMessage {
 
 class GetDataBufferStatusRequest extends $pb.GeneratedMessage {
   factory GetDataBufferStatusRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.bool? getBlobSpecs,
   }) {
     final $result = create();
@@ -1589,7 +1589,7 @@ class GetDataBufferStatusRequest extends $pb.GeneratedMessage {
   factory GetDataBufferStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDataBufferStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOB(2, _omitFieldNames ? '' : 'getBlobSpecs')
     ..hasRequiredFields = false
   ;
@@ -1616,15 +1616,15 @@ class GetDataBufferStatusRequest extends $pb.GeneratedMessage {
   static GetDataBufferStatusRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.bool get getBlobSpecs => $_getBF(1);
@@ -1638,7 +1638,7 @@ class GetDataBufferStatusRequest extends $pb.GeneratedMessage {
 
 class GetDataBufferStatusResponse extends $pb.GeneratedMessage {
   factory GetDataBufferStatusResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     DataBufferStatus? dataBufferStatus,
   }) {
     final $result = create();
@@ -1655,7 +1655,7 @@ class GetDataBufferStatusResponse extends $pb.GeneratedMessage {
   factory GetDataBufferStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDataBufferStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<DataBufferStatus>(2, _omitFieldNames ? '' : 'dataBufferStatus', subBuilder: DataBufferStatus.create)
     ..hasRequiredFields = false
   ;
@@ -1682,15 +1682,15 @@ class GetDataBufferStatusResponse extends $pb.GeneratedMessage {
   static GetDataBufferStatusResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   DataBufferStatus get dataBufferStatus => $_getN(1);
@@ -1706,8 +1706,8 @@ class GetDataBufferStatusResponse extends $pb.GeneratedMessage {
 
 class GetDataPagesRequest extends $pb.GeneratedMessage {
   factory GetDataPagesRequest({
-    $68.RequestHeader? header,
-    $77.TimeRange? timeRange,
+    $67.RequestHeader? header,
+    $78.TimeRange? timeRange,
   }) {
     final $result = create();
     if (header != null) {
@@ -1723,8 +1723,8 @@ class GetDataPagesRequest extends $pb.GeneratedMessage {
   factory GetDataPagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDataPagesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$77.TimeRange>(2, _omitFieldNames ? '' : 'timeRange', subBuilder: $77.TimeRange.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$78.TimeRange>(2, _omitFieldNames ? '' : 'timeRange', subBuilder: $78.TimeRange.create)
     ..hasRequiredFields = false
   ;
 
@@ -1750,31 +1750,31 @@ class GetDataPagesRequest extends $pb.GeneratedMessage {
   static GetDataPagesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $77.TimeRange get timeRange => $_getN(1);
+  $78.TimeRange get timeRange => $_getN(1);
   @$pb.TagNumber(2)
-  set timeRange($77.TimeRange v) { setField(2, v); }
+  set timeRange($78.TimeRange v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimeRange() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimeRange() => clearField(2);
   @$pb.TagNumber(2)
-  $77.TimeRange ensureTimeRange() => $_ensure(1);
+  $78.TimeRange ensureTimeRange() => $_ensure(1);
 }
 
 class GetDataPagesResponse extends $pb.GeneratedMessage {
   factory GetDataPagesResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<PageInfo>? pages,
   }) {
     final $result = create();
@@ -1791,7 +1791,7 @@ class GetDataPagesResponse extends $pb.GeneratedMessage {
   factory GetDataPagesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDataPagesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<PageInfo>(2, _omitFieldNames ? '' : 'pages', $pb.PbFieldType.PM, subBuilder: PageInfo.create)
     ..hasRequiredFields = false
   ;
@@ -1818,15 +1818,15 @@ class GetDataPagesResponse extends $pb.GeneratedMessage {
   static GetDataPagesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<PageInfo> get pages => $_getList(1);
@@ -1835,8 +1835,8 @@ class GetDataPagesResponse extends $pb.GeneratedMessage {
 /// GRPC request to delete pages. Both time_range and page_ids can be set.
 class DeleteDataPagesRequest extends $pb.GeneratedMessage {
   factory DeleteDataPagesRequest({
-    $68.RequestHeader? header,
-    $77.TimeRange? timeRange,
+    $67.RequestHeader? header,
+    $78.TimeRange? timeRange,
     $core.Iterable<$core.String>? pageIds,
   }) {
     final $result = create();
@@ -1856,8 +1856,8 @@ class DeleteDataPagesRequest extends $pb.GeneratedMessage {
   factory DeleteDataPagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteDataPagesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$77.TimeRange>(2, _omitFieldNames ? '' : 'timeRange', subBuilder: $77.TimeRange.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$78.TimeRange>(2, _omitFieldNames ? '' : 'timeRange', subBuilder: $78.TimeRange.create)
     ..pPS(3, _omitFieldNames ? '' : 'pageIds')
     ..hasRequiredFields = false
   ;
@@ -1884,27 +1884,27 @@ class DeleteDataPagesRequest extends $pb.GeneratedMessage {
   static DeleteDataPagesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Delete all pages in this time range
   @$pb.TagNumber(2)
-  $77.TimeRange get timeRange => $_getN(1);
+  $78.TimeRange get timeRange => $_getN(1);
   @$pb.TagNumber(2)
-  set timeRange($77.TimeRange v) { setField(2, v); }
+  set timeRange($78.TimeRange v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimeRange() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimeRange() => clearField(2);
   @$pb.TagNumber(2)
-  $77.TimeRange ensureTimeRange() => $_ensure(1);
+  $78.TimeRange ensureTimeRange() => $_ensure(1);
 
   /// Delete all pages with matching ids
   @$pb.TagNumber(3)
@@ -1977,7 +1977,7 @@ class DeletePageStatus extends $pb.GeneratedMessage {
 
 class DeleteDataPagesResponse extends $pb.GeneratedMessage {
   factory DeleteDataPagesResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $fixnum.Int64? bytesDeleted,
     $core.Iterable<DeletePageStatus>? status,
   }) {
@@ -1998,7 +1998,7 @@ class DeleteDataPagesResponse extends $pb.GeneratedMessage {
   factory DeleteDataPagesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteDataPagesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aInt64(2, _omitFieldNames ? '' : 'bytesDeleted')
     ..pc<DeletePageStatus>(3, _omitFieldNames ? '' : 'status', $pb.PbFieldType.PM, subBuilder: DeletePageStatus.create)
     ..hasRequiredFields = false
@@ -2026,15 +2026,15 @@ class DeleteDataPagesResponse extends $pb.GeneratedMessage {
   static DeleteDataPagesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get bytesDeleted => $_getI64(1);

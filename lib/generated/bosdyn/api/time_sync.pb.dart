@@ -13,9 +13,9 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/duration.pb.dart' as $62;
-import '../../google/protobuf/timestamp.pb.dart' as $60;
-import 'header.pb.dart' as $68;
+import '../../google/protobuf/duration.pb.dart' as $61;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
+import 'header.pb.dart' as $67;
 import 'time_sync.pbenum.dart';
 
 export 'time_sync.pbenum.dart';
@@ -25,10 +25,10 @@ export 'time_sync.pbenum.dart';
 /// client and server clocks.
 class TimeSyncRoundTrip extends $pb.GeneratedMessage {
   factory TimeSyncRoundTrip({
-    $60.Timestamp? clientTx,
-    $60.Timestamp? serverRx,
-    $60.Timestamp? serverTx,
-    $60.Timestamp? clientRx,
+    $59.Timestamp? clientTx,
+    $59.Timestamp? serverRx,
+    $59.Timestamp? serverTx,
+    $59.Timestamp? clientRx,
   }) {
     final $result = create();
     if (clientTx != null) {
@@ -50,10 +50,10 @@ class TimeSyncRoundTrip extends $pb.GeneratedMessage {
   factory TimeSyncRoundTrip.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeSyncRoundTrip', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'clientTx', subBuilder: $60.Timestamp.create)
-    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'serverRx', subBuilder: $60.Timestamp.create)
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'serverTx', subBuilder: $60.Timestamp.create)
-    ..aOM<$60.Timestamp>(4, _omitFieldNames ? '' : 'clientRx', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'clientTx', subBuilder: $59.Timestamp.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'serverRx', subBuilder: $59.Timestamp.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'serverTx', subBuilder: $59.Timestamp.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'clientRx', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -80,59 +80,59 @@ class TimeSyncRoundTrip extends $pb.GeneratedMessage {
 
   /// Client system time when the message was sent, if not zero.
   @$pb.TagNumber(1)
-  $60.Timestamp get clientTx => $_getN(0);
+  $59.Timestamp get clientTx => $_getN(0);
   @$pb.TagNumber(1)
-  set clientTx($60.Timestamp v) { setField(1, v); }
+  set clientTx($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasClientTx() => $_has(0);
   @$pb.TagNumber(1)
   void clearClientTx() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureClientTx() => $_ensure(0);
+  $59.Timestamp ensureClientTx() => $_ensure(0);
 
   /// Server system time when the message was received, if not zero.
   @$pb.TagNumber(2)
-  $60.Timestamp get serverRx => $_getN(1);
+  $59.Timestamp get serverRx => $_getN(1);
   @$pb.TagNumber(2)
-  set serverRx($60.Timestamp v) { setField(2, v); }
+  set serverRx($59.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasServerRx() => $_has(1);
   @$pb.TagNumber(2)
   void clearServerRx() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Timestamp ensureServerRx() => $_ensure(1);
+  $59.Timestamp ensureServerRx() => $_ensure(1);
 
   /// Server system time when the response was sent, if not zero.
   @$pb.TagNumber(3)
-  $60.Timestamp get serverTx => $_getN(2);
+  $59.Timestamp get serverTx => $_getN(2);
   @$pb.TagNumber(3)
-  set serverTx($60.Timestamp v) { setField(3, v); }
+  set serverTx($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasServerTx() => $_has(2);
   @$pb.TagNumber(3)
   void clearServerTx() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureServerTx() => $_ensure(2);
+  $59.Timestamp ensureServerTx() => $_ensure(2);
 
   /// Client time when the response was received, if not zero.
   @$pb.TagNumber(4)
-  $60.Timestamp get clientRx => $_getN(3);
+  $59.Timestamp get clientRx => $_getN(3);
   @$pb.TagNumber(4)
-  set clientRx($60.Timestamp v) { setField(4, v); }
+  set clientRx($59.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasClientRx() => $_has(3);
   @$pb.TagNumber(4)
   void clearClientRx() => clearField(4);
   @$pb.TagNumber(4)
-  $60.Timestamp ensureClientRx() => $_ensure(3);
+  $59.Timestamp ensureClientRx() => $_ensure(3);
 }
 
 /// Estimate of network speed and clock skew.  Both for the last
 /// complete sample and a recent average.  Populated by the server.
 class TimeSyncEstimate extends $pb.GeneratedMessage {
   factory TimeSyncEstimate({
-    $62.Duration? roundTripTime,
-    $62.Duration? clockSkew,
+    $61.Duration? roundTripTime,
+    $61.Duration? clockSkew,
   }) {
     final $result = create();
     if (roundTripTime != null) {
@@ -148,8 +148,8 @@ class TimeSyncEstimate extends $pb.GeneratedMessage {
   factory TimeSyncEstimate.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeSyncEstimate', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$62.Duration>(1, _omitFieldNames ? '' : 'roundTripTime', subBuilder: $62.Duration.create)
-    ..aOM<$62.Duration>(2, _omitFieldNames ? '' : 'clockSkew', subBuilder: $62.Duration.create)
+    ..aOM<$61.Duration>(1, _omitFieldNames ? '' : 'roundTripTime', subBuilder: $61.Duration.create)
+    ..aOM<$61.Duration>(2, _omitFieldNames ? '' : 'clockSkew', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -177,27 +177,27 @@ class TimeSyncEstimate extends $pb.GeneratedMessage {
   /// Observed network delay (excludes processing between server_rx and server_tx).
   /// If zero, this estimate is unpopulated.
   @$pb.TagNumber(1)
-  $62.Duration get roundTripTime => $_getN(0);
+  $61.Duration get roundTripTime => $_getN(0);
   @$pb.TagNumber(1)
-  set roundTripTime($62.Duration v) { setField(1, v); }
+  set roundTripTime($61.Duration v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRoundTripTime() => $_has(0);
   @$pb.TagNumber(1)
   void clearRoundTripTime() => clearField(1);
   @$pb.TagNumber(1)
-  $62.Duration ensureRoundTripTime() => $_ensure(0);
+  $61.Duration ensureRoundTripTime() => $_ensure(0);
 
   /// Add the skew to the client system clock to get the server clock.
   @$pb.TagNumber(2)
-  $62.Duration get clockSkew => $_getN(1);
+  $61.Duration get clockSkew => $_getN(1);
   @$pb.TagNumber(2)
-  set clockSkew($62.Duration v) { setField(2, v); }
+  set clockSkew($61.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasClockSkew() => $_has(1);
   @$pb.TagNumber(2)
   void clearClockSkew() => clearField(2);
   @$pb.TagNumber(2)
-  $62.Duration ensureClockSkew() => $_ensure(1);
+  $61.Duration ensureClockSkew() => $_ensure(1);
 }
 
 /// Current best estimate status of time sync.
@@ -205,7 +205,7 @@ class TimeSyncState extends $pb.GeneratedMessage {
   factory TimeSyncState({
     TimeSyncEstimate? bestEstimate,
     TimeSyncState_Status? status,
-    $60.Timestamp? measurementTime,
+    $59.Timestamp? measurementTime,
   }) {
     final $result = create();
     if (bestEstimate != null) {
@@ -226,7 +226,7 @@ class TimeSyncState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeSyncState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOM<TimeSyncEstimate>(1, _omitFieldNames ? '' : 'bestEstimate', subBuilder: TimeSyncEstimate.create)
     ..e<TimeSyncState_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: TimeSyncState_Status.STATUS_UNKNOWN, valueOf: TimeSyncState_Status.valueOf, enumValues: TimeSyncState_Status.values)
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'measurementTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'measurementTime', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -275,21 +275,21 @@ class TimeSyncState extends $pb.GeneratedMessage {
 
   /// Time of best estimate, in server time.
   @$pb.TagNumber(3)
-  $60.Timestamp get measurementTime => $_getN(2);
+  $59.Timestamp get measurementTime => $_getN(2);
   @$pb.TagNumber(3)
-  set measurementTime($60.Timestamp v) { setField(3, v); }
+  set measurementTime($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMeasurementTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearMeasurementTime() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureMeasurementTime() => $_ensure(2);
+  $59.Timestamp ensureMeasurementTime() => $_ensure(2);
 }
 
 /// Request message for a time-sync Update RPC.
 class TimeSyncUpdateRequest extends $pb.GeneratedMessage {
   factory TimeSyncUpdateRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     TimeSyncRoundTrip? previousRoundTrip,
     $core.String? clockIdentifier,
   }) {
@@ -310,7 +310,7 @@ class TimeSyncUpdateRequest extends $pb.GeneratedMessage {
   factory TimeSyncUpdateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeSyncUpdateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<TimeSyncRoundTrip>(2, _omitFieldNames ? '' : 'previousRoundTrip', subBuilder: TimeSyncRoundTrip.create)
     ..aOS(3, _omitFieldNames ? '' : 'clockIdentifier')
     ..hasRequiredFields = false
@@ -339,15 +339,15 @@ class TimeSyncUpdateRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Round-trip timing information from the previous Update request.
   @$pb.TagNumber(2)
@@ -376,7 +376,7 @@ class TimeSyncUpdateRequest extends $pb.GeneratedMessage {
 /// Request message for a time-sync Update RPC.
 class TimeSyncUpdateResponse extends $pb.GeneratedMessage {
   factory TimeSyncUpdateResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     TimeSyncEstimate? previousEstimate,
     TimeSyncState? state,
     $core.String? clockIdentifier,
@@ -401,7 +401,7 @@ class TimeSyncUpdateResponse extends $pb.GeneratedMessage {
   factory TimeSyncUpdateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeSyncUpdateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<TimeSyncEstimate>(2, _omitFieldNames ? '' : 'previousEstimate', subBuilder: TimeSyncEstimate.create)
     ..aOM<TimeSyncState>(3, _omitFieldNames ? '' : 'state', subBuilder: TimeSyncState.create)
     ..aOS(4, _omitFieldNames ? '' : 'clockIdentifier')
@@ -431,15 +431,15 @@ class TimeSyncUpdateResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Clock synchronization estimate from the previous RPC round-trip, if available.
   @$pb.TagNumber(2)

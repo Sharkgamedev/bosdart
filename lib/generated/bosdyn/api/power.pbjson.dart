@@ -250,3 +250,66 @@ final $typed_data.Uint8List fanPowerCommandFeedbackResponseDescriptor = $convert
     'D1NUQVRVU19DT01QTEVURRABEhIKDlNUQVRVU19SVU5OSU5HEAISGwoXU1RBVFVTX1RFTVBFUk'
     'FUVVJFX1NUT1AQAxIgChxTVEFUVVNfT1ZFUlJJRERFTl9CWV9DT01NQU5EEAQ=');
 
+@$core.Deprecated('Use resetSafetyStopRequestDescriptor instead')
+const ResetSafetyStopRequest$json = {
+  '1': 'ResetSafetyStopRequest',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
+    {'1': 'lease', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.Lease', '10': 'lease'},
+    {'1': 'safety_stop_type', '3': 3, '4': 1, '5': 14, '6': '.bosdyn.api.ResetSafetyStopRequest.SafetyStopType', '10': 'safetyStopType'},
+  ],
+  '4': [ResetSafetyStopRequest_SafetyStopType$json],
+};
+
+@$core.Deprecated('Use resetSafetyStopRequestDescriptor instead')
+const ResetSafetyStopRequest_SafetyStopType$json = {
+  '1': 'SafetyStopType',
+  '2': [
+    {'1': 'SAFETY_STOP_UNKNOWN', '2': 0},
+    {'1': 'SAFETY_STOP_PRIMARY', '2': 1},
+    {'1': 'SAFETY_STOP_REDUNDANT', '2': 2},
+  ],
+};
+
+/// Descriptor for `ResetSafetyStopRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resetSafetyStopRequestDescriptor = $convert.base64Decode(
+    'ChZSZXNldFNhZmV0eVN0b3BSZXF1ZXN0EjEKBmhlYWRlchgBIAEoCzIZLmJvc2R5bi5hcGkuUm'
+    'VxdWVzdEhlYWRlclIGaGVhZGVyEicKBWxlYXNlGAIgASgLMhEuYm9zZHluLmFwaS5MZWFzZVIF'
+    'bGVhc2USWwoQc2FmZXR5X3N0b3BfdHlwZRgDIAEoDjIxLmJvc2R5bi5hcGkuUmVzZXRTYWZldH'
+    'lTdG9wUmVxdWVzdC5TYWZldHlTdG9wVHlwZVIOc2FmZXR5U3RvcFR5cGUiXQoOU2FmZXR5U3Rv'
+    'cFR5cGUSFwoTU0FGRVRZX1NUT1BfVU5LTk9XThAAEhcKE1NBRkVUWV9TVE9QX1BSSU1BUlkQAR'
+    'IZChVTQUZFVFlfU1RPUF9SRURVTkRBTlQQAg==');
+
+@$core.Deprecated('Use resetSafetyStopResponseDescriptor instead')
+const ResetSafetyStopResponse$json = {
+  '1': 'ResetSafetyStopResponse',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
+    {'1': 'lease_use_result', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.LeaseUseResult', '10': 'leaseUseResult'},
+    {'1': 'status', '3': 3, '4': 1, '5': 14, '6': '.bosdyn.api.ResetSafetyStopResponse.Status', '10': 'status'},
+  ],
+  '4': [ResetSafetyStopResponse_Status$json],
+};
+
+@$core.Deprecated('Use resetSafetyStopResponseDescriptor instead')
+const ResetSafetyStopResponse_Status$json = {
+  '1': 'Status',
+  '2': [
+    {'1': 'STATUS_UNKNOWN', '2': 0},
+    {'1': 'STATUS_OK', '2': 1},
+    {'1': 'STATUS_INCOMPATIBLE_HARDWARE_ERROR', '2': 2},
+    {'1': 'STATUS_FAILED', '2': 3},
+    {'1': 'STATUS_UNKNOWN_STOP_TYPE', '2': 4},
+  ],
+};
+
+/// Descriptor for `ResetSafetyStopResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resetSafetyStopResponseDescriptor = $convert.base64Decode(
+    'ChdSZXNldFNhZmV0eVN0b3BSZXNwb25zZRIyCgZoZWFkZXIYASABKAsyGi5ib3NkeW4uYXBpLl'
+    'Jlc3BvbnNlSGVhZGVyUgZoZWFkZXISRAoQbGVhc2VfdXNlX3Jlc3VsdBgCIAEoCzIaLmJvc2R5'
+    'bi5hcGkuTGVhc2VVc2VSZXN1bHRSDmxlYXNlVXNlUmVzdWx0EkIKBnN0YXR1cxgDIAEoDjIqLm'
+    'Jvc2R5bi5hcGkuUmVzZXRTYWZldHlTdG9wUmVzcG9uc2UuU3RhdHVzUgZzdGF0dXMihAEKBlN0'
+    'YXR1cxISCg5TVEFUVVNfVU5LTk9XThAAEg0KCVNUQVRVU19PSxABEiYKIlNUQVRVU19JTkNPTV'
+    'BBVElCTEVfSEFSRFdBUkVfRVJST1IQAhIRCg1TVEFUVVNfRkFJTEVEEAMSHAoYU1RBVFVTX1VO'
+    'S05PV05fU1RPUF9UWVBFEAQ=');
+

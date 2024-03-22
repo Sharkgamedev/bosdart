@@ -15,20 +15,20 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'image.pb.dart' as $11;
+import 'image.pb.dart' as $12;
 
 export 'image_service.pb.dart';
 
 @$pb.GrpcServiceName('bosdyn.api.ImageService')
 class ImageServiceClient extends $grpc.Client {
-  static final _$listImageSources = $grpc.ClientMethod<$11.ListImageSourcesRequest, $11.ListImageSourcesResponse>(
+  static final _$listImageSources = $grpc.ClientMethod<$12.ListImageSourcesRequest, $12.ListImageSourcesResponse>(
       '/bosdyn.api.ImageService/ListImageSources',
-      ($11.ListImageSourcesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $11.ListImageSourcesResponse.fromBuffer(value));
-  static final _$getImage = $grpc.ClientMethod<$11.GetImageRequest, $11.GetImageResponse>(
+      ($12.ListImageSourcesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.ListImageSourcesResponse.fromBuffer(value));
+  static final _$getImage = $grpc.ClientMethod<$12.GetImageRequest, $12.GetImageResponse>(
       '/bosdyn.api.ImageService/GetImage',
-      ($11.GetImageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $11.GetImageResponse.fromBuffer(value));
+      ($12.GetImageRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $12.GetImageResponse.fromBuffer(value));
 
   ImageServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -36,11 +36,11 @@ class ImageServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$11.ListImageSourcesResponse> listImageSources($11.ListImageSourcesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$12.ListImageSourcesResponse> listImageSources($12.ListImageSourcesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listImageSources, request, options: options);
   }
 
-  $grpc.ResponseFuture<$11.GetImageResponse> getImage($11.GetImageRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$12.GetImageResponse> getImage($12.GetImageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getImage, request, options: options);
   }
 }
@@ -50,30 +50,30 @@ abstract class ImageServiceBase extends $grpc.Service {
   $core.String get $name => 'bosdyn.api.ImageService';
 
   ImageServiceBase() {
-    $addMethod($grpc.ServiceMethod<$11.ListImageSourcesRequest, $11.ListImageSourcesResponse>(
+    $addMethod($grpc.ServiceMethod<$12.ListImageSourcesRequest, $12.ListImageSourcesResponse>(
         'ListImageSources',
         listImageSources_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $11.ListImageSourcesRequest.fromBuffer(value),
-        ($11.ListImageSourcesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$11.GetImageRequest, $11.GetImageResponse>(
+        ($core.List<$core.int> value) => $12.ListImageSourcesRequest.fromBuffer(value),
+        ($12.ListImageSourcesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$12.GetImageRequest, $12.GetImageResponse>(
         'GetImage',
         getImage_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $11.GetImageRequest.fromBuffer(value),
-        ($11.GetImageResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $12.GetImageRequest.fromBuffer(value),
+        ($12.GetImageResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$11.ListImageSourcesResponse> listImageSources_Pre($grpc.ServiceCall call, $async.Future<$11.ListImageSourcesRequest> request) async {
+  $async.Future<$12.ListImageSourcesResponse> listImageSources_Pre($grpc.ServiceCall call, $async.Future<$12.ListImageSourcesRequest> request) async {
     return listImageSources(call, await request);
   }
 
-  $async.Future<$11.GetImageResponse> getImage_Pre($grpc.ServiceCall call, $async.Future<$11.GetImageRequest> request) async {
+  $async.Future<$12.GetImageResponse> getImage_Pre($grpc.ServiceCall call, $async.Future<$12.GetImageRequest> request) async {
     return getImage(call, await request);
   }
 
-  $async.Future<$11.ListImageSourcesResponse> listImageSources($grpc.ServiceCall call, $11.ListImageSourcesRequest request);
-  $async.Future<$11.GetImageResponse> getImage($grpc.ServiceCall call, $11.GetImageRequest request);
+  $async.Future<$12.ListImageSourcesResponse> listImageSources($grpc.ServiceCall call, $12.ListImageSourcesRequest request);
+  $async.Future<$12.GetImageResponse> getImage($grpc.ServiceCall call, $12.GetImageRequest request);
 }

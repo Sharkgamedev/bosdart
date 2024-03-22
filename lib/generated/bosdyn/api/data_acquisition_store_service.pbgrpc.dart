@@ -16,6 +16,7 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'data_acquisition_store.pb.dart' as $3;
+import 'data_chunk.pb.dart' as $4;
 
 export 'data_acquisition_store_service.pb.dart';
 
@@ -57,6 +58,14 @@ class DataAcquisitionStoreServiceClient extends $grpc.Client {
       '/bosdyn.api.DataAcquisitionStoreService/StoreAlertData',
       ($3.StoreAlertDataRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $3.StoreAlertDataResponse.fromBuffer(value));
+  static final _$queryStoredCaptures = $grpc.ClientMethod<$3.QueryStoredCapturesRequest, $4.DataChunk>(
+      '/bosdyn.api.DataAcquisitionStoreService/QueryStoredCaptures',
+      ($3.QueryStoredCapturesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.DataChunk.fromBuffer(value));
+  static final _$queryMaxCaptureId = $grpc.ClientMethod<$3.QueryMaxCaptureIdRequest, $3.QueryMaxCaptureIdResponse>(
+      '/bosdyn.api.DataAcquisitionStoreService/QueryMaxCaptureId',
+      ($3.QueryMaxCaptureIdRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $3.QueryMaxCaptureIdResponse.fromBuffer(value));
 
   DataAcquisitionStoreServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -98,6 +107,14 @@ class DataAcquisitionStoreServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$3.StoreAlertDataResponse> storeAlertData($3.StoreAlertDataRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$storeAlertData, request, options: options);
+  }
+
+  $grpc.ResponseStream<$4.DataChunk> queryStoredCaptures($3.QueryStoredCapturesRequest request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$queryStoredCaptures, $async.Stream.fromIterable([request]), options: options);
+  }
+
+  $grpc.ResponseFuture<$3.QueryMaxCaptureIdResponse> queryMaxCaptureId($3.QueryMaxCaptureIdRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$queryMaxCaptureId, request, options: options);
   }
 }
 
@@ -169,6 +186,20 @@ abstract class DataAcquisitionStoreServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.StoreAlertDataRequest.fromBuffer(value),
         ($3.StoreAlertDataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.QueryStoredCapturesRequest, $4.DataChunk>(
+        'QueryStoredCaptures',
+        queryStoredCaptures_Pre,
+        false,
+        true,
+        ($core.List<$core.int> value) => $3.QueryStoredCapturesRequest.fromBuffer(value),
+        ($4.DataChunk value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.QueryMaxCaptureIdRequest, $3.QueryMaxCaptureIdResponse>(
+        'QueryMaxCaptureId',
+        queryMaxCaptureId_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $3.QueryMaxCaptureIdRequest.fromBuffer(value),
+        ($3.QueryMaxCaptureIdResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$3.ListCaptureActionsResponse> listCaptureActions_Pre($grpc.ServiceCall call, $async.Future<$3.ListCaptureActionsRequest> request) async {
@@ -207,6 +238,14 @@ abstract class DataAcquisitionStoreServiceBase extends $grpc.Service {
     return storeAlertData(call, await request);
   }
 
+  $async.Stream<$4.DataChunk> queryStoredCaptures_Pre($grpc.ServiceCall call, $async.Future<$3.QueryStoredCapturesRequest> request) async* {
+    yield* queryStoredCaptures(call, await request);
+  }
+
+  $async.Future<$3.QueryMaxCaptureIdResponse> queryMaxCaptureId_Pre($grpc.ServiceCall call, $async.Future<$3.QueryMaxCaptureIdRequest> request) async {
+    return queryMaxCaptureId(call, await request);
+  }
+
   $async.Future<$3.ListCaptureActionsResponse> listCaptureActions($grpc.ServiceCall call, $3.ListCaptureActionsRequest request);
   $async.Future<$3.ListStoredDataResponse> listStoredData($grpc.ServiceCall call, $3.ListStoredDataRequest request);
   $async.Future<$3.StoreDataResponse> storeData($grpc.ServiceCall call, $3.StoreDataRequest request);
@@ -216,4 +255,6 @@ abstract class DataAcquisitionStoreServiceBase extends $grpc.Service {
   $async.Future<$3.StoreMetadataResponse> storeMetadata($grpc.ServiceCall call, $3.StoreMetadataRequest request);
   $async.Future<$3.ListStoredAlertDataResponse> listStoredAlertData($grpc.ServiceCall call, $3.ListStoredAlertDataRequest request);
   $async.Future<$3.StoreAlertDataResponse> storeAlertData($grpc.ServiceCall call, $3.StoreAlertDataRequest request);
+  $async.Stream<$4.DataChunk> queryStoredCaptures($grpc.ServiceCall call, $3.QueryStoredCapturesRequest request);
+  $async.Future<$3.QueryMaxCaptureIdResponse> queryMaxCaptureId($grpc.ServiceCall call, $3.QueryMaxCaptureIdRequest request);
 }

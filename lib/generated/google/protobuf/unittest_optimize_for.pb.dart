@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest.pb.dart' as $54;
+import 'unittest.pb.dart' as $53;
 
 enum TestOptimizedForSize_Foo {
   integerField, 
@@ -26,7 +26,7 @@ class TestOptimizedForSize extends $pb.GeneratedMessage {
     $core.int? i,
     $core.int? integerField,
     $core.String? stringField,
-    $54.ForeignMessage? msg,
+    $53.ForeignMessage? msg,
   }) {
     final $result = create();
     if (i != null) {
@@ -57,7 +57,7 @@ class TestOptimizedForSize extends $pb.GeneratedMessage {
     ..a<$core.int>(1, _omitFieldNames ? '' : 'i', $pb.PbFieldType.O3)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'integerField', $pb.PbFieldType.O3)
     ..aOS(3, _omitFieldNames ? '' : 'stringField')
-    ..aOM<$54.ForeignMessage>(19, _omitFieldNames ? '' : 'msg', subBuilder: $54.ForeignMessage.create)
+    ..aOM<$53.ForeignMessage>(19, _omitFieldNames ? '' : 'msg', subBuilder: $53.ForeignMessage.create)
     ..hasExtensions = true
   ;
   static final testExtension = $pb.Extension<$core.int>(_omitMessageNames ? '' : 'protobuf_unittest.TestOptimizedForSize', _omitFieldNames ? '' : 'testExtension', 1234, $pb.PbFieldType.O3);
@@ -115,15 +115,15 @@ class TestOptimizedForSize extends $pb.GeneratedMessage {
   void clearStringField() => clearField(3);
 
   @$pb.TagNumber(19)
-  $54.ForeignMessage get msg => $_getN(3);
+  $53.ForeignMessage get msg => $_getN(3);
   @$pb.TagNumber(19)
-  set msg($54.ForeignMessage v) { setField(19, v); }
+  set msg($53.ForeignMessage v) { setField(19, v); }
   @$pb.TagNumber(19)
   $core.bool hasMsg() => $_has(3);
   @$pb.TagNumber(19)
   void clearMsg() => clearField(19);
   @$pb.TagNumber(19)
-  $54.ForeignMessage ensureMsg() => $_ensure(3);
+  $53.ForeignMessage ensureMsg() => $_ensure(3);
 }
 
 class TestRequiredOptimizedForSize extends $pb.GeneratedMessage {

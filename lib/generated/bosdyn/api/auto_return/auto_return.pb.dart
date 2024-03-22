@@ -13,10 +13,10 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $67;
-import '../../../google/protobuf/duration.pb.dart' as $62;
-import '../header.pb.dart' as $68;
-import '../lease.pb.dart' as $13;
+import '../../../google/protobuf/any.pb.dart' as $66;
+import '../../../google/protobuf/duration.pb.dart' as $61;
+import '../header.pb.dart' as $67;
+import '../lease.pb.dart' as $14;
 import 'auto_return.pbenum.dart';
 
 export 'auto_return.pbenum.dart';
@@ -24,9 +24,9 @@ export 'auto_return.pbenum.dart';
 /// Parameters to AutoReturn actions.
 class Params extends $pb.GeneratedMessage {
   factory Params({
-    $67.Any? mobilityParams,
+    $66.Any? mobilityParams,
     $core.double? maxDisplacement,
-    $62.Duration? maxDuration,
+    $61.Duration? maxDuration,
   }) {
     final $result = create();
     if (mobilityParams != null) {
@@ -45,9 +45,9 @@ class Params extends $pb.GeneratedMessage {
   factory Params.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Params', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.auto_return'), createEmptyInstance: create)
-    ..aOM<$67.Any>(1, _omitFieldNames ? '' : 'mobilityParams', subBuilder: $67.Any.create)
+    ..aOM<$66.Any>(1, _omitFieldNames ? '' : 'mobilityParams', subBuilder: $66.Any.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'maxDisplacement', $pb.PbFieldType.OF)
-    ..aOM<$62.Duration>(3, _omitFieldNames ? '' : 'maxDuration', subBuilder: $62.Duration.create)
+    ..aOM<$61.Duration>(3, _omitFieldNames ? '' : 'maxDuration', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -75,15 +75,15 @@ class Params extends $pb.GeneratedMessage {
   /// Robot-specific mobility parameters to use.
   /// For example, see bosdyn.api.spot.MobilityParams.
   @$pb.TagNumber(1)
-  $67.Any get mobilityParams => $_getN(0);
+  $66.Any get mobilityParams => $_getN(0);
   @$pb.TagNumber(1)
-  set mobilityParams($67.Any v) { setField(1, v); }
+  set mobilityParams($66.Any v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMobilityParams() => $_has(0);
   @$pb.TagNumber(1)
   void clearMobilityParams() => clearField(1);
   @$pb.TagNumber(1)
-  $67.Any ensureMobilityParams() => $_ensure(0);
+  $66.Any ensureMobilityParams() => $_ensure(0);
 
   /// Allow AutoReturn to move the robot this far in the XY plane from the location where
   /// AutoReturn started. Travel along the Z axis (which is gravity-aligned) does not count.
@@ -101,22 +101,22 @@ class Params extends $pb.GeneratedMessage {
   /// If this duration is exceeded, AutoReturn will stop trying to move the robot.
   /// Omit to try indefinitely. Robot may become stuck and never take other comms loss actions!
   @$pb.TagNumber(3)
-  $62.Duration get maxDuration => $_getN(2);
+  $61.Duration get maxDuration => $_getN(2);
   @$pb.TagNumber(3)
-  set maxDuration($62.Duration v) { setField(3, v); }
+  set maxDuration($61.Duration v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMaxDuration() => $_has(2);
   @$pb.TagNumber(3)
   void clearMaxDuration() => clearField(3);
   @$pb.TagNumber(3)
-  $62.Duration ensureMaxDuration() => $_ensure(2);
+  $61.Duration ensureMaxDuration() => $_ensure(2);
 }
 
 /// Configure the AutoReturn system.
 class ConfigureRequest extends $pb.GeneratedMessage {
   factory ConfigureRequest({
-    $68.RequestHeader? header,
-    $core.Iterable<$13.Lease>? leases,
+    $67.RequestHeader? header,
+    $core.Iterable<$14.Lease>? leases,
     Params? params,
     $core.bool? clearBuffer,
   }) {
@@ -140,8 +140,8 @@ class ConfigureRequest extends $pb.GeneratedMessage {
   factory ConfigureRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConfigureRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.auto_return'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..pc<$13.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..pc<$14.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
     ..aOM<Params>(3, _omitFieldNames ? '' : 'params', subBuilder: Params.create)
     ..aOB(4, _omitFieldNames ? '' : 'clearBuffer')
     ..hasRequiredFields = false
@@ -170,20 +170,20 @@ class ConfigureRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Leases that AutoReturn may use to accomplish its goals when AutoReturn automatically
   /// triggers. If left empty, AutoReturn will not automatically trigger.
   @$pb.TagNumber(2)
-  $core.List<$13.Lease> get leases => $_getList(1);
+  $core.List<$14.Lease> get leases => $_getList(1);
 
   /// Parameters to use when AutoReturn automatically triggers.
   @$pb.TagNumber(3)
@@ -212,7 +212,7 @@ class ConfigureRequest extends $pb.GeneratedMessage {
 /// Response to a configuration request.
 class ConfigureResponse extends $pb.GeneratedMessage {
   factory ConfigureResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     ConfigureResponse_Status? status,
     Params? invalidParams,
   }) {
@@ -233,7 +233,7 @@ class ConfigureResponse extends $pb.GeneratedMessage {
   factory ConfigureResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConfigureResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.auto_return'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<ConfigureResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ConfigureResponse_Status.STATUS_UNKNOWN, valueOf: ConfigureResponse_Status.valueOf, enumValues: ConfigureResponse_Status.values)
     ..aOM<Params>(3, _omitFieldNames ? '' : 'invalidParams', subBuilder: Params.create)
     ..hasRequiredFields = false
@@ -262,15 +262,15 @@ class ConfigureResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Return status for the request.
   @$pb.TagNumber(2)
@@ -298,7 +298,7 @@ class ConfigureResponse extends $pb.GeneratedMessage {
 /// Ask for the current configuration.
 class GetConfigurationRequest extends $pb.GeneratedMessage {
   factory GetConfigurationRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -311,7 +311,7 @@ class GetConfigurationRequest extends $pb.GeneratedMessage {
   factory GetConfigurationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetConfigurationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.auto_return'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -338,21 +338,21 @@ class GetConfigurationRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// Response to a "get configuration" request.
 class GetConfigurationResponse extends $pb.GeneratedMessage {
   factory GetConfigurationResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.bool? enabled,
     ConfigureRequest? request,
   }) {
@@ -373,7 +373,7 @@ class GetConfigurationResponse extends $pb.GeneratedMessage {
   factory GetConfigurationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetConfigurationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.auto_return'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOB(2, _omitFieldNames ? '' : 'enabled')
     ..aOM<ConfigureRequest>(3, _omitFieldNames ? '' : 'request', subBuilder: ConfigureRequest.create)
     ..hasRequiredFields = false
@@ -402,15 +402,15 @@ class GetConfigurationResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// A simple yes/no, will AutoReturn automatically trigger.
   @$pb.TagNumber(2)
@@ -439,8 +439,8 @@ class GetConfigurationResponse extends $pb.GeneratedMessage {
 /// Start AutoReturn behavior now.
 class StartRequest extends $pb.GeneratedMessage {
   factory StartRequest({
-    $68.RequestHeader? header,
-    $core.Iterable<$13.Lease>? leases,
+    $67.RequestHeader? header,
+    $core.Iterable<$14.Lease>? leases,
     Params? params,
   }) {
     final $result = create();
@@ -460,8 +460,8 @@ class StartRequest extends $pb.GeneratedMessage {
   factory StartRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.auto_return'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..pc<$13.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..pc<$14.Lease>(2, _omitFieldNames ? '' : 'leases', $pb.PbFieldType.PM, subBuilder: $14.Lease.create)
     ..aOM<Params>(3, _omitFieldNames ? '' : 'params', subBuilder: Params.create)
     ..hasRequiredFields = false
   ;
@@ -489,22 +489,22 @@ class StartRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Leases that AutoReturn may use to accomplish its goals.
   /// If left empty, use the leases specified in ConfigureRequest.
   /// If empty and no leases have been specified by ConfigureRequest, the response will have a
   /// CODE_INVALID_REQUEST in the header.
   @$pb.TagNumber(2)
-  $core.List<$13.Lease> get leases => $_getList(1);
+  $core.List<$14.Lease> get leases => $_getList(1);
 
   /// Parameters to use.
   /// If left empty, use the params specified in ConfigureRequest.
@@ -524,7 +524,7 @@ class StartRequest extends $pb.GeneratedMessage {
 
 class StartResponse extends $pb.GeneratedMessage {
   factory StartResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     StartResponse_Status? status,
     Params? invalidParams,
   }) {
@@ -545,7 +545,7 @@ class StartResponse extends $pb.GeneratedMessage {
   factory StartResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.auto_return'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<StartResponse_Status>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: StartResponse_Status.STATUS_UNKNOWN, valueOf: StartResponse_Status.valueOf, enumValues: StartResponse_Status.values)
     ..aOM<Params>(3, _omitFieldNames ? '' : 'invalidParams', subBuilder: Params.create)
     ..hasRequiredFields = false
@@ -574,15 +574,15 @@ class StartResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   StartResponse_Status get status => $_getN(1);

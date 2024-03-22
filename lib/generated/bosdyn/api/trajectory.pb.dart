@@ -13,10 +13,10 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/duration.pb.dart' as $62;
-import '../../google/protobuf/timestamp.pb.dart' as $60;
-import '../../google/protobuf/wrappers.pb.dart' as $59;
-import 'geometry.pb.dart' as $61;
+import '../../google/protobuf/duration.pb.dart' as $61;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../google/protobuf/wrappers.pb.dart' as $58;
+import 'geometry.pb.dart' as $60;
 import 'trajectory.pbenum.dart';
 
 export 'trajectory.pbenum.dart';
@@ -26,7 +26,7 @@ export 'trajectory.pbenum.dart';
 class SE2Trajectory extends $pb.GeneratedMessage {
   factory SE2Trajectory({
     $core.Iterable<SE2TrajectoryPoint>? points,
-    $60.Timestamp? referenceTime,
+    $59.Timestamp? referenceTime,
     PositionalInterpolation? interpolation,
   }) {
     final $result = create();
@@ -47,7 +47,7 @@ class SE2Trajectory extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SE2Trajectory', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..pc<SE2TrajectoryPoint>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: SE2TrajectoryPoint.create)
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'referenceTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'referenceTime', subBuilder: $59.Timestamp.create)
     ..e<PositionalInterpolation>(4, _omitFieldNames ? '' : 'interpolation', $pb.PbFieldType.OE, defaultOrMaker: PositionalInterpolation.POS_INTERP_UNKNOWN, valueOf: PositionalInterpolation.valueOf, enumValues: PositionalInterpolation.values)
     ..hasRequiredFields = false
   ;
@@ -81,15 +81,15 @@ class SE2Trajectory extends $pb.GeneratedMessage {
   /// in robot clock. If this field is not included, this time will be the receive time of the
   /// command.
   @$pb.TagNumber(3)
-  $60.Timestamp get referenceTime => $_getN(1);
+  $59.Timestamp get referenceTime => $_getN(1);
   @$pb.TagNumber(3)
-  set referenceTime($60.Timestamp v) { setField(3, v); }
+  set referenceTime($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasReferenceTime() => $_has(1);
   @$pb.TagNumber(3)
   void clearReferenceTime() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureReferenceTime() => $_ensure(1);
+  $59.Timestamp ensureReferenceTime() => $_ensure(1);
 
   /// Parameters for how trajectories will be interpolated on robot.
   @$pb.TagNumber(4)
@@ -105,8 +105,8 @@ class SE2Trajectory extends $pb.GeneratedMessage {
 /// A SE2 pose that can be used as a point within a trajectory.
 class SE2TrajectoryPoint extends $pb.GeneratedMessage {
   factory SE2TrajectoryPoint({
-    $61.SE2Pose? pose,
-    $62.Duration? timeSinceReference,
+    $60.SE2Pose? pose,
+    $61.Duration? timeSinceReference,
   }) {
     final $result = create();
     if (pose != null) {
@@ -122,8 +122,8 @@ class SE2TrajectoryPoint extends $pb.GeneratedMessage {
   factory SE2TrajectoryPoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SE2TrajectoryPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.SE2Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $61.SE2Pose.create)
-    ..aOM<$62.Duration>(3, _omitFieldNames ? '' : 'timeSinceReference', subBuilder: $62.Duration.create)
+    ..aOM<$60.SE2Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $60.SE2Pose.create)
+    ..aOM<$61.Duration>(3, _omitFieldNames ? '' : 'timeSinceReference', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -150,27 +150,27 @@ class SE2TrajectoryPoint extends $pb.GeneratedMessage {
 
   /// Required pose the robot will try and achieve.
   @$pb.TagNumber(1)
-  $61.SE2Pose get pose => $_getN(0);
+  $60.SE2Pose get pose => $_getN(0);
   @$pb.TagNumber(1)
-  set pose($61.SE2Pose v) { setField(1, v); }
+  set pose($60.SE2Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPose() => $_has(0);
   @$pb.TagNumber(1)
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE2Pose ensurePose() => $_ensure(0);
+  $60.SE2Pose ensurePose() => $_ensure(0);
 
   /// The duration to reach the point relative to the trajectory reference time.
   @$pb.TagNumber(3)
-  $62.Duration get timeSinceReference => $_getN(1);
+  $61.Duration get timeSinceReference => $_getN(1);
   @$pb.TagNumber(3)
-  set timeSinceReference($62.Duration v) { setField(3, v); }
+  set timeSinceReference($61.Duration v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeSinceReference() => $_has(1);
   @$pb.TagNumber(3)
   void clearTimeSinceReference() => clearField(3);
   @$pb.TagNumber(3)
-  $62.Duration ensureTimeSinceReference() => $_ensure(1);
+  $61.Duration ensureTimeSinceReference() => $_ensure(1);
 }
 
 /// A 3D pose trajectory, which specified multiple poses (and velocities for each pose)
@@ -178,7 +178,7 @@ class SE2TrajectoryPoint extends $pb.GeneratedMessage {
 class SE3Trajectory extends $pb.GeneratedMessage {
   factory SE3Trajectory({
     $core.Iterable<SE3TrajectoryPoint>? points,
-    $60.Timestamp? referenceTime,
+    $59.Timestamp? referenceTime,
     PositionalInterpolation? posInterpolation,
     AngularInterpolation? angInterpolation,
   }) {
@@ -203,7 +203,7 @@ class SE3Trajectory extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SE3Trajectory', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..pc<SE3TrajectoryPoint>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: SE3TrajectoryPoint.create)
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'referenceTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'referenceTime', subBuilder: $59.Timestamp.create)
     ..e<PositionalInterpolation>(4, _omitFieldNames ? '' : 'posInterpolation', $pb.PbFieldType.OE, defaultOrMaker: PositionalInterpolation.POS_INTERP_UNKNOWN, valueOf: PositionalInterpolation.valueOf, enumValues: PositionalInterpolation.values)
     ..e<AngularInterpolation>(5, _omitFieldNames ? '' : 'angInterpolation', $pb.PbFieldType.OE, defaultOrMaker: AngularInterpolation.ANG_INTERP_UNKNOWN, valueOf: AngularInterpolation.valueOf, enumValues: AngularInterpolation.values)
     ..hasRequiredFields = false
@@ -238,15 +238,15 @@ class SE3Trajectory extends $pb.GeneratedMessage {
   /// in robot clock. If this field is not included, this time will be the receive time of the
   /// command.
   @$pb.TagNumber(3)
-  $60.Timestamp get referenceTime => $_getN(1);
+  $59.Timestamp get referenceTime => $_getN(1);
   @$pb.TagNumber(3)
-  set referenceTime($60.Timestamp v) { setField(3, v); }
+  set referenceTime($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasReferenceTime() => $_has(1);
   @$pb.TagNumber(3)
   void clearReferenceTime() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureReferenceTime() => $_ensure(1);
+  $59.Timestamp ensureReferenceTime() => $_ensure(1);
 
   /// Parameters for how trajectories will be interpolated on robot.
   @$pb.TagNumber(4)
@@ -271,9 +271,9 @@ class SE3Trajectory extends $pb.GeneratedMessage {
 /// A SE3 pose and velocity that can be used as a point within a trajectory.
 class SE3TrajectoryPoint extends $pb.GeneratedMessage {
   factory SE3TrajectoryPoint({
-    $61.SE3Pose? pose,
-    $61.SE3Velocity? velocity,
-    $62.Duration? timeSinceReference,
+    $60.SE3Pose? pose,
+    $60.SE3Velocity? velocity,
+    $61.Duration? timeSinceReference,
   }) {
     final $result = create();
     if (pose != null) {
@@ -292,9 +292,9 @@ class SE3TrajectoryPoint extends $pb.GeneratedMessage {
   factory SE3TrajectoryPoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SE3TrajectoryPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.SE3Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $61.SE3Pose.create)
-    ..aOM<$61.SE3Velocity>(2, _omitFieldNames ? '' : 'velocity', subBuilder: $61.SE3Velocity.create)
-    ..aOM<$62.Duration>(3, _omitFieldNames ? '' : 'timeSinceReference', subBuilder: $62.Duration.create)
+    ..aOM<$60.SE3Pose>(1, _omitFieldNames ? '' : 'pose', subBuilder: $60.SE3Pose.create)
+    ..aOM<$60.SE3Velocity>(2, _omitFieldNames ? '' : 'velocity', subBuilder: $60.SE3Velocity.create)
+    ..aOM<$61.Duration>(3, _omitFieldNames ? '' : 'timeSinceReference', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -321,39 +321,39 @@ class SE3TrajectoryPoint extends $pb.GeneratedMessage {
 
   /// Required pose the robot will try and achieve.
   @$pb.TagNumber(1)
-  $61.SE3Pose get pose => $_getN(0);
+  $60.SE3Pose get pose => $_getN(0);
   @$pb.TagNumber(1)
-  set pose($61.SE3Pose v) { setField(1, v); }
+  set pose($60.SE3Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPose() => $_has(0);
   @$pb.TagNumber(1)
   void clearPose() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE3Pose ensurePose() => $_ensure(0);
+  $60.SE3Pose ensurePose() => $_ensure(0);
 
   /// Optional velocity (linear and angular) the robot will try and achieve.
   @$pb.TagNumber(2)
-  $61.SE3Velocity get velocity => $_getN(1);
+  $60.SE3Velocity get velocity => $_getN(1);
   @$pb.TagNumber(2)
-  set velocity($61.SE3Velocity v) { setField(2, v); }
+  set velocity($60.SE3Velocity v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasVelocity() => $_has(1);
   @$pb.TagNumber(2)
   void clearVelocity() => clearField(2);
   @$pb.TagNumber(2)
-  $61.SE3Velocity ensureVelocity() => $_ensure(1);
+  $60.SE3Velocity ensureVelocity() => $_ensure(1);
 
   /// The duration to reach the point relative to the trajectory reference time.
   @$pb.TagNumber(3)
-  $62.Duration get timeSinceReference => $_getN(2);
+  $61.Duration get timeSinceReference => $_getN(2);
   @$pb.TagNumber(3)
-  set timeSinceReference($62.Duration v) { setField(3, v); }
+  set timeSinceReference($61.Duration v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeSinceReference() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimeSinceReference() => clearField(3);
   @$pb.TagNumber(3)
-  $62.Duration ensureTimeSinceReference() => $_ensure(2);
+  $61.Duration ensureTimeSinceReference() => $_ensure(2);
 }
 
 /// A 3D point trajectory, described by 3D points, a starting and ending velocity, and
@@ -361,10 +361,10 @@ class SE3TrajectoryPoint extends $pb.GeneratedMessage {
 class Vec3Trajectory extends $pb.GeneratedMessage {
   factory Vec3Trajectory({
     $core.Iterable<Vec3TrajectoryPoint>? points,
-    $60.Timestamp? referenceTime,
+    $59.Timestamp? referenceTime,
     PositionalInterpolation? posInterpolation,
-    $61.Vec3? startingVelocity,
-    $61.Vec3? endingVelocity,
+    $60.Vec3? startingVelocity,
+    $60.Vec3? endingVelocity,
   }) {
     final $result = create();
     if (points != null) {
@@ -390,10 +390,10 @@ class Vec3Trajectory extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Vec3Trajectory', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..pc<Vec3TrajectoryPoint>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: Vec3TrajectoryPoint.create)
-    ..aOM<$60.Timestamp>(3, _omitFieldNames ? '' : 'referenceTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(3, _omitFieldNames ? '' : 'referenceTime', subBuilder: $59.Timestamp.create)
     ..e<PositionalInterpolation>(4, _omitFieldNames ? '' : 'posInterpolation', $pb.PbFieldType.OE, defaultOrMaker: PositionalInterpolation.POS_INTERP_UNKNOWN, valueOf: PositionalInterpolation.valueOf, enumValues: PositionalInterpolation.values)
-    ..aOM<$61.Vec3>(5, _omitFieldNames ? '' : 'startingVelocity', subBuilder: $61.Vec3.create)
-    ..aOM<$61.Vec3>(6, _omitFieldNames ? '' : 'endingVelocity', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(5, _omitFieldNames ? '' : 'startingVelocity', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec3>(6, _omitFieldNames ? '' : 'endingVelocity', subBuilder: $60.Vec3.create)
     ..hasRequiredFields = false
   ;
 
@@ -426,15 +426,15 @@ class Vec3Trajectory extends $pb.GeneratedMessage {
   /// in robot clock. If this field is not included, this time will be the receive time of the
   /// command.
   @$pb.TagNumber(3)
-  $60.Timestamp get referenceTime => $_getN(1);
+  $59.Timestamp get referenceTime => $_getN(1);
   @$pb.TagNumber(3)
-  set referenceTime($60.Timestamp v) { setField(3, v); }
+  set referenceTime($59.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasReferenceTime() => $_has(1);
   @$pb.TagNumber(3)
   void clearReferenceTime() => clearField(3);
   @$pb.TagNumber(3)
-  $60.Timestamp ensureReferenceTime() => $_ensure(1);
+  $59.Timestamp ensureReferenceTime() => $_ensure(1);
 
   /// Parameters for how trajectories will be interpolated on robot.
   @$pb.TagNumber(4)
@@ -448,34 +448,34 @@ class Vec3Trajectory extends $pb.GeneratedMessage {
 
   /// Velocity at the starting point of the trajectory.
   @$pb.TagNumber(5)
-  $61.Vec3 get startingVelocity => $_getN(3);
+  $60.Vec3 get startingVelocity => $_getN(3);
   @$pb.TagNumber(5)
-  set startingVelocity($61.Vec3 v) { setField(5, v); }
+  set startingVelocity($60.Vec3 v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStartingVelocity() => $_has(3);
   @$pb.TagNumber(5)
   void clearStartingVelocity() => clearField(5);
   @$pb.TagNumber(5)
-  $61.Vec3 ensureStartingVelocity() => $_ensure(3);
+  $60.Vec3 ensureStartingVelocity() => $_ensure(3);
 
   /// Velocity at the ending point of the trajectory.
   @$pb.TagNumber(6)
-  $61.Vec3 get endingVelocity => $_getN(4);
+  $60.Vec3 get endingVelocity => $_getN(4);
   @$pb.TagNumber(6)
-  set endingVelocity($61.Vec3 v) { setField(6, v); }
+  set endingVelocity($60.Vec3 v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndingVelocity() => $_has(4);
   @$pb.TagNumber(6)
   void clearEndingVelocity() => clearField(6);
   @$pb.TagNumber(6)
-  $61.Vec3 ensureEndingVelocity() => $_ensure(4);
+  $60.Vec3 ensureEndingVelocity() => $_ensure(4);
 }
 
 /// A 3D point (and linear velocity) that can be used as a point within a trajectory.
 class Vec3TrajectoryPoint extends $pb.GeneratedMessage {
   factory Vec3TrajectoryPoint({
-    $61.Vec3? point,
-    $62.Duration? timeSinceReference,
+    $60.Vec3? point,
+    $61.Duration? timeSinceReference,
     $core.double? linearSpeed,
   }) {
     final $result = create();
@@ -495,8 +495,8 @@ class Vec3TrajectoryPoint extends $pb.GeneratedMessage {
   factory Vec3TrajectoryPoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Vec3TrajectoryPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'point', subBuilder: $61.Vec3.create)
-    ..aOM<$62.Duration>(3, _omitFieldNames ? '' : 'timeSinceReference', subBuilder: $62.Duration.create)
+    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'point', subBuilder: $60.Vec3.create)
+    ..aOM<$61.Duration>(3, _omitFieldNames ? '' : 'timeSinceReference', subBuilder: $61.Duration.create)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'linearSpeed', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
   ;
@@ -524,27 +524,27 @@ class Vec3TrajectoryPoint extends $pb.GeneratedMessage {
 
   /// The point 3D position.
   @$pb.TagNumber(1)
-  $61.Vec3 get point => $_getN(0);
+  $60.Vec3 get point => $_getN(0);
   @$pb.TagNumber(1)
-  set point($61.Vec3 v) { setField(1, v); }
+  set point($60.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPoint() => $_has(0);
   @$pb.TagNumber(1)
   void clearPoint() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3 ensurePoint() => $_ensure(0);
+  $60.Vec3 ensurePoint() => $_ensure(0);
 
   /// The duration to reach the point relative to the trajectory reference time.
   @$pb.TagNumber(3)
-  $62.Duration get timeSinceReference => $_getN(1);
+  $61.Duration get timeSinceReference => $_getN(1);
   @$pb.TagNumber(3)
-  set timeSinceReference($62.Duration v) { setField(3, v); }
+  set timeSinceReference($61.Duration v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeSinceReference() => $_has(1);
   @$pb.TagNumber(3)
   void clearTimeSinceReference() => clearField(3);
   @$pb.TagNumber(3)
-  $62.Duration ensureTimeSinceReference() => $_ensure(1);
+  $61.Duration ensureTimeSinceReference() => $_ensure(1);
 
   /// These are all optional.  If nothing is specified, good defaults will be chosen
   /// server-side.
@@ -562,7 +562,7 @@ class Vec3TrajectoryPoint extends $pb.GeneratedMessage {
 class WrenchTrajectory extends $pb.GeneratedMessage {
   factory WrenchTrajectory({
     $core.Iterable<WrenchTrajectoryPoint>? points,
-    $60.Timestamp? referenceTime,
+    $59.Timestamp? referenceTime,
   }) {
     final $result = create();
     if (points != null) {
@@ -579,7 +579,7 @@ class WrenchTrajectory extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WrenchTrajectory', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..pc<WrenchTrajectoryPoint>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: WrenchTrajectoryPoint.create)
-    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'referenceTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'referenceTime', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -612,21 +612,21 @@ class WrenchTrajectory extends $pb.GeneratedMessage {
   /// in robot clock. If this field is not included, this time will be the receive time of the
   /// command.
   @$pb.TagNumber(2)
-  $60.Timestamp get referenceTime => $_getN(1);
+  $59.Timestamp get referenceTime => $_getN(1);
   @$pb.TagNumber(2)
-  set referenceTime($60.Timestamp v) { setField(2, v); }
+  set referenceTime($59.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasReferenceTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearReferenceTime() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Timestamp ensureReferenceTime() => $_ensure(1);
+  $59.Timestamp ensureReferenceTime() => $_ensure(1);
 }
 
 class WrenchTrajectoryPoint extends $pb.GeneratedMessage {
   factory WrenchTrajectoryPoint({
-    $61.Wrench? wrench,
-    $62.Duration? timeSinceReference,
+    $60.Wrench? wrench,
+    $61.Duration? timeSinceReference,
   }) {
     final $result = create();
     if (wrench != null) {
@@ -642,8 +642,8 @@ class WrenchTrajectoryPoint extends $pb.GeneratedMessage {
   factory WrenchTrajectoryPoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WrenchTrajectoryPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Wrench>(1, _omitFieldNames ? '' : 'wrench', subBuilder: $61.Wrench.create)
-    ..aOM<$62.Duration>(2, _omitFieldNames ? '' : 'timeSinceReference', subBuilder: $62.Duration.create)
+    ..aOM<$60.Wrench>(1, _omitFieldNames ? '' : 'wrench', subBuilder: $60.Wrench.create)
+    ..aOM<$61.Duration>(2, _omitFieldNames ? '' : 'timeSinceReference', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -670,34 +670,34 @@ class WrenchTrajectoryPoint extends $pb.GeneratedMessage {
 
   /// The wrench to apply at this point in time.
   @$pb.TagNumber(1)
-  $61.Wrench get wrench => $_getN(0);
+  $60.Wrench get wrench => $_getN(0);
   @$pb.TagNumber(1)
-  set wrench($61.Wrench v) { setField(1, v); }
+  set wrench($60.Wrench v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasWrench() => $_has(0);
   @$pb.TagNumber(1)
   void clearWrench() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Wrench ensureWrench() => $_ensure(0);
+  $60.Wrench ensureWrench() => $_ensure(0);
 
   /// The duration to reach the point relative to the trajectory reference time.
   @$pb.TagNumber(2)
-  $62.Duration get timeSinceReference => $_getN(1);
+  $61.Duration get timeSinceReference => $_getN(1);
   @$pb.TagNumber(2)
-  set timeSinceReference($62.Duration v) { setField(2, v); }
+  set timeSinceReference($61.Duration v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimeSinceReference() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimeSinceReference() => clearField(2);
   @$pb.TagNumber(2)
-  $62.Duration ensureTimeSinceReference() => $_ensure(1);
+  $61.Duration ensureTimeSinceReference() => $_ensure(1);
 }
 
 /// A Point trajectory.
 class ScalarTrajectory extends $pb.GeneratedMessage {
   factory ScalarTrajectory({
     $core.Iterable<ScalarTrajectoryPoint>? points,
-    $60.Timestamp? referenceTime,
+    $59.Timestamp? referenceTime,
     PositionalInterpolation? interpolation,
   }) {
     final $result = create();
@@ -718,7 +718,7 @@ class ScalarTrajectory extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScalarTrajectory', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..pc<ScalarTrajectoryPoint>(1, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: ScalarTrajectoryPoint.create)
-    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'referenceTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'referenceTime', subBuilder: $59.Timestamp.create)
     ..e<PositionalInterpolation>(3, _omitFieldNames ? '' : 'interpolation', $pb.PbFieldType.OE, defaultOrMaker: PositionalInterpolation.POS_INTERP_UNKNOWN, valueOf: PositionalInterpolation.valueOf, enumValues: PositionalInterpolation.values)
     ..hasRequiredFields = false
   ;
@@ -752,15 +752,15 @@ class ScalarTrajectory extends $pb.GeneratedMessage {
   /// in robot clock. If this field is not included, this time will be the receive time of the
   /// command.
   @$pb.TagNumber(2)
-  $60.Timestamp get referenceTime => $_getN(1);
+  $59.Timestamp get referenceTime => $_getN(1);
   @$pb.TagNumber(2)
-  set referenceTime($60.Timestamp v) { setField(2, v); }
+  set referenceTime($59.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasReferenceTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearReferenceTime() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Timestamp ensureReferenceTime() => $_ensure(1);
+  $59.Timestamp ensureReferenceTime() => $_ensure(1);
 
   /// Parameters for how trajectories will be interpolated on robot.
   /// (Note: ignored for ClawGripperCommand.Request, which will automatically
@@ -778,8 +778,8 @@ class ScalarTrajectory extends $pb.GeneratedMessage {
 class ScalarTrajectoryPoint extends $pb.GeneratedMessage {
   factory ScalarTrajectoryPoint({
     $core.double? point,
-    $59.DoubleValue? velocity,
-    $62.Duration? timeSinceReference,
+    $58.DoubleValue? velocity,
+    $61.Duration? timeSinceReference,
   }) {
     final $result = create();
     if (point != null) {
@@ -799,8 +799,8 @@ class ScalarTrajectoryPoint extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScalarTrajectoryPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..a<$core.double>(1, _omitFieldNames ? '' : 'point', $pb.PbFieldType.OD)
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'velocity', subBuilder: $59.DoubleValue.create)
-    ..aOM<$62.Duration>(3, _omitFieldNames ? '' : 'timeSinceReference', subBuilder: $62.Duration.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'velocity', subBuilder: $58.DoubleValue.create)
+    ..aOM<$61.Duration>(3, _omitFieldNames ? '' : 'timeSinceReference', subBuilder: $61.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -837,27 +837,27 @@ class ScalarTrajectoryPoint extends $pb.GeneratedMessage {
 
   /// Optional speed at the trajectory point's reference time.
   @$pb.TagNumber(2)
-  $59.DoubleValue get velocity => $_getN(1);
+  $58.DoubleValue get velocity => $_getN(1);
   @$pb.TagNumber(2)
-  set velocity($59.DoubleValue v) { setField(2, v); }
+  set velocity($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasVelocity() => $_has(1);
   @$pb.TagNumber(2)
   void clearVelocity() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensureVelocity() => $_ensure(1);
+  $58.DoubleValue ensureVelocity() => $_ensure(1);
 
   /// The duration to reach the point relative to the trajectory reference time.
   @$pb.TagNumber(3)
-  $62.Duration get timeSinceReference => $_getN(2);
+  $61.Duration get timeSinceReference => $_getN(2);
   @$pb.TagNumber(3)
-  set timeSinceReference($62.Duration v) { setField(3, v); }
+  set timeSinceReference($61.Duration v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTimeSinceReference() => $_has(2);
   @$pb.TagNumber(3)
   void clearTimeSinceReference() => clearField(3);
   @$pb.TagNumber(3)
-  $62.Duration ensureTimeSinceReference() => $_ensure(2);
+  $61.Duration ensureTimeSinceReference() => $_ensure(2);
 }
 
 

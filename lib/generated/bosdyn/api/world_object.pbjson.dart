@@ -51,6 +51,7 @@ const WorldObject$json = {
     {'1': 'ray_properties', '3': 11, '4': 1, '5': 11, '6': '.bosdyn.api.RayProperties', '10': 'rayProperties'},
     {'1': 'bounding_box_properties', '3': 12, '4': 1, '5': 11, '6': '.bosdyn.api.BoundingBoxProperties', '10': 'boundingBoxProperties'},
     {'1': 'staircase_properties', '3': 15, '4': 1, '5': 11, '6': '.bosdyn.api.StaircaseProperties', '10': 'staircaseProperties'},
+    {'1': 'gps_properties', '3': 16, '4': 1, '5': 11, '6': '.bosdyn.api.GpsProperties', '10': 'gpsProperties'},
     {'1': 'additional_properties', '3': 100, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'additionalProperties'},
   ],
 };
@@ -73,8 +74,9 @@ final $typed_data.Uint8List worldObjectDescriptor = $convert.base64Decode(
     'RpZXMSWQoXYm91bmRpbmdfYm94X3Byb3BlcnRpZXMYDCABKAsyIS5ib3NkeW4uYXBpLkJvdW5k'
     'aW5nQm94UHJvcGVydGllc1IVYm91bmRpbmdCb3hQcm9wZXJ0aWVzElIKFHN0YWlyY2FzZV9wcm'
     '9wZXJ0aWVzGA8gASgLMh8uYm9zZHluLmFwaS5TdGFpcmNhc2VQcm9wZXJ0aWVzUhNzdGFpcmNh'
-    'c2VQcm9wZXJ0aWVzEkkKFWFkZGl0aW9uYWxfcHJvcGVydGllcxhkIAEoCzIULmdvb2dsZS5wcm'
-    '90b2J1Zi5BbnlSFGFkZGl0aW9uYWxQcm9wZXJ0aWVz');
+    'c2VQcm9wZXJ0aWVzEkAKDmdwc19wcm9wZXJ0aWVzGBAgASgLMhkuYm9zZHluLmFwaS5HcHNQcm'
+    '9wZXJ0aWVzUg1ncHNQcm9wZXJ0aWVzEkkKFWFkZGl0aW9uYWxfcHJvcGVydGllcxhkIAEoCzIU'
+    'Lmdvb2dsZS5wcm90b2J1Zi5BbnlSFGFkZGl0aW9uYWxQcm9wZXJ0aWVz');
 
 @$core.Deprecated('Use listWorldObjectRequestDescriptor instead')
 const ListWorldObjectRequest$json = {
@@ -384,6 +386,19 @@ const StaircaseProperties$json = {
 final $typed_data.Uint8List staircasePropertiesDescriptor = $convert.base64Decode(
     'ChNTdGFpcmNhc2VQcm9wZXJ0aWVzEjMKCXN0YWlyY2FzZRgBIAEoCzIVLmJvc2R5bi5hcGkuU3'
     'RhaXJjYXNlUglzdGFpcmNhc2U=');
+
+@$core.Deprecated('Use gpsPropertiesDescriptor instead')
+const GpsProperties$json = {
+  '1': 'GpsProperties',
+  '2': [
+    {'1': 'registration', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.gps.Registration', '10': 'registration'},
+  ],
+};
+
+/// Descriptor for `GpsProperties`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List gpsPropertiesDescriptor = $convert.base64Decode(
+    'Cg1HcHNQcm9wZXJ0aWVzEkAKDHJlZ2lzdHJhdGlvbhgBIAEoCzIcLmJvc2R5bi5hcGkuZ3BzLl'
+    'JlZ2lzdHJhdGlvblIMcmVnaXN0cmF0aW9u');
 
 @$core.Deprecated('Use drawableFrameDescriptor instead')
 const DrawableFrame$json = {

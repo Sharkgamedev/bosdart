@@ -48,6 +48,8 @@ class AnswerQuestionResponse_Status extends $pb.ProtobufEnum {
   static const AnswerQuestionResponse_Status STATUS_INVALID_QUESTION_ID = AnswerQuestionResponse_Status._(2, _omitEnumNames ? '' : 'STATUS_INVALID_QUESTION_ID');
   static const AnswerQuestionResponse_Status STATUS_INVALID_CODE = AnswerQuestionResponse_Status._(3, _omitEnumNames ? '' : 'STATUS_INVALID_CODE');
   static const AnswerQuestionResponse_Status STATUS_ALREADY_ANSWERED = AnswerQuestionResponse_Status._(4, _omitEnumNames ? '' : 'STATUS_ALREADY_ANSWERED');
+  static const AnswerQuestionResponse_Status STATUS_CUSTOM_PARAMS_ERROR = AnswerQuestionResponse_Status._(5, _omitEnumNames ? '' : 'STATUS_CUSTOM_PARAMS_ERROR');
+  static const AnswerQuestionResponse_Status STATUS_INCOMPATIBLE_ANSWER = AnswerQuestionResponse_Status._(6, _omitEnumNames ? '' : 'STATUS_INCOMPATIBLE_ANSWER');
 
   static const $core.List<AnswerQuestionResponse_Status> values = <AnswerQuestionResponse_Status> [
     STATUS_UNKNOWN,
@@ -55,6 +57,8 @@ class AnswerQuestionResponse_Status extends $pb.ProtobufEnum {
     STATUS_INVALID_QUESTION_ID,
     STATUS_INVALID_CODE,
     STATUS_ALREADY_ANSWERED,
+    STATUS_CUSTOM_PARAMS_ERROR,
+    STATUS_INCOMPATIBLE_ANSWER,
   ];
 
   static final $core.Map<$core.int, AnswerQuestionResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);

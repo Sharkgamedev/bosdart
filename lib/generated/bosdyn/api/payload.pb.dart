@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'geometry.pb.dart' as $61;
-import 'header.pb.dart' as $68;
+import 'geometry.pb.dart' as $60;
+import 'header.pb.dart' as $67;
 import 'payload.pbenum.dart';
 import 'robot_id.pb.dart' as $25;
 
@@ -31,8 +31,8 @@ class Payload extends $pb.GeneratedMessage {
     $core.bool? isAuthorized,
     $core.bool? isEnabled,
     $core.bool? isNoncomputePayload,
-    $61.SE3Pose? bodyTformPayload,
-    $61.SE3Pose? mountTformPayload,
+    $60.SE3Pose? bodyTformPayload,
+    $60.SE3Pose? mountTformPayload,
     $core.Iterable<$core.String>? labelPrefix,
     PayloadMassVolumeProperties? massVolumeProperties,
     $core.Iterable<PayloadPreset>? presetConfigurations,
@@ -104,8 +104,8 @@ class Payload extends $pb.GeneratedMessage {
     ..aOB(4, _omitFieldNames ? '' : 'isAuthorized')
     ..aOB(5, _omitFieldNames ? '' : 'isEnabled')
     ..aOB(6, _omitFieldNames ? '' : 'isNoncomputePayload')
-    ..aOM<$61.SE3Pose>(7, _omitFieldNames ? '' : 'bodyTformPayload', subBuilder: $61.SE3Pose.create)
-    ..aOM<$61.SE3Pose>(8, _omitFieldNames ? '' : 'mountTformPayload', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(7, _omitFieldNames ? '' : 'bodyTformPayload', subBuilder: $60.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(8, _omitFieldNames ? '' : 'mountTformPayload', subBuilder: $60.SE3Pose.create)
     ..pPS(9, _omitFieldNames ? '' : 'labelPrefix')
     ..aOM<PayloadMassVolumeProperties>(10, _omitFieldNames ? '' : 'massVolumeProperties', subBuilder: PayloadMassVolumeProperties.create)
     ..pc<PayloadPreset>(11, _omitFieldNames ? '' : 'presetConfigurations', $pb.PbFieldType.PM, subBuilder: PayloadPreset.create)
@@ -205,27 +205,27 @@ class Payload extends $pb.GeneratedMessage {
 
   /// The pose of the payload relative to the body frame.
   @$pb.TagNumber(7)
-  $61.SE3Pose get bodyTformPayload => $_getN(6);
+  $60.SE3Pose get bodyTformPayload => $_getN(6);
   @$pb.TagNumber(7)
-  set bodyTformPayload($61.SE3Pose v) { setField(7, v); }
+  set bodyTformPayload($60.SE3Pose v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasBodyTformPayload() => $_has(6);
   @$pb.TagNumber(7)
   void clearBodyTformPayload() => clearField(7);
   @$pb.TagNumber(7)
-  $61.SE3Pose ensureBodyTformPayload() => $_ensure(6);
+  $60.SE3Pose ensureBodyTformPayload() => $_ensure(6);
 
   /// The pose of the payload relative to the mount frame.
   @$pb.TagNumber(8)
-  $61.SE3Pose get mountTformPayload => $_getN(7);
+  $60.SE3Pose get mountTformPayload => $_getN(7);
   @$pb.TagNumber(8)
-  set mountTformPayload($61.SE3Pose v) { setField(8, v); }
+  set mountTformPayload($60.SE3Pose v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasMountTformPayload() => $_has(7);
   @$pb.TagNumber(8)
   void clearMountTformPayload() => clearField(8);
   @$pb.TagNumber(8)
-  $61.SE3Pose ensureMountTformPayload() => $_ensure(7);
+  $60.SE3Pose ensureMountTformPayload() => $_ensure(7);
 
   /// A list of labels used to indicate what type of payload this is.
   @$pb.TagNumber(9)
@@ -308,7 +308,7 @@ class PayloadPreset extends $pb.GeneratedMessage {
   factory PayloadPreset({
     $core.String? presetName,
     $core.String? description,
-    $61.SE3Pose? mountTformPayload,
+    $60.SE3Pose? mountTformPayload,
     PayloadMassVolumeProperties? massVolumeProperties,
     $core.Iterable<$core.String>? labelPrefix,
     MountFrameName? mountFrameName,
@@ -341,7 +341,7 @@ class PayloadPreset extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PayloadPreset', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'presetName')
     ..aOS(2, _omitFieldNames ? '' : 'description')
-    ..aOM<$61.SE3Pose>(3, _omitFieldNames ? '' : 'mountTformPayload', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(3, _omitFieldNames ? '' : 'mountTformPayload', subBuilder: $60.SE3Pose.create)
     ..aOM<PayloadMassVolumeProperties>(4, _omitFieldNames ? '' : 'massVolumeProperties', subBuilder: PayloadMassVolumeProperties.create)
     ..pPS(5, _omitFieldNames ? '' : 'labelPrefix')
     ..e<MountFrameName>(6, _omitFieldNames ? '' : 'mountFrameName', $pb.PbFieldType.OE, defaultOrMaker: MountFrameName.MOUNT_FRAME_UNKNOWN, valueOf: MountFrameName.valueOf, enumValues: MountFrameName.values)
@@ -393,15 +393,15 @@ class PayloadPreset extends $pb.GeneratedMessage {
 
   /// The pose of the payload relative to the body frame.
   @$pb.TagNumber(3)
-  $61.SE3Pose get mountTformPayload => $_getN(2);
+  $60.SE3Pose get mountTformPayload => $_getN(2);
   @$pb.TagNumber(3)
-  set mountTformPayload($61.SE3Pose v) { setField(3, v); }
+  set mountTformPayload($60.SE3Pose v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasMountTformPayload() => $_has(2);
   @$pb.TagNumber(3)
   void clearMountTformPayload() => clearField(3);
   @$pb.TagNumber(3)
-  $61.SE3Pose ensureMountTformPayload() => $_ensure(2);
+  $60.SE3Pose ensureMountTformPayload() => $_ensure(2);
 
   /// The mass and volume properties of the payload.
   @$pb.TagNumber(4)
@@ -437,9 +437,9 @@ class PayloadPreset extends $pb.GeneratedMessage {
 class PayloadMassVolumeProperties extends $pb.GeneratedMessage {
   factory PayloadMassVolumeProperties({
     $core.double? totalMass,
-    $61.Vec3? comPosRtPayload,
+    $60.Vec3? comPosRtPayload,
     MomentOfIntertia? moiTensor,
-    $core.Iterable<$61.Box3WithFrame>? boundingBox,
+    $core.Iterable<$60.Box3WithFrame>? boundingBox,
     $core.Iterable<JointLimits>? jointLimits,
   }) {
     final $result = create();
@@ -466,9 +466,9 @@ class PayloadMassVolumeProperties extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PayloadMassVolumeProperties', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'totalMass', $pb.PbFieldType.OF)
-    ..aOM<$61.Vec3>(3, _omitFieldNames ? '' : 'comPosRtPayload', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(3, _omitFieldNames ? '' : 'comPosRtPayload', subBuilder: $60.Vec3.create)
     ..aOM<MomentOfIntertia>(4, _omitFieldNames ? '' : 'moiTensor', subBuilder: MomentOfIntertia.create)
-    ..pc<$61.Box3WithFrame>(5, _omitFieldNames ? '' : 'boundingBox', $pb.PbFieldType.PM, subBuilder: $61.Box3WithFrame.create)
+    ..pc<$60.Box3WithFrame>(5, _omitFieldNames ? '' : 'boundingBox', $pb.PbFieldType.PM, subBuilder: $60.Box3WithFrame.create)
     ..pc<JointLimits>(6, _omitFieldNames ? '' : 'jointLimits', $pb.PbFieldType.PM, subBuilder: JointLimits.create)
     ..hasRequiredFields = false
   ;
@@ -506,15 +506,15 @@ class PayloadMassVolumeProperties extends $pb.GeneratedMessage {
 
   /// Position of the center of mass of the payload in the payload frame. Meters.
   @$pb.TagNumber(3)
-  $61.Vec3 get comPosRtPayload => $_getN(1);
+  $60.Vec3 get comPosRtPayload => $_getN(1);
   @$pb.TagNumber(3)
-  set comPosRtPayload($61.Vec3 v) { setField(3, v); }
+  set comPosRtPayload($60.Vec3 v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasComPosRtPayload() => $_has(1);
   @$pb.TagNumber(3)
   void clearComPosRtPayload() => clearField(3);
   @$pb.TagNumber(3)
-  $61.Vec3 ensureComPosRtPayload() => $_ensure(1);
+  $60.Vec3 ensureComPosRtPayload() => $_ensure(1);
 
   /// The moment of inertia of the payload, represented about the payload
   /// center of mass, in the payload frame. Units in [kg*m^2].
@@ -533,7 +533,7 @@ class PayloadMassVolumeProperties extends $pb.GeneratedMessage {
   /// These boxes must be represented in the payload frame by specifying
   /// Must have Box3WithFrame.frame_name == "payload".
   @$pb.TagNumber(5)
-  $core.List<$61.Box3WithFrame> get boundingBox => $_getList(3);
+  $core.List<$60.Box3WithFrame> get boundingBox => $_getList(3);
 
   /// Joint limits defining limits to range of motion of the hips of the robot,
   /// in order to prevent collisions with the payload.
@@ -743,7 +743,7 @@ class JointLimits extends $pb.GeneratedMessage {
 /// The ListPayloads request message sent to the robot to get all known payloads.
 class ListPayloadsRequest extends $pb.GeneratedMessage {
   factory ListPayloadsRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -756,7 +756,7 @@ class ListPayloadsRequest extends $pb.GeneratedMessage {
   factory ListPayloadsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPayloadsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -783,21 +783,21 @@ class ListPayloadsRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The ListPayloads response message returns all payloads registered in the robot's directory.
 class ListPayloadsResponse extends $pb.GeneratedMessage {
   factory ListPayloadsResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<Payload>? payloads,
   }) {
     final $result = create();
@@ -814,7 +814,7 @@ class ListPayloadsResponse extends $pb.GeneratedMessage {
   factory ListPayloadsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPayloadsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<Payload>(2, _omitFieldNames ? '' : 'payloads', $pb.PbFieldType.PM, subBuilder: Payload.create)
     ..hasRequiredFields = false
   ;
@@ -842,15 +842,15 @@ class ListPayloadsResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The returned list of payloads registered in the directory.
   @$pb.TagNumber(2)

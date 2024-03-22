@@ -13,11 +13,11 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest_mset_wire_format.pb.dart' as $103;
+import 'unittest_mset_wire_format.pb.dart' as $106;
 
 class TestMessageSetContainer extends $pb.GeneratedMessage {
   factory TestMessageSetContainer({
-    $103.TestMessageSet? messageSet,
+    $106.TestMessageSet? messageSet,
   }) {
     final $result = create();
     if (messageSet != null) {
@@ -30,7 +30,7 @@ class TestMessageSetContainer extends $pb.GeneratedMessage {
   factory TestMessageSetContainer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestMessageSetContainer', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest'), createEmptyInstance: create)
-    ..aOM<$103.TestMessageSet>(1, _omitFieldNames ? '' : 'messageSet', subBuilder: $103.TestMessageSet.create)
+    ..aOM<$106.TestMessageSet>(1, _omitFieldNames ? '' : 'messageSet', subBuilder: $106.TestMessageSet.create)
   ;
 
   @$core.Deprecated(
@@ -55,15 +55,15 @@ class TestMessageSetContainer extends $pb.GeneratedMessage {
   static TestMessageSetContainer? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $103.TestMessageSet get messageSet => $_getN(0);
+  $106.TestMessageSet get messageSet => $_getN(0);
   @$pb.TagNumber(1)
-  set messageSet($103.TestMessageSet v) { setField(1, v); }
+  set messageSet($106.TestMessageSet v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMessageSet() => $_has(0);
   @$pb.TagNumber(1)
   void clearMessageSet() => clearField(1);
   @$pb.TagNumber(1)
-  $103.TestMessageSet ensureMessageSet() => $_ensure(0);
+  $106.TestMessageSet ensureMessageSet() => $_ensure(0);
 }
 
 class NestedTestMessageSetContainer extends $pb.GeneratedMessage {
@@ -216,7 +216,7 @@ class NestedTestInt extends $pb.GeneratedMessage {
 class TestMessageSetExtension1 extends $pb.GeneratedMessage {
   factory TestMessageSetExtension1({
     $core.int? i,
-    $103.TestMessageSet? recursive,
+    $106.TestMessageSet? recursive,
     $core.String? testAliasing,
   }) {
     final $result = create();
@@ -237,7 +237,7 @@ class TestMessageSetExtension1 extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestMessageSetExtension1', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest'), createEmptyInstance: create)
     ..a<$core.int>(15, _omitFieldNames ? '' : 'i', $pb.PbFieldType.O3)
-    ..aOM<$103.TestMessageSet>(16, _omitFieldNames ? '' : 'recursive', subBuilder: $103.TestMessageSet.create)
+    ..aOM<$106.TestMessageSet>(16, _omitFieldNames ? '' : 'recursive', subBuilder: $106.TestMessageSet.create)
     ..aOS(17, _omitFieldNames ? '' : 'testAliasing')
   ;
   static final messageSetExtension = $pb.Extension<TestMessageSetExtension1>(_omitMessageNames ? '' : 'proto2_wireformat_unittest.TestMessageSet', _omitFieldNames ? '' : 'messageSetExtension', 1545008, $pb.PbFieldType.OM, defaultOrMaker: TestMessageSetExtension1.getDefault, subBuilder: TestMessageSetExtension1.create);
@@ -273,15 +273,15 @@ class TestMessageSetExtension1 extends $pb.GeneratedMessage {
   void clearI() => clearField(15);
 
   @$pb.TagNumber(16)
-  $103.TestMessageSet get recursive => $_getN(1);
+  $106.TestMessageSet get recursive => $_getN(1);
   @$pb.TagNumber(16)
-  set recursive($103.TestMessageSet v) { setField(16, v); }
+  set recursive($106.TestMessageSet v) { setField(16, v); }
   @$pb.TagNumber(16)
   $core.bool hasRecursive() => $_has(1);
   @$pb.TagNumber(16)
   void clearRecursive() => clearField(16);
   @$pb.TagNumber(16)
-  $103.TestMessageSet ensureRecursive() => $_ensure(1);
+  $106.TestMessageSet ensureRecursive() => $_ensure(1);
 
   @$pb.TagNumber(17)
   $core.String get testAliasing => $_getSZ(2);

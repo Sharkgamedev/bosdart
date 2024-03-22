@@ -37,6 +37,14 @@ class SpotCheckServiceClient extends $grpc.Client {
       '/bosdyn.api.spot.SpotCheckService/CameraCalibrationFeedback',
       ($32.CameraCalibrationFeedbackRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $32.CameraCalibrationFeedbackResponse.fromBuffer(value));
+  static final _$gripperCameraCalibrationCommand = $grpc.ClientMethod<$32.GripperCameraCalibrationCommandRequest, $32.GripperCameraCalibrationCommandResponse>(
+      '/bosdyn.api.spot.SpotCheckService/GripperCameraCalibrationCommand',
+      ($32.GripperCameraCalibrationCommandRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $32.GripperCameraCalibrationCommandResponse.fromBuffer(value));
+  static final _$gripperCameraCalibrationFeedback = $grpc.ClientMethod<$32.GripperCameraCalibrationFeedbackRequest, $32.GripperCameraCalibrationFeedbackResponse>(
+      '/bosdyn.api.spot.SpotCheckService/GripperCameraCalibrationFeedback',
+      ($32.GripperCameraCalibrationFeedbackRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $32.GripperCameraCalibrationFeedbackResponse.fromBuffer(value));
 
   SpotCheckServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -58,6 +66,14 @@ class SpotCheckServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$32.CameraCalibrationFeedbackResponse> cameraCalibrationFeedback($32.CameraCalibrationFeedbackRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$cameraCalibrationFeedback, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$32.GripperCameraCalibrationCommandResponse> gripperCameraCalibrationCommand($32.GripperCameraCalibrationCommandRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$gripperCameraCalibrationCommand, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$32.GripperCameraCalibrationFeedbackResponse> gripperCameraCalibrationFeedback($32.GripperCameraCalibrationFeedbackRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$gripperCameraCalibrationFeedback, request, options: options);
   }
 }
 
@@ -94,6 +110,20 @@ abstract class SpotCheckServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $32.CameraCalibrationFeedbackRequest.fromBuffer(value),
         ($32.CameraCalibrationFeedbackResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$32.GripperCameraCalibrationCommandRequest, $32.GripperCameraCalibrationCommandResponse>(
+        'GripperCameraCalibrationCommand',
+        gripperCameraCalibrationCommand_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $32.GripperCameraCalibrationCommandRequest.fromBuffer(value),
+        ($32.GripperCameraCalibrationCommandResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$32.GripperCameraCalibrationFeedbackRequest, $32.GripperCameraCalibrationFeedbackResponse>(
+        'GripperCameraCalibrationFeedback',
+        gripperCameraCalibrationFeedback_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $32.GripperCameraCalibrationFeedbackRequest.fromBuffer(value),
+        ($32.GripperCameraCalibrationFeedbackResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$32.SpotCheckCommandResponse> spotCheckCommand_Pre($grpc.ServiceCall call, $async.Future<$32.SpotCheckCommandRequest> request) async {
@@ -112,8 +142,18 @@ abstract class SpotCheckServiceBase extends $grpc.Service {
     return cameraCalibrationFeedback(call, await request);
   }
 
+  $async.Future<$32.GripperCameraCalibrationCommandResponse> gripperCameraCalibrationCommand_Pre($grpc.ServiceCall call, $async.Future<$32.GripperCameraCalibrationCommandRequest> request) async {
+    return gripperCameraCalibrationCommand(call, await request);
+  }
+
+  $async.Future<$32.GripperCameraCalibrationFeedbackResponse> gripperCameraCalibrationFeedback_Pre($grpc.ServiceCall call, $async.Future<$32.GripperCameraCalibrationFeedbackRequest> request) async {
+    return gripperCameraCalibrationFeedback(call, await request);
+  }
+
   $async.Future<$32.SpotCheckCommandResponse> spotCheckCommand($grpc.ServiceCall call, $32.SpotCheckCommandRequest request);
   $async.Future<$32.SpotCheckFeedbackResponse> spotCheckFeedback($grpc.ServiceCall call, $32.SpotCheckFeedbackRequest request);
   $async.Future<$32.CameraCalibrationCommandResponse> cameraCalibrationCommand($grpc.ServiceCall call, $32.CameraCalibrationCommandRequest request);
   $async.Future<$32.CameraCalibrationFeedbackResponse> cameraCalibrationFeedback($grpc.ServiceCall call, $32.CameraCalibrationFeedbackRequest request);
+  $async.Future<$32.GripperCameraCalibrationCommandResponse> gripperCameraCalibrationCommand($grpc.ServiceCall call, $32.GripperCameraCalibrationCommandRequest request);
+  $async.Future<$32.GripperCameraCalibrationFeedbackResponse> gripperCameraCalibrationFeedback($grpc.ServiceCall call, $32.GripperCameraCalibrationFeedbackRequest request);
 }

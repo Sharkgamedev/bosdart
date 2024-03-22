@@ -14,16 +14,16 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $60;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
 import 'data_buffer.pbenum.dart';
-import 'header.pb.dart' as $68;
-import 'parameter.pb.dart' as $76;
+import 'header.pb.dart' as $67;
+import 'parameter.pb.dart' as $77;
 
 export 'data_buffer.pbenum.dart';
 
 class RecordTextMessagesRequest extends $pb.GeneratedMessage {
   factory RecordTextMessagesRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<TextMessage>? textMessages,
   }) {
     final $result = create();
@@ -40,7 +40,7 @@ class RecordTextMessagesRequest extends $pb.GeneratedMessage {
   factory RecordTextMessagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordTextMessagesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pc<TextMessage>(2, _omitFieldNames ? '' : 'textMessages', $pb.PbFieldType.PM, subBuilder: TextMessage.create)
     ..hasRequiredFields = false
   ;
@@ -68,15 +68,15 @@ class RecordTextMessagesRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The text messages to be logged.
   @$pb.TagNumber(2)
@@ -85,7 +85,7 @@ class RecordTextMessagesRequest extends $pb.GeneratedMessage {
 
 class RecordOperatorCommentsRequest extends $pb.GeneratedMessage {
   factory RecordOperatorCommentsRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<OperatorComment>? operatorComments,
   }) {
     final $result = create();
@@ -102,7 +102,7 @@ class RecordOperatorCommentsRequest extends $pb.GeneratedMessage {
   factory RecordOperatorCommentsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordOperatorCommentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pc<OperatorComment>(2, _omitFieldNames ? '' : 'operatorComments', $pb.PbFieldType.PM, subBuilder: OperatorComment.create)
     ..hasRequiredFields = false
   ;
@@ -130,15 +130,15 @@ class RecordOperatorCommentsRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The operator comments to be logged.
   @$pb.TagNumber(2)
@@ -147,7 +147,7 @@ class RecordOperatorCommentsRequest extends $pb.GeneratedMessage {
 
 class RecordDataBlobsRequest extends $pb.GeneratedMessage {
   factory RecordDataBlobsRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<DataBlob>? blobData,
     $core.bool? sync,
   }) {
@@ -168,7 +168,7 @@ class RecordDataBlobsRequest extends $pb.GeneratedMessage {
   factory RecordDataBlobsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordDataBlobsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pc<DataBlob>(2, _omitFieldNames ? '' : 'blobData', $pb.PbFieldType.PM, subBuilder: DataBlob.create)
     ..aOB(3, _omitFieldNames ? '' : 'sync')
     ..hasRequiredFields = false
@@ -197,15 +197,15 @@ class RecordDataBlobsRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The data blobs to be logged.
   @$pb.TagNumber(2)
@@ -225,7 +225,7 @@ class RecordDataBlobsRequest extends $pb.GeneratedMessage {
 
 class RecordSignalTicksRequest extends $pb.GeneratedMessage {
   factory RecordSignalTicksRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<SignalTick>? tickData,
   }) {
     final $result = create();
@@ -242,7 +242,7 @@ class RecordSignalTicksRequest extends $pb.GeneratedMessage {
   factory RecordSignalTicksRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordSignalTicksRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pc<SignalTick>(2, _omitFieldNames ? '' : 'tickData', $pb.PbFieldType.PM, subBuilder: SignalTick.create)
     ..hasRequiredFields = false
   ;
@@ -270,15 +270,15 @@ class RecordSignalTicksRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The signals data to be logged.
   @$pb.TagNumber(2)
@@ -287,7 +287,7 @@ class RecordSignalTicksRequest extends $pb.GeneratedMessage {
 
 class RecordEventsRequest extends $pb.GeneratedMessage {
   factory RecordEventsRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.Iterable<Event>? events,
   }) {
     final $result = create();
@@ -304,7 +304,7 @@ class RecordEventsRequest extends $pb.GeneratedMessage {
   factory RecordEventsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordEventsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..pc<Event>(2, _omitFieldNames ? '' : 'events', $pb.PbFieldType.PM, subBuilder: Event.create)
     ..hasRequiredFields = false
   ;
@@ -332,15 +332,15 @@ class RecordEventsRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The events to be logged.
   @$pb.TagNumber(2)
@@ -352,7 +352,7 @@ class RecordEventsRequest extends $pb.GeneratedMessage {
 class TextMessage extends $pb.GeneratedMessage {
   factory TextMessage({
     $core.String? message,
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
     $core.String? source,
     TextMessage_Level? level,
     $core.String? tag,
@@ -389,7 +389,7 @@ class TextMessage extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TextMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'message')
-    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..aOS(3, _omitFieldNames ? '' : 'source')
     ..e<TextMessage_Level>(4, _omitFieldNames ? '' : 'level', $pb.PbFieldType.OE, defaultOrMaker: TextMessage_Level.LEVEL_UNKNOWN, valueOf: TextMessage_Level.valueOf, enumValues: TextMessage_Level.values)
     ..aOS(5, _omitFieldNames ? '' : 'tag')
@@ -432,15 +432,15 @@ class TextMessage extends $pb.GeneratedMessage {
   /// The timestamp of the annotation.  This must be in robot time.
   /// If this is not specified, this will default to the time the server received the message.
   @$pb.TagNumber(2)
-  $60.Timestamp get timestamp => $_getN(1);
+  $59.Timestamp get timestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set timestamp($60.Timestamp v) { setField(2, v); }
+  set timestamp($59.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Timestamp ensureTimestamp() => $_ensure(1);
+  $59.Timestamp ensureTimestamp() => $_ensure(1);
 
   /// The client name.
   /// This may be used to segregate data for the same variables to different parts of the buffer.
@@ -500,7 +500,7 @@ class TextMessage extends $pb.GeneratedMessage {
 class OperatorComment extends $pb.GeneratedMessage {
   factory OperatorComment({
     $core.String? message,
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
   }) {
     final $result = create();
     if (message != null) {
@@ -517,7 +517,7 @@ class OperatorComment extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OperatorComment', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'message')
-    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -555,21 +555,21 @@ class OperatorComment extends $pb.GeneratedMessage {
   /// The timestamp of the annotation.  This must be in robot time.
   /// If this is not specified, this will default to the time the server received the message.
   @$pb.TagNumber(2)
-  $60.Timestamp get timestamp => $_getN(1);
+  $59.Timestamp get timestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set timestamp($60.Timestamp v) { setField(2, v); }
+  set timestamp($59.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Timestamp ensureTimestamp() => $_ensure(1);
+  $59.Timestamp ensureTimestamp() => $_ensure(1);
 }
 
 /// Message-style data to add to the log.
 class DataBlob extends $pb.GeneratedMessage {
   factory DataBlob({
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
     $core.String? channel,
     $core.String? typeId,
     $core.List<$core.int>? data,
@@ -594,7 +594,7 @@ class DataBlob extends $pb.GeneratedMessage {
   factory DataBlob.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DataBlob', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..aOS(2, _omitFieldNames ? '' : 'channel')
     ..aOS(3, _omitFieldNames ? '' : 'typeId')
     ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
@@ -624,15 +624,15 @@ class DataBlob extends $pb.GeneratedMessage {
 
   /// Timestamp of data in robot clock time.  This is required.
   @$pb.TagNumber(1)
-  $60.Timestamp get timestamp => $_getN(0);
+  $59.Timestamp get timestamp => $_getN(0);
   @$pb.TagNumber(1)
-  set timestamp($60.Timestamp v) { setField(1, v); }
+  set timestamp($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimestamp() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimestamp() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureTimestamp() => $_ensure(0);
+  $59.Timestamp ensureTimestamp() => $_ensure(0);
 
   /// A general label for this blob.
   /// This is distinct from type_id, which identifies how the blob is to be parsed.
@@ -885,7 +885,7 @@ class SignalSchemaId extends $pb.GeneratedMessage {
 class SignalTick extends $pb.GeneratedMessage {
   factory SignalTick({
     $fixnum.Int64? sequenceId,
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
     $core.String? source,
     $fixnum.Int64? schemaId,
     SignalTick_Encoding? encoding,
@@ -918,7 +918,7 @@ class SignalTick extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SignalTick', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'sequenceId')
-    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..aOS(3, _omitFieldNames ? '' : 'source')
     ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'schemaId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..e<SignalTick_Encoding>(5, _omitFieldNames ? '' : 'encoding', $pb.PbFieldType.OE, defaultOrMaker: SignalTick_Encoding.ENCODING_UNKNOWN, valueOf: SignalTick_Encoding.valueOf, enumValues: SignalTick_Encoding.values)
@@ -960,15 +960,15 @@ class SignalTick extends $pb.GeneratedMessage {
 
   /// Timestamp at which the variable values were sampled.
   @$pb.TagNumber(2)
-  $60.Timestamp get timestamp => $_getN(1);
+  $59.Timestamp get timestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set timestamp($60.Timestamp v) { setField(2, v); }
+  set timestamp($59.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Timestamp ensureTimestamp() => $_ensure(1);
+  $59.Timestamp ensureTimestamp() => $_ensure(1);
 
   /// The client name.
   /// This may be used to segregate data for the same variables to different parts of the buffer.
@@ -1020,10 +1020,10 @@ class Event extends $pb.GeneratedMessage {
     $core.String? description,
     $core.String? source,
     $core.String? id,
-    $60.Timestamp? startTime,
-    $60.Timestamp? endTime,
+    $59.Timestamp? startTime,
+    $59.Timestamp? endTime,
     Event_Level? level,
-    $core.Iterable<$76.Parameter>? parameters,
+    $core.Iterable<$77.Parameter>? parameters,
     Event_LogPreserveHint? logPreserveHint,
   }) {
     final $result = create();
@@ -1065,10 +1065,10 @@ class Event extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'description')
     ..aOS(3, _omitFieldNames ? '' : 'source')
     ..aOS(4, _omitFieldNames ? '' : 'id')
-    ..aOM<$60.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $60.Timestamp.create)
-    ..aOM<$60.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(5, _omitFieldNames ? '' : 'startTime', subBuilder: $59.Timestamp.create)
+    ..aOM<$59.Timestamp>(6, _omitFieldNames ? '' : 'endTime', subBuilder: $59.Timestamp.create)
     ..e<Event_Level>(7, _omitFieldNames ? '' : 'level', $pb.PbFieldType.OE, defaultOrMaker: Event_Level.LEVEL_UNSET, valueOf: Event_Level.valueOf, enumValues: Event_Level.values)
-    ..pc<$76.Parameter>(8, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: $76.Parameter.create)
+    ..pc<$77.Parameter>(8, _omitFieldNames ? '' : 'parameters', $pb.PbFieldType.PM, subBuilder: $77.Parameter.create)
     ..e<Event_LogPreserveHint>(9, _omitFieldNames ? '' : 'logPreserveHint', $pb.PbFieldType.OE, defaultOrMaker: Event_LogPreserveHint.LOG_PRESERVE_HINT_UNSET, valueOf: Event_LogPreserveHint.valueOf, enumValues: Event_LogPreserveHint.values)
     ..hasRequiredFields = false
   ;
@@ -1153,26 +1153,26 @@ class Event extends $pb.GeneratedMessage {
   ///    additional data, and an end time.  If you have the end message, you should not need
   ///    the start message since it is a strict subset.
   @$pb.TagNumber(5)
-  $60.Timestamp get startTime => $_getN(4);
+  $59.Timestamp get startTime => $_getN(4);
   @$pb.TagNumber(5)
-  set startTime($60.Timestamp v) { setField(5, v); }
+  set startTime($59.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStartTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearStartTime() => clearField(5);
   @$pb.TagNumber(5)
-  $60.Timestamp ensureStartTime() => $_ensure(4);
+  $59.Timestamp ensureStartTime() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $60.Timestamp get endTime => $_getN(5);
+  $59.Timestamp get endTime => $_getN(5);
   @$pb.TagNumber(6)
-  set endTime($60.Timestamp v) { setField(6, v); }
+  set endTime($59.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasEndTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearEndTime() => clearField(6);
   @$pb.TagNumber(6)
-  $60.Timestamp ensureEndTime() => $_ensure(5);
+  $59.Timestamp ensureEndTime() => $_ensure(5);
 
   /// The relative importance of the event.
   @$pb.TagNumber(7)
@@ -1186,7 +1186,7 @@ class Event extends $pb.GeneratedMessage {
 
   /// Optional set of event parameters.
   @$pb.TagNumber(8)
-  $core.List<$76.Parameter> get parameters => $_getList(7);
+  $core.List<$77.Parameter> get parameters => $_getList(7);
 
   /// Optionally request that the robot try to preserve data near this time for a service log.
   @$pb.TagNumber(9)
@@ -1283,7 +1283,7 @@ class RecordTextMessagesResponse_Error extends $pb.GeneratedMessage {
 
 class RecordTextMessagesResponse extends $pb.GeneratedMessage {
   factory RecordTextMessagesResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<RecordTextMessagesResponse_Error>? errors,
   }) {
     final $result = create();
@@ -1300,7 +1300,7 @@ class RecordTextMessagesResponse extends $pb.GeneratedMessage {
   factory RecordTextMessagesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordTextMessagesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<RecordTextMessagesResponse_Error>(2, _omitFieldNames ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: RecordTextMessagesResponse_Error.create)
     ..hasRequiredFields = false
   ;
@@ -1328,15 +1328,15 @@ class RecordTextMessagesResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Errors which occurred when logging text message data.
   @$pb.TagNumber(2)
@@ -1427,7 +1427,7 @@ class RecordOperatorCommentsResponse_Error extends $pb.GeneratedMessage {
 
 class RecordOperatorCommentsResponse extends $pb.GeneratedMessage {
   factory RecordOperatorCommentsResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<RecordOperatorCommentsResponse_Error>? errors,
   }) {
     final $result = create();
@@ -1444,7 +1444,7 @@ class RecordOperatorCommentsResponse extends $pb.GeneratedMessage {
   factory RecordOperatorCommentsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordOperatorCommentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<RecordOperatorCommentsResponse_Error>(2, _omitFieldNames ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: RecordOperatorCommentsResponse_Error.create)
     ..hasRequiredFields = false
   ;
@@ -1472,15 +1472,15 @@ class RecordOperatorCommentsResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Errors which occurred when logging operator comments.
   @$pb.TagNumber(2)
@@ -1571,7 +1571,7 @@ class RecordDataBlobsResponse_Error extends $pb.GeneratedMessage {
 
 class RecordDataBlobsResponse extends $pb.GeneratedMessage {
   factory RecordDataBlobsResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<RecordDataBlobsResponse_Error>? errors,
   }) {
     final $result = create();
@@ -1588,7 +1588,7 @@ class RecordDataBlobsResponse extends $pb.GeneratedMessage {
   factory RecordDataBlobsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordDataBlobsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<RecordDataBlobsResponse_Error>(2, _omitFieldNames ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: RecordDataBlobsResponse_Error.create)
     ..hasRequiredFields = false
   ;
@@ -1616,15 +1616,15 @@ class RecordDataBlobsResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Errors which occurred when logging data blobs.
   @$pb.TagNumber(2)
@@ -1715,7 +1715,7 @@ class RecordSignalTicksResponse_Error extends $pb.GeneratedMessage {
 
 class RecordSignalTicksResponse extends $pb.GeneratedMessage {
   factory RecordSignalTicksResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<RecordSignalTicksResponse_Error>? errors,
   }) {
     final $result = create();
@@ -1732,7 +1732,7 @@ class RecordSignalTicksResponse extends $pb.GeneratedMessage {
   factory RecordSignalTicksResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordSignalTicksResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<RecordSignalTicksResponse_Error>(2, _omitFieldNames ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: RecordSignalTicksResponse_Error.create)
     ..hasRequiredFields = false
   ;
@@ -1760,15 +1760,15 @@ class RecordSignalTicksResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Errors which occurred when logging signal ticks.
   @$pb.TagNumber(2)
@@ -1859,7 +1859,7 @@ class RecordEventsResponse_Error extends $pb.GeneratedMessage {
 
 class RecordEventsResponse extends $pb.GeneratedMessage {
   factory RecordEventsResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.Iterable<RecordEventsResponse_Error>? errors,
   }) {
     final $result = create();
@@ -1876,7 +1876,7 @@ class RecordEventsResponse extends $pb.GeneratedMessage {
   factory RecordEventsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordEventsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..pc<RecordEventsResponse_Error>(2, _omitFieldNames ? '' : 'errors', $pb.PbFieldType.PM, subBuilder: RecordEventsResponse_Error.create)
     ..hasRequiredFields = false
   ;
@@ -1904,15 +1904,15 @@ class RecordEventsResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Errors which occurred when logging events.
   @$pb.TagNumber(2)
@@ -1921,7 +1921,7 @@ class RecordEventsResponse extends $pb.GeneratedMessage {
 
 class RegisterSignalSchemaRequest extends $pb.GeneratedMessage {
   factory RegisterSignalSchemaRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     SignalSchema? schema,
   }) {
     final $result = create();
@@ -1938,7 +1938,7 @@ class RegisterSignalSchemaRequest extends $pb.GeneratedMessage {
   factory RegisterSignalSchemaRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterSignalSchemaRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<SignalSchema>(2, _omitFieldNames ? '' : 'schema', subBuilder: SignalSchema.create)
     ..hasRequiredFields = false
   ;
@@ -1966,15 +1966,15 @@ class RegisterSignalSchemaRequest extends $pb.GeneratedMessage {
 
   /// Common request/response header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Defines a schema for interpreting SignalTick data containing packed signals-type data.
   @$pb.TagNumber(2)
@@ -1991,7 +1991,7 @@ class RegisterSignalSchemaRequest extends $pb.GeneratedMessage {
 
 class RegisterSignalSchemaResponse extends $pb.GeneratedMessage {
   factory RegisterSignalSchemaResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $fixnum.Int64? schemaId,
   }) {
     final $result = create();
@@ -2008,7 +2008,7 @@ class RegisterSignalSchemaResponse extends $pb.GeneratedMessage {
   factory RegisterSignalSchemaResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterSignalSchemaResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'schemaId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
@@ -2036,15 +2036,15 @@ class RegisterSignalSchemaResponse extends $pb.GeneratedMessage {
 
   /// Common request/response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// Server returns a unique ID based on the client ID and schema definition.
   /// Always greater than zero.

@@ -19,19 +19,12 @@ const RobotCommand$json = {
   '2': [
     {'1': 'full_body_command', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.FullBodyCommand.Request', '9': 0, '10': 'fullBodyCommand'},
     {'1': 'synchronized_command', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.SynchronizedCommand.Request', '9': 0, '10': 'synchronizedCommand'},
-    {
-      '1': 'mobility_command',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.bosdyn.api.MobilityCommand.Request',
-      '8': {'3': true},
-      '9': 0,
-      '10': 'mobilityCommand',
-    },
   ],
   '8': [
     {'1': 'command'},
+  ],
+  '9': [
+    {'1': 2, '2': 3},
   ],
 };
 
@@ -40,9 +33,7 @@ final $typed_data.Uint8List robotCommandDescriptor = $convert.base64Decode(
     'CgxSb2JvdENvbW1hbmQSUQoRZnVsbF9ib2R5X2NvbW1hbmQYASABKAsyIy5ib3NkeW4uYXBpLk'
     'Z1bGxCb2R5Q29tbWFuZC5SZXF1ZXN0SABSD2Z1bGxCb2R5Q29tbWFuZBJcChRzeW5jaHJvbml6'
     'ZWRfY29tbWFuZBgDIAEoCzInLmJvc2R5bi5hcGkuU3luY2hyb25pemVkQ29tbWFuZC5SZXF1ZX'
-    'N0SABSE3N5bmNocm9uaXplZENvbW1hbmQSVAoQbW9iaWxpdHlfY29tbWFuZBgCIAEoCzIjLmJv'
-    'c2R5bi5hcGkuTW9iaWxpdHlDb21tYW5kLlJlcXVlc3RCAhgBSABSD21vYmlsaXR5Q29tbWFuZE'
-    'IJCgdjb21tYW5k');
+    'N0SABSE3N5bmNocm9uaXplZENvbW1hbmRCCQoHY29tbWFuZEoECAIQAw==');
 
 @$core.Deprecated('Use robotCommandFeedbackDescriptor instead')
 const RobotCommandFeedback$json = {
@@ -50,19 +41,12 @@ const RobotCommandFeedback$json = {
   '2': [
     {'1': 'full_body_feedback', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.FullBodyCommand.Feedback', '9': 0, '10': 'fullBodyFeedback'},
     {'1': 'synchronized_feedback', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.SynchronizedCommand.Feedback', '9': 0, '10': 'synchronizedFeedback'},
-    {
-      '1': 'mobility_feedback',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.bosdyn.api.MobilityCommand.Feedback',
-      '8': {'3': true},
-      '9': 0,
-      '10': 'mobilityFeedback',
-    },
   ],
   '8': [
     {'1': 'command'},
+  ],
+  '9': [
+    {'1': 1, '2': 2},
   ],
 };
 
@@ -71,9 +55,7 @@ final $typed_data.Uint8List robotCommandFeedbackDescriptor = $convert.base64Deco
     'ChRSb2JvdENvbW1hbmRGZWVkYmFjaxJUChJmdWxsX2JvZHlfZmVlZGJhY2sYAiABKAsyJC5ib3'
     'NkeW4uYXBpLkZ1bGxCb2R5Q29tbWFuZC5GZWVkYmFja0gAUhBmdWxsQm9keUZlZWRiYWNrEl8K'
     'FXN5bmNocm9uaXplZF9mZWVkYmFjaxgDIAEoCzIoLmJvc2R5bi5hcGkuU3luY2hyb25pemVkQ2'
-    '9tbWFuZC5GZWVkYmFja0gAUhRzeW5jaHJvbml6ZWRGZWVkYmFjaxJXChFtb2JpbGl0eV9mZWVk'
-    'YmFjaxgBIAEoCzIkLmJvc2R5bi5hcGkuTW9iaWxpdHlDb21tYW5kLkZlZWRiYWNrQgIYAUgAUh'
-    'Btb2JpbGl0eUZlZWRiYWNrQgkKB2NvbW1hbmQ=');
+    '9tbWFuZC5GZWVkYmFja0gAUhRzeW5jaHJvbml6ZWRGZWVkYmFja0IJCgdjb21tYW5kSgQIARAC');
 
 @$core.Deprecated('Use robotCommandRequestDescriptor instead')
 const RobotCommandRequest$json = {
@@ -158,52 +140,21 @@ const RobotCommandFeedbackResponse$json = {
   '2': [
     {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
     {'1': 'lease_use_result', '3': 5, '4': 1, '5': 11, '6': '.bosdyn.api.LeaseUseResult', '10': 'leaseUseResult'},
-    {
-      '1': 'status',
-      '3': 2,
-      '4': 1,
-      '5': 14,
-      '6': '.bosdyn.api.RobotCommandFeedbackResponse.Status',
-      '8': {'3': true},
-      '10': 'status',
-    },
-    {
-      '1': 'message',
-      '3': 3,
-      '4': 1,
-      '5': 9,
-      '8': {'3': true},
-      '10': 'message',
-    },
     {'1': 'feedback', '3': 4, '4': 1, '5': 11, '6': '.bosdyn.api.RobotCommandFeedback', '10': 'feedback'},
   ],
-  '4': [RobotCommandFeedbackResponse_Status$json],
-};
-
-@$core.Deprecated('Use robotCommandFeedbackResponseDescriptor instead')
-const RobotCommandFeedbackResponse_Status$json = {
-  '1': 'Status',
-  '2': [
-    {'1': 'STATUS_UNKNOWN', '2': 0},
-    {'1': 'STATUS_PROCESSING', '2': 1},
-    {'1': 'STATUS_COMMAND_OVERRIDDEN', '2': 2},
-    {'1': 'STATUS_COMMAND_TIMED_OUT', '2': 3},
-    {'1': 'STATUS_ROBOT_FROZEN', '2': 4},
+  '9': [
+    {'1': 2, '2': 3},
+    {'1': 3, '2': 4},
   ],
-  '3': {'3': true},
 };
 
 /// Descriptor for `RobotCommandFeedbackResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List robotCommandFeedbackResponseDescriptor = $convert.base64Decode(
     'ChxSb2JvdENvbW1hbmRGZWVkYmFja1Jlc3BvbnNlEjIKBmhlYWRlchgBIAEoCzIaLmJvc2R5bi'
     '5hcGkuUmVzcG9uc2VIZWFkZXJSBmhlYWRlchJEChBsZWFzZV91c2VfcmVzdWx0GAUgASgLMhou'
-    'Ym9zZHluLmFwaS5MZWFzZVVzZVJlc3VsdFIObGVhc2VVc2VSZXN1bHQSSwoGc3RhdHVzGAIgAS'
-    'gOMi8uYm9zZHluLmFwaS5Sb2JvdENvbW1hbmRGZWVkYmFja1Jlc3BvbnNlLlN0YXR1c0ICGAFS'
-    'BnN0YXR1cxIcCgdtZXNzYWdlGAMgASgJQgIYAVIHbWVzc2FnZRI8CghmZWVkYmFjaxgEIAEoCz'
-    'IgLmJvc2R5bi5hcGkuUm9ib3RDb21tYW5kRmVlZGJhY2tSCGZlZWRiYWNrIo0BCgZTdGF0dXMS'
-    'EgoOU1RBVFVTX1VOS05PV04QABIVChFTVEFUVVNfUFJPQ0VTU0lORxABEh0KGVNUQVRVU19DT0'
-    '1NQU5EX09WRVJSSURERU4QAhIcChhTVEFUVVNfQ09NTUFORF9USU1FRF9PVVQQAxIXChNTVEFU'
-    'VVNfUk9CT1RfRlJPWkVOEAQaAhgB');
+    'Ym9zZHluLmFwaS5MZWFzZVVzZVJlc3VsdFIObGVhc2VVc2VSZXN1bHQSPAoIZmVlZGJhY2sYBC'
+    'ABKAsyIC5ib3NkeW4uYXBpLlJvYm90Q29tbWFuZEZlZWRiYWNrUghmZWVkYmFja0oECAIQA0oE'
+    'CAMQBA==');
 
 @$core.Deprecated('Use clearBehaviorFaultRequestDescriptor instead')
 const ClearBehaviorFaultRequest$json = {
@@ -254,4 +205,52 @@ final $typed_data.Uint8List clearBehaviorFaultResponseDescriptor = $convert.base
     'F2aW9yRmF1bHQSTQoWYmxvY2tpbmdfc3lzdGVtX2ZhdWx0cxgFIAMoCzIXLmJvc2R5bi5hcGku'
     'U3lzdGVtRmF1bHRSFGJsb2NraW5nU3lzdGVtRmF1bHRzIkgKBlN0YXR1cxISCg5TVEFUVVNfVU'
     '5LTk9XThAAEhIKDlNUQVRVU19DTEVBUkVEEAESFgoSU1RBVFVTX05PVF9DTEVBUkVEEAI=');
+
+@$core.Deprecated('Use jointControlStreamRequestDescriptor instead')
+const JointControlStreamRequest$json = {
+  '1': 'JointControlStreamRequest',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
+    {'1': 'joint_command', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.JointCommand.UpdateRequest', '10': 'jointCommand'},
+  ],
+};
+
+/// Descriptor for `JointControlStreamRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jointControlStreamRequestDescriptor = $convert.base64Decode(
+    'ChlKb2ludENvbnRyb2xTdHJlYW1SZXF1ZXN0EjEKBmhlYWRlchgBIAEoCzIZLmJvc2R5bi5hcG'
+    'kuUmVxdWVzdEhlYWRlclIGaGVhZGVyEksKDWpvaW50X2NvbW1hbmQYAiABKAsyJi5ib3NkeW4u'
+    'YXBpLkpvaW50Q29tbWFuZC5VcGRhdGVSZXF1ZXN0Ugxqb2ludENvbW1hbmQ=');
+
+@$core.Deprecated('Use jointControlStreamResponseDescriptor instead')
+const JointControlStreamResponse$json = {
+  '1': 'JointControlStreamResponse',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
+    {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.bosdyn.api.JointControlStreamResponse.Status', '10': 'status'},
+    {'1': 'message', '3': 3, '4': 1, '5': 9, '10': 'message'},
+  ],
+  '4': [JointControlStreamResponse_Status$json],
+};
+
+@$core.Deprecated('Use jointControlStreamResponseDescriptor instead')
+const JointControlStreamResponse_Status$json = {
+  '1': 'Status',
+  '2': [
+    {'1': 'STATUS_UNKNOWN', '2': 0},
+    {'1': 'STATUS_OK', '2': 1},
+    {'1': 'STATUS_INVALID_REQUEST', '2': 2},
+    {'1': 'STATUS_INACTIVE', '2': 3},
+    {'1': 'STATUS_EXPIRED', '2': 4},
+    {'1': 'STATUS_TOO_DISTANT', '2': 5},
+  ],
+};
+
+/// Descriptor for `JointControlStreamResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List jointControlStreamResponseDescriptor = $convert.base64Decode(
+    'ChpKb2ludENvbnRyb2xTdHJlYW1SZXNwb25zZRIyCgZoZWFkZXIYASABKAsyGi5ib3NkeW4uYX'
+    'BpLlJlc3BvbnNlSGVhZGVyUgZoZWFkZXISRQoGc3RhdHVzGAIgASgOMi0uYm9zZHluLmFwaS5K'
+    'b2ludENvbnRyb2xTdHJlYW1SZXNwb25zZS5TdGF0dXNSBnN0YXR1cxIYCgdtZXNzYWdlGAMgAS'
+    'gJUgdtZXNzYWdlIogBCgZTdGF0dXMSEgoOU1RBVFVTX1VOS05PV04QABINCglTVEFUVVNfT0sQ'
+    'ARIaChZTVEFUVVNfSU5WQUxJRF9SRVFVRVNUEAISEwoPU1RBVFVTX0lOQUNUSVZFEAMSEgoOU1'
+    'RBVFVTX0VYUElSRUQQBBIWChJTVEFUVVNfVE9PX0RJU1RBTlQQBQ==');
 

@@ -15,20 +15,20 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'directory.pb.dart' as $7;
+import 'directory.pb.dart' as $8;
 
 export 'directory_service.pb.dart';
 
 @$pb.GrpcServiceName('bosdyn.api.DirectoryService')
 class DirectoryServiceClient extends $grpc.Client {
-  static final _$getServiceEntry = $grpc.ClientMethod<$7.GetServiceEntryRequest, $7.GetServiceEntryResponse>(
+  static final _$getServiceEntry = $grpc.ClientMethod<$8.GetServiceEntryRequest, $8.GetServiceEntryResponse>(
       '/bosdyn.api.DirectoryService/GetServiceEntry',
-      ($7.GetServiceEntryRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $7.GetServiceEntryResponse.fromBuffer(value));
-  static final _$listServiceEntries = $grpc.ClientMethod<$7.ListServiceEntriesRequest, $7.ListServiceEntriesResponse>(
+      ($8.GetServiceEntryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $8.GetServiceEntryResponse.fromBuffer(value));
+  static final _$listServiceEntries = $grpc.ClientMethod<$8.ListServiceEntriesRequest, $8.ListServiceEntriesResponse>(
       '/bosdyn.api.DirectoryService/ListServiceEntries',
-      ($7.ListServiceEntriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $7.ListServiceEntriesResponse.fromBuffer(value));
+      ($8.ListServiceEntriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $8.ListServiceEntriesResponse.fromBuffer(value));
 
   DirectoryServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -36,11 +36,11 @@ class DirectoryServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$7.GetServiceEntryResponse> getServiceEntry($7.GetServiceEntryRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$8.GetServiceEntryResponse> getServiceEntry($8.GetServiceEntryRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getServiceEntry, request, options: options);
   }
 
-  $grpc.ResponseFuture<$7.ListServiceEntriesResponse> listServiceEntries($7.ListServiceEntriesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$8.ListServiceEntriesResponse> listServiceEntries($8.ListServiceEntriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listServiceEntries, request, options: options);
   }
 }
@@ -50,30 +50,30 @@ abstract class DirectoryServiceBase extends $grpc.Service {
   $core.String get $name => 'bosdyn.api.DirectoryService';
 
   DirectoryServiceBase() {
-    $addMethod($grpc.ServiceMethod<$7.GetServiceEntryRequest, $7.GetServiceEntryResponse>(
+    $addMethod($grpc.ServiceMethod<$8.GetServiceEntryRequest, $8.GetServiceEntryResponse>(
         'GetServiceEntry',
         getServiceEntry_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $7.GetServiceEntryRequest.fromBuffer(value),
-        ($7.GetServiceEntryResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$7.ListServiceEntriesRequest, $7.ListServiceEntriesResponse>(
+        ($core.List<$core.int> value) => $8.GetServiceEntryRequest.fromBuffer(value),
+        ($8.GetServiceEntryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$8.ListServiceEntriesRequest, $8.ListServiceEntriesResponse>(
         'ListServiceEntries',
         listServiceEntries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $7.ListServiceEntriesRequest.fromBuffer(value),
-        ($7.ListServiceEntriesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $8.ListServiceEntriesRequest.fromBuffer(value),
+        ($8.ListServiceEntriesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$7.GetServiceEntryResponse> getServiceEntry_Pre($grpc.ServiceCall call, $async.Future<$7.GetServiceEntryRequest> request) async {
+  $async.Future<$8.GetServiceEntryResponse> getServiceEntry_Pre($grpc.ServiceCall call, $async.Future<$8.GetServiceEntryRequest> request) async {
     return getServiceEntry(call, await request);
   }
 
-  $async.Future<$7.ListServiceEntriesResponse> listServiceEntries_Pre($grpc.ServiceCall call, $async.Future<$7.ListServiceEntriesRequest> request) async {
+  $async.Future<$8.ListServiceEntriesResponse> listServiceEntries_Pre($grpc.ServiceCall call, $async.Future<$8.ListServiceEntriesRequest> request) async {
     return listServiceEntries(call, await request);
   }
 
-  $async.Future<$7.GetServiceEntryResponse> getServiceEntry($grpc.ServiceCall call, $7.GetServiceEntryRequest request);
-  $async.Future<$7.ListServiceEntriesResponse> listServiceEntries($grpc.ServiceCall call, $7.ListServiceEntriesRequest request);
+  $async.Future<$8.GetServiceEntryResponse> getServiceEntry($grpc.ServiceCall call, $8.GetServiceEntryRequest request);
+  $async.Future<$8.ListServiceEntriesResponse> listServiceEntries($grpc.ServiceCall call, $8.ListServiceEntriesRequest request);
 }

@@ -13,12 +13,12 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../geometry.pb.dart' as $61;
+import '../geometry.pb.dart' as $60;
 
 class Camera_PinholeIntrinsics extends $pb.GeneratedMessage {
   factory Camera_PinholeIntrinsics({
-    $61.Vec2? focalLength,
-    $61.Vec2? centerPoint,
+    $60.Vec2? focalLength,
+    $60.Vec2? centerPoint,
     $core.double? k1,
     $core.double? k2,
     $core.double? k3,
@@ -50,8 +50,8 @@ class Camera_PinholeIntrinsics extends $pb.GeneratedMessage {
   factory Camera_PinholeIntrinsics.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Camera.PinholeIntrinsics', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$61.Vec2>(1, _omitFieldNames ? '' : 'focalLength', subBuilder: $61.Vec2.create)
-    ..aOM<$61.Vec2>(2, _omitFieldNames ? '' : 'centerPoint', subBuilder: $61.Vec2.create)
+    ..aOM<$60.Vec2>(1, _omitFieldNames ? '' : 'focalLength', subBuilder: $60.Vec2.create)
+    ..aOM<$60.Vec2>(2, _omitFieldNames ? '' : 'centerPoint', subBuilder: $60.Vec2.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'k1', $pb.PbFieldType.OF)
     ..a<$core.double>(4, _omitFieldNames ? '' : 'k2', $pb.PbFieldType.OF)
     ..a<$core.double>(5, _omitFieldNames ? '' : 'k3', $pb.PbFieldType.OF)
@@ -82,27 +82,27 @@ class Camera_PinholeIntrinsics extends $pb.GeneratedMessage {
 
   /// Focal_length in pixels
   @$pb.TagNumber(1)
-  $61.Vec2 get focalLength => $_getN(0);
+  $60.Vec2 get focalLength => $_getN(0);
   @$pb.TagNumber(1)
-  set focalLength($61.Vec2 v) { setField(1, v); }
+  set focalLength($60.Vec2 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFocalLength() => $_has(0);
   @$pb.TagNumber(1)
   void clearFocalLength() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec2 ensureFocalLength() => $_ensure(0);
+  $60.Vec2 ensureFocalLength() => $_ensure(0);
 
   /// Center point in pixels
   @$pb.TagNumber(2)
-  $61.Vec2 get centerPoint => $_getN(1);
+  $60.Vec2 get centerPoint => $_getN(1);
   @$pb.TagNumber(2)
-  set centerPoint($61.Vec2 v) { setField(2, v); }
+  set centerPoint($60.Vec2 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCenterPoint() => $_has(1);
   @$pb.TagNumber(2)
   void clearCenterPoint() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec2 ensureCenterPoint() => $_ensure(1);
+  $60.Vec2 ensureCenterPoint() => $_ensure(1);
 
   /// The following 4 parameters are radial distortion coefficeints to 4 orders.
   /// See: https://en.wikipedia.org/wiki/Distortion_(optics)#Software_correction
@@ -150,8 +150,8 @@ class Camera_PinholeIntrinsics extends $pb.GeneratedMessage {
 /// for a full-FOV image this will be (-180, 90) and (180, -90)
 class Camera_SphericalLimits extends $pb.GeneratedMessage {
   factory Camera_SphericalLimits({
-    $61.Vec2? minAngle,
-    $61.Vec2? maxAngle,
+    $60.Vec2? minAngle,
+    $60.Vec2? maxAngle,
   }) {
     final $result = create();
     if (minAngle != null) {
@@ -167,8 +167,8 @@ class Camera_SphericalLimits extends $pb.GeneratedMessage {
   factory Camera_SphericalLimits.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Camera.SphericalLimits', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
-    ..aOM<$61.Vec2>(1, _omitFieldNames ? '' : 'minAngle', subBuilder: $61.Vec2.create)
-    ..aOM<$61.Vec2>(2, _omitFieldNames ? '' : 'maxAngle', subBuilder: $61.Vec2.create)
+    ..aOM<$60.Vec2>(1, _omitFieldNames ? '' : 'minAngle', subBuilder: $60.Vec2.create)
+    ..aOM<$60.Vec2>(2, _omitFieldNames ? '' : 'maxAngle', subBuilder: $60.Vec2.create)
     ..hasRequiredFields = false
   ;
 
@@ -194,26 +194,26 @@ class Camera_SphericalLimits extends $pb.GeneratedMessage {
   static Camera_SphericalLimits? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $61.Vec2 get minAngle => $_getN(0);
+  $60.Vec2 get minAngle => $_getN(0);
   @$pb.TagNumber(1)
-  set minAngle($61.Vec2 v) { setField(1, v); }
+  set minAngle($60.Vec2 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMinAngle() => $_has(0);
   @$pb.TagNumber(1)
   void clearMinAngle() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec2 ensureMinAngle() => $_ensure(0);
+  $60.Vec2 ensureMinAngle() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $61.Vec2 get maxAngle => $_getN(1);
+  $60.Vec2 get maxAngle => $_getN(1);
   @$pb.TagNumber(2)
-  set maxAngle($61.Vec2 v) { setField(2, v); }
+  set maxAngle($60.Vec2 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasMaxAngle() => $_has(1);
   @$pb.TagNumber(2)
   void clearMaxAngle() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec2 ensureMaxAngle() => $_ensure(1);
+  $60.Vec2 ensureMaxAngle() => $_ensure(1);
 }
 
 enum Camera_Intrinsics {
@@ -225,13 +225,13 @@ enum Camera_Intrinsics {
 class Camera extends $pb.GeneratedMessage {
   factory Camera({
     $core.String? name,
-    $61.Vec2? resolution,
+    $60.Vec2? resolution,
     $core.String? baseFrameName,
   @$core.Deprecated('This field is deprecated.')
-    $61.SE3Pose? baseTfromSensor,
+    $60.SE3Pose? baseTfromSensor,
     Camera_PinholeIntrinsics? pinhole,
     Camera_SphericalLimits? spherical,
-    $61.SE3Pose? baseTformSensor,
+    $60.SE3Pose? baseTformSensor,
   }) {
     final $result = create();
     if (name != null) {
@@ -270,12 +270,12 @@ class Camera extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Camera', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api.spot_cam'), createEmptyInstance: create)
     ..oo(0, [5, 6])
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$61.Vec2>(2, _omitFieldNames ? '' : 'resolution', subBuilder: $61.Vec2.create)
+    ..aOM<$60.Vec2>(2, _omitFieldNames ? '' : 'resolution', subBuilder: $60.Vec2.create)
     ..aOS(3, _omitFieldNames ? '' : 'baseFrameName')
-    ..aOM<$61.SE3Pose>(4, _omitFieldNames ? '' : 'baseTfromSensor', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(4, _omitFieldNames ? '' : 'baseTfromSensor', subBuilder: $60.SE3Pose.create)
     ..aOM<Camera_PinholeIntrinsics>(5, _omitFieldNames ? '' : 'pinhole', subBuilder: Camera_PinholeIntrinsics.create)
     ..aOM<Camera_SphericalLimits>(6, _omitFieldNames ? '' : 'spherical', subBuilder: Camera_SphericalLimits.create)
-    ..aOM<$61.SE3Pose>(7, _omitFieldNames ? '' : 'baseTformSensor', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(7, _omitFieldNames ? '' : 'baseTformSensor', subBuilder: $60.SE3Pose.create)
     ..hasRequiredFields = false
   ;
 
@@ -315,15 +315,15 @@ class Camera extends $pb.GeneratedMessage {
 
   /// Resolution of the sensor, where x = width and y = height.
   @$pb.TagNumber(2)
-  $61.Vec2 get resolution => $_getN(1);
+  $60.Vec2 get resolution => $_getN(1);
   @$pb.TagNumber(2)
-  set resolution($61.Vec2 v) { setField(2, v); }
+  set resolution($60.Vec2 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasResolution() => $_has(1);
   @$pb.TagNumber(2)
   void clearResolution() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec2 ensureResolution() => $_ensure(1);
+  $60.Vec2 ensureResolution() => $_ensure(1);
 
   /// The frame name for the parent frame of this camera. This frame will show up in the
   /// FrameTreeSnapshot grabbed from the payload registration service.
@@ -342,10 +342,10 @@ class Camera extends $pb.GeneratedMessage {
   /// geometry.proto.
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $61.SE3Pose get baseTfromSensor => $_getN(3);
+  $60.SE3Pose get baseTfromSensor => $_getN(3);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  set baseTfromSensor($61.SE3Pose v) { setField(4, v); }
+  set baseTfromSensor($60.SE3Pose v) { setField(4, v); }
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
   $core.bool hasBaseTfromSensor() => $_has(3);
@@ -354,7 +354,7 @@ class Camera extends $pb.GeneratedMessage {
   void clearBaseTfromSensor() => clearField(4);
   @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(4)
-  $61.SE3Pose ensureBaseTfromSensor() => $_ensure(3);
+  $60.SE3Pose ensureBaseTfromSensor() => $_ensure(3);
 
   /// Physical cameras
   @$pb.TagNumber(5)
@@ -382,15 +382,15 @@ class Camera extends $pb.GeneratedMessage {
 
   /// The transform from the named base frame to this specific camera
   @$pb.TagNumber(7)
-  $61.SE3Pose get baseTformSensor => $_getN(6);
+  $60.SE3Pose get baseTformSensor => $_getN(6);
   @$pb.TagNumber(7)
-  set baseTformSensor($61.SE3Pose v) { setField(7, v); }
+  set baseTformSensor($60.SE3Pose v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasBaseTformSensor() => $_has(6);
   @$pb.TagNumber(7)
   void clearBaseTformSensor() => clearField(7);
   @$pb.TagNumber(7)
-  $61.SE3Pose ensureBaseTformSensor() => $_ensure(6);
+  $60.SE3Pose ensureBaseTformSensor() => $_ensure(6);
 }
 
 

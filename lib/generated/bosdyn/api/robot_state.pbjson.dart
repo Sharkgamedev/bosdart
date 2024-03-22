@@ -60,6 +60,7 @@ const HardwareConfiguration$json = {
     {'1': 'can_power_command_request_payload_ports', '3': 4, '4': 1, '5': 8, '10': 'canPowerCommandRequestPayloadPorts'},
     {'1': 'can_power_command_request_wifi_radio', '3': 5, '4': 1, '5': 8, '10': 'canPowerCommandRequestWifiRadio'},
     {'1': 'has_audio_visual_system', '3': 7, '4': 1, '5': 8, '10': 'hasAudioVisualSystem'},
+    {'1': 'redundant_safety_stop_enabled', '3': 8, '4': 1, '5': 8, '10': 'redundantSafetyStopEnabled'},
   ],
 };
 
@@ -73,7 +74,8 @@ final $typed_data.Uint8List hardwareConfigurationDescriptor = $convert.base64Dec
     'EoCFIiY2FuUG93ZXJDb21tYW5kUmVxdWVzdFBheWxvYWRQb3J0cxJNCiRjYW5fcG93ZXJfY29t'
     'bWFuZF9yZXF1ZXN0X3dpZmlfcmFkaW8YBSABKAhSH2NhblBvd2VyQ29tbWFuZFJlcXVlc3RXaW'
     'ZpUmFkaW8SNQoXaGFzX2F1ZGlvX3Zpc3VhbF9zeXN0ZW0YByABKAhSFGhhc0F1ZGlvVmlzdWFs'
-    'U3lzdGVt');
+    'U3lzdGVtEkEKHXJlZHVuZGFudF9zYWZldHlfc3RvcF9lbmFibGVkGAggASgIUhpyZWR1bmRhbn'
+    'RTYWZldHlTdG9wRW5hYmxlZA==');
 
 @$core.Deprecated('Use robotStateDescriptor instead')
 const RobotState$json = {
@@ -90,6 +92,7 @@ const RobotState$json = {
     {'1': 'manipulator_state', '3': 11, '4': 1, '5': 11, '6': '.bosdyn.api.ManipulatorState', '10': 'manipulatorState'},
     {'1': 'service_fault_state', '3': 10, '4': 1, '5': 11, '6': '.bosdyn.api.ServiceFaultState', '10': 'serviceFaultState'},
     {'1': 'terrain_state', '3': 12, '4': 1, '5': 11, '6': '.bosdyn.api.TerrainState', '10': 'terrainState'},
+    {'1': 'system_state', '3': 13, '4': 1, '5': 11, '6': '.bosdyn.api.SystemState', '10': 'systemState'},
   ],
   '9': [
     {'1': 9, '2': 10},
@@ -111,7 +114,8 @@ final $typed_data.Uint8List robotStateDescriptor = $convert.base64Decode(
     'CyABKAsyHC5ib3NkeW4uYXBpLk1hbmlwdWxhdG9yU3RhdGVSEG1hbmlwdWxhdG9yU3RhdGUSTQ'
     'oTc2VydmljZV9mYXVsdF9zdGF0ZRgKIAEoCzIdLmJvc2R5bi5hcGkuU2VydmljZUZhdWx0U3Rh'
     'dGVSEXNlcnZpY2VGYXVsdFN0YXRlEj0KDXRlcnJhaW5fc3RhdGUYDCABKAsyGC5ib3NkeW4uYX'
-    'BpLlRlcnJhaW5TdGF0ZVIMdGVycmFpblN0YXRlSgQICRAK');
+    'BpLlRlcnJhaW5TdGF0ZVIMdGVycmFpblN0YXRlEjoKDHN5c3RlbV9zdGF0ZRgNIAEoCzIXLmJv'
+    'c2R5bi5hcGkuU3lzdGVtU3RhdGVSC3N5c3RlbVN0YXRlSgQICRAK');
 
 @$core.Deprecated('Use powerStateDescriptor instead')
 const PowerState$json = {
@@ -415,6 +419,19 @@ final $typed_data.Uint8List batteryStateDescriptor = $convert.base64Decode(
     'NTSU5HEAESEwoPU1RBVFVTX0NIQVJHSU5HEAISFgoSU1RBVFVTX0RJU0NIQVJHSU5HEAMSEgoO'
     'U1RBVFVTX0JPT1RJTkcQBA==');
 
+@$core.Deprecated('Use systemStateDescriptor instead')
+const SystemState$json = {
+  '1': 'SystemState',
+  '2': [
+    {'1': 'motor_temperatures', '3': 1, '4': 3, '5': 11, '6': '.bosdyn.api.MotorTemperature', '10': 'motorTemperatures'},
+  ],
+};
+
+/// Descriptor for `SystemState`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List systemStateDescriptor = $convert.base64Decode(
+    'CgtTeXN0ZW1TdGF0ZRJLChJtb3Rvcl90ZW1wZXJhdHVyZXMYASADKAsyHC5ib3NkeW4uYXBpLk'
+    '1vdG9yVGVtcGVyYXR1cmVSEW1vdG9yVGVtcGVyYXR1cmVz');
+
 @$core.Deprecated('Use kinematicStateDescriptor instead')
 const KinematicState$json = {
   '1': 'KinematicState',
@@ -468,6 +485,20 @@ final $typed_data.Uint8List jointStateDescriptor = $convert.base64Decode(
     'Z29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlUgh2ZWxvY2l0eRJACgxhY2NlbGVyYXRpb24YBC'
     'ABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWVSDGFjY2VsZXJhdGlvbhIwCgRsb2Fk'
     'GAUgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlUgRsb2Fk');
+
+@$core.Deprecated('Use motorTemperatureDescriptor instead')
+const MotorTemperature$json = {
+  '1': 'MotorTemperature',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'temperature', '3': 2, '4': 1, '5': 1, '10': 'temperature'},
+  ],
+};
+
+/// Descriptor for `MotorTemperature`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List motorTemperatureDescriptor = $convert.base64Decode(
+    'ChBNb3RvclRlbXBlcmF0dXJlEhIKBG5hbWUYASABKAlSBG5hbWUSIAoLdGVtcGVyYXR1cmUYAi'
+    'ABKAFSC3RlbXBlcmF0dXJl');
 
 @$core.Deprecated('Use behaviorFaultStateDescriptor instead')
 const BehaviorFaultState$json = {
@@ -902,4 +933,105 @@ final $typed_data.Uint8List robotImpairedStateDescriptor = $convert.base64Decode
     '9SRU1PVEVfQ0xPVURTX05PVF9XT1JLSU5HEAUSIQodSU1QQUlSRURfU1RBVFVTX1NFUlZJQ0Vf'
     'RkFVTFQQBhIiCh5JTVBBSVJFRF9TVEFUVVNfQkVIQVZJT1JfRkFVTFQQBxIvCitJTVBBSVJFRF'
     '9TVEFUVVNfRU5USVRZX0RFVEVDVE9SX05PVF9XT1JLSU5HEAg=');
+
+@$core.Deprecated('Use combinedJointStatesDescriptor instead')
+const CombinedJointStates$json = {
+  '1': 'CombinedJointStates',
+  '2': [
+    {'1': 'acquisition_timestamp', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'acquisitionTimestamp'},
+    {'1': 'position', '3': 2, '4': 3, '5': 2, '10': 'position'},
+    {'1': 'velocity', '3': 3, '4': 3, '5': 2, '10': 'velocity'},
+    {'1': 'load', '3': 4, '4': 3, '5': 2, '10': 'load'},
+  ],
+};
+
+/// Descriptor for `CombinedJointStates`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List combinedJointStatesDescriptor = $convert.base64Decode(
+    'ChNDb21iaW5lZEpvaW50U3RhdGVzEk8KFWFjcXVpc2l0aW9uX3RpbWVzdGFtcBgBIAEoCzIaLm'
+    'dvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSFGFjcXVpc2l0aW9uVGltZXN0YW1wEhoKCHBvc2l0'
+    'aW9uGAIgAygCUghwb3NpdGlvbhIaCgh2ZWxvY2l0eRgDIAMoAlIIdmVsb2NpdHkSEgoEbG9hZB'
+    'gEIAMoAlIEbG9hZA==');
+
+@$core.Deprecated('Use imuStateDescriptor instead')
+const ImuState$json = {
+  '1': 'ImuState',
+  '2': [
+    {'1': 'packet_rate', '3': 2, '4': 1, '5': 1, '10': 'packetRate'},
+    {'1': 'packets', '3': 3, '4': 3, '5': 11, '6': '.bosdyn.api.ImuState.Packet', '10': 'packets'},
+    {'1': 'identifier', '3': 7, '4': 1, '5': 9, '10': 'identifier'},
+    {'1': 'mounting_link_name', '3': 9, '4': 1, '5': 9, '10': 'mountingLinkName'},
+    {'1': 'position_imu_rt_link', '3': 10, '4': 1, '5': 11, '6': '.bosdyn.api.Vec3', '10': 'positionImuRtLink'},
+  ],
+  '3': [ImuState_Packet$json],
+};
+
+@$core.Deprecated('Use imuStateDescriptor instead')
+const ImuState_Packet$json = {
+  '1': 'Packet',
+  '2': [
+    {'1': 'acceleration_rt_odom_in_link_frame', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.Vec3', '10': 'accelerationRtOdomInLinkFrame'},
+    {'1': 'angular_velocity_rt_odom_in_link_frame', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.Vec3', '10': 'angularVelocityRtOdomInLinkFrame'},
+    {'1': 'odom_rot_link', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.Quaternion', '10': 'odomRotLink'},
+    {'1': 'timestamp', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'timestamp'},
+  ],
+};
+
+/// Descriptor for `ImuState`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List imuStateDescriptor = $convert.base64Decode(
+    'CghJbXVTdGF0ZRIfCgtwYWNrZXRfcmF0ZRgCIAEoAVIKcGFja2V0UmF0ZRI1CgdwYWNrZXRzGA'
+    'MgAygLMhsuYm9zZHluLmFwaS5JbXVTdGF0ZS5QYWNrZXRSB3BhY2tldHMSHgoKaWRlbnRpZmll'
+    'chgHIAEoCVIKaWRlbnRpZmllchIsChJtb3VudGluZ19saW5rX25hbWUYCSABKAlSEG1vdW50aW'
+    '5nTGlua05hbWUSQQoUcG9zaXRpb25faW11X3J0X2xpbmsYCiABKAsyEC5ib3NkeW4uYXBpLlZl'
+    'YzNSEXBvc2l0aW9uSW11UnRMaW5rGr8CCgZQYWNrZXQSWwoiYWNjZWxlcmF0aW9uX3J0X29kb2'
+    '1faW5fbGlua19mcmFtZRgBIAEoCzIQLmJvc2R5bi5hcGkuVmVjM1IdYWNjZWxlcmF0aW9uUnRP'
+    'ZG9tSW5MaW5rRnJhbWUSYgomYW5ndWxhcl92ZWxvY2l0eV9ydF9vZG9tX2luX2xpbmtfZnJhbW'
+    'UYAiABKAsyEC5ib3NkeW4uYXBpLlZlYzNSIGFuZ3VsYXJWZWxvY2l0eVJ0T2RvbUluTGlua0Zy'
+    'YW1lEjoKDW9kb21fcm90X2xpbmsYAyABKAsyFi5ib3NkeW4uYXBpLlF1YXRlcm5pb25SC29kb2'
+    '1Sb3RMaW5rEjgKCXRpbWVzdGFtcBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS'
+    'CXRpbWVzdGFtcA==');
+
+@$core.Deprecated('Use robotStateStreamRequestDescriptor instead')
+const RobotStateStreamRequest$json = {
+  '1': 'RobotStateStreamRequest',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
+  ],
+};
+
+/// Descriptor for `RobotStateStreamRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List robotStateStreamRequestDescriptor = $convert.base64Decode(
+    'ChdSb2JvdFN0YXRlU3RyZWFtUmVxdWVzdBIxCgZoZWFkZXIYASABKAsyGS5ib3NkeW4uYXBpLl'
+    'JlcXVlc3RIZWFkZXJSBmhlYWRlcg==');
+
+@$core.Deprecated('Use robotStateStreamResponseDescriptor instead')
+const RobotStateStreamResponse$json = {
+  '1': 'RobotStateStreamResponse',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
+    {'1': 'joint_states', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.CombinedJointStates', '10': 'jointStates'},
+    {'1': 'inertial_state', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.ImuState', '10': 'inertialState'},
+    {'1': 'last_command', '3': 4, '4': 1, '5': 11, '6': '.bosdyn.api.RobotStateStreamResponse.CommandState', '10': 'lastCommand'},
+  ],
+  '3': [RobotStateStreamResponse_CommandState$json],
+};
+
+@$core.Deprecated('Use robotStateStreamResponseDescriptor instead')
+const RobotStateStreamResponse_CommandState$json = {
+  '1': 'CommandState',
+  '2': [
+    {'1': 'user_command_key', '3': 1, '4': 1, '5': 13, '10': 'userCommandKey'},
+    {'1': 'received_timestamp', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'receivedTimestamp'},
+  ],
+};
+
+/// Descriptor for `RobotStateStreamResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List robotStateStreamResponseDescriptor = $convert.base64Decode(
+    'ChhSb2JvdFN0YXRlU3RyZWFtUmVzcG9uc2USMgoGaGVhZGVyGAEgASgLMhouYm9zZHluLmFwaS'
+    '5SZXNwb25zZUhlYWRlclIGaGVhZGVyEkIKDGpvaW50X3N0YXRlcxgCIAEoCzIfLmJvc2R5bi5h'
+    'cGkuQ29tYmluZWRKb2ludFN0YXRlc1ILam9pbnRTdGF0ZXMSOwoOaW5lcnRpYWxfc3RhdGUYAy'
+    'ABKAsyFC5ib3NkeW4uYXBpLkltdVN0YXRlUg1pbmVydGlhbFN0YXRlElQKDGxhc3RfY29tbWFu'
+    'ZBgEIAEoCzIxLmJvc2R5bi5hcGkuUm9ib3RTdGF0ZVN0cmVhbVJlc3BvbnNlLkNvbW1hbmRTdG'
+    'F0ZVILbGFzdENvbW1hbmQagwEKDENvbW1hbmRTdGF0ZRIoChB1c2VyX2NvbW1hbmRfa2V5GAEg'
+    'ASgNUg51c2VyQ29tbWFuZEtleRJJChJyZWNlaXZlZF90aW1lc3RhbXAYAiABKAsyGi5nb29nbG'
+    'UucHJvdG9idWYuVGltZXN0YW1wUhFyZWNlaXZlZFRpbWVzdGFtcA==');
 

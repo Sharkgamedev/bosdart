@@ -59,6 +59,33 @@ final $typed_data.Uint8List dataQueryParamsDescriptor = $convert.base64Decode(
     'JhbmdlUXVlcnlIAFIJdGltZVJhbmdlEjoKCmFjdGlvbl9pZHMYAiABKAsyGS5ib3NkeW4uYXBp'
     'LkFjdGlvbklkUXVlcnlIAFIJYWN0aW9uSWRzQgcKBXF1ZXJ5');
 
+@$core.Deprecated('Use queryParametersDescriptor instead')
+const QueryParameters$json = {
+  '1': 'QueryParameters',
+  '2': [
+    {'1': 'time_range', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.TimeRangeQuery', '10': 'timeRange'},
+    {'1': 'action_ids', '3': 2, '4': 3, '5': 11, '6': '.bosdyn.api.CaptureActionId', '10': 'actionIds'},
+    {'1': 'channels', '3': 3, '4': 3, '5': 9, '10': 'channels'},
+    {'1': 'captures_from_id', '3': 4, '4': 1, '5': 4, '10': 'capturesFromId'},
+    {'1': 'only_include_identifiers', '3': 5, '4': 1, '5': 8, '10': 'onlyIncludeIdentifiers'},
+    {'1': 'include_images', '3': 6, '4': 1, '5': 8, '10': 'includeImages'},
+    {'1': 'include_data', '3': 7, '4': 1, '5': 8, '10': 'includeData'},
+    {'1': 'include_metadata', '3': 8, '4': 1, '5': 8, '10': 'includeMetadata'},
+    {'1': 'include_alerts', '3': 9, '4': 1, '5': 8, '10': 'includeAlerts'},
+  ],
+};
+
+/// Descriptor for `QueryParameters`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryParametersDescriptor = $convert.base64Decode(
+    'Cg9RdWVyeVBhcmFtZXRlcnMSOQoKdGltZV9yYW5nZRgBIAEoCzIaLmJvc2R5bi5hcGkuVGltZV'
+    'JhbmdlUXVlcnlSCXRpbWVSYW5nZRI6CgphY3Rpb25faWRzGAIgAygLMhsuYm9zZHluLmFwaS5D'
+    'YXB0dXJlQWN0aW9uSWRSCWFjdGlvbklkcxIaCghjaGFubmVscxgDIAMoCVIIY2hhbm5lbHMSKA'
+    'oQY2FwdHVyZXNfZnJvbV9pZBgEIAEoBFIOY2FwdHVyZXNGcm9tSWQSOAoYb25seV9pbmNsdWRl'
+    'X2lkZW50aWZpZXJzGAUgASgIUhZvbmx5SW5jbHVkZUlkZW50aWZpZXJzEiUKDmluY2x1ZGVfaW'
+    '1hZ2VzGAYgASgIUg1pbmNsdWRlSW1hZ2VzEiEKDGluY2x1ZGVfZGF0YRgHIAEoCFILaW5jbHVk'
+    'ZURhdGESKQoQaW5jbHVkZV9tZXRhZGF0YRgIIAEoCFIPaW5jbHVkZU1ldGFkYXRhEiUKDmluY2'
+    'x1ZGVfYWxlcnRzGAkgASgIUg1pbmNsdWRlQWxlcnRz');
+
 @$core.Deprecated('Use storeImageRequestDescriptor instead')
 const StoreImageRequest$json = {
   '1': 'StoreImageRequest',
@@ -333,4 +360,106 @@ final $typed_data.Uint8List listStoredDataResponseDescriptor = $convert.base64De
     'ChZMaXN0U3RvcmVkRGF0YVJlc3BvbnNlEjIKBmhlYWRlchgBIAEoCzIaLmJvc2R5bi5hcGkuUm'
     'VzcG9uc2VIZWFkZXJSBmhlYWRlchI1CghkYXRhX2lkcxgCIAMoCzIaLmJvc2R5bi5hcGkuRGF0'
     'YUlkZW50aWZpZXJSB2RhdGFJZHM=');
+
+@$core.Deprecated('Use queryStoredCapturesRequestDescriptor instead')
+const QueryStoredCapturesRequest$json = {
+  '1': 'QueryStoredCapturesRequest',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
+    {'1': 'query', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.QueryParameters', '10': 'query'},
+  ],
+};
+
+/// Descriptor for `QueryStoredCapturesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryStoredCapturesRequestDescriptor = $convert.base64Decode(
+    'ChpRdWVyeVN0b3JlZENhcHR1cmVzUmVxdWVzdBIxCgZoZWFkZXIYASABKAsyGS5ib3NkeW4uYX'
+    'BpLlJlcXVlc3RIZWFkZXJSBmhlYWRlchIxCgVxdWVyeRgCIAEoCzIbLmJvc2R5bi5hcGkuUXVl'
+    'cnlQYXJhbWV0ZXJzUgVxdWVyeQ==');
+
+@$core.Deprecated('Use storedCapturedDataDescriptor instead')
+const StoredCapturedData$json = {
+  '1': 'StoredCapturedData',
+  '2': [
+    {'1': 'data', '3': 1, '4': 1, '5': 12, '10': 'data'},
+    {'1': 'file_extension', '3': 2, '4': 1, '5': 9, '10': 'fileExtension'},
+  ],
+};
+
+/// Descriptor for `StoredCapturedData`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List storedCapturedDataDescriptor = $convert.base64Decode(
+    'ChJTdG9yZWRDYXB0dXJlZERhdGESEgoEZGF0YRgBIAEoDFIEZGF0YRIlCg5maWxlX2V4dGVuc2'
+    'lvbhgCIAEoCVINZmlsZUV4dGVuc2lvbg==');
+
+@$core.Deprecated('Use queryStoredCaptureResultDescriptor instead')
+const QueryStoredCaptureResult$json = {
+  '1': 'QueryStoredCaptureResult',
+  '2': [
+    {'1': 'data_id', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.DataIdentifier', '10': 'dataId'},
+    {'1': 'image', '3': 3, '4': 1, '5': 11, '6': '.bosdyn.api.ImageCapture', '9': 0, '10': 'image'},
+    {'1': 'metadata', '3': 4, '4': 1, '5': 11, '6': '.bosdyn.api.AssociatedMetadata', '9': 0, '10': 'metadata'},
+    {'1': 'alert_data', '3': 5, '4': 1, '5': 11, '6': '.bosdyn.api.AssociatedAlertData', '9': 0, '10': 'alertData'},
+    {'1': 'data', '3': 6, '4': 1, '5': 11, '6': '.bosdyn.api.StoredCapturedData', '9': 0, '10': 'data'},
+  ],
+  '8': [
+    {'1': 'result'},
+  ],
+};
+
+/// Descriptor for `QueryStoredCaptureResult`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryStoredCaptureResultDescriptor = $convert.base64Decode(
+    'ChhRdWVyeVN0b3JlZENhcHR1cmVSZXN1bHQSMwoHZGF0YV9pZBgBIAEoCzIaLmJvc2R5bi5hcG'
+    'kuRGF0YUlkZW50aWZpZXJSBmRhdGFJZBIwCgVpbWFnZRgDIAEoCzIYLmJvc2R5bi5hcGkuSW1h'
+    'Z2VDYXB0dXJlSABSBWltYWdlEjwKCG1ldGFkYXRhGAQgASgLMh4uYm9zZHluLmFwaS5Bc3NvY2'
+    'lhdGVkTWV0YWRhdGFIAFIIbWV0YWRhdGESQAoKYWxlcnRfZGF0YRgFIAEoCzIfLmJvc2R5bi5h'
+    'cGkuQXNzb2NpYXRlZEFsZXJ0RGF0YUgAUglhbGVydERhdGESNAoEZGF0YRgGIAEoCzIeLmJvc2'
+    'R5bi5hcGkuU3RvcmVkQ2FwdHVyZWREYXRhSABSBGRhdGFCCAoGcmVzdWx0');
+
+@$core.Deprecated('Use queryStoredCapturesResponseDescriptor instead')
+const QueryStoredCapturesResponse$json = {
+  '1': 'QueryStoredCapturesResponse',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
+    {'1': 'action_ids', '3': 2, '4': 3, '5': 11, '6': '.bosdyn.api.CaptureActionId', '10': 'actionIds'},
+    {'1': 'results', '3': 3, '4': 3, '5': 11, '6': '.bosdyn.api.QueryStoredCaptureResult', '10': 'results'},
+    {'1': 'max_capture_id', '3': 4, '4': 1, '5': 4, '10': 'maxCaptureId'},
+  ],
+};
+
+/// Descriptor for `QueryStoredCapturesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryStoredCapturesResponseDescriptor = $convert.base64Decode(
+    'ChtRdWVyeVN0b3JlZENhcHR1cmVzUmVzcG9uc2USMgoGaGVhZGVyGAEgASgLMhouYm9zZHluLm'
+    'FwaS5SZXNwb25zZUhlYWRlclIGaGVhZGVyEjoKCmFjdGlvbl9pZHMYAiADKAsyGy5ib3NkeW4u'
+    'YXBpLkNhcHR1cmVBY3Rpb25JZFIJYWN0aW9uSWRzEj4KB3Jlc3VsdHMYAyADKAsyJC5ib3NkeW'
+    '4uYXBpLlF1ZXJ5U3RvcmVkQ2FwdHVyZVJlc3VsdFIHcmVzdWx0cxIkCg5tYXhfY2FwdHVyZV9p'
+    'ZBgEIAEoBFIMbWF4Q2FwdHVyZUlk');
+
+@$core.Deprecated('Use queryMaxCaptureIdRequestDescriptor instead')
+const QueryMaxCaptureIdRequest$json = {
+  '1': 'QueryMaxCaptureIdRequest',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.RequestHeader', '10': 'header'},
+    {'1': 'query', '3': 2, '4': 1, '5': 11, '6': '.bosdyn.api.QueryParameters', '10': 'query'},
+  ],
+};
+
+/// Descriptor for `QueryMaxCaptureIdRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryMaxCaptureIdRequestDescriptor = $convert.base64Decode(
+    'ChhRdWVyeU1heENhcHR1cmVJZFJlcXVlc3QSMQoGaGVhZGVyGAEgASgLMhkuYm9zZHluLmFwaS'
+    '5SZXF1ZXN0SGVhZGVyUgZoZWFkZXISMQoFcXVlcnkYAiABKAsyGy5ib3NkeW4uYXBpLlF1ZXJ5'
+    'UGFyYW1ldGVyc1IFcXVlcnk=');
+
+@$core.Deprecated('Use queryMaxCaptureIdResponseDescriptor instead')
+const QueryMaxCaptureIdResponse$json = {
+  '1': 'QueryMaxCaptureIdResponse',
+  '2': [
+    {'1': 'header', '3': 1, '4': 1, '5': 11, '6': '.bosdyn.api.ResponseHeader', '10': 'header'},
+    {'1': 'max_capture_id', '3': 2, '4': 1, '5': 4, '10': 'maxCaptureId'},
+  ],
+};
+
+/// Descriptor for `QueryMaxCaptureIdResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List queryMaxCaptureIdResponseDescriptor = $convert.base64Decode(
+    'ChlRdWVyeU1heENhcHR1cmVJZFJlc3BvbnNlEjIKBmhlYWRlchgBIAEoCzIaLmJvc2R5bi5hcG'
+    'kuUmVzcG9uc2VIZWFkZXJSBmhlYWRlchIkCg5tYXhfY2FwdHVyZV9pZBgCIAEoBFIMbWF4Q2Fw'
+    'dHVyZUlk');
 

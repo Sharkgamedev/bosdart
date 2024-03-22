@@ -14,15 +14,15 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/duration.pb.dart' as $62;
-import '../../google/protobuf/timestamp.pb.dart' as $60;
-import '../../google/protobuf/wrappers.pb.dart' as $59;
-import 'geometry.pb.dart' as $61;
-import 'header.pb.dart' as $68;
-import 'parameter.pb.dart' as $76;
+import '../../google/protobuf/duration.pb.dart' as $61;
+import '../../google/protobuf/timestamp.pb.dart' as $59;
+import '../../google/protobuf/wrappers.pb.dart' as $58;
+import 'geometry.pb.dart' as $60;
+import 'header.pb.dart' as $67;
+import 'parameter.pb.dart' as $77;
 import 'robot_state.pbenum.dart';
-import 'service_fault.pb.dart' as $9;
-import 'service_fault.pbenum.dart' as $9;
+import 'service_fault.pb.dart' as $10;
+import 'service_fault.pbenum.dart' as $10;
 
 export 'robot_state.pbenum.dart';
 
@@ -233,6 +233,7 @@ class HardwareConfiguration extends $pb.GeneratedMessage {
     $core.bool? canPowerCommandRequestPayloadPorts,
     $core.bool? canPowerCommandRequestWifiRadio,
     $core.bool? hasAudioVisualSystem,
+    $core.bool? redundantSafetyStopEnabled,
   }) {
     final $result = create();
     if (skeleton != null) {
@@ -253,6 +254,9 @@ class HardwareConfiguration extends $pb.GeneratedMessage {
     if (hasAudioVisualSystem != null) {
       $result.hasAudioVisualSystem = hasAudioVisualSystem;
     }
+    if (redundantSafetyStopEnabled != null) {
+      $result.redundantSafetyStopEnabled = redundantSafetyStopEnabled;
+    }
     return $result;
   }
   HardwareConfiguration._() : super();
@@ -266,6 +270,7 @@ class HardwareConfiguration extends $pb.GeneratedMessage {
     ..aOB(4, _omitFieldNames ? '' : 'canPowerCommandRequestPayloadPorts')
     ..aOB(5, _omitFieldNames ? '' : 'canPowerCommandRequestWifiRadio')
     ..aOB(7, _omitFieldNames ? '' : 'hasAudioVisualSystem')
+    ..aOB(8, _omitFieldNames ? '' : 'redundantSafetyStopEnabled')
     ..hasRequiredFields = false
   ;
 
@@ -346,6 +351,15 @@ class HardwareConfiguration extends $pb.GeneratedMessage {
   $core.bool hasHasAudioVisualSystem() => $_has(5);
   @$pb.TagNumber(7)
   void clearHasAudioVisualSystem() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get redundantSafetyStopEnabled => $_getBF(6);
+  @$pb.TagNumber(8)
+  set redundantSafetyStopEnabled($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasRedundantSafetyStopEnabled() => $_has(6);
+  @$pb.TagNumber(8)
+  void clearRedundantSafetyStopEnabled() => clearField(8);
 }
 
 /// The current state of the robot.
@@ -362,6 +376,7 @@ class RobotState extends $pb.GeneratedMessage {
     ServiceFaultState? serviceFaultState,
     ManipulatorState? manipulatorState,
     TerrainState? terrainState,
+    SystemState? systemState,
   }) {
     final $result = create();
     if (powerState != null) {
@@ -397,6 +412,9 @@ class RobotState extends $pb.GeneratedMessage {
     if (terrainState != null) {
       $result.terrainState = terrainState;
     }
+    if (systemState != null) {
+      $result.systemState = systemState;
+    }
     return $result;
   }
   RobotState._() : super();
@@ -415,6 +433,7 @@ class RobotState extends $pb.GeneratedMessage {
     ..aOM<ServiceFaultState>(10, _omitFieldNames ? '' : 'serviceFaultState', subBuilder: ServiceFaultState.create)
     ..aOM<ManipulatorState>(11, _omitFieldNames ? '' : 'manipulatorState', subBuilder: ManipulatorState.create)
     ..aOM<TerrainState>(12, _omitFieldNames ? '' : 'terrainState', subBuilder: TerrainState.create)
+    ..aOM<SystemState>(13, _omitFieldNames ? '' : 'systemState', subBuilder: SystemState.create)
     ..hasRequiredFields = false
   ;
 
@@ -539,6 +558,18 @@ class RobotState extends $pb.GeneratedMessage {
   void clearTerrainState() => clearField(12);
   @$pb.TagNumber(12)
   TerrainState ensureTerrainState() => $_ensure(10);
+
+  /// Temperature data for the motors.
+  @$pb.TagNumber(13)
+  SystemState get systemState => $_getN(11);
+  @$pb.TagNumber(13)
+  set systemState(SystemState v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasSystemState() => $_has(11);
+  @$pb.TagNumber(13)
+  void clearSystemState() => clearField(13);
+  @$pb.TagNumber(13)
+  SystemState ensureSystemState() => $_ensure(11);
 }
 
 /// The power state for the robot.
@@ -546,11 +577,11 @@ class RobotState extends $pb.GeneratedMessage {
 /// The robot must not be E-Stopped to enter the POWER_ON state.
 class PowerState extends $pb.GeneratedMessage {
   factory PowerState({
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
     PowerState_MotorPowerState? motorPowerState,
     PowerState_ShorePowerState? shorePowerState,
-    $59.DoubleValue? locomotionChargePercentage,
-    $62.Duration? locomotionEstimatedRuntime,
+    $58.DoubleValue? locomotionChargePercentage,
+    $61.Duration? locomotionEstimatedRuntime,
     PowerState_RobotPowerState? robotPowerState,
     PowerState_PayloadPortsPowerState? payloadPortsPowerState,
     PowerState_WifiRadioPowerState? wifiRadioPowerState,
@@ -587,11 +618,11 @@ class PowerState extends $pb.GeneratedMessage {
   factory PowerState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PowerState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..e<PowerState_MotorPowerState>(2, _omitFieldNames ? '' : 'motorPowerState', $pb.PbFieldType.OE, defaultOrMaker: PowerState_MotorPowerState.STATE_UNKNOWN, valueOf: PowerState_MotorPowerState.valueOf, enumValues: PowerState_MotorPowerState.values)
     ..e<PowerState_ShorePowerState>(3, _omitFieldNames ? '' : 'shorePowerState', $pb.PbFieldType.OE, defaultOrMaker: PowerState_ShorePowerState.STATE_UNKNOWN_SHORE_POWER, valueOf: PowerState_ShorePowerState.valueOf, enumValues: PowerState_ShorePowerState.values)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'locomotionChargePercentage', subBuilder: $59.DoubleValue.create)
-    ..aOM<$62.Duration>(5, _omitFieldNames ? '' : 'locomotionEstimatedRuntime', subBuilder: $62.Duration.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'locomotionChargePercentage', subBuilder: $58.DoubleValue.create)
+    ..aOM<$61.Duration>(5, _omitFieldNames ? '' : 'locomotionEstimatedRuntime', subBuilder: $61.Duration.create)
     ..e<PowerState_RobotPowerState>(6, _omitFieldNames ? '' : 'robotPowerState', $pb.PbFieldType.OE, defaultOrMaker: PowerState_RobotPowerState.ROBOT_POWER_STATE_UNKNOWN, valueOf: PowerState_RobotPowerState.valueOf, enumValues: PowerState_RobotPowerState.values)
     ..e<PowerState_PayloadPortsPowerState>(7, _omitFieldNames ? '' : 'payloadPortsPowerState', $pb.PbFieldType.OE, defaultOrMaker: PowerState_PayloadPortsPowerState.PAYLOAD_PORTS_POWER_STATE_UNKNOWN, valueOf: PowerState_PayloadPortsPowerState.valueOf, enumValues: PowerState_PayloadPortsPowerState.values)
     ..e<PowerState_WifiRadioPowerState>(9, _omitFieldNames ? '' : 'wifiRadioPowerState', $pb.PbFieldType.OE, defaultOrMaker: PowerState_WifiRadioPowerState.WIFI_RADIO_POWER_STATE_UNKNOWN, valueOf: PowerState_WifiRadioPowerState.valueOf, enumValues: PowerState_WifiRadioPowerState.values)
@@ -621,15 +652,15 @@ class PowerState extends $pb.GeneratedMessage {
 
   /// Robot clock timestamp corresponding to these readings.
   @$pb.TagNumber(1)
-  $60.Timestamp get timestamp => $_getN(0);
+  $59.Timestamp get timestamp => $_getN(0);
   @$pb.TagNumber(1)
-  set timestamp($60.Timestamp v) { setField(1, v); }
+  set timestamp($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimestamp() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimestamp() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureTimestamp() => $_ensure(0);
+  $59.Timestamp ensureTimestamp() => $_ensure(0);
 
   /// The motor power state of the robot.
   @$pb.TagNumber(2)
@@ -655,29 +686,29 @@ class PowerState extends $pb.GeneratedMessage {
   /// This field provides a summary of the BatteryStates that provide power for motor and/or
   /// base compute power, both of which are required for locomotion.
   @$pb.TagNumber(4)
-  $59.DoubleValue get locomotionChargePercentage => $_getN(3);
+  $58.DoubleValue get locomotionChargePercentage => $_getN(3);
   @$pb.TagNumber(4)
-  set locomotionChargePercentage($59.DoubleValue v) { setField(4, v); }
+  set locomotionChargePercentage($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLocomotionChargePercentage() => $_has(3);
   @$pb.TagNumber(4)
   void clearLocomotionChargePercentage() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureLocomotionChargePercentage() => $_ensure(3);
+  $58.DoubleValue ensureLocomotionChargePercentage() => $_ensure(3);
 
   /// An estimate of remaining runtime. Note that this field might not be populated.
   /// This field provides a summary of the BatteryStates that provide power for motor and/or
   /// base compute power, both of which are required for locomotion.
   @$pb.TagNumber(5)
-  $62.Duration get locomotionEstimatedRuntime => $_getN(4);
+  $61.Duration get locomotionEstimatedRuntime => $_getN(4);
   @$pb.TagNumber(5)
-  set locomotionEstimatedRuntime($62.Duration v) { setField(5, v); }
+  set locomotionEstimatedRuntime($61.Duration v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasLocomotionEstimatedRuntime() => $_has(4);
   @$pb.TagNumber(5)
   void clearLocomotionEstimatedRuntime() => clearField(5);
   @$pb.TagNumber(5)
-  $62.Duration ensureLocomotionEstimatedRuntime() => $_ensure(4);
+  $61.Duration ensureLocomotionEstimatedRuntime() => $_ensure(4);
 
   /// The payload ports power state of the robot.
   @$pb.TagNumber(6)
@@ -788,8 +819,8 @@ class SystemFaultState extends $pb.GeneratedMessage {
 class SystemFault extends $pb.GeneratedMessage {
   factory SystemFault({
     $core.String? name,
-    $60.Timestamp? onsetTimestamp,
-    $62.Duration? duration,
+    $59.Timestamp? onsetTimestamp,
+    $61.Duration? duration,
     $core.int? code,
     $core.String? errorMessage,
     $core.Iterable<$core.String>? attributes,
@@ -829,8 +860,8 @@ class SystemFault extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SystemFault', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'onsetTimestamp', subBuilder: $60.Timestamp.create)
-    ..aOM<$62.Duration>(3, _omitFieldNames ? '' : 'duration', subBuilder: $62.Duration.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'onsetTimestamp', subBuilder: $59.Timestamp.create)
+    ..aOM<$61.Duration>(3, _omitFieldNames ? '' : 'duration', subBuilder: $61.Duration.create)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'code', $pb.PbFieldType.O3)
     ..aOS(5, _omitFieldNames ? '' : 'errorMessage')
     ..pPS(6, _omitFieldNames ? '' : 'attributes')
@@ -872,27 +903,27 @@ class SystemFault extends $pb.GeneratedMessage {
 
   /// Time of robot local clock at fault onset.
   @$pb.TagNumber(2)
-  $60.Timestamp get onsetTimestamp => $_getN(1);
+  $59.Timestamp get onsetTimestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set onsetTimestamp($60.Timestamp v) { setField(2, v); }
+  set onsetTimestamp($59.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasOnsetTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearOnsetTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Timestamp ensureOnsetTimestamp() => $_ensure(1);
+  $59.Timestamp ensureOnsetTimestamp() => $_ensure(1);
 
   /// Time elapsed since onset of the fault.
   @$pb.TagNumber(3)
-  $62.Duration get duration => $_getN(2);
+  $61.Duration get duration => $_getN(2);
   @$pb.TagNumber(3)
-  set duration($62.Duration v) { setField(3, v); }
+  set duration($61.Duration v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDuration() => $_has(2);
   @$pb.TagNumber(3)
   void clearDuration() => clearField(3);
   @$pb.TagNumber(3)
-  $62.Duration ensureDuration() => $_ensure(2);
+  $61.Duration ensureDuration() => $_ensure(2);
 
   /// Error code returned by a fault. The exact interpretation of the fault code
   /// is unique to each variety of fault on the robot. The code is useful for
@@ -961,7 +992,7 @@ class SystemFault extends $pb.GeneratedMessage {
 /// in order to run the robot.
 class EStopState extends $pb.GeneratedMessage {
   factory EStopState({
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
     $core.String? name,
     EStopState_Type? type,
     EStopState_State? state,
@@ -990,7 +1021,7 @@ class EStopState extends $pb.GeneratedMessage {
   factory EStopState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EStopState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..e<EStopState_Type>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EStopState_Type.TYPE_UNKNOWN, valueOf: EStopState_Type.valueOf, enumValues: EStopState_Type.values)
     ..e<EStopState_State>(4, _omitFieldNames ? '' : 'state', $pb.PbFieldType.OE, defaultOrMaker: EStopState_State.STATE_UNKNOWN, valueOf: EStopState_State.valueOf, enumValues: EStopState_State.values)
@@ -1021,15 +1052,15 @@ class EStopState extends $pb.GeneratedMessage {
 
   /// Robot clock timestamp corresponding to these readings.
   @$pb.TagNumber(1)
-  $60.Timestamp get timestamp => $_getN(0);
+  $59.Timestamp get timestamp => $_getN(0);
   @$pb.TagNumber(1)
-  set timestamp($60.Timestamp v) { setField(1, v); }
+  set timestamp($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimestamp() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimestamp() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureTimestamp() => $_ensure(0);
+  $59.Timestamp ensureTimestamp() => $_ensure(0);
 
   /// Name of the E-Stop
   @$pb.TagNumber(2)
@@ -1076,12 +1107,12 @@ class EStopState extends $pb.GeneratedMessage {
 /// battery temperature.
 class BatteryState extends $pb.GeneratedMessage {
   factory BatteryState({
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
     $core.String? identifier,
-    $59.DoubleValue? chargePercentage,
-    $62.Duration? estimatedRuntime,
-    $59.DoubleValue? current,
-    $59.DoubleValue? voltage,
+    $58.DoubleValue? chargePercentage,
+    $61.Duration? estimatedRuntime,
+    $58.DoubleValue? current,
+    $58.DoubleValue? voltage,
     $core.Iterable<$core.double>? temperatures,
     BatteryState_Status? status,
   }) {
@@ -1117,12 +1148,12 @@ class BatteryState extends $pb.GeneratedMessage {
   factory BatteryState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BatteryState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..aOS(2, _omitFieldNames ? '' : 'identifier')
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'chargePercentage', subBuilder: $59.DoubleValue.create)
-    ..aOM<$62.Duration>(4, _omitFieldNames ? '' : 'estimatedRuntime', subBuilder: $62.Duration.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'current', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(6, _omitFieldNames ? '' : 'voltage', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'chargePercentage', subBuilder: $58.DoubleValue.create)
+    ..aOM<$61.Duration>(4, _omitFieldNames ? '' : 'estimatedRuntime', subBuilder: $61.Duration.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'current', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(6, _omitFieldNames ? '' : 'voltage', subBuilder: $58.DoubleValue.create)
     ..p<$core.double>(7, _omitFieldNames ? '' : 'temperatures', $pb.PbFieldType.KD)
     ..e<BatteryState_Status>(8, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: BatteryState_Status.STATUS_UNKNOWN, valueOf: BatteryState_Status.valueOf, enumValues: BatteryState_Status.values)
     ..hasRequiredFields = false
@@ -1151,15 +1182,15 @@ class BatteryState extends $pb.GeneratedMessage {
 
   /// Robot clock timestamp corresponding to these readings.
   @$pb.TagNumber(1)
-  $60.Timestamp get timestamp => $_getN(0);
+  $59.Timestamp get timestamp => $_getN(0);
   @$pb.TagNumber(1)
-  set timestamp($60.Timestamp v) { setField(1, v); }
+  set timestamp($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimestamp() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimestamp() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureTimestamp() => $_ensure(0);
+  $59.Timestamp ensureTimestamp() => $_ensure(0);
 
   /// An identifier for this battery (could be a serial number or a name. subject to change).
   @$pb.TagNumber(2)
@@ -1173,52 +1204,52 @@ class BatteryState extends $pb.GeneratedMessage {
 
   /// Number from 0 (empty) to 100 (full) indicating the estimated state of charge of the battery.
   @$pb.TagNumber(3)
-  $59.DoubleValue get chargePercentage => $_getN(2);
+  $58.DoubleValue get chargePercentage => $_getN(2);
   @$pb.TagNumber(3)
-  set chargePercentage($59.DoubleValue v) { setField(3, v); }
+  set chargePercentage($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasChargePercentage() => $_has(2);
   @$pb.TagNumber(3)
   void clearChargePercentage() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureChargePercentage() => $_ensure(2);
+  $58.DoubleValue ensureChargePercentage() => $_ensure(2);
 
   /// An estimate of remaining runtime. Note that this field might not be populated.
   @$pb.TagNumber(4)
-  $62.Duration get estimatedRuntime => $_getN(3);
+  $61.Duration get estimatedRuntime => $_getN(3);
   @$pb.TagNumber(4)
-  set estimatedRuntime($62.Duration v) { setField(4, v); }
+  set estimatedRuntime($61.Duration v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasEstimatedRuntime() => $_has(3);
   @$pb.TagNumber(4)
   void clearEstimatedRuntime() => clearField(4);
   @$pb.TagNumber(4)
-  $62.Duration ensureEstimatedRuntime() => $_ensure(3);
+  $61.Duration ensureEstimatedRuntime() => $_ensure(3);
 
   /// Measured current into (charging, positive) or out of (discharging, negative) the battery in
   /// Amps.
   @$pb.TagNumber(5)
-  $59.DoubleValue get current => $_getN(4);
+  $58.DoubleValue get current => $_getN(4);
   @$pb.TagNumber(5)
-  set current($59.DoubleValue v) { setField(5, v); }
+  set current($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCurrent() => $_has(4);
   @$pb.TagNumber(5)
   void clearCurrent() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureCurrent() => $_ensure(4);
+  $58.DoubleValue ensureCurrent() => $_ensure(4);
 
   /// Measured voltage of the entire battery in Volts.
   @$pb.TagNumber(6)
-  $59.DoubleValue get voltage => $_getN(5);
+  $58.DoubleValue get voltage => $_getN(5);
   @$pb.TagNumber(6)
-  set voltage($59.DoubleValue v) { setField(6, v); }
+  set voltage($58.DoubleValue v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasVoltage() => $_has(5);
   @$pb.TagNumber(6)
   void clearVoltage() => clearField(6);
   @$pb.TagNumber(6)
-  $59.DoubleValue ensureVoltage() => $_ensure(5);
+  $58.DoubleValue ensureVoltage() => $_ensure(5);
 
   /// Measured temperature measurements of battery, in Celsius.
   /// Temperatures may be measured in many locations across the battery.
@@ -1236,15 +1267,61 @@ class BatteryState extends $pb.GeneratedMessage {
   void clearStatus() => clearField(8);
 }
 
-/// The kinematic state of the robot describes the current estimated positions of the robot body and joints throughout the world.
-/// It includes a transform snapshot of the robot’s current known frames as well as joint states and the velocity of the body.
+class SystemState extends $pb.GeneratedMessage {
+  factory SystemState({
+    $core.Iterable<MotorTemperature>? motorTemperatures,
+  }) {
+    final $result = create();
+    if (motorTemperatures != null) {
+      $result.motorTemperatures.addAll(motorTemperatures);
+    }
+    return $result;
+  }
+  SystemState._() : super();
+  factory SystemState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SystemState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SystemState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..pc<MotorTemperature>(1, _omitFieldNames ? '' : 'motorTemperatures', $pb.PbFieldType.PM, subBuilder: MotorTemperature.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SystemState clone() => SystemState()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SystemState copyWith(void Function(SystemState) updates) => super.copyWith((message) => updates(message as SystemState)) as SystemState;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SystemState create() => SystemState._();
+  SystemState createEmptyInstance() => create();
+  static $pb.PbList<SystemState> createRepeated() => $pb.PbList<SystemState>();
+  @$core.pragma('dart2js:noInline')
+  static SystemState getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SystemState>(create);
+  static SystemState? _defaultInstance;
+
+  /// Temperature of the robot motors.
+  @$pb.TagNumber(1)
+  $core.List<MotorTemperature> get motorTemperatures => $_getList(0);
+}
+
+/// The kinematic state of the robot describes the current estimated positions of the robot body and
+/// joints throughout the world. It includes a transform snapshot of the robot’s current known frames
+/// as well as joint states and the velocity of the body.
 class KinematicState extends $pb.GeneratedMessage {
   factory KinematicState({
     $core.Iterable<JointState>? jointStates,
-    $61.SE3Velocity? velocityOfBodyInVision,
-    $61.SE3Velocity? velocityOfBodyInOdom,
-    $60.Timestamp? acquisitionTimestamp,
-    $61.FrameTreeSnapshot? transformsSnapshot,
+    $60.SE3Velocity? velocityOfBodyInVision,
+    $60.SE3Velocity? velocityOfBodyInOdom,
+    $59.Timestamp? acquisitionTimestamp,
+    $60.FrameTreeSnapshot? transformsSnapshot,
   }) {
     final $result = create();
     if (jointStates != null) {
@@ -1270,10 +1347,10 @@ class KinematicState extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'KinematicState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..pc<JointState>(2, _omitFieldNames ? '' : 'jointStates', $pb.PbFieldType.PM, subBuilder: JointState.create)
-    ..aOM<$61.SE3Velocity>(8, _omitFieldNames ? '' : 'velocityOfBodyInVision', subBuilder: $61.SE3Velocity.create)
-    ..aOM<$61.SE3Velocity>(12, _omitFieldNames ? '' : 'velocityOfBodyInOdom', subBuilder: $61.SE3Velocity.create)
-    ..aOM<$60.Timestamp>(30, _omitFieldNames ? '' : 'acquisitionTimestamp', subBuilder: $60.Timestamp.create)
-    ..aOM<$61.FrameTreeSnapshot>(31, _omitFieldNames ? '' : 'transformsSnapshot', subBuilder: $61.FrameTreeSnapshot.create)
+    ..aOM<$60.SE3Velocity>(8, _omitFieldNames ? '' : 'velocityOfBodyInVision', subBuilder: $60.SE3Velocity.create)
+    ..aOM<$60.SE3Velocity>(12, _omitFieldNames ? '' : 'velocityOfBodyInOdom', subBuilder: $60.SE3Velocity.create)
+    ..aOM<$59.Timestamp>(30, _omitFieldNames ? '' : 'acquisitionTimestamp', subBuilder: $59.Timestamp.create)
+    ..aOM<$60.FrameTreeSnapshot>(31, _omitFieldNames ? '' : 'transformsSnapshot', subBuilder: $60.FrameTreeSnapshot.create)
     ..hasRequiredFields = false
   ;
 
@@ -1305,55 +1382,85 @@ class KinematicState extends $pb.GeneratedMessage {
   /// Velocity of the body frame with respect to vision frame and expressed in vision frame.
   /// The linear velocity is applied at the origin of the body frame.
   @$pb.TagNumber(8)
-  $61.SE3Velocity get velocityOfBodyInVision => $_getN(1);
+  $60.SE3Velocity get velocityOfBodyInVision => $_getN(1);
   @$pb.TagNumber(8)
-  set velocityOfBodyInVision($61.SE3Velocity v) { setField(8, v); }
+  set velocityOfBodyInVision($60.SE3Velocity v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasVelocityOfBodyInVision() => $_has(1);
   @$pb.TagNumber(8)
   void clearVelocityOfBodyInVision() => clearField(8);
   @$pb.TagNumber(8)
-  $61.SE3Velocity ensureVelocityOfBodyInVision() => $_ensure(1);
+  $60.SE3Velocity ensureVelocityOfBodyInVision() => $_ensure(1);
 
   /// Velocity of the body frame with respect to odom frame and expressed in odom frame.
   /// Again, the linear velocity is applied at the origin of the body frame.
   @$pb.TagNumber(12)
-  $61.SE3Velocity get velocityOfBodyInOdom => $_getN(2);
+  $60.SE3Velocity get velocityOfBodyInOdom => $_getN(2);
   @$pb.TagNumber(12)
-  set velocityOfBodyInOdom($61.SE3Velocity v) { setField(12, v); }
+  set velocityOfBodyInOdom($60.SE3Velocity v) { setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasVelocityOfBodyInOdom() => $_has(2);
   @$pb.TagNumber(12)
   void clearVelocityOfBodyInOdom() => clearField(12);
   @$pb.TagNumber(12)
-  $61.SE3Velocity ensureVelocityOfBodyInOdom() => $_ensure(2);
+  $60.SE3Velocity ensureVelocityOfBodyInOdom() => $_ensure(2);
 
   /// Robot clock timestamp corresponding to these readings.
   @$pb.TagNumber(30)
-  $60.Timestamp get acquisitionTimestamp => $_getN(3);
+  $59.Timestamp get acquisitionTimestamp => $_getN(3);
   @$pb.TagNumber(30)
-  set acquisitionTimestamp($60.Timestamp v) { setField(30, v); }
+  set acquisitionTimestamp($59.Timestamp v) { setField(30, v); }
   @$pb.TagNumber(30)
   $core.bool hasAcquisitionTimestamp() => $_has(3);
   @$pb.TagNumber(30)
   void clearAcquisitionTimestamp() => clearField(30);
   @$pb.TagNumber(30)
-  $60.Timestamp ensureAcquisitionTimestamp() => $_ensure(3);
+  $59.Timestamp ensureAcquisitionTimestamp() => $_ensure(3);
 
-  /// A tree-based collection of transformations, which will include the transformations to the
-  /// robot body ("body") in addition to transformations to the common frames ("world", "dr") and
-  /// ground plane estimate "gpe".
-  /// All transforms within the snapshot are at the acquisition time of kinematic state.
+  ///  A tree-based collection of transformations.  See
+  ///  https://dev.bostondynamics.com/docs/concepts/geometry_and_frames for conceptual
+  ///  documentation on frames.  The snapshop will include the following frames:
+  ///  “odom”: An inertial frame that estimates the fixed location in the world (relative to where
+  ///  the robot is booted up) using the kinematics of the robot.
+  ///
+  ///  “vision”: An inertial frame that estimates the fixed location in the world (relative to where
+  ///  the robot is booted up), and is calculated using visual analysis of the world and the robot’s
+  ///  odometry.
+  ///
+  ///  “body”: A frame describing the robot body’s position and orientation. The frame’s origin is
+  ///  at the geometric center of the hips with the x-axis pointing from the hip center to the
+  ///  middle of the front hips.
+  ///
+  ///  “flat_body”: A gravity-aligned frame describing the robot body’s position and orientation.
+  ///  The position is at the robot’s center, and the x/y-axes lie flat in the “odom” frame x-y
+  ///  plane. Specifically, the x-axis is the normalized projection of the robot’s “body” frame
+  ///  x-axis to the “odom” x-y plane.
+  ///
+  ///  "gpe”: A frame that represents the robot’s ground plane estimate. The full SE(3) pose can be
+  ///  converted into a plane (a point and normal).
+  ///
+  ///  For robots with a SpotArm attached, see
+  ///  https://support.bostondynamics.com/s/article/Spot-Arm-specifications-and-concepts conceptual
+  ///  documentation on SpotArm specific frames. The snaphot will also include the following frames:
+  ///  "hand":  The hand frame is used by many of the ArmCommand requests available in the API.  The
+  ///  origin is slightly in front of the gripper's palm plate and its oreination is aligned with
+  ///  'arm0.link_wr1'.
+  ///
+  ///  "arm0.link_wr1": A frame describing the robot's distal wrist link's position and orientation.
+  ///  The origin of the frame is at the end of the link on its rotational axis.  It's x-axis is
+  ///  aligned with the rotational axis.
+  ///
+  ///  All transforms within the snapshot are at the acquisition time of kinematic state.
   @$pb.TagNumber(31)
-  $61.FrameTreeSnapshot get transformsSnapshot => $_getN(4);
+  $60.FrameTreeSnapshot get transformsSnapshot => $_getN(4);
   @$pb.TagNumber(31)
-  set transformsSnapshot($61.FrameTreeSnapshot v) { setField(31, v); }
+  set transformsSnapshot($60.FrameTreeSnapshot v) { setField(31, v); }
   @$pb.TagNumber(31)
   $core.bool hasTransformsSnapshot() => $_has(4);
   @$pb.TagNumber(31)
   void clearTransformsSnapshot() => clearField(31);
   @$pb.TagNumber(31)
-  $61.FrameTreeSnapshot ensureTransformsSnapshot() => $_ensure(4);
+  $60.FrameTreeSnapshot ensureTransformsSnapshot() => $_ensure(4);
 }
 
 /// Proto containing the state of a joint on the robot. This can be used with the robot skeleton to
@@ -1361,10 +1468,10 @@ class KinematicState extends $pb.GeneratedMessage {
 class JointState extends $pb.GeneratedMessage {
   factory JointState({
     $core.String? name,
-    $59.DoubleValue? position,
-    $59.DoubleValue? velocity,
-    $59.DoubleValue? acceleration,
-    $59.DoubleValue? load,
+    $58.DoubleValue? position,
+    $58.DoubleValue? velocity,
+    $58.DoubleValue? acceleration,
+    $58.DoubleValue? load,
   }) {
     final $result = create();
     if (name != null) {
@@ -1390,10 +1497,10 @@ class JointState extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JointState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOM<$59.DoubleValue>(2, _omitFieldNames ? '' : 'position', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(3, _omitFieldNames ? '' : 'velocity', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(4, _omitFieldNames ? '' : 'acceleration', subBuilder: $59.DoubleValue.create)
-    ..aOM<$59.DoubleValue>(5, _omitFieldNames ? '' : 'load', subBuilder: $59.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(2, _omitFieldNames ? '' : 'position', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(3, _omitFieldNames ? '' : 'velocity', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(4, _omitFieldNames ? '' : 'acceleration', subBuilder: $58.DoubleValue.create)
+    ..aOM<$58.DoubleValue>(5, _omitFieldNames ? '' : 'load', subBuilder: $58.DoubleValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -1431,52 +1538,118 @@ class JointState extends $pb.GeneratedMessage {
   /// This is typically an angle in radians as joints are typically revolute. However, for
   /// translational joints this could be a distance in meters.
   @$pb.TagNumber(2)
-  $59.DoubleValue get position => $_getN(1);
+  $58.DoubleValue get position => $_getN(1);
   @$pb.TagNumber(2)
-  set position($59.DoubleValue v) { setField(2, v); }
+  set position($58.DoubleValue v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPosition() => $_has(1);
   @$pb.TagNumber(2)
   void clearPosition() => clearField(2);
   @$pb.TagNumber(2)
-  $59.DoubleValue ensurePosition() => $_ensure(1);
+  $58.DoubleValue ensurePosition() => $_ensure(1);
 
   /// The joint velocity in [m/s].
   @$pb.TagNumber(3)
-  $59.DoubleValue get velocity => $_getN(2);
+  $58.DoubleValue get velocity => $_getN(2);
   @$pb.TagNumber(3)
-  set velocity($59.DoubleValue v) { setField(3, v); }
+  set velocity($58.DoubleValue v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasVelocity() => $_has(2);
   @$pb.TagNumber(3)
   void clearVelocity() => clearField(3);
   @$pb.TagNumber(3)
-  $59.DoubleValue ensureVelocity() => $_ensure(2);
+  $58.DoubleValue ensureVelocity() => $_ensure(2);
 
   /// The joint acceleration in [m/s^2].
   @$pb.TagNumber(4)
-  $59.DoubleValue get acceleration => $_getN(3);
+  $58.DoubleValue get acceleration => $_getN(3);
   @$pb.TagNumber(4)
-  set acceleration($59.DoubleValue v) { setField(4, v); }
+  set acceleration($58.DoubleValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasAcceleration() => $_has(3);
   @$pb.TagNumber(4)
   void clearAcceleration() => clearField(4);
   @$pb.TagNumber(4)
-  $59.DoubleValue ensureAcceleration() => $_ensure(3);
+  $58.DoubleValue ensureAcceleration() => $_ensure(3);
 
   /// This is typically a torque in Newton meters as joints are typically revolute. However, for
   /// translational joints this could be a force in Newtons.
   @$pb.TagNumber(5)
-  $59.DoubleValue get load => $_getN(4);
+  $58.DoubleValue get load => $_getN(4);
   @$pb.TagNumber(5)
-  set load($59.DoubleValue v) { setField(5, v); }
+  set load($58.DoubleValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasLoad() => $_has(4);
   @$pb.TagNumber(5)
   void clearLoad() => clearField(5);
   @$pb.TagNumber(5)
-  $59.DoubleValue ensureLoad() => $_ensure(4);
+  $58.DoubleValue ensureLoad() => $_ensure(4);
+}
+
+class MotorTemperature extends $pb.GeneratedMessage {
+  factory MotorTemperature({
+    $core.String? name,
+    $core.double? temperature,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (temperature != null) {
+      $result.temperature = temperature;
+    }
+    return $result;
+  }
+  MotorTemperature._() : super();
+  factory MotorTemperature.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory MotorTemperature.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MotorTemperature', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'temperature', $pb.PbFieldType.OD)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  MotorTemperature clone() => MotorTemperature()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  MotorTemperature copyWith(void Function(MotorTemperature) updates) => super.copyWith((message) => updates(message as MotorTemperature)) as MotorTemperature;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MotorTemperature create() => MotorTemperature._();
+  MotorTemperature createEmptyInstance() => create();
+  static $pb.PbList<MotorTemperature> createRepeated() => $pb.PbList<MotorTemperature>();
+  @$core.pragma('dart2js:noInline')
+  static MotorTemperature getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MotorTemperature>(create);
+  static MotorTemperature? _defaultInstance;
+
+  /// Name of the affected motor of the robot, specified by the joint name and degree of freedom.
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  /// Measured temperature of the motor, in Celsius.
+  @$pb.TagNumber(2)
+  $core.double get temperature => $_getN(1);
+  @$pb.TagNumber(2)
+  set temperature($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTemperature() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTemperature() => clearField(2);
 }
 
 /// This describes any current behaviror faults on the robot, which would block any robot commands
@@ -1532,7 +1705,7 @@ class BehaviorFaultState extends $pb.GeneratedMessage {
 class BehaviorFault extends $pb.GeneratedMessage {
   factory BehaviorFault({
     $core.int? behaviorFaultId,
-    $60.Timestamp? onsetTimestamp,
+    $59.Timestamp? onsetTimestamp,
     BehaviorFault_Cause? cause,
     BehaviorFault_Status? status,
   }) {
@@ -1557,7 +1730,7 @@ class BehaviorFault extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BehaviorFault', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'behaviorFaultId', $pb.PbFieldType.OU3)
-    ..aOM<$60.Timestamp>(2, _omitFieldNames ? '' : 'onsetTimestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'onsetTimestamp', subBuilder: $59.Timestamp.create)
     ..e<BehaviorFault_Cause>(3, _omitFieldNames ? '' : 'cause', $pb.PbFieldType.OE, defaultOrMaker: BehaviorFault_Cause.CAUSE_UNKNOWN, valueOf: BehaviorFault_Cause.valueOf, enumValues: BehaviorFault_Cause.values)
     ..e<BehaviorFault_Status>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: BehaviorFault_Status.STATUS_UNKNOWN, valueOf: BehaviorFault_Status.valueOf, enumValues: BehaviorFault_Status.values)
     ..hasRequiredFields = false
@@ -1596,15 +1769,15 @@ class BehaviorFault extends $pb.GeneratedMessage {
 
   /// Time of robot local clock at time of the error
   @$pb.TagNumber(2)
-  $60.Timestamp get onsetTimestamp => $_getN(1);
+  $59.Timestamp get onsetTimestamp => $_getN(1);
   @$pb.TagNumber(2)
-  set onsetTimestamp($60.Timestamp v) { setField(2, v); }
+  set onsetTimestamp($59.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasOnsetTimestamp() => $_has(1);
   @$pb.TagNumber(2)
   void clearOnsetTimestamp() => clearField(2);
   @$pb.TagNumber(2)
-  $60.Timestamp ensureOnsetTimestamp() => $_ensure(1);
+  $59.Timestamp ensureOnsetTimestamp() => $_ensure(1);
 
   /// The potential cause of the fault.
   @$pb.TagNumber(3)
@@ -1630,8 +1803,8 @@ class BehaviorFault extends $pb.GeneratedMessage {
 /// Key robot metrics (e.g., Gait cycles (count), distance walked, time moving, etc...).
 class RobotMetrics extends $pb.GeneratedMessage {
   factory RobotMetrics({
-    $60.Timestamp? timestamp,
-    $core.Iterable<$76.Parameter>? metrics,
+    $59.Timestamp? timestamp,
+    $core.Iterable<$77.Parameter>? metrics,
   }) {
     final $result = create();
     if (timestamp != null) {
@@ -1647,8 +1820,8 @@ class RobotMetrics extends $pb.GeneratedMessage {
   factory RobotMetrics.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotMetrics', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
-    ..pc<$76.Parameter>(2, _omitFieldNames ? '' : 'metrics', $pb.PbFieldType.PM, subBuilder: $76.Parameter.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
+    ..pc<$77.Parameter>(2, _omitFieldNames ? '' : 'metrics', $pb.PbFieldType.PM, subBuilder: $77.Parameter.create)
     ..hasRequiredFields = false
   ;
 
@@ -1675,19 +1848,19 @@ class RobotMetrics extends $pb.GeneratedMessage {
 
   /// Robot timestamp corresponding to these metrics.
   @$pb.TagNumber(1)
-  $60.Timestamp get timestamp => $_getN(0);
+  $59.Timestamp get timestamp => $_getN(0);
   @$pb.TagNumber(1)
-  set timestamp($60.Timestamp v) { setField(1, v); }
+  set timestamp($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimestamp() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimestamp() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureTimestamp() => $_ensure(0);
+  $59.Timestamp ensureTimestamp() => $_ensure(0);
 
   /// Key tracked robot metrics, such as distance walked, runtime, etc.
   @$pb.TagNumber(2)
-  $core.List<$76.Parameter> get metrics => $_getList(1);
+  $core.List<$77.Parameter> get metrics => $_getList(1);
 }
 
 enum CommsState_State {
@@ -1699,7 +1872,7 @@ enum CommsState_State {
 /// of the comms network.
 class CommsState extends $pb.GeneratedMessage {
   factory CommsState({
-    $60.Timestamp? timestamp,
+    $59.Timestamp? timestamp,
     WiFiState? wifiState,
   }) {
     final $result = create();
@@ -1721,7 +1894,7 @@ class CommsState extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommsState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..oo(0, [2])
-    ..aOM<$60.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $60.Timestamp.create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
     ..aOM<WiFiState>(2, _omitFieldNames ? '' : 'wifiState', subBuilder: WiFiState.create)
     ..hasRequiredFields = false
   ;
@@ -1752,15 +1925,15 @@ class CommsState extends $pb.GeneratedMessage {
 
   /// Robot timestamp corresponding to these readings.
   @$pb.TagNumber(1)
-  $60.Timestamp get timestamp => $_getN(0);
+  $59.Timestamp get timestamp => $_getN(0);
   @$pb.TagNumber(1)
-  set timestamp($60.Timestamp v) { setField(1, v); }
+  set timestamp($59.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimestamp() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimestamp() => clearField(1);
   @$pb.TagNumber(1)
-  $60.Timestamp ensureTimestamp() => $_ensure(0);
+  $59.Timestamp ensureTimestamp() => $_ensure(0);
 
   /// The communication state is WiFi.
   @$pb.TagNumber(2)
@@ -1847,9 +2020,9 @@ class FootState_TerrainState extends $pb.GeneratedMessage {
   factory FootState_TerrainState({
     $core.double? groundMuEst,
     $core.String? frameName,
-    $61.Vec3? footSlipDistanceRtFrame,
-    $61.Vec3? footSlipVelocityRtFrame,
-    $61.Vec3? groundContactNormalRtFrame,
+    $60.Vec3? footSlipDistanceRtFrame,
+    $60.Vec3? footSlipVelocityRtFrame,
+    $60.Vec3? groundContactNormalRtFrame,
     $core.double? visualSurfaceGroundPenetrationMean,
     $core.double? visualSurfaceGroundPenetrationStd,
   }) {
@@ -1884,9 +2057,9 @@ class FootState_TerrainState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FootState.TerrainState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..a<$core.double>(1, _omitFieldNames ? '' : 'groundMuEst', $pb.PbFieldType.OD)
     ..aOS(2, _omitFieldNames ? '' : 'frameName')
-    ..aOM<$61.Vec3>(3, _omitFieldNames ? '' : 'footSlipDistanceRtFrame', subBuilder: $61.Vec3.create)
-    ..aOM<$61.Vec3>(4, _omitFieldNames ? '' : 'footSlipVelocityRtFrame', subBuilder: $61.Vec3.create)
-    ..aOM<$61.Vec3>(5, _omitFieldNames ? '' : 'groundContactNormalRtFrame', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(3, _omitFieldNames ? '' : 'footSlipDistanceRtFrame', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec3>(4, _omitFieldNames ? '' : 'footSlipVelocityRtFrame', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec3>(5, _omitFieldNames ? '' : 'groundContactNormalRtFrame', subBuilder: $60.Vec3.create)
     ..a<$core.double>(6, _omitFieldNames ? '' : 'visualSurfaceGroundPenetrationMean', $pb.PbFieldType.OD)
     ..a<$core.double>(7, _omitFieldNames ? '' : 'visualSurfaceGroundPenetrationStd', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
@@ -1935,39 +2108,39 @@ class FootState_TerrainState extends $pb.GeneratedMessage {
 
   /// Foot slip distance rt named frame
   @$pb.TagNumber(3)
-  $61.Vec3 get footSlipDistanceRtFrame => $_getN(2);
+  $60.Vec3 get footSlipDistanceRtFrame => $_getN(2);
   @$pb.TagNumber(3)
-  set footSlipDistanceRtFrame($61.Vec3 v) { setField(3, v); }
+  set footSlipDistanceRtFrame($60.Vec3 v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFootSlipDistanceRtFrame() => $_has(2);
   @$pb.TagNumber(3)
   void clearFootSlipDistanceRtFrame() => clearField(3);
   @$pb.TagNumber(3)
-  $61.Vec3 ensureFootSlipDistanceRtFrame() => $_ensure(2);
+  $60.Vec3 ensureFootSlipDistanceRtFrame() => $_ensure(2);
 
   /// Foot slip velocity rt named frame
   @$pb.TagNumber(4)
-  $61.Vec3 get footSlipVelocityRtFrame => $_getN(3);
+  $60.Vec3 get footSlipVelocityRtFrame => $_getN(3);
   @$pb.TagNumber(4)
-  set footSlipVelocityRtFrame($61.Vec3 v) { setField(4, v); }
+  set footSlipVelocityRtFrame($60.Vec3 v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasFootSlipVelocityRtFrame() => $_has(3);
   @$pb.TagNumber(4)
   void clearFootSlipVelocityRtFrame() => clearField(4);
   @$pb.TagNumber(4)
-  $61.Vec3 ensureFootSlipVelocityRtFrame() => $_ensure(3);
+  $60.Vec3 ensureFootSlipVelocityRtFrame() => $_ensure(3);
 
   /// Ground contact normal rt named frame
   @$pb.TagNumber(5)
-  $61.Vec3 get groundContactNormalRtFrame => $_getN(4);
+  $60.Vec3 get groundContactNormalRtFrame => $_getN(4);
   @$pb.TagNumber(5)
-  set groundContactNormalRtFrame($61.Vec3 v) { setField(5, v); }
+  set groundContactNormalRtFrame($60.Vec3 v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasGroundContactNormalRtFrame() => $_has(4);
   @$pb.TagNumber(5)
   void clearGroundContactNormalRtFrame() => clearField(5);
   @$pb.TagNumber(5)
-  $61.Vec3 ensureGroundContactNormalRtFrame() => $_ensure(4);
+  $60.Vec3 ensureGroundContactNormalRtFrame() => $_ensure(4);
 
   /// Mean penetration (meters) of the foot below the ground visual
   /// surface. For penetrable terrains (gravel/sand/grass etc.) these values are
@@ -1995,7 +2168,7 @@ class FootState_TerrainState extends $pb.GeneratedMessage {
 /// Information about the foot positions and contact state, on a per-foot basis.
 class FootState extends $pb.GeneratedMessage {
   factory FootState({
-    $61.Vec3? footPositionRtBody,
+    $60.Vec3? footPositionRtBody,
     FootState_Contact? contact,
     FootState_TerrainState? terrain,
   }) {
@@ -2016,7 +2189,7 @@ class FootState extends $pb.GeneratedMessage {
   factory FootState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FootState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'footPositionRtBody', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'footPositionRtBody', subBuilder: $60.Vec3.create)
     ..e<FootState_Contact>(2, _omitFieldNames ? '' : 'contact', $pb.PbFieldType.OE, defaultOrMaker: FootState_Contact.CONTACT_UNKNOWN, valueOf: FootState_Contact.valueOf, enumValues: FootState_Contact.values)
     ..aOM<FootState_TerrainState>(3, _omitFieldNames ? '' : 'terrain', subBuilder: FootState_TerrainState.create)
     ..hasRequiredFields = false
@@ -2045,15 +2218,15 @@ class FootState extends $pb.GeneratedMessage {
 
   /// The foot position described relative to the body.
   @$pb.TagNumber(1)
-  $61.Vec3 get footPositionRtBody => $_getN(0);
+  $60.Vec3 get footPositionRtBody => $_getN(0);
   @$pb.TagNumber(1)
-  set footPositionRtBody($61.Vec3 v) { setField(1, v); }
+  set footPositionRtBody($60.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFootPositionRtBody() => $_has(0);
   @$pb.TagNumber(1)
   void clearFootPositionRtBody() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3 ensureFootPositionRtBody() => $_ensure(0);
+  $60.Vec3 ensureFootPositionRtBody() => $_ensure(0);
 
   /// Is the foot in contact with the ground?
   @$pb.TagNumber(2)
@@ -2083,9 +2256,9 @@ class ManipulatorState extends $pb.GeneratedMessage {
     $core.bool? isGripperHoldingItem,
     ManipulatorState_StowState? stowState,
     $core.double? gripperOpenPercentage,
-    $61.Vec3? estimatedEndEffectorForceInHand,
-    $61.SE3Velocity? velocityOfHandInVision,
-    $61.SE3Velocity? velocityOfHandInOdom,
+    $60.Vec3? estimatedEndEffectorForceInHand,
+    $60.SE3Velocity? velocityOfHandInVision,
+    $60.SE3Velocity? velocityOfHandInOdom,
     ManipulatorState_CarryState? carryState,
   }) {
     final $result = create();
@@ -2120,9 +2293,9 @@ class ManipulatorState extends $pb.GeneratedMessage {
     ..aOB(6, _omitFieldNames ? '' : 'isGripperHoldingItem')
     ..e<ManipulatorState_StowState>(9, _omitFieldNames ? '' : 'stowState', $pb.PbFieldType.OE, defaultOrMaker: ManipulatorState_StowState.STOWSTATE_UNKNOWN, valueOf: ManipulatorState_StowState.valueOf, enumValues: ManipulatorState_StowState.values)
     ..a<$core.double>(12, _omitFieldNames ? '' : 'gripperOpenPercentage', $pb.PbFieldType.OD)
-    ..aOM<$61.Vec3>(13, _omitFieldNames ? '' : 'estimatedEndEffectorForceInHand', subBuilder: $61.Vec3.create)
-    ..aOM<$61.SE3Velocity>(14, _omitFieldNames ? '' : 'velocityOfHandInVision', subBuilder: $61.SE3Velocity.create)
-    ..aOM<$61.SE3Velocity>(15, _omitFieldNames ? '' : 'velocityOfHandInOdom', subBuilder: $61.SE3Velocity.create)
+    ..aOM<$60.Vec3>(13, _omitFieldNames ? '' : 'estimatedEndEffectorForceInHand', subBuilder: $60.Vec3.create)
+    ..aOM<$60.SE3Velocity>(14, _omitFieldNames ? '' : 'velocityOfHandInVision', subBuilder: $60.SE3Velocity.create)
+    ..aOM<$60.SE3Velocity>(15, _omitFieldNames ? '' : 'velocityOfHandInOdom', subBuilder: $60.SE3Velocity.create)
     ..e<ManipulatorState_CarryState>(16, _omitFieldNames ? '' : 'carryState', $pb.PbFieldType.OE, defaultOrMaker: ManipulatorState_CarryState.CARRY_STATE_UNKNOWN, valueOf: ManipulatorState_CarryState.valueOf, enumValues: ManipulatorState_CarryState.values)
     ..hasRequiredFields = false
   ;
@@ -2181,41 +2354,41 @@ class ManipulatorState extends $pb.GeneratedMessage {
 
   /// The estimated force on the end-effector expressed in the hand frame.
   @$pb.TagNumber(13)
-  $61.Vec3 get estimatedEndEffectorForceInHand => $_getN(3);
+  $60.Vec3 get estimatedEndEffectorForceInHand => $_getN(3);
   @$pb.TagNumber(13)
-  set estimatedEndEffectorForceInHand($61.Vec3 v) { setField(13, v); }
+  set estimatedEndEffectorForceInHand($60.Vec3 v) { setField(13, v); }
   @$pb.TagNumber(13)
   $core.bool hasEstimatedEndEffectorForceInHand() => $_has(3);
   @$pb.TagNumber(13)
   void clearEstimatedEndEffectorForceInHand() => clearField(13);
   @$pb.TagNumber(13)
-  $61.Vec3 ensureEstimatedEndEffectorForceInHand() => $_ensure(3);
+  $60.Vec3 ensureEstimatedEndEffectorForceInHand() => $_ensure(3);
 
   /// Velocity of the hand frame with respect to vision frame and expressed in vision frame.
   /// The linear velocity is applied at the origin of the hand frame.
   @$pb.TagNumber(14)
-  $61.SE3Velocity get velocityOfHandInVision => $_getN(4);
+  $60.SE3Velocity get velocityOfHandInVision => $_getN(4);
   @$pb.TagNumber(14)
-  set velocityOfHandInVision($61.SE3Velocity v) { setField(14, v); }
+  set velocityOfHandInVision($60.SE3Velocity v) { setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasVelocityOfHandInVision() => $_has(4);
   @$pb.TagNumber(14)
   void clearVelocityOfHandInVision() => clearField(14);
   @$pb.TagNumber(14)
-  $61.SE3Velocity ensureVelocityOfHandInVision() => $_ensure(4);
+  $60.SE3Velocity ensureVelocityOfHandInVision() => $_ensure(4);
 
   /// Velocity of the hand frame with respect to odom frame and expressed in odom frame.
   /// Again, the linear velocity is applied at the origin of the hand frame.
   @$pb.TagNumber(15)
-  $61.SE3Velocity get velocityOfHandInOdom => $_getN(5);
+  $60.SE3Velocity get velocityOfHandInOdom => $_getN(5);
   @$pb.TagNumber(15)
-  set velocityOfHandInOdom($61.SE3Velocity v) { setField(15, v); }
+  set velocityOfHandInOdom($60.SE3Velocity v) { setField(15, v); }
   @$pb.TagNumber(15)
   $core.bool hasVelocityOfHandInOdom() => $_has(5);
   @$pb.TagNumber(15)
   void clearVelocityOfHandInOdom() => clearField(15);
   @$pb.TagNumber(15)
-  $61.SE3Velocity ensureVelocityOfHandInOdom() => $_ensure(5);
+  $60.SE3Velocity ensureVelocityOfHandInOdom() => $_ensure(5);
 
   @$pb.TagNumber(16)
   ManipulatorState_CarryState get carryState => $_getN(6);
@@ -2232,9 +2405,9 @@ class ManipulatorState extends $pb.GeneratedMessage {
 /// A "historical" fault indicates a, now cleared, service problem.
 class ServiceFaultState extends $pb.GeneratedMessage {
   factory ServiceFaultState({
-    $core.Iterable<$9.ServiceFault>? faults,
-    $core.Iterable<$9.ServiceFault>? historicalFaults,
-    $core.Map<$core.String, $9.ServiceFault_Severity>? aggregated,
+    $core.Iterable<$10.ServiceFault>? faults,
+    $core.Iterable<$10.ServiceFault>? historicalFaults,
+    $core.Map<$core.String, $10.ServiceFault_Severity>? aggregated,
   }) {
     final $result = create();
     if (faults != null) {
@@ -2253,9 +2426,9 @@ class ServiceFaultState extends $pb.GeneratedMessage {
   factory ServiceFaultState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServiceFaultState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..pc<$9.ServiceFault>(1, _omitFieldNames ? '' : 'faults', $pb.PbFieldType.PM, subBuilder: $9.ServiceFault.create)
-    ..pc<$9.ServiceFault>(2, _omitFieldNames ? '' : 'historicalFaults', $pb.PbFieldType.PM, subBuilder: $9.ServiceFault.create)
-    ..m<$core.String, $9.ServiceFault_Severity>(3, _omitFieldNames ? '' : 'aggregated', entryClassName: 'ServiceFaultState.AggregatedEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OE, valueOf: $9.ServiceFault_Severity.valueOf, enumValues: $9.ServiceFault_Severity.values, valueDefaultOrMaker: $9.ServiceFault_Severity.SEVERITY_UNKNOWN, defaultEnumValue: $9.ServiceFault_Severity.SEVERITY_UNKNOWN, packageName: const $pb.PackageName('bosdyn.api'))
+    ..pc<$10.ServiceFault>(1, _omitFieldNames ? '' : 'faults', $pb.PbFieldType.PM, subBuilder: $10.ServiceFault.create)
+    ..pc<$10.ServiceFault>(2, _omitFieldNames ? '' : 'historicalFaults', $pb.PbFieldType.PM, subBuilder: $10.ServiceFault.create)
+    ..m<$core.String, $10.ServiceFault_Severity>(3, _omitFieldNames ? '' : 'aggregated', entryClassName: 'ServiceFaultState.AggregatedEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OE, valueOf: $10.ServiceFault_Severity.valueOf, enumValues: $10.ServiceFault_Severity.values, valueDefaultOrMaker: $10.ServiceFault_Severity.SEVERITY_UNKNOWN, defaultEnumValue: $10.ServiceFault_Severity.SEVERITY_UNKNOWN, packageName: const $pb.PackageName('bosdyn.api'))
     ..hasRequiredFields = false
   ;
 
@@ -2282,18 +2455,18 @@ class ServiceFaultState extends $pb.GeneratedMessage {
 
   /// Currently active faults
   @$pb.TagNumber(1)
-  $core.List<$9.ServiceFault> get faults => $_getList(0);
+  $core.List<$10.ServiceFault> get faults => $_getList(0);
 
   /// Service faults that have been cleared. Acts as a ring buffer with size of 50.
   @$pb.TagNumber(2)
-  $core.List<$9.ServiceFault> get historicalFaults => $_getList(1);
+  $core.List<$10.ServiceFault> get historicalFaults => $_getList(1);
 
   /// Aggregated service fault data. Maps attribute string to highest severity level
   /// of any active fault containing that attribute string.
   /// This provides a very quick way of determining if there any "locomotion" or
   /// "vision" faults above a certain severity level.
   @$pb.TagNumber(3)
-  $core.Map<$core.String, $9.ServiceFault_Severity> get aggregated => $_getMap(2);
+  $core.Map<$core.String, $10.ServiceFault_Severity> get aggregated => $_getMap(2);
 }
 
 /// Relevant terrain data beneath and around the robot
@@ -2352,7 +2525,7 @@ class TerrainState extends $pb.GeneratedMessage {
 /// The RobotState request message to get the current state of the robot.
 class RobotStateRequest extends $pb.GeneratedMessage {
   factory RobotStateRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -2365,7 +2538,7 @@ class RobotStateRequest extends $pb.GeneratedMessage {
   factory RobotStateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotStateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -2392,22 +2565,22 @@ class RobotStateRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The RobotState response message, which returns the robot state information from the time
 /// the request was received.
 class RobotStateResponse extends $pb.GeneratedMessage {
   factory RobotStateResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     RobotState? robotState,
   }) {
     final $result = create();
@@ -2424,7 +2597,7 @@ class RobotStateResponse extends $pb.GeneratedMessage {
   factory RobotStateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotStateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<RobotState>(2, _omitFieldNames ? '' : 'robotState', subBuilder: RobotState.create)
     ..hasRequiredFields = false
   ;
@@ -2452,15 +2625,15 @@ class RobotStateResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The requested RobotState.
   @$pb.TagNumber(2)
@@ -2478,7 +2651,7 @@ class RobotStateResponse extends $pb.GeneratedMessage {
 /// The RobotMetrics request message to get metrics and parameters from the robot.
 class RobotMetricsRequest extends $pb.GeneratedMessage {
   factory RobotMetricsRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -2491,7 +2664,7 @@ class RobotMetricsRequest extends $pb.GeneratedMessage {
   factory RobotMetricsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotMetricsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -2518,22 +2691,22 @@ class RobotMetricsRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The RobotMetrics response message, which returns the metrics information from the time
 /// the request was received.
 class RobotMetricsResponse extends $pb.GeneratedMessage {
   factory RobotMetricsResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     RobotMetrics? robotMetrics,
   }) {
     final $result = create();
@@ -2550,7 +2723,7 @@ class RobotMetricsResponse extends $pb.GeneratedMessage {
   factory RobotMetricsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotMetricsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<RobotMetrics>(2, _omitFieldNames ? '' : 'robotMetrics', subBuilder: RobotMetrics.create)
     ..hasRequiredFields = false
   ;
@@ -2578,15 +2751,15 @@ class RobotMetricsResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The requested robot metrics.
   @$pb.TagNumber(2)
@@ -2605,7 +2778,7 @@ class RobotMetricsResponse extends $pb.GeneratedMessage {
 /// by the robot skeleton and urdf.
 class RobotHardwareConfigurationRequest extends $pb.GeneratedMessage {
   factory RobotHardwareConfigurationRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -2618,7 +2791,7 @@ class RobotHardwareConfigurationRequest extends $pb.GeneratedMessage {
   factory RobotHardwareConfigurationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotHardwareConfigurationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -2645,22 +2818,22 @@ class RobotHardwareConfigurationRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 }
 
 /// The RobotHardwareConfiguration response message, which returns the hardware config from the time
 /// the request was received.
 class RobotHardwareConfigurationResponse extends $pb.GeneratedMessage {
   factory RobotHardwareConfigurationResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     HardwareConfiguration? hardwareConfiguration,
   }) {
     final $result = create();
@@ -2677,7 +2850,7 @@ class RobotHardwareConfigurationResponse extends $pb.GeneratedMessage {
   factory RobotHardwareConfigurationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotHardwareConfigurationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<HardwareConfiguration>(2, _omitFieldNames ? '' : 'hardwareConfiguration', subBuilder: HardwareConfiguration.create)
     ..hasRequiredFields = false
   ;
@@ -2705,15 +2878,15 @@ class RobotHardwareConfigurationResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The requested RobotState.
   @$pb.TagNumber(2)
@@ -2728,11 +2901,11 @@ class RobotHardwareConfigurationResponse extends $pb.GeneratedMessage {
   HardwareConfiguration ensureHardwareConfiguration() => $_ensure(1);
 }
 
-/// The RobotLinkModel request message uses a link name returned by the RobotHardwareConfiguration response to
-/// get the associated OBJ file.
+/// The RobotLinkModel request message uses a link name returned by the RobotHardwareConfiguration
+/// response to get the associated OBJ file.
 class RobotLinkModelRequest extends $pb.GeneratedMessage {
   factory RobotLinkModelRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.String? linkName,
   }) {
     final $result = create();
@@ -2749,7 +2922,7 @@ class RobotLinkModelRequest extends $pb.GeneratedMessage {
   factory RobotLinkModelRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotLinkModelRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOS(2, _omitFieldNames ? '' : 'linkName')
     ..hasRequiredFields = false
   ;
@@ -2777,15 +2950,15 @@ class RobotLinkModelRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The link name of which the OBJ file shoould represent.
   @$pb.TagNumber(2)
@@ -2801,7 +2974,7 @@ class RobotLinkModelRequest extends $pb.GeneratedMessage {
 /// The RobotLinkModel response message returns the OBJ file for a specifc robot link.
 class RobotLinkModelResponse extends $pb.GeneratedMessage {
   factory RobotLinkModelResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     Skeleton_Link_ObjModel? linkModel,
   }) {
     final $result = create();
@@ -2818,7 +2991,7 @@ class RobotLinkModelResponse extends $pb.GeneratedMessage {
   factory RobotLinkModelResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotLinkModelResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..aOM<Skeleton_Link_ObjModel>(2, _omitFieldNames ? '' : 'linkModel', subBuilder: Skeleton_Link_ObjModel.create)
     ..hasRequiredFields = false
   ;
@@ -2846,15 +3019,15 @@ class RobotLinkModelResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// The requested RobotState skeleton obj model.
   @$pb.TagNumber(2)
@@ -2874,7 +3047,7 @@ class RobotImpairedState extends $pb.GeneratedMessage {
   factory RobotImpairedState({
     RobotImpairedState_ImpairedStatus? impairedStatus,
     $core.Iterable<SystemFault>? systemFaults,
-    $core.Iterable<$9.ServiceFault>? serviceFaults,
+    $core.Iterable<$10.ServiceFault>? serviceFaults,
     $core.Iterable<BehaviorFault>? behaviorFaults,
   }) {
     final $result = create();
@@ -2899,7 +3072,7 @@ class RobotImpairedState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotImpairedState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..e<RobotImpairedState_ImpairedStatus>(1, _omitFieldNames ? '' : 'impairedStatus', $pb.PbFieldType.OE, defaultOrMaker: RobotImpairedState_ImpairedStatus.IMPAIRED_STATUS_UNKNOWN, valueOf: RobotImpairedState_ImpairedStatus.valueOf, enumValues: RobotImpairedState_ImpairedStatus.values)
     ..pc<SystemFault>(2, _omitFieldNames ? '' : 'systemFaults', $pb.PbFieldType.PM, subBuilder: SystemFault.create)
-    ..pc<$9.ServiceFault>(3, _omitFieldNames ? '' : 'serviceFaults', $pb.PbFieldType.PM, subBuilder: $9.ServiceFault.create)
+    ..pc<$10.ServiceFault>(3, _omitFieldNames ? '' : 'serviceFaults', $pb.PbFieldType.PM, subBuilder: $10.ServiceFault.create)
     ..pc<BehaviorFault>(4, _omitFieldNames ? '' : 'behaviorFaults', $pb.PbFieldType.PM, subBuilder: BehaviorFault.create)
     ..hasRequiredFields = false
   ;
@@ -2935,19 +3108,537 @@ class RobotImpairedState extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearImpairedStatus() => clearField(1);
 
-  /// If impaired_status is STATUS_SYSTEM_FAULT, these are the faults which caused the robot to stop.
+  /// If impaired_status is STATUS_SYSTEM_FAULT, these are the faults which caused the robot to
+  /// stop.
   @$pb.TagNumber(2)
   $core.List<SystemFault> get systemFaults => $_getList(1);
 
   /// If impaired_status is STATUS_SERVICE_FAULT, these are the service faults which caused
   /// the robot to stop.
   @$pb.TagNumber(3)
-  $core.List<$9.ServiceFault> get serviceFaults => $_getList(2);
+  $core.List<$10.ServiceFault> get serviceFaults => $_getList(2);
 
   /// If impaired_status is STATUS_BEHAVIOR_FAULT, these are the behavior faults which caused
   /// the robot to stop.
   @$pb.TagNumber(4)
   $core.List<BehaviorFault> get behaviorFaults => $_getList(3);
+}
+
+class CombinedJointStates extends $pb.GeneratedMessage {
+  factory CombinedJointStates({
+    $59.Timestamp? acquisitionTimestamp,
+    $core.Iterable<$core.double>? position,
+    $core.Iterable<$core.double>? velocity,
+    $core.Iterable<$core.double>? load,
+  }) {
+    final $result = create();
+    if (acquisitionTimestamp != null) {
+      $result.acquisitionTimestamp = acquisitionTimestamp;
+    }
+    if (position != null) {
+      $result.position.addAll(position);
+    }
+    if (velocity != null) {
+      $result.velocity.addAll(velocity);
+    }
+    if (load != null) {
+      $result.load.addAll(load);
+    }
+    return $result;
+  }
+  CombinedJointStates._() : super();
+  factory CombinedJointStates.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CombinedJointStates.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CombinedJointStates', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..aOM<$59.Timestamp>(1, _omitFieldNames ? '' : 'acquisitionTimestamp', subBuilder: $59.Timestamp.create)
+    ..p<$core.double>(2, _omitFieldNames ? '' : 'position', $pb.PbFieldType.KF)
+    ..p<$core.double>(3, _omitFieldNames ? '' : 'velocity', $pb.PbFieldType.KF)
+    ..p<$core.double>(4, _omitFieldNames ? '' : 'load', $pb.PbFieldType.KF)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CombinedJointStates clone() => CombinedJointStates()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CombinedJointStates copyWith(void Function(CombinedJointStates) updates) => super.copyWith((message) => updates(message as CombinedJointStates)) as CombinedJointStates;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CombinedJointStates create() => CombinedJointStates._();
+  CombinedJointStates createEmptyInstance() => create();
+  static $pb.PbList<CombinedJointStates> createRepeated() => $pb.PbList<CombinedJointStates>();
+  @$core.pragma('dart2js:noInline')
+  static CombinedJointStates getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CombinedJointStates>(create);
+  static CombinedJointStates? _defaultInstance;
+
+  /// Robot clock timestamp corresponding to these readings.
+  @$pb.TagNumber(1)
+  $59.Timestamp get acquisitionTimestamp => $_getN(0);
+  @$pb.TagNumber(1)
+  set acquisitionTimestamp($59.Timestamp v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAcquisitionTimestamp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAcquisitionTimestamp() => clearField(1);
+  @$pb.TagNumber(1)
+  $59.Timestamp ensureAcquisitionTimestamp() => $_ensure(0);
+
+  /// The ordering of joints in these repeated fields are the same as (TODO  where)
+  @$pb.TagNumber(2)
+  $core.List<$core.double> get position => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.double> get velocity => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.double> get load => $_getList(3);
+}
+
+class ImuState_Packet extends $pb.GeneratedMessage {
+  factory ImuState_Packet({
+    $60.Vec3? accelerationRtOdomInLinkFrame,
+    $60.Vec3? angularVelocityRtOdomInLinkFrame,
+    $60.Quaternion? odomRotLink,
+    $59.Timestamp? timestamp,
+  }) {
+    final $result = create();
+    if (accelerationRtOdomInLinkFrame != null) {
+      $result.accelerationRtOdomInLinkFrame = accelerationRtOdomInLinkFrame;
+    }
+    if (angularVelocityRtOdomInLinkFrame != null) {
+      $result.angularVelocityRtOdomInLinkFrame = angularVelocityRtOdomInLinkFrame;
+    }
+    if (odomRotLink != null) {
+      $result.odomRotLink = odomRotLink;
+    }
+    if (timestamp != null) {
+      $result.timestamp = timestamp;
+    }
+    return $result;
+  }
+  ImuState_Packet._() : super();
+  factory ImuState_Packet.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ImuState_Packet.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImuState.Packet', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'accelerationRtOdomInLinkFrame', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec3>(2, _omitFieldNames ? '' : 'angularVelocityRtOdomInLinkFrame', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Quaternion>(3, _omitFieldNames ? '' : 'odomRotLink', subBuilder: $60.Quaternion.create)
+    ..aOM<$59.Timestamp>(4, _omitFieldNames ? '' : 'timestamp', subBuilder: $59.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ImuState_Packet clone() => ImuState_Packet()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ImuState_Packet copyWith(void Function(ImuState_Packet) updates) => super.copyWith((message) => updates(message as ImuState_Packet)) as ImuState_Packet;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ImuState_Packet create() => ImuState_Packet._();
+  ImuState_Packet createEmptyInstance() => create();
+  static $pb.PbList<ImuState_Packet> createRepeated() => $pb.PbList<ImuState_Packet>();
+  @$core.pragma('dart2js:noInline')
+  static ImuState_Packet getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ImuState_Packet>(create);
+  static ImuState_Packet? _defaultInstance;
+
+  /// Linear acceleration of the imu relative to the odom frame expressed in the mounting
+  /// link's frame (m/s^2).
+  @$pb.TagNumber(1)
+  $60.Vec3 get accelerationRtOdomInLinkFrame => $_getN(0);
+  @$pb.TagNumber(1)
+  set accelerationRtOdomInLinkFrame($60.Vec3 v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAccelerationRtOdomInLinkFrame() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccelerationRtOdomInLinkFrame() => clearField(1);
+  @$pb.TagNumber(1)
+  $60.Vec3 ensureAccelerationRtOdomInLinkFrame() => $_ensure(0);
+
+  /// Angular velocity of the imu relative to the odom frame expressed in the mounting link's
+  /// frame (rad/s).
+  @$pb.TagNumber(2)
+  $60.Vec3 get angularVelocityRtOdomInLinkFrame => $_getN(1);
+  @$pb.TagNumber(2)
+  set angularVelocityRtOdomInLinkFrame($60.Vec3 v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAngularVelocityRtOdomInLinkFrame() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAngularVelocityRtOdomInLinkFrame() => clearField(2);
+  @$pb.TagNumber(2)
+  $60.Vec3 ensureAngularVelocityRtOdomInLinkFrame() => $_ensure(1);
+
+  /// Rotation from mounting link to odom frame as reported by the IMU.
+  @$pb.TagNumber(3)
+  $60.Quaternion get odomRotLink => $_getN(2);
+  @$pb.TagNumber(3)
+  set odomRotLink($60.Quaternion v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOdomRotLink() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOdomRotLink() => clearField(3);
+  @$pb.TagNumber(3)
+  $60.Quaternion ensureOdomRotLink() => $_ensure(2);
+
+  /// Packet timestamp. Note that a given state update may contain many imu packets so
+  /// this timestamp will be different than the header timestamp for the state message.
+  @$pb.TagNumber(4)
+  $59.Timestamp get timestamp => $_getN(3);
+  @$pb.TagNumber(4)
+  set timestamp($59.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTimestamp() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTimestamp() => clearField(4);
+  @$pb.TagNumber(4)
+  $59.Timestamp ensureTimestamp() => $_ensure(3);
+}
+
+class ImuState extends $pb.GeneratedMessage {
+  factory ImuState({
+    $core.double? packetRate,
+    $core.Iterable<ImuState_Packet>? packets,
+    $core.String? identifier,
+    $core.String? mountingLinkName,
+    $60.Vec3? positionImuRtLink,
+  }) {
+    final $result = create();
+    if (packetRate != null) {
+      $result.packetRate = packetRate;
+    }
+    if (packets != null) {
+      $result.packets.addAll(packets);
+    }
+    if (identifier != null) {
+      $result.identifier = identifier;
+    }
+    if (mountingLinkName != null) {
+      $result.mountingLinkName = mountingLinkName;
+    }
+    if (positionImuRtLink != null) {
+      $result.positionImuRtLink = positionImuRtLink;
+    }
+    return $result;
+  }
+  ImuState._() : super();
+  factory ImuState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ImuState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImuState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..a<$core.double>(2, _omitFieldNames ? '' : 'packetRate', $pb.PbFieldType.OD)
+    ..pc<ImuState_Packet>(3, _omitFieldNames ? '' : 'packets', $pb.PbFieldType.PM, subBuilder: ImuState_Packet.create)
+    ..aOS(7, _omitFieldNames ? '' : 'identifier')
+    ..aOS(9, _omitFieldNames ? '' : 'mountingLinkName')
+    ..aOM<$60.Vec3>(10, _omitFieldNames ? '' : 'positionImuRtLink', subBuilder: $60.Vec3.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ImuState clone() => ImuState()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ImuState copyWith(void Function(ImuState) updates) => super.copyWith((message) => updates(message as ImuState)) as ImuState;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ImuState create() => ImuState._();
+  ImuState createEmptyInstance() => create();
+  static $pb.PbList<ImuState> createRepeated() => $pb.PbList<ImuState>();
+  @$core.pragma('dart2js:noInline')
+  static ImuState getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ImuState>(create);
+  static ImuState? _defaultInstance;
+
+  /// Frequency at which IMU packets are expected to arrive.
+  @$pb.TagNumber(2)
+  $core.double get packetRate => $_getN(0);
+  @$pb.TagNumber(2)
+  set packetRate($core.double v) { $_setDouble(0, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPacketRate() => $_has(0);
+  @$pb.TagNumber(2)
+  void clearPacketRate() => clearField(2);
+
+  /// A set of data packets since the last message.
+  @$pb.TagNumber(3)
+  $core.List<ImuState_Packet> get packets => $_getList(1);
+
+  /// Name for this imu.
+  @$pb.TagNumber(7)
+  $core.String get identifier => $_getSZ(2);
+  @$pb.TagNumber(7)
+  set identifier($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasIdentifier() => $_has(2);
+  @$pb.TagNumber(7)
+  void clearIdentifier() => clearField(7);
+
+  /// Name of the link the IMU is mounted on.
+  /// This name matches a link listed in RobotState.kinematic_state.transforms_snapshot.
+  @$pb.TagNumber(9)
+  $core.String get mountingLinkName => $_getSZ(3);
+  @$pb.TagNumber(9)
+  set mountingLinkName($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasMountingLinkName() => $_has(3);
+  @$pb.TagNumber(9)
+  void clearMountingLinkName() => clearField(9);
+
+  /// Position of the IMU in the mounting link frame expressed in the mounting link's frame (m).
+  @$pb.TagNumber(10)
+  $60.Vec3 get positionImuRtLink => $_getN(4);
+  @$pb.TagNumber(10)
+  set positionImuRtLink($60.Vec3 v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasPositionImuRtLink() => $_has(4);
+  @$pb.TagNumber(10)
+  void clearPositionImuRtLink() => clearField(10);
+  @$pb.TagNumber(10)
+  $60.Vec3 ensurePositionImuRtLink() => $_ensure(4);
+}
+
+/// The RobotStateStream request message to get the current state of the robot.
+class RobotStateStreamRequest extends $pb.GeneratedMessage {
+  factory RobotStateStreamRequest({
+    $67.RequestHeader? header,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    return $result;
+  }
+  RobotStateStreamRequest._() : super();
+  factory RobotStateStreamRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RobotStateStreamRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotStateStreamRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RobotStateStreamRequest clone() => RobotStateStreamRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RobotStateStreamRequest copyWith(void Function(RobotStateStreamRequest) updates) => super.copyWith((message) => updates(message as RobotStateStreamRequest)) as RobotStateStreamRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RobotStateStreamRequest create() => RobotStateStreamRequest._();
+  RobotStateStreamRequest createEmptyInstance() => create();
+  static $pb.PbList<RobotStateStreamRequest> createRepeated() => $pb.PbList<RobotStateStreamRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RobotStateStreamRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RobotStateStreamRequest>(create);
+  static RobotStateStreamRequest? _defaultInstance;
+
+  /// Common request header.
+  @$pb.TagNumber(1)
+  $67.RequestHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.RequestHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.RequestHeader ensureHeader() => $_ensure(0);
+}
+
+class RobotStateStreamResponse_CommandState extends $pb.GeneratedMessage {
+  factory RobotStateStreamResponse_CommandState({
+    $core.int? userCommandKey,
+    $59.Timestamp? receivedTimestamp,
+  }) {
+    final $result = create();
+    if (userCommandKey != null) {
+      $result.userCommandKey = userCommandKey;
+    }
+    if (receivedTimestamp != null) {
+      $result.receivedTimestamp = receivedTimestamp;
+    }
+    return $result;
+  }
+  RobotStateStreamResponse_CommandState._() : super();
+  factory RobotStateStreamResponse_CommandState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RobotStateStreamResponse_CommandState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotStateStreamResponse.CommandState', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'userCommandKey', $pb.PbFieldType.OU3)
+    ..aOM<$59.Timestamp>(2, _omitFieldNames ? '' : 'receivedTimestamp', subBuilder: $59.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RobotStateStreamResponse_CommandState clone() => RobotStateStreamResponse_CommandState()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RobotStateStreamResponse_CommandState copyWith(void Function(RobotStateStreamResponse_CommandState) updates) => super.copyWith((message) => updates(message as RobotStateStreamResponse_CommandState)) as RobotStateStreamResponse_CommandState;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RobotStateStreamResponse_CommandState create() => RobotStateStreamResponse_CommandState._();
+  RobotStateStreamResponse_CommandState createEmptyInstance() => create();
+  static $pb.PbList<RobotStateStreamResponse_CommandState> createRepeated() => $pb.PbList<RobotStateStreamResponse_CommandState>();
+  @$core.pragma('dart2js:noInline')
+  static RobotStateStreamResponse_CommandState getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RobotStateStreamResponse_CommandState>(create);
+  static RobotStateStreamResponse_CommandState? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get userCommandKey => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set userCommandKey($core.int v) { $_setUnsignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUserCommandKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserCommandKey() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $59.Timestamp get receivedTimestamp => $_getN(1);
+  @$pb.TagNumber(2)
+  set receivedTimestamp($59.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasReceivedTimestamp() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReceivedTimestamp() => clearField(2);
+  @$pb.TagNumber(2)
+  $59.Timestamp ensureReceivedTimestamp() => $_ensure(1);
+}
+
+class RobotStateStreamResponse extends $pb.GeneratedMessage {
+  factory RobotStateStreamResponse({
+    $67.ResponseHeader? header,
+    CombinedJointStates? jointStates,
+    ImuState? inertialState,
+    RobotStateStreamResponse_CommandState? lastCommand,
+  }) {
+    final $result = create();
+    if (header != null) {
+      $result.header = header;
+    }
+    if (jointStates != null) {
+      $result.jointStates = jointStates;
+    }
+    if (inertialState != null) {
+      $result.inertialState = inertialState;
+    }
+    if (lastCommand != null) {
+      $result.lastCommand = lastCommand;
+    }
+    return $result;
+  }
+  RobotStateStreamResponse._() : super();
+  factory RobotStateStreamResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RobotStateStreamResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RobotStateStreamResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
+    ..aOM<CombinedJointStates>(2, _omitFieldNames ? '' : 'jointStates', subBuilder: CombinedJointStates.create)
+    ..aOM<ImuState>(3, _omitFieldNames ? '' : 'inertialState', subBuilder: ImuState.create)
+    ..aOM<RobotStateStreamResponse_CommandState>(4, _omitFieldNames ? '' : 'lastCommand', subBuilder: RobotStateStreamResponse_CommandState.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RobotStateStreamResponse clone() => RobotStateStreamResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RobotStateStreamResponse copyWith(void Function(RobotStateStreamResponse) updates) => super.copyWith((message) => updates(message as RobotStateStreamResponse)) as RobotStateStreamResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RobotStateStreamResponse create() => RobotStateStreamResponse._();
+  RobotStateStreamResponse createEmptyInstance() => create();
+  static $pb.PbList<RobotStateStreamResponse> createRepeated() => $pb.PbList<RobotStateStreamResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RobotStateStreamResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RobotStateStreamResponse>(create);
+  static RobotStateStreamResponse? _defaultInstance;
+
+  /// Common response header.
+  @$pb.TagNumber(1)
+  $67.ResponseHeader get header => $_getN(0);
+  @$pb.TagNumber(1)
+  set header($67.ResponseHeader v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasHeader() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHeader() => clearField(1);
+  @$pb.TagNumber(1)
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
+
+  /// Joint state of all robot joints.
+  @$pb.TagNumber(2)
+  CombinedJointStates get jointStates => $_getN(1);
+  @$pb.TagNumber(2)
+  set jointStates(CombinedJointStates v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasJointStates() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearJointStates() => clearField(2);
+  @$pb.TagNumber(2)
+  CombinedJointStates ensureJointStates() => $_ensure(1);
+
+  /// IMU state
+  @$pb.TagNumber(3)
+  ImuState get inertialState => $_getN(2);
+  @$pb.TagNumber(3)
+  set inertialState(ImuState v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasInertialState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearInertialState() => clearField(3);
+  @$pb.TagNumber(3)
+  ImuState ensureInertialState() => $_ensure(2);
+
+  /// For determining latency information about the last command received is provided.
+  @$pb.TagNumber(4)
+  RobotStateStreamResponse_CommandState get lastCommand => $_getN(3);
+  @$pb.TagNumber(4)
+  set lastCommand(RobotStateStreamResponse_CommandState v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLastCommand() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLastCommand() => clearField(4);
+  @$pb.TagNumber(4)
+  RobotStateStreamResponse_CommandState ensureLastCommand() => $_ensure(3);
 }
 
 

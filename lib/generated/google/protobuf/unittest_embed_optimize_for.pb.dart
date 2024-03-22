@@ -13,12 +13,12 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest_optimize_for.pb.dart' as $100;
+import 'unittest_optimize_for.pb.dart' as $103;
 
 class TestEmbedOptimizedForSize extends $pb.GeneratedMessage {
   factory TestEmbedOptimizedForSize({
-    $100.TestOptimizedForSize? optionalMessage,
-    $core.Iterable<$100.TestOptimizedForSize>? repeatedMessage,
+    $103.TestOptimizedForSize? optionalMessage,
+    $core.Iterable<$103.TestOptimizedForSize>? repeatedMessage,
   }) {
     final $result = create();
     if (optionalMessage != null) {
@@ -34,8 +34,8 @@ class TestEmbedOptimizedForSize extends $pb.GeneratedMessage {
   factory TestEmbedOptimizedForSize.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestEmbedOptimizedForSize', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest'), createEmptyInstance: create)
-    ..aOM<$100.TestOptimizedForSize>(1, _omitFieldNames ? '' : 'optionalMessage', subBuilder: $100.TestOptimizedForSize.create)
-    ..pc<$100.TestOptimizedForSize>(2, _omitFieldNames ? '' : 'repeatedMessage', $pb.PbFieldType.PM, subBuilder: $100.TestOptimizedForSize.create)
+    ..aOM<$103.TestOptimizedForSize>(1, _omitFieldNames ? '' : 'optionalMessage', subBuilder: $103.TestOptimizedForSize.create)
+    ..pc<$103.TestOptimizedForSize>(2, _omitFieldNames ? '' : 'repeatedMessage', $pb.PbFieldType.PM, subBuilder: $103.TestOptimizedForSize.create)
   ;
 
   @$core.Deprecated(
@@ -62,18 +62,18 @@ class TestEmbedOptimizedForSize extends $pb.GeneratedMessage {
   /// Test that embedding a message which has optimize_for = CODE_SIZE into
   /// one optimized for speed works.
   @$pb.TagNumber(1)
-  $100.TestOptimizedForSize get optionalMessage => $_getN(0);
+  $103.TestOptimizedForSize get optionalMessage => $_getN(0);
   @$pb.TagNumber(1)
-  set optionalMessage($100.TestOptimizedForSize v) { setField(1, v); }
+  set optionalMessage($103.TestOptimizedForSize v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasOptionalMessage() => $_has(0);
   @$pb.TagNumber(1)
   void clearOptionalMessage() => clearField(1);
   @$pb.TagNumber(1)
-  $100.TestOptimizedForSize ensureOptionalMessage() => $_ensure(0);
+  $103.TestOptimizedForSize ensureOptionalMessage() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$100.TestOptimizedForSize> get repeatedMessage => $_getList(1);
+  $core.List<$103.TestOptimizedForSize> get repeatedMessage => $_getList(1);
 }
 
 

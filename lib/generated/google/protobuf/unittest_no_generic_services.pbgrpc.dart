@@ -15,16 +15,16 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest_no_generic_services.pb.dart' as $56;
+import 'unittest_no_generic_services.pb.dart' as $55;
 
 export 'unittest_no_generic_services.pb.dart';
 
 @$pb.GrpcServiceName('protobuf_unittest.no_generic_services_test.TestService')
 class TestServiceClient extends $grpc.Client {
-  static final _$foo = $grpc.ClientMethod<$56.TestMessage, $56.TestMessage>(
+  static final _$foo = $grpc.ClientMethod<$55.TestMessage, $55.TestMessage>(
       '/protobuf_unittest.no_generic_services_test.TestService/Foo',
-      ($56.TestMessage value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $56.TestMessage.fromBuffer(value));
+      ($55.TestMessage value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $55.TestMessage.fromBuffer(value));
 
   TestServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -32,7 +32,7 @@ class TestServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$56.TestMessage> foo($56.TestMessage request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$55.TestMessage> foo($55.TestMessage request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$foo, request, options: options);
   }
 }
@@ -42,18 +42,18 @@ abstract class TestServiceBase extends $grpc.Service {
   $core.String get $name => 'protobuf_unittest.no_generic_services_test.TestService';
 
   TestServiceBase() {
-    $addMethod($grpc.ServiceMethod<$56.TestMessage, $56.TestMessage>(
+    $addMethod($grpc.ServiceMethod<$55.TestMessage, $55.TestMessage>(
         'Foo',
         foo_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $56.TestMessage.fromBuffer(value),
-        ($56.TestMessage value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $55.TestMessage.fromBuffer(value),
+        ($55.TestMessage value) => value.writeToBuffer()));
   }
 
-  $async.Future<$56.TestMessage> foo_Pre($grpc.ServiceCall call, $async.Future<$56.TestMessage> request) async {
+  $async.Future<$55.TestMessage> foo_Pre($grpc.ServiceCall call, $async.Future<$55.TestMessage> request) async {
     return foo(call, await request);
   }
 
-  $async.Future<$56.TestMessage> foo($grpc.ServiceCall call, $56.TestMessage request);
+  $async.Future<$55.TestMessage> foo($grpc.ServiceCall call, $55.TestMessage request);
 }

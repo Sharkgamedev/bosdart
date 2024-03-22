@@ -15,7 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'map_proto2_unittest.pbenum.dart';
-import 'unittest_import.pbenum.dart' as $97;
+import 'unittest_import.pbenum.dart' as $100;
 
 export 'map_proto2_unittest.pbenum.dart';
 
@@ -319,7 +319,7 @@ class TestEnumMapPlusExtra extends $pb.GeneratedMessage {
 
 class TestImportEnumMap extends $pb.GeneratedMessage {
   factory TestImportEnumMap({
-    $core.Map<$core.int, $97.ImportEnumForMap>? importEnumAmp,
+    $core.Map<$core.int, $100.ImportEnumForMap>? importEnumAmp,
   }) {
     final $result = create();
     if (importEnumAmp != null) {
@@ -332,7 +332,7 @@ class TestImportEnumMap extends $pb.GeneratedMessage {
   factory TestImportEnumMap.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestImportEnumMap', package: const $pb.PackageName(_omitMessageNames ? '' : 'protobuf_unittest'), createEmptyInstance: create)
-    ..m<$core.int, $97.ImportEnumForMap>(1, _omitFieldNames ? '' : 'importEnumAmp', entryClassName: 'TestImportEnumMap.ImportEnumAmpEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OE, valueOf: $97.ImportEnumForMap.valueOf, enumValues: $97.ImportEnumForMap.values, valueDefaultOrMaker: $97.ImportEnumForMap.UNKNOWN, defaultEnumValue: $97.ImportEnumForMap.UNKNOWN, packageName: const $pb.PackageName('protobuf_unittest'))
+    ..m<$core.int, $100.ImportEnumForMap>(1, _omitFieldNames ? '' : 'importEnumAmp', entryClassName: 'TestImportEnumMap.ImportEnumAmpEntry', keyFieldType: $pb.PbFieldType.O3, valueFieldType: $pb.PbFieldType.OE, valueOf: $100.ImportEnumForMap.valueOf, enumValues: $100.ImportEnumForMap.values, valueDefaultOrMaker: $100.ImportEnumForMap.UNKNOWN, defaultEnumValue: $100.ImportEnumForMap.UNKNOWN, packageName: const $pb.PackageName('protobuf_unittest'))
     ..hasRequiredFields = false
   ;
 
@@ -358,7 +358,7 @@ class TestImportEnumMap extends $pb.GeneratedMessage {
   static TestImportEnumMap? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.Map<$core.int, $97.ImportEnumForMap> get importEnumAmp => $_getMap(0);
+  $core.Map<$core.int, $100.ImportEnumForMap> get importEnumAmp => $_getMap(0);
 }
 
 class TestIntIntMap extends $pb.GeneratedMessage {

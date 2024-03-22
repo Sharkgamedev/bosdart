@@ -75,6 +75,7 @@ class SetLocalizationResponse_QualityCheckResult extends $pb.ProtobufEnum {
   static const SetLocalizationResponse_QualityCheckResult QUALITY_CHECK_POOR_POINT_CLOUD_MATCH = SetLocalizationResponse_QualityCheckResult._(2, _omitEnumNames ? '' : 'QUALITY_CHECK_POOR_POINT_CLOUD_MATCH');
   static const SetLocalizationResponse_QualityCheckResult QUALITY_CHECK_POOR_GRAVITY_ALIGNMENT = SetLocalizationResponse_QualityCheckResult._(3, _omitEnumNames ? '' : 'QUALITY_CHECK_POOR_GRAVITY_ALIGNMENT');
   static const SetLocalizationResponse_QualityCheckResult QUALITY_CHECK_SKIPPED = SetLocalizationResponse_QualityCheckResult._(4, _omitEnumNames ? '' : 'QUALITY_CHECK_SKIPPED');
+  static const SetLocalizationResponse_QualityCheckResult QUALITY_CHECK_BAD_HEIGHT = SetLocalizationResponse_QualityCheckResult._(5, _omitEnumNames ? '' : 'QUALITY_CHECK_BAD_HEIGHT');
 
   static const $core.List<SetLocalizationResponse_QualityCheckResult> values = <SetLocalizationResponse_QualityCheckResult> [
     QUALITY_CHECK_UNKNOWN,
@@ -82,6 +83,7 @@ class SetLocalizationResponse_QualityCheckResult extends $pb.ProtobufEnum {
     QUALITY_CHECK_POOR_POINT_CLOUD_MATCH,
     QUALITY_CHECK_POOR_GRAVITY_ALIGNMENT,
     QUALITY_CHECK_SKIPPED,
+    QUALITY_CHECK_BAD_HEIGHT,
   ];
 
   static final $core.Map<$core.int, SetLocalizationResponse_QualityCheckResult> _byValue = $pb.ProtobufEnum.initByValue(values);
@@ -294,6 +296,7 @@ class NavigateToAnchorResponse_Status extends $pb.ProtobufEnum {
   static const NavigateToAnchorResponse_Status STATUS_UNRECOGNIZED_COMMAND = NavigateToAnchorResponse_Status._(15, _omitEnumNames ? '' : 'STATUS_UNRECOGNIZED_COMMAND');
   static const NavigateToAnchorResponse_Status STATUS_INVALID_POSE = NavigateToAnchorResponse_Status._(16, _omitEnumNames ? '' : 'STATUS_INVALID_POSE');
   static const NavigateToAnchorResponse_Status STATUS_AREA_CALLBACK_ERROR = NavigateToAnchorResponse_Status._(17, _omitEnumNames ? '' : 'STATUS_AREA_CALLBACK_ERROR');
+  static const NavigateToAnchorResponse_Status STATUS_INVALID_GPS_COMMAND = NavigateToAnchorResponse_Status._(18, _omitEnumNames ? '' : 'STATUS_INVALID_GPS_COMMAND');
 
   static const $core.List<NavigateToAnchorResponse_Status> values = <NavigateToAnchorResponse_Status> [
     STATUS_UNKNOWN,
@@ -313,12 +316,33 @@ class NavigateToAnchorResponse_Status extends $pb.ProtobufEnum {
     STATUS_UNRECOGNIZED_COMMAND,
     STATUS_INVALID_POSE,
     STATUS_AREA_CALLBACK_ERROR,
+    STATUS_INVALID_GPS_COMMAND,
   ];
 
   static final $core.Map<$core.int, NavigateToAnchorResponse_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
   static NavigateToAnchorResponse_Status? valueOf($core.int value) => _byValue[value];
 
   const NavigateToAnchorResponse_Status._($core.int v, $core.String n) : super(v, n);
+}
+
+/// The result of the GPS command, if relevant.
+class NavigateToAnchorResponse_GPSStatus extends $pb.ProtobufEnum {
+  static const NavigateToAnchorResponse_GPSStatus GPS_STATUS_UNKNOWN = NavigateToAnchorResponse_GPSStatus._(0, _omitEnumNames ? '' : 'GPS_STATUS_UNKNOWN');
+  static const NavigateToAnchorResponse_GPSStatus GPS_STATUS_OK = NavigateToAnchorResponse_GPSStatus._(1, _omitEnumNames ? '' : 'GPS_STATUS_OK');
+  static const NavigateToAnchorResponse_GPSStatus GPS_STATUS_NO_COORDS_IN_MAP = NavigateToAnchorResponse_GPSStatus._(2, _omitEnumNames ? '' : 'GPS_STATUS_NO_COORDS_IN_MAP');
+  static const NavigateToAnchorResponse_GPSStatus GPS_STATUS_TOO_FAR_FROM_MAP = NavigateToAnchorResponse_GPSStatus._(3, _omitEnumNames ? '' : 'GPS_STATUS_TOO_FAR_FROM_MAP');
+
+  static const $core.List<NavigateToAnchorResponse_GPSStatus> values = <NavigateToAnchorResponse_GPSStatus> [
+    GPS_STATUS_UNKNOWN,
+    GPS_STATUS_OK,
+    GPS_STATUS_NO_COORDS_IN_MAP,
+    GPS_STATUS_TOO_FAR_FROM_MAP,
+  ];
+
+  static final $core.Map<$core.int, NavigateToAnchorResponse_GPSStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static NavigateToAnchorResponse_GPSStatus? valueOf($core.int value) => _byValue[value];
+
+  const NavigateToAnchorResponse_GPSStatus._($core.int v, $core.String n) : super(v, n);
 }
 
 class NavigationFeedbackResponse_Status extends $pb.ProtobufEnum {

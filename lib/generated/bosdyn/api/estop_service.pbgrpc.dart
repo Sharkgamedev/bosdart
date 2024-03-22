@@ -15,36 +15,36 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'estop.pb.dart' as $8;
+import 'estop.pb.dart' as $9;
 
 export 'estop_service.pb.dart';
 
 @$pb.GrpcServiceName('bosdyn.api.EstopService')
 class EstopServiceClient extends $grpc.Client {
-  static final _$registerEstopEndpoint = $grpc.ClientMethod<$8.RegisterEstopEndpointRequest, $8.RegisterEstopEndpointResponse>(
+  static final _$registerEstopEndpoint = $grpc.ClientMethod<$9.RegisterEstopEndpointRequest, $9.RegisterEstopEndpointResponse>(
       '/bosdyn.api.EstopService/RegisterEstopEndpoint',
-      ($8.RegisterEstopEndpointRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.RegisterEstopEndpointResponse.fromBuffer(value));
-  static final _$deregisterEstopEndpoint = $grpc.ClientMethod<$8.DeregisterEstopEndpointRequest, $8.DeregisterEstopEndpointResponse>(
+      ($9.RegisterEstopEndpointRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.RegisterEstopEndpointResponse.fromBuffer(value));
+  static final _$deregisterEstopEndpoint = $grpc.ClientMethod<$9.DeregisterEstopEndpointRequest, $9.DeregisterEstopEndpointResponse>(
       '/bosdyn.api.EstopService/DeregisterEstopEndpoint',
-      ($8.DeregisterEstopEndpointRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.DeregisterEstopEndpointResponse.fromBuffer(value));
-  static final _$estopCheckIn = $grpc.ClientMethod<$8.EstopCheckInRequest, $8.EstopCheckInResponse>(
+      ($9.DeregisterEstopEndpointRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.DeregisterEstopEndpointResponse.fromBuffer(value));
+  static final _$estopCheckIn = $grpc.ClientMethod<$9.EstopCheckInRequest, $9.EstopCheckInResponse>(
       '/bosdyn.api.EstopService/EstopCheckIn',
-      ($8.EstopCheckInRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.EstopCheckInResponse.fromBuffer(value));
-  static final _$getEstopConfig = $grpc.ClientMethod<$8.GetEstopConfigRequest, $8.GetEstopConfigResponse>(
+      ($9.EstopCheckInRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.EstopCheckInResponse.fromBuffer(value));
+  static final _$getEstopConfig = $grpc.ClientMethod<$9.GetEstopConfigRequest, $9.GetEstopConfigResponse>(
       '/bosdyn.api.EstopService/GetEstopConfig',
-      ($8.GetEstopConfigRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetEstopConfigResponse.fromBuffer(value));
-  static final _$setEstopConfig = $grpc.ClientMethod<$8.SetEstopConfigRequest, $8.SetEstopConfigResponse>(
+      ($9.GetEstopConfigRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetEstopConfigResponse.fromBuffer(value));
+  static final _$setEstopConfig = $grpc.ClientMethod<$9.SetEstopConfigRequest, $9.SetEstopConfigResponse>(
       '/bosdyn.api.EstopService/SetEstopConfig',
-      ($8.SetEstopConfigRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.SetEstopConfigResponse.fromBuffer(value));
-  static final _$getEstopSystemStatus = $grpc.ClientMethod<$8.GetEstopSystemStatusRequest, $8.GetEstopSystemStatusResponse>(
+      ($9.SetEstopConfigRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.SetEstopConfigResponse.fromBuffer(value));
+  static final _$getEstopSystemStatus = $grpc.ClientMethod<$9.GetEstopSystemStatusRequest, $9.GetEstopSystemStatusResponse>(
       '/bosdyn.api.EstopService/GetEstopSystemStatus',
-      ($8.GetEstopSystemStatusRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.GetEstopSystemStatusResponse.fromBuffer(value));
+      ($9.GetEstopSystemStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $9.GetEstopSystemStatusResponse.fromBuffer(value));
 
   EstopServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -52,27 +52,27 @@ class EstopServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$8.RegisterEstopEndpointResponse> registerEstopEndpoint($8.RegisterEstopEndpointRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.RegisterEstopEndpointResponse> registerEstopEndpoint($9.RegisterEstopEndpointRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$registerEstopEndpoint, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.DeregisterEstopEndpointResponse> deregisterEstopEndpoint($8.DeregisterEstopEndpointRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.DeregisterEstopEndpointResponse> deregisterEstopEndpoint($9.DeregisterEstopEndpointRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deregisterEstopEndpoint, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.EstopCheckInResponse> estopCheckIn($8.EstopCheckInRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.EstopCheckInResponse> estopCheckIn($9.EstopCheckInRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$estopCheckIn, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetEstopConfigResponse> getEstopConfig($8.GetEstopConfigRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetEstopConfigResponse> getEstopConfig($9.GetEstopConfigRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getEstopConfig, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.SetEstopConfigResponse> setEstopConfig($8.SetEstopConfigRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.SetEstopConfigResponse> setEstopConfig($9.SetEstopConfigRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setEstopConfig, request, options: options);
   }
 
-  $grpc.ResponseFuture<$8.GetEstopSystemStatusResponse> getEstopSystemStatus($8.GetEstopSystemStatusRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$9.GetEstopSystemStatusResponse> getEstopSystemStatus($9.GetEstopSystemStatusRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getEstopSystemStatus, request, options: options);
   }
 }
@@ -82,78 +82,78 @@ abstract class EstopServiceBase extends $grpc.Service {
   $core.String get $name => 'bosdyn.api.EstopService';
 
   EstopServiceBase() {
-    $addMethod($grpc.ServiceMethod<$8.RegisterEstopEndpointRequest, $8.RegisterEstopEndpointResponse>(
+    $addMethod($grpc.ServiceMethod<$9.RegisterEstopEndpointRequest, $9.RegisterEstopEndpointResponse>(
         'RegisterEstopEndpoint',
         registerEstopEndpoint_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.RegisterEstopEndpointRequest.fromBuffer(value),
-        ($8.RegisterEstopEndpointResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.DeregisterEstopEndpointRequest, $8.DeregisterEstopEndpointResponse>(
+        ($core.List<$core.int> value) => $9.RegisterEstopEndpointRequest.fromBuffer(value),
+        ($9.RegisterEstopEndpointResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.DeregisterEstopEndpointRequest, $9.DeregisterEstopEndpointResponse>(
         'DeregisterEstopEndpoint',
         deregisterEstopEndpoint_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.DeregisterEstopEndpointRequest.fromBuffer(value),
-        ($8.DeregisterEstopEndpointResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.EstopCheckInRequest, $8.EstopCheckInResponse>(
+        ($core.List<$core.int> value) => $9.DeregisterEstopEndpointRequest.fromBuffer(value),
+        ($9.DeregisterEstopEndpointResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.EstopCheckInRequest, $9.EstopCheckInResponse>(
         'EstopCheckIn',
         estopCheckIn_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.EstopCheckInRequest.fromBuffer(value),
-        ($8.EstopCheckInResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetEstopConfigRequest, $8.GetEstopConfigResponse>(
+        ($core.List<$core.int> value) => $9.EstopCheckInRequest.fromBuffer(value),
+        ($9.EstopCheckInResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetEstopConfigRequest, $9.GetEstopConfigResponse>(
         'GetEstopConfig',
         getEstopConfig_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetEstopConfigRequest.fromBuffer(value),
-        ($8.GetEstopConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.SetEstopConfigRequest, $8.SetEstopConfigResponse>(
+        ($core.List<$core.int> value) => $9.GetEstopConfigRequest.fromBuffer(value),
+        ($9.GetEstopConfigResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.SetEstopConfigRequest, $9.SetEstopConfigResponse>(
         'SetEstopConfig',
         setEstopConfig_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.SetEstopConfigRequest.fromBuffer(value),
-        ($8.SetEstopConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$8.GetEstopSystemStatusRequest, $8.GetEstopSystemStatusResponse>(
+        ($core.List<$core.int> value) => $9.SetEstopConfigRequest.fromBuffer(value),
+        ($9.SetEstopConfigResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$9.GetEstopSystemStatusRequest, $9.GetEstopSystemStatusResponse>(
         'GetEstopSystemStatus',
         getEstopSystemStatus_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $8.GetEstopSystemStatusRequest.fromBuffer(value),
-        ($8.GetEstopSystemStatusResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $9.GetEstopSystemStatusRequest.fromBuffer(value),
+        ($9.GetEstopSystemStatusResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$8.RegisterEstopEndpointResponse> registerEstopEndpoint_Pre($grpc.ServiceCall call, $async.Future<$8.RegisterEstopEndpointRequest> request) async {
+  $async.Future<$9.RegisterEstopEndpointResponse> registerEstopEndpoint_Pre($grpc.ServiceCall call, $async.Future<$9.RegisterEstopEndpointRequest> request) async {
     return registerEstopEndpoint(call, await request);
   }
 
-  $async.Future<$8.DeregisterEstopEndpointResponse> deregisterEstopEndpoint_Pre($grpc.ServiceCall call, $async.Future<$8.DeregisterEstopEndpointRequest> request) async {
+  $async.Future<$9.DeregisterEstopEndpointResponse> deregisterEstopEndpoint_Pre($grpc.ServiceCall call, $async.Future<$9.DeregisterEstopEndpointRequest> request) async {
     return deregisterEstopEndpoint(call, await request);
   }
 
-  $async.Future<$8.EstopCheckInResponse> estopCheckIn_Pre($grpc.ServiceCall call, $async.Future<$8.EstopCheckInRequest> request) async {
+  $async.Future<$9.EstopCheckInResponse> estopCheckIn_Pre($grpc.ServiceCall call, $async.Future<$9.EstopCheckInRequest> request) async {
     return estopCheckIn(call, await request);
   }
 
-  $async.Future<$8.GetEstopConfigResponse> getEstopConfig_Pre($grpc.ServiceCall call, $async.Future<$8.GetEstopConfigRequest> request) async {
+  $async.Future<$9.GetEstopConfigResponse> getEstopConfig_Pre($grpc.ServiceCall call, $async.Future<$9.GetEstopConfigRequest> request) async {
     return getEstopConfig(call, await request);
   }
 
-  $async.Future<$8.SetEstopConfigResponse> setEstopConfig_Pre($grpc.ServiceCall call, $async.Future<$8.SetEstopConfigRequest> request) async {
+  $async.Future<$9.SetEstopConfigResponse> setEstopConfig_Pre($grpc.ServiceCall call, $async.Future<$9.SetEstopConfigRequest> request) async {
     return setEstopConfig(call, await request);
   }
 
-  $async.Future<$8.GetEstopSystemStatusResponse> getEstopSystemStatus_Pre($grpc.ServiceCall call, $async.Future<$8.GetEstopSystemStatusRequest> request) async {
+  $async.Future<$9.GetEstopSystemStatusResponse> getEstopSystemStatus_Pre($grpc.ServiceCall call, $async.Future<$9.GetEstopSystemStatusRequest> request) async {
     return getEstopSystemStatus(call, await request);
   }
 
-  $async.Future<$8.RegisterEstopEndpointResponse> registerEstopEndpoint($grpc.ServiceCall call, $8.RegisterEstopEndpointRequest request);
-  $async.Future<$8.DeregisterEstopEndpointResponse> deregisterEstopEndpoint($grpc.ServiceCall call, $8.DeregisterEstopEndpointRequest request);
-  $async.Future<$8.EstopCheckInResponse> estopCheckIn($grpc.ServiceCall call, $8.EstopCheckInRequest request);
-  $async.Future<$8.GetEstopConfigResponse> getEstopConfig($grpc.ServiceCall call, $8.GetEstopConfigRequest request);
-  $async.Future<$8.SetEstopConfigResponse> setEstopConfig($grpc.ServiceCall call, $8.SetEstopConfigRequest request);
-  $async.Future<$8.GetEstopSystemStatusResponse> getEstopSystemStatus($grpc.ServiceCall call, $8.GetEstopSystemStatusRequest request);
+  $async.Future<$9.RegisterEstopEndpointResponse> registerEstopEndpoint($grpc.ServiceCall call, $9.RegisterEstopEndpointRequest request);
+  $async.Future<$9.DeregisterEstopEndpointResponse> deregisterEstopEndpoint($grpc.ServiceCall call, $9.DeregisterEstopEndpointRequest request);
+  $async.Future<$9.EstopCheckInResponse> estopCheckIn($grpc.ServiceCall call, $9.EstopCheckInRequest request);
+  $async.Future<$9.GetEstopConfigResponse> getEstopConfig($grpc.ServiceCall call, $9.GetEstopConfigRequest request);
+  $async.Future<$9.SetEstopConfigResponse> setEstopConfig($grpc.ServiceCall call, $9.SetEstopConfigRequest request);
+  $async.Future<$9.GetEstopSystemStatusResponse> getEstopSystemStatus($grpc.ServiceCall call, $9.GetEstopSystemStatusRequest request);
 }

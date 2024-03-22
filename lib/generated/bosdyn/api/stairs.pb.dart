@@ -13,14 +13,14 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'geometry.pb.dart' as $61;
+import 'geometry.pb.dart' as $60;
 import 'stairs.pbenum.dart';
 
 export 'stairs.pbenum.dart';
 
 class StairTransform extends $pb.GeneratedMessage {
   factory StairTransform({
-    $61.SE3Pose? frameTformStairs,
+    $60.SE3Pose? frameTformStairs,
     $core.String? frameName,
   }) {
     final $result = create();
@@ -37,7 +37,7 @@ class StairTransform extends $pb.GeneratedMessage {
   factory StairTransform.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StairTransform', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.SE3Pose>(1, _omitFieldNames ? '' : 'frameTformStairs', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(1, _omitFieldNames ? '' : 'frameTformStairs', subBuilder: $60.SE3Pose.create)
     ..aOS(2, _omitFieldNames ? '' : 'frameName')
     ..hasRequiredFields = false
   ;
@@ -68,15 +68,15 @@ class StairTransform extends $pb.GeneratedMessage {
   /// Y-axis is oriented to the left when facing up the stairs.
   /// Z-axis is oriented facing up (opposite gravity).
   @$pb.TagNumber(1)
-  $61.SE3Pose get frameTformStairs => $_getN(0);
+  $60.SE3Pose get frameTformStairs => $_getN(0);
   @$pb.TagNumber(1)
-  set frameTformStairs($61.SE3Pose v) { setField(1, v); }
+  set frameTformStairs($60.SE3Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFrameTformStairs() => $_has(0);
   @$pb.TagNumber(1)
   void clearFrameTformStairs() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE3Pose ensureFrameTformStairs() => $_ensure(0);
+  $60.SE3Pose ensureFrameTformStairs() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get frameName => $_getSZ(1);
@@ -155,8 +155,8 @@ class Staircase_Width extends $pb.GeneratedMessage {
 
 class Staircase_Step extends $pb.GeneratedMessage {
   factory Staircase_Step({
-    $61.Vec3? point,
-    $61.Vec2? north,
+    $60.Vec3? point,
+    $60.Vec2? north,
     Staircase_Width? width,
   }) {
     final $result = create();
@@ -176,8 +176,8 @@ class Staircase_Step extends $pb.GeneratedMessage {
   factory Staircase_Step.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Staircase.Step', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'point', subBuilder: $61.Vec3.create)
-    ..aOM<$61.Vec2>(2, _omitFieldNames ? '' : 'north', subBuilder: $61.Vec2.create)
+    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'point', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec2>(2, _omitFieldNames ? '' : 'north', subBuilder: $60.Vec2.create)
     ..aOM<Staircase_Width>(3, _omitFieldNames ? '' : 'width', subBuilder: Staircase_Width.create)
     ..hasRequiredFields = false
   ;
@@ -205,27 +205,27 @@ class Staircase_Step extends $pb.GeneratedMessage {
 
   /// Center of edge in stairs frame.
   @$pb.TagNumber(1)
-  $61.Vec3 get point => $_getN(0);
+  $60.Vec3 get point => $_getN(0);
   @$pb.TagNumber(1)
-  set point($61.Vec3 v) { setField(1, v); }
+  set point($60.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPoint() => $_has(0);
   @$pb.TagNumber(1)
   void clearPoint() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3 ensurePoint() => $_ensure(0);
+  $60.Vec3 ensurePoint() => $_ensure(0);
 
   /// Unit vector pointing up the stairs in stairs frame, perpendicular to edge.
   @$pb.TagNumber(2)
-  $61.Vec2 get north => $_getN(1);
+  $60.Vec2 get north => $_getN(1);
   @$pb.TagNumber(2)
-  set north($61.Vec2 v) { setField(2, v); }
+  set north($60.Vec2 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasNorth() => $_has(1);
   @$pb.TagNumber(2)
   void clearNorth() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec2 ensureNorth() => $_ensure(1);
+  $60.Vec2 ensureNorth() => $_ensure(1);
 
   /// Width of stairs at this step.
   @$pb.TagNumber(3)
@@ -244,11 +244,13 @@ class Staircase extends $pb.GeneratedMessage {
   factory Staircase({
     Staircase_KnowledgeType? knowledgeType,
     StairTransform? stairTform,
+  @$core.Deprecated('This field is deprecated.')
     $core.int? numberOfSteps,
     $core.double? averageRise,
     $core.double? averageRun,
     Staircase_Width? averageWidth,
     $core.Iterable<Staircase_Step>? steps,
+    $core.String? id,
   }) {
     final $result = create();
     if (knowledgeType != null) {
@@ -258,6 +260,7 @@ class Staircase extends $pb.GeneratedMessage {
       $result.stairTform = stairTform;
     }
     if (numberOfSteps != null) {
+      // ignore: deprecated_member_use_from_same_package
       $result.numberOfSteps = numberOfSteps;
     }
     if (averageRise != null) {
@@ -271,6 +274,9 @@ class Staircase extends $pb.GeneratedMessage {
     }
     if (steps != null) {
       $result.steps.addAll(steps);
+    }
+    if (id != null) {
+      $result.id = id;
     }
     return $result;
   }
@@ -286,6 +292,7 @@ class Staircase extends $pb.GeneratedMessage {
     ..a<$core.double>(5, _omitFieldNames ? '' : 'averageRun', $pb.PbFieldType.OD)
     ..aOM<Staircase_Width>(6, _omitFieldNames ? '' : 'averageWidth', subBuilder: Staircase_Width.create)
     ..pc<Staircase_Step>(7, _omitFieldNames ? '' : 'steps', $pb.PbFieldType.PM, subBuilder: Staircase_Step.create)
+    ..aOS(8, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
@@ -334,12 +341,17 @@ class Staircase extends $pb.GeneratedMessage {
   StairTransform ensureStairTform() => $_ensure(1);
 
   /// Number of vertical risers.
+  /// DEPRECATED as of 4.0. Use the length of the steps field instead.
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.int get numberOfSteps => $_getIZ(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   set numberOfSteps($core.int v) { $_setSignedInt32(2, v); }
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   $core.bool hasNumberOfSteps() => $_has(2);
+  @$core.Deprecated('This field is deprecated.')
   @$pb.TagNumber(3)
   void clearNumberOfSteps() => clearField(3);
 
@@ -378,6 +390,17 @@ class Staircase extends $pb.GeneratedMessage {
   /// The individual steps ordered from lowest to highest.
   @$pb.TagNumber(7)
   $core.List<Staircase_Step> get steps => $_getList(6);
+
+  /// Unique identifier used to equate staircases shared across edges and externally. This should
+  /// be randomly generated.
+  @$pb.TagNumber(8)
+  $core.String get id => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set id($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearId() => clearField(8);
 }
 
 /// A single stair from a staircase.
@@ -452,7 +475,7 @@ class StraightStaircase_Stair extends $pb.GeneratedMessage {
 /// as oriented bounding boxes.
 class StraightStaircase_Landing extends $pb.GeneratedMessage {
   factory StraightStaircase_Landing({
-    $61.SE3Pose? stairsTformLandingCenter,
+    $60.SE3Pose? stairsTformLandingCenter,
     $core.double? landingExtentX,
     $core.double? landingExtentY,
   }) {
@@ -473,7 +496,7 @@ class StraightStaircase_Landing extends $pb.GeneratedMessage {
   factory StraightStaircase_Landing.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StraightStaircase.Landing', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.SE3Pose>(1, _omitFieldNames ? '' : 'stairsTformLandingCenter', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(1, _omitFieldNames ? '' : 'stairsTformLandingCenter', subBuilder: $60.SE3Pose.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'landingExtentX', $pb.PbFieldType.OD)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'landingExtentY', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
@@ -502,15 +525,15 @@ class StraightStaircase_Landing extends $pb.GeneratedMessage {
 
   /// Pose of the landing's center relative to the stairs frame.
   @$pb.TagNumber(1)
-  $61.SE3Pose get stairsTformLandingCenter => $_getN(0);
+  $60.SE3Pose get stairsTformLandingCenter => $_getN(0);
   @$pb.TagNumber(1)
-  set stairsTformLandingCenter($61.SE3Pose v) { setField(1, v); }
+  set stairsTformLandingCenter($60.SE3Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStairsTformLandingCenter() => $_has(0);
   @$pb.TagNumber(1)
   void clearStairsTformLandingCenter() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE3Pose ensureStairsTformLandingCenter() => $_ensure(0);
+  $60.SE3Pose ensureStairsTformLandingCenter() => $_ensure(0);
 
   /// The half-size of the box representing the landing in the x axis.
   @$pb.TagNumber(2)
@@ -541,7 +564,7 @@ enum StraightStaircase_Location {
 
 class StraightStaircase extends $pb.GeneratedMessage {
   factory StraightStaircase({
-    $61.SE3Pose? fromKoTformStairs,
+    $60.SE3Pose? fromKoTformStairs,
     $core.Iterable<StraightStaircase_Stair>? stairs,
     StraightStaircase_Landing? bottomLanding,
     StraightStaircase_Landing? topLanding,
@@ -576,7 +599,7 @@ class StraightStaircase extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StraightStaircase', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..oo(0, [1, 5])
-    ..aOM<$61.SE3Pose>(1, _omitFieldNames ? '' : 'fromKoTformStairs', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(1, _omitFieldNames ? '' : 'fromKoTformStairs', subBuilder: $60.SE3Pose.create)
     ..pc<StraightStaircase_Stair>(2, _omitFieldNames ? '' : 'stairs', $pb.PbFieldType.PM, subBuilder: StraightStaircase_Stair.create)
     ..aOM<StraightStaircase_Landing>(3, _omitFieldNames ? '' : 'bottomLanding', subBuilder: StraightStaircase_Landing.create)
     ..aOM<StraightStaircase_Landing>(4, _omitFieldNames ? '' : 'topLanding', subBuilder: StraightStaircase_Landing.create)
@@ -611,15 +634,15 @@ class StraightStaircase extends $pb.GeneratedMessage {
   /// It is expressed in ko frame of the from_waypoint.
   /// This field is only used in GraphNav.
   @$pb.TagNumber(1)
-  $61.SE3Pose get fromKoTformStairs => $_getN(0);
+  $60.SE3Pose get fromKoTformStairs => $_getN(0);
   @$pb.TagNumber(1)
-  set fromKoTformStairs($61.SE3Pose v) { setField(1, v); }
+  set fromKoTformStairs($60.SE3Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFromKoTformStairs() => $_has(0);
   @$pb.TagNumber(1)
   void clearFromKoTformStairs() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE3Pose ensureFromKoTformStairs() => $_ensure(0);
+  $60.SE3Pose ensureFromKoTformStairs() => $_ensure(0);
 
   /// Each stair should be rise followed by run. The last stair will have zero run.
   @$pb.TagNumber(2)
@@ -666,7 +689,7 @@ class StraightStaircase extends $pb.GeneratedMessage {
 /// Landing associated with a staircase
 class StaircaseLanding extends $pb.GeneratedMessage {
   factory StaircaseLanding({
-    $61.SE3Pose? stairsTformLandingCenter,
+    $60.SE3Pose? stairsTformLandingCenter,
     $core.double? landingExtentX,
     $core.double? landingExtentY,
   }) {
@@ -687,7 +710,7 @@ class StaircaseLanding extends $pb.GeneratedMessage {
   factory StaircaseLanding.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StaircaseLanding', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.SE3Pose>(1, _omitFieldNames ? '' : 'stairsTformLandingCenter', subBuilder: $61.SE3Pose.create)
+    ..aOM<$60.SE3Pose>(1, _omitFieldNames ? '' : 'stairsTformLandingCenter', subBuilder: $60.SE3Pose.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'landingExtentX', $pb.PbFieldType.OD)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'landingExtentY', $pb.PbFieldType.OD)
     ..hasRequiredFields = false
@@ -716,15 +739,15 @@ class StaircaseLanding extends $pb.GeneratedMessage {
 
   /// Pose of the landing's center relative to the stairs frame.
   @$pb.TagNumber(1)
-  $61.SE3Pose get stairsTformLandingCenter => $_getN(0);
+  $60.SE3Pose get stairsTformLandingCenter => $_getN(0);
   @$pb.TagNumber(1)
-  set stairsTformLandingCenter($61.SE3Pose v) { setField(1, v); }
+  set stairsTformLandingCenter($60.SE3Pose v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStairsTformLandingCenter() => $_has(0);
   @$pb.TagNumber(1)
   void clearStairsTformLandingCenter() => clearField(1);
   @$pb.TagNumber(1)
-  $61.SE3Pose ensureStairsTformLandingCenter() => $_ensure(0);
+  $60.SE3Pose ensureStairsTformLandingCenter() => $_ensure(0);
 
   /// The half-size of the box representing the landing in the x axis.
   @$pb.TagNumber(2)

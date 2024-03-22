@@ -15,24 +15,24 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'directory_registration.pb.dart' as $6;
+import 'directory_registration.pb.dart' as $7;
 
 export 'directory_registration_service.pb.dart';
 
 @$pb.GrpcServiceName('bosdyn.api.DirectoryRegistrationService')
 class DirectoryRegistrationServiceClient extends $grpc.Client {
-  static final _$registerService = $grpc.ClientMethod<$6.RegisterServiceRequest, $6.RegisterServiceResponse>(
+  static final _$registerService = $grpc.ClientMethod<$7.RegisterServiceRequest, $7.RegisterServiceResponse>(
       '/bosdyn.api.DirectoryRegistrationService/RegisterService',
-      ($6.RegisterServiceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $6.RegisterServiceResponse.fromBuffer(value));
-  static final _$unregisterService = $grpc.ClientMethod<$6.UnregisterServiceRequest, $6.UnregisterServiceResponse>(
+      ($7.RegisterServiceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $7.RegisterServiceResponse.fromBuffer(value));
+  static final _$unregisterService = $grpc.ClientMethod<$7.UnregisterServiceRequest, $7.UnregisterServiceResponse>(
       '/bosdyn.api.DirectoryRegistrationService/UnregisterService',
-      ($6.UnregisterServiceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $6.UnregisterServiceResponse.fromBuffer(value));
-  static final _$updateService = $grpc.ClientMethod<$6.UpdateServiceRequest, $6.UpdateServiceResponse>(
+      ($7.UnregisterServiceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $7.UnregisterServiceResponse.fromBuffer(value));
+  static final _$updateService = $grpc.ClientMethod<$7.UpdateServiceRequest, $7.UpdateServiceResponse>(
       '/bosdyn.api.DirectoryRegistrationService/UpdateService',
-      ($6.UpdateServiceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $6.UpdateServiceResponse.fromBuffer(value));
+      ($7.UpdateServiceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $7.UpdateServiceResponse.fromBuffer(value));
 
   DirectoryRegistrationServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -40,15 +40,15 @@ class DirectoryRegistrationServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$6.RegisterServiceResponse> registerService($6.RegisterServiceRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.RegisterServiceResponse> registerService($7.RegisterServiceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$registerService, request, options: options);
   }
 
-  $grpc.ResponseFuture<$6.UnregisterServiceResponse> unregisterService($6.UnregisterServiceRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.UnregisterServiceResponse> unregisterService($7.UnregisterServiceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$unregisterService, request, options: options);
   }
 
-  $grpc.ResponseFuture<$6.UpdateServiceResponse> updateService($6.UpdateServiceRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.UpdateServiceResponse> updateService($7.UpdateServiceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateService, request, options: options);
   }
 }
@@ -58,42 +58,42 @@ abstract class DirectoryRegistrationServiceBase extends $grpc.Service {
   $core.String get $name => 'bosdyn.api.DirectoryRegistrationService';
 
   DirectoryRegistrationServiceBase() {
-    $addMethod($grpc.ServiceMethod<$6.RegisterServiceRequest, $6.RegisterServiceResponse>(
+    $addMethod($grpc.ServiceMethod<$7.RegisterServiceRequest, $7.RegisterServiceResponse>(
         'RegisterService',
         registerService_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $6.RegisterServiceRequest.fromBuffer(value),
-        ($6.RegisterServiceResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$6.UnregisterServiceRequest, $6.UnregisterServiceResponse>(
+        ($core.List<$core.int> value) => $7.RegisterServiceRequest.fromBuffer(value),
+        ($7.RegisterServiceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$7.UnregisterServiceRequest, $7.UnregisterServiceResponse>(
         'UnregisterService',
         unregisterService_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $6.UnregisterServiceRequest.fromBuffer(value),
-        ($6.UnregisterServiceResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$6.UpdateServiceRequest, $6.UpdateServiceResponse>(
+        ($core.List<$core.int> value) => $7.UnregisterServiceRequest.fromBuffer(value),
+        ($7.UnregisterServiceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$7.UpdateServiceRequest, $7.UpdateServiceResponse>(
         'UpdateService',
         updateService_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $6.UpdateServiceRequest.fromBuffer(value),
-        ($6.UpdateServiceResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $7.UpdateServiceRequest.fromBuffer(value),
+        ($7.UpdateServiceResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$6.RegisterServiceResponse> registerService_Pre($grpc.ServiceCall call, $async.Future<$6.RegisterServiceRequest> request) async {
+  $async.Future<$7.RegisterServiceResponse> registerService_Pre($grpc.ServiceCall call, $async.Future<$7.RegisterServiceRequest> request) async {
     return registerService(call, await request);
   }
 
-  $async.Future<$6.UnregisterServiceResponse> unregisterService_Pre($grpc.ServiceCall call, $async.Future<$6.UnregisterServiceRequest> request) async {
+  $async.Future<$7.UnregisterServiceResponse> unregisterService_Pre($grpc.ServiceCall call, $async.Future<$7.UnregisterServiceRequest> request) async {
     return unregisterService(call, await request);
   }
 
-  $async.Future<$6.UpdateServiceResponse> updateService_Pre($grpc.ServiceCall call, $async.Future<$6.UpdateServiceRequest> request) async {
+  $async.Future<$7.UpdateServiceResponse> updateService_Pre($grpc.ServiceCall call, $async.Future<$7.UpdateServiceRequest> request) async {
     return updateService(call, await request);
   }
 
-  $async.Future<$6.RegisterServiceResponse> registerService($grpc.ServiceCall call, $6.RegisterServiceRequest request);
-  $async.Future<$6.UnregisterServiceResponse> unregisterService($grpc.ServiceCall call, $6.UnregisterServiceRequest request);
-  $async.Future<$6.UpdateServiceResponse> updateService($grpc.ServiceCall call, $6.UpdateServiceRequest request);
+  $async.Future<$7.RegisterServiceResponse> registerService($grpc.ServiceCall call, $7.RegisterServiceRequest request);
+  $async.Future<$7.UnregisterServiceResponse> unregisterService($grpc.ServiceCall call, $7.UnregisterServiceRequest request);
+  $async.Future<$7.UpdateServiceResponse> updateService($grpc.ServiceCall call, $7.UpdateServiceRequest request);
 }

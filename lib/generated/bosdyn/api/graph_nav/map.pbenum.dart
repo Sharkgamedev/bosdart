@@ -133,5 +133,24 @@ class Edge_Annotations_GroundClutterAvoidanceMode extends $pb.ProtobufEnum {
   const Edge_Annotations_GroundClutterAvoidanceMode._($core.int v, $core.String n) : super(v, n);
 }
 
+class Edge_Annotations_StairData_DescentPreference extends $pb.ProtobufEnum {
+  static const Edge_Annotations_StairData_DescentPreference DESCENT_PREFERENCE_UNKNOWN = Edge_Annotations_StairData_DescentPreference._(0, _omitEnumNames ? '' : 'DESCENT_PREFERENCE_UNKNOWN');
+  static const Edge_Annotations_StairData_DescentPreference DESCENT_PREFERENCE_PREFER_REVERSE = Edge_Annotations_StairData_DescentPreference._(1, _omitEnumNames ? '' : 'DESCENT_PREFERENCE_PREFER_REVERSE');
+  static const Edge_Annotations_StairData_DescentPreference DESCENT_PREFERENCE_ALWAYS_REVERSE = Edge_Annotations_StairData_DescentPreference._(2, _omitEnumNames ? '' : 'DESCENT_PREFERENCE_ALWAYS_REVERSE');
+  static const Edge_Annotations_StairData_DescentPreference DESCENT_PREFERENCE_NONE = Edge_Annotations_StairData_DescentPreference._(3, _omitEnumNames ? '' : 'DESCENT_PREFERENCE_NONE');
+
+  static const $core.List<Edge_Annotations_StairData_DescentPreference> values = <Edge_Annotations_StairData_DescentPreference> [
+    DESCENT_PREFERENCE_UNKNOWN,
+    DESCENT_PREFERENCE_PREFER_REVERSE,
+    DESCENT_PREFERENCE_ALWAYS_REVERSE,
+    DESCENT_PREFERENCE_NONE,
+  ];
+
+  static final $core.Map<$core.int, Edge_Annotations_StairData_DescentPreference> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static Edge_Annotations_StairData_DescentPreference? valueOf($core.int value) => _byValue[value];
+
+  const Edge_Annotations_StairData_DescentPreference._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'unittest.pb.dart' as $54;
+import 'unittest.pb.dart' as $53;
 import 'unittest_no_field_presence.pbenum.dart';
 
 export 'unittest_no_field_presence.pbenum.dart';
@@ -98,7 +98,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
     $core.List<$core.int>? optionalBytes,
     TestAllTypes_NestedMessage? optionalNestedMessage,
     ForeignMessage? optionalForeignMessage,
-    $54.TestAllTypes? optionalProto2Message,
+    $53.TestAllTypes? optionalProto2Message,
     TestAllTypes_NestedEnum? optionalNestedEnum,
     ForeignEnum? optionalForeignEnum,
     $core.String? optionalStringPiece,
@@ -121,7 +121,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
     $core.Iterable<$core.List<$core.int>>? repeatedBytes,
     $core.Iterable<TestAllTypes_NestedMessage>? repeatedNestedMessage,
     $core.Iterable<ForeignMessage>? repeatedForeignMessage,
-    $core.Iterable<$54.TestAllTypes>? repeatedProto2Message,
+    $core.Iterable<$53.TestAllTypes>? repeatedProto2Message,
     $core.Iterable<TestAllTypes_NestedEnum>? repeatedNestedEnum,
     $core.Iterable<ForeignEnum>? repeatedForeignEnum,
     $core.Iterable<$core.String>? repeatedStringPiece,
@@ -315,7 +315,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(15, _omitFieldNames ? '' : 'optionalBytes', $pb.PbFieldType.OY)
     ..aOM<TestAllTypes_NestedMessage>(18, _omitFieldNames ? '' : 'optionalNestedMessage', subBuilder: TestAllTypes_NestedMessage.create)
     ..aOM<ForeignMessage>(19, _omitFieldNames ? '' : 'optionalForeignMessage', subBuilder: ForeignMessage.create)
-    ..aOM<$54.TestAllTypes>(20, _omitFieldNames ? '' : 'optionalProto2Message', subBuilder: $54.TestAllTypes.create)
+    ..aOM<$53.TestAllTypes>(20, _omitFieldNames ? '' : 'optionalProto2Message', subBuilder: $53.TestAllTypes.create)
     ..e<TestAllTypes_NestedEnum>(21, _omitFieldNames ? '' : 'optionalNestedEnum', $pb.PbFieldType.OE, defaultOrMaker: TestAllTypes_NestedEnum.FOO, valueOf: TestAllTypes_NestedEnum.valueOf, enumValues: TestAllTypes_NestedEnum.values)
     ..e<ForeignEnum>(22, _omitFieldNames ? '' : 'optionalForeignEnum', $pb.PbFieldType.OE, defaultOrMaker: ForeignEnum.FOREIGN_FOO, valueOf: ForeignEnum.valueOf, enumValues: ForeignEnum.values)
     ..aOS(24, _omitFieldNames ? '' : 'optionalStringPiece')
@@ -338,7 +338,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
     ..p<$core.List<$core.int>>(45, _omitFieldNames ? '' : 'repeatedBytes', $pb.PbFieldType.PY)
     ..pc<TestAllTypes_NestedMessage>(48, _omitFieldNames ? '' : 'repeatedNestedMessage', $pb.PbFieldType.PM, subBuilder: TestAllTypes_NestedMessage.create)
     ..pc<ForeignMessage>(49, _omitFieldNames ? '' : 'repeatedForeignMessage', $pb.PbFieldType.PM, subBuilder: ForeignMessage.create)
-    ..pc<$54.TestAllTypes>(50, _omitFieldNames ? '' : 'repeatedProto2Message', $pb.PbFieldType.PM, subBuilder: $54.TestAllTypes.create)
+    ..pc<$53.TestAllTypes>(50, _omitFieldNames ? '' : 'repeatedProto2Message', $pb.PbFieldType.PM, subBuilder: $53.TestAllTypes.create)
     ..pc<TestAllTypes_NestedEnum>(51, _omitFieldNames ? '' : 'repeatedNestedEnum', $pb.PbFieldType.KE, valueOf: TestAllTypes_NestedEnum.valueOf, enumValues: TestAllTypes_NestedEnum.values, defaultEnumValue: TestAllTypes_NestedEnum.FOO)
     ..pc<ForeignEnum>(52, _omitFieldNames ? '' : 'repeatedForeignEnum', $pb.PbFieldType.KE, valueOf: ForeignEnum.valueOf, enumValues: ForeignEnum.values, defaultEnumValue: ForeignEnum.FOREIGN_FOO)
     ..pPS(54, _omitFieldNames ? '' : 'repeatedStringPiece')
@@ -536,15 +536,15 @@ class TestAllTypes extends $pb.GeneratedMessage {
   ForeignMessage ensureOptionalForeignMessage() => $_ensure(16);
 
   @$pb.TagNumber(20)
-  $54.TestAllTypes get optionalProto2Message => $_getN(17);
+  $53.TestAllTypes get optionalProto2Message => $_getN(17);
   @$pb.TagNumber(20)
-  set optionalProto2Message($54.TestAllTypes v) { setField(20, v); }
+  set optionalProto2Message($53.TestAllTypes v) { setField(20, v); }
   @$pb.TagNumber(20)
   $core.bool hasOptionalProto2Message() => $_has(17);
   @$pb.TagNumber(20)
   void clearOptionalProto2Message() => clearField(20);
   @$pb.TagNumber(20)
-  $54.TestAllTypes ensureOptionalProto2Message() => $_ensure(17);
+  $53.TestAllTypes ensureOptionalProto2Message() => $_ensure(17);
 
   @$pb.TagNumber(21)
   TestAllTypes_NestedEnum get optionalNestedEnum => $_getN(18);
@@ -646,7 +646,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
   $core.List<ForeignMessage> get repeatedForeignMessage => $_getList(39);
 
   @$pb.TagNumber(50)
-  $core.List<$54.TestAllTypes> get repeatedProto2Message => $_getList(40);
+  $core.List<$53.TestAllTypes> get repeatedProto2Message => $_getList(40);
 
   @$pb.TagNumber(51)
   $core.List<TestAllTypes_NestedEnum> get repeatedNestedEnum => $_getList(41);
@@ -704,7 +704,7 @@ class TestAllTypes extends $pb.GeneratedMessage {
 
 class TestProto2Required extends $pb.GeneratedMessage {
   factory TestProto2Required({
-    $54.TestRequired? proto2,
+    $53.TestRequired? proto2,
   }) {
     final $result = create();
     if (proto2 != null) {
@@ -717,7 +717,7 @@ class TestProto2Required extends $pb.GeneratedMessage {
   factory TestProto2Required.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TestProto2Required', package: const $pb.PackageName(_omitMessageNames ? '' : 'proto2_nofieldpresence_unittest'), createEmptyInstance: create)
-    ..aOM<$54.TestRequired>(1, _omitFieldNames ? '' : 'proto2', subBuilder: $54.TestRequired.create)
+    ..aOM<$53.TestRequired>(1, _omitFieldNames ? '' : 'proto2', subBuilder: $53.TestRequired.create)
   ;
 
   @$core.Deprecated(
@@ -742,15 +742,15 @@ class TestProto2Required extends $pb.GeneratedMessage {
   static TestProto2Required? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $54.TestRequired get proto2 => $_getN(0);
+  $53.TestRequired get proto2 => $_getN(0);
   @$pb.TagNumber(1)
-  set proto2($54.TestRequired v) { setField(1, v); }
+  set proto2($53.TestRequired v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasProto2() => $_has(0);
   @$pb.TagNumber(1)
   void clearProto2() => clearField(1);
   @$pb.TagNumber(1)
-  $54.TestRequired ensureProto2() => $_ensure(0);
+  $53.TestRequired ensureProto2() => $_ensure(0);
 }
 
 /// Define these after TestAllTypes to make sure the compiler can handle

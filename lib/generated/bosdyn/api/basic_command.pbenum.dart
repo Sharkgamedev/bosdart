@@ -127,15 +127,19 @@ class SafePowerOffCommand_Feedback_Status extends $pb.ProtobufEnum {
 
 class SE2TrajectoryCommand_Feedback_Status extends $pb.ProtobufEnum {
   static const SE2TrajectoryCommand_Feedback_Status STATUS_UNKNOWN = SE2TrajectoryCommand_Feedback_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
-  static const SE2TrajectoryCommand_Feedback_Status STATUS_AT_GOAL = SE2TrajectoryCommand_Feedback_Status._(1, _omitEnumNames ? '' : 'STATUS_AT_GOAL');
-  static const SE2TrajectoryCommand_Feedback_Status STATUS_NEAR_GOAL = SE2TrajectoryCommand_Feedback_Status._(3, _omitEnumNames ? '' : 'STATUS_NEAR_GOAL');
-  static const SE2TrajectoryCommand_Feedback_Status STATUS_GOING_TO_GOAL = SE2TrajectoryCommand_Feedback_Status._(2, _omitEnumNames ? '' : 'STATUS_GOING_TO_GOAL');
+  static const SE2TrajectoryCommand_Feedback_Status STATUS_STOPPED = SE2TrajectoryCommand_Feedback_Status._(1, _omitEnumNames ? '' : 'STATUS_STOPPED');
+  static const SE2TrajectoryCommand_Feedback_Status STATUS_STOPPING = SE2TrajectoryCommand_Feedback_Status._(3, _omitEnumNames ? '' : 'STATUS_STOPPING');
+  static const SE2TrajectoryCommand_Feedback_Status STATUS_IN_PROGRESS = SE2TrajectoryCommand_Feedback_Status._(2, _omitEnumNames ? '' : 'STATUS_IN_PROGRESS');
+
+  static const SE2TrajectoryCommand_Feedback_Status STATUS_AT_GOAL = STATUS_STOPPED;
+  static const SE2TrajectoryCommand_Feedback_Status STATUS_NEAR_GOAL = STATUS_STOPPING;
+  static const SE2TrajectoryCommand_Feedback_Status STATUS_GOING_TO_GOAL = STATUS_IN_PROGRESS;
 
   static const $core.List<SE2TrajectoryCommand_Feedback_Status> values = <SE2TrajectoryCommand_Feedback_Status> [
     STATUS_UNKNOWN,
-    STATUS_AT_GOAL,
-    STATUS_NEAR_GOAL,
-    STATUS_GOING_TO_GOAL,
+    STATUS_STOPPED,
+    STATUS_STOPPING,
+    STATUS_IN_PROGRESS,
   ];
 
   static final $core.Map<$core.int, SE2TrajectoryCommand_Feedback_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
@@ -159,6 +163,25 @@ class SE2TrajectoryCommand_Feedback_BodyMovementStatus extends $pb.ProtobufEnum 
   static SE2TrajectoryCommand_Feedback_BodyMovementStatus? valueOf($core.int value) => _byValue[value];
 
   const SE2TrajectoryCommand_Feedback_BodyMovementStatus._($core.int v, $core.String n) : super(v, n);
+}
+
+class SE2TrajectoryCommand_Feedback_FinalGoalStatus extends $pb.ProtobufEnum {
+  static const SE2TrajectoryCommand_Feedback_FinalGoalStatus FINAL_GOAL_STATUS_UNKNOWN = SE2TrajectoryCommand_Feedback_FinalGoalStatus._(0, _omitEnumNames ? '' : 'FINAL_GOAL_STATUS_UNKNOWN');
+  static const SE2TrajectoryCommand_Feedback_FinalGoalStatus FINAL_GOAL_STATUS_IN_PROGRESS = SE2TrajectoryCommand_Feedback_FinalGoalStatus._(1, _omitEnumNames ? '' : 'FINAL_GOAL_STATUS_IN_PROGRESS');
+  static const SE2TrajectoryCommand_Feedback_FinalGoalStatus FINAL_GOAL_STATUS_ACHIEVABLE = SE2TrajectoryCommand_Feedback_FinalGoalStatus._(2, _omitEnumNames ? '' : 'FINAL_GOAL_STATUS_ACHIEVABLE');
+  static const SE2TrajectoryCommand_Feedback_FinalGoalStatus FINAL_GOAL_STATUS_BLOCKED = SE2TrajectoryCommand_Feedback_FinalGoalStatus._(3, _omitEnumNames ? '' : 'FINAL_GOAL_STATUS_BLOCKED');
+
+  static const $core.List<SE2TrajectoryCommand_Feedback_FinalGoalStatus> values = <SE2TrajectoryCommand_Feedback_FinalGoalStatus> [
+    FINAL_GOAL_STATUS_UNKNOWN,
+    FINAL_GOAL_STATUS_IN_PROGRESS,
+    FINAL_GOAL_STATUS_ACHIEVABLE,
+    FINAL_GOAL_STATUS_BLOCKED,
+  ];
+
+  static final $core.Map<$core.int, SE2TrajectoryCommand_Feedback_FinalGoalStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static SE2TrajectoryCommand_Feedback_FinalGoalStatus? valueOf($core.int value) => _byValue[value];
+
+  const SE2TrajectoryCommand_Feedback_FinalGoalStatus._($core.int v, $core.String n) : super(v, n);
 }
 
 class SitCommand_Feedback_Status extends $pb.ProtobufEnum {
@@ -312,6 +335,23 @@ class ConstrainedManipulationCommand_Feedback_Status extends $pb.ProtobufEnum {
   static ConstrainedManipulationCommand_Feedback_Status? valueOf($core.int value) => _byValue[value];
 
   const ConstrainedManipulationCommand_Feedback_Status._($core.int v, $core.String n) : super(v, n);
+}
+
+class JointCommand_Feedback_Status extends $pb.ProtobufEnum {
+  static const JointCommand_Feedback_Status STATUS_UNKNOWN = JointCommand_Feedback_Status._(0, _omitEnumNames ? '' : 'STATUS_UNKNOWN');
+  static const JointCommand_Feedback_Status STATUS_ACTIVE = JointCommand_Feedback_Status._(1, _omitEnumNames ? '' : 'STATUS_ACTIVE');
+  static const JointCommand_Feedback_Status STATUS_ERROR = JointCommand_Feedback_Status._(2, _omitEnumNames ? '' : 'STATUS_ERROR');
+
+  static const $core.List<JointCommand_Feedback_Status> values = <JointCommand_Feedback_Status> [
+    STATUS_UNKNOWN,
+    STATUS_ACTIVE,
+    STATUS_ERROR,
+  ];
+
+  static final $core.Map<$core.int, JointCommand_Feedback_Status> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static JointCommand_Feedback_Status? valueOf($core.int value) => _byValue[value];
+
+  const JointCommand_Feedback_Status._($core.int v, $core.String n) : super(v, n);
 }
 
 

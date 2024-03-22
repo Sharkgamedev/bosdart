@@ -13,11 +13,11 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/wrappers.pb.dart' as $59;
-import 'geometry.pb.dart' as $61;
-import 'header.pb.dart' as $68;
-import 'image.pb.dart' as $11;
-import 'lease.pb.dart' as $13;
+import '../../google/protobuf/wrappers.pb.dart' as $58;
+import 'geometry.pb.dart' as $60;
+import 'header.pb.dart' as $67;
+import 'image.pb.dart' as $12;
+import 'lease.pb.dart' as $14;
 import 'manipulation_api.pbenum.dart';
 import 'robot_state.pbenum.dart' as $26;
 
@@ -25,10 +25,10 @@ export 'manipulation_api.pbenum.dart';
 
 class WalkToObjectRayInWorld extends $pb.GeneratedMessage {
   factory WalkToObjectRayInWorld({
-    $61.Vec3? rayStartRtFrame,
-    $61.Vec3? rayEndRtFrame,
+    $60.Vec3? rayStartRtFrame,
+    $60.Vec3? rayEndRtFrame,
     $core.String? frameName,
-    $59.FloatValue? offsetDistance,
+    $58.FloatValue? offsetDistance,
   }) {
     final $result = create();
     if (rayStartRtFrame != null) {
@@ -50,10 +50,10 @@ class WalkToObjectRayInWorld extends $pb.GeneratedMessage {
   factory WalkToObjectRayInWorld.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WalkToObjectRayInWorld', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'rayStartRtFrame', subBuilder: $61.Vec3.create)
-    ..aOM<$61.Vec3>(2, _omitFieldNames ? '' : 'rayEndRtFrame', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'rayStartRtFrame', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec3>(2, _omitFieldNames ? '' : 'rayEndRtFrame', subBuilder: $60.Vec3.create)
     ..aOS(3, _omitFieldNames ? '' : 'frameName')
-    ..aOM<$59.FloatValue>(4, _omitFieldNames ? '' : 'offsetDistance', subBuilder: $59.FloatValue.create)
+    ..aOM<$58.FloatValue>(4, _omitFieldNames ? '' : 'offsetDistance', subBuilder: $58.FloatValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -80,27 +80,27 @@ class WalkToObjectRayInWorld extends $pb.GeneratedMessage {
 
   /// Position of the start of the ray (see PickObjectRayInWorld for detailed comments.)
   @$pb.TagNumber(1)
-  $61.Vec3 get rayStartRtFrame => $_getN(0);
+  $60.Vec3 get rayStartRtFrame => $_getN(0);
   @$pb.TagNumber(1)
-  set rayStartRtFrame($61.Vec3 v) { setField(1, v); }
+  set rayStartRtFrame($60.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRayStartRtFrame() => $_has(0);
   @$pb.TagNumber(1)
   void clearRayStartRtFrame() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3 ensureRayStartRtFrame() => $_ensure(0);
+  $60.Vec3 ensureRayStartRtFrame() => $_ensure(0);
 
   /// Position of the end of the ray.
   @$pb.TagNumber(2)
-  $61.Vec3 get rayEndRtFrame => $_getN(1);
+  $60.Vec3 get rayEndRtFrame => $_getN(1);
   @$pb.TagNumber(2)
-  set rayEndRtFrame($61.Vec3 v) { setField(2, v); }
+  set rayEndRtFrame($60.Vec3 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasRayEndRtFrame() => $_has(1);
   @$pb.TagNumber(2)
   void clearRayEndRtFrame() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3 ensureRayEndRtFrame() => $_ensure(1);
+  $60.Vec3 ensureRayEndRtFrame() => $_ensure(1);
 
   /// Name of the frame that the above parameters are expressed in.
   @$pb.TagNumber(3)
@@ -117,24 +117,24 @@ class WalkToObjectRayInWorld extends $pb.GeneratedMessage {
   /// the object. \
   /// If unset, we use a reasonable default value.
   @$pb.TagNumber(4)
-  $59.FloatValue get offsetDistance => $_getN(3);
+  $58.FloatValue get offsetDistance => $_getN(3);
   @$pb.TagNumber(4)
-  set offsetDistance($59.FloatValue v) { setField(4, v); }
+  set offsetDistance($58.FloatValue v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasOffsetDistance() => $_has(3);
   @$pb.TagNumber(4)
   void clearOffsetDistance() => clearField(4);
   @$pb.TagNumber(4)
-  $59.FloatValue ensureOffsetDistance() => $_ensure(3);
+  $58.FloatValue ensureOffsetDistance() => $_ensure(3);
 }
 
 class WalkToObjectInImage extends $pb.GeneratedMessage {
   factory WalkToObjectInImage({
-    $61.Vec2? pixelXy,
-    $61.FrameTreeSnapshot? transformsSnapshotForCamera,
+    $60.Vec2? pixelXy,
+    $60.FrameTreeSnapshot? transformsSnapshotForCamera,
     $core.String? frameNameImageSensor,
-    $11.ImageSource_PinholeModel? cameraModel,
-    $59.FloatValue? offsetDistance,
+    $12.ImageSource_PinholeModel? cameraModel,
+    $58.FloatValue? offsetDistance,
   }) {
     final $result = create();
     if (pixelXy != null) {
@@ -159,11 +159,11 @@ class WalkToObjectInImage extends $pb.GeneratedMessage {
   factory WalkToObjectInImage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WalkToObjectInImage', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Vec2>(1, _omitFieldNames ? '' : 'pixelXy', subBuilder: $61.Vec2.create)
-    ..aOM<$61.FrameTreeSnapshot>(2, _omitFieldNames ? '' : 'transformsSnapshotForCamera', subBuilder: $61.FrameTreeSnapshot.create)
+    ..aOM<$60.Vec2>(1, _omitFieldNames ? '' : 'pixelXy', subBuilder: $60.Vec2.create)
+    ..aOM<$60.FrameTreeSnapshot>(2, _omitFieldNames ? '' : 'transformsSnapshotForCamera', subBuilder: $60.FrameTreeSnapshot.create)
     ..aOS(3, _omitFieldNames ? '' : 'frameNameImageSensor')
-    ..aOM<$11.ImageSource_PinholeModel>(4, _omitFieldNames ? '' : 'cameraModel', subBuilder: $11.ImageSource_PinholeModel.create)
-    ..aOM<$59.FloatValue>(5, _omitFieldNames ? '' : 'offsetDistance', subBuilder: $59.FloatValue.create)
+    ..aOM<$12.ImageSource_PinholeModel>(4, _omitFieldNames ? '' : 'cameraModel', subBuilder: $12.ImageSource_PinholeModel.create)
+    ..aOM<$58.FloatValue>(5, _omitFieldNames ? '' : 'offsetDistance', subBuilder: $58.FloatValue.create)
     ..hasRequiredFields = false
   ;
 
@@ -190,31 +190,32 @@ class WalkToObjectInImage extends $pb.GeneratedMessage {
 
   /// Walk to an object that is at a pixel location in an image.
   @$pb.TagNumber(1)
-  $61.Vec2 get pixelXy => $_getN(0);
+  $60.Vec2 get pixelXy => $_getN(0);
   @$pb.TagNumber(1)
-  set pixelXy($61.Vec2 v) { setField(1, v); }
+  set pixelXy($60.Vec2 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPixelXy() => $_has(0);
   @$pb.TagNumber(1)
   void clearPixelXy() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec2 ensurePixelXy() => $_ensure(0);
+  $60.Vec2 ensurePixelXy() => $_ensure(0);
 
-  /// A tree-based collection of transformations, which will include the transformations to each image's
-  /// sensor in addition to transformations to the common frames ("vision", "body", "odom").
-  /// All transforms within the snapshot are at the acquistion time of the image.
+  /// A tree-based collection of transformations, which will include the transformations to each
+  /// image's sensor in addition to transformations to the common frames ("vision", "body",
+  /// "odom"). All transforms within the snapshot are at the acquisition time of the image.
   @$pb.TagNumber(2)
-  $61.FrameTreeSnapshot get transformsSnapshotForCamera => $_getN(1);
+  $60.FrameTreeSnapshot get transformsSnapshotForCamera => $_getN(1);
   @$pb.TagNumber(2)
-  set transformsSnapshotForCamera($61.FrameTreeSnapshot v) { setField(2, v); }
+  set transformsSnapshotForCamera($60.FrameTreeSnapshot v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTransformsSnapshotForCamera() => $_has(1);
   @$pb.TagNumber(2)
   void clearTransformsSnapshotForCamera() => clearField(2);
   @$pb.TagNumber(2)
-  $61.FrameTreeSnapshot ensureTransformsSnapshotForCamera() => $_ensure(1);
+  $60.FrameTreeSnapshot ensureTransformsSnapshotForCamera() => $_ensure(1);
 
-  /// The frame name for the image's sensor source. This will be included in the transform snapshot.
+  /// The frame name for the image's sensor source. This will be included in the transform
+  /// snapshot.
   @$pb.TagNumber(3)
   $core.String get frameNameImageSensor => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -226,36 +227,36 @@ class WalkToObjectInImage extends $pb.GeneratedMessage {
 
   /// Camera model.
   @$pb.TagNumber(4)
-  $11.ImageSource_PinholeModel get cameraModel => $_getN(3);
+  $12.ImageSource_PinholeModel get cameraModel => $_getN(3);
   @$pb.TagNumber(4)
-  set cameraModel($11.ImageSource_PinholeModel v) { setField(4, v); }
+  set cameraModel($12.ImageSource_PinholeModel v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasCameraModel() => $_has(3);
   @$pb.TagNumber(4)
   void clearCameraModel() => clearField(4);
   @$pb.TagNumber(4)
-  $11.ImageSource_PinholeModel ensureCameraModel() => $_ensure(3);
+  $12.ImageSource_PinholeModel ensureCameraModel() => $_ensure(3);
 
   /// Optional offset distance for the robot to stand from the object's location.  The robot will
   /// walk forwards or backwards from where it is so that its center of mass is this distance from
   /// the object. \
   /// If unset, we use a reasonable default value.
   @$pb.TagNumber(5)
-  $59.FloatValue get offsetDistance => $_getN(4);
+  $58.FloatValue get offsetDistance => $_getN(4);
   @$pb.TagNumber(5)
-  set offsetDistance($59.FloatValue v) { setField(5, v); }
+  set offsetDistance($58.FloatValue v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasOffsetDistance() => $_has(4);
   @$pb.TagNumber(5)
   void clearOffsetDistance() => clearField(5);
   @$pb.TagNumber(5)
-  $59.FloatValue ensureOffsetDistance() => $_ensure(4);
+  $58.FloatValue ensureOffsetDistance() => $_ensure(4);
 }
 
 class PickObjectRayInWorld extends $pb.GeneratedMessage {
   factory PickObjectRayInWorld({
-    $61.Vec3? rayStartRtFrame,
-    $61.Vec3? rayEndRtFrame,
+    $60.Vec3? rayStartRtFrame,
+    $60.Vec3? rayEndRtFrame,
     WalkGazeMode? walkGazeMode,
     $core.String? frameName,
     GraspParams? graspParams,
@@ -283,8 +284,8 @@ class PickObjectRayInWorld extends $pb.GeneratedMessage {
   factory PickObjectRayInWorld.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PickObjectRayInWorld', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'rayStartRtFrame', subBuilder: $61.Vec3.create)
-    ..aOM<$61.Vec3>(2, _omitFieldNames ? '' : 'rayEndRtFrame', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'rayStartRtFrame', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec3>(2, _omitFieldNames ? '' : 'rayEndRtFrame', subBuilder: $60.Vec3.create)
     ..e<WalkGazeMode>(4, _omitFieldNames ? '' : 'walkGazeMode', $pb.PbFieldType.OE, defaultOrMaker: WalkGazeMode.PICK_WALK_GAZE_UNKNOWN, valueOf: WalkGazeMode.valueOf, enumValues: WalkGazeMode.values)
     ..aOS(6, _omitFieldNames ? '' : 'frameName')
     ..aOM<GraspParams>(10, _omitFieldNames ? '' : 'graspParams', subBuilder: GraspParams.create)
@@ -322,26 +323,26 @@ class PickObjectRayInWorld extends $pb.GeneratedMessage {
   ///      ray_start_rt_frame: camera's position \
   ///      ray_end_rt_frame: camera's position + unit vector along ray of interest * 4 meters
   @$pb.TagNumber(1)
-  $61.Vec3 get rayStartRtFrame => $_getN(0);
+  $60.Vec3 get rayStartRtFrame => $_getN(0);
   @$pb.TagNumber(1)
-  set rayStartRtFrame($61.Vec3 v) { setField(1, v); }
+  set rayStartRtFrame($60.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRayStartRtFrame() => $_has(0);
   @$pb.TagNumber(1)
   void clearRayStartRtFrame() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3 ensureRayStartRtFrame() => $_ensure(0);
+  $60.Vec3 ensureRayStartRtFrame() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $61.Vec3 get rayEndRtFrame => $_getN(1);
+  $60.Vec3 get rayEndRtFrame => $_getN(1);
   @$pb.TagNumber(2)
-  set rayEndRtFrame($61.Vec3 v) { setField(2, v); }
+  set rayEndRtFrame($60.Vec3 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasRayEndRtFrame() => $_has(1);
   @$pb.TagNumber(2)
   void clearRayEndRtFrame() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3 ensureRayEndRtFrame() => $_ensure(1);
+  $60.Vec3 ensureRayEndRtFrame() => $_ensure(1);
 
   /// Configure if the robot should automatically walk and/or gaze at the target object before
   /// performing the grasp. \
@@ -420,7 +421,7 @@ class PickObjectExecutePlan extends $pb.GeneratedMessage {
 class PickObject extends $pb.GeneratedMessage {
   factory PickObject({
     $core.String? frameName,
-    $61.Vec3? objectRtFrame,
+    $60.Vec3? objectRtFrame,
     GraspParams? graspParams,
   }) {
     final $result = create();
@@ -441,7 +442,7 @@ class PickObject extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PickObject', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'frameName')
-    ..aOM<$61.Vec3>(2, _omitFieldNames ? '' : 'objectRtFrame', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(2, _omitFieldNames ? '' : 'objectRtFrame', subBuilder: $60.Vec3.create)
     ..aOM<GraspParams>(3, _omitFieldNames ? '' : 'graspParams', subBuilder: GraspParams.create)
     ..hasRequiredFields = false
   ;
@@ -479,15 +480,15 @@ class PickObject extends $pb.GeneratedMessage {
 
   /// Pickup an object at the location, given in the frame named above.
   @$pb.TagNumber(2)
-  $61.Vec3 get objectRtFrame => $_getN(1);
+  $60.Vec3 get objectRtFrame => $_getN(1);
   @$pb.TagNumber(2)
-  set objectRtFrame($61.Vec3 v) { setField(2, v); }
+  set objectRtFrame($60.Vec3 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasObjectRtFrame() => $_has(1);
   @$pb.TagNumber(2)
   void clearObjectRtFrame() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3 ensureObjectRtFrame() => $_ensure(1);
+  $60.Vec3 ensureObjectRtFrame() => $_ensure(1);
 
   /// Optional parameters for the grasp.
   @$pb.TagNumber(3)
@@ -504,10 +505,10 @@ class PickObject extends $pb.GeneratedMessage {
 
 class PickObjectInImage extends $pb.GeneratedMessage {
   factory PickObjectInImage({
-    $61.Vec2? pixelXy,
-    $61.FrameTreeSnapshot? transformsSnapshotForCamera,
+    $60.Vec2? pixelXy,
+    $60.FrameTreeSnapshot? transformsSnapshotForCamera,
     $core.String? frameNameImageSensor,
-    $11.ImageSource_PinholeModel? cameraModel,
+    $12.ImageSource_PinholeModel? cameraModel,
     WalkGazeMode? walkGazeMode,
     GraspParams? graspParams,
   }) {
@@ -537,10 +538,10 @@ class PickObjectInImage extends $pb.GeneratedMessage {
   factory PickObjectInImage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PickObjectInImage', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Vec2>(1, _omitFieldNames ? '' : 'pixelXy', subBuilder: $61.Vec2.create)
-    ..aOM<$61.FrameTreeSnapshot>(2, _omitFieldNames ? '' : 'transformsSnapshotForCamera', subBuilder: $61.FrameTreeSnapshot.create)
+    ..aOM<$60.Vec2>(1, _omitFieldNames ? '' : 'pixelXy', subBuilder: $60.Vec2.create)
+    ..aOM<$60.FrameTreeSnapshot>(2, _omitFieldNames ? '' : 'transformsSnapshotForCamera', subBuilder: $60.FrameTreeSnapshot.create)
     ..aOS(3, _omitFieldNames ? '' : 'frameNameImageSensor')
-    ..aOM<$11.ImageSource_PinholeModel>(4, _omitFieldNames ? '' : 'cameraModel', subBuilder: $11.ImageSource_PinholeModel.create)
+    ..aOM<$12.ImageSource_PinholeModel>(4, _omitFieldNames ? '' : 'cameraModel', subBuilder: $12.ImageSource_PinholeModel.create)
     ..e<WalkGazeMode>(9, _omitFieldNames ? '' : 'walkGazeMode', $pb.PbFieldType.OE, defaultOrMaker: WalkGazeMode.PICK_WALK_GAZE_UNKNOWN, valueOf: WalkGazeMode.valueOf, enumValues: WalkGazeMode.values)
     ..aOM<GraspParams>(10, _omitFieldNames ? '' : 'graspParams', subBuilder: GraspParams.create)
     ..hasRequiredFields = false
@@ -569,31 +570,32 @@ class PickObjectInImage extends $pb.GeneratedMessage {
 
   /// Pickup an object that is at a pixel location in an image.
   @$pb.TagNumber(1)
-  $61.Vec2 get pixelXy => $_getN(0);
+  $60.Vec2 get pixelXy => $_getN(0);
   @$pb.TagNumber(1)
-  set pixelXy($61.Vec2 v) { setField(1, v); }
+  set pixelXy($60.Vec2 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPixelXy() => $_has(0);
   @$pb.TagNumber(1)
   void clearPixelXy() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec2 ensurePixelXy() => $_ensure(0);
+  $60.Vec2 ensurePixelXy() => $_ensure(0);
 
-  /// A tree-based collection of transformations, which will include the transformations to each image's
-  /// sensor in addition to transformations to the common frames ("vision", "body", "odom").
-  /// All transforms within the snapshot are at the acquistion time of the image.
+  /// A tree-based collection of transformations, which will include the transformations to each
+  /// image's sensor in addition to transformations to the common frames ("vision", "body",
+  /// "odom"). All transforms within the snapshot are at the acquistion time of the image.
   @$pb.TagNumber(2)
-  $61.FrameTreeSnapshot get transformsSnapshotForCamera => $_getN(1);
+  $60.FrameTreeSnapshot get transformsSnapshotForCamera => $_getN(1);
   @$pb.TagNumber(2)
-  set transformsSnapshotForCamera($61.FrameTreeSnapshot v) { setField(2, v); }
+  set transformsSnapshotForCamera($60.FrameTreeSnapshot v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTransformsSnapshotForCamera() => $_has(1);
   @$pb.TagNumber(2)
   void clearTransformsSnapshotForCamera() => clearField(2);
   @$pb.TagNumber(2)
-  $61.FrameTreeSnapshot ensureTransformsSnapshotForCamera() => $_ensure(1);
+  $60.FrameTreeSnapshot ensureTransformsSnapshotForCamera() => $_ensure(1);
 
-  /// The frame name for the image's sensor source. This must be included in the transform snapshot.
+  /// The frame name for the image's sensor source. This must be included in the transform
+  /// snapshot.
   @$pb.TagNumber(3)
   $core.String get frameNameImageSensor => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -605,15 +607,15 @@ class PickObjectInImage extends $pb.GeneratedMessage {
 
   /// Camera model.
   @$pb.TagNumber(4)
-  $11.ImageSource_PinholeModel get cameraModel => $_getN(3);
+  $12.ImageSource_PinholeModel get cameraModel => $_getN(3);
   @$pb.TagNumber(4)
-  set cameraModel($11.ImageSource_PinholeModel v) { setField(4, v); }
+  set cameraModel($12.ImageSource_PinholeModel v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasCameraModel() => $_has(3);
   @$pb.TagNumber(4)
   void clearCameraModel() => clearField(4);
   @$pb.TagNumber(4)
-  $11.ImageSource_PinholeModel ensureCameraModel() => $_ensure(3);
+  $12.ImageSource_PinholeModel ensureCameraModel() => $_ensure(3);
 
   /// Automatic walking / gazing configuration.
   /// See detailed comment in the PickObjectRayInWorld message.
@@ -883,7 +885,7 @@ class AllowableOrientation extends $pb.GeneratedMessage {
 
 class RotationWithTolerance extends $pb.GeneratedMessage {
   factory RotationWithTolerance({
-    $61.Quaternion? rotationEwrtFrame,
+    $60.Quaternion? rotationEwrtFrame,
     $core.double? thresholdRadians,
   }) {
     final $result = create();
@@ -900,7 +902,7 @@ class RotationWithTolerance extends $pb.GeneratedMessage {
   factory RotationWithTolerance.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RotationWithTolerance', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Quaternion>(1, _omitFieldNames ? '' : 'rotationEwrtFrame', subBuilder: $61.Quaternion.create)
+    ..aOM<$60.Quaternion>(1, _omitFieldNames ? '' : 'rotationEwrtFrame', subBuilder: $60.Quaternion.create)
     ..a<$core.double>(2, _omitFieldNames ? '' : 'thresholdRadians', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
@@ -927,15 +929,15 @@ class RotationWithTolerance extends $pb.GeneratedMessage {
   static RotationWithTolerance? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $61.Quaternion get rotationEwrtFrame => $_getN(0);
+  $60.Quaternion get rotationEwrtFrame => $_getN(0);
   @$pb.TagNumber(1)
-  set rotationEwrtFrame($61.Quaternion v) { setField(1, v); }
+  set rotationEwrtFrame($60.Quaternion v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRotationEwrtFrame() => $_has(0);
   @$pb.TagNumber(1)
   void clearRotationEwrtFrame() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Quaternion ensureRotationEwrtFrame() => $_ensure(0);
+  $60.Quaternion ensureRotationEwrtFrame() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.double get thresholdRadians => $_getN(1);
@@ -949,8 +951,8 @@ class RotationWithTolerance extends $pb.GeneratedMessage {
 
 class VectorAlignmentWithTolerance extends $pb.GeneratedMessage {
   factory VectorAlignmentWithTolerance({
-    $61.Vec3? axisOnGripperEwrtGripper,
-    $61.Vec3? axisToAlignWithEwrtFrame,
+    $60.Vec3? axisOnGripperEwrtGripper,
+    $60.Vec3? axisToAlignWithEwrtFrame,
     $core.double? thresholdRadians,
   }) {
     final $result = create();
@@ -970,8 +972,8 @@ class VectorAlignmentWithTolerance extends $pb.GeneratedMessage {
   factory VectorAlignmentWithTolerance.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VectorAlignmentWithTolerance', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$61.Vec3>(1, _omitFieldNames ? '' : 'axisOnGripperEwrtGripper', subBuilder: $61.Vec3.create)
-    ..aOM<$61.Vec3>(2, _omitFieldNames ? '' : 'axisToAlignWithEwrtFrame', subBuilder: $61.Vec3.create)
+    ..aOM<$60.Vec3>(1, _omitFieldNames ? '' : 'axisOnGripperEwrtGripper', subBuilder: $60.Vec3.create)
+    ..aOM<$60.Vec3>(2, _omitFieldNames ? '' : 'axisToAlignWithEwrtFrame', subBuilder: $60.Vec3.create)
     ..a<$core.double>(3, _omitFieldNames ? '' : 'thresholdRadians', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
@@ -998,30 +1000,30 @@ class VectorAlignmentWithTolerance extends $pb.GeneratedMessage {
   static VectorAlignmentWithTolerance? _defaultInstance;
 
   /// Axis on the gripper that you want to align.  For example, to align the front of the gripper
-  /// to be straight down, you'd use: \
+  /// to be straight down, you'd use:
   ///      axis_on_gripper_ewrt_gripper = Vec3(1, 0, 0) \
   ///      axis_to_align_with_ewrt_frame = Vec3(0, 0, -1)   (in the "vision" frame) \
   @$pb.TagNumber(1)
-  $61.Vec3 get axisOnGripperEwrtGripper => $_getN(0);
+  $60.Vec3 get axisOnGripperEwrtGripper => $_getN(0);
   @$pb.TagNumber(1)
-  set axisOnGripperEwrtGripper($61.Vec3 v) { setField(1, v); }
+  set axisOnGripperEwrtGripper($60.Vec3 v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAxisOnGripperEwrtGripper() => $_has(0);
   @$pb.TagNumber(1)
   void clearAxisOnGripperEwrtGripper() => clearField(1);
   @$pb.TagNumber(1)
-  $61.Vec3 ensureAxisOnGripperEwrtGripper() => $_ensure(0);
+  $60.Vec3 ensureAxisOnGripperEwrtGripper() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $61.Vec3 get axisToAlignWithEwrtFrame => $_getN(1);
+  $60.Vec3 get axisToAlignWithEwrtFrame => $_getN(1);
   @$pb.TagNumber(2)
-  set axisToAlignWithEwrtFrame($61.Vec3 v) { setField(2, v); }
+  set axisToAlignWithEwrtFrame($60.Vec3 v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAxisToAlignWithEwrtFrame() => $_has(1);
   @$pb.TagNumber(2)
   void clearAxisToAlignWithEwrtFrame() => clearField(2);
   @$pb.TagNumber(2)
-  $61.Vec3 ensureAxisToAlignWithEwrtFrame() => $_ensure(1);
+  $60.Vec3 ensureAxisToAlignWithEwrtFrame() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.double get thresholdRadians => $_getN(2);
@@ -1085,7 +1087,7 @@ class SqueezeGrasp extends $pb.GeneratedMessage {
 
 class ManipulationApiFeedbackRequest extends $pb.GeneratedMessage {
   factory ManipulationApiFeedbackRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     $core.int? manipulationCmdId,
   }) {
     final $result = create();
@@ -1102,7 +1104,7 @@ class ManipulationApiFeedbackRequest extends $pb.GeneratedMessage {
   factory ManipulationApiFeedbackRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManipulationApiFeedbackRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'manipulationCmdId', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
@@ -1130,15 +1132,15 @@ class ManipulationApiFeedbackRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// Unique identifier for the command, provided by ManipulationApiResponse.
   @$pb.TagNumber(2)
@@ -1153,9 +1155,9 @@ class ManipulationApiFeedbackRequest extends $pb.GeneratedMessage {
 
 class ManipulationApiFeedbackResponse extends $pb.GeneratedMessage {
   factory ManipulationApiFeedbackResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     ManipulationFeedbackState? currentState,
-    $61.FrameTreeSnapshot? transformsSnapshotManipulationData,
+    $60.FrameTreeSnapshot? transformsSnapshotManipulationData,
     $core.int? manipulationCmdId,
   }) {
     final $result = create();
@@ -1178,9 +1180,9 @@ class ManipulationApiFeedbackResponse extends $pb.GeneratedMessage {
   factory ManipulationApiFeedbackResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManipulationApiFeedbackResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..e<ManipulationFeedbackState>(2, _omitFieldNames ? '' : 'currentState', $pb.PbFieldType.OE, defaultOrMaker: ManipulationFeedbackState.MANIP_STATE_UNKNOWN, valueOf: ManipulationFeedbackState.valueOf, enumValues: ManipulationFeedbackState.values)
-    ..aOM<$61.FrameTreeSnapshot>(3, _omitFieldNames ? '' : 'transformsSnapshotManipulationData', subBuilder: $61.FrameTreeSnapshot.create)
+    ..aOM<$60.FrameTreeSnapshot>(3, _omitFieldNames ? '' : 'transformsSnapshotManipulationData', subBuilder: $60.FrameTreeSnapshot.create)
     ..a<$core.int>(4, _omitFieldNames ? '' : 'manipulationCmdId', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
@@ -1208,15 +1210,15 @@ class ManipulationApiFeedbackResponse extends $pb.GeneratedMessage {
 
   /// / Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ManipulationFeedbackState get currentState => $_getN(1);
@@ -1239,15 +1241,15 @@ class ManipulationApiFeedbackResponse extends $pb.GeneratedMessage {
   ///      If the range camera in the hand senses an object, this frame will have the position of
   ///      the nearest object.  This is useful for getting a ballpark range measurement.
   @$pb.TagNumber(3)
-  $61.FrameTreeSnapshot get transformsSnapshotManipulationData => $_getN(2);
+  $60.FrameTreeSnapshot get transformsSnapshotManipulationData => $_getN(2);
   @$pb.TagNumber(3)
-  set transformsSnapshotManipulationData($61.FrameTreeSnapshot v) { setField(3, v); }
+  set transformsSnapshotManipulationData($60.FrameTreeSnapshot v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasTransformsSnapshotManipulationData() => $_has(2);
   @$pb.TagNumber(3)
   void clearTransformsSnapshotManipulationData() => clearField(3);
   @$pb.TagNumber(3)
-  $61.FrameTreeSnapshot ensureTransformsSnapshotManipulationData() => $_ensure(2);
+  $60.FrameTreeSnapshot ensureTransformsSnapshotManipulationData() => $_ensure(2);
 
   /// The unique identifier for the ManipulationApiFeedbackRequest.
   @$pb.TagNumber(4)
@@ -1262,9 +1264,9 @@ class ManipulationApiFeedbackResponse extends $pb.GeneratedMessage {
 
 class ManipulationApiResponse extends $pb.GeneratedMessage {
   factory ManipulationApiResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
     $core.int? manipulationCmdId,
-    $13.LeaseUseResult? leaseUseResult,
+    $14.LeaseUseResult? leaseUseResult,
   }) {
     final $result = create();
     if (header != null) {
@@ -1283,9 +1285,9 @@ class ManipulationApiResponse extends $pb.GeneratedMessage {
   factory ManipulationApiResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManipulationApiResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..a<$core.int>(5, _omitFieldNames ? '' : 'manipulationCmdId', $pb.PbFieldType.O3)
-    ..aOM<$13.LeaseUseResult>(6, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $13.LeaseUseResult.create)
+    ..aOM<$14.LeaseUseResult>(6, _omitFieldNames ? '' : 'leaseUseResult', subBuilder: $14.LeaseUseResult.create)
     ..hasRequiredFields = false
   ;
 
@@ -1312,15 +1314,15 @@ class ManipulationApiResponse extends $pb.GeneratedMessage {
 
   /// / Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 
   /// ID of the manipulation command either just issued or that we are providing feedback for.
   @$pb.TagNumber(5)
@@ -1334,15 +1336,15 @@ class ManipulationApiResponse extends $pb.GeneratedMessage {
 
   /// Details about how the lease was used.
   @$pb.TagNumber(6)
-  $13.LeaseUseResult get leaseUseResult => $_getN(2);
+  $14.LeaseUseResult get leaseUseResult => $_getN(2);
   @$pb.TagNumber(6)
-  set leaseUseResult($13.LeaseUseResult v) { setField(6, v); }
+  set leaseUseResult($14.LeaseUseResult v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasLeaseUseResult() => $_has(2);
   @$pb.TagNumber(6)
   void clearLeaseUseResult() => clearField(6);
   @$pb.TagNumber(6)
-  $13.LeaseUseResult ensureLeaseUseResult() => $_ensure(2);
+  $14.LeaseUseResult ensureLeaseUseResult() => $_ensure(2);
 }
 
 enum ManipulationApiRequest_ManipulationCmd {
@@ -1357,8 +1359,8 @@ enum ManipulationApiRequest_ManipulationCmd {
 
 class ManipulationApiRequest extends $pb.GeneratedMessage {
   factory ManipulationApiRequest({
-    $68.RequestHeader? header,
-    $13.Lease? lease,
+    $67.RequestHeader? header,
+    $14.Lease? lease,
     PickObjectRayInWorld? pickObjectRayInWorld,
     PickObject? pickObject,
     PickObjectInImage? pickObjectInImage,
@@ -1408,8 +1410,8 @@ class ManipulationApiRequest extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ManipulationApiRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
     ..oo(0, [4, 10, 11, 12, 13, 14])
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
-    ..aOM<$13.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $13.Lease.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
+    ..aOM<$14.Lease>(2, _omitFieldNames ? '' : 'lease', subBuilder: $14.Lease.create)
     ..aOM<PickObjectRayInWorld>(4, _omitFieldNames ? '' : 'pickObjectRayInWorld', subBuilder: PickObjectRayInWorld.create)
     ..aOM<PickObject>(10, _omitFieldNames ? '' : 'pickObject', subBuilder: PickObject.create)
     ..aOM<PickObjectInImage>(11, _omitFieldNames ? '' : 'pickObjectInImage', subBuilder: PickObjectInImage.create)
@@ -1444,27 +1446,27 @@ class ManipulationApiRequest extends $pb.GeneratedMessage {
   void clearManipulationCmd() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// The Lease to show ownership of the robot.
   @$pb.TagNumber(2)
-  $13.Lease get lease => $_getN(1);
+  $14.Lease get lease => $_getN(1);
   @$pb.TagNumber(2)
-  set lease($13.Lease v) { setField(2, v); }
+  set lease($14.Lease v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLease() => $_has(1);
   @$pb.TagNumber(2)
   void clearLease() => clearField(2);
   @$pb.TagNumber(2)
-  $13.Lease ensureLease() => $_ensure(1);
+  $14.Lease ensureLease() => $_ensure(1);
 
   /// Pick up an object based on a ray in 3D space.  This is the lowest-level, most
   /// configurable object picking command.
@@ -1650,7 +1652,7 @@ class ApiGraspedCarryStateOverride extends $pb.GeneratedMessage {
 
 class ApiGraspOverrideRequest extends $pb.GeneratedMessage {
   factory ApiGraspOverrideRequest({
-    $68.RequestHeader? header,
+    $67.RequestHeader? header,
     ApiGraspedCarryStateOverride? carryStateOverride,
     ApiGraspOverride? apiGraspOverride,
   }) {
@@ -1671,7 +1673,7 @@ class ApiGraspOverrideRequest extends $pb.GeneratedMessage {
   factory ApiGraspOverrideRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApiGraspOverrideRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.RequestHeader.create)
+    ..aOM<$67.RequestHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.RequestHeader.create)
     ..aOM<ApiGraspedCarryStateOverride>(2, _omitFieldNames ? '' : 'carryStateOverride', subBuilder: ApiGraspedCarryStateOverride.create)
     ..aOM<ApiGraspOverride>(4, _omitFieldNames ? '' : 'apiGraspOverride', subBuilder: ApiGraspOverride.create)
     ..hasRequiredFields = false
@@ -1700,15 +1702,15 @@ class ApiGraspOverrideRequest extends $pb.GeneratedMessage {
 
   /// Common request header.
   @$pb.TagNumber(1)
-  $68.RequestHeader get header => $_getN(0);
+  $67.RequestHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.RequestHeader v) { setField(1, v); }
+  set header($67.RequestHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.RequestHeader ensureHeader() => $_ensure(0);
+  $67.RequestHeader ensureHeader() => $_ensure(0);
 
   /// If the grasp override is set to NOT_HOLDING, setting a carry_state_override
   /// message will cause the request to be rejected as malformed.
@@ -1737,7 +1739,7 @@ class ApiGraspOverrideRequest extends $pb.GeneratedMessage {
 
 class ApiGraspOverrideResponse extends $pb.GeneratedMessage {
   factory ApiGraspOverrideResponse({
-    $68.ResponseHeader? header,
+    $67.ResponseHeader? header,
   }) {
     final $result = create();
     if (header != null) {
@@ -1750,7 +1752,7 @@ class ApiGraspOverrideResponse extends $pb.GeneratedMessage {
   factory ApiGraspOverrideResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApiGraspOverrideResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'bosdyn.api'), createEmptyInstance: create)
-    ..aOM<$68.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $68.ResponseHeader.create)
+    ..aOM<$67.ResponseHeader>(1, _omitFieldNames ? '' : 'header', subBuilder: $67.ResponseHeader.create)
     ..hasRequiredFields = false
   ;
 
@@ -1777,15 +1779,15 @@ class ApiGraspOverrideResponse extends $pb.GeneratedMessage {
 
   /// Common response header.
   @$pb.TagNumber(1)
-  $68.ResponseHeader get header => $_getN(0);
+  $67.ResponseHeader get header => $_getN(0);
   @$pb.TagNumber(1)
-  set header($68.ResponseHeader v) { setField(1, v); }
+  set header($67.ResponseHeader v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasHeader() => $_has(0);
   @$pb.TagNumber(1)
   void clearHeader() => clearField(1);
   @$pb.TagNumber(1)
-  $68.ResponseHeader ensureHeader() => $_ensure(0);
+  $67.ResponseHeader ensureHeader() => $_ensure(0);
 }
 
 
