@@ -7,7 +7,7 @@ import 'package:bosdart/structures/error.dart';
 
 Future<RobotState> getRobotState(Robot robot) async {
   RobotStateServiceClient client = RobotStateServiceClient(
-      ChannelManager.ensureChannelFor(robot, Authority.api));
+      ChannelManager.ensureChannelFor(robot, Authority.check));
 
   RobotStateRequest request = RobotStateRequest();
   request.header = robot.requestHeader();
