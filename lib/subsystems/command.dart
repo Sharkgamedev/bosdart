@@ -43,8 +43,6 @@ extension CommandClient on Robot {
     MobilityParams params = MobilityParams();
     SE2VelocityCommand_Request walkRequest = SE2VelocityCommand_Request();
 
-    //params.locomotionHint = LocomotionHint.HINT_CRAWL;
-
     Vec2 slewLimit = Vec2();
     slewLimit.x = 4;
     slewLimit.y = 4;
@@ -61,12 +59,10 @@ extension CommandClient on Robot {
     slewVelocity.angular = 2.0;
 
     walkRequest.velocity = seVelocity;
-    print(DateTime.now());
     walkRequest.endTime = TimeSystem.timestampFromLocalMicros(
         (DateTime.now().millisecondsSinceEpoch / 1000).round() +
             endTimeRelative);
-    //print(DateTime.fromMicrosecondsSinceEpoch(DateTime.now().microsecondsSinceEpoch + endTimeRelative));
-    //print(TimeSystem.timestampFromLocalMicros(DateTime.now().microsecondsSinceEpoch + endTimeRelative).toDateTime());
+
     walkRequest.se2FrameName = "flat_body";
     walkRequest.slewRateLimit = slewVelocity;
 
